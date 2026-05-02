@@ -95,7 +95,9 @@ Parses `fixtures/current.xml` and `fixtures/prior.xml`, runs the diff, and print
 
 ## Admin portal
 
-The viewer is **not** part of this skill — it lives at the repo root in [`portal/`](../../../portal) (separate React + Tailwind app, separate dependency tree). It reads this skill's `data/` directory via Vite's `publicDir`. Run from there:
+The viewer is **not** part of this skill. It's a generic, skill-agnostic admin UI that lives at the repo root in [`portal/`](../../../portal) (separate React + Tailwind app, separate dependency tree). Skills register themselves with the portal via [`portal/skills.config.js`](../../../portal/skills.config.js); the portal then serves the registered skill's `data/` directory and edits its `investors.json` (or equivalent registry file).
+
+This skill is the first registered consumer. Run the portal from the repo root:
 
 ```bash
 cd portal
@@ -104,7 +106,7 @@ npm install && npm run dev    # http://localhost:5173
 
 If the portal renders an empty state, the data dir hasn't been populated — run the downloader (live or `--smoke-test`) first.
 
-The portal also has a **"Manage tracked investors"** module (sidebar button, dev-mode only). It edits this skill's `investors.json` in place via dev-only API endpoints registered by `portal/vite-plugin-admin.js`. After adding/removing filers, re-run the downloader so their 13F data lands in `data/`.
+The portal's **"Manage tracked investors"** module (sidebar button, dev-mode only) edits this skill's `investors.json` in place via API endpoints registered by `portal/vite-plugin-admin.js`. After adding/removing filers, re-run the downloader so their 13F data lands in `data/`.
 
 ## Caveats
 

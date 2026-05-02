@@ -1,38 +1,36 @@
-// Vite dev-only middleware that exposes a small admin API for the
-// "Manage Tracked Investors" portal module:
+// Vite dev-only middleware for the admin portal.
 //
-//   GET    /api/investors            list current entries (investors.json)
-//   POST   /api/investors            { name, cik } append, dedup by CIK
-//   DELETE /api/investors/:cik       remove by CIK
-//   GET    /api/search?q=foo         search SEC EDGAR for 13F-HR filers
+// The active skill (see skills.config.js) determines which file gets edited
+// and which SEC form filter the search uses. The portal currently serves
+// one skill at a time; per-skill API namespaces can be layered on later.
 //
-// Lives under configureServer, so it runs only with `vite` / `vite preview`
-// — production builds (`vite build`) ship none of this code.
+// Routes:
+//   GET    /api/config            sanitized active-skill metadata
+//   GET    /api/registry          list current entries (e.g. investors.json)
+//   POST   /api/registry          { name, cik } → append, dedup by CIK
+//   DELETE /api/registry/:cik     remove by CIK
+//   GET    /api/search?q=foo      search SEC EDGAR (if secFormFilter set)
+//
+// configureServer only runs under `vite` / `vite preview`, so production
+// builds (`vite build`) ship none of this code.
 import fs from 'node:fs/promises'
-import path from 'node:path'
 import https from 'node:https'
-import { fileURLToPath } from 'node:url'
+import { activeSkill, publicConfig } from './skills.config.js'
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const INVESTORS_PATH = path.resolve(
-  __dirname,
-  '../.claude/skills/13f-report/investors.json',
-)
+const SEC_UA = process.env.SEC_UA || 'Skill-Admin-Portal admin@example.com'
 
-const SEC_UA = process.env.SEC_UA || '13F-Admin-Portal admin@example.com'
+const normalizeCik = (cik) => String(parseInt(String(cik).trim(), 10))
 
-function normalizeCik(cik) {
-  // strip leading zeros so "0001067983" and "1067983" compare equal.
-  return String(parseInt(String(cik).trim(), 10))
+async function readRegistry() {
+  return JSON.parse(await fs.readFile(activeSkill.registryFile, 'utf8'))
 }
 
-async function readInvestors() {
-  const txt = await fs.readFile(INVESTORS_PATH, 'utf8')
-  return JSON.parse(txt)
-}
-
-async function writeInvestors(arr) {
-  await fs.writeFile(INVESTORS_PATH, JSON.stringify(arr, null, 2) + '\n', 'utf8')
+async function writeRegistry(arr) {
+  await fs.writeFile(
+    activeSkill.registryFile,
+    JSON.stringify(arr, null, 2) + '\n',
+    'utf8',
+  )
 }
 
 function readJsonBody(req) {
@@ -73,13 +71,13 @@ function send(res, code, body) {
   res.end(JSON.stringify(body))
 }
 
-async function handleSearch(query) {
-  // EDGAR full-text search filtered to 13F-HR filings only — keeps results
-  // to entities that actually file 13Fs.
+async function searchEdgar(query, formFilter) {
+  // EDGAR full-text search filtered to the configured form, so results are
+  // guaranteed to be entities that actually file it.
   const url =
     'https://efts.sec.gov/LATEST/search-index' +
     `?q=${encodeURIComponent('"' + query + '"')}` +
-    '&forms=13F-HR'
+    `&forms=${encodeURIComponent(formFilter)}`
   const data = await fetchSEC(url)
   const seen = new Set()
   const results = []
@@ -102,7 +100,7 @@ async function handleSearch(query) {
 
 export default function adminPlugin() {
   return {
-    name: '13f-portal-admin',
+    name: 'skill-admin-portal',
     configureServer(server) {
       server.middlewares.use(async (req, res, next) => {
         if (!req.url?.startsWith('/api/')) return next()
@@ -110,46 +108,56 @@ export default function adminPlugin() {
           const url = new URL(req.url, 'http://localhost')
           const p = url.pathname
 
-          if (p === '/api/investors' && req.method === 'GET') {
-            return send(res, 200, await readInvestors())
+          if (p === '/api/config' && req.method === 'GET') {
+            return send(res, 200, publicConfig())
           }
 
-          if (p === '/api/investors' && req.method === 'POST') {
+          if (p === '/api/registry' && req.method === 'GET') {
+            return send(res, 200, await readRegistry())
+          }
+
+          if (p === '/api/registry' && req.method === 'POST') {
             const body = await readJsonBody(req)
             const name = body?.name?.trim?.()
             const rawCik = body?.cik
             if (!name || !rawCik) return send(res, 400, { error: 'name and cik are required' })
             const cik = normalizeCik(rawCik)
-            const list = await readInvestors()
+            const list = await readRegistry()
             if (list.some((i) => normalizeCik(i.cik) === cik)) {
               return send(res, 409, { error: 'CIK already tracked' })
             }
             const entry = { name, cik }
             list.push(entry)
-            await writeInvestors(list)
+            await writeRegistry(list)
             return send(res, 201, entry)
           }
 
-          const delMatch = p.match(/^\/api\/investors\/(\d+)$/)
+          const delMatch = p.match(/^\/api\/registry\/(\d+)$/)
           if (delMatch && req.method === 'DELETE') {
             const target = normalizeCik(delMatch[1])
-            const list = await readInvestors()
+            const list = await readRegistry()
             const filtered = list.filter((i) => normalizeCik(i.cik) !== target)
             if (filtered.length === list.length) return send(res, 404, { error: 'CIK not tracked' })
-            await writeInvestors(filtered)
+            await writeRegistry(filtered)
             return send(res, 204)
           }
 
           if (p === '/api/search' && req.method === 'GET') {
+            if (!activeSkill.secFormFilter) {
+              return send(res, 404, { error: 'search disabled for this skill' })
+            }
             const q = url.searchParams.get('q')?.trim()
             if (!q) return send(res, 400, { error: 'q parameter required' })
-            const results = await handleSearch(q)
+            const results = await searchEdgar(q, activeSkill.secFormFilter)
             return send(res, 200, { results })
           }
+
+          // Anything else under /api/* is an unknown endpoint — short-circuit
+          // so it doesn't fall through to Vite's SPA HTML fallback.
+          return send(res, 404, { error: 'unknown endpoint' })
         } catch (e) {
           return send(res, 500, { error: String(e?.message ?? e) })
         }
-        next()
       })
     },
   }

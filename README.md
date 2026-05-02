@@ -10,9 +10,13 @@ The repo has two cooperating pieces:
    SEC EDGAR for a configured list of top filers, diffs each one's
    stock-on-hand against the prior quarter, and writes JSON to the skill's
    `data/` directory.
-2. **Portal** at [`portal/`](portal/) — a standalone React + Vite + Tailwind
-   admin UI that reads the skill's JSON and renders per-investor stock-on-hand
-   deltas with sortable, filterable tables.
+2. **Admin portal** at [`portal/`](portal/) — a generic, **skill-agnostic**
+   React + Vite + Tailwind admin UI. It lives at the repo root because one
+   portal can serve multiple skills. Skills register with it via
+   [`portal/skills.config.js`](portal/skills.config.js); the portal then
+   reads the active skill's data and exposes a "manage tracked entries"
+   module backed by dev-only API endpoints. The 13F skill is the first
+   registered consumer.
 
 ## Repository layout
 
@@ -29,23 +33,25 @@ The repo has two cooperating pieces:
 │       ├── summary.json            # filer overview list
 │       └── <filer-slug>.json       # one per filer (full holdings + deltas)
 │
-└── portal/                         # standalone React app
+└── portal/                         # standalone React app, skill-agnostic
     ├── package.json
-    ├── vite.config.js              # publicDir → skill data/, registers admin plugin
-    ├── vite-plugin-admin.js        # dev-only /api/investors + /api/search endpoints
+    ├── skills.config.js            # ★ skill registry (which skill(s) the portal serves)
+    ├── vite.config.js              # publicDir + define(__PORTAL_CONFIG__)
+    ├── vite-plugin-admin.js        # dev-only /api/config /api/registry /api/search
     ├── tailwind.config.js
     ├── postcss.config.js
     ├── index.html
     └── src/
         ├── main.jsx
-        ├── App.jsx
+        ├── App.jsx                 # reads portalConfig (title, labels, downloadCmd)
+        ├── config.js               # exposes the inlined __PORTAL_CONFIG__ to React
         ├── format.js               # number / currency / action-badge helpers
         ├── index.css               # tailwind directives
         └── components/
             ├── Sidebar.jsx         # filer list + portfolio totals + manage button
             ├── StatsCards.jsx      # value, holdings, new+added, trim+exit
             ├── HoldingsTable.jsx   # sortable, filterable, searchable
-            └── ManageInvestors.jsx # add/remove tracked investors (dev-mode modal)
+            └── ManageRegistry.jsx  # add/remove tracked entries (dev-mode modal)
 ```
 
 ## Quick start
@@ -108,31 +114,61 @@ For each filer:
   (`All / New / Added / Trimmed / Exited / Hold`), free-text search across
   issuer name and CUSIP.
 
-## Manage tracked investors (dev-only module)
+## Manage tracked entries (dev-only module)
 
-A **"Manage tracked investors"** button at the top of the sidebar (visible only
-under `npm run dev`) opens a modal that:
+A **"Manage tracked …"** button at the top of the sidebar (visible only under
+`npm run dev`, label pluralized from the active skill's config) opens a modal
+that:
 
-- Lists the current entries in `investors.json` with a **Remove** button each.
-- Lets you search SEC EDGAR for 13F-HR filers by name, then **Add** matches in
-  one click. Search is filtered to entities that actually file 13F-HR.
+- Lists the active skill's currently-tracked entries with a **Remove** button each.
+- If the active skill has SEC search enabled, lets you search SEC EDGAR by
+  name (filtered to the skill's configured form, e.g. `13F-HR`) and **Add**
+  matches in one click.
 
-Edits go straight to `.claude/skills/13f-report/investors.json`. After adding
-or removing filers, an in-page banner reminds you to re-run the downloader to
-fetch new filers' 13F holdings.
+Edits go straight to the active skill's registry file (for the 13F skill,
+that's `.claude/skills/13f-report/investors.json`). After adding or removing
+entries, an in-page banner reminds you to re-run the active skill's
+downloader.
 
 The endpoints are registered by `portal/vite-plugin-admin.js` and only exist
 in dev mode:
 
-| Method | Path                       | Effect                                          |
-| ------ | -------------------------- | ----------------------------------------------- |
-| GET    | `/api/investors`           | Read `investors.json`                           |
-| POST   | `/api/investors`           | Append `{name, cik}`; 409 if CIK already present |
-| DELETE | `/api/investors/:cik`      | Remove by CIK                                   |
-| GET    | `/api/search?q=...`        | Proxy SEC EDGAR full-text search (forms=13F-HR) |
+| Method | Path                       | Effect                                                  |
+| ------ | -------------------------- | ------------------------------------------------------- |
+| GET    | `/api/config`              | Sanitized active-skill metadata (title, labels, etc.)   |
+| GET    | `/api/registry`            | Read the active skill's registry file                   |
+| POST   | `/api/registry`            | Append `{name, cik}`; 409 if CIK already present        |
+| DELETE | `/api/registry/:cik`       | Remove by CIK                                           |
+| GET    | `/api/search?q=...`        | SEC EDGAR full-text search (filtered by `secFormFilter`) |
 
 Production builds (`npm run build`) ship none of this — the management UI and
 API both vanish.
+
+## Registering another skill
+
+To plug a second skill into the same portal, add an entry to
+`portal/skills.config.js` and (for now) make it the first entry:
+
+```js
+export const skills = [
+  {
+    id: 'my-other-skill',
+    title: 'My Other Skill',
+    description: 'Short tagline shown in the sidebar.',
+    entitySingular: 'fund',
+    entityPlural: 'funds',
+    downloadCmd: 'python3 .claude/skills/my-other-skill/run.py',
+    dataDir: path.join(skillsRoot, 'my-other-skill/data'),
+    registryFile: path.join(skillsRoot, 'my-other-skill/registry.json'),
+    secFormFilter: null,         // disables the SEC search UI
+  },
+  // ...existing 13f-report entry
+]
+```
+
+The portal currently shows one active skill at a time (the first registered).
+Multi-skill switching (a UI picker, per-skill API namespaces) is a future
+iteration.
 
 ## Output JSON schema (per filer)
 
