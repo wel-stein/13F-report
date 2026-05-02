@@ -1,11 +1,11 @@
 ---
 name: 13f-report
-description: Download SEC 13F-HR institutional holdings filings for a fixed list of top-10 US investors, compute buy/sell/new/exit deltas vs the prior quarter, emit JSON, and view in a React + Tailwind admin portal. Use when the user asks for "13F report", "institutional holdings", "what did Berkshire/BlackRock/Bridgewater buy/sell", or wants the latest top-investor portfolio changes. Quarterly data; safe to re-run monthly to pick up newly released filings.
+description: Download SEC 13F-HR institutional holdings filings for a fixed list of top-10 US investors, compute buy/sell/new/exit deltas vs the prior quarter, and emit JSON. Use when the user asks for "13F report", "institutional holdings", "what did Berkshire/BlackRock/Bridgewater buy/sell", or wants the latest top-investor portfolio changes. Quarterly data; safe to re-run monthly to pick up newly released filings.
 ---
 
-# 13F Report Downloader + Admin Portal
+# 13F Report Downloader
 
-Pulls 13F-HR filings from SEC EDGAR for a configured list of top US institutional investors, parses the holdings information table, diffs against the prior quarter, and writes JSON files to `data/`. Ships with a React + Tailwind admin portal in `portal/` that reads those JSON files and renders per-investor stock-on-hand vs prior-quarter deltas.
+Pulls 13F-HR filings from SEC EDGAR for a configured list of top US institutional investors, parses the holdings information table, diffs against the prior quarter, and writes JSON files to `data/`. A separate React + Tailwind admin portal (at the repo root, `portal/`) consumes the JSON to visualize per-investor stock-on-hand vs prior-quarter deltas.
 
 ## When to use
 
@@ -93,31 +93,14 @@ Parses `fixtures/current.xml` and `fixtures/prior.xml`, runs the diff, and print
 - `trim` — share count decreased
 - `exit` — removed entirely (lives in `exited`, not `holdings`)
 
-## Admin portal (React + Tailwind)
+## Admin portal
 
-A single-page admin portal under `portal/` reads the JSON in `data/` and renders, per investor:
-
-- A sidebar with all filers (counts and total portfolio value).
-- Stats cards: total portfolio value (with delta vs prior), holdings count, new+added count, trimmed+exited count.
-- A sortable, filterable holdings table — each row shows `shares_prior` → `shares`, `Δ shares`, `Δ %`, current value, `Δ value`, and an action badge (`new` / `add` / `hold` / `trim` / `exit`).
-
-### Run
+The viewer is **not** part of this skill — it lives at the repo root in [`portal/`](../../../portal) (separate React + Tailwind app, separate dependency tree). It reads this skill's `data/` directory via Vite's `publicDir`. Run from there:
 
 ```bash
-cd .claude/skills/13f-report/portal
-npm install     # first time only
-npm run dev     # http://localhost:5173 — live, hot-reloading
-# or
-npm run build && npm run preview   # http://localhost:4173 — built bundle
+cd portal
+npm install && npm run dev    # http://localhost:5173
 ```
-
-The portal reads `/summary.json` and per-filer JSON. Vite is configured (`vite.config.js`) with `publicDir` pointing at `../data`, so the same files written by `download_13f.py` are served as-is — no copy step. After re-running the downloader, refresh the page (dev) or rebuild (preview).
-
-### Expected page flow
-
-1. On load, fetches `/summary.json` and lists filers in the sidebar.
-2. Selecting a filer fetches `/<filer-slug>.json` and renders stats + the holdings table.
-3. The table supports sorting any column, filtering by action (`All / New / Added / Trimmed / Exited / Hold`), and free-text search on issuer/CUSIP.
 
 If the portal renders an empty state, the data dir hasn't been populated — run the downloader (live or `--smoke-test`) first.
 
