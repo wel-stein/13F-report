@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<informationTable xmlns="http://www.sec.gov/edgar/document/thirteenf/informationtable">
+  <infoTable>
+    <nameOfIssuer>APPLE INC</nameOfIssuer>
+    <titleOfClass>COM</titleOfClass>
+    <cusip>037833100</cusip>
+    <value>176000000</value>
+    <shrsOrPrnAmt>
+      <sshPrnamt>905560000</sshPrnamt>
+      <sshPrnamtType>SH</sshPrnamtType>
+    </shrsOrPrnAmt>
+    <investmentDiscretion>DFND</investmentDiscretion>
+    <votingAuthority><Sole>905560000</Sole><Shared>0</Shared><None>0</None></votingAuthority>
+  </infoTable>
+  <infoTable>
+    <nameOfIssuer>BANK OF AMERICA CORP</nameOfIssuer>
+    <titleOfClass>COM</titleOfClass>
+    <cusip>060505104</cusip>
+    <value>34800000</value>
+    <shrsOrPrnAmt>
+      <sshPrnamt>1032852006</sshPrnamt>
+      <sshPrnamtType>SH</sshPrnamtType>
+    </shrsOrPrnAmt>
+    <investmentDiscretion>DFND</investmentDiscretion>
+    <votingAuthority><Sole>1032852006</Sole><Shared>0</Shared><None>0</None></votingAuthority>
+  </infoTable>
+  <infoTable>
+    <nameOfIssuer>COCA COLA CO</nameOfIssuer>
+    <titleOfClass>COM</titleOfClass>
+    <cusip>191216100</cusip>
+    <value>25400000</value>
+    <shrsOrPrnAmt>
+      <sshPrnamt>400000000</sshPrnamt>
+      <sshPrnamtType>SH</sshPrnamtType>
+    </shrsOrPrnAmt>
+    <investmentDiscretion>DFND</investmentDiscretion>
+    <votingAuthority><Sole>400000000</Sole><Shared>0</Shared><None>0</None></votingAuthority>
+  </infoTable>
+  <infoTable>
+    <nameOfIssuer>HP INC</nameOfIssuer>
+    <titleOfClass>COM</titleOfClass>
+    <cusip>40434L105</cusip>
+    <value>2300000</value>
+    <shrsOrPrnAmt>
+      <sshPrnamt>104500000</sshPrnamt>
+      <sshPrnamtType>SH</sshPrnamtType>
+    </shrsOrPrnAmt>
+    <investmentDiscretion>DFND</investmentDiscretion>
+    <votingAuthority><Sole>104500000</Sole><Shared>0</Shared><None>0</None></votingAuthority>
+  </infoTable>
+  <infoTable>
+    <nameOfIssuer>OCCIDENTAL PETROLEUM CORP</nameOfIssuer>
+    <titleOfClass>COM</titleOfClass>
+    <cusip>674599105</cusip>
+    <value>14500000</value>
+    <shrsOrPrnAmt>
+      <sshPrnamt>248000000</sshPrnamt>
+      <sshPrnamtType>SH</sshPrnamtType>
+    </shrsOrPrnAmt>
+    <investmentDiscretion>DFND</investmentDiscretion>
+    <votingAuthority><Sole>248000000</Sole><Shared>0</Shared><None>0</None></votingAuthority>
+  </infoTable>
+</informationTable>
