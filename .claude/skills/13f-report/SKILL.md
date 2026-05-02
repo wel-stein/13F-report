@@ -1,0 +1,130 @@
+---
+name: 13f-report
+description: Download SEC 13F-HR institutional holdings filings for a fixed list of top-10 US investors, compute buy/sell/new/exit deltas vs the prior quarter, emit JSON, and view in a React + Tailwind admin portal. Use when the user asks for "13F report", "institutional holdings", "what did Berkshire/BlackRock/Bridgewater buy/sell", or wants the latest top-investor portfolio changes. Quarterly data; safe to re-run monthly to pick up newly released filings.
+---
+
+# 13F Report Downloader + Admin Portal
+
+Pulls 13F-HR filings from SEC EDGAR for a configured list of top US institutional investors, parses the holdings information table, diffs against the prior quarter, and writes JSON files to `data/`. Ships with a React + Tailwind admin portal in `portal/` that reads those JSON files and renders per-investor stock-on-hand vs prior-quarter deltas.
+
+## When to use
+
+- "Download the latest 13F report for the top 10 investors"
+- "What did Warren Buffett buy/sell last quarter?"
+- "Refresh the institutional-holdings JSON"
+- Monthly cadence to pick up newly filed 13Fs (deadline is 45 days after each quarter end)
+
+## When NOT to use
+
+- The user wants real-time prices, intraday flows, or non-13F SEC forms (10-K, 8-K, etc.).
+- The user wants holdings for a non-US filer or a fund <$100M AUM (those don't file 13F).
+
+## How to run
+
+The script lives next to this skill:
+
+```bash
+python3 .claude/skills/13f-report/download_13f.py \
+  --user-agent "Your Name your_email@example.com"
+```
+
+SEC requires an identifying `User-Agent` on every request. Pass `--user-agent` or set the `SEC_UA` env var. Anything else gets a 403.
+
+Output goes to `.claude/skills/13f-report/data/`:
+
+- `<filer-slug>.json` — one file per filer (latest filing, holdings count, total value, top buys, top sells)
+- `summary.json` — combined report across all filers, with `generated_at` timestamp
+
+### Useful flags
+
+| Flag | Default | Purpose |
+| --- | --- | --- |
+| `--investors PATH` | `investors.json` | Override the filer list |
+| `--out-dir PATH` | `./data` | Write JSON elsewhere |
+| `--top-n N` | `25` | Cap top buys/sells per filer |
+| `--user-agent S` | env `SEC_UA` | Required by SEC; identify yourself |
+| `--smoke-test` | off | Run offline against bundled fixtures (no network) |
+
+### Offline smoke test (no SEC access required)
+
+```bash
+python3 .claude/skills/13f-report/download_13f.py --smoke-test
+```
+
+Parses `fixtures/current.xml` and `fixtures/prior.xml`, runs the diff, and prints the resulting JSON. Useful in sandboxed environments.
+
+## Filer list
+
+`investors.json` — top US 13F filers. Edit to swap, add, or reorder. CIKs are the SEC Central Index Key (no zero-padding required; the script normalizes).
+
+> **Verify CIKs before relying on output.** Some large managers file under multiple CIKs (e.g. parent vs. advisor entity). If a filer's holdings look small or stale, search EDGAR for the right entity and update `investors.json`.
+
+## Output schema
+
+```json
+{
+  "name": "Berkshire Hathaway",
+  "cik": "1067983",
+  "latest_filing": { "form": "13F-HR", "report_date": "2025-12-31", "filing_date": "2026-02-14", "accession": "...", "primary_doc": "..." },
+  "prior_filing":  { "...": "..." },
+  "holdings_count": 41,
+  "total_value_usd": 299000000000,
+  "total_value_usd_prior": 281000000000,
+  "holdings": [
+    {
+      "issuer": "APPLE INC", "cusip": "037833100", "class": "COM",
+      "shares": 300000000,        "value_usd":       69900000000,
+      "shares_prior": 905560000,  "value_usd_prior": 176000000000,
+      "delta_shares": -605560000, "delta_value_usd": -106100000000,
+      "action": "trim"
+    }
+  ],
+  "exited":   [{ "...same shape, shares=0..." }],
+  "top_buys": [{ "...subset of holdings where action in (new, add)..." }],
+  "top_sells":[{ "...subset of holdings ∪ exited where action in (trim, exit)..." }]
+}
+```
+
+`action` values, per security (aggregated by CUSIP/class/put-call):
+
+- `new` — not in prior quarter
+- `add` — share count increased
+- `hold` — share count unchanged
+- `trim` — share count decreased
+- `exit` — removed entirely (lives in `exited`, not `holdings`)
+
+## Admin portal (React + Tailwind)
+
+A single-page admin portal under `portal/` reads the JSON in `data/` and renders, per investor:
+
+- A sidebar with all filers (counts and total portfolio value).
+- Stats cards: total portfolio value (with delta vs prior), holdings count, new+added count, trimmed+exited count.
+- A sortable, filterable holdings table — each row shows `shares_prior` → `shares`, `Δ shares`, `Δ %`, current value, `Δ value`, and an action badge (`new` / `add` / `hold` / `trim` / `exit`).
+
+### Run
+
+```bash
+cd .claude/skills/13f-report/portal
+npm install     # first time only
+npm run dev     # http://localhost:5173 — live, hot-reloading
+# or
+npm run build && npm run preview   # http://localhost:4173 — built bundle
+```
+
+The portal reads `/summary.json` and per-filer JSON. Vite is configured (`vite.config.js`) with `publicDir` pointing at `../data`, so the same files written by `download_13f.py` are served as-is — no copy step. After re-running the downloader, refresh the page (dev) or rebuild (preview).
+
+### Expected page flow
+
+1. On load, fetches `/summary.json` and lists filers in the sidebar.
+2. Selecting a filer fetches `/<filer-slug>.json` and renders stats + the holdings table.
+3. The table supports sorting any column, filtering by action (`All / New / Added / Trimmed / Exited / Hold`), and free-text search on issuer/CUSIP.
+
+If the portal renders an empty state, the data dir hasn't been populated — run the downloader (live or `--smoke-test`) first.
+
+## Caveats
+
+- **Quarterly data, not monthly.** 13F deadline is 45 days after quarter end. Monthly runs only surface late-filed amendments and any newly arrived quarter.
+- **Value-unit change.** Pre-2023 13Fs reported `value` in $thousands; from Jan 2023 the field is in actual dollars. The script preserves whatever the filing reports — be aware when comparing across that boundary.
+- **Aggregation key.** Holdings are aggregated by `(cusip, class, put_call)` so options vs. common are treated separately, and split-manager rows for the same security are summed.
+- **No price-based inference.** The diff is computed from share counts, not market value, so a price move alone never shows up as a buy or sell.
+- **Rate limit.** SEC asks for ≤ 10 req/s. The script sleeps ~120ms between requests and retries 5xx/429 with exponential backoff.
