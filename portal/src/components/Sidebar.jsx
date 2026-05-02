@@ -1,6 +1,6 @@
 import { fmtCompactUSD } from '../format.js'
 
-export default function Sidebar({ filers, selectedCik, onSelect }) {
+export default function Sidebar({ filers, selectedCik, onSelect, onManage }) {
   return (
     <aside className="w-72 shrink-0 border-r border-slate-200 bg-white overflow-y-auto">
       <div className="px-4 py-5 border-b border-slate-200">
@@ -8,6 +8,14 @@ export default function Sidebar({ filers, selectedCik, onSelect }) {
         <p className="mt-1 text-xs text-slate-500">
           Top US institutional investors — quarterly stock-on-hand vs. prior quarter
         </p>
+        {onManage && import.meta.env.DEV && (
+          <button
+            onClick={onManage}
+            className="mt-3 w-full rounded border border-slate-300 bg-white px-2.5 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50"
+          >
+            Manage tracked investors…
+          </button>
+        )}
       </div>
       <nav className="py-2">
         {filers.length === 0 && (

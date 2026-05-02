@@ -31,7 +31,8 @@ The repo has two cooperating pieces:
 │
 └── portal/                         # standalone React app
     ├── package.json
-    ├── vite.config.js              # publicDir → ../.claude/skills/13f-report/data
+    ├── vite.config.js              # publicDir → skill data/, registers admin plugin
+    ├── vite-plugin-admin.js        # dev-only /api/investors + /api/search endpoints
     ├── tailwind.config.js
     ├── postcss.config.js
     ├── index.html
@@ -41,9 +42,10 @@ The repo has two cooperating pieces:
         ├── format.js               # number / currency / action-badge helpers
         ├── index.css               # tailwind directives
         └── components/
-            ├── Sidebar.jsx         # filer list + portfolio totals
+            ├── Sidebar.jsx         # filer list + portfolio totals + manage button
             ├── StatsCards.jsx      # value, holdings, new+added, trim+exit
-            └── HoldingsTable.jsx   # sortable, filterable, searchable
+            ├── HoldingsTable.jsx   # sortable, filterable, searchable
+            └── ManageInvestors.jsx # add/remove tracked investors (dev-mode modal)
 ```
 
 ## Quick start
@@ -105,6 +107,32 @@ For each filer:
 - Sortable on every column, filterable by action
   (`All / New / Added / Trimmed / Exited / Hold`), free-text search across
   issuer name and CUSIP.
+
+## Manage tracked investors (dev-only module)
+
+A **"Manage tracked investors"** button at the top of the sidebar (visible only
+under `npm run dev`) opens a modal that:
+
+- Lists the current entries in `investors.json` with a **Remove** button each.
+- Lets you search SEC EDGAR for 13F-HR filers by name, then **Add** matches in
+  one click. Search is filtered to entities that actually file 13F-HR.
+
+Edits go straight to `.claude/skills/13f-report/investors.json`. After adding
+or removing filers, an in-page banner reminds you to re-run the downloader to
+fetch new filers' 13F holdings.
+
+The endpoints are registered by `portal/vite-plugin-admin.js` and only exist
+in dev mode:
+
+| Method | Path                       | Effect                                          |
+| ------ | -------------------------- | ----------------------------------------------- |
+| GET    | `/api/investors`           | Read `investors.json`                           |
+| POST   | `/api/investors`           | Append `{name, cik}`; 409 if CIK already present |
+| DELETE | `/api/investors/:cik`      | Remove by CIK                                   |
+| GET    | `/api/search?q=...`        | Proxy SEC EDGAR full-text search (forms=13F-HR) |
+
+Production builds (`npm run build`) ship none of this — the management UI and
+API both vanish.
 
 ## Output JSON schema (per filer)
 

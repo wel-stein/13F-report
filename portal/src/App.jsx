@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import Sidebar from './components/Sidebar.jsx'
 import StatsCards from './components/StatsCards.jsx'
 import HoldingsTable from './components/HoldingsTable.jsx'
+import ManageInvestors from './components/ManageInvestors.jsx'
 
 function slug(name) {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '')
@@ -14,6 +15,8 @@ export default function App() {
   const [filerCache, setFilerCache] = useState({})
   const [filerError, setFilerError] = useState(null)
   const [loadingFiler, setLoadingFiler] = useState(false)
+  const [manageOpen, setManageOpen] = useState(false)
+  const [pendingDownload, setPendingDownload] = useState(false)
 
   useEffect(() => {
     fetch('/summary.json')
@@ -57,8 +60,32 @@ export default function App() {
         filers={summary?.filers ?? []}
         selectedCik={selectedCik}
         onSelect={setSelectedCik}
+        onManage={() => setManageOpen(true)}
+      />
+      <ManageInvestors
+        open={manageOpen}
+        onClose={() => setManageOpen(false)}
+        onChanged={() => setPendingDownload(true)}
       />
       <main className="flex-1 overflow-y-auto p-6">
+        {pendingDownload && (
+          <div className="mb-4 rounded border border-amber-300 bg-amber-50 px-4 py-2.5 text-sm text-amber-900 flex items-start gap-3">
+            <div className="flex-1">
+              <p className="font-medium">investors.json changed</p>
+              <p className="mt-0.5 text-xs">
+                Re-run <code className="rounded bg-amber-100 px-1">python3 .claude/skills/13f-report/download_13f.py</code>{' '}
+                to fetch 13F holdings for any newly-added filers, then refresh this page.
+              </p>
+            </div>
+            <button
+              onClick={() => setPendingDownload(false)}
+              className="text-amber-700 hover:text-amber-900"
+              aria-label="Dismiss"
+            >
+              ✕
+            </button>
+          </div>
+        )}
         {summaryError && (
           <ErrorBox title="Could not load summary.json" message={summaryError}>
             <p className="mt-2">

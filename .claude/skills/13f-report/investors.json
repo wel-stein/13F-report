@@ -1,12 +1,42 @@
 [
-  { "name": "Berkshire Hathaway",          "cik": "1067983" },
-  { "name": "BlackRock",                   "cik": "1364742" },
-  { "name": "Vanguard Group",              "cik": "0000102909" },
-  { "name": "State Street",                "cik": "0000093751" },
-  { "name": "FMR (Fidelity)",              "cik": "0000315066" },
-  { "name": "Bridgewater Associates",      "cik": "1350694"  },
-  { "name": "Renaissance Technologies",    "cik": "1037389"  },
-  { "name": "Citadel Advisors",            "cik": "1423053"  },
-  { "name": "Two Sigma Investments",       "cik": "1179392"  },
-  { "name": "Millennium Management",       "cik": "1273087"  }
+  {
+    "name": "Berkshire Hathaway",
+    "cik": "1067983"
+  },
+  {
+    "name": "BlackRock",
+    "cik": "1364742"
+  },
+  {
+    "name": "Vanguard Group",
+    "cik": "0000102909"
+  },
+  {
+    "name": "State Street",
+    "cik": "0000093751"
+  },
+  {
+    "name": "FMR (Fidelity)",
+    "cik": "0000315066"
+  },
+  {
+    "name": "Bridgewater Associates",
+    "cik": "1350694"
+  },
+  {
+    "name": "Renaissance Technologies",
+    "cik": "1037389"
+  },
+  {
+    "name": "Citadel Advisors",
+    "cik": "1423053"
+  },
+  {
+    "name": "Two Sigma Investments",
+    "cik": "1179392"
+  },
+  {
+    "name": "Millennium Management",
+    "cik": "1273087"
+  }
 ]

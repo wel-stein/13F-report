@@ -104,6 +104,8 @@ npm install && npm run dev    # http://localhost:5173
 
 If the portal renders an empty state, the data dir hasn't been populated — run the downloader (live or `--smoke-test`) first.
 
+The portal also has a **"Manage tracked investors"** module (sidebar button, dev-mode only). It edits this skill's `investors.json` in place via dev-only API endpoints registered by `portal/vite-plugin-admin.js`. After adding/removing filers, re-run the downloader so their 13F data lands in `data/`.
+
 ## Caveats
 
 - **Quarterly data, not monthly.** 13F deadline is 45 days after quarter end. Monthly runs only surface late-filed amendments and any newly arrived quarter.
