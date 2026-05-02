@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-05-02",
+  "filers": [
+    {
+      "name": "Berkshire Hathaway",
+      "cik": "1067983",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-02",
+        "report_date": "2026-05-02",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "total_value_usd": 142000000,
+      "total_value_usd_prior": 253000000
+    },
+    {
+      "name": "BlackRock",
+      "cik": "1364742",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-02",
+        "report_date": "2026-05-02",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "total_value_usd": 142000000,
+      "total_value_usd_prior": 253000000
+    }
+  ]
+}

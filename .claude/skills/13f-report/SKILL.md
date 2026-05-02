@@ -1,11 +1,11 @@
 ---
 name: 13f-report
-description: Download SEC 13F-HR institutional holdings filings for a fixed list of top-10 US investors, compute buy/sell/new/exit deltas vs the prior quarter, and emit JSON. Use when the user asks for "13F report", "institutional holdings", "what did Berkshire/BlackRock/Bridgewater buy/sell", or wants the latest top-investor portfolio changes. Quarterly data; safe to re-run monthly to pick up newly released filings.
+description: Download SEC 13F-HR institutional holdings filings for a fixed list of top-10 US investors, compute buy/sell/new/exit deltas vs the prior quarter, emit JSON, and view in a React + Tailwind admin portal. Use when the user asks for "13F report", "institutional holdings", "what did Berkshire/BlackRock/Bridgewater buy/sell", or wants the latest top-investor portfolio changes. Quarterly data; safe to re-run monthly to pick up newly released filings.
 ---
 
-# 13F Report Downloader
+# 13F Report Downloader + Admin Portal
 
-Pulls 13F-HR filings from SEC EDGAR for a configured list of top US institutional investors, parses the holdings information table, diffs against the prior quarter, and writes JSON files to `data/`.
+Pulls 13F-HR filings from SEC EDGAR for a configured list of top US institutional investors, parses the holdings information table, diffs against the prior quarter, and writes JSON files to `data/`. Ships with a React + Tailwind admin portal in `portal/` that reads those JSON files and renders per-investor stock-on-hand vs prior-quarter deltas.
 
 ## When to use
 
@@ -65,27 +65,61 @@ Parses `fixtures/current.xml` and `fixtures/prior.xml`, runs the diff, and print
 {
   "name": "Berkshire Hathaway",
   "cik": "1067983",
-  "latest_filing": {
-    "form": "13F-HR",
-    "filing_date": "2026-02-14",
-    "report_date": "2025-12-31",
-    "accession": "0000950123-26-001234",
-    "primary_doc": "primary_doc.xml"
-  },
-  "prior_filing": { "...": "..." },
+  "latest_filing": { "form": "13F-HR", "report_date": "2025-12-31", "filing_date": "2026-02-14", "accession": "...", "primary_doc": "..." },
+  "prior_filing":  { "...": "..." },
   "holdings_count": 41,
   "total_value_usd": 299000000000,
-  "top_buys":  [{ "issuer": "...", "cusip": "...", "delta_shares": 1234, "delta_value_usd": 5678, "action": "new|add" }],
-  "top_sells": [{ "issuer": "...", "cusip": "...", "delta_shares": -1234, "delta_value_usd": -5678, "action": "exit|trim" }]
+  "total_value_usd_prior": 281000000000,
+  "holdings": [
+    {
+      "issuer": "APPLE INC", "cusip": "037833100", "class": "COM",
+      "shares": 300000000,        "value_usd":       69900000000,
+      "shares_prior": 905560000,  "value_usd_prior": 176000000000,
+      "delta_shares": -605560000, "delta_value_usd": -106100000000,
+      "action": "trim"
+    }
+  ],
+  "exited":   [{ "...same shape, shares=0..." }],
+  "top_buys": [{ "...subset of holdings where action in (new, add)..." }],
+  "top_sells":[{ "...subset of holdings ∪ exited where action in (trim, exit)..." }]
 }
 ```
 
-`action` values:
+`action` values, per security (aggregated by CUSIP/class/put-call):
 
-- `new` — security not present in prior quarter
+- `new` — not in prior quarter
 - `add` — share count increased
+- `hold` — share count unchanged
 - `trim` — share count decreased
-- `exit` — security removed entirely
+- `exit` — removed entirely (lives in `exited`, not `holdings`)
+
+## Admin portal (React + Tailwind)
+
+A single-page admin portal under `portal/` reads the JSON in `data/` and renders, per investor:
+
+- A sidebar with all filers (counts and total portfolio value).
+- Stats cards: total portfolio value (with delta vs prior), holdings count, new+added count, trimmed+exited count.
+- A sortable, filterable holdings table — each row shows `shares_prior` → `shares`, `Δ shares`, `Δ %`, current value, `Δ value`, and an action badge (`new` / `add` / `hold` / `trim` / `exit`).
+
+### Run
+
+```bash
+cd .claude/skills/13f-report/portal
+npm install     # first time only
+npm run dev     # http://localhost:5173 — live, hot-reloading
+# or
+npm run build && npm run preview   # http://localhost:4173 — built bundle
+```
+
+The portal reads `/summary.json` and per-filer JSON. Vite is configured (`vite.config.js`) with `publicDir` pointing at `../data`, so the same files written by `download_13f.py` are served as-is — no copy step. After re-running the downloader, refresh the page (dev) or rebuild (preview).
+
+### Expected page flow
+
+1. On load, fetches `/summary.json` and lists filers in the sidebar.
+2. Selecting a filer fetches `/<filer-slug>.json` and renders stats + the holdings table.
+3. The table supports sorting any column, filtering by action (`All / New / Added / Trimmed / Exited / Hold`), and free-text search on issuer/CUSIP.
+
+If the portal renders an empty state, the data dir hasn't been populated — run the downloader (live or `--smoke-test`) first.
 
 ## Caveats
 

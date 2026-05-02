@@ -143,28 +143,64 @@ def aggregate(rows: list[dict]) -> dict[str, dict]:
     return agg
 
 
-def diff(curr: dict[str, dict], prev: dict[str, dict]) -> dict:
-    buys: list[dict] = []
-    sells: list[dict] = []
+def build_holdings(curr: dict[str, dict], prev: dict[str, dict]) -> tuple[list[dict], list[dict]]:
+    """Return (current-quarter holdings, exited holdings).
+
+    Each row has shares/value for both quarters and a delta + action so the
+    portal can show stock-on-hand and what changed in a single table.
+    """
+    holdings: list[dict] = []
     for k, c in curr.items():
         p = prev.get(k)
+        prior_shares = p["shares"] if p else 0
+        prior_value = p["value_usd"] if p else 0
+        delta_shares = c["shares"] - prior_shares
+        delta_value = c["value_usd"] - prior_value
         if p is None:
-            buys.append({**c, "delta_shares": c["shares"],
-                         "delta_value_usd": c["value_usd"], "action": "new"})
-        elif c["shares"] > p["shares"]:
-            buys.append({**c, "delta_shares": c["shares"] - p["shares"],
-                         "delta_value_usd": c["value_usd"] - p["value_usd"], "action": "add"})
+            action = "new"
+        elif delta_shares > 0:
+            action = "add"
+        elif delta_shares < 0:
+            action = "trim"
+        else:
+            action = "hold"
+        holdings.append({
+            "issuer": c["issuer"], "class": c["class"], "cusip": c["cusip"],
+            "put_call": c["put_call"], "share_type": c["share_type"],
+            "shares": c["shares"], "value_usd": c["value_usd"],
+            "shares_prior": prior_shares, "value_usd_prior": prior_value,
+            "delta_shares": delta_shares, "delta_value_usd": delta_value,
+            "action": action,
+        })
+
+    exited: list[dict] = []
     for k, p in prev.items():
-        c = curr.get(k)
-        if c is None:
-            sells.append({**p, "delta_shares": -p["shares"],
-                          "delta_value_usd": -p["value_usd"], "action": "exit"})
-        elif c["shares"] < p["shares"]:
-            sells.append({**p, "delta_shares": c["shares"] - p["shares"],
-                          "delta_value_usd": c["value_usd"] - p["value_usd"], "action": "trim"})
-    buys.sort(key=lambda r: r["delta_value_usd"], reverse=True)
-    sells.sort(key=lambda r: r["delta_value_usd"])  # most-negative first
-    return {"buys": buys, "sells": sells}
+        if k in curr:
+            continue
+        exited.append({
+            "issuer": p["issuer"], "class": p["class"], "cusip": p["cusip"],
+            "put_call": p["put_call"], "share_type": p["share_type"],
+            "shares": 0, "value_usd": 0,
+            "shares_prior": p["shares"], "value_usd_prior": p["value_usd"],
+            "delta_shares": -p["shares"], "delta_value_usd": -p["value_usd"],
+            "action": "exit",
+        })
+
+    holdings.sort(key=lambda r: r["value_usd"], reverse=True)
+    exited.sort(key=lambda r: r["value_usd_prior"], reverse=True)
+    return holdings, exited
+
+
+def top_buys_sells(holdings: list[dict], exited: list[dict], top_n: int) -> tuple[list[dict], list[dict]]:
+    buys = sorted(
+        (h for h in holdings if h["action"] in ("new", "add")),
+        key=lambda r: r["delta_value_usd"], reverse=True,
+    )[:top_n]
+    sells = sorted(
+        [h for h in holdings if h["action"] == "trim"] + exited,
+        key=lambda r: r["delta_value_usd"],
+    )[:top_n]
+    return buys, sells
 
 
 def process_filer(name: str, cik: str, top_n: int) -> dict:
@@ -174,6 +210,8 @@ def process_filer(name: str, cik: str, top_n: int) -> dict:
     latest = filings[0]
     prior = filings[1] if len(filings) > 1 else None
     latest_rows = parse_holdings(find_information_table(cik, latest["accession"]))
+    curr_agg = aggregate(latest_rows)
+    prior_agg: dict[str, dict] = {}
     out: dict = {
         "name": name,
         "cik": cik,
@@ -183,10 +221,15 @@ def process_filer(name: str, cik: str, top_n: int) -> dict:
     }
     if prior:
         prior_rows = parse_holdings(find_information_table(cik, prior["accession"]))
-        d = diff(aggregate(latest_rows), aggregate(prior_rows))
+        prior_agg = aggregate(prior_rows)
         out["prior_filing"] = prior
-        out["top_buys"] = d["buys"][:top_n]
-        out["top_sells"] = d["sells"][:top_n]
+        out["total_value_usd_prior"] = sum(r["value_usd"] for r in prior_rows)
+    holdings, exited = build_holdings(curr_agg, prior_agg)
+    buys, sells = top_buys_sells(holdings, exited, top_n)
+    out["holdings"] = holdings
+    out["exited"] = exited
+    out["top_buys"] = buys
+    out["top_sells"] = sells
     return out
 
 
@@ -214,20 +257,47 @@ def run(investors_path: Path, out_dir: Path, top_n: int) -> int:
 
 
 def smoke_test_offline(fixtures_dir: Path, out_dir: Path) -> int:
-    """Run aggregation + diff on bundled fixture XMLs (no network)."""
-    curr = parse_holdings((fixtures_dir / "current.xml").read_text())
-    prev = parse_holdings((fixtures_dir / "prior.xml").read_text())
-    d = diff(aggregate(curr), aggregate(prev))
+    """Generate sample per-filer + summary JSON from bundled XML fixtures.
+
+    Writes the same shape as a live run so the portal can be exercised
+    without SEC network access.
+    """
     out_dir.mkdir(parents=True, exist_ok=True)
-    payload = {
-        "name": "FIXTURE FILER",
-        "holdings_count": len(curr),
-        "total_value_usd": sum(r["value_usd"] for r in curr),
-        "top_buys": d["buys"],
-        "top_sells": d["sells"],
-    }
-    (out_dir / "fixture.json").write_text(json.dumps(payload, indent=2))
-    print(json.dumps(payload, indent=2))
+    curr_rows = parse_holdings((fixtures_dir / "current.xml").read_text())
+    prev_rows = parse_holdings((fixtures_dir / "prior.xml").read_text())
+    holdings, exited = build_holdings(aggregate(curr_rows), aggregate(prev_rows))
+    buys, sells = top_buys_sells(holdings, exited, top_n=25)
+    today = date.today().isoformat()
+
+    fake_filers = [
+        ("Berkshire Hathaway", "1067983"),
+        ("BlackRock",          "1364742"),
+    ]
+    summary = {"generated_at": today, "filers": []}
+    for name, cik in fake_filers:
+        payload = {
+            "name": name,
+            "cik": cik,
+            "latest_filing": {"form": "13F-HR", "filing_date": today,
+                              "report_date": today, "accession": "FIXTURE",
+                              "primary_doc": "fixture.xml"},
+            "prior_filing": {"form": "13F-HR", "filing_date": "PRIOR",
+                             "report_date": "PRIOR", "accession": "FIXTURE-PRIOR",
+                             "primary_doc": "fixture.xml"},
+            "holdings_count": len(curr_rows),
+            "total_value_usd": sum(r["value_usd"] for r in curr_rows),
+            "total_value_usd_prior": sum(r["value_usd"] for r in prev_rows),
+            "holdings": holdings,
+            "exited": exited,
+            "top_buys": buys,
+            "top_sells": sells,
+        }
+        (out_dir / f"{slug(name)}.json").write_text(json.dumps(payload, indent=2))
+        summary["filers"].append({k: payload[k] for k in (
+            "name", "cik", "latest_filing", "holdings_count",
+            "total_value_usd", "total_value_usd_prior")})
+    (out_dir / "summary.json").write_text(json.dumps(summary, indent=2))
+    print(f"wrote {len(fake_filers)} filer JSONs + summary.json to {out_dir}", file=sys.stderr)
     return 0
 
 
