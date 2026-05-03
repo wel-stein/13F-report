@@ -93,20 +93,14 @@ Parses `fixtures/current.xml` and `fixtures/prior.xml`, runs the diff, and print
 - `trim` — share count decreased
 - `exit` — removed entirely (lives in `exited`, not `holdings`)
 
-## Admin portal
+## Consumers
 
-The viewer is **not** part of this skill. It's a generic, skill-agnostic admin UI that lives at the repo root in [`portal/`](../../../portal) (separate React + Tailwind app, separate dependency tree). Skills register themselves with the portal via [`portal/skills.config.js`](../../../portal/skills.config.js); the portal then serves the registered skill's `data/` directory and edits its `investors.json` (or equivalent registry file).
+Two separate React projects in this repo consume the JSON this skill emits:
 
-This skill is the first registered consumer. Run the portal from the repo root:
+- [`portal/`](../../../portal) — **admin portal** (dev tool). Skill-agnostic; registered via [`portal/skills.config.js`](../../../portal/skills.config.js). Includes a "Manage tracked investors" module (dev-mode only) that edits this skill's `investors.json` in place via Vite middleware. Run with `cd portal && npm install && npm run dev` (port 5173).
+- [`web/`](../../../web) — **public site** (read-only). Same data; user-facing. Aggregates buys/sells across all investors on the homepage; per-investor pages at `#/investor/:cik`. Deployable as a static bundle. Run with `cd web && npm install && npm run dev` (port 5174).
 
-```bash
-cd portal
-npm install && npm run dev    # http://localhost:5173
-```
-
-If the portal renders an empty state, the data dir hasn't been populated — run the downloader (live or `--smoke-test`) first.
-
-The portal's **"Manage tracked investors"** module (sidebar button, dev-mode only) edits this skill's `investors.json` in place via API endpoints registered by `portal/vite-plugin-admin.js`. After adding/removing filers, re-run the downloader so their 13F data lands in `data/`.
+Both UIs use Vite's `publicDir` to serve this skill's `data/` directory directly, so re-running the downloader is enough to refresh either UI. If a UI renders an empty state, the data dir hasn't been populated — run the downloader (live or `--smoke-test`) first.
 
 ## Caveats
 

@@ -3,7 +3,7 @@
 Tools for tracking what the largest US institutional investors are buying and
 selling, based on their quarterly **SEC Form 13F-HR** filings.
 
-The repo has two cooperating pieces:
+The repo has three cooperating sub-projects:
 
 1. **Skill** at [`.claude/skills/13f-report/`](.claude/skills/13f-report/) — a
    Claude Code skill (Python, stdlib-only) that downloads 13F-HR filings from
@@ -11,12 +11,16 @@ The repo has two cooperating pieces:
    stock-on-hand against the prior quarter, and writes JSON to the skill's
    `data/` directory.
 2. **Admin portal** at [`portal/`](portal/) — a generic, **skill-agnostic**
-   React + Vite + Tailwind admin UI. It lives at the repo root because one
-   portal can serve multiple skills. Skills register with it via
-   [`portal/skills.config.js`](portal/skills.config.js); the portal then
-   reads the active skill's data and exposes a "manage tracked entries"
-   module backed by dev-only API endpoints. The 13F skill is the first
-   registered consumer.
+   React + Vite + Tailwind admin UI for editing the skill's tracked-entities
+   list and previewing its JSON. Lives at the repo root because one portal
+   can serve multiple skills (registered via
+   [`portal/skills.config.js`](portal/skills.config.js)). Includes dev-only
+   API endpoints for adding/removing entries and proxying SEC search.
+3. **Public site** at [`web/`](web/) — a read-only, deployable React + Vite +
+   Tailwind site built for end users. Same JSON source, different UX:
+   homepage aggregates buys/sells across all investors; per-investor pages
+   live at deep-linkable `#/investor/:cik` URLs. No `/api/*`, no edit
+   controls, no auth — pure static bundle.
 
 ## Repository layout
 
@@ -33,25 +37,47 @@ The repo has two cooperating pieces:
 │       ├── summary.json            # filer overview list
 │       └── <filer-slug>.json       # one per filer (full holdings + deltas)
 │
-└── portal/                         # standalone React app, skill-agnostic
+├── portal/                         # admin portal (dev tool, skill-agnostic)
+│   ├── package.json
+│   ├── skills.config.js            # ★ skill registry
+│   ├── vite.config.js              # publicDir + define(__PORTAL_CONFIG__)
+│   ├── vite-plugin-admin.js        # dev-only /api/config /api/registry /api/search
+│   ├── tailwind.config.js
+│   ├── postcss.config.js
+│   ├── index.html
+│   └── src/
+│       ├── main.jsx
+│       ├── App.jsx
+│       ├── config.js               # exposes inlined __PORTAL_CONFIG__
+│       ├── format.js
+│       ├── index.css
+│       └── components/
+│           ├── Sidebar.jsx
+│           ├── StatsCards.jsx
+│           ├── HoldingsTable.jsx
+│           └── ManageRegistry.jsx  # dev-mode add/remove modal
+│
+└── web/                            # public-facing site (read-only, deployable)
     ├── package.json
-    ├── skills.config.js            # ★ skill registry (which skill(s) the portal serves)
-    ├── vite.config.js              # publicDir + define(__PORTAL_CONFIG__)
-    ├── vite-plugin-admin.js        # dev-only /api/config /api/registry /api/search
+    ├── site.config.js              # data dir + public site metadata
+    ├── vite.config.js              # publicDir + define(__SITE_CONFIG__)
     ├── tailwind.config.js
     ├── postcss.config.js
     ├── index.html
     └── src/
-        ├── main.jsx
-        ├── App.jsx                 # reads portalConfig (title, labels, downloadCmd)
-        ├── config.js               # exposes the inlined __PORTAL_CONFIG__ to React
-        ├── format.js               # number / currency / action-badge helpers
-        ├── index.css               # tailwind directives
-        └── components/
-            ├── Sidebar.jsx         # filer list + portfolio totals + manage button
-            ├── StatsCards.jsx      # value, holdings, new+added, trim+exit
-            ├── HoldingsTable.jsx   # sortable, filterable, searchable
-            └── ManageRegistry.jsx  # add/remove tracked entries (dev-mode modal)
+        ├── main.jsx                # HashRouter root
+        ├── App.jsx                 # routes: / and /investor/:cik
+        ├── site.js                 # exposes inlined __SITE_CONFIG__
+        ├── format.js
+        ├── data.js                 # loadSummary / loadFiler / cross-investor aggregator
+        ├── index.css
+        ├── components/
+        │   ├── NavBar.jsx
+        │   ├── InvestorCard.jsx
+        │   └── MoverList.jsx       # top buys / sells with mini bar chart
+        └── pages/
+            ├── Home.jsx            # hero, top movers, investor grid
+            └── Investor.jsx        # per-investor stats + holdings list
 ```
 
 ## Quick start
@@ -68,27 +94,36 @@ python3 .claude/skills/13f-report/download_13f.py --smoke-test
 python3 .claude/skills/13f-report/download_13f.py \
   --user-agent "Your Name you@example.com"
 
-# 2. run the portal
+# 2a. admin portal (edit tracked investors, preview JSON)
 cd portal
 npm install      # first time only
 npm run dev      # http://localhost:5173 (live, hot-reloading)
 # or
 npm run build && npm run preview   # http://localhost:4173 (built bundle)
+
+# 2b. public site (read-only, deployable static bundle)
+cd web
+npm install      # first time only
+npm run dev      # http://localhost:5174
+# or
+npm run build && npm run preview   # http://localhost:4174
 ```
 
-The committed `data/` folder already includes smoke-test output, so
-`cd portal && npm install && npm run dev` works out of the box without
-running the downloader.
+The committed `data/` folder already includes smoke-test output, so both UIs
+render out of the box without running the downloader. The admin portal and
+the public site can run side by side (different ports).
 
 ## How the pieces connect
 
-The portal's `vite.config.js` sets
+Both the admin portal (`portal/`) and the public site (`web/`) use Vite's
+`publicDir` to serve the skill's `data/` directory directly:
 
 ```js
-publicDir: path.resolve(__dirname, '../.claude/skills/13f-report/data')
+// portal/vite.config.js  AND  web/vite.config.js
+publicDir: '../.claude/skills/13f-report/data'
 ```
 
-so every file the downloader writes is served by Vite at the URL root with no
+So every file the downloader writes is served by Vite at the URL root with no
 copy step:
 
 | File                                    | URL                          |
@@ -169,6 +204,40 @@ export const skills = [
 The portal currently shows one active skill at a time (the first registered).
 Multi-skill switching (a UI picker, per-skill API namespaces) is a future
 iteration.
+
+## Public site (web/)
+
+The third sub-project is a polished, **read-only** site for end users —
+deployable as a static bundle to any host (Netlify, Cloudflare Pages, GitHub
+Pages, S3+CloudFront). Different audience than the admin portal: no editing,
+no `/api/*`, no auth.
+
+Pages:
+
+- **`/` — Home** (overview)
+  - Hero banner with the latest reported quarter and headline tagline.
+  - **Most-bought stocks** — top 10 securities ranked by *net dollars added*
+    aggregated across every tracked investor, with a mini bar chart and chips
+    showing which investors contributed.
+  - **Most-sold stocks** — same shape for net trims + exits.
+  - **Investor card grid** — each card links to the per-investor page.
+- **`/investor/:cik`** (deep-linkable per-investor page)
+  - Header with filer name, CIK, latest report date, prior comparison date.
+  - Stats cards (total value with delta, holdings count, buy/sell counts).
+  - Full holdings table — sortable by impact, filterable by action,
+    free-text search on issuer / CUSIP. Read-only.
+
+Routing uses `HashRouter` (`#/investor/1067983`) so the build deploys to any
+static host without server rewrites. Configure the base URL via
+`VITE_BASE` env var if hosting under a subpath (e.g. GitHub Pages):
+
+```bash
+VITE_BASE=/13F-report/ npm run build
+```
+
+The site reads the same skill `data/` directory as the portal — no extra
+build pipeline, no copy step. Site title / tagline / external link target
+are configured at the top of [`web/site.config.js`](web/site.config.js).
 
 ## Output JSON schema (per filer)
 
