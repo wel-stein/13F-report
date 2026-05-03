@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import {
   aggregateAcrossInvestors,
   asOfQuarter,
@@ -68,6 +69,26 @@ export default function Home() {
         >
           <MoverList rows={moves.sells} kind="sell" />
         </Panel>
+      </section>
+
+      <section className="mt-10 rounded-lg border border-slate-200 bg-white px-5 py-4 shadow-sm">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h2 className="text-base font-semibold text-slate-900">
+              Looking for where managers <em>agree</em>?
+            </h2>
+            <p className="mt-0.5 text-sm text-slate-600">
+              The lists above rank by dollar size. Consensus picks rank by how many funds
+              moved the same way — surfacing crowded trades a single mega-bet would otherwise drown out.
+            </p>
+          </div>
+          <Link
+            to="/consensus"
+            className="rounded bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-800"
+          >
+            See consensus picks →
+          </Link>
+        </div>
       </section>
 
       <section className="mt-12">

@@ -76,7 +76,8 @@ The repo has three cooperating sub-projects:
         │   ├── InvestorCard.jsx
         │   └── MoverList.jsx       # top buys / sells with mini bar chart
         └── pages/
-            ├── Home.jsx            # hero, top movers, investor grid
+            ├── Home.jsx            # hero, top movers (by $), investor grid
+            ├── Consensus.jsx       # ★ stocks ranked by fund-count agreement
             ├── Investor.jsx        # per-investor stats + holdings list
             └── WhaleCheck.jsx      # ★ strategy-vs-S&P 500 chart (lazy, Recharts)
 ```
@@ -221,7 +222,17 @@ Pages:
     aggregated across every tracked investor, with a mini bar chart and chips
     showing which investors contributed.
   - **Most-sold stocks** — same shape for net trims + exits.
+  - **Consensus picks teaser** — short callout linking to `/consensus`.
   - **Investor card grid** — each card links to the per-investor page.
+- **`/consensus` — Consensus picks**
+  - Ranks stocks by *how many funds agree*, not dollar size — surfaces
+    crowded trades that a single mega-bet would otherwise drown out.
+  - Per-row stacked bar (green/red/grey) showing the buyer / seller / holder
+    split, plus the net fund count, plus chip lists of the actual managers
+    on each side (each chip links to that investor's page).
+  - Filters: minimum funds-on-a-side (1–5), top N (10/20/50/100).
+  - Empty/degenerate state explains when too few filers in the dataset
+    can't produce signal at the chosen threshold.
 - **`/investor/:cik`** (deep-linkable per-investor page)
   - Header with filer name, CIK, latest report date, prior comparison date.
   - Stats cards (total value with delta, holdings count, buy/sell counts).

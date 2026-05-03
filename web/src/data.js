@@ -116,3 +116,70 @@ export function asOfQuarter(filerResults) {
   }
   return latest
 }
+
+/**
+ * Per-CUSIP "consensus" — how many distinct funds bought, sold, or held a
+ * security this quarter. Differs from aggregateAcrossInvestors, which sorts
+ * by dollar magnitude; this is sorted by *agreement among managers*.
+ *
+ * Returns { buys, sells, totalFilers } where each row is:
+ *   { issuer, cusip, class, put_call,
+ *     buyers, sellers, holders,                   // arrays of {name, cik, ...}
+ *     buyer_count, seller_count, holder_count, coverage,
+ *     net,                                        // buyer_count - seller_count
+ *     net_dollars }
+ */
+export function aggregateConsensus(filerResults, { minBuyers = 2, minSellers = 2 } = {}) {
+  const bucket = new Map()
+
+  for (const { filer, data } of filerResults) {
+    if (!data) continue
+    const rows = [...(data.holdings ?? []), ...(data.exited ?? [])]
+    for (const h of rows) {
+      const key = `${h.cusip}|${h.class}|${h.put_call}`
+      let row = bucket.get(key)
+      if (!row) {
+        row = {
+          issuer: h.issuer, cusip: h.cusip, class: h.class, put_call: h.put_call,
+          buyers: [], sellers: [], holders: [],
+        }
+        bucket.set(key, row)
+      }
+      const ref = {
+        name: filer.name, cik: filer.cik, action: h.action,
+        delta_shares: h.delta_shares, delta_value_usd: h.delta_value_usd,
+        shares: h.shares,
+      }
+      if (h.action === 'new' || h.action === 'add') row.buyers.push(ref)
+      else if (h.action === 'trim' || h.action === 'exit') row.sellers.push(ref)
+      else row.holders.push(ref)
+    }
+  }
+
+  const all = [...bucket.values()].map((r) => {
+    const buyer_count  = r.buyers.length
+    const seller_count = r.sellers.length
+    const holder_count = r.holders.length
+    return {
+      ...r,
+      buyer_count,
+      seller_count,
+      holder_count,
+      coverage: buyer_count + seller_count + holder_count,
+      net: buyer_count - seller_count,
+      net_dollars:
+        r.buyers.reduce((s, b) => s + (b.delta_value_usd || 0), 0) +
+        r.sellers.reduce((s, b) => s + (b.delta_value_usd || 0), 0),
+    }
+  })
+
+  const buys = all
+    .filter((r) => r.net > 0 && r.buyer_count >= minBuyers)
+    .sort((a, b) => b.net - a.net || b.net_dollars - a.net_dollars)
+  const sells = all
+    .filter((r) => r.net < 0 && r.seller_count >= minSellers)
+    .sort((a, b) => a.net - b.net || a.net_dollars - b.net_dollars)
+
+  const totalFilers = filerResults.filter((r) => r.data).length
+  return { buys, sells, totalFilers }
+}

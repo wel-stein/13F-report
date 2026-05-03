@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import NavBar from './components/NavBar.jsx'
 import Home from './pages/Home.jsx'
 import Investor from './pages/Investor.jsx'
+import Consensus from './pages/Consensus.jsx'
 
 // WhaleCheck pulls in Recharts (~95 KB gz). Lazy-load it so the home and
 // investor pages stay lean — Recharts only ships to users who actually
@@ -16,6 +17,7 @@ export default function App() {
       <Suspense fallback={<RouteFallback />}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/consensus" element={<Consensus />} />
           <Route path="/investor/:cik" element={<Investor />} />
           <Route path="/investor/:cik/whalecheck" element={<WhaleCheck />} />
           <Route path="*" element={<NotFound />} />
