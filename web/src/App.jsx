@@ -1,18 +1,35 @@
+import { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import NavBar from './components/NavBar.jsx'
 import Home from './pages/Home.jsx'
 import Investor from './pages/Investor.jsx'
 
+// WhaleCheck pulls in Recharts (~95 KB gz). Lazy-load it so the home and
+// investor pages stay lean — Recharts only ships to users who actually
+// click through to the strategy chart.
+const WhaleCheck = lazy(() => import('./pages/WhaleCheck.jsx'))
+
 export default function App() {
   return (
     <div className="min-h-screen bg-slate-50">
       <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/investor/:cik" element={<Investor />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Suspense fallback={<RouteFallback />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/investor/:cik" element={<Investor />} />
+          <Route path="/investor/:cik/whalecheck" element={<WhaleCheck />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </div>
+  )
+}
+
+function RouteFallback() {
+  return (
+    <main className="mx-auto flex min-h-[60vh] max-w-3xl items-center justify-center px-4 text-sm text-slate-500">
+      Loading…
+    </main>
   )
 }
 

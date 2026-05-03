@@ -66,10 +66,10 @@ The repo has three cooperating sub-projects:
     ├── index.html
     └── src/
         ├── main.jsx                # HashRouter root
-        ├── App.jsx                 # routes: / and /investor/:cik
+        ├── App.jsx                 # routes + lazy-loaded WhaleCheck
         ├── site.js                 # exposes inlined __SITE_CONFIG__
         ├── format.js
-        ├── data.js                 # loadSummary / loadFiler / cross-investor aggregator
+        ├── data.js                 # loadSummary / loadFiler / loadFilerHistory / aggregator
         ├── index.css
         ├── components/
         │   ├── NavBar.jsx
@@ -77,7 +77,8 @@ The repo has three cooperating sub-projects:
         │   └── MoverList.jsx       # top buys / sells with mini bar chart
         └── pages/
             ├── Home.jsx            # hero, top movers, investor grid
-            └── Investor.jsx        # per-investor stats + holdings list
+            ├── Investor.jsx        # per-investor stats + holdings list
+            └── WhaleCheck.jsx      # ★ strategy-vs-S&P 500 chart (lazy, Recharts)
 ```
 
 ## Quick start
@@ -226,6 +227,21 @@ Pages:
   - Stats cards (total value with delta, holdings count, buy/sell counts).
   - Full holdings table — sortable by impact, filterable by action,
     free-text search on issuer / CUSIP. Read-only.
+  - "WhaleCheck — strategy vs. S&P 500" CTA in the top-right corner.
+- **`/investor/:cik/whalecheck` — WhaleCheck**
+  - Charts a hypothetical 13F-mirroring strategy versus the S&P 500
+    (cumulative return line chart, dual lines, hover tooltips).
+  - Stats cards: strategy total return, S&P total return, alpha (excess),
+    quarter-by-quarter win rate.
+  - Quarter-by-quarter table with QoQ returns and excess return per quarter.
+  - **Demo banner** when the underlying history file is synthetic (current
+    state — see "WhaleCheck history" in [SKILL.md](.claude/skills/13f-report/SKILL.md)
+    for the real-data plan). Reads
+    `/<filer-slug>_history.json`; renders an empty-state with the regenerate
+    command if the file isn't present.
+  - The page (and its Recharts dependency, ~95 KB gz) is **lazy-loaded** —
+    only ships to users who click through, keeping the home + investor pages
+    on a 60 KB gz main bundle.
 
 Routing uses `HashRouter` (`#/investor/1067983`) so the build deploys to any
 static host without server rewrites. Configure the base URL via

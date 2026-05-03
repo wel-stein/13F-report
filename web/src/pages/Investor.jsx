@@ -50,7 +50,15 @@ export default function Investor() {
   const { filer, data, generatedAt } = state
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
-      <Link to="/" className="text-sm text-indigo-700 hover:underline">← All investors</Link>
+      <div className="flex items-center justify-between">
+        <Link to="/" className="text-sm text-indigo-700 hover:underline">← All investors</Link>
+        <Link
+          to={`/investor/${filer.cik}/whalecheck`}
+          className="rounded bg-indigo-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm hover:bg-indigo-700"
+        >
+          WhaleCheck — strategy vs. S&P 500 →
+        </Link>
+      </div>
       <Header filer={filer} data={data} generatedAt={generatedAt} />
       <div className="mt-6">
         <Stats filer={filer} data={data} />

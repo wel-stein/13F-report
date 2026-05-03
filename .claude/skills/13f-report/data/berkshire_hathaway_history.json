@@ -1,0 +1,106 @@
+{
+  "name": "Berkshire Hathaway",
+  "cik": "1067983",
+  "benchmark": "S&P 500 (SPY)",
+  "is_synthetic": true,
+  "generated_at": "2026-05-03",
+  "quarters": 12,
+  "series": [
+    {
+      "quarter": "2023-Q3",
+      "report_date": "2023-09-30",
+      "portfolio_return_pct": 9.1,
+      "portfolio_cum_pct": 9.1,
+      "spy_return_pct": 10.42,
+      "spy_cum_pct": 10.42
+    },
+    {
+      "quarter": "2023-Q4",
+      "report_date": "2023-12-31",
+      "portfolio_return_pct": 10.85,
+      "portfolio_cum_pct": 20.93,
+      "spy_return_pct": 13.1,
+      "spy_cum_pct": 24.89
+    },
+    {
+      "quarter": "2024-Q1",
+      "report_date": "2024-03-31",
+      "portfolio_return_pct": 1.32,
+      "portfolio_cum_pct": 22.52,
+      "spy_return_pct": 2.58,
+      "spy_cum_pct": 28.11
+    },
+    {
+      "quarter": "2024-Q2",
+      "report_date": "2024-06-30",
+      "portfolio_return_pct": -3.7,
+      "portfolio_cum_pct": 17.99,
+      "spy_return_pct": -4.71,
+      "spy_cum_pct": 22.07
+    },
+    {
+      "quarter": "2024-Q3",
+      "report_date": "2024-09-30",
+      "portfolio_return_pct": 12.43,
+      "portfolio_cum_pct": 32.65,
+      "spy_return_pct": 15.46,
+      "spy_cum_pct": 40.94
+    },
+    {
+      "quarter": "2024-Q4",
+      "report_date": "2024-12-31",
+      "portfolio_return_pct": 0.27,
+      "portfolio_cum_pct": 33.02,
+      "spy_return_pct": 1.57,
+      "spy_cum_pct": 43.16
+    },
+    {
+      "quarter": "2025-Q1",
+      "report_date": "2025-03-31",
+      "portfolio_return_pct": -2.39,
+      "portfolio_cum_pct": 29.85,
+      "spy_return_pct": -7.96,
+      "spy_cum_pct": 31.76
+    },
+    {
+      "quarter": "2025-Q2",
+      "report_date": "2025-06-30",
+      "portfolio_return_pct": 7.15,
+      "portfolio_cum_pct": 39.13,
+      "spy_return_pct": 4.59,
+      "spy_cum_pct": 37.8
+    },
+    {
+      "quarter": "2025-Q3",
+      "report_date": "2025-09-30",
+      "portfolio_return_pct": 0.97,
+      "portfolio_cum_pct": 40.48,
+      "spy_return_pct": 5.21,
+      "spy_cum_pct": 44.99
+    },
+    {
+      "quarter": "2025-Q4",
+      "report_date": "2025-12-31",
+      "portfolio_return_pct": 9.09,
+      "portfolio_cum_pct": 53.26,
+      "spy_return_pct": 6.76,
+      "spy_cum_pct": 54.79
+    },
+    {
+      "quarter": "2026-Q1",
+      "report_date": "2026-03-31",
+      "portfolio_return_pct": 7.16,
+      "portfolio_cum_pct": 64.24,
+      "spy_return_pct": 9.3,
+      "spy_cum_pct": 69.19
+    },
+    {
+      "quarter": "2026-Q2",
+      "report_date": "2026-06-30",
+      "portfolio_return_pct": 0.35,
+      "portfolio_cum_pct": 64.82,
+      "spy_return_pct": -3.29,
+      "spy_cum_pct": 63.62
+    }
+  ]
+}

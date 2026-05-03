@@ -1,0 +1,106 @@
+{
+  "name": "BlackRock",
+  "cik": "1364742",
+  "benchmark": "S&P 500 (SPY)",
+  "is_synthetic": true,
+  "generated_at": "2026-05-03",
+  "quarters": 12,
+  "series": [
+    {
+      "quarter": "2023-Q3",
+      "report_date": "2023-09-30",
+      "portfolio_return_pct": 5.62,
+      "portfolio_cum_pct": 5.62,
+      "spy_return_pct": 1.75,
+      "spy_cum_pct": 1.75
+    },
+    {
+      "quarter": "2023-Q4",
+      "report_date": "2023-12-31",
+      "portfolio_return_pct": 6.33,
+      "portfolio_cum_pct": 12.3,
+      "spy_return_pct": 6.93,
+      "spy_cum_pct": 8.8
+    },
+    {
+      "quarter": "2024-Q1",
+      "report_date": "2024-03-31",
+      "portfolio_return_pct": 3.67,
+      "portfolio_cum_pct": 16.42,
+      "spy_return_pct": 4.02,
+      "spy_cum_pct": 13.18
+    },
+    {
+      "quarter": "2024-Q2",
+      "report_date": "2024-06-30",
+      "portfolio_return_pct": -4.35,
+      "portfolio_cum_pct": 11.35,
+      "spy_return_pct": -8.35,
+      "spy_cum_pct": 3.73
+    },
+    {
+      "quarter": "2024-Q3",
+      "report_date": "2024-09-30",
+      "portfolio_return_pct": 4.37,
+      "portfolio_cum_pct": 16.22,
+      "spy_return_pct": 9.48,
+      "spy_cum_pct": 13.56
+    },
+    {
+      "quarter": "2024-Q4",
+      "report_date": "2024-12-31",
+      "portfolio_return_pct": 3.89,
+      "portfolio_cum_pct": 20.75,
+      "spy_return_pct": 6.23,
+      "spy_cum_pct": 20.64
+    },
+    {
+      "quarter": "2025-Q1",
+      "report_date": "2025-03-31",
+      "portfolio_return_pct": 6.51,
+      "portfolio_cum_pct": 28.61,
+      "spy_return_pct": 3.75,
+      "spy_cum_pct": 25.16
+    },
+    {
+      "quarter": "2025-Q2",
+      "report_date": "2025-06-30",
+      "portfolio_return_pct": -0.33,
+      "portfolio_cum_pct": 28.19,
+      "spy_return_pct": 0.26,
+      "spy_cum_pct": 25.49
+    },
+    {
+      "quarter": "2025-Q3",
+      "report_date": "2025-09-30",
+      "portfolio_return_pct": 3.17,
+      "portfolio_cum_pct": 32.25,
+      "spy_return_pct": 2.83,
+      "spy_cum_pct": 29.04
+    },
+    {
+      "quarter": "2025-Q4",
+      "report_date": "2025-12-31",
+      "portfolio_return_pct": 2.65,
+      "portfolio_cum_pct": 35.76,
+      "spy_return_pct": 1.08,
+      "spy_cum_pct": 30.44
+    },
+    {
+      "quarter": "2026-Q1",
+      "report_date": "2026-03-31",
+      "portfolio_return_pct": -2.13,
+      "portfolio_cum_pct": 32.86,
+      "spy_return_pct": -0.27,
+      "spy_cum_pct": 30.08
+    },
+    {
+      "quarter": "2026-Q2",
+      "report_date": "2026-06-30",
+      "portfolio_return_pct": 8.63,
+      "portfolio_cum_pct": 44.33,
+      "spy_return_pct": 3.36,
+      "spy_cum_pct": 34.46
+    }
+  ]
+}

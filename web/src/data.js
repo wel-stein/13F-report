@@ -5,6 +5,7 @@ import { slugFromName } from './format.js'
 
 let summaryCache = null
 const filerCache = new Map() // cik → JSON
+const historyCache = new Map() // cik → JSON | 'missing'
 
 export async function loadSummary() {
   if (summaryCache) return summaryCache
@@ -22,6 +23,30 @@ export async function loadFiler(filer) {
   if (!r.ok) throw new Error(`${path}: HTTP ${r.status}`)
   const data = await r.json()
   filerCache.set(filer.cik, data)
+  return data
+}
+
+/**
+ * Load a filer's WhaleCheck history JSON if present, else return null.
+ * 404 is an expected outcome (filer has no history file yet) and we cache
+ * that result so we don't refetch on every page navigation.
+ */
+export async function loadFilerHistory(filer) {
+  if (filer.error) return null
+  const key = String(filer.cik)
+  if (historyCache.has(key)) {
+    const cached = historyCache.get(key)
+    return cached === 'missing' ? null : cached
+  }
+  const path = `/${slugFromName(filer.name)}_history.json`
+  const r = await fetch(path)
+  if (r.status === 404) {
+    historyCache.set(key, 'missing')
+    return null
+  }
+  if (!r.ok) throw new Error(`${path}: HTTP ${r.status}`)
+  const data = await r.json()
+  historyCache.set(key, data)
   return data
 }
 

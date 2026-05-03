@@ -102,6 +102,69 @@ Two separate React projects in this repo consume the JSON this skill emits:
 
 Both UIs use Vite's `publicDir` to serve this skill's `data/` directory directly, so re-running the downloader is enough to refresh either UI. If a UI renders an empty state, the data dir hasn't been populated — run the downloader (live or `--smoke-test`) first.
 
+## WhaleCheck history files (synthetic for now)
+
+The public site has a "WhaleCheck" page at `#/investor/:cik/whalecheck` that
+charts a fund's hypothetical 13F-mirroring strategy versus the S&P 500. It
+reads a separate JSON file per filer:
+
+```
+data/<filer-slug>_history.json
+```
+
+Schema:
+
+```json
+{
+  "name": "Berkshire Hathaway",
+  "cik": "1067983",
+  "benchmark": "S&P 500 (SPY)",
+  "is_synthetic": true,
+  "generated_at": "2026-05-02",
+  "quarters": 12,
+  "series": [
+    {
+      "quarter": "2023-Q3",
+      "report_date": "2023-09-30",
+      "portfolio_return_pct": 4.5,
+      "portfolio_cum_pct":   4.5,
+      "spy_return_pct":      3.2,
+      "spy_cum_pct":         3.2
+    }
+  ]
+}
+```
+
+Today these files are produced by `generate_history_fixture.py`, which writes
+**plausible-but-fake** numbers seeded by CIK so the WhaleCheck UI can render
+for demos. Each filer's `is_synthetic: true` flag drives a banner on the page.
+
+```bash
+# Re-generate synthetic history for every filer in summary.json
+python3 .claude/skills/13f-report/generate_history_fixture.py
+```
+
+To wire **real** WhaleCheck data, replace the generator with a script that
+emits the same schema from real prices. The work breaks down as:
+
+1. **Multi-quarter holdings.** Extend `download_13f.py` to walk back N
+   quarters per filer (the EDGAR submissions API already lists every 13F-HR
+   filing — the existing parser handles each one fine, you just need to
+   fetch and persist more than the latest pair).
+2. **CUSIP → ticker mapping.** SEC's monthly company-tickers feed
+   (`https://www.sec.gov/files/company_tickers_exchange.json`) is a starting
+   point; CUSIP-to-ticker is a separate dataset (CUSIP Global Services is
+   licensed; OpenFIGI is the common free fallback).
+3. **Historical prices.** Yahoo Finance (`yfinance`), Stooq's free CSVs, or
+   a paid feed. Pull quarterly close prices for each ticker and for SPY.
+4. **Backtest.** At each filing date, weight positions by reported value;
+   compute portfolio close-to-close return to the next filing date. SPY
+   over the same window is the benchmark. `is_synthetic: false` once real.
+
+The UI is schema-stable, so once the generator is replaced, no front-end
+changes are needed — the demo banner disappears automatically when
+`is_synthetic` is `false`.
+
 ## Caveats
 
 - **Quarterly data, not monthly.** 13F deadline is 45 days after quarter end. Monthly runs only surface late-filed amendments and any newly arrived quarter.
