@@ -222,6 +222,15 @@ def process_filer(name: str, cik: str, top_n: int) -> dict:
     latest = filings[0]
     prior = filings[1] if len(filings) > 1 else None
     latest_rows = parse_holdings(find_information_table(cik, latest["accession"]))
+    if not latest_rows:
+        # 0 rows from a real 13F-HR filing usually means our XML parsing
+        # missed the namespace; surface it loudly rather than silently
+        # writing empty arrays.
+        print(
+            f"[{name}] WARN: parsed 0 holdings from {latest['accession']} — "
+            "schema may have changed",
+            file=sys.stderr,
+        )
     curr_agg = aggregate(latest_rows)
     prior_agg: dict[str, dict] = {}
     out: dict = {

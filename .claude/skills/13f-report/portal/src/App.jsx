@@ -6,6 +6,8 @@ import ThemeToggle from './components/ThemeToggle.jsx'
 import TopMoves from './components/TopMoves.jsx'
 import Overview from './components/Overview.jsx'
 import Compare from './components/Compare.jsx'
+import CopyLink from './components/CopyLink.jsx'
+import PortfolioBar from './components/PortfolioBar.jsx'
 
 function slug(name) {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '')
@@ -146,8 +148,19 @@ export default function App() {
       })
       .then((data) => {
         setSummary(data)
-        // Default to overview when no cik is in the hash.
-        setHashState((s) => (s.cik ? s : { ...s, cik: 'overview' }))
+        const knownCiks = new Set((data.filers ?? []).map((f) => f.cik))
+        // Default to overview, and clear stale a/b/cik values that don't
+        // correspond to any filer in the loaded summary.
+        setHashState((s) => {
+          const isViewSentinel = s.cik === 'overview' || s.cik === 'compare'
+          const cikValid = isViewSentinel || !s.cik || knownCiks.has(s.cik)
+          return {
+            ...s,
+            cik: cikValid ? (s.cik || 'overview') : 'overview',
+            a: s.a && knownCiks.has(s.a) ? s.a : '',
+            b: s.b && knownCiks.has(s.b) ? s.b : '',
+          }
+        })
       })
       .catch((e) => setSummaryError(e.message))
   }, [])
@@ -246,6 +259,7 @@ export default function App() {
   }
   const setCompareA = (cik) => updateHash({ a: cik ?? '' })
   const setCompareB = (cik) => updateHash({ b: cik ?? '' })
+  const swapCompare = () => updateHash({ a: hashState.b, b: hashState.a })
 
   // Pre-load compare's selected filers when entering the view directly via
   // a deep-link.
@@ -294,11 +308,8 @@ export default function App() {
 
       <Sidebar
         filers={summary?.filers ?? []}
-        selectedCik={
-          view === 'overview' ? '__overview__'
-          : view === 'compare' ? '__compare__'
-          : hashState.cik
-        }
+        selectedView={view}
+        selectedCik={hashState.cik}
         onSelect={handleSelect}
         onSelectOverview={() => handleSelect('overview')}
         onSelectCompare={handleSelectCompare}
@@ -341,6 +352,7 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
             b={hashState.b}
             onChangeA={setCompareA}
             onChangeB={setCompareB}
+            onSwap={swapCompare}
           />
         )}
 
@@ -377,6 +389,15 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
                     <TopMoves buys={filerData.top_buys} sells={filerData.top_sells} limit={5} />
                   </div>
                 )}
+                {(filerData.holdings?.length ?? 0) > 0 && (filerData.total_value_usd ?? 0) > 0 && (
+                  <div className="mt-6">
+                    <PortfolioBar
+                      holdings={filerData.holdings}
+                      total={filerData.total_value_usd}
+                      top={10}
+                    />
+                  </div>
+                )}
                 <div className="mt-6">
                   <h2 className="mb-2 text-base font-semibold text-slate-900 dark:text-slate-100">
                     Stock-on-hand vs. prior quarter
@@ -391,6 +412,7 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
                     onChange={handleTableState}
                     csvBaseName={[slug(selected.name), filerData.latest_filing?.report_date]
                       .filter(Boolean).join('-')}
+                    totalValue={filerData.total_value_usd}
                   />
                 </div>
               </>
@@ -418,7 +440,10 @@ function Header({ filer, generatedAt }) {
     <div>
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
         <h1 className="text-xl font-semibold text-slate-900 dark:text-slate-100 sm:text-2xl">{filer.name}</h1>
-        <p className="text-xs text-slate-500 dark:text-slate-400">CIK {filer.cik}{generatedAt ? ` · generated ${generatedAt}` : ''}</p>
+        <div className="flex items-center gap-2">
+          <CopyLink />
+          <p className="text-xs text-slate-500 dark:text-slate-400">CIK {filer.cik}{generatedAt ? ` · generated ${generatedAt}` : ''}</p>
+        </div>
       </div>
       <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
         Latest 13F-HR — report&nbsp;
