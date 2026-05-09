@@ -10,12 +10,15 @@ import {
 
 const COLUMNS = [
   { key: 'issuer',          label: 'Issuer',              align: 'left'  },
-  { key: 'cusip',           label: 'CUSIP',               align: 'left',  className: 'font-mono text-xs' },
-  { key: 'shares_prior',    label: 'Shares (prior)',      align: 'right', fmt: fmtShares },
+  { key: 'cusip',           label: 'CUSIP',               align: 'left',  className: 'font-mono text-xs',
+    responsive: 'hidden sm:table-cell' },
+  { key: 'shares_prior',    label: 'Shares (prior)',      align: 'right', fmt: fmtShares,
+    responsive: 'hidden md:table-cell' },
   { key: 'shares',          label: 'Shares (current)',    align: 'right', fmt: fmtShares },
   { key: 'delta_shares',    label: 'Δ Shares',            align: 'right', fmt: fmtSignedShares,
     cellTone: (r) => (r.delta_shares > 0 ? 'text-emerald-700' : r.delta_shares < 0 ? 'text-rose-700' : 'text-slate-500') },
   { key: 'delta_pct',       label: 'Δ %',                 align: 'right',
+    responsive: 'hidden sm:table-cell',
     accessor: (r) => (r.shares_prior ? (r.shares - r.shares_prior) / r.shares_prior : (r.shares ? Infinity : 0)),
     fmt: (_, r) => fmtPct(r.shares, r.shares_prior) },
   { key: 'value_usd',       label: 'Value (current)',     align: 'right', fmt: fmtCompactUSD },
@@ -69,14 +72,14 @@ export default function HoldingsTable({ holdings = [], exited = [] }) {
 
   return (
     <div className="rounded-lg border border-slate-200 bg-white shadow-sm">
-      <div className="flex flex-wrap items-center gap-2 border-b border-slate-200 px-4 py-3">
+      <div className="flex flex-col gap-2 border-b border-slate-200 px-4 py-3 sm:flex-row sm:items-center">
         <div className="flex flex-wrap gap-1">
           {ACTION_FILTERS.map((f) => (
             <button
               key={f.id}
               onClick={() => setFilter(f.id)}
               className={
-                'rounded px-2.5 py-1 text-xs font-medium ring-1 ring-inset transition ' +
+                'rounded px-3 py-1.5 text-xs font-medium ring-1 ring-inset transition ' +
                 (filter === f.id
                   ? 'bg-indigo-600 text-white ring-indigo-600'
                   : 'bg-white text-slate-700 ring-slate-300 hover:bg-slate-50')
@@ -86,12 +89,12 @@ export default function HoldingsTable({ holdings = [], exited = [] }) {
             </button>
           ))}
         </div>
-        <div className="ml-auto">
+        <div className="sm:ml-auto">
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Filter issuer or CUSIP…"
-            className="w-64 rounded border border-slate-300 px-2 py-1 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+            className="w-full rounded border border-slate-300 px-2 py-1 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:w-64"
           />
         </div>
       </div>
@@ -105,7 +108,8 @@ export default function HoldingsTable({ holdings = [], exited = [] }) {
                   scope="col"
                   className={
                     `px-3 py-2 font-semibold text-slate-700 select-none cursor-pointer ` +
-                    (c.align === 'right' ? 'text-right' : 'text-left')
+                    (c.align === 'right' ? 'text-right ' : 'text-left ') +
+                    (c.responsive ?? '')
                   }
                   onClick={() => setSort(c.key)}
                 >
@@ -127,7 +131,7 @@ export default function HoldingsTable({ holdings = [], exited = [] }) {
                   if (c.key === 'action') {
                     const cls = ACTION_STYLE[row.action] ?? ACTION_STYLE.hold
                     return (
-                      <td key={c.key} className="px-3 py-2">
+                      <td key={c.key} className={`px-3 py-2 ${c.responsive ?? ''}`}>
                         <span className={`inline-flex rounded px-2 py-0.5 text-xs font-medium ring-1 ring-inset ${cls}`}>
                           {row.action}
                         </span>
@@ -143,7 +147,7 @@ export default function HoldingsTable({ holdings = [], exited = [] }) {
                       key={c.key}
                       className={
                         `px-3 py-2 ${c.align === 'right' ? 'text-right tabular-nums' : ''} ` +
-                        `${c.className ?? ''} ${tone}`
+                        `${c.className ?? ''} ${tone} ${c.responsive ?? ''}`
                       }
                     >
                       {display}
