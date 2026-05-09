@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import {
   ACTION_STYLE,
   fmtCompactUSD,
@@ -83,6 +83,7 @@ export default function HoldingsTable({
   query = '',
   onChange,
   csvBaseName = 'holdings',
+  pageSize = 100,
 }) {
   const all = useMemo(() => [...holdings, ...exited], [holdings, exited])
 
@@ -92,6 +93,11 @@ export default function HoldingsTable({
     const next = { filter, sortKey, sortDir, query, ...patch }
     onChangeRef.current?.(next)
   }
+
+  const [page, setPage] = useState(0)
+  // Reset to page 0 whenever the underlying data, filter, sort, or query
+  // change so we don't land on a now-empty page.
+  useEffect(() => { setPage(0) }, [holdings, exited, filter, sortKey, sortDir, query])
 
   const filtered = useMemo(() => {
     const f = ACTION_FILTERS.find((x) => x.id === filter) ?? ACTION_FILTERS[0]
@@ -119,6 +125,16 @@ export default function HoldingsTable({
     if (sortKey === key) emit({ sortDir: sortDir === 'asc' ? 'desc' : 'asc' })
     else emit({ sortKey: key, sortDir: 'desc' })
   }
+
+  const total = filtered.length
+  const pageCount = Math.max(1, Math.ceil(total / pageSize))
+  const safePage = Math.min(page, pageCount - 1)
+  const pageRows = total > pageSize
+    ? filtered.slice(safePage * pageSize, (safePage + 1) * pageSize)
+    : filtered
+  const showPagination = total > pageSize
+  const rangeStart = total === 0 ? 0 : safePage * pageSize + 1
+  const rangeEnd = Math.min(total, (safePage + 1) * pageSize)
 
   return (
     <div className="rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
@@ -197,10 +213,10 @@ export default function HoldingsTable({
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100 bg-white dark:divide-slate-800 dark:bg-slate-900">
-            {filtered.length === 0 && (
+            {pageRows.length === 0 && (
               <tr><td colSpan={COLUMNS.length} className="px-3 py-6 text-center text-slate-500 dark:text-slate-400">No rows.</td></tr>
             )}
-            {filtered.map((row, i) => (
+            {pageRows.map((row, i) => (
               <tr key={`${row.cusip}-${row.action}-${i}`} className="hover:bg-slate-50 dark:hover:bg-slate-800/50">
                 {COLUMNS.map((c) => {
                   if (c.key === 'action') {
@@ -234,6 +250,48 @@ export default function HoldingsTable({
           </tbody>
         </table>
       </div>
+      {showPagination && (
+        <div className="flex flex-col items-center justify-between gap-2 border-t border-slate-200 px-4 py-2 text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400 sm:flex-row">
+          <span>
+            Showing <span className="font-medium text-slate-900 dark:text-slate-100">{rangeStart.toLocaleString()}</span>–
+            <span className="font-medium text-slate-900 dark:text-slate-100">{rangeEnd.toLocaleString()}</span>
+            {' '}of <span className="font-medium text-slate-900 dark:text-slate-100">{total.toLocaleString()}</span>
+          </span>
+          <div className="flex items-center gap-1">
+            <button
+              type="button"
+              onClick={() => setPage(0)}
+              disabled={safePage === 0}
+              className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+              aria-label="First page"
+            >‹‹</button>
+            <button
+              type="button"
+              onClick={() => setPage((p) => Math.max(0, p - 1))}
+              disabled={safePage === 0}
+              className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+              aria-label="Previous page"
+            >‹ Prev</button>
+            <span className="px-2 tabular-nums">
+              Page {safePage + 1} / {pageCount}
+            </span>
+            <button
+              type="button"
+              onClick={() => setPage((p) => Math.min(pageCount - 1, p + 1))}
+              disabled={safePage >= pageCount - 1}
+              className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+              aria-label="Next page"
+            >Next ›</button>
+            <button
+              type="button"
+              onClick={() => setPage(pageCount - 1)}
+              disabled={safePage >= pageCount - 1}
+              className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+              aria-label="Last page"
+            >››</button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

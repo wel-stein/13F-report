@@ -6,6 +6,7 @@ export default function Sidebar({
   selectedCik,
   onSelect,
   onSelectOverview,
+  onSelectCompare,
   open = false,
   onClose,
   theme,
@@ -62,6 +63,20 @@ export default function Sidebar({
           >
             <span className="text-sm font-medium text-slate-900 dark:text-slate-100">Overview</span>
             <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">Aggregated across all filers</p>
+          </button>
+        )}
+        {onSelectCompare && (
+          <button
+            onClick={onSelectCompare}
+            className={
+              'block w-full text-left px-4 py-3 border-l-4 transition ' +
+              (selectedCik === '__compare__'
+                ? 'border-indigo-500 bg-indigo-50 dark:bg-indigo-950/40'
+                : 'border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/60')
+            }
+          >
+            <span className="text-sm font-medium text-slate-900 dark:text-slate-100">Compare filers</span>
+            <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">Pick two filers to diff</p>
           </button>
         )}
         {filers.length === 0 && (

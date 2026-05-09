@@ -5,6 +5,7 @@ import HoldingsTable from './components/HoldingsTable.jsx'
 import ThemeToggle from './components/ThemeToggle.jsx'
 import TopMoves from './components/TopMoves.jsx'
 import Overview from './components/Overview.jsx'
+import Compare from './components/Compare.jsx'
 
 function slug(name) {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '')
@@ -41,18 +42,24 @@ function parseHash() {
     filter: VALID_FILTERS.has(filter) ? filter : 'all',
     sort:   normalizeSort(params.get('sort')),
     q:      params.get('q') ?? '',
+    a:      params.get('a') ?? '',
+    b:      params.get('b') ?? '',
   }
 }
 
 function writeHash(state) {
   const params = new URLSearchParams()
   if (state.cik) params.set('cik', state.cik)
-  // Filter/sort/query only apply to the filer view; strip them on overview
-  // so we don't leak stale state across views.
-  if (state.cik && state.cik !== 'overview') {
+  // Filter/sort/query only apply to the filer view; strip them on overview /
+  // compare so we don't leak stale state across views.
+  if (state.cik && state.cik !== 'overview' && state.cik !== 'compare') {
     if (state.filter && state.filter !== 'all') params.set('filter', state.filter)
     if (state.sort   && state.sort   !== DEFAULT_SORT) params.set('sort', state.sort)
     if (state.q) params.set('q', state.q)
+  }
+  if (state.cik === 'compare') {
+    if (state.a) params.set('a', state.a)
+    if (state.b) params.set('b', state.b)
   }
   const qs = params.toString()
   const next = qs ? `#${qs}` : ''
@@ -131,7 +138,9 @@ export default function App() {
       .catch((e) => setSummaryError(e.message))
   }, [])
 
-  const view = hashState.cik === 'overview' || !hashState.cik ? 'overview' : 'filer'
+  const view = !hashState.cik || hashState.cik === 'overview' ? 'overview'
+    : hashState.cik === 'compare' ? 'compare'
+    : 'filer'
 
   const selected = useMemo(() => {
     if (!summary || view !== 'filer') return null
@@ -143,6 +152,7 @@ export default function App() {
   useEffect(() => {
     let t = '13F Admin Portal'
     if (view === 'overview') t = 'Overview · 13F Admin Portal'
+    else if (view === 'compare') t = 'Compare · 13F Admin Portal'
     else if (selected) t = `${selected.name} · 13F Admin Portal`
     document.title = t
   }, [view, selected])
@@ -205,8 +215,34 @@ export default function App() {
     // No-op when clicking the already-selected filer so we don't wipe the
     // user's filter/sort/query state.
     if (cik === hashState.cik) return
-    updateHash({ cik, filter: 'all', sort: DEFAULT_SORT, q: '' })
+    updateHash({ cik, filter: 'all', sort: DEFAULT_SORT, q: '', a: '', b: '' })
   }
+
+  const handleSelectCompare = () => {
+    setSidebarOpen(false)
+    if (hashState.cik === 'compare') return
+    // Pre-select the first two non-errored filers as a friendly default.
+    const ok = (summary?.filers ?? []).filter((f) => !f.error)
+    updateHash({
+      cik: 'compare',
+      filter: 'all', sort: DEFAULT_SORT, q: '',
+      a: ok[0]?.cik ?? '',
+      b: ok[1]?.cik ?? '',
+    })
+  }
+  const setCompareA = (cik) => updateHash({ a: cik ?? '' })
+  const setCompareB = (cik) => updateHash({ b: cik ?? '' })
+
+  // Pre-load compare's selected filers when entering the view directly via
+  // a deep-link.
+  useEffect(() => {
+    if (view !== 'compare' || !summary) return
+    for (const cik of [hashState.a, hashState.b]) {
+      if (!cik) continue
+      const f = summary.filers.find((x) => x.cik === cik)
+      if (f) fetchFiler(f).catch(() => {})
+    }
+  }, [view, summary, hashState.a, hashState.b, fetchFiler])
 
   const [sortKey, sortDir] = normalizeSort(hashState.sort).split(':')
   const handleTableState = useCallback(({ filter, sortKey, sortDir, query }) => {
@@ -244,9 +280,14 @@ export default function App() {
 
       <Sidebar
         filers={summary?.filers ?? []}
-        selectedCik={view === 'overview' ? '__overview__' : hashState.cik}
+        selectedCik={
+          view === 'overview' ? '__overview__'
+          : view === 'compare' ? '__compare__'
+          : hashState.cik
+        }
         onSelect={handleSelect}
         onSelectOverview={() => handleSelect('overview')}
+        onSelectCompare={handleSelectCompare}
         open={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
         theme={theme}
@@ -274,6 +315,18 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
             summary={summary}
             filerData={overviewFilerData}
             onSelect={handleSelect}
+          />
+        )}
+
+        {!summaryError && view === 'compare' && summary && (
+          <Compare
+            summary={summary}
+            filerCache={filerCache}
+            fetchFiler={fetchFiler}
+            a={hashState.a}
+            b={hashState.b}
+            onChangeA={setCompareA}
+            onChangeB={setCompareB}
           />
         )}
 
