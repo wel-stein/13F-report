@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Sidebar from './components/Sidebar.jsx'
 import StatsCards from './components/StatsCards.jsx'
 import HoldingsTable from './components/HoldingsTable.jsx'
@@ -17,26 +17,49 @@ function readInitialTheme() {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 }
 
+const VALID_FILTERS = new Set(['all', 'new', 'add', 'trim', 'exit', 'hold'])
+const VALID_SORT_KEYS = new Set([
+  'issuer', 'cusip', 'shares_prior', 'shares', 'delta_shares',
+  'delta_pct', 'value_usd', 'delta_value_usd', 'action',
+])
+const DEFAULT_SORT = 'value_usd:desc'
+
+function normalizeSort(raw) {
+  if (typeof raw !== 'string') return DEFAULT_SORT
+  const [k, d] = raw.split(':')
+  if (!VALID_SORT_KEYS.has(k)) return DEFAULT_SORT
+  if (d !== 'asc' && d !== 'desc') return DEFAULT_SORT
+  return `${k}:${d}`
+}
+
 function parseHash() {
   const h = (typeof window !== 'undefined' && window.location.hash) || ''
   const params = new URLSearchParams(h.startsWith('#') ? h.slice(1) : h)
+  const filter = params.get('filter') ?? 'all'
   return {
-    cik:    params.get('cik')    ?? '',
-    filter: params.get('filter') ?? 'all',
-    sort:   params.get('sort')   ?? 'value_usd:desc',
-    q:      params.get('q')      ?? '',
+    cik:    params.get('cik') ?? '',
+    filter: VALID_FILTERS.has(filter) ? filter : 'all',
+    sort:   normalizeSort(params.get('sort')),
+    q:      params.get('q') ?? '',
   }
 }
 
 function writeHash(state) {
   const params = new URLSearchParams()
-  if (state.cik)                       params.set('cik', state.cik)
-  if (state.filter && state.filter !== 'all')        params.set('filter', state.filter)
-  if (state.sort   && state.sort   !== 'value_usd:desc') params.set('sort', state.sort)
-  if (state.q)                         params.set('q', state.q)
-  const next = '#' + params.toString()
-  if (window.location.hash !== next && (next !== '#' || window.location.hash !== '')) {
-    history.replaceState(null, '', next === '#' ? window.location.pathname + window.location.search : next)
+  if (state.cik) params.set('cik', state.cik)
+  // Filter/sort/query only apply to the filer view; strip them on overview
+  // so we don't leak stale state across views.
+  if (state.cik && state.cik !== 'overview') {
+    if (state.filter && state.filter !== 'all') params.set('filter', state.filter)
+    if (state.sort   && state.sort   !== DEFAULT_SORT) params.set('sort', state.sort)
+    if (state.q) params.set('q', state.q)
+  }
+  const qs = params.toString()
+  const next = qs ? `#${qs}` : ''
+  const cur = window.location.hash
+  if (cur !== next) {
+    const url = next || (window.location.pathname + window.location.search)
+    history.replaceState(null, '', url)
   }
 }
 
@@ -99,11 +122,8 @@ export default function App() {
       })
       .then((data) => {
         setSummary(data)
-        setHashState((s) => {
-          if (s.cik || s.cik === 'overview') return s
-          // Default to overview when no hash is set.
-          return { ...s, cik: 'overview' }
-        })
+        // Default to overview when no cik is in the hash.
+        setHashState((s) => (s.cik ? s : { ...s, cik: 'overview' }))
       })
       .catch((e) => setSummaryError(e.message))
   }, [])
@@ -115,10 +135,18 @@ export default function App() {
     return summary.filers.find((f) => f.cik === hashState.cik) ?? null
   }, [summary, hashState.cik, view])
 
-  // Fetch a filer JSON on demand (and cache).
+  // Cache lookups via ref so fetchFiler stays referentially stable across
+  // cache writes (otherwise the prefetch effect re-runs N times as N
+  // filers load, walking the whole filer list each pass).
+  const filerCacheRef = useRef(filerCache)
+  useEffect(() => { filerCacheRef.current = filerCache }, [filerCache])
+  const inFlightRef = useRef(new Set())
+
   const fetchFiler = useCallback((filer) => {
     if (!filer || filer.error) return Promise.resolve(null)
-    if (filerCache[filer.cik]) return Promise.resolve(filerCache[filer.cik])
+    if (filerCacheRef.current[filer.cik]) return Promise.resolve(filerCacheRef.current[filer.cik])
+    if (inFlightRef.current.has(filer.cik)) return Promise.resolve(null)
+    inFlightRef.current.add(filer.cik)
     return fetch(`/${slug(filer.name)}.json`)
       .then((r) => {
         if (!r.ok) throw new Error(`${slug(filer.name)}.json: HTTP ${r.status}`)
@@ -128,7 +156,8 @@ export default function App() {
         setFilerCache((prev) => ({ ...prev, [filer.cik]: data }))
         return data
       })
-  }, [filerCache])
+      .finally(() => { inFlightRef.current.delete(filer.cik) })
+  }, [])
 
   // Single-filer view: load on selection.
   useEffect(() => {
@@ -141,13 +170,14 @@ export default function App() {
       .finally(() => setLoadingFiler(false))
   }, [view, selected, filerCache, fetchFiler])
 
-  // Overview view: prefetch every (non-errored) filer JSON.
+  // Overview view: prefetch every (non-errored) filer JSON. fetchFiler is
+  // stable, so this only re-runs when the view or summary actually changes.
   useEffect(() => {
     if (view !== 'overview' || !summary) return
     summary.filers
-      .filter((f) => !f.error && !filerCache[f.cik])
-      .forEach((f) => { fetchFiler(f).catch(() => { /* per-filer load best-effort */ }) })
-  }, [view, summary, filerCache, fetchFiler])
+      .filter((f) => !f.error)
+      .forEach((f) => { fetchFiler(f).catch(() => { /* best-effort */ }) })
+  }, [view, summary, fetchFiler])
 
   const filerData = selected && filerCache[selected.cik]
   const overviewFilerData = useMemo(
@@ -156,11 +186,14 @@ export default function App() {
   )
 
   const handleSelect = (cik) => {
-    updateHash({ cik, filter: 'all', sort: 'value_usd:desc', q: '' })
     setSidebarOpen(false)
+    // No-op when clicking the already-selected filer so we don't wipe the
+    // user's filter/sort/query state.
+    if (cik === hashState.cik) return
+    updateHash({ cik, filter: 'all', sort: DEFAULT_SORT, q: '' })
   }
 
-  const [sortKey, sortDir] = (hashState.sort || 'value_usd:desc').split(':')
+  const [sortKey, sortDir] = normalizeSort(hashState.sort).split(':')
   const handleTableState = useCallback(({ filter, sortKey, sortDir, query }) => {
     updateHash({ filter, sort: `${sortKey}:${sortDir}`, q: query })
   }, [updateHash])

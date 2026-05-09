@@ -47,13 +47,17 @@ function Panel({ title, rows, emptyLabel }) {
   )
 }
 
+function panelTitle(kind, count) {
+  return count > 0 ? `Top ${count} ${kind}` : `Top ${kind}`
+}
+
 export default function TopMoves({ buys = [], sells = [], limit = 5 }) {
   const buysTop = buys.slice(0, limit)
   const sellsTop = sells.slice(0, limit)
   return (
     <div className="grid gap-4 md:grid-cols-2">
-      <Panel title={`Top ${buysTop.length || ''} Buys`.trim()} rows={buysTop} emptyLabel="No new or added positions." />
-      <Panel title={`Top ${sellsTop.length || ''} Sells`.trim()} rows={sellsTop} emptyLabel="No trims or exits." />
+      <Panel title={panelTitle('Buys', buysTop.length)} rows={buysTop} emptyLabel="No new or added positions." />
+      <Panel title={panelTitle('Sells', sellsTop.length)} rows={sellsTop} emptyLabel="No trims or exits." />
     </div>
   )
 }

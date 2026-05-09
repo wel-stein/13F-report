@@ -250,6 +250,22 @@ def slug(name: str) -> str:
     return "".join(c if c.isalnum() else "_" for c in name.lower()).strip("_")
 
 
+SUMMARY_FIELDS = (
+    "name", "cik", "error", "latest_filing", "prior_filing",
+    "holdings_count", "holdings_count_prior",
+    "total_value_usd", "total_value_usd_prior",
+)
+
+
+def _summary_entry(res: dict) -> dict:
+    """Slim per-filer dict for summary.json (no holdings/exited/top_*).
+
+    The portal fetches the per-filer file when it needs detail; keeping
+    summary.json small avoids shipping every holding twice.
+    """
+    return {k: res[k] for k in SUMMARY_FIELDS if k in res}
+
+
 def run(investors_path: Path, out_dir: Path, top_n: int) -> int:
     investors = json.loads(investors_path.read_text())
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -261,7 +277,7 @@ def run(investors_path: Path, out_dir: Path, top_n: int) -> int:
         except Exception as e:
             res = {"name": inv["name"], "cik": inv["cik"], "error": f"{type(e).__name__}: {e}"}
             failures += 1
-        summary["filers"].append(res)
+        summary["filers"].append(_summary_entry(res))
         (out_dir / f"{slug(inv['name'])}.json").write_text(json.dumps(res, indent=2))
         status = "ok" if "error" not in res else f"ERROR: {res['error']}"
         print(f"[{inv['name']}] {status}", file=sys.stderr)

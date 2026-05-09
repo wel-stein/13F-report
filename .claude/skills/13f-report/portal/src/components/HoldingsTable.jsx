@@ -20,7 +20,13 @@ const COLUMNS = [
   { key: 'delta_pct',       label: 'Δ %',                 align: 'right',
     responsive: 'hidden sm:table-cell',
     accessor: (r) => (r.shares_prior ? (r.shares - r.shares_prior) / r.shares_prior : (r.shares ? Infinity : 0)),
-    fmt: (_, r) => fmtPct(r.shares, r.shares_prior) },
+    fmt: (_, r) => fmtPct(r.shares, r.shares_prior),
+    cellTone: (r) => {
+      const d = r.shares - (r.shares_prior ?? 0)
+      return d > 0 ? 'text-emerald-700 dark:text-emerald-400'
+        : d < 0 ? 'text-rose-700 dark:text-rose-400'
+        : 'text-slate-500 dark:text-slate-400'
+    } },
   { key: 'value_usd',       label: 'Value (current)',     align: 'right', fmt: fmtCompactUSD },
   { key: 'delta_value_usd', label: 'Δ Value',             align: 'right', fmt: fmtSignedUSD,
     cellTone: (r) => (r.delta_value_usd > 0 ? 'text-emerald-700 dark:text-emerald-400' : r.delta_value_usd < 0 ? 'text-rose-700 dark:text-rose-400' : 'text-slate-500 dark:text-slate-400') },
