@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import {
   ACTION_STYLE,
   fmtCompactUSD,
@@ -11,7 +11,8 @@ import {
 const COLUMNS = [
   { key: 'issuer',          label: 'Issuer',              align: 'left'  },
   { key: 'cusip',           label: 'CUSIP',               align: 'left',  className: 'font-mono text-xs',
-    responsive: 'hidden sm:table-cell' },
+    responsive: 'hidden sm:table-cell',
+    title: 'Committee on Uniform Securities Identification Procedures number' },
   { key: 'shares_prior',    label: 'Shares (prior)',      align: 'right', fmt: fmtShares,
     responsive: 'hidden md:table-cell' },
   { key: 'shares',          label: 'Shares (current)',    align: 'right', fmt: fmtShares },
@@ -20,7 +21,13 @@ const COLUMNS = [
   { key: 'delta_pct',       label: 'Δ %',                 align: 'right',
     responsive: 'hidden sm:table-cell',
     accessor: (r) => (r.shares_prior ? (r.shares - r.shares_prior) / r.shares_prior : (r.shares ? Infinity : 0)),
-    fmt: (_, r) => fmtPct(r.shares, r.shares_prior) },
+    fmt: (_, r) => fmtPct(r.shares, r.shares_prior),
+    cellTone: (r) => {
+      const d = r.shares - (r.shares_prior ?? 0)
+      return d > 0 ? 'text-emerald-700 dark:text-emerald-400'
+        : d < 0 ? 'text-rose-700 dark:text-rose-400'
+        : 'text-slate-500 dark:text-slate-400'
+    } },
   { key: 'value_usd',       label: 'Value (current)',     align: 'right', fmt: fmtCompactUSD },
   { key: 'delta_value_usd', label: 'Δ Value',             align: 'right', fmt: fmtSignedUSD,
     cellTone: (r) => (r.delta_value_usd > 0 ? 'text-emerald-700 dark:text-emerald-400' : r.delta_value_usd < 0 ? 'text-rose-700 dark:text-rose-400' : 'text-slate-500 dark:text-slate-400') },
@@ -36,6 +43,37 @@ const ACTION_FILTERS = [
   { id: 'hold', label: 'Hold',    match: (h) => h.action === 'hold' },
 ]
 
+const CSV_FIELDS = [
+  'issuer', 'cusip', 'class', 'put_call',
+  'shares_prior', 'shares', 'delta_shares',
+  'value_usd_prior', 'value_usd', 'delta_value_usd',
+  'action',
+]
+
+function csvEscape(v) {
+  if (v == null) return ''
+  const s = String(v)
+  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
+}
+
+function rowsToCsv(rows) {
+  const header = CSV_FIELDS.join(',')
+  const body = rows.map((r) => CSV_FIELDS.map((f) => csvEscape(r[f])).join(',')).join('\n')
+  return `${header}\n${body}\n`
+}
+
+function downloadCsv(rows, filename) {
+  const blob = new Blob([rowsToCsv(rows)], { type: 'text/csv;charset=utf-8' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = filename
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(a)
+  setTimeout(() => URL.revokeObjectURL(url), 1000)
+}
+
 export default function HoldingsTable({
   holdings = [],
   exited = [],
@@ -44,6 +82,8 @@ export default function HoldingsTable({
   sortDir = 'desc',
   query = '',
   onChange,
+  csvBaseName = 'holdings',
+  pageSize = 100,
 }) {
   const all = useMemo(() => [...holdings, ...exited], [holdings, exited])
 
@@ -53,6 +93,11 @@ export default function HoldingsTable({
     const next = { filter, sortKey, sortDir, query, ...patch }
     onChangeRef.current?.(next)
   }
+
+  const [page, setPage] = useState(0)
+  // Reset to page 0 whenever the underlying data, filter, sort, or query
+  // change so we don't land on a now-empty page.
+  useEffect(() => { setPage(0) }, [holdings, exited, filter, sortKey, sortDir, query])
 
   const filtered = useMemo(() => {
     const f = ACTION_FILTERS.find((x) => x.id === filter) ?? ACTION_FILTERS[0]
@@ -81,6 +126,16 @@ export default function HoldingsTable({
     else emit({ sortKey: key, sortDir: 'desc' })
   }
 
+  const total = filtered.length
+  const pageCount = Math.max(1, Math.ceil(total / pageSize))
+  const safePage = Math.min(page, pageCount - 1)
+  const pageRows = total > pageSize
+    ? filtered.slice(safePage * pageSize, (safePage + 1) * pageSize)
+    : filtered
+  const showPagination = total > pageSize
+  const rangeStart = total === 0 ? 0 : safePage * pageSize + 1
+  const rangeEnd = Math.min(total, (safePage + 1) * pageSize)
+
   return (
     <div className="rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
       <div className="flex flex-col gap-2 border-b border-slate-200 px-4 py-3 dark:border-slate-800 sm:flex-row sm:items-center">
@@ -101,7 +156,7 @@ export default function HoldingsTable({
             </button>
           ))}
         </div>
-        <div className="sm:ml-auto">
+        <div className="flex items-center gap-2 sm:ml-auto">
           <input
             value={query}
             onChange={(e) => emit({ query: e.target.value })}
@@ -109,6 +164,15 @@ export default function HoldingsTable({
             aria-label="Filter holdings by issuer or CUSIP"
             className="w-full rounded border border-slate-300 bg-white px-2 py-1 text-sm text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500 sm:w-64"
           />
+          <button
+            type="button"
+            onClick={() => downloadCsv(filtered, `${csvBaseName}-${filter}.csv`)}
+            disabled={filtered.length === 0}
+            title="Export the currently filtered & sorted rows as CSV"
+            className="shrink-0 rounded border border-slate-300 bg-white px-2 py-1 text-xs font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+          >
+            CSV
+          </button>
         </div>
       </div>
       <div className="overflow-x-auto">
@@ -131,6 +195,7 @@ export default function HoldingsTable({
                     <button
                       type="button"
                       onClick={() => setSort(c.key)}
+                      title={c.title}
                       className={
                         `flex w-full items-center gap-1 px-3 py-2 select-none ` +
                         `focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ` +
@@ -148,10 +213,10 @@ export default function HoldingsTable({
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100 bg-white dark:divide-slate-800 dark:bg-slate-900">
-            {filtered.length === 0 && (
+            {pageRows.length === 0 && (
               <tr><td colSpan={COLUMNS.length} className="px-3 py-6 text-center text-slate-500 dark:text-slate-400">No rows.</td></tr>
             )}
-            {filtered.map((row, i) => (
+            {pageRows.map((row, i) => (
               <tr key={`${row.cusip}-${row.action}-${i}`} className="hover:bg-slate-50 dark:hover:bg-slate-800/50">
                 {COLUMNS.map((c) => {
                   if (c.key === 'action') {
@@ -185,6 +250,48 @@ export default function HoldingsTable({
           </tbody>
         </table>
       </div>
+      {showPagination && (
+        <div className="flex flex-col items-center justify-between gap-2 border-t border-slate-200 px-4 py-2 text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400 sm:flex-row">
+          <span>
+            Showing <span className="font-medium text-slate-900 dark:text-slate-100">{rangeStart.toLocaleString()}</span>–
+            <span className="font-medium text-slate-900 dark:text-slate-100">{rangeEnd.toLocaleString()}</span>
+            {' '}of <span className="font-medium text-slate-900 dark:text-slate-100">{total.toLocaleString()}</span>
+          </span>
+          <div className="flex items-center gap-1">
+            <button
+              type="button"
+              onClick={() => setPage(0)}
+              disabled={safePage === 0}
+              className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+              aria-label="First page"
+            >‹‹</button>
+            <button
+              type="button"
+              onClick={() => setPage((p) => Math.max(0, p - 1))}
+              disabled={safePage === 0}
+              className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+              aria-label="Previous page"
+            >‹ Prev</button>
+            <span className="px-2 tabular-nums">
+              Page {safePage + 1} / {pageCount}
+            </span>
+            <button
+              type="button"
+              onClick={() => setPage((p) => Math.min(pageCount - 1, p + 1))}
+              disabled={safePage >= pageCount - 1}
+              className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+              aria-label="Next page"
+            >Next ›</button>
+            <button
+              type="button"
+              onClick={() => setPage(pageCount - 1)}
+              disabled={safePage >= pageCount - 1}
+              className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+              aria-label="Last page"
+            >››</button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

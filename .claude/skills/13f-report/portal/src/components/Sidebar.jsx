@@ -6,6 +6,7 @@ export default function Sidebar({
   selectedCik,
   onSelect,
   onSelectOverview,
+  onSelectCompare,
   open = false,
   onClose,
   theme,
@@ -37,6 +38,7 @@ export default function Sidebar({
             type="button"
             onClick={onClose}
             aria-label="Close menu"
+            data-drawer-close
             className="-mr-1 rounded p-1.5 text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 md:hidden"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -61,6 +63,20 @@ export default function Sidebar({
           >
             <span className="text-sm font-medium text-slate-900 dark:text-slate-100">Overview</span>
             <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">Aggregated across all filers</p>
+          </button>
+        )}
+        {onSelectCompare && (
+          <button
+            onClick={onSelectCompare}
+            className={
+              'block w-full text-left px-4 py-3 border-l-4 transition ' +
+              (selectedCik === '__compare__'
+                ? 'border-indigo-500 bg-indigo-50 dark:bg-indigo-950/40'
+                : 'border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/60')
+            }
+          >
+            <span className="text-sm font-medium text-slate-900 dark:text-slate-100">Compare filers</span>
+            <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">Pick two filers to diff</p>
           </button>
         )}
         {filers.length === 0 && (

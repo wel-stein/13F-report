@@ -2,10 +2,13 @@ import { useMemo } from 'react'
 import { fmtCompactUSD, fmtSignedUSD, ACTION_STYLE } from '../format.js'
 
 function aggregateMoves(filerData) {
-  // key by CUSIP|class|put_call so options/common stay separate
+  // Pull from each filer's full holdings + exited arrays so we don't miss
+  // moves that happen to fall outside the per-filer top_buys/top_sells cuts.
+  // Key by CUSIP|class|put_call so options/common stay separate.
   const acc = new Map()
   const credit = (row, sourceName) => {
     if (!row?.cusip) return
+    if (!row.delta_value_usd) return
     const key = `${row.cusip}|${row.class ?? ''}|${row.put_call ?? ''}`
     const e = acc.get(key) ?? {
       issuer: row.issuer,
@@ -16,15 +19,15 @@ function aggregateMoves(filerData) {
       filers: new Set(),
       actions: new Set(),
     }
-    e.delta_value_usd += row.delta_value_usd ?? 0
+    e.delta_value_usd += row.delta_value_usd
     e.filers.add(sourceName)
     e.actions.add(row.action)
     acc.set(key, e)
   }
   for (const { name, data } of filerData) {
     if (!data) continue
-    for (const r of data.top_buys ?? []) credit(r, name)
-    for (const r of data.top_sells ?? []) credit(r, name)
+    for (const r of data.holdings ?? []) credit(r, name)
+    for (const r of data.exited ?? []) credit(r, name)
   }
   return [...acc.values()].map((e) => ({
     ...e,
@@ -94,7 +97,7 @@ function StatCard({ label, value, sub, tone = 'slate' }) {
   )
 }
 
-export default function Overview({ summary, filerData, loading, onSelect }) {
+export default function Overview({ summary, filerData, onSelect }) {
   const filers = summary?.filers ?? []
   const ok = filers.filter((f) => !f.error)
   const errored = filers.filter((f) => f.error)
@@ -152,7 +155,7 @@ export default function Overview({ summary, filerData, loading, onSelect }) {
         />
       </div>
 
-      {(loading || !fullyLoaded) && (
+      {!fullyLoaded && (
         <p className="text-sm text-slate-500 dark:text-slate-400">
           Loading filer data… {filerData.filter((d) => d.data).length}/{ok.length}
         </p>

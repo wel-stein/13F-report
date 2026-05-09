@@ -1,10 +1,11 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Sidebar from './components/Sidebar.jsx'
 import StatsCards from './components/StatsCards.jsx'
 import HoldingsTable from './components/HoldingsTable.jsx'
 import ThemeToggle from './components/ThemeToggle.jsx'
 import TopMoves from './components/TopMoves.jsx'
 import Overview from './components/Overview.jsx'
+import Compare from './components/Compare.jsx'
 
 function slug(name) {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '')
@@ -17,26 +18,55 @@ function readInitialTheme() {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 }
 
+const VALID_FILTERS = new Set(['all', 'new', 'add', 'trim', 'exit', 'hold'])
+const VALID_SORT_KEYS = new Set([
+  'issuer', 'cusip', 'shares_prior', 'shares', 'delta_shares',
+  'delta_pct', 'value_usd', 'delta_value_usd', 'action',
+])
+const DEFAULT_SORT = 'value_usd:desc'
+
+function normalizeSort(raw) {
+  if (typeof raw !== 'string') return DEFAULT_SORT
+  const [k, d] = raw.split(':')
+  if (!VALID_SORT_KEYS.has(k)) return DEFAULT_SORT
+  if (d !== 'asc' && d !== 'desc') return DEFAULT_SORT
+  return `${k}:${d}`
+}
+
 function parseHash() {
   const h = (typeof window !== 'undefined' && window.location.hash) || ''
   const params = new URLSearchParams(h.startsWith('#') ? h.slice(1) : h)
+  const filter = params.get('filter') ?? 'all'
   return {
-    cik:    params.get('cik')    ?? '',
-    filter: params.get('filter') ?? 'all',
-    sort:   params.get('sort')   ?? 'value_usd:desc',
-    q:      params.get('q')      ?? '',
+    cik:    params.get('cik') ?? '',
+    filter: VALID_FILTERS.has(filter) ? filter : 'all',
+    sort:   normalizeSort(params.get('sort')),
+    q:      params.get('q') ?? '',
+    a:      params.get('a') ?? '',
+    b:      params.get('b') ?? '',
   }
 }
 
 function writeHash(state) {
   const params = new URLSearchParams()
-  if (state.cik)                       params.set('cik', state.cik)
-  if (state.filter && state.filter !== 'all')        params.set('filter', state.filter)
-  if (state.sort   && state.sort   !== 'value_usd:desc') params.set('sort', state.sort)
-  if (state.q)                         params.set('q', state.q)
-  const next = '#' + params.toString()
-  if (window.location.hash !== next && (next !== '#' || window.location.hash !== '')) {
-    history.replaceState(null, '', next === '#' ? window.location.pathname + window.location.search : next)
+  if (state.cik) params.set('cik', state.cik)
+  // Filter/sort/query only apply to the filer view; strip them on overview /
+  // compare so we don't leak stale state across views.
+  if (state.cik && state.cik !== 'overview' && state.cik !== 'compare') {
+    if (state.filter && state.filter !== 'all') params.set('filter', state.filter)
+    if (state.sort   && state.sort   !== DEFAULT_SORT) params.set('sort', state.sort)
+    if (state.q) params.set('q', state.q)
+  }
+  if (state.cik === 'compare') {
+    if (state.a) params.set('a', state.a)
+    if (state.b) params.set('b', state.b)
+  }
+  const qs = params.toString()
+  const next = qs ? `#${qs}` : ''
+  const cur = window.location.hash
+  if (cur !== next) {
+    const url = next || (window.location.pathname + window.location.search)
+    history.replaceState(null, '', url)
   }
 }
 
@@ -72,12 +102,15 @@ export default function App() {
     setHashState((s) => ({ ...s, ...patch }))
   }, [])
 
-  // Drawer: close on Escape, lock body scroll while open, auto-close at md+.
+  // Drawer: close on Escape, lock body scroll while open, auto-close at md+,
+  // and move focus to the close button so keyboard users can dismiss it.
   useEffect(() => {
     if (!sidebarOpen) return
     const onKey = (e) => { if (e.key === 'Escape') setSidebarOpen(false) }
     document.body.style.overflow = 'hidden'
     document.addEventListener('keydown', onKey)
+    const focusBtn = document.querySelector('[data-drawer-close]')
+    focusBtn?.focus?.()
     return () => {
       document.body.style.overflow = ''
       document.removeEventListener('keydown', onKey)
@@ -99,26 +132,43 @@ export default function App() {
       })
       .then((data) => {
         setSummary(data)
-        setHashState((s) => {
-          if (s.cik || s.cik === 'overview') return s
-          // Default to overview when no hash is set.
-          return { ...s, cik: 'overview' }
-        })
+        // Default to overview when no cik is in the hash.
+        setHashState((s) => (s.cik ? s : { ...s, cik: 'overview' }))
       })
       .catch((e) => setSummaryError(e.message))
   }, [])
 
-  const view = hashState.cik === 'overview' || !hashState.cik ? 'overview' : 'filer'
+  const view = !hashState.cik || hashState.cik === 'overview' ? 'overview'
+    : hashState.cik === 'compare' ? 'compare'
+    : 'filer'
 
   const selected = useMemo(() => {
     if (!summary || view !== 'filer') return null
     return summary.filers.find((f) => f.cik === hashState.cik) ?? null
   }, [summary, hashState.cik, view])
 
-  // Fetch a filer JSON on demand (and cache).
+  // Document title reflects the current view so bookmarks of #cik=... save
+  // the filer's name rather than the generic portal title.
+  useEffect(() => {
+    let t = '13F Admin Portal'
+    if (view === 'overview') t = 'Overview · 13F Admin Portal'
+    else if (view === 'compare') t = 'Compare · 13F Admin Portal'
+    else if (selected) t = `${selected.name} · 13F Admin Portal`
+    document.title = t
+  }, [view, selected])
+
+  // Cache lookups via ref so fetchFiler stays referentially stable across
+  // cache writes (otherwise the prefetch effect re-runs N times as N
+  // filers load, walking the whole filer list each pass).
+  const filerCacheRef = useRef(filerCache)
+  useEffect(() => { filerCacheRef.current = filerCache }, [filerCache])
+  const inFlightRef = useRef(new Set())
+
   const fetchFiler = useCallback((filer) => {
     if (!filer || filer.error) return Promise.resolve(null)
-    if (filerCache[filer.cik]) return Promise.resolve(filerCache[filer.cik])
+    if (filerCacheRef.current[filer.cik]) return Promise.resolve(filerCacheRef.current[filer.cik])
+    if (inFlightRef.current.has(filer.cik)) return Promise.resolve(null)
+    inFlightRef.current.add(filer.cik)
     return fetch(`/${slug(filer.name)}.json`)
       .then((r) => {
         if (!r.ok) throw new Error(`${slug(filer.name)}.json: HTTP ${r.status}`)
@@ -128,26 +178,31 @@ export default function App() {
         setFilerCache((prev) => ({ ...prev, [filer.cik]: data }))
         return data
       })
-  }, [filerCache])
+      .finally(() => { inFlightRef.current.delete(filer.cik) })
+  }, [])
 
   // Single-filer view: load on selection.
-  useEffect(() => {
-    if (view !== 'filer' || !selected || selected.error) return
-    if (filerCache[selected.cik]) return
+  const loadSelectedFiler = useCallback(() => {
+    if (!selected || selected.error || filerCacheRef.current[selected.cik]) return
     setLoadingFiler(true)
     setFilerError(null)
     fetchFiler(selected)
       .catch((e) => setFilerError(e.message))
       .finally(() => setLoadingFiler(false))
-  }, [view, selected, filerCache, fetchFiler])
+  }, [selected, fetchFiler])
+  useEffect(() => {
+    if (view !== 'filer') return
+    loadSelectedFiler()
+  }, [view, loadSelectedFiler])
 
-  // Overview view: prefetch every (non-errored) filer JSON.
+  // Overview view: prefetch every (non-errored) filer JSON. fetchFiler is
+  // stable, so this only re-runs when the view or summary actually changes.
   useEffect(() => {
     if (view !== 'overview' || !summary) return
     summary.filers
-      .filter((f) => !f.error && !filerCache[f.cik])
-      .forEach((f) => { fetchFiler(f).catch(() => { /* per-filer load best-effort */ }) })
-  }, [view, summary, filerCache, fetchFiler])
+      .filter((f) => !f.error)
+      .forEach((f) => { fetchFiler(f).catch(() => { /* best-effort */ }) })
+  }, [view, summary, fetchFiler])
 
   const filerData = selected && filerCache[selected.cik]
   const overviewFilerData = useMemo(
@@ -156,11 +211,40 @@ export default function App() {
   )
 
   const handleSelect = (cik) => {
-    updateHash({ cik, filter: 'all', sort: 'value_usd:desc', q: '' })
     setSidebarOpen(false)
+    // No-op when clicking the already-selected filer so we don't wipe the
+    // user's filter/sort/query state.
+    if (cik === hashState.cik) return
+    updateHash({ cik, filter: 'all', sort: DEFAULT_SORT, q: '', a: '', b: '' })
   }
 
-  const [sortKey, sortDir] = (hashState.sort || 'value_usd:desc').split(':')
+  const handleSelectCompare = () => {
+    setSidebarOpen(false)
+    if (hashState.cik === 'compare') return
+    // Pre-select the first two non-errored filers as a friendly default.
+    const ok = (summary?.filers ?? []).filter((f) => !f.error)
+    updateHash({
+      cik: 'compare',
+      filter: 'all', sort: DEFAULT_SORT, q: '',
+      a: ok[0]?.cik ?? '',
+      b: ok[1]?.cik ?? '',
+    })
+  }
+  const setCompareA = (cik) => updateHash({ a: cik ?? '' })
+  const setCompareB = (cik) => updateHash({ b: cik ?? '' })
+
+  // Pre-load compare's selected filers when entering the view directly via
+  // a deep-link.
+  useEffect(() => {
+    if (view !== 'compare' || !summary) return
+    for (const cik of [hashState.a, hashState.b]) {
+      if (!cik) continue
+      const f = summary.filers.find((x) => x.cik === cik)
+      if (f) fetchFiler(f).catch(() => {})
+    }
+  }, [view, summary, hashState.a, hashState.b, fetchFiler])
+
+  const [sortKey, sortDir] = normalizeSort(hashState.sort).split(':')
   const handleTableState = useCallback(({ filter, sortKey, sortDir, query }) => {
     updateHash({ filter, sort: `${sortKey}:${sortDir}`, q: query })
   }, [updateHash])
@@ -196,9 +280,14 @@ export default function App() {
 
       <Sidebar
         filers={summary?.filers ?? []}
-        selectedCik={view === 'overview' ? '__overview__' : hashState.cik}
+        selectedCik={
+          view === 'overview' ? '__overview__'
+          : view === 'compare' ? '__compare__'
+          : hashState.cik
+        }
         onSelect={handleSelect}
         onSelectOverview={() => handleSelect('overview')}
+        onSelectCompare={handleSelectCompare}
         open={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
         theme={theme}
@@ -229,6 +318,18 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
           />
         )}
 
+        {!summaryError && view === 'compare' && summary && (
+          <Compare
+            summary={summary}
+            filerCache={filerCache}
+            fetchFiler={fetchFiler}
+            a={hashState.a}
+            b={hashState.b}
+            onChangeA={setCompareA}
+            onChangeB={setCompareB}
+          />
+        )}
+
         {!summaryError && view === 'filer' && !selected && summary && (
           <p className="text-slate-500 dark:text-slate-400">Investor not found. Pick one from the sidebar.</p>
         )}
@@ -240,8 +341,18 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
         {view === 'filer' && selected && !selected.error && (
           <>
             <Header filer={selected} generatedAt={summary?.generated_at} />
-            {loadingFiler && <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">Loading…</p>}
-            {filerError && <ErrorBox title="Could not load filer JSON" message={filerError} />}
+            {loadingFiler && <LoadingSkeleton />}
+            {filerError && (
+              <ErrorBox title="Could not load filer JSON" message={filerError}>
+                <button
+                  type="button"
+                  onClick={() => { setFilerError(null); loadSelectedFiler() }}
+                  className="mt-2 rounded border border-rose-300 bg-white px-2 py-1 text-xs font-medium text-rose-800 hover:bg-rose-100 dark:border-rose-800 dark:bg-rose-950/40 dark:text-rose-200 dark:hover:bg-rose-900/40"
+                >
+                  Retry
+                </button>
+              </ErrorBox>
+            )}
             {filerData && (
               <>
                 <div className="mt-5">
@@ -264,6 +375,7 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
                     sortDir={sortDir}
                     query={hashState.q}
                     onChange={handleTableState}
+                    csvBaseName={slug(selected.name)}
                   />
                 </div>
               </>
@@ -275,9 +387,18 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
   )
 }
 
+function edgarFilingUrl(cik, accession) {
+  if (!cik || !accession) return null
+  const cikNoPad = String(parseInt(cik, 10))
+  const accNoDash = accession.replace(/-/g, '')
+  return `https://www.sec.gov/Archives/edgar/data/${cikNoPad}/${accNoDash}/`
+}
+
 function Header({ filer, generatedAt }) {
   const latest = filer.latest_filing
   const prior = filer.prior_filing
+  const edgarUrl = edgarFilingUrl(filer.cik, latest?.accession)
+  const isFixture = latest?.accession === 'FIXTURE'
   return (
     <div>
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
@@ -293,7 +414,33 @@ function Header({ filer, generatedAt }) {
             {' '}·  comparing to <span className="font-medium text-slate-900 dark:text-slate-200">{prior.report_date}</span>
           </>
         )}
+        {edgarUrl && !isFixture && (
+          <>
+            {' '}·{' '}
+            <a
+              href={edgarUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-indigo-700 hover:underline dark:text-indigo-400"
+            >
+              View on EDGAR ↗
+            </a>
+          </>
+        )}
       </p>
+    </div>
+  )
+}
+
+function LoadingSkeleton() {
+  return (
+    <div className="mt-4 animate-pulse space-y-3" aria-label="Loading">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-5">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <div key={i} className="h-20 rounded-lg border border-slate-200 bg-slate-100 dark:border-slate-800 dark:bg-slate-800/50" />
+        ))}
+      </div>
+      <div className="h-64 rounded-lg border border-slate-200 bg-slate-100 dark:border-slate-800 dark:bg-slate-800/50" />
     </div>
   )
 }
