@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import {
   ACTION_STYLE,
   fmtCompactUSD,
@@ -36,12 +36,23 @@ const ACTION_FILTERS = [
   { id: 'hold', label: 'Hold',    match: (h) => h.action === 'hold' },
 ]
 
-export default function HoldingsTable({ holdings = [], exited = [] }) {
+export default function HoldingsTable({
+  holdings = [],
+  exited = [],
+  filter = 'all',
+  sortKey = 'value_usd',
+  sortDir = 'desc',
+  query = '',
+  onChange,
+}) {
   const all = useMemo(() => [...holdings, ...exited], [holdings, exited])
-  const [filter, setFilter] = useState('all')
-  const [sortKey, setSortKey] = useState('value_usd')
-  const [sortDir, setSortDir] = useState('desc')
-  const [query, setQuery] = useState('')
+
+  const onChangeRef = useRef(onChange)
+  useEffect(() => { onChangeRef.current = onChange }, [onChange])
+  const emit = (patch) => {
+    const next = { filter, sortKey, sortDir, query, ...patch }
+    onChangeRef.current?.(next)
+  }
 
   const filtered = useMemo(() => {
     const f = ACTION_FILTERS.find((x) => x.id === filter) ?? ACTION_FILTERS[0]
@@ -66,8 +77,8 @@ export default function HoldingsTable({ holdings = [], exited = [] }) {
   }, [all])
 
   function setSort(key) {
-    if (sortKey === key) setSortDir((d) => (d === 'asc' ? 'desc' : 'asc'))
-    else { setSortKey(key); setSortDir('desc') }
+    if (sortKey === key) emit({ sortDir: sortDir === 'asc' ? 'desc' : 'asc' })
+    else emit({ sortKey: key, sortDir: 'desc' })
   }
 
   return (
@@ -77,7 +88,8 @@ export default function HoldingsTable({ holdings = [], exited = [] }) {
           {ACTION_FILTERS.map((f) => (
             <button
               key={f.id}
-              onClick={() => setFilter(f.id)}
+              onClick={() => emit({ filter: f.id })}
+              aria-pressed={filter === f.id}
               className={
                 'rounded px-3 py-1.5 text-xs font-medium ring-1 ring-inset transition ' +
                 (filter === f.id
@@ -92,33 +104,47 @@ export default function HoldingsTable({ holdings = [], exited = [] }) {
         <div className="sm:ml-auto">
           <input
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => emit({ query: e.target.value })}
             placeholder="Filter issuer or CUSIP…"
+            aria-label="Filter holdings by issuer or CUSIP"
             className="w-full rounded border border-slate-300 bg-white px-2 py-1 text-sm text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500 sm:w-64"
           />
         </div>
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-slate-200 text-sm dark:divide-slate-800">
-          <thead className="bg-slate-50 dark:bg-slate-800/50">
+          <thead className="sticky top-0 bg-slate-50 backdrop-blur dark:bg-slate-800/80">
             <tr>
-              {COLUMNS.map((c) => (
-                <th
-                  key={c.key}
-                  scope="col"
-                  className={
-                    `px-3 py-2 font-semibold text-slate-700 select-none cursor-pointer dark:text-slate-300 ` +
-                    (c.align === 'right' ? 'text-right ' : 'text-left ') +
-                    (c.responsive ?? '')
-                  }
-                  onClick={() => setSort(c.key)}
-                >
-                  {c.label}
-                  {sortKey === c.key && (
-                    <span className="ml-1 text-slate-400 dark:text-slate-500">{sortDir === 'asc' ? '▲' : '▼'}</span>
-                  )}
-                </th>
-              ))}
+              {COLUMNS.map((c) => {
+                const isSorted = sortKey === c.key
+                const ariaSort = isSorted ? (sortDir === 'asc' ? 'ascending' : 'descending') : 'none'
+                return (
+                  <th
+                    key={c.key}
+                    scope="col"
+                    aria-sort={ariaSort}
+                    className={
+                      `font-semibold text-slate-700 dark:text-slate-300 ` +
+                      (c.responsive ?? '')
+                    }
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setSort(c.key)}
+                      className={
+                        `flex w-full items-center gap-1 px-3 py-2 select-none ` +
+                        `focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ` +
+                        (c.align === 'right' ? 'justify-end' : 'justify-start')
+                      }
+                    >
+                      <span>{c.label}</span>
+                      <span className={'text-slate-400 dark:text-slate-500 ' + (isSorted ? '' : 'invisible')}>
+                        {sortDir === 'asc' ? '▲' : '▼'}
+                      </span>
+                    </button>
+                  </th>
+                )
+              })}
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100 bg-white dark:divide-slate-800 dark:bg-slate-900">

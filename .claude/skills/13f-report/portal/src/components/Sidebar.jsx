@@ -5,6 +5,7 @@ export default function Sidebar({
   filers,
   selectedCik,
   onSelect,
+  onSelectOverview,
   open = false,
   onClose,
   theme,
@@ -23,7 +24,7 @@ export default function Sidebar({
     >
       <div className="flex items-start justify-between gap-2 border-b border-slate-200 px-4 py-5 dark:border-slate-800">
         <div>
-          <h1 className="text-lg font-semibold text-slate-900 dark:text-slate-100">13F Admin Portal</h1>
+          <p className="text-lg font-semibold text-slate-900 dark:text-slate-100">13F Admin Portal</p>
           <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
             Top US institutional investors — quarterly stock-on-hand vs. prior quarter
           </p>
@@ -48,6 +49,20 @@ export default function Sidebar({
         </div>
       </div>
       <nav className="py-2">
+        {onSelectOverview && (
+          <button
+            onClick={onSelectOverview}
+            className={
+              'block w-full text-left px-4 py-3 border-l-4 transition ' +
+              (selectedCik === '__overview__'
+                ? 'border-indigo-500 bg-indigo-50 dark:bg-indigo-950/40'
+                : 'border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/60')
+            }
+          >
+            <span className="text-sm font-medium text-slate-900 dark:text-slate-100">Overview</span>
+            <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">Aggregated across all filers</p>
+          </button>
+        )}
         {filers.length === 0 && (
           <p className="px-4 py-6 text-sm text-slate-500 dark:text-slate-400">
             No filer JSON found. Run the downloader (or smoke test) to populate{' '}

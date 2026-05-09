@@ -3,8 +3,8 @@
   "cik": "1364742",
   "latest_filing": {
     "form": "13F-HR",
-    "filing_date": "2026-05-02",
-    "report_date": "2026-05-02",
+    "filing_date": "2026-05-09",
+    "report_date": "2026-05-09",
     "accession": "FIXTURE",
     "primary_doc": "fixture.xml"
   },
@@ -16,6 +16,7 @@
     "primary_doc": "fixture.xml"
   },
   "holdings_count": 5,
+  "holdings_count_prior": 5,
   "total_value_usd": 142000000,
   "total_value_usd_prior": 253000000,
   "holdings": [

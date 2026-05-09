@@ -62,7 +62,12 @@ def http_get(url: str, retries: int = 4) -> bytes:
 
 
 def get_recent_13f(cik: str) -> list[dict]:
-    """Most recent 13F-HR (and amendments), newest report-date first."""
+    """Most recent 13F-HR filings, deduped by report_date, newest first.
+
+    A 13F-HR/A (amendment) shares its report_date with the original 13F-HR.
+    We keep the most-recently-filed entry per report_date so the diff
+    compares two distinct quarters, not an amendment vs. its own original.
+    """
     cik10 = str(int(cik)).zfill(10)
     body = http_get(f"{EDGAR_DATA}/submissions/CIK{cik10}.json")
     sub = json.loads(body)
@@ -78,7 +83,14 @@ def get_recent_13f(cik: str) -> list[dict]:
                 "primary_doc": recent["primaryDocument"][i],
             })
     out.sort(key=lambda r: (r["report_date"], r["filing_date"]), reverse=True)
-    return out
+    deduped: list[dict] = []
+    seen: set[str] = set()
+    for r in out:
+        if r["report_date"] in seen:
+            continue
+        seen.add(r["report_date"])
+        deduped.append(r)
+    return deduped
 
 
 def find_information_table(cik: str, accession: str) -> str:
@@ -216,14 +228,15 @@ def process_filer(name: str, cik: str, top_n: int) -> dict:
         "name": name,
         "cik": cik,
         "latest_filing": latest,
-        "holdings_count": len(latest_rows),
-        "total_value_usd": sum(r["value_usd"] for r in latest_rows),
+        "holdings_count": len(curr_agg),
+        "total_value_usd": sum(r["value_usd"] for r in curr_agg.values()),
     }
     if prior:
         prior_rows = parse_holdings(find_information_table(cik, prior["accession"]))
         prior_agg = aggregate(prior_rows)
         out["prior_filing"] = prior
-        out["total_value_usd_prior"] = sum(r["value_usd"] for r in prior_rows)
+        out["holdings_count_prior"] = len(prior_agg)
+        out["total_value_usd_prior"] = sum(r["value_usd"] for r in prior_agg.values())
     holdings, exited = build_holdings(curr_agg, prior_agg)
     buys, sells = top_buys_sells(holdings, exited, top_n)
     out["holdings"] = holdings
@@ -265,7 +278,9 @@ def smoke_test_offline(fixtures_dir: Path, out_dir: Path) -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
     curr_rows = parse_holdings((fixtures_dir / "current.xml").read_text())
     prev_rows = parse_holdings((fixtures_dir / "prior.xml").read_text())
-    holdings, exited = build_holdings(aggregate(curr_rows), aggregate(prev_rows))
+    curr_agg = aggregate(curr_rows)
+    prev_agg = aggregate(prev_rows)
+    holdings, exited = build_holdings(curr_agg, prev_agg)
     buys, sells = top_buys_sells(holdings, exited, top_n=25)
     today = date.today().isoformat()
 
@@ -284,9 +299,10 @@ def smoke_test_offline(fixtures_dir: Path, out_dir: Path) -> int:
             "prior_filing": {"form": "13F-HR", "filing_date": "PRIOR",
                              "report_date": "PRIOR", "accession": "FIXTURE-PRIOR",
                              "primary_doc": "fixture.xml"},
-            "holdings_count": len(curr_rows),
-            "total_value_usd": sum(r["value_usd"] for r in curr_rows),
-            "total_value_usd_prior": sum(r["value_usd"] for r in prev_rows),
+            "holdings_count": len(curr_agg),
+            "holdings_count_prior": len(prev_agg),
+            "total_value_usd": sum(r["value_usd"] for r in curr_agg.values()),
+            "total_value_usd_prior": sum(r["value_usd"] for r in prev_agg.values()),
             "holdings": holdings,
             "exited": exited,
             "top_buys": buys,
@@ -295,7 +311,7 @@ def smoke_test_offline(fixtures_dir: Path, out_dir: Path) -> int:
         (out_dir / f"{slug(name)}.json").write_text(json.dumps(payload, indent=2))
         summary["filers"].append({k: payload[k] for k in (
             "name", "cik", "latest_filing", "holdings_count",
-            "total_value_usd", "total_value_usd_prior")})
+            "holdings_count_prior", "total_value_usd", "total_value_usd_prior")})
     (out_dir / "summary.json").write_text(json.dumps(summary, indent=2))
     print(f"wrote {len(fake_filers)} filer JSONs + summary.json to {out_dir}", file=sys.stderr)
     return 0
