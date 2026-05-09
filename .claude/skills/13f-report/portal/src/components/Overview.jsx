@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { fmtCompactUSD, fmtSignedUSD, ACTION_STYLE } from '../format.js'
+import { fmtCompactUSD, fmtSignedUSD } from '../format.js'
 
 function aggregateMoves(filerData) {
   // Pull from each filer's full holdings + exited arrays so we don't miss
@@ -36,52 +36,7 @@ function aggregateMoves(filerData) {
   }))
 }
 
-function MoveRow({ row, kind }) {
-  const cls = ACTION_STYLE[kind === 'buy' ? 'add' : 'trim']
-  const sign = row.delta_value_usd > 0
-    ? 'text-emerald-700 dark:text-emerald-400'
-    : 'text-rose-700 dark:text-rose-400'
-  return (
-    <li className="flex items-center justify-between gap-3 py-2">
-      <div className="min-w-0 flex-1">
-        <div className="flex items-center gap-2">
-          <span className="truncate text-sm font-medium text-slate-900 dark:text-slate-100">
-            {row.issuer}
-          </span>
-          <span className={`inline-flex shrink-0 rounded px-1.5 py-0.5 text-[10px] font-medium ring-1 ring-inset ${cls}`}>
-            {row.filers.length} {row.filers.length === 1 ? 'filer' : 'filers'}
-          </span>
-        </div>
-        <p className="truncate text-[11px] text-slate-500 dark:text-slate-400">
-          {row.filers.join(' · ')}
-        </p>
-      </div>
-      <div className={`shrink-0 text-right tabular-nums text-sm font-medium ${sign}`}>
-        {fmtSignedUSD(row.delta_value_usd)}
-      </div>
-    </li>
-  )
-}
-
-function Panel({ title, rows, kind, emptyLabel }) {
-  return (
-    <div className="rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
-      <div className="flex items-baseline justify-between border-b border-slate-200 px-4 py-2.5 dark:border-slate-800">
-        <h2 className="text-sm font-semibold text-slate-900 dark:text-slate-100">{title}</h2>
-        <span className="text-xs text-slate-500 dark:text-slate-400">across all filers</span>
-      </div>
-      {rows.length === 0 ? (
-        <p className="px-4 py-6 text-center text-sm text-slate-500 dark:text-slate-400">{emptyLabel}</p>
-      ) : (
-        <ul className="divide-y divide-slate-100 px-4 dark:divide-slate-800">
-          {rows.map((r, i) => <MoveRow key={`${r.cusip}-${i}`} row={r} kind={kind} />)}
-        </ul>
-      )}
-    </div>
-  )
-}
-
-function ConsensusList({ title, rows, tone }) {
+function ConsensusList({ title, rows, tone, emptyLabel = 'No data yet.' }) {
   const ringClass = tone === 'emerald'
     ? 'ring-emerald-300 dark:ring-emerald-800'
     : tone === 'rose' ? 'ring-rose-300 dark:ring-rose-800'
@@ -92,11 +47,12 @@ function ConsensusList({ title, rows, tone }) {
     : 'text-slate-900 dark:text-slate-100'
   return (
     <div className={`rounded-lg border border-slate-200 bg-white shadow-sm ring-1 ring-inset ${ringClass} dark:border-slate-800 dark:bg-slate-900`}>
-      <div className="border-b border-slate-200 px-4 py-2 dark:border-slate-800">
+      <div className="flex items-baseline justify-between border-b border-slate-200 px-4 py-2 dark:border-slate-800">
         <h2 className="text-sm font-semibold text-slate-900 dark:text-slate-100">{title}</h2>
+        <span className="text-xs text-slate-500 dark:text-slate-400">across all filers</span>
       </div>
       {rows.length === 0 ? (
-        <p className="px-4 py-5 text-center text-sm text-slate-500 dark:text-slate-400">No data yet.</p>
+        <p className="px-4 py-5 text-center text-sm text-slate-500 dark:text-slate-400">{emptyLabel}</p>
       ) : (
         <ol className="divide-y divide-slate-100 px-4 dark:divide-slate-800">
           {rows.map((r, i) => (
@@ -185,8 +141,18 @@ export default function Overview({ summary, filerData, onSelect }) {
       </div>
 
       <div className="grid gap-3 md:grid-cols-2">
-        <ConsensusList title="Top consensus buys" rows={topBuys.slice(0, 3)} tone="emerald" />
-        <ConsensusList title="Top consensus sells" rows={topSells.slice(0, 3)} tone="rose" />
+        <ConsensusList
+          title="Top 10 consensus buys"
+          rows={topBuys}
+          tone="emerald"
+          emptyLabel={fullyLoaded ? 'No net buys reported.' : 'Loading…'}
+        />
+        <ConsensusList
+          title="Top 10 consensus sells"
+          rows={topSells}
+          tone="rose"
+          emptyLabel={fullyLoaded ? 'No net sells reported.' : 'Loading…'}
+        />
       </div>
 
       {!fullyLoaded && (
@@ -194,21 +160,6 @@ export default function Overview({ summary, filerData, onSelect }) {
           Loading filer data… {filerData.filter((d) => d.data).length}/{ok.length}
         </p>
       )}
-
-      <div className="grid gap-4 md:grid-cols-2">
-        <Panel
-          title="Top 10 net buys"
-          rows={topBuys}
-          kind="buy"
-          emptyLabel={fullyLoaded ? 'No net buys reported.' : 'Loading…'}
-        />
-        <Panel
-          title="Top 10 net sells"
-          rows={topSells}
-          kind="sell"
-          emptyLabel={fullyLoaded ? 'No net sells reported.' : 'Loading…'}
-        />
-      </div>
 
       <div>
         <h2 className="mb-2 text-sm font-semibold text-slate-900 dark:text-slate-100">Per-filer summary</h2>
