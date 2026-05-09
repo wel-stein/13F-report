@@ -1,8 +1,10 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import Sidebar from './components/Sidebar.jsx'
 import StatsCards from './components/StatsCards.jsx'
 import HoldingsTable from './components/HoldingsTable.jsx'
 import ThemeToggle from './components/ThemeToggle.jsx'
+import TopMoves from './components/TopMoves.jsx'
+import Overview from './components/Overview.jsx'
 
 function slug(name) {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '')
@@ -15,16 +17,40 @@ function readInitialTheme() {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 }
 
+function parseHash() {
+  const h = (typeof window !== 'undefined' && window.location.hash) || ''
+  const params = new URLSearchParams(h.startsWith('#') ? h.slice(1) : h)
+  return {
+    cik:    params.get('cik')    ?? '',
+    filter: params.get('filter') ?? 'all',
+    sort:   params.get('sort')   ?? 'value_usd:desc',
+    q:      params.get('q')      ?? '',
+  }
+}
+
+function writeHash(state) {
+  const params = new URLSearchParams()
+  if (state.cik)                       params.set('cik', state.cik)
+  if (state.filter && state.filter !== 'all')        params.set('filter', state.filter)
+  if (state.sort   && state.sort   !== 'value_usd:desc') params.set('sort', state.sort)
+  if (state.q)                         params.set('q', state.q)
+  const next = '#' + params.toString()
+  if (window.location.hash !== next && (next !== '#' || window.location.hash !== '')) {
+    history.replaceState(null, '', next === '#' ? window.location.pathname + window.location.search : next)
+  }
+}
+
 export default function App() {
   const [summary, setSummary] = useState(null)
   const [summaryError, setSummaryError] = useState(null)
-  const [selectedCik, setSelectedCik] = useState(null)
   const [filerCache, setFilerCache] = useState({})
   const [filerError, setFilerError] = useState(null)
   const [loadingFiler, setLoadingFiler] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [theme, setTheme] = useState(readInitialTheme)
+  const [hashState, setHashState] = useState(parseHash)
 
+  // Theme: persist + apply class on <html>.
   useEffect(() => {
     const root = document.documentElement
     if (theme === 'dark') root.classList.add('dark')
@@ -34,6 +60,37 @@ export default function App() {
 
   const toggleTheme = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))
 
+  // Hash <-> state sync.
+  useEffect(() => {
+    const onHash = () => setHashState(parseHash())
+    window.addEventListener('hashchange', onHash)
+    return () => window.removeEventListener('hashchange', onHash)
+  }, [])
+  useEffect(() => { writeHash(hashState) }, [hashState])
+
+  const updateHash = useCallback((patch) => {
+    setHashState((s) => ({ ...s, ...patch }))
+  }, [])
+
+  // Drawer: close on Escape, lock body scroll while open, auto-close at md+.
+  useEffect(() => {
+    if (!sidebarOpen) return
+    const onKey = (e) => { if (e.key === 'Escape') setSidebarOpen(false) }
+    document.body.style.overflow = 'hidden'
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = ''
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [sidebarOpen])
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)')
+    const onChange = (e) => { if (e.matches) setSidebarOpen(false) }
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
+  }, [])
+
+  // Load summary.json once.
   useEffect(() => {
     fetch('/summary.json')
       .then((r) => {
@@ -42,38 +99,71 @@ export default function App() {
       })
       .then((data) => {
         setSummary(data)
-        const first = data.filers?.find((f) => !f.error)
-        if (first) setSelectedCik(first.cik)
+        setHashState((s) => {
+          if (s.cik || s.cik === 'overview') return s
+          // Default to overview when no hash is set.
+          return { ...s, cik: 'overview' }
+        })
       })
       .catch((e) => setSummaryError(e.message))
   }, [])
 
-  const selected = useMemo(() => {
-    if (!summary || !selectedCik) return null
-    return summary.filers.find((f) => f.cik === selectedCik) ?? null
-  }, [summary, selectedCik])
+  const view = hashState.cik === 'overview' || !hashState.cik ? 'overview' : 'filer'
 
+  const selected = useMemo(() => {
+    if (!summary || view !== 'filer') return null
+    return summary.filers.find((f) => f.cik === hashState.cik) ?? null
+  }, [summary, hashState.cik, view])
+
+  // Fetch a filer JSON on demand (and cache).
+  const fetchFiler = useCallback((filer) => {
+    if (!filer || filer.error) return Promise.resolve(null)
+    if (filerCache[filer.cik]) return Promise.resolve(filerCache[filer.cik])
+    return fetch(`/${slug(filer.name)}.json`)
+      .then((r) => {
+        if (!r.ok) throw new Error(`${slug(filer.name)}.json: HTTP ${r.status}`)
+        return r.json()
+      })
+      .then((data) => {
+        setFilerCache((prev) => ({ ...prev, [filer.cik]: data }))
+        return data
+      })
+  }, [filerCache])
+
+  // Single-filer view: load on selection.
   useEffect(() => {
-    if (!selected || selected.error) return
+    if (view !== 'filer' || !selected || selected.error) return
     if (filerCache[selected.cik]) return
     setLoadingFiler(true)
     setFilerError(null)
-    fetch(`/${slug(selected.name)}.json`)
-      .then((r) => {
-        if (!r.ok) throw new Error(`${slug(selected.name)}.json: HTTP ${r.status}`)
-        return r.json()
-      })
-      .then((data) => setFilerCache((prev) => ({ ...prev, [selected.cik]: data })))
+    fetchFiler(selected)
       .catch((e) => setFilerError(e.message))
       .finally(() => setLoadingFiler(false))
-  }, [selected, filerCache])
+  }, [view, selected, filerCache, fetchFiler])
+
+  // Overview view: prefetch every (non-errored) filer JSON.
+  useEffect(() => {
+    if (view !== 'overview' || !summary) return
+    summary.filers
+      .filter((f) => !f.error && !filerCache[f.cik])
+      .forEach((f) => { fetchFiler(f).catch(() => { /* per-filer load best-effort */ }) })
+  }, [view, summary, filerCache, fetchFiler])
 
   const filerData = selected && filerCache[selected.cik]
+  const overviewFilerData = useMemo(
+    () => (summary?.filers ?? []).map((f) => ({ name: f.name, cik: f.cik, data: filerCache[f.cik] ?? null })),
+    [summary, filerCache],
+  )
 
   const handleSelect = (cik) => {
-    setSelectedCik(cik)
+    updateHash({ cik, filter: 'all', sort: 'value_usd:desc', q: '' })
     setSidebarOpen(false)
   }
+
+  const [sortKey, sortDir] = (hashState.sort || 'value_usd:desc').split(':')
+  const handleTableState = useCallback(({ filter, sortKey, sortDir, query }) => {
+    updateHash({ filter, sort: `${sortKey}:${sortDir}`, q: query })
+  }, [updateHash])
 
   return (
     <div className="flex min-h-screen flex-col text-slate-900 dark:text-slate-100 md:h-screen md:flex-row">
@@ -92,7 +182,7 @@ export default function App() {
             <line x1="4" y1="18" x2="20" y2="18" />
           </svg>
         </button>
-        <h1 className="text-base font-semibold text-slate-900 dark:text-slate-100">13F Admin Portal</h1>
+        <p className="text-base font-semibold text-slate-900 dark:text-slate-100">13F Admin Portal</p>
         <ThemeToggle theme={theme} onToggle={toggleTheme} className="ml-auto -mr-1" />
       </header>
 
@@ -106,8 +196,9 @@ export default function App() {
 
       <Sidebar
         filers={summary?.filers ?? []}
-        selectedCik={selectedCik}
+        selectedCik={view === 'overview' ? '__overview__' : hashState.cik}
         onSelect={handleSelect}
+        onSelectOverview={() => handleSelect('overview')}
         open={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
         theme={theme}
@@ -130,17 +221,25 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
           </ErrorBox>
         )}
 
-        {!summaryError && !selected && (
-          <p className="text-slate-500 dark:text-slate-400">Select an investor on the left.</p>
+        {!summaryError && view === 'overview' && summary && (
+          <Overview
+            summary={summary}
+            filerData={overviewFilerData}
+            onSelect={handleSelect}
+          />
+        )}
+
+        {!summaryError && view === 'filer' && !selected && summary && (
+          <p className="text-slate-500 dark:text-slate-400">Investor not found. Pick one from the sidebar.</p>
         )}
 
         {selected?.error && (
           <ErrorBox title={`${selected.name}: filing error`} message={selected.error} />
         )}
 
-        {selected && !selected.error && (
+        {view === 'filer' && selected && !selected.error && (
           <>
-            <Header filer={selected} generatedAt={summary.generated_at} />
+            <Header filer={selected} generatedAt={summary?.generated_at} />
             {loadingFiler && <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">Loading…</p>}
             {filerError && <ErrorBox title="Could not load filer JSON" message={filerError} />}
             {filerData && (
@@ -148,11 +247,24 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
                 <div className="mt-5">
                   <StatsCards filer={filerData} />
                 </div>
+                {((filerData.top_buys?.length ?? 0) > 0 || (filerData.top_sells?.length ?? 0) > 0) && (
+                  <div className="mt-6">
+                    <TopMoves buys={filerData.top_buys} sells={filerData.top_sells} limit={5} />
+                  </div>
+                )}
                 <div className="mt-6">
                   <h2 className="mb-2 text-base font-semibold text-slate-900 dark:text-slate-100">
                     Stock-on-hand vs. prior quarter
                   </h2>
-                  <HoldingsTable holdings={filerData.holdings} exited={filerData.exited} />
+                  <HoldingsTable
+                    holdings={filerData.holdings}
+                    exited={filerData.exited}
+                    filter={hashState.filter}
+                    sortKey={sortKey}
+                    sortDir={sortDir}
+                    query={hashState.q}
+                    onChange={handleTableState}
+                  />
                 </div>
               </>
             )}
@@ -170,7 +282,7 @@ function Header({ filer, generatedAt }) {
     <div>
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
         <h1 className="text-xl font-semibold text-slate-900 dark:text-slate-100 sm:text-2xl">{filer.name}</h1>
-        <p className="text-xs text-slate-500 dark:text-slate-400">CIK {filer.cik} · generated {generatedAt}</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400">CIK {filer.cik}{generatedAt ? ` · generated ${generatedAt}` : ''}</p>
       </div>
       <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
         Latest 13F-HR — report&nbsp;
