@@ -51,6 +51,11 @@ export default function Sidebar({
         </div>
       </div>
       <nav className="py-2">
+        {(onSelectOverview || onSelectCompare) && (
+          <p className="px-4 pb-1 pt-2 text-[11px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            Aggregate
+          </p>
+        )}
         {onSelectOverview && (
           <button
             onClick={onSelectOverview}
@@ -78,6 +83,14 @@ export default function Sidebar({
             <span className="text-sm font-medium text-slate-900 dark:text-slate-100">Compare filers</span>
             <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">Pick two filers to diff</p>
           </button>
+        )}
+        {(onSelectOverview || onSelectCompare) && filers.length > 0 && (
+          <>
+            <div className="my-2 border-t border-slate-200 dark:border-slate-800" aria-hidden="true" />
+            <p className="px-4 pb-1 pt-1 text-[11px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+              Filers
+            </p>
+          </>
         )}
         {filers.length === 0 && (
           <p className="px-4 py-6 text-sm text-slate-500 dark:text-slate-400">
