@@ -47,7 +47,7 @@ function parseHash() {
   }
 }
 
-function writeHash(state) {
+function writeHash(state, { push = false } = {}) {
   const params = new URLSearchParams()
   if (state.cik) params.set('cik', state.cik)
   // Filter/sort/query only apply to the filer view; strip them on overview /
@@ -66,7 +66,8 @@ function writeHash(state) {
   const cur = window.location.hash
   if (cur !== next) {
     const url = next || (window.location.pathname + window.location.search)
-    history.replaceState(null, '', url)
+    if (push) history.pushState(null, '', url)
+    else history.replaceState(null, '', url)
   }
 }
 
@@ -96,7 +97,20 @@ export default function App() {
     window.addEventListener('hashchange', onHash)
     return () => window.removeEventListener('hashchange', onHash)
   }, [])
-  useEffect(() => { writeHash(hashState) }, [hashState])
+  // Track previous cik so view changes (overview ↔ filer ↔ compare) push
+  // a history entry while incidental updates (filter, sort, query, a/b
+  // pickers) replace it.
+  const prevCikRef = useRef(hashState.cik)
+  useEffect(() => {
+    const prev = prevCikRef.current
+    const cur = hashState.cik
+    const cikChanged = prev !== cur
+    // Initial '' → 'overview' is a system-driven default-fill, not a user
+    // navigation, so don't push it onto history.
+    const isInitialDefault = prev === '' && cur === 'overview'
+    writeHash(hashState, { push: cikChanged && !isInitialDefault })
+    prevCikRef.current = cur
+  }, [hashState])
 
   const updateHash = useCallback((patch) => {
     setHashState((s) => ({ ...s, ...patch }))
@@ -375,7 +389,8 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
                     sortDir={sortDir}
                     query={hashState.q}
                     onChange={handleTableState}
-                    csvBaseName={slug(selected.name)}
+                    csvBaseName={[slug(selected.name), filerData.latest_filing?.report_date]
+                      .filter(Boolean).join('-')}
                   />
                 </div>
               </>
