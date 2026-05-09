@@ -2,16 +2,16 @@ import { fmtCompactUSD, fmtSignedUSD } from '../format.js'
 
 function Card({ label, value, sub, tone = 'slate' }) {
   const toneClass = {
-    slate:   'text-slate-900',
-    emerald: 'text-emerald-700',
-    rose:    'text-rose-700',
-    indigo:  'text-indigo-700',
+    slate:   'text-slate-900 dark:text-slate-100',
+    emerald: 'text-emerald-700 dark:text-emerald-400',
+    rose:    'text-rose-700 dark:text-rose-400',
+    indigo:  'text-indigo-700 dark:text-indigo-400',
   }[tone]
   return (
-    <div className="rounded-lg border border-slate-200 bg-white px-3 py-3 shadow-sm sm:px-4">
-      <p className="text-[10px] font-medium uppercase tracking-wide text-slate-500 sm:text-xs">{label}</p>
+    <div className="rounded-lg border border-slate-200 bg-white px-3 py-3 shadow-sm dark:border-slate-800 dark:bg-slate-900 sm:px-4">
+      <p className="text-[10px] font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400 sm:text-xs">{label}</p>
       <p className={`mt-1 break-words text-xl font-semibold sm:text-2xl ${toneClass}`}>{value}</p>
-      {sub && <p className="mt-0.5 break-words text-[11px] text-slate-500 sm:text-xs">{sub}</p>}
+      {sub && <p className="mt-0.5 break-words text-[11px] text-slate-500 dark:text-slate-400 sm:text-xs">{sub}</p>}
     </div>
   )
 }
