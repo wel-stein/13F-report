@@ -31,7 +31,7 @@ from datetime import date
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
-DEFAULT_UA = "13F-Report-Tool research@example.com"
+DEFAULT_UA = "Western welstein@gmail.com"
 EDGAR_DATA = "https://data.sec.gov"
 EDGAR_ARCHIVES = "https://www.sec.gov/Archives/edgar/data"
 NS_INFO = "{http://www.sec.gov/edgar/document/thirteenf/informationtable}"
