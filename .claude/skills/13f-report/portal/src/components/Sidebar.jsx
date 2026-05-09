@@ -37,6 +37,7 @@ export default function Sidebar({
             type="button"
             onClick={onClose}
             aria-label="Close menu"
+            data-drawer-close
             className="-mr-1 rounded p-1.5 text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 md:hidden"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"

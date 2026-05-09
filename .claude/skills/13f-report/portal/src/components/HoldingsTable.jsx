@@ -11,7 +11,8 @@ import {
 const COLUMNS = [
   { key: 'issuer',          label: 'Issuer',              align: 'left'  },
   { key: 'cusip',           label: 'CUSIP',               align: 'left',  className: 'font-mono text-xs',
-    responsive: 'hidden sm:table-cell' },
+    responsive: 'hidden sm:table-cell',
+    title: 'Committee on Uniform Securities Identification Procedures number' },
   { key: 'shares_prior',    label: 'Shares (prior)',      align: 'right', fmt: fmtShares,
     responsive: 'hidden md:table-cell' },
   { key: 'shares',          label: 'Shares (current)',    align: 'right', fmt: fmtShares },
@@ -42,6 +43,37 @@ const ACTION_FILTERS = [
   { id: 'hold', label: 'Hold',    match: (h) => h.action === 'hold' },
 ]
 
+const CSV_FIELDS = [
+  'issuer', 'cusip', 'class', 'put_call',
+  'shares_prior', 'shares', 'delta_shares',
+  'value_usd_prior', 'value_usd', 'delta_value_usd',
+  'action',
+]
+
+function csvEscape(v) {
+  if (v == null) return ''
+  const s = String(v)
+  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
+}
+
+function rowsToCsv(rows) {
+  const header = CSV_FIELDS.join(',')
+  const body = rows.map((r) => CSV_FIELDS.map((f) => csvEscape(r[f])).join(',')).join('\n')
+  return `${header}\n${body}\n`
+}
+
+function downloadCsv(rows, filename) {
+  const blob = new Blob([rowsToCsv(rows)], { type: 'text/csv;charset=utf-8' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = filename
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(a)
+  setTimeout(() => URL.revokeObjectURL(url), 1000)
+}
+
 export default function HoldingsTable({
   holdings = [],
   exited = [],
@@ -50,6 +82,7 @@ export default function HoldingsTable({
   sortDir = 'desc',
   query = '',
   onChange,
+  csvBaseName = 'holdings',
 }) {
   const all = useMemo(() => [...holdings, ...exited], [holdings, exited])
 
@@ -107,7 +140,7 @@ export default function HoldingsTable({
             </button>
           ))}
         </div>
-        <div className="sm:ml-auto">
+        <div className="flex items-center gap-2 sm:ml-auto">
           <input
             value={query}
             onChange={(e) => emit({ query: e.target.value })}
@@ -115,6 +148,15 @@ export default function HoldingsTable({
             aria-label="Filter holdings by issuer or CUSIP"
             className="w-full rounded border border-slate-300 bg-white px-2 py-1 text-sm text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500 sm:w-64"
           />
+          <button
+            type="button"
+            onClick={() => downloadCsv(filtered, `${csvBaseName}-${filter}.csv`)}
+            disabled={filtered.length === 0}
+            title="Export the currently filtered & sorted rows as CSV"
+            className="shrink-0 rounded border border-slate-300 bg-white px-2 py-1 text-xs font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+          >
+            CSV
+          </button>
         </div>
       </div>
       <div className="overflow-x-auto">
@@ -137,6 +179,7 @@ export default function HoldingsTable({
                     <button
                       type="button"
                       onClick={() => setSort(c.key)}
+                      title={c.title}
                       className={
                         `flex w-full items-center gap-1 px-3 py-2 select-none ` +
                         `focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ` +

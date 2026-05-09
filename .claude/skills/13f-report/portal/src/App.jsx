@@ -95,12 +95,15 @@ export default function App() {
     setHashState((s) => ({ ...s, ...patch }))
   }, [])
 
-  // Drawer: close on Escape, lock body scroll while open, auto-close at md+.
+  // Drawer: close on Escape, lock body scroll while open, auto-close at md+,
+  // and move focus to the close button so keyboard users can dismiss it.
   useEffect(() => {
     if (!sidebarOpen) return
     const onKey = (e) => { if (e.key === 'Escape') setSidebarOpen(false) }
     document.body.style.overflow = 'hidden'
     document.addEventListener('keydown', onKey)
+    const focusBtn = document.querySelector('[data-drawer-close]')
+    focusBtn?.focus?.()
     return () => {
       document.body.style.overflow = ''
       document.removeEventListener('keydown', onKey)
@@ -135,6 +138,15 @@ export default function App() {
     return summary.filers.find((f) => f.cik === hashState.cik) ?? null
   }, [summary, hashState.cik, view])
 
+  // Document title reflects the current view so bookmarks of #cik=... save
+  // the filer's name rather than the generic portal title.
+  useEffect(() => {
+    let t = '13F Admin Portal'
+    if (view === 'overview') t = 'Overview · 13F Admin Portal'
+    else if (selected) t = `${selected.name} · 13F Admin Portal`
+    document.title = t
+  }, [view, selected])
+
   // Cache lookups via ref so fetchFiler stays referentially stable across
   // cache writes (otherwise the prefetch effect re-runs N times as N
   // filers load, walking the whole filer list each pass).
@@ -160,15 +172,18 @@ export default function App() {
   }, [])
 
   // Single-filer view: load on selection.
-  useEffect(() => {
-    if (view !== 'filer' || !selected || selected.error) return
-    if (filerCache[selected.cik]) return
+  const loadSelectedFiler = useCallback(() => {
+    if (!selected || selected.error || filerCacheRef.current[selected.cik]) return
     setLoadingFiler(true)
     setFilerError(null)
     fetchFiler(selected)
       .catch((e) => setFilerError(e.message))
       .finally(() => setLoadingFiler(false))
-  }, [view, selected, filerCache, fetchFiler])
+  }, [selected, fetchFiler])
+  useEffect(() => {
+    if (view !== 'filer') return
+    loadSelectedFiler()
+  }, [view, loadSelectedFiler])
 
   // Overview view: prefetch every (non-errored) filer JSON. fetchFiler is
   // stable, so this only re-runs when the view or summary actually changes.
@@ -273,8 +288,18 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
         {view === 'filer' && selected && !selected.error && (
           <>
             <Header filer={selected} generatedAt={summary?.generated_at} />
-            {loadingFiler && <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">Loading…</p>}
-            {filerError && <ErrorBox title="Could not load filer JSON" message={filerError} />}
+            {loadingFiler && <LoadingSkeleton />}
+            {filerError && (
+              <ErrorBox title="Could not load filer JSON" message={filerError}>
+                <button
+                  type="button"
+                  onClick={() => { setFilerError(null); loadSelectedFiler() }}
+                  className="mt-2 rounded border border-rose-300 bg-white px-2 py-1 text-xs font-medium text-rose-800 hover:bg-rose-100 dark:border-rose-800 dark:bg-rose-950/40 dark:text-rose-200 dark:hover:bg-rose-900/40"
+                >
+                  Retry
+                </button>
+              </ErrorBox>
+            )}
             {filerData && (
               <>
                 <div className="mt-5">
@@ -297,6 +322,7 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
                     sortDir={sortDir}
                     query={hashState.q}
                     onChange={handleTableState}
+                    csvBaseName={slug(selected.name)}
                   />
                 </div>
               </>
@@ -308,9 +334,18 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
   )
 }
 
+function edgarFilingUrl(cik, accession) {
+  if (!cik || !accession) return null
+  const cikNoPad = String(parseInt(cik, 10))
+  const accNoDash = accession.replace(/-/g, '')
+  return `https://www.sec.gov/Archives/edgar/data/${cikNoPad}/${accNoDash}/`
+}
+
 function Header({ filer, generatedAt }) {
   const latest = filer.latest_filing
   const prior = filer.prior_filing
+  const edgarUrl = edgarFilingUrl(filer.cik, latest?.accession)
+  const isFixture = latest?.accession === 'FIXTURE'
   return (
     <div>
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
@@ -326,7 +361,33 @@ function Header({ filer, generatedAt }) {
             {' '}·  comparing to <span className="font-medium text-slate-900 dark:text-slate-200">{prior.report_date}</span>
           </>
         )}
+        {edgarUrl && !isFixture && (
+          <>
+            {' '}·{' '}
+            <a
+              href={edgarUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-indigo-700 hover:underline dark:text-indigo-400"
+            >
+              View on EDGAR ↗
+            </a>
+          </>
+        )}
       </p>
+    </div>
+  )
+}
+
+function LoadingSkeleton() {
+  return (
+    <div className="mt-4 animate-pulse space-y-3" aria-label="Loading">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-5">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <div key={i} className="h-20 rounded-lg border border-slate-200 bg-slate-100 dark:border-slate-800 dark:bg-slate-800/50" />
+        ))}
+      </div>
+      <div className="h-64 rounded-lg border border-slate-200 bg-slate-100 dark:border-slate-800 dark:bg-slate-800/50" />
     </div>
   )
 }
