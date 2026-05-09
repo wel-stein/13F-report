@@ -16,14 +16,14 @@ const COLUMNS = [
     responsive: 'hidden md:table-cell' },
   { key: 'shares',          label: 'Shares (current)',    align: 'right', fmt: fmtShares },
   { key: 'delta_shares',    label: 'Δ Shares',            align: 'right', fmt: fmtSignedShares,
-    cellTone: (r) => (r.delta_shares > 0 ? 'text-emerald-700' : r.delta_shares < 0 ? 'text-rose-700' : 'text-slate-500') },
+    cellTone: (r) => (r.delta_shares > 0 ? 'text-emerald-700 dark:text-emerald-400' : r.delta_shares < 0 ? 'text-rose-700 dark:text-rose-400' : 'text-slate-500 dark:text-slate-400') },
   { key: 'delta_pct',       label: 'Δ %',                 align: 'right',
     responsive: 'hidden sm:table-cell',
     accessor: (r) => (r.shares_prior ? (r.shares - r.shares_prior) / r.shares_prior : (r.shares ? Infinity : 0)),
     fmt: (_, r) => fmtPct(r.shares, r.shares_prior) },
   { key: 'value_usd',       label: 'Value (current)',     align: 'right', fmt: fmtCompactUSD },
   { key: 'delta_value_usd', label: 'Δ Value',             align: 'right', fmt: fmtSignedUSD,
-    cellTone: (r) => (r.delta_value_usd > 0 ? 'text-emerald-700' : r.delta_value_usd < 0 ? 'text-rose-700' : 'text-slate-500') },
+    cellTone: (r) => (r.delta_value_usd > 0 ? 'text-emerald-700 dark:text-emerald-400' : r.delta_value_usd < 0 ? 'text-rose-700 dark:text-rose-400' : 'text-slate-500 dark:text-slate-400') },
   { key: 'action',          label: 'Action',              align: 'left' },
 ]
 
@@ -71,8 +71,8 @@ export default function HoldingsTable({ holdings = [], exited = [] }) {
   }
 
   return (
-    <div className="rounded-lg border border-slate-200 bg-white shadow-sm">
-      <div className="flex flex-col gap-2 border-b border-slate-200 px-4 py-3 sm:flex-row sm:items-center">
+    <div className="rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
+      <div className="flex flex-col gap-2 border-b border-slate-200 px-4 py-3 dark:border-slate-800 sm:flex-row sm:items-center">
         <div className="flex flex-wrap gap-1">
           {ACTION_FILTERS.map((f) => (
             <button
@@ -82,7 +82,7 @@ export default function HoldingsTable({ holdings = [], exited = [] }) {
                 'rounded px-3 py-1.5 text-xs font-medium ring-1 ring-inset transition ' +
                 (filter === f.id
                   ? 'bg-indigo-600 text-white ring-indigo-600'
-                  : 'bg-white text-slate-700 ring-slate-300 hover:bg-slate-50')
+                  : 'bg-white text-slate-700 ring-slate-300 hover:bg-slate-50 dark:bg-slate-900 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-800')
               }
             >
               {f.label} <span className="opacity-70">({counts[f.id] ?? 0})</span>
@@ -94,20 +94,20 @@ export default function HoldingsTable({ holdings = [], exited = [] }) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Filter issuer or CUSIP…"
-            className="w-full rounded border border-slate-300 px-2 py-1 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:w-64"
+            className="w-full rounded border border-slate-300 bg-white px-2 py-1 text-sm text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500 sm:w-64"
           />
         </div>
       </div>
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-slate-200 text-sm">
-          <thead className="bg-slate-50">
+        <table className="min-w-full divide-y divide-slate-200 text-sm dark:divide-slate-800">
+          <thead className="bg-slate-50 dark:bg-slate-800/50">
             <tr>
               {COLUMNS.map((c) => (
                 <th
                   key={c.key}
                   scope="col"
                   className={
-                    `px-3 py-2 font-semibold text-slate-700 select-none cursor-pointer ` +
+                    `px-3 py-2 font-semibold text-slate-700 select-none cursor-pointer dark:text-slate-300 ` +
                     (c.align === 'right' ? 'text-right ' : 'text-left ') +
                     (c.responsive ?? '')
                   }
@@ -115,18 +115,18 @@ export default function HoldingsTable({ holdings = [], exited = [] }) {
                 >
                   {c.label}
                   {sortKey === c.key && (
-                    <span className="ml-1 text-slate-400">{sortDir === 'asc' ? '▲' : '▼'}</span>
+                    <span className="ml-1 text-slate-400 dark:text-slate-500">{sortDir === 'asc' ? '▲' : '▼'}</span>
                   )}
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-100 bg-white">
+          <tbody className="divide-y divide-slate-100 bg-white dark:divide-slate-800 dark:bg-slate-900">
             {filtered.length === 0 && (
-              <tr><td colSpan={COLUMNS.length} className="px-3 py-6 text-center text-slate-500">No rows.</td></tr>
+              <tr><td colSpan={COLUMNS.length} className="px-3 py-6 text-center text-slate-500 dark:text-slate-400">No rows.</td></tr>
             )}
             {filtered.map((row, i) => (
-              <tr key={`${row.cusip}-${row.action}-${i}`} className="hover:bg-slate-50">
+              <tr key={`${row.cusip}-${row.action}-${i}`} className="hover:bg-slate-50 dark:hover:bg-slate-800/50">
                 {COLUMNS.map((c) => {
                   if (c.key === 'action') {
                     const cls = ACTION_STYLE[row.action] ?? ACTION_STYLE.hold
