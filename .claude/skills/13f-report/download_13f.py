@@ -294,9 +294,21 @@ def smoke_test_offline(fixtures_dir: Path, out_dir: Path) -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
     curr_rows = parse_holdings((fixtures_dir / "current.xml").read_text())
     prev_rows = parse_holdings((fixtures_dir / "prior.xml").read_text())
+    # Sanity check: catch a regression where the parser silently returns 0
+    # rows (e.g. a future SEC schema namespace change).
+    if not curr_rows or not prev_rows:
+        print(
+            f"smoke-test: expected non-empty holdings (current={len(curr_rows)}, "
+            f"prior={len(prev_rows)}); fixtures or parser likely broken",
+            file=sys.stderr,
+        )
+        return 2
     curr_agg = aggregate(curr_rows)
     prev_agg = aggregate(prev_rows)
     holdings, exited = build_holdings(curr_agg, prev_agg)
+    if not holdings and not exited:
+        print("smoke-test: expected at least one diff row, got none", file=sys.stderr)
+        return 2
     buys, sells = top_buys_sells(holdings, exited, top_n=25)
     today = date.today().isoformat()
 

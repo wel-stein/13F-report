@@ -99,6 +99,16 @@ export default function HoldingsTable({
   // change so we don't land on a now-empty page.
   useEffect(() => { setPage(0) }, [holdings, exited, filter, sortKey, sortDir, query])
 
+  // Scroll the table back to its top edge on page change so users land at
+  // row 1 of the new page instead of staring at the (now-empty) footer.
+  const containerRef = useRef(null)
+  const goToPage = (next) => {
+    setPage(next)
+    requestAnimationFrame(() => {
+      containerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+  }
+
   const filtered = useMemo(() => {
     const f = ACTION_FILTERS.find((x) => x.id === filter) ?? ACTION_FILTERS[0]
     const q = query.trim().toLowerCase()
@@ -137,7 +147,7 @@ export default function HoldingsTable({
   const rangeEnd = Math.min(total, (safePage + 1) * pageSize)
 
   return (
-    <div className="rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
+    <div ref={containerRef} className="rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
       <div className="flex flex-col gap-2 border-b border-slate-200 px-4 py-3 dark:border-slate-800 sm:flex-row sm:items-center">
         <div className="flex flex-wrap gap-1">
           {ACTION_FILTERS.map((f) => (
@@ -177,7 +187,7 @@ export default function HoldingsTable({
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-slate-200 text-sm dark:divide-slate-800">
-          <thead className="sticky top-0 bg-slate-50 backdrop-blur dark:bg-slate-800/80">
+          <thead className="sticky top-0 bg-slate-50 dark:bg-slate-800">
             <tr>
               {COLUMNS.map((c) => {
                 const isSorted = sortKey === c.key
@@ -260,14 +270,14 @@ export default function HoldingsTable({
           <div className="flex items-center gap-1">
             <button
               type="button"
-              onClick={() => setPage(0)}
+              onClick={() => goToPage(0)}
               disabled={safePage === 0}
               className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
               aria-label="First page"
             >‹‹</button>
             <button
               type="button"
-              onClick={() => setPage((p) => Math.max(0, p - 1))}
+              onClick={() => goToPage(Math.max(0, safePage - 1))}
               disabled={safePage === 0}
               className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
               aria-label="Previous page"
@@ -277,14 +287,14 @@ export default function HoldingsTable({
             </span>
             <button
               type="button"
-              onClick={() => setPage((p) => Math.min(pageCount - 1, p + 1))}
+              onClick={() => goToPage(Math.min(pageCount - 1, safePage + 1))}
               disabled={safePage >= pageCount - 1}
               className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
               aria-label="Next page"
             >Next ›</button>
             <button
               type="button"
-              onClick={() => setPage(pageCount - 1)}
+              onClick={() => goToPage(pageCount - 1)}
               disabled={safePage >= pageCount - 1}
               className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
               aria-label="Last page"
