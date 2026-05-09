@@ -69,7 +69,7 @@ export default function HoldingsTable({ holdings = [], exited = [] }) {
 
   return (
     <div className="rounded-lg border border-slate-200 bg-white shadow-sm">
-      <div className="flex flex-wrap items-center gap-2 border-b border-slate-200 px-4 py-3">
+      <div className="flex flex-col gap-2 border-b border-slate-200 px-4 py-3 sm:flex-row sm:items-center">
         <div className="flex flex-wrap gap-1">
           {ACTION_FILTERS.map((f) => (
             <button
@@ -86,12 +86,12 @@ export default function HoldingsTable({ holdings = [], exited = [] }) {
             </button>
           ))}
         </div>
-        <div className="ml-auto">
+        <div className="sm:ml-auto">
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Filter issuer or CUSIP…"
-            className="w-64 rounded border border-slate-300 px-2 py-1 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+            className="w-full rounded border border-slate-300 px-2 py-1 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:w-64"
           />
         </div>
       </div>

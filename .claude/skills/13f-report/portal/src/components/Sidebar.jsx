@@ -1,13 +1,36 @@
 import { fmtCompactUSD } from '../format.js'
 
-export default function Sidebar({ filers, selectedCik, onSelect }) {
+export default function Sidebar({ filers, selectedCik, onSelect, open = false, onClose }) {
   return (
-    <aside className="w-72 shrink-0 border-r border-slate-200 bg-white overflow-y-auto">
-      <div className="px-4 py-5 border-b border-slate-200">
-        <h1 className="text-lg font-semibold text-slate-900">13F Admin Portal</h1>
-        <p className="mt-1 text-xs text-slate-500">
-          Top US institutional investors — quarterly stock-on-hand vs. prior quarter
-        </p>
+    <aside
+      className={
+        'fixed inset-y-0 left-0 z-40 w-72 max-w-[85vw] shrink-0 transform overflow-y-auto ' +
+        'border-r border-slate-200 bg-white transition-transform duration-200 ease-out ' +
+        (open ? 'translate-x-0' : '-translate-x-full') + ' ' +
+        'md:static md:z-auto md:max-w-none md:translate-x-0'
+      }
+      aria-label="Investor list"
+    >
+      <div className="flex items-start justify-between gap-2 border-b border-slate-200 px-4 py-5">
+        <div>
+          <h1 className="text-lg font-semibold text-slate-900">13F Admin Portal</h1>
+          <p className="mt-1 text-xs text-slate-500">
+            Top US institutional investors — quarterly stock-on-hand vs. prior quarter
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close menu"
+          className="-mr-1 rounded p-1.5 text-slate-500 hover:bg-slate-100 md:hidden"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+               className="h-5 w-5">
+            <line x1="6" y1="6" x2="18" y2="18" />
+            <line x1="18" y1="6" x2="6" y2="18" />
+          </svg>
+        </button>
       </div>
       <nav className="py-2">
         {filers.length === 0 && (
@@ -30,7 +53,7 @@ export default function Sidebar({ filers, selectedCik, onSelect }) {
                   : 'border-transparent hover:bg-slate-50')
               }
             >
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between gap-2">
                 <span className="text-sm font-medium text-slate-900">{f.name}</span>
                 {hasError && (
                   <span className="text-xs text-rose-600" title={f.error}>error</span>
