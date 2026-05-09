@@ -6,8 +6,8 @@ name: Refresh 13F data
 # is plenty to pick up newly-released filings without spamming SEC.
 #
 # Manual runs via the "Run workflow" button accept a custom User-Agent;
-# scheduled runs fall back to the SEC_UA repository variable, then to a
-# default constructed from the repo owner.
+# scheduled runs fall back to the SEC_UA repository variable, then to
+# the project owner's contact info.
 
 on:
   schedule:
@@ -46,7 +46,7 @@ jobs:
             ${{
               inputs.user_agent
               || vars.SEC_UA
-              || format('13F-Report-Tool {0}@users.noreply.github.com', github.repository_owner)
+              || 'Western welstein@gmail.com'
             }}
         run: |
           set -eo pipefail
