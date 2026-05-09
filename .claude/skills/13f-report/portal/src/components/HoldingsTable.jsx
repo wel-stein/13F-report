@@ -7,6 +7,7 @@ import {
   fmtSignedShares,
   fmtSignedUSD,
 } from '../format.js'
+import SharesSparkline from './SharesSparkline.jsx'
 
 const COLUMNS = [
   { key: 'issuer',          label: 'Issuer',              align: 'left'  },
@@ -28,6 +29,8 @@ const COLUMNS = [
         : d < 0 ? 'text-rose-700 dark:text-rose-400'
         : 'text-slate-500 dark:text-slate-400'
     } },
+  { key: 'trend',           label: 'Trend',               align: 'center',
+    responsive: 'hidden md:table-cell' },
   { key: 'value_usd',       label: 'Value (current)',     align: 'right', fmt: fmtCompactUSD },
   { key: 'delta_value_usd', label: 'Δ Value',             align: 'right', fmt: fmtSignedUSD,
     cellTone: (r) => (r.delta_value_usd > 0 ? 'text-emerald-700 dark:text-emerald-400' : r.delta_value_usd < 0 ? 'text-rose-700 dark:text-rose-400' : 'text-slate-500 dark:text-slate-400') },
@@ -226,11 +229,12 @@ export default function HoldingsTable({
               {COLUMNS.map((c) => {
                 const isSorted = sortKey === c.key
                 const ariaSort = isSorted ? (sortDir === 'asc' ? 'ascending' : 'descending') : 'none'
+                const sortable = c.key !== 'trend'
                 return (
                   <th
                     key={c.key}
                     scope="col"
-                    aria-sort={ariaSort}
+                    aria-sort={sortable ? ariaSort : undefined}
                     className={
                       `font-semibold text-slate-700 dark:text-slate-300 ` +
                       (c.responsive ?? '')
@@ -238,18 +242,21 @@ export default function HoldingsTable({
                   >
                     <button
                       type="button"
-                      onClick={() => setSort(c.key)}
+                      onClick={sortable ? () => setSort(c.key) : undefined}
+                      disabled={!sortable}
                       title={c.title}
                       className={
                         `flex w-full items-center gap-1 px-3 py-2 select-none ` +
                         `focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ` +
-                        (c.align === 'right' ? 'justify-end' : 'justify-start')
+                        (c.align === 'right' ? 'justify-end' : c.align === 'center' ? 'justify-center' : 'justify-start')
                       }
                     >
                       <span>{c.label}</span>
-                      <span className={'text-slate-400 dark:text-slate-500 ' + (isSorted ? '' : 'invisible')}>
-                        {sortDir === 'asc' ? '▲' : '▼'}
-                      </span>
+                      {sortable && (
+                        <span className={'text-slate-400 dark:text-slate-500 ' + (isSorted ? '' : 'invisible')}>
+                          {sortDir === 'asc' ? '▲' : '▼'}
+                        </span>
+                      )}
                     </button>
                   </th>
                 )
@@ -270,6 +277,13 @@ export default function HoldingsTable({
                         <span className={`inline-flex rounded px-2 py-0.5 text-xs font-medium ring-1 ring-inset ${cls}`}>
                           {row.action}
                         </span>
+                      </td>
+                    )
+                  }
+                  if (c.key === 'trend') {
+                    return (
+                      <td key={c.key} className={`px-3 py-2 text-center ${c.responsive ?? ''}`}>
+                        <SharesSparkline prior={row.shares_prior ?? 0} current={row.shares ?? 0} />
                       </td>
                     )
                   }

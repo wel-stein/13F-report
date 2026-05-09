@@ -7,6 +7,7 @@ import TopMoves from './components/TopMoves.jsx'
 import Overview from './components/Overview.jsx'
 import Compare from './components/Compare.jsx'
 import CopyLink from './components/CopyLink.jsx'
+import PortfolioBar from './components/PortfolioBar.jsx'
 
 function slug(name) {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '')
@@ -386,6 +387,15 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
                 {((filerData.top_buys?.length ?? 0) > 0 || (filerData.top_sells?.length ?? 0) > 0) && (
                   <div className="mt-6">
                     <TopMoves buys={filerData.top_buys} sells={filerData.top_sells} limit={5} />
+                  </div>
+                )}
+                {(filerData.holdings?.length ?? 0) > 0 && (filerData.total_value_usd ?? 0) > 0 && (
+                  <div className="mt-6">
+                    <PortfolioBar
+                      holdings={filerData.holdings}
+                      total={filerData.total_value_usd}
+                      top={10}
+                    />
                   </div>
                 )}
                 <div className="mt-6">
