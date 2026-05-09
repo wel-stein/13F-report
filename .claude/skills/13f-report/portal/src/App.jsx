@@ -6,6 +6,7 @@ import ThemeToggle from './components/ThemeToggle.jsx'
 import TopMoves from './components/TopMoves.jsx'
 import Overview from './components/Overview.jsx'
 import Compare from './components/Compare.jsx'
+import CopyLink from './components/CopyLink.jsx'
 
 function slug(name) {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '')
@@ -257,6 +258,7 @@ export default function App() {
   }
   const setCompareA = (cik) => updateHash({ a: cik ?? '' })
   const setCompareB = (cik) => updateHash({ b: cik ?? '' })
+  const swapCompare = () => updateHash({ a: hashState.b, b: hashState.a })
 
   // Pre-load compare's selected filers when entering the view directly via
   // a deep-link.
@@ -349,6 +351,7 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
             b={hashState.b}
             onChangeA={setCompareA}
             onChangeB={setCompareB}
+            onSwap={swapCompare}
           />
         )}
 
@@ -399,6 +402,7 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
                     onChange={handleTableState}
                     csvBaseName={[slug(selected.name), filerData.latest_filing?.report_date]
                       .filter(Boolean).join('-')}
+                    totalValue={filerData.total_value_usd}
                   />
                 </div>
               </>
@@ -426,7 +430,10 @@ function Header({ filer, generatedAt }) {
     <div>
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
         <h1 className="text-xl font-semibold text-slate-900 dark:text-slate-100 sm:text-2xl">{filer.name}</h1>
-        <p className="text-xs text-slate-500 dark:text-slate-400">CIK {filer.cik}{generatedAt ? ` · generated ${generatedAt}` : ''}</p>
+        <div className="flex items-center gap-2">
+          <CopyLink />
+          <p className="text-xs text-slate-500 dark:text-slate-400">CIK {filer.cik}{generatedAt ? ` · generated ${generatedAt}` : ''}</p>
+        </div>
       </div>
       <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
         Latest 13F-HR — report&nbsp;

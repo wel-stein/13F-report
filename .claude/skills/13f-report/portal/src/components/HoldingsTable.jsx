@@ -84,6 +84,7 @@ export default function HoldingsTable({
   onChange,
   csvBaseName = 'holdings',
   pageSize = 100,
+  totalValue = 0,
 }) {
   const all = useMemo(() => [...holdings, ...exited], [holdings, exited])
 
@@ -164,7 +165,7 @@ export default function HoldingsTable({
 
   return (
     <div className="rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
-      <div className="flex flex-col gap-2 border-b border-slate-200 px-4 py-3 dark:border-slate-800 sm:flex-row sm:items-center">
+      <div data-print="hide" className="flex flex-col gap-2 border-b border-slate-200 px-4 py-3 dark:border-slate-800 sm:flex-row sm:items-center">
         <div className="flex flex-wrap gap-1">
           {ACTION_FILTERS.map((f) => (
             <button
@@ -183,13 +184,30 @@ export default function HoldingsTable({
           ))}
         </div>
         <div className="flex items-center gap-2 sm:ml-auto">
-          <input
-            value={localQuery}
-            onChange={(e) => setLocalQuery(e.target.value)}
-            placeholder="Filter issuer or CUSIP…"
-            aria-label="Filter holdings by issuer or CUSIP"
-            className="w-full rounded border border-slate-300 bg-white px-2 py-1 text-sm text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500 sm:w-64"
-          />
+          <div className="relative w-full sm:w-64">
+            <input
+              value={localQuery}
+              onChange={(e) => setLocalQuery(e.target.value)}
+              placeholder="Filter issuer or CUSIP…"
+              aria-label="Filter holdings by issuer or CUSIP"
+              className="w-full rounded border border-slate-300 bg-white px-2 py-1 pr-7 text-sm text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500"
+            />
+            {localQuery && (
+              <button
+                type="button"
+                onClick={() => setLocalQuery('')}
+                aria-label="Clear search"
+                className="absolute inset-y-0 right-1 my-auto flex h-5 w-5 items-center justify-center rounded text-slate-400 hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-slate-800 dark:hover:text-slate-200"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                     className="h-3 w-3">
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                </svg>
+              </button>
+            )}
+          </div>
           <button
             type="button"
             onClick={() => downloadCsv(filtered, `${csvBaseName}-${filter}.csv`)}
@@ -259,6 +277,30 @@ export default function HoldingsTable({
                   const raw = get(row)
                   const display = c.fmt ? c.fmt(raw, row) : raw
                   const tone = c.cellTone ? c.cellTone(row) : ''
+                  // For the value column, render a thin position-size bar
+                  // underneath so users can eyeball concentration without
+                  // reading numbers.
+                  if (c.key === 'value_usd' && totalValue > 0) {
+                    const pct = Math.min(100, Math.max(0, ((row.value_usd ?? 0) / totalValue) * 100))
+                    return (
+                      <td
+                        key={c.key}
+                        className={
+                          `px-3 py-2 text-right tabular-nums ` +
+                          `${c.className ?? ''} ${tone} ${c.responsive ?? ''}`
+                        }
+                      >
+                        <div>{display}</div>
+                        <div className="mt-1 h-1 w-full overflow-hidden rounded bg-slate-100 dark:bg-slate-800">
+                          <div
+                            className="h-full bg-indigo-500/70 dark:bg-indigo-400/70"
+                            style={{ width: `${pct}%` }}
+                            aria-label={`${pct.toFixed(1)}% of portfolio`}
+                          />
+                        </div>
+                      </td>
+                    )
+                  }
                   return (
                     <td
                       key={c.key}
@@ -277,7 +319,7 @@ export default function HoldingsTable({
         </table>
       </div>
       {showPagination && (
-        <div className="flex flex-col items-center justify-between gap-2 border-t border-slate-200 px-4 py-2 text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400 sm:flex-row">
+        <div data-print="hide" className="flex flex-col items-center justify-between gap-2 border-t border-slate-200 px-4 py-2 text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400 sm:flex-row">
           <span>
             Showing <span className="font-medium text-slate-900 dark:text-slate-100">{rangeStart.toLocaleString()}</span>–
             <span className="font-medium text-slate-900 dark:text-slate-100">{rangeEnd.toLocaleString()}</span>

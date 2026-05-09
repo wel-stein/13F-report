@@ -1,3 +1,4 @@
+import { useMemo, useState } from 'react'
 import { fmtCompactUSD } from '../format.js'
 import ThemeToggle from './ThemeToggle.jsx'
 
@@ -13,6 +14,13 @@ export default function Sidebar({
   theme,
   onToggleTheme,
 }) {
+  const [filerQuery, setFilerQuery] = useState('')
+  const visibleFilers = useMemo(() => {
+    const q = filerQuery.trim().toLowerCase()
+    if (!q) return filers
+    return filers.filter((f) => f.name.toLowerCase().includes(q) || (f.cik || '').includes(q))
+  }, [filers, filerQuery])
+  const showFilerSearch = filers.length > 8
   return (
     <aside
       className={
@@ -93,13 +101,28 @@ export default function Sidebar({
             </p>
           </>
         )}
+        {showFilerSearch && (
+          <div className="px-4 pb-2 pt-1">
+            <input
+              type="search"
+              value={filerQuery}
+              onChange={(e) => setFilerQuery(e.target.value)}
+              placeholder="Search filers…"
+              aria-label="Search filers"
+              className="w-full rounded border border-slate-300 bg-white px-2 py-1 text-xs text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500"
+            />
+          </div>
+        )}
         {filers.length === 0 && (
           <p className="px-4 py-6 text-sm text-slate-500 dark:text-slate-400">
             No filer JSON found. Run the downloader (or smoke test) to populate{' '}
             <code className="rounded bg-slate-100 px-1 dark:bg-slate-800">data/</code>.
           </p>
         )}
-        {filers.map((f) => {
+        {showFilerSearch && visibleFilers.length === 0 && (
+          <p className="px-4 py-3 text-xs text-slate-500 dark:text-slate-400">No filers match “{filerQuery}”.</p>
+        )}
+        {visibleFilers.map((f) => {
           const active = selectedView === 'filer' && f.cik === selectedCik
           const hasError = !!f.error
           return (

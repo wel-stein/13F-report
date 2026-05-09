@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { fmtCompactUSD, fmtSignedUSD } from '../format.js'
+import CopyLink from './CopyLink.jsx'
 
 function key(h) {
   return `${h.cusip}|${h.class ?? ''}|${h.put_call ?? ''}`
@@ -116,6 +117,7 @@ export default function Compare({
   fetchFiler,
   a, b,
   onChangeA, onChangeB,
+  onSwap,
 }) {
   const filers = summary?.filers ?? []
   const filerA = useMemo(() => filers.find((f) => f.cik === a) ?? null, [filers, a])
@@ -206,17 +208,45 @@ export default function Compare({
 
   return (
     <div className="space-y-5">
-      <div>
-        <h1 className="text-xl font-semibold text-slate-900 dark:text-slate-100 sm:text-2xl">Compare filers</h1>
-        <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
-          Pick two filers to see overlap, divergent bets, and per-filer weights side by side.
-          Includes prior-quarter exits as a secondary badge.
-        </p>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h1 className="text-xl font-semibold text-slate-900 dark:text-slate-100 sm:text-2xl">Compare filers</h1>
+          <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
+            Pick two filers to see overlap, divergent bets, and per-filer weights side by side.
+            Includes prior-quarter exits as a secondary badge.
+          </p>
+        </div>
+        {(a || b) && <CopyLink />}
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div className="grid items-end gap-3 sm:grid-cols-[1fr_auto_1fr]">
         <Picker label="Filer A" value={a} onChange={onChangeA} filers={filers} exclude={b} allFilers={filers} />
+        <button
+          type="button"
+          onClick={onSwap}
+          disabled={!a && !b}
+          aria-label="Swap A and B"
+          title="Swap A and B"
+          className="hidden h-9 w-9 items-center justify-center self-end rounded border border-slate-300 bg-white text-slate-600 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 sm:flex"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+               className="h-4 w-4">
+            <path d="M7 4v16M3 8l4-4 4 4" />
+            <path d="M17 20V4M21 16l-4 4-4-4" />
+          </svg>
+        </button>
         <Picker label="Filer B" value={b} onChange={onChangeB} filers={filers} exclude={a} allFilers={filers} />
+        {(a || b) && (
+          <button
+            type="button"
+            onClick={onSwap}
+            disabled={!a && !b}
+            className="rounded border border-slate-300 bg-white px-2 py-1 text-xs font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 sm:hidden"
+          >
+            Swap A and B
+          </button>
+        )}
       </div>
 
       {sameFiler && (

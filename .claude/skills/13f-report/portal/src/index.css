@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media print {
+  /* Hide UI chrome that doesn't belong on a printed page. */
+  aside,
+  header[class*="md:hidden"],
+  [data-print="hide"] {
+    display: none !important;
+  }
+
+  main {
+    overflow: visible !important;
+    height: auto !important;
+    padding: 0 !important;
+  }
+
+  /* Don't break a row across pages. */
+  tr {
+    break-inside: avoid;
+  }
+
+  /* Solid backgrounds in case the user prints in color. */
+  body { background: white !important; color: black !important; }
+}

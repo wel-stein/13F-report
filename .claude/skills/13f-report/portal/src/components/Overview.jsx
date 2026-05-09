@@ -81,6 +81,47 @@ function Panel({ title, rows, kind, emptyLabel }) {
   )
 }
 
+function ConsensusList({ title, rows, tone }) {
+  const ringClass = tone === 'emerald'
+    ? 'ring-emerald-300 dark:ring-emerald-800'
+    : tone === 'rose' ? 'ring-rose-300 dark:ring-rose-800'
+    : 'ring-slate-300 dark:ring-slate-700'
+  const valueClass = tone === 'emerald'
+    ? 'text-emerald-700 dark:text-emerald-400'
+    : tone === 'rose' ? 'text-rose-700 dark:text-rose-400'
+    : 'text-slate-900 dark:text-slate-100'
+  return (
+    <div className={`rounded-lg border border-slate-200 bg-white shadow-sm ring-1 ring-inset ${ringClass} dark:border-slate-800 dark:bg-slate-900`}>
+      <div className="border-b border-slate-200 px-4 py-2 dark:border-slate-800">
+        <h2 className="text-sm font-semibold text-slate-900 dark:text-slate-100">{title}</h2>
+      </div>
+      {rows.length === 0 ? (
+        <p className="px-4 py-5 text-center text-sm text-slate-500 dark:text-slate-400">No data yet.</p>
+      ) : (
+        <ol className="divide-y divide-slate-100 px-4 dark:divide-slate-800">
+          {rows.map((r, i) => (
+            <li key={r.cusip ?? i} className="flex items-center justify-between gap-3 py-2">
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-sm font-medium text-slate-900 dark:text-slate-100">
+                  <span className="mr-1 text-slate-400 tabular-nums">{i + 1}.</span>
+                  {r.issuer}
+                </p>
+                <p className="truncate text-[11px] text-slate-500 dark:text-slate-400">
+                  {r.filers.length} {r.filers.length === 1 ? 'filer' : 'filers'} · {r.filers.slice(0, 3).join(' · ')}
+                  {r.filers.length > 3 ? ` +${r.filers.length - 3}` : ''}
+                </p>
+              </div>
+              <div className={`shrink-0 text-right tabular-nums text-sm font-medium ${valueClass}`}>
+                {fmtSignedUSD(r.delta_value_usd)}
+              </div>
+            </li>
+          ))}
+        </ol>
+      )}
+    </div>
+  )
+}
+
 function StatCard({ label, value, sub, tone = 'slate' }) {
   const toneClass = {
     slate: 'text-slate-900 dark:text-slate-100',
@@ -129,7 +170,7 @@ export default function Overview({ summary, filerData, onSelect }) {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         <StatCard
           label="Combined AUM"
           value={fmtCompactUSD(totalAum)}
@@ -141,18 +182,11 @@ export default function Overview({ summary, filerData, onSelect }) {
           value={`${ok.length}`}
           sub={errored.length > 0 ? `${errored.length} errored` : 'all loaded ok'}
         />
-        <StatCard
-          label="Top consensus buy"
-          value={topBuys[0]?.issuer ? topBuys[0].issuer : '—'}
-          sub={topBuys[0] ? `${topBuys[0].filers.length} filers · ${fmtSignedUSD(topBuys[0].delta_value_usd)}` : 'no data'}
-          tone="emerald"
-        />
-        <StatCard
-          label="Top consensus sell"
-          value={topSells[0]?.issuer ? topSells[0].issuer : '—'}
-          sub={topSells[0] ? `${topSells[0].filers.length} filers · ${fmtSignedUSD(topSells[0].delta_value_usd)}` : 'no data'}
-          tone="rose"
-        />
+      </div>
+
+      <div className="grid gap-3 md:grid-cols-2">
+        <ConsensusList title="Top consensus buys" rows={topBuys.slice(0, 3)} tone="emerald" />
+        <ConsensusList title="Top consensus sells" rows={topSells.slice(0, 3)} tone="rose" />
       </div>
 
       {!fullyLoaded && (
