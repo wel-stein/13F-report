@@ -220,6 +220,226 @@
       "holdings_count_prior": 5978,
       "total_value_usd": 237791015622,
       "total_value_usd_prior": 234292490467
+    },
+    {
+      "name": "Wellington Management",
+      "cik": "0000902219",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-09",
+        "report_date": "2026-05-09",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 852000000,
+      "total_value_usd_prior": 1518000000
+    },
+    {
+      "name": "T. Rowe Price Associates",
+      "cik": "0000080255",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-09",
+        "report_date": "2026-05-09",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 923000000,
+      "total_value_usd_prior": 1644500000
+    },
+    {
+      "name": "Norges Bank",
+      "cik": "0001167631",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-09",
+        "report_date": "2026-05-09",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 994000000,
+      "total_value_usd_prior": 1771000000
+    },
+    {
+      "name": "Geode Capital Management",
+      "cik": "0001364716",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-09",
+        "report_date": "2026-05-09",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 1065000000,
+      "total_value_usd_prior": 1897500000
+    },
+    {
+      "name": "Bank of New York Mellon",
+      "cik": "0001390777",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-09",
+        "report_date": "2026-05-09",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 1136000000,
+      "total_value_usd_prior": 2024000000
+    },
+    {
+      "name": "Goldman Sachs Group",
+      "cik": "0000886982",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-09",
+        "report_date": "2026-05-09",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 1207000000,
+      "total_value_usd_prior": 2150500000
+    },
+    {
+      "name": "Morgan Stanley",
+      "cik": "0000895421",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-09",
+        "report_date": "2026-05-09",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 1278000000,
+      "total_value_usd_prior": 2277000000
+    },
+    {
+      "name": "JPMorgan Chase",
+      "cik": "0000019617",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-09",
+        "report_date": "2026-05-09",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 1349000000,
+      "total_value_usd_prior": 2403500000
+    },
+    {
+      "name": "Northern Trust",
+      "cik": "0000073124",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-09",
+        "report_date": "2026-05-09",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 1420000000,
+      "total_value_usd_prior": 2530000000
+    },
+    {
+      "name": "UBS Group AG",
+      "cik": "0001114446",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-09",
+        "report_date": "2026-05-09",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 1491000000,
+      "total_value_usd_prior": 2656500000
     }
   ]
 }
