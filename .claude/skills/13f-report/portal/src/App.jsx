@@ -146,8 +146,19 @@ export default function App() {
       })
       .then((data) => {
         setSummary(data)
-        // Default to overview when no cik is in the hash.
-        setHashState((s) => (s.cik ? s : { ...s, cik: 'overview' }))
+        const knownCiks = new Set((data.filers ?? []).map((f) => f.cik))
+        // Default to overview, and clear stale a/b/cik values that don't
+        // correspond to any filer in the loaded summary.
+        setHashState((s) => {
+          const isViewSentinel = s.cik === 'overview' || s.cik === 'compare'
+          const cikValid = isViewSentinel || !s.cik || knownCiks.has(s.cik)
+          return {
+            ...s,
+            cik: cikValid ? (s.cik || 'overview') : 'overview',
+            a: s.a && knownCiks.has(s.a) ? s.a : '',
+            b: s.b && knownCiks.has(s.b) ? s.b : '',
+          }
+        })
       })
       .catch((e) => setSummaryError(e.message))
   }, [])
@@ -294,11 +305,8 @@ export default function App() {
 
       <Sidebar
         filers={summary?.filers ?? []}
-        selectedCik={
-          view === 'overview' ? '__overview__'
-          : view === 'compare' ? '__compare__'
-          : hashState.cik
-        }
+        selectedView={view}
+        selectedCik={hashState.cik}
         onSelect={handleSelect}
         onSelectOverview={() => handleSelect('overview')}
         onSelectCompare={handleSelectCompare}

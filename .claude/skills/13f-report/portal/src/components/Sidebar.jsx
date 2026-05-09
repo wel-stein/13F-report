@@ -3,6 +3,7 @@ import ThemeToggle from './ThemeToggle.jsx'
 
 export default function Sidebar({
   filers,
+  selectedView = 'overview',
   selectedCik,
   onSelect,
   onSelectOverview,
@@ -61,7 +62,7 @@ export default function Sidebar({
             onClick={onSelectOverview}
             className={
               'block w-full text-left px-4 py-3 border-l-4 transition ' +
-              (selectedCik === '__overview__'
+              (selectedView === 'overview'
                 ? 'border-indigo-500 bg-indigo-50 dark:bg-indigo-950/40'
                 : 'border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/60')
             }
@@ -75,7 +76,7 @@ export default function Sidebar({
             onClick={onSelectCompare}
             className={
               'block w-full text-left px-4 py-3 border-l-4 transition ' +
-              (selectedCik === '__compare__'
+              (selectedView === 'compare'
                 ? 'border-indigo-500 bg-indigo-50 dark:bg-indigo-950/40'
                 : 'border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/60')
             }
@@ -99,7 +100,7 @@ export default function Sidebar({
           </p>
         )}
         {filers.map((f) => {
-          const active = f.cik === selectedCik
+          const active = selectedView === 'filer' && f.cik === selectedCik
           const hasError = !!f.error
           return (
             <button

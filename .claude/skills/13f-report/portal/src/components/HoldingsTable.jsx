@@ -94,18 +94,34 @@ export default function HoldingsTable({
     onChangeRef.current?.(next)
   }
 
+  // Search input is uncontrolled-ish: keep a local snapshot for instant
+  // typing, debounce-propagate to the parent (which writes the URL hash)
+  // so we don't pump replaceState on every keystroke.
+  const [localQuery, setLocalQuery] = useState(query)
+  useEffect(() => { setLocalQuery(query) }, [query])
+  useEffect(() => {
+    if (localQuery === query) return
+    const t = setTimeout(() => emit({ query: localQuery }), 200)
+    return () => clearTimeout(t)
+    // emit captures filter/sort/query as closure; only the localQuery
+    // identity should drive the debounce timer.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [localQuery])
+
   const [page, setPage] = useState(0)
   // Reset to page 0 whenever the underlying data, filter, sort, or query
   // change so we don't land on a now-empty page.
   useEffect(() => { setPage(0) }, [holdings, exited, filter, sortKey, sortDir, query])
 
-  // Scroll the table back to its top edge on page change so users land at
-  // row 1 of the new page instead of staring at the (now-empty) footer.
-  const containerRef = useRef(null)
+  // Scroll the table's thead back to the top of the viewport on page change
+  // so users land at row 1 of the new page instead of staring at the
+  // (now-empty) footer. We target the thead rather than the whole card so
+  // we don't include the filter bar in what scrolls into view.
+  const theadRef = useRef(null)
   const goToPage = (next) => {
     setPage(next)
     requestAnimationFrame(() => {
-      containerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      theadRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     })
   }
 
@@ -147,7 +163,7 @@ export default function HoldingsTable({
   const rangeEnd = Math.min(total, (safePage + 1) * pageSize)
 
   return (
-    <div ref={containerRef} className="rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
+    <div className="rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
       <div className="flex flex-col gap-2 border-b border-slate-200 px-4 py-3 dark:border-slate-800 sm:flex-row sm:items-center">
         <div className="flex flex-wrap gap-1">
           {ACTION_FILTERS.map((f) => (
@@ -168,8 +184,8 @@ export default function HoldingsTable({
         </div>
         <div className="flex items-center gap-2 sm:ml-auto">
           <input
-            value={query}
-            onChange={(e) => emit({ query: e.target.value })}
+            value={localQuery}
+            onChange={(e) => setLocalQuery(e.target.value)}
             placeholder="Filter issuer or CUSIP…"
             aria-label="Filter holdings by issuer or CUSIP"
             className="w-full rounded border border-slate-300 bg-white px-2 py-1 text-sm text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500 sm:w-64"
@@ -187,7 +203,7 @@ export default function HoldingsTable({
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-slate-200 text-sm dark:divide-slate-800">
-          <thead className="sticky top-0 bg-slate-50 dark:bg-slate-800">
+          <thead ref={theadRef} className="sticky top-0 bg-slate-50 dark:bg-slate-800">
             <tr>
               {COLUMNS.map((c) => {
                 const isSorted = sortKey === c.key
