@@ -1,0 +1,66 @@
+name: Refresh 13F data
+
+# Pulls the latest 13F-HR filings for every entry in investors.json and
+# commits the refreshed JSON back to the default branch. SEC filings are
+# quarterly (deadline = 45 days after each quarter end), so a weekly run
+# is plenty to pick up newly-released filings without spamming SEC.
+#
+# Manual runs via the "Run workflow" button accept a custom User-Agent;
+# scheduled runs fall back to the SEC_UA repository variable, then to a
+# default constructed from the repo owner.
+
+on:
+  schedule:
+    # Mondays, 12:00 UTC.
+    - cron: '0 12 * * 1'
+  workflow_dispatch:
+    inputs:
+      user_agent:
+        description: 'SEC User-Agent (e.g. "Your Name your_email@example.com"). Falls back to vars.SEC_UA / a default if blank.'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-13f-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run downloader
+        env:
+          SEC_UA: >-
+            ${{
+              inputs.user_agent
+              || vars.SEC_UA
+              || format('13F-Report-Tool {0}@users.noreply.github.com', github.repository_owner)
+            }}
+        run: |
+          set -eo pipefail
+          python3 .claude/skills/13f-report/download_13f.py
+
+      - name: Commit refreshed data if changed
+        run: |
+          set -eo pipefail
+          if [[ -z "$(git status --porcelain .claude/skills/13f-report/data/)" ]]; then
+            echo "No data changes; nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .claude/skills/13f-report/data/
+          git commit -m "Refresh 13F data ($(date -u +%Y-%m-%d))"
+          git push
