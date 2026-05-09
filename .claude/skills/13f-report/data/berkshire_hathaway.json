@@ -16,7 +16,7 @@
     "primary_doc": "fixture.xml"
   },
   "holdings_count": 5,
-  "holdings_count_prior": 5,
+  "holdings_count_prior": 6,
   "total_value_usd": 142000000,
   "total_value_usd_prior": 253000000,
   "holdings": [

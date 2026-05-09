@@ -294,11 +294,13 @@ def run(investors_path: Path, out_dir: Path, top_n: int) -> int:
     return 1 if failures == len(investors) else 0
 
 
-def smoke_test_offline(fixtures_dir: Path, out_dir: Path) -> int:
+def smoke_test_offline(fixtures_dir: Path, out_dir: Path, investors_path: Path) -> int:
     """Generate sample per-filer + summary JSON from bundled XML fixtures.
 
     Writes the same shape as a live run so the portal can be exercised
-    without SEC network access.
+    without SEC network access. Each filer in investors.json gets its
+    own scaled copy of the fixture diff so the portal shows distinct
+    AUM / value / delta numbers per filer instead of identical rows.
     """
     out_dir.mkdir(parents=True, exist_ok=True)
     curr_rows = parse_holdings((fixtures_dir / "current.xml").read_text())
@@ -314,43 +316,59 @@ def smoke_test_offline(fixtures_dir: Path, out_dir: Path) -> int:
         return 2
     curr_agg = aggregate(curr_rows)
     prev_agg = aggregate(prev_rows)
-    holdings, exited = build_holdings(curr_agg, prev_agg)
-    if not holdings and not exited:
+    base_holdings, base_exited = build_holdings(curr_agg, prev_agg)
+    if not base_holdings and not base_exited:
         print("smoke-test: expected at least one diff row, got none", file=sys.stderr)
         return 2
-    buys, sells = top_buys_sells(holdings, exited, top_n=25)
-    today = date.today().isoformat()
 
-    fake_filers = [
-        ("Berkshire Hathaway", "1067983"),
-        ("BlackRock",          "1364742"),
-    ]
-    summary = {"generated_at": today, "filers": []}
-    for name, cik in fake_filers:
+    investors = json.loads(investors_path.read_text())
+    today = date.today().isoformat()
+    summary: dict = {"generated_at": today, "filers": []}
+
+    int_keys = ("shares", "shares_prior", "delta_shares",
+                "value_usd", "value_usd_prior", "delta_value_usd")
+
+    def scaled_row(row: dict, factor: float) -> dict:
+        out = dict(row)
+        for k in int_keys:
+            if k in out and out[k] is not None:
+                out[k] = int(out[k] * factor)
+        return out
+
+    for idx, inv in enumerate(investors):
+        # Spread per-filer factors across roughly 1x – 5.5x so AUM and
+        # values look distinct in the sidebar / overview.
+        factor = 1.0 + idx * 0.5
+        holdings = [scaled_row(r, factor) for r in base_holdings]
+        exited = [scaled_row(r, factor) for r in base_exited]
+        buys, sells = top_buys_sells(holdings, exited, top_n=25)
+        total_curr = sum(r["value_usd"] for r in holdings)
+        total_prior = (
+            sum(r["value_usd_prior"] for r in holdings)
+            + sum(r["value_usd_prior"] for r in exited)
+        )
         payload = {
-            "name": name,
-            "cik": cik,
+            "name": inv["name"],
+            "cik": inv["cik"],
             "latest_filing": {"form": "13F-HR", "filing_date": today,
                               "report_date": today, "accession": "FIXTURE",
                               "primary_doc": "fixture.xml"},
             "prior_filing": {"form": "13F-HR", "filing_date": "PRIOR",
                              "report_date": "PRIOR", "accession": "FIXTURE-PRIOR",
                              "primary_doc": "fixture.xml"},
-            "holdings_count": len(curr_agg),
-            "holdings_count_prior": len(prev_agg),
-            "total_value_usd": sum(r["value_usd"] for r in curr_agg.values()),
-            "total_value_usd_prior": sum(r["value_usd"] for r in prev_agg.values()),
+            "holdings_count": len(holdings),
+            "holdings_count_prior": len(holdings) + len(exited),
+            "total_value_usd": total_curr,
+            "total_value_usd_prior": total_prior,
             "holdings": holdings,
             "exited": exited,
             "top_buys": buys,
             "top_sells": sells,
         }
-        (out_dir / f"{slug(name)}.json").write_text(json.dumps(payload, indent=2))
-        summary["filers"].append({k: payload[k] for k in (
-            "name", "cik", "latest_filing", "holdings_count",
-            "holdings_count_prior", "total_value_usd", "total_value_usd_prior")})
+        (out_dir / f"{slug(inv['name'])}.json").write_text(json.dumps(payload, indent=2))
+        summary["filers"].append(_summary_entry(payload))
     (out_dir / "summary.json").write_text(json.dumps(summary, indent=2))
-    print(f"wrote {len(fake_filers)} filer JSONs + summary.json to {out_dir}", file=sys.stderr)
+    print(f"wrote {len(investors)} filer JSONs + summary.json to {out_dir}", file=sys.stderr)
     return 0
 
 
@@ -371,7 +389,7 @@ def main() -> int:
         _UA = args.user_agent
 
     if args.smoke_test:
-        return smoke_test_offline(here / "fixtures", Path(args.out_dir))
+        return smoke_test_offline(here / "fixtures", Path(args.out_dir), Path(args.investors))
     return run(Path(args.investors), Path(args.out_dir), args.top_n)
 
 
