@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "cd .claude/skills/13f-report/portal && npm install",
+  "installCommand": "cd .claude/skills/13f-report/portal && npm ci",
   "buildCommand": "cd .claude/skills/13f-report/portal && npm run build",
   "outputDirectory": ".claude/skills/13f-report/portal/dist"
 }

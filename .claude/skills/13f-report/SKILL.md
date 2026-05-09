@@ -61,6 +61,8 @@ Parses `fixtures/current.xml` and `fixtures/prior.xml`, runs the diff, and print
 
 ## Output schema
 
+Each per-filer file:
+
 ```json
 {
   "name": "Berkshire Hathaway",
@@ -68,6 +70,7 @@ Parses `fixtures/current.xml` and `fixtures/prior.xml`, runs the diff, and print
   "latest_filing": { "form": "13F-HR", "report_date": "2025-12-31", "filing_date": "2026-02-14", "accession": "...", "primary_doc": "..." },
   "prior_filing":  { "...": "..." },
   "holdings_count": 41,
+  "holdings_count_prior": 38,
   "total_value_usd": 299000000000,
   "total_value_usd_prior": 281000000000,
   "holdings": [
@@ -85,6 +88,14 @@ Parses `fixtures/current.xml` and `fixtures/prior.xml`, runs the diff, and print
 }
 ```
 
+`summary.json` carries only the lightweight per-filer fields (`name`, `cik`,
+`latest_filing`, `prior_filing`, `holdings_count(_prior)`,
+`total_value_usd(_prior)`, plus `error` when a filer fails) — the portal
+fetches the full per-filer file lazily when a row is selected. Filings are
+deduped by `report_date` so a 13F-HR/A amendment isn't compared against its
+own original. `holdings_count` reflects the aggregated security count
+(keyed by `cusip|class|put_call`), matching the table the portal renders.
+
 `action` values, per security (aggregated by CUSIP/class/put-call):
 
 - `new` — not in prior quarter
@@ -95,11 +106,35 @@ Parses `fixtures/current.xml` and `fixtures/prior.xml`, runs the diff, and print
 
 ## Admin portal (React + Tailwind)
 
-A single-page admin portal under `portal/` reads the JSON in `data/` and renders, per investor:
+A single-page admin portal under `portal/` reads the JSON in `data/`. The
+sidebar groups entries into **Aggregate** (Overview, Compare filers) and
+**Filers** (one entry per filer in `summary.json`).
 
-- A sidebar with all filers (counts and total portfolio value).
-- Stats cards: total portfolio value (with delta vs prior), holdings count, new+added count, trimmed+exited count.
-- A sortable, filterable holdings table — each row shows `shares_prior` → `shares`, `Δ shares`, `Δ %`, current value, `Δ value`, and an action badge (`new` / `add` / `hold` / `trim` / `exit`).
+Per-investor view renders:
+
+- Stats cards: total portfolio value (with delta vs prior), holdings count,
+  Top-10 concentration, new+added, trimmed+exited.
+- Top Buys / Top Sells panels (the top 5 by Δ value).
+- A sortable, filterable holdings table — each row shows
+  `shares_prior → shares`, `Δ shares`, `Δ %`, current value, `Δ value`, and
+  an action badge (`new` / `add` / `hold` / `trim` / `exit`).
+  Supports keyword search, CSV export of the filtered/sorted rows, and
+  pages at 100 rows per screen for large 13Fs.
+- A "View on EDGAR ↗" link to the filing index on sec.gov.
+
+The Overview view aggregates across every filer: combined AUM, top-10
+consensus buys / sells (joined on CUSIP), and a per-filer summary table
+with click-through.
+
+The Compare view diffs two filers side-by-side: overlap, only-A, only-B,
+overlap-weight stats, plus a sortable table joining the two filers'
+holdings (with a "X sold" badge when one side exited what the other still
+holds).
+
+State lives in the URL hash (`#cik=…&filter=…&sort=…&q=…` or `#cik=compare&a=…&b=…`)
+so refresh, back/forward, and shareable links all work. Light/dark theme
+toggle is in the mobile top-bar and the sidebar header on desktop;
+preference persists in `localStorage`.
 
 ### Run
 
@@ -111,15 +146,29 @@ npm run dev     # http://localhost:5173 — live, hot-reloading
 npm run build && npm run preview   # http://localhost:4173 — built bundle
 ```
 
-The portal reads `/summary.json` and per-filer JSON. Vite is configured (`vite.config.js`) with `publicDir` pointing at `../data`, so the same files written by `download_13f.py` are served as-is — no copy step. After re-running the downloader, refresh the page (dev) or rebuild (preview).
+The portal reads `/summary.json` and per-filer JSON. Vite is configured
+(`vite.config.js`) with `publicDir` pointing at `../data`, so the same
+files written by `download_13f.py` are served as-is — no copy step. After
+re-running the downloader, refresh the page (dev) or rebuild (preview).
+
+### Vercel
+
+Deployed via the repo-root `vercel.json`, which runs `npm ci` + `npm run build`
+inside the portal subfolder and serves `dist/`. Vite's `publicDir` copies
+the per-filer JSONs from `../data/` into the build output so they resolve
+at the site root.
 
 ### Expected page flow
 
-1. On load, fetches `/summary.json` and lists filers in the sidebar.
-2. Selecting a filer fetches `/<filer-slug>.json` and renders stats + the holdings table.
-3. The table supports sorting any column, filtering by action (`All / New / Added / Trimmed / Exited / Hold`), and free-text search on issuer/CUSIP.
+1. On load, fetches `/summary.json` and lands on the Overview view.
+2. Selecting a filer fetches `/<filer-slug>.json` and renders stats + the
+   holdings table; selecting "Compare filers" lazy-loads two filer JSONs.
+3. Each table supports sorting any column; the holdings table also
+   filters by action (`All / New / Added / Trimmed / Exited / Hold`) and
+   free-text searches issuer/CUSIP.
 
-If the portal renders an empty state, the data dir hasn't been populated — run the downloader (live or `--smoke-test`) first.
+If the portal renders an empty state, the data dir hasn't been populated —
+run the downloader (live or `--smoke-test`) first.
 
 ## Caveats
 
