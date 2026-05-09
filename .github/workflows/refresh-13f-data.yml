@@ -1,39 +1,51 @@
 name: Refresh 13F data
 
-# Pulls the latest 13F-HR filings for every entry in investors.json and
-# commits the refreshed JSON back to the default branch. SEC filings are
-# quarterly (deadline = 45 days after each quarter end), so a weekly run
-# is plenty to pick up newly-released filings without spamming SEC.
+# Pulls the latest 13F-HR filings for every entry in investors.json from
+# SEC EDGAR and commits the refreshed JSON to the default branch. Runs
+# weekly because 13F deadlines are quarterly (45 days after each quarter
+# end), so a daily cadence would just spam SEC for unchanged data.
 #
-# Manual runs via the "Run workflow" button accept a custom User-Agent;
-# scheduled runs fall back to the SEC_UA repository variable, then to
-# the project owner's contact info.
+# Triggers
+# - schedule: Mondays at 12:00 UTC
+# - workflow_dispatch: manual run via the Actions tab, with an optional
+#   override for the SEC User-Agent
+#
+# User-Agent precedence (SEC requires identifying contact info on every
+# request — anything else gets a 403):
+#   1. workflow_dispatch input
+#   2. vars.SEC_UA repository variable
+#   3. fallback "Western welstein@gmail.com"
 
 on:
   schedule:
-    # Mondays, 12:00 UTC.
     - cron: '0 12 * * 1'
   workflow_dispatch:
     inputs:
       user_agent:
-        description: 'SEC User-Agent (e.g. "Your Name your_email@example.com"). Falls back to vars.SEC_UA / a default if blank.'
+        description: 'SEC User-Agent (e.g. "Your Name your_email@example.com"). Optional; falls back to vars.SEC_UA / repo default.'
         required: false
         type: string
 
 permissions:
   contents: write
 
+# Don't let two refreshes race each other onto the same ref.
 concurrency:
   group: refresh-13f-data
   cancel-in-progress: false
 
 jobs:
   refresh:
+    name: refresh
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
-      - name: Checkout
+      - name: Checkout (full history)
         uses: actions/checkout@v4
+        with:
+          # Full history so the post-download rebase can resolve cleanly
+          # against any concurrent commits to the default branch.
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -50,37 +62,48 @@ jobs:
             }}
         run: |
           set -eo pipefail
+          echo "Using SEC_UA=$SEC_UA"
           python3 .claude/skills/13f-report/download_13f.py
 
-      - name: Commit refreshed data if changed
+      - name: Commit and push refreshed data
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
         run: |
           set -eo pipefail
-          if [[ -z "$(git status --porcelain .claude/skills/13f-report/data/)" ]]; then
+          DATA_DIR=".claude/skills/13f-report/data"
+          REF="${GITHUB_REF_NAME}"
+
+          if [[ -z "$(git status --porcelain "$DATA_DIR")" ]]; then
             echo "No data changes; nothing to commit."
             exit 0
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .claude/skills/13f-report/data/
+
+          git config user.name  "$GIT_AUTHOR_NAME"
+          git config user.email "$GIT_AUTHOR_EMAIL"
+          git add "$DATA_DIR"
           git commit -m "Refresh 13F data ($(date -u +%Y-%m-%d))"
-          # Push with rebase-retry so concurrent pushes (e.g. a PR merging
-          # while the downloader was running) don't fail the whole workflow.
-          # The "ours" strategy keeps the data/ files we just generated when
-          # rebasing onto a moved upstream — the downloader's output is the
-          # source of truth, and other paths come through unchanged.
-          ref="${GITHUB_REF_NAME}"
+
+          # Up to 3 attempts. Between attempts, fetch the latest origin/$REF
+          # and rebase our commit on top of it with --strategy-option=ours
+          # so the just-generated data files always win on conflict (the
+          # downloader is the source of truth for data/*.json; other paths
+          # we don't touch flow through the rebase unchanged).
           for attempt in 1 2 3; do
-            if git push origin "HEAD:${ref}"; then
-              echo "Push succeeded on attempt ${attempt}."
+            echo "Push attempt ${attempt}/3 to origin/${REF}..."
+            if git push origin "HEAD:${REF}"; then
+              echo "✅ Push succeeded on attempt ${attempt}."
               exit 0
             fi
-            echo "Push rejected on attempt ${attempt}; rebasing onto latest origin/${ref}."
-            git fetch origin "${ref}"
-            if ! git rebase --strategy-option=ours "origin/${ref}"; then
-              echo "Rebase failed on attempt ${attempt}; aborting." >&2
+            echo "⚠️  Push rejected on attempt ${attempt}; rebasing onto origin/${REF}..."
+            git fetch origin "${REF}"
+            if ! git rebase --strategy-option=ours "origin/${REF}"; then
+              echo "❌ Rebase failed on attempt ${attempt}; aborting." >&2
               git rebase --abort || true
               exit 1
             fi
           done
-          echo "Push still failing after 3 attempts." >&2
+          echo "❌ Push still failing after 3 attempts." >&2
           exit 1
