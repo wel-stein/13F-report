@@ -63,4 +63,24 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .claude/skills/13f-report/data/
           git commit -m "Refresh 13F data ($(date -u +%Y-%m-%d))"
-          git push
+          # Push with rebase-retry so concurrent pushes (e.g. a PR merging
+          # while the downloader was running) don't fail the whole workflow.
+          # The "ours" strategy keeps the data/ files we just generated when
+          # rebasing onto a moved upstream — the downloader's output is the
+          # source of truth, and other paths come through unchanged.
+          ref="${GITHUB_REF_NAME}"
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:${ref}"; then
+              echo "Push succeeded on attempt ${attempt}."
+              exit 0
+            fi
+            echo "Push rejected on attempt ${attempt}; rebasing onto latest origin/${ref}."
+            git fetch origin "${ref}"
+            if ! git rebase --strategy-option=ours "origin/${ref}"; then
+              echo "Rebase failed on attempt ${attempt}; aborting." >&2
+              git rebase --abort || true
+              exit 1
+            fi
+          done
+          echo "Push still failing after 3 attempts." >&2
+          exit 1
