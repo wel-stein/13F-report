@@ -11,8 +11,15 @@
         "accession": "FIXTURE",
         "primary_doc": "fixture.xml"
       },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
       "holdings_count": 5,
-      "holdings_count_prior": 5,
+      "holdings_count_prior": 6,
       "total_value_usd": 142000000,
       "total_value_usd_prior": 253000000
     },
@@ -26,10 +33,193 @@
         "accession": "FIXTURE",
         "primary_doc": "fixture.xml"
       },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
       "holdings_count": 5,
-      "holdings_count_prior": 5,
-      "total_value_usd": 142000000,
-      "total_value_usd_prior": 253000000
+      "holdings_count_prior": 6,
+      "total_value_usd": 213000000,
+      "total_value_usd_prior": 379500000
+    },
+    {
+      "name": "Vanguard Group",
+      "cik": "0000102909",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-09",
+        "report_date": "2026-05-09",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 284000000,
+      "total_value_usd_prior": 506000000
+    },
+    {
+      "name": "State Street",
+      "cik": "0000093751",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-09",
+        "report_date": "2026-05-09",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 355000000,
+      "total_value_usd_prior": 632500000
+    },
+    {
+      "name": "FMR (Fidelity)",
+      "cik": "0000315066",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-09",
+        "report_date": "2026-05-09",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 426000000,
+      "total_value_usd_prior": 759000000
+    },
+    {
+      "name": "Bridgewater Associates",
+      "cik": "1350694",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-09",
+        "report_date": "2026-05-09",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 497000000,
+      "total_value_usd_prior": 885500000
+    },
+    {
+      "name": "Renaissance Technologies",
+      "cik": "1037389",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-09",
+        "report_date": "2026-05-09",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 568000000,
+      "total_value_usd_prior": 1012000000
+    },
+    {
+      "name": "Citadel Advisors",
+      "cik": "1423053",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-09",
+        "report_date": "2026-05-09",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 639000000,
+      "total_value_usd_prior": 1138500000
+    },
+    {
+      "name": "Two Sigma Investments",
+      "cik": "1179392",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-09",
+        "report_date": "2026-05-09",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 710000000,
+      "total_value_usd_prior": 1265000000
+    },
+    {
+      "name": "Millennium Management",
+      "cik": "1273087",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-09",
+        "report_date": "2026-05-09",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 781000000,
+      "total_value_usd_prior": 1391500000
     }
   ]
 }
