@@ -10,7 +10,11 @@ import CopyLink from './components/CopyLink.jsx'
 import PortfolioBar from './components/PortfolioBar.jsx'
 
 function slug(name) {
-  return name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '')
+  // Mirror download_13f.py's slug() exactly: each non-alphanumeric char
+  // becomes a single '_' (no collapsing runs), then strip leading/trailing
+  // underscores. "FMR (Fidelity)" → "fmr__fidelity" (two underscores from
+  // space + open-paren), matching the filename the downloader writes.
+  return name.toLowerCase().replace(/[^a-z0-9]/g, '_').replace(/^_+|_+$/g, '')
 }
 
 function readInitialTheme() {

@@ -1,0 +1,184 @@
+{
+  "name": "T. Rowe Price Associates",
+  "cik": "0000080255",
+  "latest_filing": {
+    "form": "13F-HR",
+    "filing_date": "2026-05-09",
+    "report_date": "2026-05-09",
+    "accession": "FIXTURE",
+    "primary_doc": "fixture.xml"
+  },
+  "prior_filing": {
+    "form": "13F-HR",
+    "filing_date": "PRIOR",
+    "report_date": "PRIOR",
+    "accession": "FIXTURE-PRIOR",
+    "primary_doc": "fixture.xml"
+  },
+  "holdings_count": 5,
+  "holdings_count_prior": 6,
+  "total_value_usd": 923000000,
+  "total_value_usd_prior": 1644500000,
+  "holdings": [
+    {
+      "issuer": "APPLE INC",
+      "class": "COM",
+      "cusip": "037833100",
+      "put_call": "",
+      "share_type": "SH",
+      "shares": 1950000000,
+      "value_usd": 454350000,
+      "shares_prior": 5886140000,
+      "value_usd_prior": 1144000000,
+      "delta_shares": -3936140000,
+      "delta_value_usd": -689650000,
+      "action": "trim"
+    },
+    {
+      "issuer": "BANK OF AMERICA CORP",
+      "class": "COM",
+      "cusip": "060505104",
+      "put_call": "",
+      "share_type": "SH",
+      "shares": 5200000000,
+      "value_usd": 170300000,
+      "shares_prior": 6713538039,
+      "value_usd_prior": 226200000,
+      "delta_shares": -1513538039,
+      "delta_value_usd": -55900000,
+      "action": "trim"
+    },
+    {
+      "issuer": "COCA COLA CO",
+      "class": "COM",
+      "cusip": "191216100",
+      "put_call": "",
+      "share_type": "SH",
+      "shares": 2600000000,
+      "value_usd": 165100000,
+      "shares_prior": 2600000000,
+      "value_usd_prior": 165100000,
+      "delta_shares": 0,
+      "delta_value_usd": 0,
+      "action": "hold"
+    },
+    {
+      "issuer": "OCCIDENTAL PETROLEUM CORP",
+      "class": "COM",
+      "cusip": "674599105",
+      "put_call": "",
+      "share_type": "SH",
+      "shares": 1717300000,
+      "value_usd": 115700000,
+      "shares_prior": 1612000000,
+      "value_usd_prior": 94250000,
+      "delta_shares": 105300000,
+      "delta_value_usd": 21450000,
+      "action": "add"
+    },
+    {
+      "issuer": "SIRIUS XM HOLDINGS INC",
+      "class": "COM",
+      "cusip": "82968B103",
+      "put_call": "",
+      "share_type": "SH",
+      "shares": 780000000,
+      "value_usd": 17550000,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 780000000,
+      "delta_value_usd": 17550000,
+      "action": "new"
+    }
+  ],
+  "exited": [
+    {
+      "issuer": "HP INC",
+      "class": "COM",
+      "cusip": "40434L105",
+      "put_call": "",
+      "share_type": "SH",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 679250000,
+      "value_usd_prior": 14950000,
+      "delta_shares": -679250000,
+      "delta_value_usd": -14950000,
+      "action": "exit"
+    }
+  ],
+  "top_buys": [
+    {
+      "issuer": "OCCIDENTAL PETROLEUM CORP",
+      "class": "COM",
+      "cusip": "674599105",
+      "put_call": "",
+      "share_type": "SH",
+      "shares": 1717300000,
+      "value_usd": 115700000,
+      "shares_prior": 1612000000,
+      "value_usd_prior": 94250000,
+      "delta_shares": 105300000,
+      "delta_value_usd": 21450000,
+      "action": "add"
+    },
+    {
+      "issuer": "SIRIUS XM HOLDINGS INC",
+      "class": "COM",
+      "cusip": "82968B103",
+      "put_call": "",
+      "share_type": "SH",
+      "shares": 780000000,
+      "value_usd": 17550000,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 780000000,
+      "delta_value_usd": 17550000,
+      "action": "new"
+    }
+  ],
+  "top_sells": [
+    {
+      "issuer": "APPLE INC",
+      "class": "COM",
+      "cusip": "037833100",
+      "put_call": "",
+      "share_type": "SH",
+      "shares": 1950000000,
+      "value_usd": 454350000,
+      "shares_prior": 5886140000,
+      "value_usd_prior": 1144000000,
+      "delta_shares": -3936140000,
+      "delta_value_usd": -689650000,
+      "action": "trim"
+    },
+    {
+      "issuer": "BANK OF AMERICA CORP",
+      "class": "COM",
+      "cusip": "060505104",
+      "put_call": "",
+      "share_type": "SH",
+      "shares": 5200000000,
+      "value_usd": 170300000,
+      "shares_prior": 6713538039,
+      "value_usd_prior": 226200000,
+      "delta_shares": -1513538039,
+      "delta_value_usd": -55900000,
+      "action": "trim"
+    },
+    {
+      "issuer": "HP INC",
+      "class": "COM",
+      "cusip": "40434L105",
+      "put_call": "",
+      "share_type": "SH",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 679250000,
+      "value_usd_prior": 14950000,
+      "delta_shares": -679250000,
+      "delta_value_usd": -14950000,
+      "action": "exit"
+    }
+  ]
+}

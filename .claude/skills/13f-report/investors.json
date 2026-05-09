@@ -8,5 +8,15 @@
   { "name": "Renaissance Technologies",    "cik": "1037389"  },
   { "name": "Citadel Advisors",            "cik": "1423053"  },
   { "name": "Two Sigma Investments",       "cik": "1179392"  },
-  { "name": "Millennium Management",       "cik": "1273087"  }
+  { "name": "Millennium Management",       "cik": "1273087"  },
+  { "name": "Wellington Management",       "cik": "0000902219" },
+  { "name": "T. Rowe Price Associates",    "cik": "0000080255" },
+  { "name": "Norges Bank",                 "cik": "0001167631" },
+  { "name": "Geode Capital Management",    "cik": "0001364716" },
+  { "name": "Bank of New York Mellon",     "cik": "0001390777" },
+  { "name": "Goldman Sachs Group",         "cik": "0000886982" },
+  { "name": "Morgan Stanley",              "cik": "0000895421" },
+  { "name": "JPMorgan Chase",              "cik": "0000019617" },
+  { "name": "Northern Trust",              "cik": "0000073124" },
+  { "name": "UBS Group AG",                "cik": "0001114446" }
 ]
