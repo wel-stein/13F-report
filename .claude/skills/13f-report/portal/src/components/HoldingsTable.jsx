@@ -11,6 +11,8 @@ import SharesSparkline from './SharesSparkline.jsx'
 
 const COLUMNS = [
   { key: 'issuer',          label: 'Issuer',              align: 'left'  },
+  { key: 'sector',          label: 'Sector',              align: 'left',
+    responsive: 'hidden lg:table-cell' },
   { key: 'cusip',           label: 'CUSIP',               align: 'left',  className: 'font-mono text-xs',
     responsive: 'hidden sm:table-cell',
     title: 'Committee on Uniform Securities Identification Procedures number' },
@@ -47,7 +49,7 @@ const ACTION_FILTERS = [
 ]
 
 const CSV_FIELDS = [
-  'issuer', 'cusip', 'class', 'put_call',
+  'issuer', 'sector', 'cusip', 'class', 'put_call',
   'shares_prior', 'shares', 'delta_shares',
   'value_usd_prior', 'value_usd', 'delta_value_usd',
   'action',

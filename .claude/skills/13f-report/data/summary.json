@@ -1,394 +1,6073 @@
 {
-  "generated_at": "2026-05-11",
+  "generated_at": "2026-05-12",
   "filers": [
     {
       "name": "Berkshire Hathaway",
       "cik": "1067983",
       "latest_filing": {
         "form": "13F-HR",
-        "filing_date": "2026-02-17",
-        "report_date": "2025-12-31",
-        "accession": "0001193125-26-054580",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
       },
       "prior_filing": {
         "form": "13F-HR",
-        "filing_date": "2025-11-14",
-        "report_date": "2025-09-30",
-        "accession": "0001193125-25-282901",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
       },
-      "holdings_count": 42,
-      "holdings_count_prior": 41,
-      "total_value_usd": 274160086701,
-      "total_value_usd_prior": 267334501955
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 142000000,
+      "total_value_usd_prior": 253000000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 142000000,
+        "aum_usd_prior": 253000000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 69900000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 26200000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 25400000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 17800000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 2700000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 120000000,
+            "shares_prior": 0,
+            "delta_shares": 120000000,
+            "value_usd": 2700000,
+            "delta_value_usd": 2700000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 104500000,
+            "delta_shares": -104500000,
+            "value_usd": 0,
+            "delta_value_usd": -2300000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 264200000,
+            "shares_prior": 248000000,
+            "delta_shares": 16200000,
+            "value_usd": 17800000,
+            "delta_value_usd": 3300000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 120000000,
+            "shares_prior": 0,
+            "delta_shares": 120000000,
+            "value_usd": 2700000,
+            "delta_value_usd": 2700000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 300000000,
+            "shares_prior": 905560000,
+            "delta_shares": -605560000,
+            "value_usd": 69900000,
+            "delta_value_usd": -106100000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 800000000,
+            "shares_prior": 1032852006,
+            "delta_shares": -232852006,
+            "value_usd": 26200000,
+            "delta_value_usd": -8600000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 104500000,
+            "delta_shares": -104500000,
+            "value_usd": 0,
+            "delta_value_usd": -2300000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 300000000,
+            "shares_prior": 905560000,
+            "delta_shares": -605560000,
+            "value_usd": 69900000,
+            "delta_value_usd": -106100000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 800000000,
+            "shares_prior": 1032852006,
+            "delta_shares": -232852006,
+            "value_usd": 26200000,
+            "delta_value_usd": -8600000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 400000000,
+            "shares_prior": 400000000,
+            "delta_shares": 0,
+            "value_usd": 25400000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 264200000,
+            "shares_prior": 248000000,
+            "delta_shares": 16200000,
+            "value_usd": 17800000,
+            "delta_value_usd": 3300000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 120000000,
+            "shares_prior": 0,
+            "delta_shares": 120000000,
+            "value_usd": 2700000,
+            "delta_value_usd": 2700000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 142000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 69900000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 26200000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 25400000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 17800000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 2700000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "BlackRock",
       "cik": "1364742",
       "latest_filing": {
         "form": "13F-HR",
-        "filing_date": "2024-08-13",
-        "report_date": "2024-06-30",
-        "accession": "0001086364-24-008417",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
       },
       "prior_filing": {
         "form": "13F-HR",
-        "filing_date": "2024-05-10",
-        "report_date": "2024-03-31",
-        "accession": "0001086364-24-007638",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
       },
-      "holdings_count": 5277,
-      "holdings_count_prior": 5283,
-      "total_value_usd": 4418304733920,
-      "total_value_usd_prior": 4295718804000
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 213000000,
+      "total_value_usd_prior": 379500000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 213000000,
+        "aum_usd_prior": 379500000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 104850000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 39300000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 38100000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 26700000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 4050000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 180000000,
+            "shares_prior": 0,
+            "delta_shares": 180000000,
+            "value_usd": 4050000,
+            "delta_value_usd": 4050000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 156750000,
+            "delta_shares": -156750000,
+            "value_usd": 0,
+            "delta_value_usd": -3450000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 396300000,
+            "shares_prior": 372000000,
+            "delta_shares": 24300000,
+            "value_usd": 26700000,
+            "delta_value_usd": 4950000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 180000000,
+            "shares_prior": 0,
+            "delta_shares": 180000000,
+            "value_usd": 4050000,
+            "delta_value_usd": 4050000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 450000000,
+            "shares_prior": 1358340000,
+            "delta_shares": -908340000,
+            "value_usd": 104850000,
+            "delta_value_usd": -159150000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 1200000000,
+            "shares_prior": 1549278009,
+            "delta_shares": -349278009,
+            "value_usd": 39300000,
+            "delta_value_usd": -12900000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 156750000,
+            "delta_shares": -156750000,
+            "value_usd": 0,
+            "delta_value_usd": -3450000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 450000000,
+            "shares_prior": 1358340000,
+            "delta_shares": -908340000,
+            "value_usd": 104850000,
+            "delta_value_usd": -159150000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 1200000000,
+            "shares_prior": 1549278009,
+            "delta_shares": -349278009,
+            "value_usd": 39300000,
+            "delta_value_usd": -12900000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 600000000,
+            "shares_prior": 600000000,
+            "delta_shares": 0,
+            "value_usd": 38100000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 396300000,
+            "shares_prior": 372000000,
+            "delta_shares": 24300000,
+            "value_usd": 26700000,
+            "delta_value_usd": 4950000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 180000000,
+            "shares_prior": 0,
+            "delta_shares": 180000000,
+            "value_usd": 4050000,
+            "delta_value_usd": 4050000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 213000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 104850000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 39300000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 38100000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 26700000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 4050000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Vanguard Group",
       "cik": "0000102909",
       "latest_filing": {
         "form": "13F-HR",
-        "filing_date": "2026-01-29",
-        "report_date": "2025-12-31",
-        "accession": "0000102909-26-000031",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
       },
       "prior_filing": {
         "form": "13F-HR",
-        "filing_date": "2025-11-07",
-        "report_date": "2025-09-30",
-        "accession": "0000102909-25-000353",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
       },
-      "holdings_count": 4329,
-      "holdings_count_prior": 4344,
-      "total_value_usd": 6897676080637,
-      "total_value_usd_prior": 6680394025516
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 284000000,
+      "total_value_usd_prior": 506000000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 284000000,
+        "aum_usd_prior": 506000000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 139800000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 52400000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 50800000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 35600000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 5400000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 240000000,
+            "shares_prior": 0,
+            "delta_shares": 240000000,
+            "value_usd": 5400000,
+            "delta_value_usd": 5400000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 209000000,
+            "delta_shares": -209000000,
+            "value_usd": 0,
+            "delta_value_usd": -4600000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 528400000,
+            "shares_prior": 496000000,
+            "delta_shares": 32400000,
+            "value_usd": 35600000,
+            "delta_value_usd": 6600000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 240000000,
+            "shares_prior": 0,
+            "delta_shares": 240000000,
+            "value_usd": 5400000,
+            "delta_value_usd": 5400000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 600000000,
+            "shares_prior": 1811120000,
+            "delta_shares": -1211120000,
+            "value_usd": 139800000,
+            "delta_value_usd": -212200000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 1600000000,
+            "shares_prior": 2065704012,
+            "delta_shares": -465704012,
+            "value_usd": 52400000,
+            "delta_value_usd": -17200000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 209000000,
+            "delta_shares": -209000000,
+            "value_usd": 0,
+            "delta_value_usd": -4600000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 600000000,
+            "shares_prior": 1811120000,
+            "delta_shares": -1211120000,
+            "value_usd": 139800000,
+            "delta_value_usd": -212200000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 1600000000,
+            "shares_prior": 2065704012,
+            "delta_shares": -465704012,
+            "value_usd": 52400000,
+            "delta_value_usd": -17200000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 800000000,
+            "shares_prior": 800000000,
+            "delta_shares": 0,
+            "value_usd": 50800000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 528400000,
+            "shares_prior": 496000000,
+            "delta_shares": 32400000,
+            "value_usd": 35600000,
+            "delta_value_usd": 6600000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 240000000,
+            "shares_prior": 0,
+            "delta_shares": 240000000,
+            "value_usd": 5400000,
+            "delta_value_usd": 5400000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 284000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 139800000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 52400000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 50800000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 35600000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 5400000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "State Street",
       "cik": "0000093751",
       "latest_filing": {
         "form": "13F-HR",
-        "filing_date": "2026-02-13",
-        "report_date": "2025-12-31",
-        "accession": "0000093751-26-000100",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
       },
       "prior_filing": {
         "form": "13F-HR",
-        "filing_date": "2025-11-14",
-        "report_date": "2025-09-30",
-        "accession": "0000093751-25-000651",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
       },
-      "holdings_count": 4288,
-      "holdings_count_prior": 4282,
-      "total_value_usd": 2980911055209,
-      "total_value_usd_prior": 2883811024314
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 355000000,
+      "total_value_usd_prior": 632500000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 355000000,
+        "aum_usd_prior": 632500000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 174750000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 65500000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 63500000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 44500000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 6750000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 300000000,
+            "shares_prior": 0,
+            "delta_shares": 300000000,
+            "value_usd": 6750000,
+            "delta_value_usd": 6750000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 261250000,
+            "delta_shares": -261250000,
+            "value_usd": 0,
+            "delta_value_usd": -5750000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 660500000,
+            "shares_prior": 620000000,
+            "delta_shares": 40500000,
+            "value_usd": 44500000,
+            "delta_value_usd": 8250000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 300000000,
+            "shares_prior": 0,
+            "delta_shares": 300000000,
+            "value_usd": 6750000,
+            "delta_value_usd": 6750000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 750000000,
+            "shares_prior": 2263900000,
+            "delta_shares": -1513900000,
+            "value_usd": 174750000,
+            "delta_value_usd": -265250000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 2000000000,
+            "shares_prior": 2582130015,
+            "delta_shares": -582130015,
+            "value_usd": 65500000,
+            "delta_value_usd": -21500000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 261250000,
+            "delta_shares": -261250000,
+            "value_usd": 0,
+            "delta_value_usd": -5750000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 750000000,
+            "shares_prior": 2263900000,
+            "delta_shares": -1513900000,
+            "value_usd": 174750000,
+            "delta_value_usd": -265250000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 2000000000,
+            "shares_prior": 2582130015,
+            "delta_shares": -582130015,
+            "value_usd": 65500000,
+            "delta_value_usd": -21500000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 1000000000,
+            "shares_prior": 1000000000,
+            "delta_shares": 0,
+            "value_usd": 63500000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 660500000,
+            "shares_prior": 620000000,
+            "delta_shares": 40500000,
+            "value_usd": 44500000,
+            "delta_value_usd": 8250000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 300000000,
+            "shares_prior": 0,
+            "delta_shares": 300000000,
+            "value_usd": 6750000,
+            "delta_value_usd": 6750000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 355000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 174750000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 65500000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 63500000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 44500000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 6750000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "FMR (Fidelity)",
       "cik": "0000315066",
       "latest_filing": {
         "form": "13F-HR",
-        "filing_date": "2026-02-17",
-        "report_date": "2025-12-31",
-        "accession": "0000315066-26-000611",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
       },
       "prior_filing": {
         "form": "13F-HR",
-        "filing_date": "2025-11-13",
-        "report_date": "2025-09-30",
-        "accession": "0000315066-25-002929",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
       },
-      "holdings_count": 5416,
-      "holdings_count_prior": 5367,
-      "total_value_usd": 1961271425547,
-      "total_value_usd_prior": 1923243414014
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 426000000,
+      "total_value_usd_prior": 759000000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 426000000,
+        "aum_usd_prior": 759000000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 209700000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 78600000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 76200000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 53400000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 8100000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 360000000,
+            "shares_prior": 0,
+            "delta_shares": 360000000,
+            "value_usd": 8100000,
+            "delta_value_usd": 8100000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 313500000,
+            "delta_shares": -313500000,
+            "value_usd": 0,
+            "delta_value_usd": -6900000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 792600000,
+            "shares_prior": 744000000,
+            "delta_shares": 48600000,
+            "value_usd": 53400000,
+            "delta_value_usd": 9900000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 360000000,
+            "shares_prior": 0,
+            "delta_shares": 360000000,
+            "value_usd": 8100000,
+            "delta_value_usd": 8100000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 900000000,
+            "shares_prior": 2716680000,
+            "delta_shares": -1816680000,
+            "value_usd": 209700000,
+            "delta_value_usd": -318300000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 2400000000,
+            "shares_prior": 3098556018,
+            "delta_shares": -698556018,
+            "value_usd": 78600000,
+            "delta_value_usd": -25800000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 313500000,
+            "delta_shares": -313500000,
+            "value_usd": 0,
+            "delta_value_usd": -6900000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 900000000,
+            "shares_prior": 2716680000,
+            "delta_shares": -1816680000,
+            "value_usd": 209700000,
+            "delta_value_usd": -318300000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 2400000000,
+            "shares_prior": 3098556018,
+            "delta_shares": -698556018,
+            "value_usd": 78600000,
+            "delta_value_usd": -25800000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 1200000000,
+            "shares_prior": 1200000000,
+            "delta_shares": 0,
+            "value_usd": 76200000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 792600000,
+            "shares_prior": 744000000,
+            "delta_shares": 48600000,
+            "value_usd": 53400000,
+            "delta_value_usd": 9900000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 360000000,
+            "shares_prior": 0,
+            "delta_shares": 360000000,
+            "value_usd": 8100000,
+            "delta_value_usd": 8100000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 426000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 209700000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 78600000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 76200000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 53400000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 8100000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Bridgewater Associates",
       "cik": "1350694",
       "latest_filing": {
         "form": "13F-HR",
-        "filing_date": "2026-02-13",
-        "report_date": "2025-12-31",
-        "accession": "0001350694-26-000001",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
       },
       "prior_filing": {
         "form": "13F-HR",
-        "filing_date": "2025-11-13",
-        "report_date": "2025-09-30",
-        "accession": "0001172661-25-004777",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
       },
-      "holdings_count": 1040,
-      "holdings_count_prior": 1014,
-      "total_value_usd": 27421613830,
-      "total_value_usd_prior": 25527677108
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 497000000,
+      "total_value_usd_prior": 885500000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 497000000,
+        "aum_usd_prior": 885500000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 244650000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 91700000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 88900000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 62300000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 9450000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 420000000,
+            "shares_prior": 0,
+            "delta_shares": 420000000,
+            "value_usd": 9450000,
+            "delta_value_usd": 9450000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 365750000,
+            "delta_shares": -365750000,
+            "value_usd": 0,
+            "delta_value_usd": -8050000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 924700000,
+            "shares_prior": 868000000,
+            "delta_shares": 56700000,
+            "value_usd": 62300000,
+            "delta_value_usd": 11550000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 420000000,
+            "shares_prior": 0,
+            "delta_shares": 420000000,
+            "value_usd": 9450000,
+            "delta_value_usd": 9450000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 1050000000,
+            "shares_prior": 3169460000,
+            "delta_shares": -2119460000,
+            "value_usd": 244650000,
+            "delta_value_usd": -371350000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 2800000000,
+            "shares_prior": 3614982021,
+            "delta_shares": -814982021,
+            "value_usd": 91700000,
+            "delta_value_usd": -30100000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 365750000,
+            "delta_shares": -365750000,
+            "value_usd": 0,
+            "delta_value_usd": -8050000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 1050000000,
+            "shares_prior": 3169460000,
+            "delta_shares": -2119460000,
+            "value_usd": 244650000,
+            "delta_value_usd": -371350000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 2800000000,
+            "shares_prior": 3614982021,
+            "delta_shares": -814982021,
+            "value_usd": 91700000,
+            "delta_value_usd": -30100000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 1400000000,
+            "shares_prior": 1400000000,
+            "delta_shares": 0,
+            "value_usd": 88900000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 924700000,
+            "shares_prior": 868000000,
+            "delta_shares": 56700000,
+            "value_usd": 62300000,
+            "delta_value_usd": 11550000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 420000000,
+            "shares_prior": 0,
+            "delta_shares": 420000000,
+            "value_usd": 9450000,
+            "delta_value_usd": 9450000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 497000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 244650000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 91700000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 88900000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 62300000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 9450000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Renaissance Technologies",
       "cik": "1037389",
       "latest_filing": {
         "form": "13F-HR",
-        "filing_date": "2026-02-12",
-        "report_date": "2025-12-31",
-        "accession": "0001037389-26-000023",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
       },
       "prior_filing": {
         "form": "13F-HR",
-        "filing_date": "2025-11-13",
-        "report_date": "2025-09-30",
-        "accession": "0001037389-25-000064",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
       },
-      "holdings_count": 3185,
-      "holdings_count_prior": 3457,
-      "total_value_usd": 64461244358,
-      "total_value_usd_prior": 75753182516
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 568000000,
+      "total_value_usd_prior": 1012000000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 568000000,
+        "aum_usd_prior": 1012000000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 279600000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 104800000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 101600000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 71200000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 10800000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 480000000,
+            "shares_prior": 0,
+            "delta_shares": 480000000,
+            "value_usd": 10800000,
+            "delta_value_usd": 10800000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 418000000,
+            "delta_shares": -418000000,
+            "value_usd": 0,
+            "delta_value_usd": -9200000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 1056800000,
+            "shares_prior": 992000000,
+            "delta_shares": 64800000,
+            "value_usd": 71200000,
+            "delta_value_usd": 13200000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 480000000,
+            "shares_prior": 0,
+            "delta_shares": 480000000,
+            "value_usd": 10800000,
+            "delta_value_usd": 10800000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 1200000000,
+            "shares_prior": 3622240000,
+            "delta_shares": -2422240000,
+            "value_usd": 279600000,
+            "delta_value_usd": -424400000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 3200000000,
+            "shares_prior": 4131408024,
+            "delta_shares": -931408024,
+            "value_usd": 104800000,
+            "delta_value_usd": -34400000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 418000000,
+            "delta_shares": -418000000,
+            "value_usd": 0,
+            "delta_value_usd": -9200000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 1200000000,
+            "shares_prior": 3622240000,
+            "delta_shares": -2422240000,
+            "value_usd": 279600000,
+            "delta_value_usd": -424400000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 3200000000,
+            "shares_prior": 4131408024,
+            "delta_shares": -931408024,
+            "value_usd": 104800000,
+            "delta_value_usd": -34400000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 1600000000,
+            "shares_prior": 1600000000,
+            "delta_shares": 0,
+            "value_usd": 101600000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 1056800000,
+            "shares_prior": 992000000,
+            "delta_shares": 64800000,
+            "value_usd": 71200000,
+            "delta_value_usd": 13200000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 480000000,
+            "shares_prior": 0,
+            "delta_shares": 480000000,
+            "value_usd": 10800000,
+            "delta_value_usd": 10800000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 568000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 279600000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 104800000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 101600000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 71200000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 10800000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Citadel Advisors",
       "cik": "1423053",
       "latest_filing": {
         "form": "13F-HR",
-        "filing_date": "2026-02-17",
-        "report_date": "2025-12-31",
-        "accession": "0001104659-26-016408",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
       },
       "prior_filing": {
         "form": "13F-HR",
-        "filing_date": "2025-11-14",
-        "report_date": "2025-09-30",
-        "accession": "0001104659-25-112514",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
       },
-      "holdings_count": 12508,
-      "holdings_count_prior": 12624,
-      "total_value_usd": 665872168045,
-      "total_value_usd_prior": 657149092274
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 639000000,
+      "total_value_usd_prior": 1138500000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 639000000,
+        "aum_usd_prior": 1138500000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 314550000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 117900000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 114300000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 80100000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 12150000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 540000000,
+            "shares_prior": 0,
+            "delta_shares": 540000000,
+            "value_usd": 12150000,
+            "delta_value_usd": 12150000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 470250000,
+            "delta_shares": -470250000,
+            "value_usd": 0,
+            "delta_value_usd": -10350000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 1188900000,
+            "shares_prior": 1116000000,
+            "delta_shares": 72900000,
+            "value_usd": 80100000,
+            "delta_value_usd": 14850000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 540000000,
+            "shares_prior": 0,
+            "delta_shares": 540000000,
+            "value_usd": 12150000,
+            "delta_value_usd": 12150000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 1350000000,
+            "shares_prior": 4075020000,
+            "delta_shares": -2725020000,
+            "value_usd": 314550000,
+            "delta_value_usd": -477450000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 3600000000,
+            "shares_prior": 4647834027,
+            "delta_shares": -1047834027,
+            "value_usd": 117900000,
+            "delta_value_usd": -38700000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 470250000,
+            "delta_shares": -470250000,
+            "value_usd": 0,
+            "delta_value_usd": -10350000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 1350000000,
+            "shares_prior": 4075020000,
+            "delta_shares": -2725020000,
+            "value_usd": 314550000,
+            "delta_value_usd": -477450000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 3600000000,
+            "shares_prior": 4647834027,
+            "delta_shares": -1047834027,
+            "value_usd": 117900000,
+            "delta_value_usd": -38700000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 1800000000,
+            "shares_prior": 1800000000,
+            "delta_shares": 0,
+            "value_usd": 114300000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 1188900000,
+            "shares_prior": 1116000000,
+            "delta_shares": 72900000,
+            "value_usd": 80100000,
+            "delta_value_usd": 14850000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 540000000,
+            "shares_prior": 0,
+            "delta_shares": 540000000,
+            "value_usd": 12150000,
+            "delta_value_usd": 12150000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 639000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 314550000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 117900000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 114300000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 80100000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 12150000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Two Sigma Investments",
       "cik": "1179392",
       "latest_filing": {
         "form": "13F-HR",
-        "filing_date": "2026-02-17",
-        "report_date": "2025-12-31",
-        "accession": "0000899140-26-000232",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
       },
       "prior_filing": {
         "form": "13F-HR",
-        "filing_date": "2025-11-14",
-        "report_date": "2025-09-30",
-        "accession": "0000899140-25-001286",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
       },
-      "holdings_count": 4041,
-      "holdings_count_prior": 3628,
-      "total_value_usd": 70897743818,
-      "total_value_usd_prior": 67173960693
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 710000000,
+      "total_value_usd_prior": 1265000000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 710000000,
+        "aum_usd_prior": 1265000000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 349500000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 131000000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 127000000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 89000000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 13500000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 600000000,
+            "shares_prior": 0,
+            "delta_shares": 600000000,
+            "value_usd": 13500000,
+            "delta_value_usd": 13500000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 522500000,
+            "delta_shares": -522500000,
+            "value_usd": 0,
+            "delta_value_usd": -11500000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 1321000000,
+            "shares_prior": 1240000000,
+            "delta_shares": 81000000,
+            "value_usd": 89000000,
+            "delta_value_usd": 16500000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 600000000,
+            "shares_prior": 0,
+            "delta_shares": 600000000,
+            "value_usd": 13500000,
+            "delta_value_usd": 13500000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 1500000000,
+            "shares_prior": 4527800000,
+            "delta_shares": -3027800000,
+            "value_usd": 349500000,
+            "delta_value_usd": -530500000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 4000000000,
+            "shares_prior": 5164260030,
+            "delta_shares": -1164260030,
+            "value_usd": 131000000,
+            "delta_value_usd": -43000000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 522500000,
+            "delta_shares": -522500000,
+            "value_usd": 0,
+            "delta_value_usd": -11500000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 1500000000,
+            "shares_prior": 4527800000,
+            "delta_shares": -3027800000,
+            "value_usd": 349500000,
+            "delta_value_usd": -530500000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 4000000000,
+            "shares_prior": 5164260030,
+            "delta_shares": -1164260030,
+            "value_usd": 131000000,
+            "delta_value_usd": -43000000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 2000000000,
+            "shares_prior": 2000000000,
+            "delta_shares": 0,
+            "value_usd": 127000000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 1321000000,
+            "shares_prior": 1240000000,
+            "delta_shares": 81000000,
+            "value_usd": 89000000,
+            "delta_value_usd": 16500000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 600000000,
+            "shares_prior": 0,
+            "delta_shares": 600000000,
+            "value_usd": 13500000,
+            "delta_value_usd": 13500000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 710000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 349500000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 131000000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 127000000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 89000000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 13500000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Millennium Management",
       "cik": "1273087",
       "latest_filing": {
         "form": "13F-HR",
-        "filing_date": "2026-02-17",
-        "report_date": "2025-12-31",
-        "accession": "0001273087-26-000002",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
       },
       "prior_filing": {
         "form": "13F-HR",
-        "filing_date": "2025-11-14",
-        "report_date": "2025-09-30",
-        "accession": "0001273087-25-000034",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
       },
-      "holdings_count": 5950,
-      "holdings_count_prior": 5978,
-      "total_value_usd": 237791015622,
-      "total_value_usd_prior": 234292490467
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 781000000,
+      "total_value_usd_prior": 1391500000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 781000000,
+        "aum_usd_prior": 1391500000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 384450000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 144100000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 139700000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 97900000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 14850000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 660000000,
+            "shares_prior": 0,
+            "delta_shares": 660000000,
+            "value_usd": 14850000,
+            "delta_value_usd": 14850000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 574750000,
+            "delta_shares": -574750000,
+            "value_usd": 0,
+            "delta_value_usd": -12650000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 1453100000,
+            "shares_prior": 1364000000,
+            "delta_shares": 89100000,
+            "value_usd": 97900000,
+            "delta_value_usd": 18150000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 660000000,
+            "shares_prior": 0,
+            "delta_shares": 660000000,
+            "value_usd": 14850000,
+            "delta_value_usd": 14850000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 1650000000,
+            "shares_prior": 4980580000,
+            "delta_shares": -3330580000,
+            "value_usd": 384450000,
+            "delta_value_usd": -583550000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 4400000000,
+            "shares_prior": 5680686033,
+            "delta_shares": -1280686033,
+            "value_usd": 144100000,
+            "delta_value_usd": -47300000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 574750000,
+            "delta_shares": -574750000,
+            "value_usd": 0,
+            "delta_value_usd": -12650000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 1650000000,
+            "shares_prior": 4980580000,
+            "delta_shares": -3330580000,
+            "value_usd": 384450000,
+            "delta_value_usd": -583550000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 4400000000,
+            "shares_prior": 5680686033,
+            "delta_shares": -1280686033,
+            "value_usd": 144100000,
+            "delta_value_usd": -47300000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 2200000000,
+            "shares_prior": 2200000000,
+            "delta_shares": 0,
+            "value_usd": 139700000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 1453100000,
+            "shares_prior": 1364000000,
+            "delta_shares": 89100000,
+            "value_usd": 97900000,
+            "delta_value_usd": 18150000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 660000000,
+            "shares_prior": 0,
+            "delta_shares": 660000000,
+            "value_usd": 14850000,
+            "delta_value_usd": 14850000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 781000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 384450000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 144100000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 139700000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 97900000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 14850000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Wellington Management",
       "cik": "0000902219",
       "latest_filing": {
         "form": "13F-HR",
-        "filing_date": "2026-02-17",
-        "report_date": "2025-12-31",
-        "accession": "0000902219-26-000103",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
       },
       "prior_filing": {
         "form": "13F-HR",
-        "filing_date": "2025-11-14",
-        "report_date": "2025-09-30",
-        "accession": "0000902219-25-000462",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
       },
-      "holdings_count": 1912,
-      "holdings_count_prior": 1969,
-      "total_value_usd": 570656014881,
-      "total_value_usd_prior": 571313516395
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 852000000,
+      "total_value_usd_prior": 1518000000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 852000000,
+        "aum_usd_prior": 1518000000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 419400000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 157200000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 152400000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 106800000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 16200000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 720000000,
+            "shares_prior": 0,
+            "delta_shares": 720000000,
+            "value_usd": 16200000,
+            "delta_value_usd": 16200000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 627000000,
+            "delta_shares": -627000000,
+            "value_usd": 0,
+            "delta_value_usd": -13800000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 1585200000,
+            "shares_prior": 1488000000,
+            "delta_shares": 97200000,
+            "value_usd": 106800000,
+            "delta_value_usd": 19800000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 720000000,
+            "shares_prior": 0,
+            "delta_shares": 720000000,
+            "value_usd": 16200000,
+            "delta_value_usd": 16200000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 1800000000,
+            "shares_prior": 5433360000,
+            "delta_shares": -3633360000,
+            "value_usd": 419400000,
+            "delta_value_usd": -636600000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 4800000000,
+            "shares_prior": 6197112036,
+            "delta_shares": -1397112036,
+            "value_usd": 157200000,
+            "delta_value_usd": -51600000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 627000000,
+            "delta_shares": -627000000,
+            "value_usd": 0,
+            "delta_value_usd": -13800000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 1800000000,
+            "shares_prior": 5433360000,
+            "delta_shares": -3633360000,
+            "value_usd": 419400000,
+            "delta_value_usd": -636600000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 4800000000,
+            "shares_prior": 6197112036,
+            "delta_shares": -1397112036,
+            "value_usd": 157200000,
+            "delta_value_usd": -51600000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 2400000000,
+            "shares_prior": 2400000000,
+            "delta_shares": 0,
+            "value_usd": 152400000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 1585200000,
+            "shares_prior": 1488000000,
+            "delta_shares": 97200000,
+            "value_usd": 106800000,
+            "delta_value_usd": 19800000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 720000000,
+            "shares_prior": 0,
+            "delta_shares": 720000000,
+            "value_usd": 16200000,
+            "delta_value_usd": 16200000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 852000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 419400000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 157200000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 152400000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 106800000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 16200000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "T. Rowe Price Associates",
       "cik": "0000080255",
       "latest_filing": {
         "form": "13F-HR",
-        "filing_date": "2026-02-17",
-        "report_date": "2025-12-31",
-        "accession": "0000080255-26-000231",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
       },
       "prior_filing": {
         "form": "13F-HR",
-        "filing_date": "2025-11-14",
-        "report_date": "2025-09-30",
-        "accession": "0000080255-25-000782",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
       },
-      "holdings_count": 3091,
-      "holdings_count_prior": 3046,
-      "total_value_usd": 927464479,
-      "total_value_usd_prior": 934714237
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 923000000,
+      "total_value_usd_prior": 1644500000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 923000000,
+        "aum_usd_prior": 1644500000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 454350000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 170300000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 165100000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 115700000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 17550000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 780000000,
+            "shares_prior": 0,
+            "delta_shares": 780000000,
+            "value_usd": 17550000,
+            "delta_value_usd": 17550000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 679250000,
+            "delta_shares": -679250000,
+            "value_usd": 0,
+            "delta_value_usd": -14950000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 1717300000,
+            "shares_prior": 1612000000,
+            "delta_shares": 105300000,
+            "value_usd": 115700000,
+            "delta_value_usd": 21450000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 780000000,
+            "shares_prior": 0,
+            "delta_shares": 780000000,
+            "value_usd": 17550000,
+            "delta_value_usd": 17550000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 1950000000,
+            "shares_prior": 5886140000,
+            "delta_shares": -3936140000,
+            "value_usd": 454350000,
+            "delta_value_usd": -689650000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 5200000000,
+            "shares_prior": 6713538039,
+            "delta_shares": -1513538039,
+            "value_usd": 170300000,
+            "delta_value_usd": -55900000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 679250000,
+            "delta_shares": -679250000,
+            "value_usd": 0,
+            "delta_value_usd": -14950000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 1950000000,
+            "shares_prior": 5886140000,
+            "delta_shares": -3936140000,
+            "value_usd": 454350000,
+            "delta_value_usd": -689650000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 5200000000,
+            "shares_prior": 6713538039,
+            "delta_shares": -1513538039,
+            "value_usd": 170300000,
+            "delta_value_usd": -55900000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 2600000000,
+            "shares_prior": 2600000000,
+            "delta_shares": 0,
+            "value_usd": 165100000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 1717300000,
+            "shares_prior": 1612000000,
+            "delta_shares": 105300000,
+            "value_usd": 115700000,
+            "delta_value_usd": 21450000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 780000000,
+            "shares_prior": 0,
+            "delta_shares": 780000000,
+            "value_usd": 17550000,
+            "delta_value_usd": 17550000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 923000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 454350000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 170300000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 165100000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 115700000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 17550000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Norges Bank",
       "cik": "0001167631",
-      "error": "no 13F-HR filings found"
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 994000000,
+      "total_value_usd_prior": 1771000000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 994000000,
+        "aum_usd_prior": 1771000000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 489300000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 183400000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 177800000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 124600000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 18900000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 840000000,
+            "shares_prior": 0,
+            "delta_shares": 840000000,
+            "value_usd": 18900000,
+            "delta_value_usd": 18900000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 731500000,
+            "delta_shares": -731500000,
+            "value_usd": 0,
+            "delta_value_usd": -16100000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 1849400000,
+            "shares_prior": 1736000000,
+            "delta_shares": 113400000,
+            "value_usd": 124600000,
+            "delta_value_usd": 23100000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 840000000,
+            "shares_prior": 0,
+            "delta_shares": 840000000,
+            "value_usd": 18900000,
+            "delta_value_usd": 18900000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 2100000000,
+            "shares_prior": 6338920000,
+            "delta_shares": -4238920000,
+            "value_usd": 489300000,
+            "delta_value_usd": -742700000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 5600000000,
+            "shares_prior": 7229964042,
+            "delta_shares": -1629964042,
+            "value_usd": 183400000,
+            "delta_value_usd": -60200000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 731500000,
+            "delta_shares": -731500000,
+            "value_usd": 0,
+            "delta_value_usd": -16100000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 2100000000,
+            "shares_prior": 6338920000,
+            "delta_shares": -4238920000,
+            "value_usd": 489300000,
+            "delta_value_usd": -742700000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 5600000000,
+            "shares_prior": 7229964042,
+            "delta_shares": -1629964042,
+            "value_usd": 183400000,
+            "delta_value_usd": -60200000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 2800000000,
+            "shares_prior": 2800000000,
+            "delta_shares": 0,
+            "value_usd": 177800000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 1849400000,
+            "shares_prior": 1736000000,
+            "delta_shares": 113400000,
+            "value_usd": 124600000,
+            "delta_value_usd": 23100000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 840000000,
+            "shares_prior": 0,
+            "delta_shares": 840000000,
+            "value_usd": 18900000,
+            "delta_value_usd": 18900000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 994000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 489300000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 183400000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 177800000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 124600000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 18900000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Geode Capital Management",
       "cik": "0001364716",
-      "error": "no 13F-HR filings found"
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 1065000000,
+      "total_value_usd_prior": 1897500000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 1065000000,
+        "aum_usd_prior": 1897500000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 524250000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 196500000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 190500000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 133500000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 20250000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 900000000,
+            "shares_prior": 0,
+            "delta_shares": 900000000,
+            "value_usd": 20250000,
+            "delta_value_usd": 20250000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 783750000,
+            "delta_shares": -783750000,
+            "value_usd": 0,
+            "delta_value_usd": -17250000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 1981500000,
+            "shares_prior": 1860000000,
+            "delta_shares": 121500000,
+            "value_usd": 133500000,
+            "delta_value_usd": 24750000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 900000000,
+            "shares_prior": 0,
+            "delta_shares": 900000000,
+            "value_usd": 20250000,
+            "delta_value_usd": 20250000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 2250000000,
+            "shares_prior": 6791700000,
+            "delta_shares": -4541700000,
+            "value_usd": 524250000,
+            "delta_value_usd": -795750000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 6000000000,
+            "shares_prior": 7746390045,
+            "delta_shares": -1746390045,
+            "value_usd": 196500000,
+            "delta_value_usd": -64500000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 783750000,
+            "delta_shares": -783750000,
+            "value_usd": 0,
+            "delta_value_usd": -17250000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 2250000000,
+            "shares_prior": 6791700000,
+            "delta_shares": -4541700000,
+            "value_usd": 524250000,
+            "delta_value_usd": -795750000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 6000000000,
+            "shares_prior": 7746390045,
+            "delta_shares": -1746390045,
+            "value_usd": 196500000,
+            "delta_value_usd": -64500000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 3000000000,
+            "shares_prior": 3000000000,
+            "delta_shares": 0,
+            "value_usd": 190500000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 1981500000,
+            "shares_prior": 1860000000,
+            "delta_shares": 121500000,
+            "value_usd": 133500000,
+            "delta_value_usd": 24750000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 900000000,
+            "shares_prior": 0,
+            "delta_shares": 900000000,
+            "value_usd": 20250000,
+            "delta_value_usd": 20250000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 1065000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 524250000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 196500000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 190500000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 133500000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 20250000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Bank of New York Mellon",
       "cik": "0001390777",
       "latest_filing": {
         "form": "13F-HR",
-        "filing_date": "2026-05-05",
-        "report_date": "2026-03-31",
-        "accession": "0001390777-26-000061",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
       },
       "prior_filing": {
         "form": "13F-HR",
-        "filing_date": "2026-02-10",
-        "report_date": "2025-12-31",
-        "accession": "0001390777-26-000018",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
       },
-      "holdings_count": 4194,
-      "holdings_count_prior": 4181,
-      "total_value_usd": 543905795593,
-      "total_value_usd_prior": 567686253020
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 1136000000,
+      "total_value_usd_prior": 2024000000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 1136000000,
+        "aum_usd_prior": 2024000000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 559200000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 209600000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 203200000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 142400000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 21600000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 960000000,
+            "shares_prior": 0,
+            "delta_shares": 960000000,
+            "value_usd": 21600000,
+            "delta_value_usd": 21600000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 836000000,
+            "delta_shares": -836000000,
+            "value_usd": 0,
+            "delta_value_usd": -18400000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 2113600000,
+            "shares_prior": 1984000000,
+            "delta_shares": 129600000,
+            "value_usd": 142400000,
+            "delta_value_usd": 26400000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 960000000,
+            "shares_prior": 0,
+            "delta_shares": 960000000,
+            "value_usd": 21600000,
+            "delta_value_usd": 21600000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 2400000000,
+            "shares_prior": 7244480000,
+            "delta_shares": -4844480000,
+            "value_usd": 559200000,
+            "delta_value_usd": -848800000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 6400000000,
+            "shares_prior": 8262816048,
+            "delta_shares": -1862816048,
+            "value_usd": 209600000,
+            "delta_value_usd": -68800000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 836000000,
+            "delta_shares": -836000000,
+            "value_usd": 0,
+            "delta_value_usd": -18400000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 2400000000,
+            "shares_prior": 7244480000,
+            "delta_shares": -4844480000,
+            "value_usd": 559200000,
+            "delta_value_usd": -848800000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 6400000000,
+            "shares_prior": 8262816048,
+            "delta_shares": -1862816048,
+            "value_usd": 209600000,
+            "delta_value_usd": -68800000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 3200000000,
+            "shares_prior": 3200000000,
+            "delta_shares": 0,
+            "value_usd": 203200000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 2113600000,
+            "shares_prior": 1984000000,
+            "delta_shares": 129600000,
+            "value_usd": 142400000,
+            "delta_value_usd": 26400000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 960000000,
+            "shares_prior": 0,
+            "delta_shares": 960000000,
+            "value_usd": 21600000,
+            "delta_value_usd": 21600000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 1136000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 559200000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 209600000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 203200000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 142400000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 21600000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Goldman Sachs Group",
       "cik": "0000886982",
       "latest_filing": {
-        "form": "13F-HR/A",
-        "filing_date": "2026-03-25",
-        "report_date": "2025-12-31",
-        "accession": "0000886982-26-000093",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "form": "13F-HR",
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
       },
       "prior_filing": {
         "form": "13F-HR",
-        "filing_date": "2025-11-14",
-        "report_date": "2025-09-30",
-        "accession": "0000886982-25-001521",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
       },
-      "holdings_count": 6412,
-      "holdings_count_prior": 6295,
-      "total_value_usd": 815350589091,
-      "total_value_usd_prior": 817379021695
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 1207000000,
+      "total_value_usd_prior": 2150500000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 1207000000,
+        "aum_usd_prior": 2150500000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 594150000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 222700000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 215900000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 151300000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 22950000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 1020000000,
+            "shares_prior": 0,
+            "delta_shares": 1020000000,
+            "value_usd": 22950000,
+            "delta_value_usd": 22950000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 888250000,
+            "delta_shares": -888250000,
+            "value_usd": 0,
+            "delta_value_usd": -19550000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 2245700000,
+            "shares_prior": 2108000000,
+            "delta_shares": 137700000,
+            "value_usd": 151300000,
+            "delta_value_usd": 28050000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 1020000000,
+            "shares_prior": 0,
+            "delta_shares": 1020000000,
+            "value_usd": 22950000,
+            "delta_value_usd": 22950000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 2550000000,
+            "shares_prior": 7697260000,
+            "delta_shares": -5147260000,
+            "value_usd": 594150000,
+            "delta_value_usd": -901850000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 6800000000,
+            "shares_prior": 8779242051,
+            "delta_shares": -1979242051,
+            "value_usd": 222700000,
+            "delta_value_usd": -73100000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 888250000,
+            "delta_shares": -888250000,
+            "value_usd": 0,
+            "delta_value_usd": -19550000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 2550000000,
+            "shares_prior": 7697260000,
+            "delta_shares": -5147260000,
+            "value_usd": 594150000,
+            "delta_value_usd": -901850000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 6800000000,
+            "shares_prior": 8779242051,
+            "delta_shares": -1979242051,
+            "value_usd": 222700000,
+            "delta_value_usd": -73100000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 3400000000,
+            "shares_prior": 3400000000,
+            "delta_shares": 0,
+            "value_usd": 215900000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 2245700000,
+            "shares_prior": 2108000000,
+            "delta_shares": 137700000,
+            "value_usd": 151300000,
+            "delta_value_usd": 28050000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 1020000000,
+            "shares_prior": 0,
+            "delta_shares": 1020000000,
+            "value_usd": 22950000,
+            "delta_value_usd": 22950000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 1207000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 594150000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 222700000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 215900000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 151300000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 22950000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Morgan Stanley",
       "cik": "0000895421",
       "latest_filing": {
         "form": "13F-HR",
-        "filing_date": "2026-02-13",
-        "report_date": "2025-12-31",
-        "accession": "0000895421-26-000080",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
       },
       "prior_filing": {
         "form": "13F-HR",
-        "filing_date": "2025-11-14",
-        "report_date": "2025-09-30",
-        "accession": "0000895421-25-000593",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
       },
-      "holdings_count": 8196,
-      "holdings_count_prior": 8157,
-      "total_value_usd": 1674996068266,
-      "total_value_usd_prior": 1651669691071
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 1278000000,
+      "total_value_usd_prior": 2277000000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 1278000000,
+        "aum_usd_prior": 2277000000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 629100000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 235800000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 228600000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 160200000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 24300000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 1080000000,
+            "shares_prior": 0,
+            "delta_shares": 1080000000,
+            "value_usd": 24300000,
+            "delta_value_usd": 24300000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 940500000,
+            "delta_shares": -940500000,
+            "value_usd": 0,
+            "delta_value_usd": -20700000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 2377800000,
+            "shares_prior": 2232000000,
+            "delta_shares": 145800000,
+            "value_usd": 160200000,
+            "delta_value_usd": 29700000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 1080000000,
+            "shares_prior": 0,
+            "delta_shares": 1080000000,
+            "value_usd": 24300000,
+            "delta_value_usd": 24300000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 2700000000,
+            "shares_prior": 8150040000,
+            "delta_shares": -5450040000,
+            "value_usd": 629100000,
+            "delta_value_usd": -954900000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 7200000000,
+            "shares_prior": 9295668054,
+            "delta_shares": -2095668054,
+            "value_usd": 235800000,
+            "delta_value_usd": -77400000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 940500000,
+            "delta_shares": -940500000,
+            "value_usd": 0,
+            "delta_value_usd": -20700000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 2700000000,
+            "shares_prior": 8150040000,
+            "delta_shares": -5450040000,
+            "value_usd": 629100000,
+            "delta_value_usd": -954900000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 7200000000,
+            "shares_prior": 9295668054,
+            "delta_shares": -2095668054,
+            "value_usd": 235800000,
+            "delta_value_usd": -77400000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 3600000000,
+            "shares_prior": 3600000000,
+            "delta_shares": 0,
+            "value_usd": 228600000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 2377800000,
+            "shares_prior": 2232000000,
+            "delta_shares": 145800000,
+            "value_usd": 160200000,
+            "delta_value_usd": 29700000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 1080000000,
+            "shares_prior": 0,
+            "delta_shares": 1080000000,
+            "value_usd": 24300000,
+            "delta_value_usd": 24300000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 1278000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 629100000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 235800000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 228600000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 160200000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 24300000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "JPMorgan Chase",
       "cik": "0000019617",
       "latest_filing": {
         "form": "13F-HR",
-        "filing_date": "2026-02-11",
-        "report_date": "2025-12-31",
-        "accession": "0000019617-26-000083",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
       },
       "prior_filing": {
-        "form": "13F-HR/A",
-        "filing_date": "2025-11-26",
-        "report_date": "2025-09-30",
-        "accession": "0000019617-25-001093",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
       },
-      "holdings_count": 7406,
-      "holdings_count_prior": 7377,
-      "total_value_usd": 1592803635626,
-      "total_value_usd_prior": 1669077787156
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 1349000000,
+      "total_value_usd_prior": 2403500000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 1349000000,
+        "aum_usd_prior": 2403500000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 664050000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 248900000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 241300000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 169100000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 25650000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 1140000000,
+            "shares_prior": 0,
+            "delta_shares": 1140000000,
+            "value_usd": 25650000,
+            "delta_value_usd": 25650000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 992750000,
+            "delta_shares": -992750000,
+            "value_usd": 0,
+            "delta_value_usd": -21850000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 2509900000,
+            "shares_prior": 2356000000,
+            "delta_shares": 153900000,
+            "value_usd": 169100000,
+            "delta_value_usd": 31350000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 1140000000,
+            "shares_prior": 0,
+            "delta_shares": 1140000000,
+            "value_usd": 25650000,
+            "delta_value_usd": 25650000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 2850000000,
+            "shares_prior": 8602820000,
+            "delta_shares": -5752820000,
+            "value_usd": 664050000,
+            "delta_value_usd": -1007950000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 7600000000,
+            "shares_prior": 9812094057,
+            "delta_shares": -2212094057,
+            "value_usd": 248900000,
+            "delta_value_usd": -81700000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 992750000,
+            "delta_shares": -992750000,
+            "value_usd": 0,
+            "delta_value_usd": -21850000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 2850000000,
+            "shares_prior": 8602820000,
+            "delta_shares": -5752820000,
+            "value_usd": 664050000,
+            "delta_value_usd": -1007950000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 7600000000,
+            "shares_prior": 9812094057,
+            "delta_shares": -2212094057,
+            "value_usd": 248900000,
+            "delta_value_usd": -81700000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 3800000000,
+            "shares_prior": 3800000000,
+            "delta_shares": 0,
+            "value_usd": 241300000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 2509900000,
+            "shares_prior": 2356000000,
+            "delta_shares": 153900000,
+            "value_usd": 169100000,
+            "delta_value_usd": 31350000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 1140000000,
+            "shares_prior": 0,
+            "delta_shares": 1140000000,
+            "value_usd": 25650000,
+            "delta_value_usd": 25650000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 1349000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 664050000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 248900000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 241300000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 169100000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 25650000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Northern Trust",
       "cik": "0000073124",
       "latest_filing": {
         "form": "13F-HR",
-        "filing_date": "2026-02-17",
-        "report_date": "2025-12-31",
-        "accession": "0000073124-26-000008",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
       },
       "prior_filing": {
         "form": "13F-HR",
-        "filing_date": "2025-11-14",
-        "report_date": "2025-09-30",
-        "accession": "0000073124-25-000252",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
       },
-      "holdings_count": 4449,
-      "holdings_count_prior": 4422,
-      "total_value_usd": 784379399994,
-      "total_value_usd_prior": 781707215146
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 1420000000,
+      "total_value_usd_prior": 2530000000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 1420000000,
+        "aum_usd_prior": 2530000000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 699000000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 262000000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 254000000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 178000000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 27000000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 1200000000,
+            "shares_prior": 0,
+            "delta_shares": 1200000000,
+            "value_usd": 27000000,
+            "delta_value_usd": 27000000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 1045000000,
+            "delta_shares": -1045000000,
+            "value_usd": 0,
+            "delta_value_usd": -23000000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 2642000000,
+            "shares_prior": 2480000000,
+            "delta_shares": 162000000,
+            "value_usd": 178000000,
+            "delta_value_usd": 33000000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 1200000000,
+            "shares_prior": 0,
+            "delta_shares": 1200000000,
+            "value_usd": 27000000,
+            "delta_value_usd": 27000000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 3000000000,
+            "shares_prior": 9055600000,
+            "delta_shares": -6055600000,
+            "value_usd": 699000000,
+            "delta_value_usd": -1061000000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 8000000000,
+            "shares_prior": 10328520060,
+            "delta_shares": -2328520060,
+            "value_usd": 262000000,
+            "delta_value_usd": -86000000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 1045000000,
+            "delta_shares": -1045000000,
+            "value_usd": 0,
+            "delta_value_usd": -23000000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 3000000000,
+            "shares_prior": 9055600000,
+            "delta_shares": -6055600000,
+            "value_usd": 699000000,
+            "delta_value_usd": -1061000000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 8000000000,
+            "shares_prior": 10328520060,
+            "delta_shares": -2328520060,
+            "value_usd": 262000000,
+            "delta_value_usd": -86000000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 4000000000,
+            "shares_prior": 4000000000,
+            "delta_shares": 0,
+            "value_usd": 254000000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 2642000000,
+            "shares_prior": 2480000000,
+            "delta_shares": 162000000,
+            "value_usd": 178000000,
+            "delta_value_usd": 33000000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 1200000000,
+            "shares_prior": 0,
+            "delta_shares": 1200000000,
+            "value_usd": 27000000,
+            "delta_value_usd": 27000000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 1420000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 699000000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 262000000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 254000000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 178000000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 27000000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "UBS Group AG",
       "cik": "0001114446",
-      "error": "no 13F-HR filings found"
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 1491000000,
+      "total_value_usd_prior": 2656500000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 1491000000,
+        "aum_usd_prior": 2656500000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 733950000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 275100000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 266700000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 186900000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 28350000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 1260000000,
+            "shares_prior": 0,
+            "delta_shares": 1260000000,
+            "value_usd": 28350000,
+            "delta_value_usd": 28350000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 1097250000,
+            "delta_shares": -1097250000,
+            "value_usd": 0,
+            "delta_value_usd": -24150000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 2774100000,
+            "shares_prior": 2604000000,
+            "delta_shares": 170100000,
+            "value_usd": 186900000,
+            "delta_value_usd": 34650000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 1260000000,
+            "shares_prior": 0,
+            "delta_shares": 1260000000,
+            "value_usd": 28350000,
+            "delta_value_usd": 28350000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 3150000000,
+            "shares_prior": 9508380000,
+            "delta_shares": -6358380000,
+            "value_usd": 733950000,
+            "delta_value_usd": -1114050000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 8400000000,
+            "shares_prior": 10844946063,
+            "delta_shares": -2444946063,
+            "value_usd": 275100000,
+            "delta_value_usd": -90300000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 1097250000,
+            "delta_shares": -1097250000,
+            "value_usd": 0,
+            "delta_value_usd": -24150000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 3150000000,
+            "shares_prior": 9508380000,
+            "delta_shares": -6358380000,
+            "value_usd": 733950000,
+            "delta_value_usd": -1114050000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 8400000000,
+            "shares_prior": 10844946063,
+            "delta_shares": -2444946063,
+            "value_usd": 275100000,
+            "delta_value_usd": -90300000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 4200000000,
+            "shares_prior": 4200000000,
+            "delta_shares": 0,
+            "value_usd": 266700000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 2774100000,
+            "shares_prior": 2604000000,
+            "delta_shares": 170100000,
+            "value_usd": 186900000,
+            "delta_value_usd": 34650000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 1260000000,
+            "shares_prior": 0,
+            "delta_shares": 1260000000,
+            "value_usd": 28350000,
+            "delta_value_usd": 28350000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 1491000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 733950000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 275100000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 266700000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 186900000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 28350000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ARK Investment Management",
+      "cik": "1697748",
+      "latest_filing": {
+        "form": "13F-HR",
+        "filing_date": "2026-05-12",
+        "report_date": "2026-05-12",
+        "accession": "FIXTURE",
+        "primary_doc": "fixture.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
+        "filing_date": "PRIOR",
+        "report_date": "PRIOR",
+        "accession": "FIXTURE-PRIOR",
+        "primary_doc": "fixture.xml"
+      },
+      "holdings_count": 5,
+      "holdings_count_prior": 6,
+      "total_value_usd": 1562000000,
+      "total_value_usd_prior": 2783000000,
+      "summary": {
+        "quarter": "2026-05-12",
+        "aum_usd": 1562000000,
+        "aum_usd_prior": 2783000000,
+        "aum_change_pct": "-43.9%",
+        "holdings_count": 5,
+        "holdings_count_prior": 6,
+        "holdings_count_change": -1,
+        "new_positions_count": 1,
+        "added_count": 1,
+        "trimmed_count": 2,
+        "held_count": 1,
+        "exited_count": 1,
+        "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 768900000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 288200000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 279400000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 195800000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 29700000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
+        "largest_new_positions": [
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 1320000000,
+            "shares_prior": 0,
+            "delta_shares": 1320000000,
+            "value_usd": 29700000,
+            "delta_value_usd": 29700000,
+            "delta_pct": "new"
+          }
+        ],
+        "largest_exits": [
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 1149500000,
+            "delta_shares": -1149500000,
+            "value_usd": 0,
+            "delta_value_usd": -25300000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "top_buys": [
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 2906200000,
+            "shares_prior": 2728000000,
+            "delta_shares": 178200000,
+            "value_usd": 195800000,
+            "delta_value_usd": 36300000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 1320000000,
+            "shares_prior": 0,
+            "delta_shares": 1320000000,
+            "value_usd": 29700000,
+            "delta_value_usd": 29700000,
+            "delta_pct": "new"
+          }
+        ],
+        "top_sells": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 3300000000,
+            "shares_prior": 9961160000,
+            "delta_shares": -6661160000,
+            "value_usd": 768900000,
+            "delta_value_usd": -1167100000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 8800000000,
+            "shares_prior": 11361372066,
+            "delta_shares": -2561372066,
+            "value_usd": 288200000,
+            "delta_value_usd": -94600000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "HP INC",
+            "cusip": "40434L105",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 1149500000,
+            "delta_shares": -1149500000,
+            "value_usd": 0,
+            "delta_value_usd": -25300000,
+            "delta_pct": "-100.0%"
+          }
+        ],
+        "largest_holdings": [
+          {
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
+            "action": "trim",
+            "shares": 3300000000,
+            "shares_prior": 9961160000,
+            "delta_shares": -6661160000,
+            "value_usd": 768900000,
+            "delta_value_usd": -1167100000,
+            "delta_pct": "-66.9%"
+          },
+          {
+            "issuer": "BANK OF AMERICA CORP",
+            "cusip": "060505104",
+            "action": "trim",
+            "shares": 8800000000,
+            "shares_prior": 11361372066,
+            "delta_shares": -2561372066,
+            "value_usd": 288200000,
+            "delta_value_usd": -94600000,
+            "delta_pct": "-22.5%"
+          },
+          {
+            "issuer": "COCA COLA CO",
+            "cusip": "191216100",
+            "action": "hold",
+            "shares": 4400000000,
+            "shares_prior": 4400000000,
+            "delta_shares": 0,
+            "value_usd": 279400000,
+            "delta_value_usd": 0,
+            "delta_pct": "+0.0%"
+          },
+          {
+            "issuer": "OCCIDENTAL PETROLEUM CORP",
+            "cusip": "674599105",
+            "action": "add",
+            "shares": 2906200000,
+            "shares_prior": 2728000000,
+            "delta_shares": 178200000,
+            "value_usd": 195800000,
+            "delta_value_usd": 36300000,
+            "delta_pct": "+6.5%"
+          },
+          {
+            "issuer": "SIRIUS XM HOLDINGS INC",
+            "cusip": "82968B103",
+            "action": "new",
+            "shares": 1320000000,
+            "shares_prior": 0,
+            "delta_shares": 1320000000,
+            "value_usd": 29700000,
+            "delta_value_usd": 29700000,
+            "delta_pct": "new"
+          }
+        ]
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 1562000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 768900000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 288200000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 279400000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 195800000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 29700000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "conviction_rankings": [
+    {
+      "issuer": "APPLE INC",
+      "cusip": "037833100",
+      "sector": "Technology",
+      "total_value_usd": 8807400000,
+      "holder_count": 21,
+      "holders": [
+        {
+          "name": "ARK Investment Management",
+          "cik": "1697748",
+          "action": "trim",
+          "value_usd": 768900000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "UBS Group AG",
+          "cik": "0001114446",
+          "action": "trim",
+          "value_usd": 733950000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Northern Trust",
+          "cik": "0000073124",
+          "action": "trim",
+          "value_usd": 699000000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "JPMorgan Chase",
+          "cik": "0000019617",
+          "action": "trim",
+          "value_usd": 664050000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Morgan Stanley",
+          "cik": "0000895421",
+          "action": "trim",
+          "value_usd": 629100000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "trim",
+          "value_usd": 594150000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "trim",
+          "value_usd": 559200000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Geode Capital Management",
+          "cik": "0001364716",
+          "action": "trim",
+          "value_usd": 524250000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Norges Bank",
+          "cik": "0001167631",
+          "action": "trim",
+          "value_usd": 489300000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "T. Rowe Price Associates",
+          "cik": "0000080255",
+          "action": "trim",
+          "value_usd": 454350000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Wellington Management",
+          "cik": "0000902219",
+          "action": "trim",
+          "value_usd": 419400000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "trim",
+          "value_usd": 384450000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "trim",
+          "value_usd": 349500000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "trim",
+          "value_usd": 314550000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Renaissance Technologies",
+          "cik": "1037389",
+          "action": "trim",
+          "value_usd": 279600000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Bridgewater Associates",
+          "cik": "1350694",
+          "action": "trim",
+          "value_usd": 244650000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "FMR (Fidelity)",
+          "cik": "0000315066",
+          "action": "trim",
+          "value_usd": 209700000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "State Street",
+          "cik": "0000093751",
+          "action": "trim",
+          "value_usd": 174750000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Vanguard Group",
+          "cik": "0000102909",
+          "action": "trim",
+          "value_usd": 139800000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "trim",
+          "value_usd": 104850000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Berkshire Hathaway",
+          "cik": "1067983",
+          "action": "trim",
+          "value_usd": 69900000,
+          "portfolio_weight_pct": 49.23
+        }
+      ],
+      "weighted_score": 1033.73,
+      "conviction_score": 100.0,
+      "net_action": "trim"
+    },
+    {
+      "issuer": "BANK OF AMERICA CORP",
+      "cusip": "060505104",
+      "sector": "Financials",
+      "total_value_usd": 3301200000,
+      "holder_count": 21,
+      "holders": [
+        {
+          "name": "ARK Investment Management",
+          "cik": "1697748",
+          "action": "trim",
+          "value_usd": 288200000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "UBS Group AG",
+          "cik": "0001114446",
+          "action": "trim",
+          "value_usd": 275100000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Northern Trust",
+          "cik": "0000073124",
+          "action": "trim",
+          "value_usd": 262000000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "JPMorgan Chase",
+          "cik": "0000019617",
+          "action": "trim",
+          "value_usd": 248900000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Morgan Stanley",
+          "cik": "0000895421",
+          "action": "trim",
+          "value_usd": 235800000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "trim",
+          "value_usd": 222700000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "trim",
+          "value_usd": 209600000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Geode Capital Management",
+          "cik": "0001364716",
+          "action": "trim",
+          "value_usd": 196500000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Norges Bank",
+          "cik": "0001167631",
+          "action": "trim",
+          "value_usd": 183400000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "T. Rowe Price Associates",
+          "cik": "0000080255",
+          "action": "trim",
+          "value_usd": 170300000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Wellington Management",
+          "cik": "0000902219",
+          "action": "trim",
+          "value_usd": 157200000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "trim",
+          "value_usd": 144100000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "trim",
+          "value_usd": 131000000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "trim",
+          "value_usd": 117900000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Renaissance Technologies",
+          "cik": "1037389",
+          "action": "trim",
+          "value_usd": 104800000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Bridgewater Associates",
+          "cik": "1350694",
+          "action": "trim",
+          "value_usd": 91700000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "FMR (Fidelity)",
+          "cik": "0000315066",
+          "action": "trim",
+          "value_usd": 78600000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "State Street",
+          "cik": "0000093751",
+          "action": "trim",
+          "value_usd": 65500000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Vanguard Group",
+          "cik": "0000102909",
+          "action": "trim",
+          "value_usd": 52400000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "trim",
+          "value_usd": 39300000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Berkshire Hathaway",
+          "cik": "1067983",
+          "action": "trim",
+          "value_usd": 26200000,
+          "portfolio_weight_pct": 18.45
+        }
+      ],
+      "weighted_score": 387.46,
+      "conviction_score": 100.0,
+      "net_action": "trim"
+    },
+    {
+      "issuer": "COCA COLA CO",
+      "cusip": "191216100",
+      "sector": "Consumer Staples",
+      "total_value_usd": 3200400000,
+      "holder_count": 21,
+      "holders": [
+        {
+          "name": "ARK Investment Management",
+          "cik": "1697748",
+          "action": "hold",
+          "value_usd": 279400000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "UBS Group AG",
+          "cik": "0001114446",
+          "action": "hold",
+          "value_usd": 266700000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Northern Trust",
+          "cik": "0000073124",
+          "action": "hold",
+          "value_usd": 254000000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "JPMorgan Chase",
+          "cik": "0000019617",
+          "action": "hold",
+          "value_usd": 241300000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Morgan Stanley",
+          "cik": "0000895421",
+          "action": "hold",
+          "value_usd": 228600000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "hold",
+          "value_usd": 215900000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "hold",
+          "value_usd": 203200000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Geode Capital Management",
+          "cik": "0001364716",
+          "action": "hold",
+          "value_usd": 190500000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Norges Bank",
+          "cik": "0001167631",
+          "action": "hold",
+          "value_usd": 177800000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "T. Rowe Price Associates",
+          "cik": "0000080255",
+          "action": "hold",
+          "value_usd": 165100000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Wellington Management",
+          "cik": "0000902219",
+          "action": "hold",
+          "value_usd": 152400000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "hold",
+          "value_usd": 139700000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "hold",
+          "value_usd": 127000000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "hold",
+          "value_usd": 114300000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Renaissance Technologies",
+          "cik": "1037389",
+          "action": "hold",
+          "value_usd": 101600000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Bridgewater Associates",
+          "cik": "1350694",
+          "action": "hold",
+          "value_usd": 88900000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "FMR (Fidelity)",
+          "cik": "0000315066",
+          "action": "hold",
+          "value_usd": 76200000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "State Street",
+          "cik": "0000093751",
+          "action": "hold",
+          "value_usd": 63500000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Vanguard Group",
+          "cik": "0000102909",
+          "action": "hold",
+          "value_usd": 50800000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "hold",
+          "value_usd": 38100000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Berkshire Hathaway",
+          "cik": "1067983",
+          "action": "hold",
+          "value_usd": 25400000,
+          "portfolio_weight_pct": 17.89
+        }
+      ],
+      "weighted_score": 375.63,
+      "conviction_score": 100.0,
+      "net_action": "hold"
+    },
+    {
+      "issuer": "OCCIDENTAL PETROLEUM CORP",
+      "cusip": "674599105",
+      "sector": "Energy",
+      "total_value_usd": 2242800000,
+      "holder_count": 21,
+      "holders": [
+        {
+          "name": "ARK Investment Management",
+          "cik": "1697748",
+          "action": "add",
+          "value_usd": 195800000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "UBS Group AG",
+          "cik": "0001114446",
+          "action": "add",
+          "value_usd": 186900000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Northern Trust",
+          "cik": "0000073124",
+          "action": "add",
+          "value_usd": 178000000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "JPMorgan Chase",
+          "cik": "0000019617",
+          "action": "add",
+          "value_usd": 169100000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Morgan Stanley",
+          "cik": "0000895421",
+          "action": "add",
+          "value_usd": 160200000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "add",
+          "value_usd": 151300000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "add",
+          "value_usd": 142400000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Geode Capital Management",
+          "cik": "0001364716",
+          "action": "add",
+          "value_usd": 133500000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Norges Bank",
+          "cik": "0001167631",
+          "action": "add",
+          "value_usd": 124600000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "T. Rowe Price Associates",
+          "cik": "0000080255",
+          "action": "add",
+          "value_usd": 115700000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Wellington Management",
+          "cik": "0000902219",
+          "action": "add",
+          "value_usd": 106800000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "add",
+          "value_usd": 97900000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "add",
+          "value_usd": 89000000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "add",
+          "value_usd": 80100000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Renaissance Technologies",
+          "cik": "1037389",
+          "action": "add",
+          "value_usd": 71200000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Bridgewater Associates",
+          "cik": "1350694",
+          "action": "add",
+          "value_usd": 62300000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "FMR (Fidelity)",
+          "cik": "0000315066",
+          "action": "add",
+          "value_usd": 53400000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "State Street",
+          "cik": "0000093751",
+          "action": "add",
+          "value_usd": 44500000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Vanguard Group",
+          "cik": "0000102909",
+          "action": "add",
+          "value_usd": 35600000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "add",
+          "value_usd": 26700000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Berkshire Hathaway",
+          "cik": "1067983",
+          "action": "add",
+          "value_usd": 17800000,
+          "portfolio_weight_pct": 12.54
+        }
+      ],
+      "weighted_score": 263.24,
+      "conviction_score": 100.0,
+      "net_action": "add"
+    },
+    {
+      "issuer": "SIRIUS XM HOLDINGS INC",
+      "cusip": "82968B103",
+      "sector": "Communications",
+      "total_value_usd": 340200000,
+      "holder_count": 21,
+      "holders": [
+        {
+          "name": "ARK Investment Management",
+          "cik": "1697748",
+          "action": "new",
+          "value_usd": 29700000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "UBS Group AG",
+          "cik": "0001114446",
+          "action": "new",
+          "value_usd": 28350000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Northern Trust",
+          "cik": "0000073124",
+          "action": "new",
+          "value_usd": 27000000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "JPMorgan Chase",
+          "cik": "0000019617",
+          "action": "new",
+          "value_usd": 25650000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Morgan Stanley",
+          "cik": "0000895421",
+          "action": "new",
+          "value_usd": 24300000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "new",
+          "value_usd": 22950000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "new",
+          "value_usd": 21600000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Geode Capital Management",
+          "cik": "0001364716",
+          "action": "new",
+          "value_usd": 20250000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Norges Bank",
+          "cik": "0001167631",
+          "action": "new",
+          "value_usd": 18900000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "T. Rowe Price Associates",
+          "cik": "0000080255",
+          "action": "new",
+          "value_usd": 17550000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Wellington Management",
+          "cik": "0000902219",
+          "action": "new",
+          "value_usd": 16200000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "new",
+          "value_usd": 14850000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "new",
+          "value_usd": 13500000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "new",
+          "value_usd": 12150000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Renaissance Technologies",
+          "cik": "1037389",
+          "action": "new",
+          "value_usd": 10800000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Bridgewater Associates",
+          "cik": "1350694",
+          "action": "new",
+          "value_usd": 9450000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "FMR (Fidelity)",
+          "cik": "0000315066",
+          "action": "new",
+          "value_usd": 8100000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "State Street",
+          "cik": "0000093751",
+          "action": "new",
+          "value_usd": 6750000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Vanguard Group",
+          "cik": "0000102909",
+          "action": "new",
+          "value_usd": 5400000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "new",
+          "value_usd": 4050000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Berkshire Hathaway",
+          "cik": "1067983",
+          "action": "new",
+          "value_usd": 2700000,
+          "portfolio_weight_pct": 1.9
+        }
+      ],
+      "weighted_score": 39.93,
+      "conviction_score": 100.0,
+      "net_action": "new"
     }
   ]
 }
