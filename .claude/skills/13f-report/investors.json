@@ -18,5 +18,6 @@
   { "name": "Morgan Stanley",              "cik": "0000895421" },
   { "name": "JPMorgan Chase",              "cik": "0000019617" },
   { "name": "Northern Trust",              "cik": "0000073124" },
-  { "name": "UBS Group AG",                "cik": "0001114446" }
+  { "name": "UBS Group AG",                "cik": "0001114446" },
+  { "name": "ARK Investment Management",   "cik": "1697748"    }
 ]
