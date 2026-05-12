@@ -35,6 +35,8 @@ DEFAULT_UA = "Western welstein@gmail.com"
 EDGAR_DATA = "https://data.sec.gov"
 EDGAR_ARCHIVES = "https://www.sec.gov/Archives/edgar/data"
 NS_INFO = "{http://www.sec.gov/edgar/document/thirteenf/informationtable}"
+OLLAMA_URL = "http://localhost:11434/v1/chat/completions"
+OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "llama3.2")
 
 _UA = os.environ.get("SEC_UA", DEFAULT_UA)
 
@@ -255,6 +257,65 @@ def process_filer(name: str, cik: str, top_n: int) -> dict:
     return out
 
 
+def _fmt_usd(v: int) -> str:
+    b = v / 1_000_000_000
+    if b >= 1:
+        return f"${b:.1f}B"
+    return f"${v / 1_000_000:.0f}M"
+
+
+def generate_ai_summary(filer: dict, model: str = OLLAMA_MODEL) -> str | None:
+    """Call a local Ollama instance to summarise key portfolio moves.
+
+    Returns the summary string, or None if Ollama is unavailable.
+    Uses urllib so no extra dependencies are needed.
+    """
+    name = filer.get("name", "")
+    qtr = (filer.get("latest_filing") or {}).get("report_date", "")
+    total = filer.get("total_value_usd", 0)
+    total_prior = filer.get("total_value_usd_prior")
+    aum_line = f"AUM: {_fmt_usd(total)}"
+    if total_prior:
+        aum_line += f" (prev {_fmt_usd(total_prior)})"
+
+    def _row(h: dict) -> str:
+        return (
+            f"{h['issuer']} ({h['action'].upper()}, "
+            f"Δ {_fmt_usd(abs(h['delta_value_usd']))})"
+        )
+
+    buys_txt = "; ".join(_row(h) for h in (filer.get("top_buys") or [])[:5]) or "none"
+    sells_txt = "; ".join(_row(h) for h in (filer.get("top_sells") or [])[:5]) or "none"
+    new_count = sum(1 for h in (filer.get("holdings") or []) if h["action"] == "new")
+    exit_count = len(filer.get("exited") or [])
+
+    prompt = (
+        f"Write a concise 3-sentence analyst summary of {name}'s 13F filing for {qtr}. "
+        f"{aum_line}. New positions: {new_count}. Exits: {exit_count}. "
+        f"Top buys: {buys_txt}. Top sells/trims: {sells_txt}. "
+        "Focus on the most interesting strategic moves. No bullet points, plain prose."
+    )
+
+    body = json.dumps({
+        "model": model,
+        "messages": [{"role": "user", "content": prompt}],
+        "stream": False,
+    }).encode()
+    req = urllib.request.Request(
+        OLLAMA_URL,
+        data=body,
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            data = json.loads(resp.read())
+            return data["choices"][0]["message"]["content"].strip()
+    except Exception as e:
+        print(f"  [ai] Ollama unavailable ({e}); skipping summary", file=sys.stderr)
+        return None
+
+
 def slug(name: str) -> str:
     return "".join(c if c.isalnum() else "_" for c in name.lower()).strip("_")
 
@@ -263,6 +324,7 @@ SUMMARY_FIELDS = (
     "name", "cik", "error", "latest_filing", "prior_filing",
     "holdings_count", "holdings_count_prior",
     "total_value_usd", "total_value_usd_prior",
+    "ai_summary",
 )
 
 
@@ -275,7 +337,7 @@ def _summary_entry(res: dict) -> dict:
     return {k: res[k] for k in SUMMARY_FIELDS if k in res}
 
 
-def run(investors_path: Path, out_dir: Path, top_n: int) -> int:
+def run(investors_path: Path, out_dir: Path, top_n: int, ai: bool = True, ai_model: str = OLLAMA_MODEL) -> int:
     investors = json.loads(investors_path.read_text())
     out_dir.mkdir(parents=True, exist_ok=True)
     summary = {"generated_at": date.today().isoformat(), "filers": []}
@@ -286,6 +348,11 @@ def run(investors_path: Path, out_dir: Path, top_n: int) -> int:
         except Exception as e:
             res = {"name": inv["name"], "cik": inv["cik"], "error": f"{type(e).__name__}: {e}"}
             failures += 1
+        if ai and "error" not in res:
+            print(f"[{inv['name']}] generating AI summary…", file=sys.stderr)
+            summary_text = generate_ai_summary(res, model=ai_model)
+            if summary_text:
+                res["ai_summary"] = summary_text
         summary["filers"].append(_summary_entry(res))
         (out_dir / f"{slug(inv['name'])}.json").write_text(json.dumps(res, indent=2))
         status = "ok" if "error" not in res else f"ERROR: {res['error']}"
@@ -382,6 +449,10 @@ def main() -> int:
                    help="SEC requires an identifying User-Agent (e.g. 'Name email@x.com')")
     p.add_argument("--smoke-test", action="store_true",
                    help="Run offline against bundled fixtures (no network)")
+    p.add_argument("--no-ai", action="store_true",
+                   help="Skip AI summary generation (useful if Ollama is not running)")
+    p.add_argument("--ai-model", default=OLLAMA_MODEL,
+                   help=f"Ollama model to use for summaries (default: {OLLAMA_MODEL})")
     args = p.parse_args()
 
     if args.user_agent:
@@ -390,7 +461,8 @@ def main() -> int:
 
     if args.smoke_test:
         return smoke_test_offline(here / "fixtures", Path(args.out_dir), Path(args.investors))
-    return run(Path(args.investors), Path(args.out_dir), args.top_n)
+    return run(Path(args.investors), Path(args.out_dir), args.top_n,
+               ai=not args.no_ai, ai_model=args.ai_model)
 
 
 if __name__ == "__main__":
