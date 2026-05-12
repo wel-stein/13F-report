@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { fmtCompactUSD, fmtSignedUSD } from '../format.js'
+import { ACTION_STYLE, fmtCompactUSD, fmtSignedUSD } from '../format.js'
 
 function aggregateMoves(filerData) {
   // Pull from each filer's full holdings + exited arrays so we don't miss
@@ -94,6 +94,65 @@ function StatCard({ label, value, sub, tone = 'slate' }) {
   )
 }
 
+function ConvictionRankings({ rankings }) {
+  const rows = rankings?.slice(0, 15) ?? []
+  return (
+    <div className="rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
+      <div className="border-b border-slate-200 px-4 py-2.5 dark:border-slate-800">
+        <h2 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Conviction Rankings</h2>
+      </div>
+      {rows.length === 0 ? (
+        <p className="px-4 py-5 text-center text-sm text-slate-500 dark:text-slate-400">Loading…</p>
+      ) : (
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-slate-100 text-sm dark:divide-slate-800">
+            <thead className="bg-slate-50 dark:bg-slate-800/50">
+              <tr className="text-slate-700 dark:text-slate-300">
+                <th scope="col" className="px-3 py-2 text-left font-semibold">#</th>
+                <th scope="col" className="px-3 py-2 text-left font-semibold">Issuer</th>
+                <th scope="col" className="hidden px-3 py-2 text-left font-semibold sm:table-cell">Sector</th>
+                <th scope="col" className="px-3 py-2 text-right font-semibold">Holders</th>
+                <th scope="col" className="hidden px-3 py-2 text-right font-semibold md:table-cell">Conviction %</th>
+                <th scope="col" className="hidden px-3 py-2 text-right font-semibold lg:table-cell">Weighted Score</th>
+                <th scope="col" className="px-3 py-2 text-left font-semibold">Net Action</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100 bg-white dark:divide-slate-800 dark:bg-slate-900">
+              {rows.map((r, i) => {
+                const actionCls = ACTION_STYLE[r.net_action] ?? ACTION_STYLE.hold
+                return (
+                  <tr key={r.cusip ?? i} className="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                    <td className="px-3 py-2 tabular-nums text-slate-400 dark:text-slate-500">{i + 1}</td>
+                    <td className="px-3 py-2">
+                      <p className="font-medium text-slate-900 dark:text-slate-100">{r.issuer}</p>
+                      <p className="text-[11px] text-slate-400 dark:text-slate-500 font-mono">{r.cusip}</p>
+                    </td>
+                    <td className="hidden px-3 py-2 text-slate-600 dark:text-slate-400 sm:table-cell">{r.sector ?? '—'}</td>
+                    <td className="px-3 py-2 text-right tabular-nums text-slate-900 dark:text-slate-100">{r.holder_count}</td>
+                    <td className="hidden px-3 py-2 text-right tabular-nums text-slate-700 dark:text-slate-300 md:table-cell">
+                      {r.conviction_score != null ? `${(r.conviction_score * 100).toFixed(1)}%` : '—'}
+                    </td>
+                    <td className="hidden px-3 py-2 text-right tabular-nums text-slate-700 dark:text-slate-300 lg:table-cell">
+                      {r.weighted_score != null ? r.weighted_score.toFixed(2) : '—'}
+                    </td>
+                    <td className="px-3 py-2">
+                      {r.net_action ? (
+                        <span className={`inline-flex rounded px-2 py-0.5 text-xs font-medium ring-1 ring-inset ${actionCls}`}>
+                          {r.net_action}
+                        </span>
+                      ) : '—'}
+                    </td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function Overview({ summary, filerData, onSelect }) {
   const filers = summary?.filers ?? []
   const ok = filers.filter((f) => !f.error)
@@ -160,6 +219,8 @@ export default function Overview({ summary, filerData, onSelect }) {
           Loading filer data… {filerData.filter((d) => d.data).length}/{ok.length}
         </p>
       )}
+
+      <ConvictionRankings rankings={summary?.conviction_rankings} />
 
       <div>
         <h2 className="mb-2 text-sm font-semibold text-slate-900 dark:text-slate-100">Per-filer summary</h2>

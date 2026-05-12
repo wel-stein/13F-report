@@ -8,6 +8,8 @@ import Overview from './components/Overview.jsx'
 import Compare from './components/Compare.jsx'
 import CopyLink from './components/CopyLink.jsx'
 import PortfolioBar from './components/PortfolioBar.jsx'
+import SectorBreakdown from './components/SectorBreakdown.jsx'
+import HistoryCard from './components/HistoryCard.jsx'
 
 function slug(name) {
   // Mirror download_13f.py's slug() exactly: each non-alphanumeric char
@@ -400,6 +402,16 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
                       total={filerData.total_value_usd}
                       top={10}
                     />
+                  </div>
+                )}
+                {(filerData.summary?.sector_breakdown?.length ?? 0) > 0 && (
+                  <div className="mt-6">
+                    <SectorBreakdown breakdown={filerData.summary?.sector_breakdown} />
+                  </div>
+                )}
+                {(filerData.history?.length ?? 0) > 0 && (
+                  <div className="mt-6">
+                    <HistoryCard history={filerData.history} />
                   </div>
                 )}
                 <div className="mt-6">
