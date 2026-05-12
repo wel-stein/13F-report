@@ -36,6 +36,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 69900000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 26200000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 25400000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 17800000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 2700000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -178,7 +210,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 142000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 69900000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 26200000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 25400000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 17800000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 2700000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "BlackRock",
@@ -215,6 +287,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 104850000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 39300000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 38100000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 26700000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 4050000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -357,7 +461,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 213000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 104850000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 39300000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 38100000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 26700000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 4050000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Vanguard Group",
@@ -394,6 +538,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 139800000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 52400000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 50800000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 35600000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 5400000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -536,7 +712,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 284000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 139800000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 52400000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 50800000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 35600000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 5400000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "State Street",
@@ -573,6 +789,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 174750000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 65500000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 63500000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 44500000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 6750000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -715,7 +963,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 355000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 174750000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 65500000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 63500000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 44500000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 6750000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "FMR (Fidelity)",
@@ -752,6 +1040,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 209700000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 78600000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 76200000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 53400000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 8100000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -894,7 +1214,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 426000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 209700000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 78600000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 76200000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 53400000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 8100000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Bridgewater Associates",
@@ -931,6 +1291,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 244650000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 91700000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 88900000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 62300000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 9450000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -1073,7 +1465,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 497000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 244650000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 91700000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 88900000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 62300000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 9450000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Renaissance Technologies",
@@ -1110,6 +1542,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 279600000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 104800000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 101600000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 71200000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 10800000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -1252,7 +1716,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 568000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 279600000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 104800000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 101600000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 71200000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 10800000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Citadel Advisors",
@@ -1289,6 +1793,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 314550000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 117900000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 114300000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 80100000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 12150000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -1431,7 +1967,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 639000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 314550000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 117900000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 114300000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 80100000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 12150000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Two Sigma Investments",
@@ -1468,6 +2044,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 349500000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 131000000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 127000000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 89000000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 13500000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -1610,7 +2218,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 710000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 349500000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 131000000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 127000000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 89000000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 13500000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Millennium Management",
@@ -1647,6 +2295,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 384450000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 144100000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 139700000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 97900000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 14850000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -1789,7 +2469,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 781000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 384450000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 144100000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 139700000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 97900000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 14850000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Wellington Management",
@@ -1826,6 +2546,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 419400000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 157200000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 152400000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 106800000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 16200000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -1968,7 +2720,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 852000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 419400000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 157200000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 152400000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 106800000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 16200000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "T. Rowe Price Associates",
@@ -2005,6 +2797,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 454350000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 170300000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 165100000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 115700000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 17550000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -2147,7 +2971,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 923000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 454350000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 170300000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 165100000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 115700000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 17550000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Norges Bank",
@@ -2184,6 +3048,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 489300000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 183400000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 177800000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 124600000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 18900000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -2326,7 +3222,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 994000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 489300000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 183400000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 177800000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 124600000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 18900000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Geode Capital Management",
@@ -2363,6 +3299,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 524250000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 196500000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 190500000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 133500000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 20250000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -2505,7 +3473,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 1065000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 524250000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 196500000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 190500000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 133500000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 20250000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Bank of New York Mellon",
@@ -2542,6 +3550,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 559200000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 209600000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 203200000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 142400000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 21600000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -2684,7 +3724,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 1136000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 559200000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 209600000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 203200000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 142400000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 21600000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Goldman Sachs Group",
@@ -2721,6 +3801,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 594150000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 222700000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 215900000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 151300000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 22950000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -2863,7 +3975,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 1207000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 594150000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 222700000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 215900000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 151300000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 22950000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Morgan Stanley",
@@ -2900,6 +4052,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 629100000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 235800000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 228600000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 160200000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 24300000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -3042,7 +4226,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 1278000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 629100000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 235800000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 228600000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 160200000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 24300000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "JPMorgan Chase",
@@ -3079,6 +4303,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 664050000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 248900000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 241300000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 169100000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 25650000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -3221,7 +4477,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 1349000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 664050000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 248900000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 241300000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 169100000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 25650000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Northern Trust",
@@ -3258,6 +4554,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 699000000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 262000000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 254000000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 178000000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 27000000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -3400,7 +4728,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 1420000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 699000000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 262000000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 254000000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 178000000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 27000000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "UBS Group AG",
@@ -3437,6 +4805,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 733950000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 275100000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 266700000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 186900000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 28350000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -3579,7 +4979,47 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 1491000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 733950000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 275100000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 266700000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 186900000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 28350000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "ARK Investment Management",
@@ -3616,6 +5056,38 @@
         "held_count": 1,
         "exited_count": 1,
         "top10_concentration_pct": 100.0,
+        "sector_breakdown": [
+          {
+            "sector": "Technology",
+            "value_usd": 768900000,
+            "count": 1,
+            "pct_of_portfolio": 49.23
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 288200000,
+            "count": 1,
+            "pct_of_portfolio": 18.45
+          },
+          {
+            "sector": "Consumer Staples",
+            "value_usd": 279400000,
+            "count": 1,
+            "pct_of_portfolio": 17.89
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 195800000,
+            "count": 1,
+            "pct_of_portfolio": 12.54
+          },
+          {
+            "sector": "Communications",
+            "value_usd": 29700000,
+            "count": 1,
+            "pct_of_portfolio": 1.9
+          }
+        ],
         "largest_new_positions": [
           {
             "issuer": "SIRIUS XM HOLDINGS INC",
@@ -3758,7 +5230,844 @@
             "delta_pct": "new"
           }
         ]
-      }
+      },
+      "history": [
+        {
+          "quarter": "2026-05-12",
+          "filing_date": "2026-05-12",
+          "total_value_usd": 1562000000,
+          "holdings_count": 5,
+          "top5_holdings": [
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 768900000,
+              "pct_of_portfolio": 49.23
+            },
+            {
+              "issuer": "BANK OF AMERICA CORP",
+              "cusip": "060505104",
+              "value_usd": 288200000,
+              "pct_of_portfolio": 18.45
+            },
+            {
+              "issuer": "COCA COLA CO",
+              "cusip": "191216100",
+              "value_usd": 279400000,
+              "pct_of_portfolio": 17.89
+            },
+            {
+              "issuer": "OCCIDENTAL PETROLEUM CORP",
+              "cusip": "674599105",
+              "value_usd": 195800000,
+              "pct_of_portfolio": 12.54
+            },
+            {
+              "issuer": "SIRIUS XM HOLDINGS INC",
+              "cusip": "82968B103",
+              "value_usd": 29700000,
+              "pct_of_portfolio": 1.9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "conviction_rankings": [
+    {
+      "issuer": "APPLE INC",
+      "cusip": "037833100",
+      "sector": "Technology",
+      "total_value_usd": 8807400000,
+      "holder_count": 21,
+      "holders": [
+        {
+          "name": "ARK Investment Management",
+          "cik": "1697748",
+          "action": "trim",
+          "value_usd": 768900000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "UBS Group AG",
+          "cik": "0001114446",
+          "action": "trim",
+          "value_usd": 733950000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Northern Trust",
+          "cik": "0000073124",
+          "action": "trim",
+          "value_usd": 699000000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "JPMorgan Chase",
+          "cik": "0000019617",
+          "action": "trim",
+          "value_usd": 664050000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Morgan Stanley",
+          "cik": "0000895421",
+          "action": "trim",
+          "value_usd": 629100000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "trim",
+          "value_usd": 594150000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "trim",
+          "value_usd": 559200000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Geode Capital Management",
+          "cik": "0001364716",
+          "action": "trim",
+          "value_usd": 524250000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Norges Bank",
+          "cik": "0001167631",
+          "action": "trim",
+          "value_usd": 489300000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "T. Rowe Price Associates",
+          "cik": "0000080255",
+          "action": "trim",
+          "value_usd": 454350000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Wellington Management",
+          "cik": "0000902219",
+          "action": "trim",
+          "value_usd": 419400000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "trim",
+          "value_usd": 384450000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "trim",
+          "value_usd": 349500000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "trim",
+          "value_usd": 314550000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Renaissance Technologies",
+          "cik": "1037389",
+          "action": "trim",
+          "value_usd": 279600000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Bridgewater Associates",
+          "cik": "1350694",
+          "action": "trim",
+          "value_usd": 244650000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "FMR (Fidelity)",
+          "cik": "0000315066",
+          "action": "trim",
+          "value_usd": 209700000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "State Street",
+          "cik": "0000093751",
+          "action": "trim",
+          "value_usd": 174750000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Vanguard Group",
+          "cik": "0000102909",
+          "action": "trim",
+          "value_usd": 139800000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "trim",
+          "value_usd": 104850000,
+          "portfolio_weight_pct": 49.23
+        },
+        {
+          "name": "Berkshire Hathaway",
+          "cik": "1067983",
+          "action": "trim",
+          "value_usd": 69900000,
+          "portfolio_weight_pct": 49.23
+        }
+      ],
+      "weighted_score": 1033.73,
+      "conviction_score": 100.0,
+      "net_action": "trim"
+    },
+    {
+      "issuer": "BANK OF AMERICA CORP",
+      "cusip": "060505104",
+      "sector": "Financials",
+      "total_value_usd": 3301200000,
+      "holder_count": 21,
+      "holders": [
+        {
+          "name": "ARK Investment Management",
+          "cik": "1697748",
+          "action": "trim",
+          "value_usd": 288200000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "UBS Group AG",
+          "cik": "0001114446",
+          "action": "trim",
+          "value_usd": 275100000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Northern Trust",
+          "cik": "0000073124",
+          "action": "trim",
+          "value_usd": 262000000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "JPMorgan Chase",
+          "cik": "0000019617",
+          "action": "trim",
+          "value_usd": 248900000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Morgan Stanley",
+          "cik": "0000895421",
+          "action": "trim",
+          "value_usd": 235800000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "trim",
+          "value_usd": 222700000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "trim",
+          "value_usd": 209600000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Geode Capital Management",
+          "cik": "0001364716",
+          "action": "trim",
+          "value_usd": 196500000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Norges Bank",
+          "cik": "0001167631",
+          "action": "trim",
+          "value_usd": 183400000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "T. Rowe Price Associates",
+          "cik": "0000080255",
+          "action": "trim",
+          "value_usd": 170300000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Wellington Management",
+          "cik": "0000902219",
+          "action": "trim",
+          "value_usd": 157200000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "trim",
+          "value_usd": 144100000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "trim",
+          "value_usd": 131000000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "trim",
+          "value_usd": 117900000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Renaissance Technologies",
+          "cik": "1037389",
+          "action": "trim",
+          "value_usd": 104800000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Bridgewater Associates",
+          "cik": "1350694",
+          "action": "trim",
+          "value_usd": 91700000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "FMR (Fidelity)",
+          "cik": "0000315066",
+          "action": "trim",
+          "value_usd": 78600000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "State Street",
+          "cik": "0000093751",
+          "action": "trim",
+          "value_usd": 65500000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Vanguard Group",
+          "cik": "0000102909",
+          "action": "trim",
+          "value_usd": 52400000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "trim",
+          "value_usd": 39300000,
+          "portfolio_weight_pct": 18.45
+        },
+        {
+          "name": "Berkshire Hathaway",
+          "cik": "1067983",
+          "action": "trim",
+          "value_usd": 26200000,
+          "portfolio_weight_pct": 18.45
+        }
+      ],
+      "weighted_score": 387.46,
+      "conviction_score": 100.0,
+      "net_action": "trim"
+    },
+    {
+      "issuer": "COCA COLA CO",
+      "cusip": "191216100",
+      "sector": "Consumer Staples",
+      "total_value_usd": 3200400000,
+      "holder_count": 21,
+      "holders": [
+        {
+          "name": "ARK Investment Management",
+          "cik": "1697748",
+          "action": "hold",
+          "value_usd": 279400000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "UBS Group AG",
+          "cik": "0001114446",
+          "action": "hold",
+          "value_usd": 266700000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Northern Trust",
+          "cik": "0000073124",
+          "action": "hold",
+          "value_usd": 254000000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "JPMorgan Chase",
+          "cik": "0000019617",
+          "action": "hold",
+          "value_usd": 241300000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Morgan Stanley",
+          "cik": "0000895421",
+          "action": "hold",
+          "value_usd": 228600000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "hold",
+          "value_usd": 215900000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "hold",
+          "value_usd": 203200000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Geode Capital Management",
+          "cik": "0001364716",
+          "action": "hold",
+          "value_usd": 190500000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Norges Bank",
+          "cik": "0001167631",
+          "action": "hold",
+          "value_usd": 177800000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "T. Rowe Price Associates",
+          "cik": "0000080255",
+          "action": "hold",
+          "value_usd": 165100000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Wellington Management",
+          "cik": "0000902219",
+          "action": "hold",
+          "value_usd": 152400000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "hold",
+          "value_usd": 139700000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "hold",
+          "value_usd": 127000000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "hold",
+          "value_usd": 114300000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Renaissance Technologies",
+          "cik": "1037389",
+          "action": "hold",
+          "value_usd": 101600000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Bridgewater Associates",
+          "cik": "1350694",
+          "action": "hold",
+          "value_usd": 88900000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "FMR (Fidelity)",
+          "cik": "0000315066",
+          "action": "hold",
+          "value_usd": 76200000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "State Street",
+          "cik": "0000093751",
+          "action": "hold",
+          "value_usd": 63500000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Vanguard Group",
+          "cik": "0000102909",
+          "action": "hold",
+          "value_usd": 50800000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "hold",
+          "value_usd": 38100000,
+          "portfolio_weight_pct": 17.89
+        },
+        {
+          "name": "Berkshire Hathaway",
+          "cik": "1067983",
+          "action": "hold",
+          "value_usd": 25400000,
+          "portfolio_weight_pct": 17.89
+        }
+      ],
+      "weighted_score": 375.63,
+      "conviction_score": 100.0,
+      "net_action": "hold"
+    },
+    {
+      "issuer": "OCCIDENTAL PETROLEUM CORP",
+      "cusip": "674599105",
+      "sector": "Energy",
+      "total_value_usd": 2242800000,
+      "holder_count": 21,
+      "holders": [
+        {
+          "name": "ARK Investment Management",
+          "cik": "1697748",
+          "action": "add",
+          "value_usd": 195800000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "UBS Group AG",
+          "cik": "0001114446",
+          "action": "add",
+          "value_usd": 186900000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Northern Trust",
+          "cik": "0000073124",
+          "action": "add",
+          "value_usd": 178000000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "JPMorgan Chase",
+          "cik": "0000019617",
+          "action": "add",
+          "value_usd": 169100000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Morgan Stanley",
+          "cik": "0000895421",
+          "action": "add",
+          "value_usd": 160200000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "add",
+          "value_usd": 151300000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "add",
+          "value_usd": 142400000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Geode Capital Management",
+          "cik": "0001364716",
+          "action": "add",
+          "value_usd": 133500000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Norges Bank",
+          "cik": "0001167631",
+          "action": "add",
+          "value_usd": 124600000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "T. Rowe Price Associates",
+          "cik": "0000080255",
+          "action": "add",
+          "value_usd": 115700000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Wellington Management",
+          "cik": "0000902219",
+          "action": "add",
+          "value_usd": 106800000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "add",
+          "value_usd": 97900000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "add",
+          "value_usd": 89000000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "add",
+          "value_usd": 80100000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Renaissance Technologies",
+          "cik": "1037389",
+          "action": "add",
+          "value_usd": 71200000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Bridgewater Associates",
+          "cik": "1350694",
+          "action": "add",
+          "value_usd": 62300000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "FMR (Fidelity)",
+          "cik": "0000315066",
+          "action": "add",
+          "value_usd": 53400000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "State Street",
+          "cik": "0000093751",
+          "action": "add",
+          "value_usd": 44500000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Vanguard Group",
+          "cik": "0000102909",
+          "action": "add",
+          "value_usd": 35600000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "add",
+          "value_usd": 26700000,
+          "portfolio_weight_pct": 12.54
+        },
+        {
+          "name": "Berkshire Hathaway",
+          "cik": "1067983",
+          "action": "add",
+          "value_usd": 17800000,
+          "portfolio_weight_pct": 12.54
+        }
+      ],
+      "weighted_score": 263.24,
+      "conviction_score": 100.0,
+      "net_action": "add"
+    },
+    {
+      "issuer": "SIRIUS XM HOLDINGS INC",
+      "cusip": "82968B103",
+      "sector": "Communications",
+      "total_value_usd": 340200000,
+      "holder_count": 21,
+      "holders": [
+        {
+          "name": "ARK Investment Management",
+          "cik": "1697748",
+          "action": "new",
+          "value_usd": 29700000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "UBS Group AG",
+          "cik": "0001114446",
+          "action": "new",
+          "value_usd": 28350000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Northern Trust",
+          "cik": "0000073124",
+          "action": "new",
+          "value_usd": 27000000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "JPMorgan Chase",
+          "cik": "0000019617",
+          "action": "new",
+          "value_usd": 25650000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Morgan Stanley",
+          "cik": "0000895421",
+          "action": "new",
+          "value_usd": 24300000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "new",
+          "value_usd": 22950000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "new",
+          "value_usd": 21600000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Geode Capital Management",
+          "cik": "0001364716",
+          "action": "new",
+          "value_usd": 20250000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Norges Bank",
+          "cik": "0001167631",
+          "action": "new",
+          "value_usd": 18900000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "T. Rowe Price Associates",
+          "cik": "0000080255",
+          "action": "new",
+          "value_usd": 17550000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Wellington Management",
+          "cik": "0000902219",
+          "action": "new",
+          "value_usd": 16200000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "new",
+          "value_usd": 14850000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "new",
+          "value_usd": 13500000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "new",
+          "value_usd": 12150000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Renaissance Technologies",
+          "cik": "1037389",
+          "action": "new",
+          "value_usd": 10800000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Bridgewater Associates",
+          "cik": "1350694",
+          "action": "new",
+          "value_usd": 9450000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "FMR (Fidelity)",
+          "cik": "0000315066",
+          "action": "new",
+          "value_usd": 8100000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "State Street",
+          "cik": "0000093751",
+          "action": "new",
+          "value_usd": 6750000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Vanguard Group",
+          "cik": "0000102909",
+          "action": "new",
+          "value_usd": 5400000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "new",
+          "value_usd": 4050000,
+          "portfolio_weight_pct": 1.9
+        },
+        {
+          "name": "Berkshire Hathaway",
+          "cik": "1067983",
+          "action": "new",
+          "value_usd": 2700000,
+          "portfolio_weight_pct": 1.9
+        }
+      ],
+      "weighted_score": 39.93,
+      "conviction_score": 100.0,
+      "net_action": "new"
     }
   ]
 }

@@ -178,6 +178,7 @@ def build_holdings(curr: dict[str, dict], prev: dict[str, dict]) -> tuple[list[d
         holdings.append({
             "issuer": c["issuer"], "class": c["class"], "cusip": c["cusip"],
             "put_call": c["put_call"], "share_type": c["share_type"],
+            "sector": classify_sector(c["issuer"]),
             "shares": c["shares"], "value_usd": c["value_usd"],
             "shares_prior": prior_shares, "value_usd_prior": prior_value,
             "delta_shares": delta_shares, "delta_value_usd": delta_value,
@@ -191,6 +192,7 @@ def build_holdings(curr: dict[str, dict], prev: dict[str, dict]) -> tuple[list[d
         exited.append({
             "issuer": p["issuer"], "class": p["class"], "cusip": p["cusip"],
             "put_call": p["put_call"], "share_type": p["share_type"],
+            "sector": classify_sector(p["issuer"]),
             "shares": 0, "value_usd": 0,
             "shares_prior": p["shares"], "value_usd_prior": p["value_usd"],
             "delta_shares": -p["shares"], "delta_value_usd": -p["value_usd"],
@@ -267,6 +269,270 @@ def _pct(a: int, b: int) -> str:
     return f"{(a - b) / b * 100:+.1f}%"
 
 
+# ---------------------------------------------------------------------------
+# Sector classification
+# ---------------------------------------------------------------------------
+
+# Ordered list: first match wins. Keywords are matched against the
+# upper-cased issuer name as it appears in the SEC filing.
+_SECTOR_RULES: list[tuple[str, tuple[str, ...]]] = [
+    ("Fund/ETF", (
+        " ETF", "ISHARES", "SPDR ", "INVESCO QQQ", " FUND ", "PROSHARES",
+        "DIREXION", "VANECK ", "WISDOMTREE",
+    )),
+    ("Technology", (
+        "APPLE INC", "MICROSOFT", "NVIDIA", "BROADCOM", "TAIWAN SEMICONDUCTOR",
+        "ASML HOLD", "SAMSUNG", "INTEL CORP", "QUALCOMM", "ADVANCED MICRO",
+        "APPLIED MATERIALS", "LAM RESEARCH", "KLA CORP", "MICRON TECH",
+        "ANALOG DEVICES", "TEXAS INSTRUMENTS", "NXP SEMI", "MARVELL TECH",
+        "SKYWORKS", "QORVO", "MICROCHIP TECH", "WESTERN DIGITAL", "SEAGATE",
+        "ORACLE CORP", "SAP SE", "SALESFORCE", "SERVICENOW", "WORKDAY",
+        "SNOWFLAKE", "CROWDSTRIKE", "PALO ALTO", "FORTINET", "ZSCALER",
+        "OKTA INC", "ADOBE INC", "AUTODESK", "INTUIT INC", "VEEVA",
+        "DATADOG", "MONGODB", "CLOUDFLARE", "TWILIO", "SHOPIFY",
+        "PAYPAL", "BLOCK INC", "SQUARE INC", "ARISTA NETWORKS",
+        "CISCO SYSTEMS", "JUNIPER NETWORKS", "MOTOROLA SOLUTIONS",
+        "ACCENTURE", "COGNIZANT", "INFOSYS", "WIPRO", "IBM CORP",
+        "HEWLETT PACKARD", "HP INC", "DELL TECH", "NETAPP", "PURE STORAGE",
+        "AKAMAI", "FASTLY INC", "UBER TECH", "LYFT INC",
+        "ROBLOX", "UNITY SOFTWARE", "ELECTRONIC ARTS", "ACTIVISION",
+        "TAKE-TWO", "NETFLIX INC",
+        "SEMICONDUCTOR", "SOFTWARE INC", "SOFTWARE CORP", "TECHNOLOGIES INC",
+        "TECHNOLOGIES CORP", "TECH CORP", "TECH INC", "DIGITAL INC",
+        "CYBER", "COMPUTING INC",
+    )),
+    ("Communications", (
+        "ALPHABET INC", "META PLATFORMS", "COMCAST CORP", "CHARTER COMM",
+        "VERIZON COMM", "AT&T INC", "T-MOBILE US", "DISH NETWORK",
+        "FOX CORP", "NEW YORK TIMES", "PARAMOUNT", "WARNER BROS",
+        "SIRIUS XM", "PINTEREST INC", "SNAP INC", "SPOTIFY",
+        "TELECOM", "TELECOMMUNICATIONS", "WIRELESS COMM", "BROADBAND",
+        "MEDIA CORP", "BROADCASTING",
+    )),
+    ("Healthcare", (
+        "UNITEDHEALTH", "JOHNSON & JOHNSON", "ABBVIE INC", "ELI LILLY",
+        "PFIZER INC", "MERCK & CO", "BRISTOL-MYERS", "AMGEN INC",
+        "GILEAD SCIENCES", "REGENERON", "VERTEX PHARMA", "BIOGEN INC",
+        "MODERNA INC", "BIONTECH", "ASTRAZENECA", "NOVARTIS", "NOVO NORDISK",
+        "ROCHE HOLD", "SANOFI", "GLAXOSMITHKLINE", "GSK PLC",
+        "MEDTRONIC", "ABBOTT LABS", "BECTON DICKINSON", "ZIMMER BIOMET",
+        "STRYKER CORP", "BOSTON SCIENTIFIC", "EDWARDS LIFESCIENCES",
+        "INTUITIVE SURGICAL", "DANAHER CORP", "ILLUMINA INC",
+        "THERMO FISHER", "AGILENT TECH", "WATERS CORP",
+        "CVS HEALTH", "WALGREEN", "MCKESSON CORP", "AMERISOURCE",
+        "CARDINAL HEALTH", "CIGNA CORP", "HUMANA INC", "ELEVANCE",
+        "CENTENE CORP", "MOLINA HEALTH",
+        "PHARMA", "BIOTECH", "THERAPEUTICS", "BIOSCIENCES", "ONCOLOGY",
+        "GENOMICS", "MEDICAL CORP", "MEDICAL INC", "HEALTH CORP",
+        "CLINICAL", "DIAGNOSTIC", "SURGICAL INC", "LABORATORY",
+    )),
+    ("Financials", (
+        "JPMORGAN CHASE", "BANK OF AMERICA", "WELLS FARGO", "CITIGROUP",
+        "GOLDMAN SACHS", "MORGAN STANLEY", "BLACKROCK INC",
+        "BERKSHIRE HATHAWAY", "VISA INC", "MASTERCARD INC",
+        "AMERICAN EXPRESS", "CHARLES SCHWAB", "STATE STREET CORP",
+        "NORTHERN TRUST", "BANK OF NEW YORK", "BNY MELLON",
+        "AMERICAN INTERNATIONAL", "CHUBB LTD", "PROGRESSIVE CORP",
+        "TRAVELERS COS", "ALLSTATE CORP", "METLIFE INC", "PRUDENTIAL",
+        "AFLAC INC", "LINCOLN NATIONAL", "CME GROUP", "CBOE GLOBAL",
+        "INTERCONTINENTAL EXCHANGE", "NASDAQ INC", "MOODY", "S&P GLOBAL",
+        "MSCI INC", "FACTSET",
+        "BANK CORP", "BANK INC", "BANCORP", "FINANCIAL CORP",
+        "FINANCIAL INC", "FINANCIAL GROUP", "INSURANCE CO",
+        "INSURANCE CORP", "CAPITAL CORP", "CAPITAL INC",
+        "ASSET MANAGEMENT", "SECURITIES CORP", "MORTGAGE CORP",
+        "CREDIT CORP", "LENDING INC",
+    )),
+    ("Energy", (
+        "EXXON MOBIL", "CHEVRON CORP", "CONOCOPHILLIPS", "PIONEER NATURAL",
+        "DEVON ENERGY", "EOG RESOURCES", "SCHLUMBERGER", "HALLIBURTON",
+        "BAKER HUGHES", "WILLIAMS COS", "KINDER MORGAN",
+        "ENTERPRISE PRODUCTS", "MARATHON OIL", "MARATHON PETROLEUM",
+        "VALERO ENERGY", "PHILLIPS 66", "OCCIDENTAL PETROLEUM",
+        "DIAMONDBACK ENERGY", "COTERRA ENERGY", "ENPHASE ENERGY",
+        "FIRST SOLAR", "SUNRUN INC", "NEXTERA ENERGY",
+        "ENERGY CORP", "ENERGY INC", "OIL CORP", "OIL INC",
+        "PETROLEUM CORP", "PIPELINE CORP", "REFINING CORP",
+        "DRILLING CORP", "EXPLORATION CORP",
+    )),
+    ("Consumer Discretionary", (
+        "AMAZON COM", "TESLA INC", "HOME DEPOT", "LOWE'S COS",
+        "MCDONALD'S CORP", "STARBUCKS CORP", "YUM BRANDS",
+        "NIKE INC", "LULULEMON", "RALPH LAUREN",
+        "FORD MOTOR", "GENERAL MOTORS", "STELLANTIS",
+        "MARRIOTT INTL", "HILTON WORLDWIDE", "HYATT HOTELS", "WYNDHAM",
+        "BOOKING HOLDINGS", "AIRBNB INC", "EXPEDIA GROUP",
+        "WALT DISNEY", "WARNER BROS DISCOVERY",
+        "ROSS STORES", "TJX COMPANIES", "BURLINGTON STORES",
+        "AUTOZONE INC", "O'REILLY AUTO", "ADVANCE AUTO",
+        "CARNIVAL CORP", "ROYAL CARIBBEAN", "NORWEGIAN CRUISE",
+        "RETAIL CORP", "RETAIL INC", "APPAREL INC",
+        "RESTAURANTS INC", "HOTELS INC", "LUXURY INC",
+    )),
+    ("Consumer Staples", (
+        "WALMART INC", "COSTCO WHOLESALE", "PROCTER & GAMBLE",
+        "COCA-COLA CO", "COCA COLA CO", "PEPSICO INC", "MONSTER BEVERAGE",
+        "PHILIP MORRIS", "ALTRIA GROUP", "BRITISH AMERICAN TOBACCO",
+        "NESTLE SA", "UNILEVER PLC", "DIAGEO PLC", "BROWN-FORMAN",
+        "GENERAL MILLS", "KELLOGG CO", "KRAFT HEINZ", "CAMPBELL SOUP",
+        "HERSHEY CO", "MONDELEZ", "CONAGRA BRANDS", "COLGATE-PALMOLIVE",
+        "KIMBERLY-CLARK", "CHURCH & DWIGHT",
+        "SYSCO CORP", "US FOODS",
+        "GROCERY", "BEVERAGE CORP", "TOBACCO CORP",
+        "HOUSEHOLD PRODUCTS",
+    )),
+    ("Industrials", (
+        "BOEING CO", "LOCKHEED MARTIN", "RAYTHEON TECH", "NORTHROP GRUMMAN",
+        "GENERAL DYNAMICS", "L3HARRIS", "TEXTRON INC",
+        "CATERPILLAR INC", "DEERE & CO", "ILLINOIS TOOL",
+        "PARKER HANNIFIN", "HONEYWELL INTL", "EMERSON ELECTRIC",
+        "EATON CORP", "ROCKWELL AUTOMATION",
+        "UNITED PARCEL", "FEDEX CORP", "XPO INC", "OLD DOMINION",
+        "UNION PACIFIC", "CSX CORP", "NORFOLK SOUTHERN",
+        "GENERAL ELECTRIC", "3M CO", "MMM INC",
+        "WASTE MANAGEMENT", "REPUBLIC SERVICES",
+        "FASTENAL CO", "W.W. GRAINGER",
+        "AEROSPACE CORP", "DEFENSE CORP", "INDUSTRIAL CORP",
+        "MANUFACTURING CORP", "MACHINERY CORP", "ENGINEERING CORP",
+        "LOGISTICS CORP", "FREIGHT CORP", "RAILROAD CORP",
+    )),
+    ("Real Estate", (
+        "PROLOGIS INC", "AMERICAN TOWER", "CROWN CASTLE",
+        "SBA COMMUNICATIONS", "SIMON PROPERTY", "BROOKFIELD",
+        "WELLTOWER INC", "VENTAS INC", "EQUINIX INC",
+        "DIGITAL REALTY", "IRON MOUNTAIN", "EXTRA SPACE STORAGE",
+        "PUBLIC STORAGE", "LIFE STORAGE", "REALTY INCOME",
+        "NATIONAL RETAIL", "AGREE REALTY",
+        "REIT", "REAL ESTATE", "REALTY CORP", "REALTY INC",
+        "PROPERTY TRUST", "PROPERTIES INC", "PROPERTIES CORP",
+        "APARTMENT", "RESIDENTIAL TRUST",
+    )),
+    ("Utilities", (
+        "DUKE ENERGY", "SOUTHERN CO", "DOMINION ENERGY",
+        "AMERICAN ELECTRIC POWER", "XCEL ENERGY", "EVERSOURCE ENERGY",
+        "CONSOLIDATED EDISON", "PUBLIC SERVICE ENTERPRISE",
+        "SEMPRA ENERGY", "WEC ENERGY", "ENTERGY CORP",
+        "FIRSTENERGY CORP", "PPL CORP", "AMERICAN WATER WORKS",
+        "UTILITIES INC", "ELECTRIC POWER CORP",
+        "UTILITY CORP", "WATER WORKS CORP",
+    )),
+    ("Materials", (
+        "LINDE PLC", "AIR PRODUCTS", "DOW INC", "DUPONT DE NEMOURS",
+        "LYONDELLBASELL", "EASTMAN CHEMICAL", "CELANESE CORP",
+        "FREEPORT-MCMORAN", "NEWMONT CORP", "BARRICK GOLD",
+        "AGNICO EAGLE", "NUCOR CORP", "STEEL DYNAMICS",
+        "ALCOA CORP", "RIO TINTO", "BHP GROUP",
+        "CHEMICAL CORP", "CHEMICAL INC", "CHEMICALS CORP",
+        "MATERIALS CORP", "METALS INC", "MINING CORP",
+        "STEEL CORP", "ALUMINUM CORP", "GOLD CORP",
+    )),
+]
+
+
+def classify_sector(issuer: str) -> str:
+    name = issuer.upper()
+    for sector, keywords in _SECTOR_RULES:
+        if any(kw in name for kw in keywords):
+            return sector
+    return "Other"
+
+
+# ---------------------------------------------------------------------------
+# Multi-quarter history (incremental — built up across runs)
+# ---------------------------------------------------------------------------
+
+def _quarter_snapshot(filer: dict) -> dict:
+    holdings = filer.get("holdings") or []
+    total = filer.get("total_value_usd", 0)
+    top5 = [
+        {
+            "issuer": h["issuer"],
+            "cusip": h["cusip"],
+            "value_usd": h["value_usd"],
+            "pct_of_portfolio": round(h["value_usd"] / total * 100, 2) if total else 0,
+        }
+        for h in holdings[:5]
+    ]
+    return {
+        "quarter": (filer.get("latest_filing") or {}).get("report_date", ""),
+        "filing_date": (filer.get("latest_filing") or {}).get("filing_date", ""),
+        "total_value_usd": total,
+        "holdings_count": filer.get("holdings_count", 0),
+        "top5_holdings": top5,
+    }
+
+
+def merge_history(existing: list[dict], filer: dict, max_quarters: int = 8) -> list[dict]:
+    snapshot = _quarter_snapshot(filer)
+    quarter = snapshot["quarter"]
+    if not quarter:
+        return existing
+    updated = [q for q in existing if q.get("quarter") != quarter]
+    updated.append(snapshot)
+    updated.sort(key=lambda q: q.get("quarter", ""), reverse=True)
+    return updated[:max_quarters]
+
+
+# ---------------------------------------------------------------------------
+# Conviction score (cross-filer, computed after all filers are processed)
+# ---------------------------------------------------------------------------
+
+def build_conviction_rankings(results: list[dict], top_n: int = 50) -> list[dict]:
+    """Rank stocks by how many of the tracked managers hold them.
+
+    conviction_score = (holder_count / total_filers) * 100
+    weighted_score   = sum of (holding_value / filer_aum) across holders * 100
+    """
+    valid = [r for r in results if "error" not in r]
+    total_filers = len(valid)
+    if not total_filers:
+        return []
+
+    # CUSIP → aggregated data
+    cusip_map: dict[str, dict] = {}
+    for filer in valid:
+        aum = filer.get("total_value_usd") or 0
+        for h in (filer.get("holdings") or []):
+            cusip = h["cusip"]
+            if not cusip:
+                continue
+            if cusip not in cusip_map:
+                cusip_map[cusip] = {
+                    "issuer": h["issuer"],
+                    "cusip": cusip,
+                    "sector": h.get("sector", "Other"),
+                    "total_value_usd": 0,
+                    "holder_count": 0,
+                    "holders": [],
+                    "weighted_score": 0.0,
+                }
+            entry = cusip_map[cusip]
+            entry["total_value_usd"] += h["value_usd"]
+            entry["holder_count"] += 1
+            portfolio_weight = h["value_usd"] / aum * 100 if aum else 0
+            entry["weighted_score"] += portfolio_weight
+            entry["holders"].append({
+                "name": filer["name"],
+                "cik": filer["cik"],
+                "action": h["action"],
+                "value_usd": h["value_usd"],
+                "portfolio_weight_pct": round(portfolio_weight, 2),
+            })
+
+    rankings = []
+    for entry in cusip_map.values():
+        entry["conviction_score"] = round(entry["holder_count"] / total_filers * 100, 1)
+        entry["weighted_score"] = round(entry["weighted_score"], 2)
+        # majority action among holders
+        actions = [h["action"] for h in entry["holders"]]
+        entry["net_action"] = max(set(actions), key=actions.count)
+        entry["holders"].sort(key=lambda h: h["value_usd"], reverse=True)
+        rankings.append(entry)
+
+    rankings.sort(key=lambda e: (e["holder_count"], e["weighted_score"]), reverse=True)
+    return rankings[:top_n]
+
+
 def build_summary(filer: dict) -> dict:
     """Derive a structured summary purely from the filer data — no LLM needed."""
     holdings = filer.get("holdings") or []
@@ -300,6 +566,22 @@ def build_summary(filer: dict) -> dict:
             "delta_pct": _pct(h["shares"], h["shares_prior"]) if h["shares_prior"] else "new",
         }
 
+    sector_breakdown: dict[str, dict] = {}
+    for h in holdings:
+        s = h.get("sector", "Other")
+        if s not in sector_breakdown:
+            sector_breakdown[s] = {"value_usd": 0, "count": 0}
+        sector_breakdown[s]["value_usd"] += h["value_usd"]
+        sector_breakdown[s]["count"] += 1
+    for s in sector_breakdown:
+        sector_breakdown[s]["pct_of_portfolio"] = round(
+            sector_breakdown[s]["value_usd"] / total * 100, 2
+        ) if total else 0
+    sector_breakdown_list = sorted(
+        [{"sector": s, **v} for s, v in sector_breakdown.items()],
+        key=lambda x: x["value_usd"], reverse=True,
+    )
+
     return {
         "quarter": (filer.get("latest_filing") or {}).get("report_date", ""),
         "aum_usd": total,
@@ -314,6 +596,7 @@ def build_summary(filer: dict) -> dict:
         "held_count": len(held),
         "exited_count": len(exited),
         "top10_concentration_pct": concentration_pct,
+        "sector_breakdown": sector_breakdown_list,
         "largest_new_positions": [_holding_snapshot(h) for h in new_positions[:5]],
         "largest_exits": [_holding_snapshot(h) for h in exited[:5]],
         "top_buys": [_holding_snapshot(h) for h in top_buys[:5]],
@@ -330,7 +613,7 @@ SUMMARY_FIELDS = (
     "name", "cik", "error", "latest_filing", "prior_filing",
     "holdings_count", "holdings_count_prior",
     "total_value_usd", "total_value_usd_prior",
-    "summary",
+    "summary", "history",
 )
 
 
@@ -348,7 +631,15 @@ def run(investors_path: Path, out_dir: Path, top_n: int) -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
     summary = {"generated_at": date.today().isoformat(), "filers": []}
     failures = 0
+    all_results: list[dict] = []
     for inv in investors:
+        filer_path = out_dir / f"{slug(inv['name'])}.json"
+        existing_history: list[dict] = []
+        if filer_path.exists():
+            try:
+                existing_history = json.loads(filer_path.read_text()).get("history") or []
+            except Exception:
+                pass
         try:
             res = process_filer(inv["name"], inv["cik"], top_n=top_n)
         except Exception as e:
@@ -356,10 +647,13 @@ def run(investors_path: Path, out_dir: Path, top_n: int) -> int:
             failures += 1
         if "error" not in res:
             res["summary"] = build_summary(res)
+            res["history"] = merge_history(existing_history, res)
+        all_results.append(res)
         summary["filers"].append(_summary_entry(res))
-        (out_dir / f"{slug(inv['name'])}.json").write_text(json.dumps(res, indent=2))
+        filer_path.write_text(json.dumps(res, indent=2))
         status = "ok" if "error" not in res else f"ERROR: {res['error']}"
         print(f"[{inv['name']}] {status}", file=sys.stderr)
+    summary["conviction_rankings"] = build_conviction_rankings(all_results)
     (out_dir / "summary.json").write_text(json.dumps(summary, indent=2))
     return 1 if failures == len(investors) else 0
 
@@ -394,6 +688,7 @@ def smoke_test_offline(fixtures_dir: Path, out_dir: Path, investors_path: Path) 
     investors = json.loads(investors_path.read_text())
     today = date.today().isoformat()
     summary: dict = {"generated_at": today, "filers": []}
+    all_payloads: list[dict] = []
 
     int_keys = ("shares", "shares_prior", "delta_shares",
                 "value_usd", "value_usd_prior", "delta_value_usd")
@@ -436,8 +731,18 @@ def smoke_test_offline(fixtures_dir: Path, out_dir: Path, investors_path: Path) 
             "top_sells": sells,
         }
         payload["summary"] = build_summary(payload)
-        (out_dir / f"{slug(inv['name'])}.json").write_text(json.dumps(payload, indent=2))
+        filer_path = out_dir / f"{slug(inv['name'])}.json"
+        existing_history: list[dict] = []
+        if filer_path.exists():
+            try:
+                existing_history = json.loads(filer_path.read_text()).get("history") or []
+            except Exception:
+                pass
+        payload["history"] = merge_history(existing_history, payload)
+        all_payloads.append(payload)
+        filer_path.write_text(json.dumps(payload, indent=2))
         summary["filers"].append(_summary_entry(payload))
+    summary["conviction_rankings"] = build_conviction_rankings(all_payloads)
     (out_dir / "summary.json").write_text(json.dumps(summary, indent=2))
     print(f"wrote {len(investors)} filer JSONs + summary.json to {out_dir}", file=sys.stderr)
     return 0

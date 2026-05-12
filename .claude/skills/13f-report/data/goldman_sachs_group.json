@@ -26,6 +26,7 @@
       "cusip": "037833100",
       "put_call": "",
       "share_type": "SH",
+      "sector": "Technology",
       "shares": 2550000000,
       "value_usd": 594150000,
       "shares_prior": 7697260000,
@@ -40,6 +41,7 @@
       "cusip": "060505104",
       "put_call": "",
       "share_type": "SH",
+      "sector": "Financials",
       "shares": 6800000000,
       "value_usd": 222700000,
       "shares_prior": 8779242051,
@@ -54,6 +56,7 @@
       "cusip": "191216100",
       "put_call": "",
       "share_type": "SH",
+      "sector": "Consumer Staples",
       "shares": 3400000000,
       "value_usd": 215900000,
       "shares_prior": 3400000000,
@@ -68,6 +71,7 @@
       "cusip": "674599105",
       "put_call": "",
       "share_type": "SH",
+      "sector": "Energy",
       "shares": 2245700000,
       "value_usd": 151300000,
       "shares_prior": 2108000000,
@@ -82,6 +86,7 @@
       "cusip": "82968B103",
       "put_call": "",
       "share_type": "SH",
+      "sector": "Communications",
       "shares": 1020000000,
       "value_usd": 22950000,
       "shares_prior": 0,
@@ -98,6 +103,7 @@
       "cusip": "40434L105",
       "put_call": "",
       "share_type": "SH",
+      "sector": "Technology",
       "shares": 0,
       "value_usd": 0,
       "shares_prior": 888250000,
@@ -114,6 +120,7 @@
       "cusip": "674599105",
       "put_call": "",
       "share_type": "SH",
+      "sector": "Energy",
       "shares": 2245700000,
       "value_usd": 151300000,
       "shares_prior": 2108000000,
@@ -128,6 +135,7 @@
       "cusip": "82968B103",
       "put_call": "",
       "share_type": "SH",
+      "sector": "Communications",
       "shares": 1020000000,
       "value_usd": 22950000,
       "shares_prior": 0,
@@ -144,6 +152,7 @@
       "cusip": "037833100",
       "put_call": "",
       "share_type": "SH",
+      "sector": "Technology",
       "shares": 2550000000,
       "value_usd": 594150000,
       "shares_prior": 7697260000,
@@ -158,6 +167,7 @@
       "cusip": "060505104",
       "put_call": "",
       "share_type": "SH",
+      "sector": "Financials",
       "shares": 6800000000,
       "value_usd": 222700000,
       "shares_prior": 8779242051,
@@ -172,6 +182,7 @@
       "cusip": "40434L105",
       "put_call": "",
       "share_type": "SH",
+      "sector": "Technology",
       "shares": 0,
       "value_usd": 0,
       "shares_prior": 888250000,
@@ -195,6 +206,38 @@
     "held_count": 1,
     "exited_count": 1,
     "top10_concentration_pct": 100.0,
+    "sector_breakdown": [
+      {
+        "sector": "Technology",
+        "value_usd": 594150000,
+        "count": 1,
+        "pct_of_portfolio": 49.23
+      },
+      {
+        "sector": "Financials",
+        "value_usd": 222700000,
+        "count": 1,
+        "pct_of_portfolio": 18.45
+      },
+      {
+        "sector": "Consumer Staples",
+        "value_usd": 215900000,
+        "count": 1,
+        "pct_of_portfolio": 17.89
+      },
+      {
+        "sector": "Energy",
+        "value_usd": 151300000,
+        "count": 1,
+        "pct_of_portfolio": 12.54
+      },
+      {
+        "sector": "Communications",
+        "value_usd": 22950000,
+        "count": 1,
+        "pct_of_portfolio": 1.9
+      }
+    ],
     "largest_new_positions": [
       {
         "issuer": "SIRIUS XM HOLDINGS INC",
@@ -337,5 +380,45 @@
         "delta_pct": "new"
       }
     ]
-  }
+  },
+  "history": [
+    {
+      "quarter": "2026-05-12",
+      "filing_date": "2026-05-12",
+      "total_value_usd": 1207000000,
+      "holdings_count": 5,
+      "top5_holdings": [
+        {
+          "issuer": "APPLE INC",
+          "cusip": "037833100",
+          "value_usd": 594150000,
+          "pct_of_portfolio": 49.23
+        },
+        {
+          "issuer": "BANK OF AMERICA CORP",
+          "cusip": "060505104",
+          "value_usd": 222700000,
+          "pct_of_portfolio": 18.45
+        },
+        {
+          "issuer": "COCA COLA CO",
+          "cusip": "191216100",
+          "value_usd": 215900000,
+          "pct_of_portfolio": 17.89
+        },
+        {
+          "issuer": "OCCIDENTAL PETROLEUM CORP",
+          "cusip": "674599105",
+          "value_usd": 151300000,
+          "pct_of_portfolio": 12.54
+        },
+        {
+          "issuer": "SIRIUS XM HOLDINGS INC",
+          "cusip": "82968B103",
+          "value_usd": 22950000,
+          "pct_of_portfolio": 1.9
+        }
+      ]
+    }
+  ]
 }
