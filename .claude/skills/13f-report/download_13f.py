@@ -35,9 +35,6 @@ DEFAULT_UA = "Western welstein@gmail.com"
 EDGAR_DATA = "https://data.sec.gov"
 EDGAR_ARCHIVES = "https://www.sec.gov/Archives/edgar/data"
 NS_INFO = "{http://www.sec.gov/edgar/document/thirteenf/informationtable}"
-OLLAMA_URL = "http://localhost:11434/v1/chat/completions"
-OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "llama3.2")
-
 _UA = os.environ.get("SEC_UA", DEFAULT_UA)
 
 
@@ -264,56 +261,65 @@ def _fmt_usd(v: int) -> str:
     return f"${v / 1_000_000:.0f}M"
 
 
-def generate_ai_summary(filer: dict, model: str = OLLAMA_MODEL) -> str | None:
-    """Call a local Ollama instance to summarise key portfolio moves.
+def _pct(a: int, b: int) -> str:
+    if not b:
+        return "n/a"
+    return f"{(a - b) / b * 100:+.1f}%"
 
-    Returns the summary string, or None if Ollama is unavailable.
-    Uses urllib so no extra dependencies are needed.
-    """
-    name = filer.get("name", "")
-    qtr = (filer.get("latest_filing") or {}).get("report_date", "")
+
+def build_summary(filer: dict) -> dict:
+    """Derive a structured summary purely from the filer data — no LLM needed."""
+    holdings = filer.get("holdings") or []
+    exited = filer.get("exited") or []
+    top_buys = filer.get("top_buys") or []
+    top_sells = filer.get("top_sells") or []
+
     total = filer.get("total_value_usd", 0)
-    total_prior = filer.get("total_value_usd_prior")
-    aum_line = f"AUM: {_fmt_usd(total)}"
-    if total_prior:
-        aum_line += f" (prev {_fmt_usd(total_prior)})"
+    total_prior = filer.get("total_value_usd_prior") or 0
+    count = filer.get("holdings_count", 0)
+    count_prior = filer.get("holdings_count_prior") or 0
 
-    def _row(h: dict) -> str:
-        return (
-            f"{h['issuer']} ({h['action'].upper()}, "
-            f"Δ {_fmt_usd(abs(h['delta_value_usd']))})"
-        )
+    new_positions = [h for h in holdings if h["action"] == "new"]
+    added = [h for h in holdings if h["action"] == "add"]
+    trimmed = [h for h in holdings if h["action"] == "trim"]
+    held = [h for h in holdings if h["action"] == "hold"]
 
-    buys_txt = "; ".join(_row(h) for h in (filer.get("top_buys") or [])[:5]) or "none"
-    sells_txt = "; ".join(_row(h) for h in (filer.get("top_sells") or [])[:5]) or "none"
-    new_count = sum(1 for h in (filer.get("holdings") or []) if h["action"] == "new")
-    exit_count = len(filer.get("exited") or [])
+    top10_value = sum(h["value_usd"] for h in holdings[:10])
+    concentration_pct = round(top10_value / total * 100, 1) if total else 0
 
-    prompt = (
-        f"Write a concise 3-sentence analyst summary of {name}'s 13F filing for {qtr}. "
-        f"{aum_line}. New positions: {new_count}. Exits: {exit_count}. "
-        f"Top buys: {buys_txt}. Top sells/trims: {sells_txt}. "
-        "Focus on the most interesting strategic moves. No bullet points, plain prose."
-    )
+    def _holding_snapshot(h: dict) -> dict:
+        return {
+            "issuer": h["issuer"],
+            "cusip": h["cusip"],
+            "action": h["action"],
+            "shares": h["shares"],
+            "shares_prior": h["shares_prior"],
+            "delta_shares": h["delta_shares"],
+            "value_usd": h["value_usd"],
+            "delta_value_usd": h["delta_value_usd"],
+            "delta_pct": _pct(h["shares"], h["shares_prior"]) if h["shares_prior"] else "new",
+        }
 
-    body = json.dumps({
-        "model": model,
-        "messages": [{"role": "user", "content": prompt}],
-        "stream": False,
-    }).encode()
-    req = urllib.request.Request(
-        OLLAMA_URL,
-        data=body,
-        headers={"Content-Type": "application/json"},
-        method="POST",
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=60) as resp:
-            data = json.loads(resp.read())
-            return data["choices"][0]["message"]["content"].strip()
-    except Exception as e:
-        print(f"  [ai] Ollama unavailable ({e}); skipping summary", file=sys.stderr)
-        return None
+    return {
+        "quarter": (filer.get("latest_filing") or {}).get("report_date", ""),
+        "aum_usd": total,
+        "aum_usd_prior": total_prior,
+        "aum_change_pct": _pct(total, total_prior) if total_prior else "n/a",
+        "holdings_count": count,
+        "holdings_count_prior": count_prior,
+        "holdings_count_change": count - count_prior,
+        "new_positions_count": len(new_positions),
+        "added_count": len(added),
+        "trimmed_count": len(trimmed),
+        "held_count": len(held),
+        "exited_count": len(exited),
+        "top10_concentration_pct": concentration_pct,
+        "largest_new_positions": [_holding_snapshot(h) for h in new_positions[:5]],
+        "largest_exits": [_holding_snapshot(h) for h in exited[:5]],
+        "top_buys": [_holding_snapshot(h) for h in top_buys[:5]],
+        "top_sells": [_holding_snapshot(h) for h in top_sells[:5]],
+        "largest_holdings": [_holding_snapshot(h) for h in holdings[:10]],
+    }
 
 
 def slug(name: str) -> str:
@@ -324,7 +330,7 @@ SUMMARY_FIELDS = (
     "name", "cik", "error", "latest_filing", "prior_filing",
     "holdings_count", "holdings_count_prior",
     "total_value_usd", "total_value_usd_prior",
-    "ai_summary",
+    "summary",
 )
 
 
@@ -337,7 +343,7 @@ def _summary_entry(res: dict) -> dict:
     return {k: res[k] for k in SUMMARY_FIELDS if k in res}
 
 
-def run(investors_path: Path, out_dir: Path, top_n: int, ai: bool = True, ai_model: str = OLLAMA_MODEL) -> int:
+def run(investors_path: Path, out_dir: Path, top_n: int) -> int:
     investors = json.loads(investors_path.read_text())
     out_dir.mkdir(parents=True, exist_ok=True)
     summary = {"generated_at": date.today().isoformat(), "filers": []}
@@ -348,11 +354,8 @@ def run(investors_path: Path, out_dir: Path, top_n: int, ai: bool = True, ai_mod
         except Exception as e:
             res = {"name": inv["name"], "cik": inv["cik"], "error": f"{type(e).__name__}: {e}"}
             failures += 1
-        if ai and "error" not in res:
-            print(f"[{inv['name']}] generating AI summary…", file=sys.stderr)
-            summary_text = generate_ai_summary(res, model=ai_model)
-            if summary_text:
-                res["ai_summary"] = summary_text
+        if "error" not in res:
+            res["summary"] = build_summary(res)
         summary["filers"].append(_summary_entry(res))
         (out_dir / f"{slug(inv['name'])}.json").write_text(json.dumps(res, indent=2))
         status = "ok" if "error" not in res else f"ERROR: {res['error']}"
@@ -432,6 +435,7 @@ def smoke_test_offline(fixtures_dir: Path, out_dir: Path, investors_path: Path) 
             "top_buys": buys,
             "top_sells": sells,
         }
+        payload["summary"] = build_summary(payload)
         (out_dir / f"{slug(inv['name'])}.json").write_text(json.dumps(payload, indent=2))
         summary["filers"].append(_summary_entry(payload))
     (out_dir / "summary.json").write_text(json.dumps(summary, indent=2))
@@ -449,10 +453,6 @@ def main() -> int:
                    help="SEC requires an identifying User-Agent (e.g. 'Name email@x.com')")
     p.add_argument("--smoke-test", action="store_true",
                    help="Run offline against bundled fixtures (no network)")
-    p.add_argument("--no-ai", action="store_true",
-                   help="Skip AI summary generation (useful if Ollama is not running)")
-    p.add_argument("--ai-model", default=OLLAMA_MODEL,
-                   help=f"Ollama model to use for summaries (default: {OLLAMA_MODEL})")
     args = p.parse_args()
 
     if args.user_agent:
@@ -461,8 +461,7 @@ def main() -> int:
 
     if args.smoke_test:
         return smoke_test_offline(here / "fixtures", Path(args.out_dir), Path(args.investors))
-    return run(Path(args.investors), Path(args.out_dir), args.top_n,
-               ai=not args.no_ai, ai_model=args.ai_model)
+    return run(Path(args.investors), Path(args.out_dir), args.top_n)
 
 
 if __name__ == "__main__":
