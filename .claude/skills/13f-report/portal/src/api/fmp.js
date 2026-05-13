@@ -1,40 +1,50 @@
-const BASE = 'https://financialmodelingprep.com/api'
+// In dev: direct calls to FMP with VITE_FMP_API_KEY (key stays local, never committed).
+// In prod: calls go to /api/fmp/* — the Vercel serverless proxy injects FMP_API_KEY server-side.
+const BASE = import.meta.env.DEV
+  ? 'https://financialmodelingprep.com/api'
+  : '/api/fmp'
 
-function apiKey() {
-  return import.meta.env.VITE_FMP_API_KEY ?? ''
+function devKey() {
+  return import.meta.env.DEV ? (import.meta.env.VITE_FMP_API_KEY ?? '') : null
 }
 
 export function hasFmpKey() {
-  return !!import.meta.env.VITE_FMP_API_KEY
+  // In production the serverless proxy handles auth; just check dev key locally.
+  return import.meta.env.PROD || !!import.meta.env.VITE_FMP_API_KEY
+}
+
+async function fmpFetch(path, params = {}) {
+  const url = new URL(`${BASE}/${path}`, window.location.origin)
+  for (const [k, v] of Object.entries(params)) {
+    if (v !== null && v !== undefined && v !== '') url.searchParams.set(k, v)
+  }
+  const key = devKey()
+  if (key) url.searchParams.set('apikey', key)
+
+  const r = await fetch(url.toString())
+  if (!r.ok) throw new Error(`FMP ${path}: HTTP ${r.status}`)
+  return r.json()
 }
 
 export async function screenStocks({ sector, exchange, marketCapMin, marketCapMax, limit = 25 } = {}) {
-  const p = new URLSearchParams({
+  return fmpFetch('v3/stock-screener', {
     country: 'US',
     isEtf: 'false',
     isActivelyTrading: 'true',
     limit,
-    apikey: apiKey(),
+    sector: sector || undefined,
+    exchange: exchange || undefined,
+    marketCapMoreThan: marketCapMin,
+    marketCapLessThan: marketCapMax,
   })
-  if (sector) p.set('sector', sector)
-  if (exchange) p.set('exchange', exchange)
-  if (marketCapMin) p.set('marketCapMoreThan', marketCapMin)
-  if (marketCapMax) p.set('marketCapLessThan', marketCapMax)
-  const r = await fetch(`${BASE}/v3/stock-screener?${p}`)
-  if (!r.ok) throw new Error(`FMP screener: HTTP ${r.status}`)
-  return r.json()
 }
 
 export async function getProfiles(tickers) {
   if (!tickers.length) return []
-  const r = await fetch(`${BASE}/v3/profile/${tickers.join(',')}?apikey=${apiKey()}`)
-  if (!r.ok) throw new Error(`FMP profiles: HTTP ${r.status}`)
-  return r.json()
+  return fmpFetch(`v3/profile/${tickers.join(',')}`)
 }
 
 export async function getRatiosTTM(ticker) {
-  const r = await fetch(`${BASE}/v3/ratios-ttm/${ticker}?apikey=${apiKey()}`)
-  if (!r.ok) throw new Error(`FMP ratios ${ticker}: HTTP ${r.status}`)
-  const data = await r.json()
+  const data = await fmpFetch(`v3/ratios-ttm/${ticker}`)
   return Array.isArray(data) ? (data[0] ?? null) : null
 }
