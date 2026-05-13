@@ -6,6 +6,7 @@ import ThemeToggle from './components/ThemeToggle.jsx'
 import TopMoves from './components/TopMoves.jsx'
 import Overview from './components/Overview.jsx'
 import Compare from './components/Compare.jsx'
+import UndervaluedPage from './components/UndervaluedPage.jsx'
 import CopyLink from './components/CopyLink.jsx'
 import PortfolioBar from './components/PortfolioBar.jsx'
 import SectorBreakdown from './components/SectorBreakdown.jsx'
@@ -172,7 +173,8 @@ export default function App() {
   }, [])
 
   const view = !hashState.cik || hashState.cik === 'overview' ? 'overview'
-    : hashState.cik === 'compare' ? 'compare'
+    : hashState.cik === 'compare'      ? 'compare'
+    : hashState.cik === 'undervalued'  ? 'undervalued'
     : 'filer'
 
   const selected = useMemo(() => {
@@ -186,6 +188,7 @@ export default function App() {
     let t = '13F Admin Portal'
     if (view === 'overview') t = 'Overview · 13F Admin Portal'
     else if (view === 'compare') t = 'Compare · 13F Admin Portal'
+    else if (view === 'undervalued') t = 'Undervalued Stocks · 13F Admin Portal'
     else if (selected) t = `${selected.name} · 13F Admin Portal`
     document.title = t
   }, [view, selected])
@@ -249,6 +252,12 @@ export default function App() {
     // user's filter/sort/query state.
     if (cik === hashState.cik) return
     updateHash({ cik, filter: 'all', sort: DEFAULT_SORT, q: '', a: '', b: '' })
+  }
+
+  const handleSelectUndervalued = () => {
+    setSidebarOpen(false)
+    if (hashState.cik === 'undervalued') return
+    updateHash({ cik: 'undervalued', filter: 'all', sort: DEFAULT_SORT, q: '', a: '', b: '' })
   }
 
   const handleSelectCompare = () => {
@@ -319,6 +328,7 @@ export default function App() {
         onSelect={handleSelect}
         onSelectOverview={() => handleSelect('overview')}
         onSelectCompare={handleSelectCompare}
+        onSelectUndervalued={handleSelectUndervalued}
         open={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
         theme={theme}
@@ -348,6 +358,8 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
             onSelect={handleSelect}
           />
         )}
+
+        {view === 'undervalued' && <UndervaluedPage />}
 
         {!summaryError && view === 'compare' && summary && (
           <Compare

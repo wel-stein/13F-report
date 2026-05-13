@@ -9,6 +9,7 @@ export default function Sidebar({
   onSelect,
   onSelectOverview,
   onSelectCompare,
+  onSelectUndervalued,
   open = false,
   onClose,
   theme,
@@ -91,6 +92,20 @@ export default function Sidebar({
           >
             <span className="text-sm font-medium text-slate-900 dark:text-slate-100">Compare filers</span>
             <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">Pick two filers to diff</p>
+          </button>
+        )}
+        {onSelectUndervalued && (
+          <button
+            onClick={onSelectUndervalued}
+            className={
+              'block w-full text-left px-4 py-3 border-l-4 transition ' +
+              (selectedView === 'undervalued'
+                ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40'
+                : 'border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/60')
+            }
+          >
+            <span className="text-sm font-medium text-slate-900 dark:text-slate-100">Undervalued Stocks</span>
+            <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">DCF screen · FMP + Polygon</p>
           </button>
         )}
         {(onSelectOverview || onSelectCompare) && filers.length > 0 && (
