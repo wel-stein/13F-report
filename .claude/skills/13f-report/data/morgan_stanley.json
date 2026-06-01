@@ -11,14 +11,14 @@
   "holdings_count": 8287,
   "total_value_usd": 1659786624056,
   "prior_filing": {
-    "form": "13F-HR",
-    "filing_date": "2026-02-13",
+    "form": "13F-HR/A",
+    "filing_date": "2026-05-27",
     "report_date": "2025-12-31",
-    "accession": "0000895421-26-000080",
+    "accession": "0000895421-26-000187",
     "primary_doc": "xslForm13F_X02/primary_doc.xml"
   },
   "holdings_count_prior": 8196,
-  "total_value_usd_prior": 1674996068266,
+  "total_value_usd_prior": 1674971377331,
   "holdings": [
     {
       "issuer": "APPLE INC",
@@ -47774,10 +47774,10 @@
       "sector": "Other",
       "shares": 1831116,
       "value_usd": 15546176,
-      "shares_prior": 1655572,
-      "value_usd_prior": 29038736,
-      "delta_shares": 175544,
-      "delta_value_usd": -13492560,
+      "shares_prior": 247879,
+      "value_usd_prior": 4347801,
+      "delta_shares": 1583237,
+      "delta_value_usd": 11198375,
       "action": "add"
     },
     {
@@ -133065,7 +133065,7 @@
   "summary": {
     "quarter": "2026-03-31",
     "aum_usd": 1659786624056,
-    "aum_usd_prior": 1674996068266,
+    "aum_usd_prior": 1674971377331,
     "aum_change_pct": "-0.9%",
     "holdings_count": 8287,
     "holdings_count_prior": 8196,

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-25",
+  "generated_at": "2026-06-01",
   "filers": [
     {
       "name": "Berkshire Hathaway",
@@ -7866,20 +7866,20 @@
         "primary_doc": "xslForm13F_X02/primary_doc.xml"
       },
       "prior_filing": {
-        "form": "13F-HR",
-        "filing_date": "2026-02-13",
+        "form": "13F-HR/A",
+        "filing_date": "2026-05-27",
         "report_date": "2025-12-31",
-        "accession": "0000895421-26-000080",
+        "accession": "0000895421-26-000187",
         "primary_doc": "xslForm13F_X02/primary_doc.xml"
       },
       "holdings_count": 8287,
       "holdings_count_prior": 8196,
       "total_value_usd": 1659786624056,
-      "total_value_usd_prior": 1674996068266,
+      "total_value_usd_prior": 1674971377331,
       "summary": {
         "quarter": "2026-03-31",
         "aum_usd": 1659786624056,
-        "aum_usd_prior": 1674996068266,
+        "aum_usd_prior": 1674971377331,
         "aum_change_pct": "-0.9%",
         "holdings_count": 8287,
         "holdings_count_prior": 8196,
@@ -10305,7 +10305,7 @@
       ],
       "weighted_score": 76.07,
       "conviction_score": 161.1,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "APPLE INC",
@@ -10721,7 +10721,7 @@
       ],
       "weighted_score": 11.84,
       "conviction_score": 155.6,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "MICROSOFT CORP",
@@ -11123,7 +11123,7 @@
       ],
       "weighted_score": 26.01,
       "conviction_score": 150.0,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "ELI LILLY & CO",
@@ -13250,7 +13250,7 @@
       ],
       "weighted_score": 26.44,
       "conviction_score": 138.9,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "COCA COLA CO",
@@ -13437,7 +13437,7 @@
       ],
       "weighted_score": 16.19,
       "conviction_score": 138.9,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "MICRON TECHNOLOGY INC",
@@ -14933,7 +14933,7 @@
       ],
       "weighted_score": 5.32,
       "conviction_score": 138.9,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "ROBLOX CORP",
@@ -16429,7 +16429,7 @@
       ],
       "weighted_score": 2.27,
       "conviction_score": 138.9,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "UBER TECHNOLOGIES INC",
@@ -16803,7 +16803,7 @@
       ],
       "weighted_score": 2.15,
       "conviction_score": 138.9,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "SPOTIFY TECHNOLOGY S A",
