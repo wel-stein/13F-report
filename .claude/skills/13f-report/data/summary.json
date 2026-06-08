@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-01",
+  "generated_at": "2026-06-08",
   "filers": [
     {
       "name": "Berkshire Hathaway",
@@ -10305,7 +10305,7 @@
       ],
       "weighted_score": 76.07,
       "conviction_score": 161.1,
-      "net_action": "add"
+      "net_action": "trim"
     },
     {
       "issuer": "APPLE INC",
@@ -10721,7 +10721,7 @@
       ],
       "weighted_score": 11.84,
       "conviction_score": 155.6,
-      "net_action": "add"
+      "net_action": "trim"
     },
     {
       "issuer": "MICROSOFT CORP",
@@ -11123,7 +11123,7 @@
       ],
       "weighted_score": 26.01,
       "conviction_score": 150.0,
-      "net_action": "add"
+      "net_action": "trim"
     },
     {
       "issuer": "ELI LILLY & CO",
@@ -13250,7 +13250,7 @@
       ],
       "weighted_score": 26.44,
       "conviction_score": 138.9,
-      "net_action": "add"
+      "net_action": "trim"
     },
     {
       "issuer": "COCA COLA CO",
@@ -13437,7 +13437,7 @@
       ],
       "weighted_score": 16.19,
       "conviction_score": 138.9,
-      "net_action": "add"
+      "net_action": "trim"
     },
     {
       "issuer": "MICRON TECHNOLOGY INC",
@@ -14933,7 +14933,7 @@
       ],
       "weighted_score": 5.32,
       "conviction_score": 138.9,
-      "net_action": "add"
+      "net_action": "trim"
     },
     {
       "issuer": "ROBLOX CORP",
@@ -16429,7 +16429,7 @@
       ],
       "weighted_score": 2.27,
       "conviction_score": 138.9,
-      "net_action": "add"
+      "net_action": "trim"
     },
     {
       "issuer": "UBER TECHNOLOGIES INC",
@@ -16803,7 +16803,7 @@
       ],
       "weighted_score": 2.15,
       "conviction_score": 138.9,
-      "net_action": "add"
+      "net_action": "trim"
     },
     {
       "issuer": "SPOTIFY TECHNOLOGY S A",
