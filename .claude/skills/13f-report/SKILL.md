@@ -34,6 +34,11 @@ Output goes to `.claude/skills/13f-report/data/`:
 
 - `<filer-slug>.json` — one file per filer (latest filing, holdings count, total value, top buys, top sells)
 - `summary.json` — combined report across all filers, with `generated_at` timestamp
+- `tickers.json` — `{ cusip: ticker }` map used by the portal's Quiet
+  Accumulation view. Hand-curated entries are kept as-is; each live run
+  *fills in* any still-unmapped CUSIPs by matching the holding's issuer name
+  against SEC's `company_tickers.json` (best-effort — a fetch failure leaves
+  the existing map untouched and never fails the run).
 
 ### Useful flags
 
@@ -107,8 +112,8 @@ own original. `holdings_count` reflects the aggregated security count
 ## Admin portal (React + Tailwind)
 
 A single-page admin portal under `portal/` reads the JSON in `data/`. The
-sidebar groups entries into **Aggregate** (Overview, Compare filers) and
-**Filers** (one entry per filer in `summary.json`).
+sidebar groups entries into **Aggregate** (Overview, Quiet Accumulation,
+Compare filers) and **Filers** (one entry per filer in `summary.json`).
 
 Per-investor view renders:
 
@@ -125,6 +130,19 @@ Per-investor view renders:
 The Overview view aggregates across every filer: combined AUM, top-10
 consensus buys / sells (joined on CUSIP), and a per-filer summary table
 with click-through.
+
+The **Quiet Accumulation** view (悄悄吸筹) screens for stocks being broadly
+accumulated under the radar: securities that many filers bought or newly
+opened this quarter (`new` / `add`) but that are a top-10 position of *no*
+filer — i.e. broad institutional buying before a name becomes an obvious
+conviction holding. Rows are ranked by a conviction score that weights
+brand-new positions double (`new × 2 + add`), with net dollars bought as the
+tiebreak; option legs are excluded. Two controls: an **All filers / Active
+managers only** toggle (the latter restricts to the 10 discretionary alpha
+managers, stripping breadth noise from passive index/custodial giants) and a
+**min buyers** slider. Each row shows the stock **ticker** (from
+`data/tickers.json`; private / unlisted issuers show `—`), issuer, sector,
+buyer count, new-position count, net $ bought, and which filers are buying.
 
 The Compare view diffs two filers side-by-side: overlap, only-A, only-B,
 overlap-weight stats, plus a sortable table joining the two filers'

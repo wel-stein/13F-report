@@ -5,6 +5,7 @@ import HoldingsTable from './components/HoldingsTable.jsx'
 import ThemeToggle from './components/ThemeToggle.jsx'
 import TopMoves from './components/TopMoves.jsx'
 import Overview from './components/Overview.jsx'
+import QuietAccumulation from './components/QuietAccumulation.jsx'
 import Compare from './components/Compare.jsx'
 import CopyLink from './components/CopyLink.jsx'
 import PortfolioBar from './components/PortfolioBar.jsx'
@@ -58,9 +59,9 @@ function parseHash() {
 function writeHash(state, { push = false } = {}) {
   const params = new URLSearchParams()
   if (state.cik) params.set('cik', state.cik)
-  // Filter/sort/query only apply to the filer view; strip them on overview /
-  // compare so we don't leak stale state across views.
-  if (state.cik && state.cik !== 'overview' && state.cik !== 'compare') {
+  // Filter/sort/query only apply to the filer view; strip them on aggregate
+  // views (overview / quiet / compare) so we don't leak stale state across views.
+  if (state.cik && state.cik !== 'overview' && state.cik !== 'quiet' && state.cik !== 'compare') {
     if (state.filter && state.filter !== 'all') params.set('filter', state.filter)
     if (state.sort   && state.sort   !== DEFAULT_SORT) params.set('sort', state.sort)
     if (state.q) params.set('q', state.q)
@@ -82,6 +83,7 @@ function writeHash(state, { push = false } = {}) {
 export default function App() {
   const [summary, setSummary] = useState(null)
   const [summaryError, setSummaryError] = useState(null)
+  const [tickers, setTickers] = useState({})
   const [filerCache, setFilerCache] = useState({})
   const [filerError, setFilerError] = useState(null)
   const [loadingFiler, setLoadingFiler] = useState(false)
@@ -158,7 +160,7 @@ export default function App() {
         // Default to overview, and clear stale a/b/cik values that don't
         // correspond to any filer in the loaded summary.
         setHashState((s) => {
-          const isViewSentinel = s.cik === 'overview' || s.cik === 'compare'
+          const isViewSentinel = s.cik === 'overview' || s.cik === 'quiet' || s.cik === 'compare'
           const cikValid = isViewSentinel || !s.cik || knownCiks.has(s.cik)
           return {
             ...s,
@@ -171,7 +173,17 @@ export default function App() {
       .catch((e) => setSummaryError(e.message))
   }, [])
 
+  // Load the CUSIP→ticker map once (best-effort; the Quiet Accumulation view
+  // degrades to "—" when it's absent).
+  useEffect(() => {
+    fetch('/tickers.json')
+      .then((r) => (r.ok ? r.json() : {}))
+      .then((data) => setTickers(data && typeof data === 'object' ? data : {}))
+      .catch(() => setTickers({}))
+  }, [])
+
   const view = !hashState.cik || hashState.cik === 'overview' ? 'overview'
+    : hashState.cik === 'quiet' ? 'quiet'
     : hashState.cik === 'compare' ? 'compare'
     : 'filer'
 
@@ -185,6 +197,7 @@ export default function App() {
   useEffect(() => {
     let t = '13F Admin Portal'
     if (view === 'overview') t = 'Overview · 13F Admin Portal'
+    else if (view === 'quiet') t = 'Quiet Accumulation · 13F Admin Portal'
     else if (view === 'compare') t = 'Compare · 13F Admin Portal'
     else if (selected) t = `${selected.name} · 13F Admin Portal`
     document.title = t
@@ -228,10 +241,11 @@ export default function App() {
     loadSelectedFiler()
   }, [view, loadSelectedFiler])
 
-  // Overview view: prefetch every (non-errored) filer JSON. fetchFiler is
-  // stable, so this only re-runs when the view or summary actually changes.
+  // Overview & Quiet Accumulation views: prefetch every (non-errored) filer
+  // JSON. fetchFiler is stable, so this only re-runs when the view or summary
+  // actually changes.
   useEffect(() => {
-    if (view !== 'overview' || !summary) return
+    if ((view !== 'overview' && view !== 'quiet') || !summary) return
     summary.filers
       .filter((f) => !f.error)
       .forEach((f) => { fetchFiler(f).catch(() => { /* best-effort */ }) })
@@ -318,6 +332,7 @@ export default function App() {
         selectedCik={hashState.cik}
         onSelect={handleSelect}
         onSelectOverview={() => handleSelect('overview')}
+        onSelectQuiet={() => handleSelect('quiet')}
         onSelectCompare={handleSelectCompare}
         open={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
@@ -346,6 +361,14 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
             summary={summary}
             filerData={overviewFilerData}
             onSelect={handleSelect}
+          />
+        )}
+
+        {!summaryError && view === 'quiet' && summary && (
+          <QuietAccumulation
+            summary={summary}
+            filerData={overviewFilerData}
+            tickers={tickers}
           />
         )}
 
