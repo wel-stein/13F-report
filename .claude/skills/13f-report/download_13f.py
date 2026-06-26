@@ -34,6 +34,7 @@ from xml.etree import ElementTree as ET
 DEFAULT_UA = "Western welstein@gmail.com"
 EDGAR_DATA = "https://data.sec.gov"
 EDGAR_ARCHIVES = "https://www.sec.gov/Archives/edgar/data"
+COMPANY_TICKERS_URL = "https://www.sec.gov/files/company_tickers.json"
 NS_INFO = "{http://www.sec.gov/edgar/document/thirteenf/informationtable}"
 _UA = os.environ.get("SEC_UA", DEFAULT_UA)
 
@@ -626,6 +627,90 @@ def _summary_entry(res: dict) -> dict:
     return {k: res[k] for k in SUMMARY_FIELDS if k in res}
 
 
+# Corporate-name noise to drop before matching a 13F issuer string against
+# SEC's company list. 13F issuers read like "APPLE INC" / "COCA COLA CO";
+# SEC titles read like "Apple Inc.". Normalizing both to a bare core name lets
+# them line up.
+_NAME_STOPWORDS = {
+    "INC", "INCORPORATED", "CORP", "CORPORATION", "CO", "COMPANY", "COMPANIES",
+    "LTD", "LIMITED", "PLC", "LLC", "LP", "NV", "SA", "AG", "AB", "SE",
+    "HLDG", "HLDGS", "HOLDING", "HOLDINGS", "GROUP", "GRP", "THE", "COM",
+    "CL", "CLASS", "A", "B", "C", "NEW", "DEL", "TR", "TRUST", "ADR", "ADS",
+    "SH", "SHS", "ORD", "REIT", "SPONSORED",
+}
+
+
+def _normalize_issuer(name: str) -> str:
+    """Reduce a company name to a comparable core token string."""
+    cleaned = []
+    for ch in (name or "").upper():
+        cleaned.append(ch if ch.isalnum() or ch == " " else " ")
+    tokens = [t for t in "".join(cleaned).split() if t and t not in _NAME_STOPWORDS]
+    return " ".join(tokens)
+
+
+def enrich_tickers(all_results: list[dict], out_dir: Path) -> None:
+    """Best-effort CUSIP→ticker map written to data/tickers.json.
+
+    Hand-curated entries already in tickers.json always win; this only *fills
+    in* CUSIPs that have no ticker yet, by matching each holding's issuer name
+    against SEC's official company_tickers.json. Wrapped so any failure (no
+    network, schema change) leaves the existing map untouched and never breaks
+    the data refresh.
+    """
+    path = out_dir / "tickers.json"
+    try:
+        existing = json.loads(path.read_text()) if path.exists() else {}
+        if not isinstance(existing, dict):
+            existing = {}
+    except Exception:
+        existing = {}
+
+    # CUSIPs still missing a ticker, keyed to the issuer name we'll match on.
+    want: dict[str, str] = {}
+    for res in all_results:
+        if "error" in res:
+            continue
+        for arr in ("holdings", "exited"):
+            for h in res.get(arr, ()):
+                cusip, issuer = h.get("cusip"), h.get("issuer")
+                if cusip and issuer and cusip not in existing and cusip not in want:
+                    want[cusip] = issuer
+    if not want:
+        return
+
+    try:
+        raw = json.loads(http_get(COMPANY_TICKERS_URL))
+    except Exception as e:
+        print(f"ticker enrichment skipped (SEC company_tickers fetch failed: {e})",
+              file=sys.stderr)
+        return
+
+    # normalized title -> ticker, but only when the normalized name is unique
+    # across SEC's list (ambiguous names are left unmatched on purpose).
+    by_name: dict[str, str | None] = {}
+    for row in (raw.values() if isinstance(raw, dict) else raw):
+        title, ticker = row.get("title"), row.get("ticker")
+        if not title or not ticker:
+            continue
+        norm = _normalize_issuer(title)
+        if not norm:
+            continue
+        by_name[norm] = None if norm in by_name else ticker
+
+    added = 0
+    for cusip, issuer in want.items():
+        ticker = by_name.get(_normalize_issuer(issuer))
+        if ticker:
+            existing[cusip] = ticker
+            added += 1
+
+    if added:
+        path.write_text(json.dumps(dict(sorted(existing.items())), indent=0) + "\n")
+    print(f"ticker enrichment: +{added} new (of {len(want)} unmapped), "
+          f"{len(existing)} total", file=sys.stderr)
+
+
 def run(investors_path: Path, out_dir: Path, top_n: int) -> int:
     investors = json.loads(investors_path.read_text())
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -655,6 +740,7 @@ def run(investors_path: Path, out_dir: Path, top_n: int) -> int:
         print(f"[{inv['name']}] {status}", file=sys.stderr)
     summary["conviction_rankings"] = build_conviction_rankings(all_results)
     (out_dir / "summary.json").write_text(json.dumps(summary, indent=2))
+    enrich_tickers(all_results, out_dir)
     return 1 if failures == len(investors) else 0
 
 
