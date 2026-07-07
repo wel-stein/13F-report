@@ -35,6 +35,7 @@ DEFAULT_UA = "Western welstein@gmail.com"
 EDGAR_DATA = "https://data.sec.gov"
 EDGAR_ARCHIVES = "https://www.sec.gov/Archives/edgar/data"
 COMPANY_TICKERS_URL = "https://www.sec.gov/files/company_tickers.json"
+COMPANY_FACTS_URL = "https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:0>10}.json"
 NS_INFO = "{http://www.sec.gov/edgar/document/thirteenf/informationtable}"
 _UA = os.environ.get("SEC_UA", DEFAULT_UA)
 
@@ -711,6 +712,189 @@ def enrich_tickers(all_results: list[dict], out_dir: Path) -> None:
           f"{len(existing)} total", file=sys.stderr)
 
 
+# --- EDGAR fundamentals (for the portal's per-stock thesis card) -----------
+# XBRL concept fallbacks — companies tag the same line item differently, and
+# foreign filers use the IFRS taxonomy, so we try several tags per metric.
+_REVENUE_TAGS = ("RevenueFromContractWithCustomerExcludingAssessedTax", "Revenues",
+                 "RevenueFromContractWithCustomerIncludingAssessedTax", "SalesRevenueNet",
+                 "Revenue")  # bare "Revenue" is the IFRS tag for 20-F filers
+_NET_INCOME_TAGS = ("NetIncomeLoss", "ProfitLoss")
+_OCF_TAGS = ("NetCashProvidedByUsedInOperatingActivities",
+             "NetCashProvidedByUsedInOperatingActivitiesContinuingOperations",
+             "CashFlowsFromUsedInOperatingActivities")
+_CAPEX_TAGS = ("PaymentsToAcquirePropertyPlantAndEquipment",
+               "PaymentsToAcquireProductiveAssets",
+               "PurchaseOfPropertyPlantAndEquipment")
+_CASH_TAGS = ("CashAndCashEquivalentsAtCarryingValue",
+              "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents")
+_DEBT_TAGS = ("LongTermDebt", "LongTermDebtNoncurrent")
+
+
+def _fy_series(facts: dict, tags: tuple[str, ...]) -> dict[int, float]:
+    """Map fiscal year -> annual value for the first XBRL tag that resolves.
+
+    Scans both us-gaap and ifrs-full taxonomies; keeps annual figures
+    (fp == 'FY', from a 10-K or 20-F), preferring the most-recently-filed entry
+    for each fiscal year.
+    """
+    all_facts = facts.get("facts", {})
+    for taxonomy in ("us-gaap", "ifrs-full"):
+        concepts = all_facts.get(taxonomy, {})
+        for tag in tags:
+            node = concepts.get(tag)
+            if not node:
+                continue
+            units = node.get("units", {})
+            rows = units.get("USD") or next(iter(units.values()), [])
+            series: dict[int, tuple[str, float]] = {}
+            for e in rows:
+                if e.get("fp") != "FY":
+                    continue
+                if e.get("form") not in ("10-K", "10-K/A", "20-F", "20-F/A"):
+                    continue
+                fy, val, filed = e.get("fy"), e.get("val"), e.get("filed", "")
+                if fy is None or val is None:
+                    continue
+                prev = series.get(fy)
+                if prev is None or filed >= prev[0]:
+                    series[fy] = (filed, val)
+            if series:
+                return {fy: v for fy, (_, v) in series.items()}
+    return {}
+
+
+def _pct(n, d):
+    return round(n / d * 100, 1) if d else None
+
+
+def _compute_fundamentals(facts: dict, cik: str) -> dict | None:
+    rev = _fy_series(facts, _REVENUE_TAGS)
+    if len(rev) < 2:
+        return None
+    fy = max(rev)
+    if not rev.get(fy) or not rev.get(fy - 1):
+        return None
+    ni = _fy_series(facts, _NET_INCOME_TAGS)
+    ocf = _fy_series(facts, _OCF_TAGS)
+    capex = _fy_series(facts, _CAPEX_TAGS)
+    cash = _fy_series(facts, _CASH_TAGS)
+    debt = _fy_series(facts, _DEBT_TAGS)
+
+    def fcf(y):
+        return (ocf[y] - capex[y]) if (y in ocf and y in capex) else None
+
+    rev_now, rev_prior = rev[fy], rev[fy - 1]
+    fcf_now = fcf(fy)
+    # 3-years-prior anchor for the "transition" rows (fall back to earliest).
+    y3 = fy - 3 if (fy - 3) in rev else min(rev)
+    out = {
+        "cik": str(int(cik)),
+        "fiscal_year": fy,
+        "revenue": rev_now,
+        "revenue_prior": rev_prior,
+        "revenue_growth_pct": _pct(rev_now - rev_prior, rev_prior),
+        "net_income": ni.get(fy),
+        "net_margin_pct": _pct(ni[fy], rev_now) if fy in ni else None,
+        "net_margin_pct_3y": _pct(ni[y3], rev[y3]) if (y3 in ni and rev.get(y3)) else None,
+        "fcf": fcf_now,
+        "fcf_3y": fcf(y3),
+        "fcf_margin_pct": _pct(fcf_now, rev_now) if fcf_now is not None else None,
+        "cash": cash.get(fy),
+        "total_debt": debt.get(fy),
+        "as_of": date.today().isoformat(),
+        "fy_3y": y3,
+    }
+    # Rule of 40 = revenue growth % + FCF margin % (only when both exist).
+    if out["revenue_growth_pct"] is not None and out["fcf_margin_pct"] is not None:
+        out["rule_of_40"] = round(out["revenue_growth_pct"] + out["fcf_margin_pct"], 1)
+    return out
+
+
+def enrich_fundamentals(all_results: list[dict], out_dir: Path,
+                        max_fetch: int = 600) -> None:
+    """Per-stock fundamentals from SEC EDGAR XBRL -> data/fundamentals.json.
+
+    For every held security that maps to a ticker (tickers.json) and a CIK
+    (company_tickers.json), pull companyfacts and compute revenue growth, net
+    margin (+3y), FCF (+3y), Rule of 40, cash and debt. Incremental: tickers
+    already present and fetched within ~80 days are skipped. Wrapped so any
+    failure leaves the existing file intact and never breaks the refresh.
+    """
+    fund_path = out_dir / "fundamentals.json"
+    tickers_path = out_dir / "tickers.json"
+    try:
+        cusip_ticker = json.loads(tickers_path.read_text()) if tickers_path.exists() else {}
+    except Exception:
+        cusip_ticker = {}
+    if not cusip_ticker:
+        return
+
+    try:
+        doc = json.loads(fund_path.read_text()) if fund_path.exists() else {}
+        stocks = doc.get("stocks", {}) if isinstance(doc, dict) else {}
+    except Exception:
+        stocks = {}
+
+    # Tickers actually held this quarter.
+    held = set()
+    for res in all_results:
+        if "error" in res:
+            continue
+        for h in res.get("holdings", ()):
+            t = cusip_ticker.get(h.get("cusip"))
+            if t:
+                held.add(t)
+    if not held:
+        return
+
+    try:
+        raw = json.loads(http_get(COMPANY_TICKERS_URL))
+    except Exception as e:
+        print(f"fundamentals enrichment skipped (company_tickers fetch failed: {e})",
+              file=sys.stderr)
+        return
+    ticker_cik = {}
+    for row in (raw.values() if isinstance(raw, dict) else raw):
+        t, cik = row.get("ticker"), row.get("cik_str")
+        if t and cik is not None:
+            ticker_cik.setdefault(t.upper(), str(cik))
+
+    today = date.today().isoformat()
+
+    def is_fresh(entry):
+        d = (entry or {}).get("as_of", "")
+        # Skip refetch if fetched within ~80 days (fundamentals are quarterly).
+        return bool(d) and (date.fromisoformat(today) - date.fromisoformat(d)).days < 80
+
+    fetched = added = 0
+    for ticker in sorted(held):
+        if fetched >= max_fetch:
+            print(f"fundamentals: hit max_fetch={max_fetch}; {len(held) - fetched} "
+                  f"tickers deferred to a later run", file=sys.stderr)
+            break
+        if is_fresh(stocks.get(ticker)):
+            continue
+        cik = ticker_cik.get(ticker.upper())
+        if not cik:
+            continue
+        fetched += 1
+        try:
+            facts = json.loads(http_get(COMPANY_FACTS_URL.format(cik=cik)))
+            metrics = _compute_fundamentals(facts, cik)
+        except Exception:
+            continue
+        if metrics:
+            metrics["ticker"] = ticker
+            stocks[ticker] = metrics
+            added += 1
+
+    doc = {"generated_at": today, "source": "SEC EDGAR XBRL companyfacts",
+           "stocks": dict(sorted(stocks.items()))}
+    fund_path.write_text(json.dumps(doc, indent=2) + "\n")
+    print(f"fundamentals enrichment: {added} computed this run "
+          f"({fetched} fetched), {len(stocks)} total", file=sys.stderr)
+
+
 def run(investors_path: Path, out_dir: Path, top_n: int) -> int:
     investors = json.loads(investors_path.read_text())
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -741,6 +925,7 @@ def run(investors_path: Path, out_dir: Path, top_n: int) -> int:
     summary["conviction_rankings"] = build_conviction_rankings(all_results)
     (out_dir / "summary.json").write_text(json.dumps(summary, indent=2))
     enrich_tickers(all_results, out_dir)
+    enrich_fundamentals(all_results, out_dir)
     return 1 if failures == len(investors) else 0
 
 

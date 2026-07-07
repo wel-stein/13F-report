@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-07-07",
+  "source": "SEC EDGAR XBRL companyfacts",
+  "note": "QGEN/CCL are an approximate demo seed (public FY2025 figures); download_13f.py overwrites every entry with precise EDGAR-computed values on the next refresh.",
+  "stocks": {
+    "CCL": {
+      "ticker": "CCL",
+      "cik": "815097",
+      "fiscal_year": 2025,
+      "revenue": 26600000000,
+      "revenue_prior": 25024000000,
+      "revenue_growth_pct": 6.3,
+      "net_income": 2800000000,
+      "net_margin_pct": 10.5,
+      "net_margin_pct_3y": -50.1,
+      "fcf": 2600000000,
+      "fcf_3y": -6000000000,
+      "fcf_margin_pct": 9.8,
+      "rule_of_40": 16.1,
+      "cash": 1900000000,
+      "total_debt": 27000000000,
+      "fy_3y": 2022,
+      "as_of": "2020-01-01"
+    },
+    "QGEN": {
+      "ticker": "QGEN",
+      "cik": "1015820",
+      "fiscal_year": 2025,
+      "revenue": 2071000000,
+      "revenue_prior": 1966000000,
+      "revenue_growth_pct": 5.3,
+      "net_income": 380000000,
+      "net_margin_pct": 18.3,
+      "net_margin_pct_3y": null,
+      "fcf": 453000000,
+      "fcf_3y": null,
+      "fcf_margin_pct": 21.9,
+      "rule_of_40": 27.2,
+      "cash": 1100000000,
+      "total_debt": 1650000000,
+      "fy_3y": 2022,
+      "as_of": "2020-01-01"
+    }
+  }
+}

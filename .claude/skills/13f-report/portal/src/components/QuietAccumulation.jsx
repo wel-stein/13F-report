@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { fmtSignedUSD } from '../format.js'
+import ThesisCard from './ThesisCard.jsx'
 
 // Discretionary "alpha" managers — the ones whose buys carry stock-picking
 // signal. The passive/index/custodial giants (Vanguard, BlackRock, State
@@ -113,9 +114,10 @@ function Toggle({ active, onClick, children }) {
 
 const LIMIT = 50
 
-export default function QuietAccumulation({ summary, filerData, tickers }) {
+export default function QuietAccumulation({ summary, filerData, tickers, fundamentals }) {
   const [activeOnly, setActiveOnly] = useState(false)
   const [minBuyers, setMinBuyers] = useState(8)
+  const [selected, setSelected] = useState(null)
 
   const ok = (summary?.filers ?? []).filter((f) => !f.error)
   const fullyLoaded = ok.every((f) => filerData.find((d) => d.cik === f.cik && d.data))
@@ -148,6 +150,7 @@ export default function QuietAccumulation({ summary, filerData, tickers }) {
           opened</span> this quarter but that are a top-10 position of <span className="font-medium">no one</span> —
           broad institutional accumulation before it becomes a headline conviction name. Ranked by a conviction
           score that weights brand-new positions double. Options legs excluded.
+          <span className="text-slate-500 dark:text-slate-500"> 点击任意行查看个股论点卡(EDGAR 基本面 + Rule of 40)。</span>
           {summary?.generated_at && (
             <span className="text-slate-500 dark:text-slate-500"> · generated {summary.generated_at}</span>
           )}
@@ -216,12 +219,21 @@ export default function QuietAccumulation({ summary, filerData, tickers }) {
                   const buyerNames = activeOnly ? [...r.activeBuyers] : [...r.buyers]
                   const newCount = activeOnly ? r.activeNew.size : r.newFilers.size
                   const buyerCount = activeOnly ? r.activeBuyers.size : r.buyers.size
+                  const openCard = () => setSelected({
+                    issuer: r.issuer, ticker, sector: r.sector,
+                    buyerCount, newCount, netBuyUsd: r.netBuyUsd,
+                  })
                   return (
-                    <tr key={r.cusip} className="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                    <tr
+                      key={r.cusip}
+                      onClick={openCard}
+                      title="查看个股论点卡"
+                      className="cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50"
+                    >
                       <td className="px-3 py-2 tabular-nums text-slate-400 dark:text-slate-500">{i + 1}</td>
                       <td className="px-3 py-2">
                         {ticker ? (
-                          <span className="inline-flex rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs font-semibold text-slate-800 dark:bg-slate-800 dark:text-slate-200">
+                          <span className="inline-flex rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs font-semibold text-slate-800 group-hover:ring-1 dark:bg-slate-800 dark:text-slate-200">
                             {ticker}
                           </span>
                         ) : (
@@ -264,6 +276,14 @@ export default function QuietAccumulation({ summary, filerData, tickers }) {
         more shares at quarter-end, not a real-time price signal. Tickers are best-effort (private / unlisted issuers
         show “—”). Always confirm before acting.
       </p>
+
+      {selected && (
+        <ThesisCard
+          row={selected}
+          fundamentals={selected.ticker ? fundamentals?.[selected.ticker] : null}
+          onClose={() => setSelected(null)}
+        />
+      )}
     </div>
   )
 }

@@ -39,6 +39,14 @@ Output goes to `.claude/skills/13f-report/data/`:
   *fills in* any still-unmapped CUSIPs by matching the holding's issuer name
   against SEC's `company_tickers.json` (best-effort — a fetch failure leaves
   the existing map untouched and never fails the run).
+- `fundamentals.json` — `{ generated_at, source, stocks: { TICKER: {…} } }`
+  per-stock fundamentals used by the portal's thesis card. For every held
+  security that maps to a ticker and a SEC CIK, the downloader pulls EDGAR
+  **XBRL companyfacts** and computes revenue growth, net margin (+3-yr prior),
+  free cash flow (OCF − capex, +3-yr prior), FCF margin, **Rule of 40**
+  (revenue growth % + FCF margin %), cash, and debt. Incremental (entries
+  fetched within ~80 days are skipped), capped at `max_fetch`, and fully
+  fail-safe. Foreign filers without US-GAAP/IFRS XBRL simply stay absent.
 
 ### Useful flags
 
@@ -143,6 +151,11 @@ managers, stripping breadth noise from passive index/custodial giants) and a
 **min buyers** slider. Each row shows the stock **ticker** (from
 `data/tickers.json`; private / unlisted issuers show `—`), issuer, sector,
 buyer count, new-position count, net $ bought, and which filers are buying.
+Clicking any row opens a **thesis card** — a phosphor-terminal modal that
+renders that stock's EDGAR fundamentals (`fundamentals.json`): revenue
+growth, net margin and FCF transitions, cash/debt, and a **Rule of 40** bar
+(revenue growth + FCF margin vs. the 40% healthy line). Stocks not yet
+enriched show a graceful "pending next EDGAR refresh" state.
 
 The Compare view diffs two filers side-by-side: overlap, only-A, only-B,
 overlap-weight stats, plus a sortable table joining the two filers'
