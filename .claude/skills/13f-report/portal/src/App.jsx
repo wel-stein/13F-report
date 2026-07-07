@@ -84,6 +84,7 @@ export default function App() {
   const [summary, setSummary] = useState(null)
   const [summaryError, setSummaryError] = useState(null)
   const [tickers, setTickers] = useState({})
+  const [fundamentals, setFundamentals] = useState({})
   const [filerCache, setFilerCache] = useState({})
   const [filerError, setFilerError] = useState(null)
   const [loadingFiler, setLoadingFiler] = useState(false)
@@ -180,6 +181,14 @@ export default function App() {
       .then((r) => (r.ok ? r.json() : {}))
       .then((data) => setTickers(data && typeof data === 'object' ? data : {}))
       .catch(() => setTickers({}))
+  }, [])
+
+  // Load per-stock EDGAR fundamentals once (best-effort; drives the thesis card).
+  useEffect(() => {
+    fetch('/fundamentals.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => setFundamentals(data?.stocks && typeof data.stocks === 'object' ? data.stocks : {}))
+      .catch(() => setFundamentals({}))
   }, [])
 
   const view = !hashState.cik || hashState.cik === 'overview' ? 'overview'
@@ -369,6 +378,7 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
             summary={summary}
             filerData={overviewFilerData}
             tickers={tickers}
+            fundamentals={fundamentals}
           />
         )}
 
