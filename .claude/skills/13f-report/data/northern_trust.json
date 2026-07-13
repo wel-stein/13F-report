@@ -69631,7 +69631,7 @@
     "quarter": "2026-03-31",
     "aum_usd": 756584776538,
     "aum_usd_prior": 784379399994,
-    "aum_change_pct": "-3.5%",
+    "aum_change_pct": 96.5,
     "holdings_count": 4396,
     "holdings_count_prior": 4449,
     "holdings_count_change": -53,
@@ -69788,7 +69788,7 @@
         "delta_shares": -12760196,
         "value_usd": 0,
         "delta_value_usd": -792918579,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "ASTRAZENECA PLC",
@@ -69799,7 +69799,7 @@
         "delta_shares": -4756686,
         "value_usd": 0,
         "delta_value_usd": -437282144,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "CARNIVAL CORP",
@@ -69810,7 +69810,7 @@
         "delta_shares": -12633810,
         "value_usd": 0,
         "delta_value_usd": -385836556,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "AMCOR PLC",
@@ -69821,7 +69821,7 @@
         "delta_shares": -19514316,
         "value_usd": 0,
         "delta_value_usd": -162749397,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "COMERICA INC",
@@ -69832,7 +69832,7 @@
         "delta_shares": -1402411,
         "value_usd": 0,
         "delta_value_usd": -121911589,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       }
     ],
     "top_buys": [
@@ -69845,7 +69845,7 @@
         "delta_shares": 10865527,
         "value_usd": 4240584854,
         "delta_value_usd": 1213917644,
-        "delta_pct": "+16.5%"
+        "delta_pct": 116.5
       },
       {
         "issuer": "JOHNSON & JOHNSON",
@@ -69856,7 +69856,7 @@
         "delta_shares": 38236,
         "value_usd": 7166899890,
         "delta_value_usd": 1107107329,
-        "delta_pct": "+0.1%"
+        "delta_pct": 100.1
       },
       {
         "issuer": "SPDR INDEX SHS FDS",
@@ -69878,7 +69878,7 @@
         "delta_shares": 14386,
         "value_usd": 4910513658,
         "delta_value_usd": 673215490,
-        "delta_pct": "+0.3%"
+        "delta_pct": 100.3
       },
       {
         "issuer": "CONOCOPHILLIPS",
@@ -69889,7 +69889,7 @@
         "delta_shares": 656963,
         "value_usd": 1657996164,
         "delta_value_usd": 543698857,
-        "delta_pct": "+5.5%"
+        "delta_pct": 105.5
       }
     ],
     "top_sells": [
@@ -69902,7 +69902,7 @@
         "delta_shares": -82975,
         "value_usd": 29501421832,
         "delta_value_usd": -9081747916,
-        "delta_pct": "-0.1%"
+        "delta_pct": 99.9
       },
       {
         "issuer": "APPLE INC",
@@ -69913,7 +69913,7 @@
         "delta_shares": -1404826,
         "value_usd": 40420022970,
         "delta_value_usd": -3259845840,
-        "delta_pct": "-0.9%"
+        "delta_pct": 99.1
       },
       {
         "issuer": "NVIDIA CORPORATION",
@@ -69924,7 +69924,7 @@
         "delta_shares": -1047967,
         "value_usd": 44078176199,
         "delta_value_usd": -3253622064,
-        "delta_pct": "-0.4%"
+        "delta_pct": 99.6
       },
       {
         "issuer": "TESLA INC",
@@ -69935,7 +69935,7 @@
         "delta_shares": -145045,
         "value_usd": 9538959648,
         "delta_value_usd": -2065909349,
-        "delta_pct": "-0.6%"
+        "delta_pct": 99.4
       },
       {
         "issuer": "META PLATFORMS INC",
@@ -69946,7 +69946,7 @@
         "delta_shares": -153488,
         "value_usd": 12575284666,
         "delta_value_usd": -2034656288,
-        "delta_pct": "-0.7%"
+        "delta_pct": 99.3
       }
     ],
     "largest_holdings": [
@@ -69959,7 +69959,7 @@
         "delta_shares": -1047967,
         "value_usd": 44078176199,
         "delta_value_usd": -3253622064,
-        "delta_pct": "-0.4%"
+        "delta_pct": 99.6
       },
       {
         "issuer": "APPLE INC",
@@ -69970,7 +69970,7 @@
         "delta_shares": -1404826,
         "value_usd": 40420022970,
         "delta_value_usd": -3259845840,
-        "delta_pct": "-0.9%"
+        "delta_pct": 99.1
       },
       {
         "issuer": "MICROSOFT CORP",
@@ -69981,7 +69981,7 @@
         "delta_shares": -82975,
         "value_usd": 29501421832,
         "delta_value_usd": -9081747916,
-        "delta_pct": "-0.1%"
+        "delta_pct": 99.9
       },
       {
         "issuer": "AMAZON COM INC",
@@ -69992,7 +69992,7 @@
         "delta_shares": 381198,
         "value_usd": 19812034061,
         "delta_value_usd": -2057118556,
-        "delta_pct": "+0.4%"
+        "delta_pct": 100.4
       },
       {
         "issuer": "ALPHABET INC",
@@ -70003,7 +70003,7 @@
         "delta_shares": -149423,
         "value_usd": 18688943662,
         "delta_value_usd": -1700152091,
-        "delta_pct": "-0.2%"
+        "delta_pct": 99.8
       },
       {
         "issuer": "ALPHABET INC",
@@ -70014,7 +70014,7 @@
         "delta_shares": -39341,
         "value_usd": 15015771611,
         "delta_value_usd": -1422527480,
-        "delta_pct": "-0.1%"
+        "delta_pct": 99.9
       },
       {
         "issuer": "BROADCOM INC",
@@ -70025,7 +70025,7 @@
         "delta_shares": -118467,
         "value_usd": 14740583050,
         "delta_value_usd": -1783620196,
-        "delta_pct": "-0.2%"
+        "delta_pct": 99.8
       },
       {
         "issuer": "META PLATFORMS INC",
@@ -70036,7 +70036,7 @@
         "delta_shares": -153488,
         "value_usd": 12575284666,
         "delta_value_usd": -2034656288,
-        "delta_pct": "-0.7%"
+        "delta_pct": 99.3
       },
       {
         "issuer": "TESLA INC",
@@ -70047,7 +70047,7 @@
         "delta_shares": -145045,
         "value_usd": 9538959648,
         "delta_value_usd": -2065909349,
-        "delta_pct": "-0.6%"
+        "delta_pct": 99.4
       },
       {
         "issuer": "JPMORGAN CHASE & CO",
@@ -70058,7 +70058,7 @@
         "delta_shares": -451720,
         "value_usd": 9183981714,
         "delta_value_usd": -1021615657,
-        "delta_pct": "-1.4%"
+        "delta_pct": 98.6
       }
     ]
   },

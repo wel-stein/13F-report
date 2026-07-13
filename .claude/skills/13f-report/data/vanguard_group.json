@@ -67891,7 +67891,7 @@
     "quarter": "2025-12-31",
     "aum_usd": 6897676080637,
     "aum_usd_prior": 6680394025516,
-    "aum_change_pct": "+3.3%",
+    "aum_change_pct": 103.3,
     "holdings_count": 4329,
     "holdings_count_prior": 4344,
     "holdings_count_change": -15,
@@ -68048,7 +68048,7 @@
         "delta_shares": -33420185,
         "value_usd": 0,
         "delta_value_usd": -2741123574,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "MR COOPER GROUP INC",
@@ -68059,7 +68059,7 @@
         "delta_shares": -6685853,
         "value_usd": 0,
         "delta_value_usd": -1409310953,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "INTERPUBLIC GROUP COS INC",
@@ -68070,7 +68070,7 @@
         "delta_shares": -44436576,
         "value_usd": 0,
         "delta_value_usd": -1240224837,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "LIGHT & WONDER INC",
@@ -68081,7 +68081,7 @@
         "delta_shares": -7934380,
         "value_usd": 0,
         "delta_value_usd": -666011857,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "CUSHMAN WAKEFIELD PLC",
@@ -68092,7 +68092,7 @@
         "delta_shares": -36304186,
         "value_usd": 0,
         "delta_value_usd": -577962641,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       }
     ],
     "top_buys": [
@@ -68105,7 +68105,7 @@
         "delta_shares": 12531695,
         "value_usd": 165567397786,
         "delta_value_usd": 40021410659,
-        "delta_pct": "+2.4%"
+        "delta_pct": 102.4
       },
       {
         "issuer": "ALPHABET INC",
@@ -68116,7 +68116,7 @@
         "delta_shares": 8128234,
         "value_usd": 132114124826,
         "delta_value_usd": 31555849610,
-        "delta_pct": "+2.0%"
+        "delta_pct": 102.0
       },
       {
         "issuer": "APPLE INC",
@@ -68127,7 +68127,7 @@
         "delta_shares": 26856752,
         "value_usd": 387749544852,
         "delta_value_usd": 31413406619,
-        "delta_pct": "+1.9%"
+        "delta_pct": 101.9
       },
       {
         "issuer": "ELI LILLY & CO",
@@ -68138,7 +68138,7 @@
         "delta_shares": 1006885,
         "value_usd": 88087192938,
         "delta_value_usd": 26315408031,
-        "delta_pct": "+1.2%"
+        "delta_pct": 101.2
       },
       {
         "issuer": "MICRON TECHNOLOGY INC",
@@ -68149,7 +68149,7 @@
         "delta_shares": 1954644,
         "value_usd": 30427016150,
         "delta_value_usd": 12916400895,
-        "delta_pct": "+1.9%"
+        "delta_pct": 101.9
       }
     ],
     "top_sells": [
@@ -68162,7 +68162,7 @@
         "delta_shares": -33420185,
         "value_usd": 0,
         "delta_value_usd": -2741123574,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "DUPONT DE NEMOURS INC",
@@ -68173,7 +68173,7 @@
         "delta_shares": -80210,
         "value_usd": 2041639692,
         "delta_value_usd": -1920920409,
-        "delta_pct": "-0.2%"
+        "delta_pct": 99.8
       },
       {
         "issuer": "MOTOROLA SOLUTIONS INC",
@@ -68184,7 +68184,7 @@
         "delta_shares": -8291,
         "value_usd": 8495777218,
         "delta_value_usd": -1643237913,
-        "delta_pct": "-0.0%"
+        "delta_pct": 100.0
       },
       {
         "issuer": "AUTOZONE INC",
@@ -68195,7 +68195,7 @@
         "delta_shares": -1617,
         "value_usd": 6090899989,
         "delta_value_usd": -1621012343,
-        "delta_pct": "-0.1%"
+        "delta_pct": 99.9
       },
       {
         "issuer": "AUTOMATIC DATA PROCESSING IN",
@@ -68206,7 +68206,7 @@
         "delta_shares": -109715,
         "value_usd": 10695602307,
         "delta_value_usd": -1540304980,
-        "delta_pct": "-0.3%"
+        "delta_pct": 99.7
       }
     ],
     "largest_holdings": [
@@ -68219,7 +68219,7 @@
         "delta_shares": 43149475,
         "value_usd": 422736430797,
         "delta_value_usd": 7869494486,
-        "delta_pct": "+1.9%"
+        "delta_pct": 101.9
       },
       {
         "issuer": "APPLE INC",
@@ -68230,7 +68230,7 @@
         "delta_shares": 26856752,
         "value_usd": 387749544852,
         "delta_value_usd": 31413406619,
-        "delta_pct": "+1.9%"
+        "delta_pct": 101.9
       },
       {
         "issuer": "MICROSOFT CORP",
@@ -68241,7 +68241,7 @@
         "delta_shares": 15955898,
         "value_usd": 347211390598,
         "delta_value_usd": -16382611514,
-        "delta_pct": "+2.3%"
+        "delta_pct": 102.3
       },
       {
         "issuer": "AMAZON COM INC",
@@ -68252,7 +68252,7 @@
         "delta_shares": -4937929,
         "value_usd": 195135349873,
         "delta_value_usd": 8426534869,
-        "delta_pct": "-0.6%"
+        "delta_pct": 99.4
       },
       {
         "issuer": "BROADCOM INC",
@@ -68263,7 +68263,7 @@
         "delta_shares": 3919715,
         "value_usd": 167064997221,
         "delta_value_usd": 9108184390,
-        "delta_pct": "+0.8%"
+        "delta_pct": 100.8
       },
       {
         "issuer": "ALPHABET INC",
@@ -68274,7 +68274,7 @@
         "delta_shares": 12531695,
         "value_usd": 165567397786,
         "delta_value_usd": 40021410659,
-        "delta_pct": "+2.4%"
+        "delta_pct": 102.4
       },
       {
         "issuer": "ALPHABET INC",
@@ -68285,7 +68285,7 @@
         "delta_shares": 8128234,
         "value_usd": 132114124826,
         "delta_value_usd": 31555849610,
-        "delta_pct": "+2.0%"
+        "delta_pct": 102.0
       },
       {
         "issuer": "META PLATFORMS INC",
@@ -68296,7 +68296,7 @@
         "delta_shares": 7269279,
         "value_usd": 132015115418,
         "delta_value_usd": -9519262230,
-        "delta_pct": "+3.8%"
+        "delta_pct": 103.8
       },
       {
         "issuer": "TESLA INC",
@@ -68307,7 +68307,7 @@
         "delta_shares": 6538720,
         "value_usd": 116443761793,
         "delta_value_usd": 4202524678,
-        "delta_pct": "+2.6%"
+        "delta_pct": 102.6
       },
       {
         "issuer": "ELI LILLY & CO",
@@ -68318,7 +68318,7 @@
         "delta_shares": 1006885,
         "value_usd": 88087192938,
         "delta_value_usd": 26315408031,
-        "delta_pct": "+1.2%"
+        "delta_pct": 101.2
       }
     ]
   },

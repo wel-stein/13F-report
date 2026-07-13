@@ -66511,7 +66511,7 @@
     "quarter": "2026-03-31",
     "aum_usd": 543905795593,
     "aum_usd_prior": 567686253020,
-    "aum_change_pct": "-4.2%",
+    "aum_change_pct": 95.8,
     "holdings_count": 4194,
     "holdings_count_prior": 4181,
     "holdings_count_change": 13,
@@ -66668,7 +66668,7 @@
         "delta_shares": -3365554,
         "value_usd": 0,
         "delta_value_usd": -292567602,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "CARNIVAL CORP",
@@ -66679,7 +66679,7 @@
         "delta_shares": -5329893,
         "value_usd": 0,
         "delta_value_usd": -162774938,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "INVESCO S&P 500 TOP 50 ETF",
@@ -66690,7 +66690,7 @@
         "delta_shares": -2479520,
         "value_usd": 0,
         "delta_value_usd": -146985924,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "AMCOR PLC",
@@ -66701,7 +66701,7 @@
         "delta_shares": -11477121,
         "value_usd": 0,
         "delta_value_usd": -95719186,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "ASTRAZENECA PLC-SPONS ADR",
@@ -66712,7 +66712,7 @@
         "delta_shares": -1032000,
         "value_usd": 0,
         "delta_value_usd": -94871726,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       }
     ],
     "top_buys": [
@@ -66758,7 +66758,7 @@
         "delta_shares": 4129601,
         "value_usd": 3184446278,
         "delta_value_usd": 1055163107,
-        "delta_pct": "+33.6%"
+        "delta_pct": 133.6
       },
       {
         "issuer": "COLGATE-PALMOLIVE CO",
@@ -66769,7 +66769,7 @@
         "delta_shares": 7927238,
         "value_usd": 1067211316,
         "delta_value_usd": 704169220,
-        "delta_pct": "+172.5%"
+        "delta_pct": 272.5
       }
     ],
     "top_sells": [
@@ -66782,7 +66782,7 @@
         "delta_shares": -2781219,
         "value_usd": 19121877494,
         "delta_value_usd": -7205542116,
-        "delta_pct": "-5.1%"
+        "delta_pct": 94.9
       },
       {
         "issuer": "APPLE INC",
@@ -66793,7 +66793,7 @@
         "delta_shares": -5725313,
         "value_usd": 23377071068,
         "delta_value_usd": -3220944826,
-        "delta_pct": "-5.9%"
+        "delta_pct": 94.1
       },
       {
         "issuer": "NVIDIA CORP",
@@ -66804,7 +66804,7 @@
         "delta_shares": -4120437,
         "value_usd": 26816370721,
         "delta_value_usd": -2629001151,
-        "delta_pct": "-2.6%"
+        "delta_pct": 97.4
       },
       {
         "issuer": "VANGUARD S&P 500 ETF",
@@ -66815,7 +66815,7 @@
         "delta_shares": -3289689,
         "value_usd": 161087509,
         "delta_value_usd": -2071037302,
-        "delta_pct": "-92.4%"
+        "delta_pct": 7.6
       },
       {
         "issuer": "AMAZON.COM INC",
@@ -66826,7 +66826,7 @@
         "delta_shares": -1536316,
         "value_usd": 13939686617,
         "delta_value_usd": -1863902999,
-        "delta_pct": "-2.2%"
+        "delta_pct": 97.8
       }
     ],
     "largest_holdings": [
@@ -66839,7 +66839,7 @@
         "delta_shares": -4120437,
         "value_usd": 26816370721,
         "delta_value_usd": -2629001151,
-        "delta_pct": "-2.6%"
+        "delta_pct": 97.4
       },
       {
         "issuer": "APPLE INC",
@@ -66850,7 +66850,7 @@
         "delta_shares": -5725313,
         "value_usd": 23377071068,
         "delta_value_usd": -3220944826,
-        "delta_pct": "-5.9%"
+        "delta_pct": 94.1
       },
       {
         "issuer": "MICROSOFT CORP",
@@ -66861,7 +66861,7 @@
         "delta_shares": -2781219,
         "value_usd": 19121877494,
         "delta_value_usd": -7205542116,
-        "delta_pct": "-5.1%"
+        "delta_pct": 94.9
       },
       {
         "issuer": "AMAZON.COM INC",
@@ -66872,7 +66872,7 @@
         "delta_shares": -1536316,
         "value_usd": 13939686617,
         "delta_value_usd": -1863902999,
-        "delta_pct": "-2.2%"
+        "delta_pct": 97.8
       },
       {
         "issuer": "ALPHABET INC-CL A",
@@ -66883,7 +66883,7 @@
         "delta_shares": -1580623,
         "value_usd": 11535151476,
         "delta_value_usd": -1515232335,
-        "delta_pct": "-3.8%"
+        "delta_pct": 96.2
       },
       {
         "issuer": "BROADCOM INC",
@@ -66894,7 +66894,7 @@
         "delta_shares": -1285490,
         "value_usd": 8886950530,
         "delta_value_usd": -1495515909,
-        "delta_pct": "-4.3%"
+        "delta_pct": 95.7
       },
       {
         "issuer": "ISHARES CORE S&P 500 ETF",
@@ -66905,7 +66905,7 @@
         "delta_shares": -115469,
         "value_usd": 8726634007,
         "delta_value_usd": -502990664,
-        "delta_pct": "-0.9%"
+        "delta_pct": 99.1
       },
       {
         "issuer": "ALPHABET INC-CL C",
@@ -66916,7 +66916,7 @@
         "delta_shares": -703108,
         "value_usd": 8248405909,
         "delta_value_usd": -995271151,
-        "delta_pct": "-2.4%"
+        "delta_pct": 97.6
       },
       {
         "issuer": "META PLATFORMS INC-CLASS A",
@@ -66927,7 +66927,7 @@
         "delta_shares": -721001,
         "value_usd": 8097834293,
         "delta_value_usd": -1720897178,
-        "delta_pct": "-4.8%"
+        "delta_pct": 95.2
       },
       {
         "issuer": "EXXON MOBIL CORP",
@@ -66938,7 +66938,7 @@
         "delta_shares": -2316219,
         "value_usd": 7514094403,
         "delta_value_usd": 1905606351,
-        "delta_pct": "-5.0%"
+        "delta_pct": 95.0
       }
     ]
   },

@@ -109081,7 +109081,7 @@
     "quarter": "2026-03-31",
     "aum_usd": 870939686922,
     "aum_usd_prior": 815350589091,
-    "aum_change_pct": "+6.8%",
+    "aum_change_pct": 106.8,
     "holdings_count": 6431,
     "holdings_count_prior": 6412,
     "holdings_count_change": 19,
@@ -109238,7 +109238,7 @@
         "delta_shares": -14411321,
         "value_usd": 0,
         "delta_value_usd": -1324832731,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "DAYFORCE INC",
@@ -109249,7 +109249,7 @@
         "delta_shares": -6369838,
         "value_usd": 0,
         "delta_value_usd": -440538005,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "FIDELITY ETHEREUM FD",
@@ -109260,7 +109260,7 @@
         "delta_shares": -13301910,
         "value_usd": 0,
         "delta_value_usd": -393869555,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "CYBERARK SOFTWARE LTD",
@@ -109271,7 +109271,7 @@
         "delta_shares": -744881,
         "value_usd": 0,
         "delta_value_usd": -332261619,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "AVIDITY BIOSCIENCES INC",
@@ -109282,7 +109282,7 @@
         "delta_shares": -3776785,
         "value_usd": 0,
         "delta_value_usd": -272419502,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       }
     ],
     "top_buys": [
@@ -109295,7 +109295,7 @@
         "delta_shares": 11155200,
         "value_usd": 3925998945,
         "delta_value_usd": 3785632154,
-        "delta_pct": "+2415.1%"
+        "delta_pct": 2515.1
       },
       {
         "issuer": "ISHARES INC",
@@ -109306,7 +109306,7 @@
         "delta_shares": 29469997,
         "value_usd": 2334605281,
         "delta_value_usd": 2319364016,
-        "delta_pct": "+14053.1%"
+        "delta_pct": 14153.1
       },
       {
         "issuer": "EXXON MOBIL CORP",
@@ -109317,7 +109317,7 @@
         "delta_shares": 5832752,
         "value_usd": 5435534780,
         "delta_value_usd": 2282018063,
-        "delta_pct": "+22.3%"
+        "delta_pct": 122.3
       },
       {
         "issuer": "ASTRAZENECA PLC",
@@ -109339,7 +109339,7 @@
         "delta_shares": 8221703,
         "value_usd": 9149108409,
         "delta_value_usd": 1720746510,
-        "delta_pct": "+34.7%"
+        "delta_pct": 134.7
       }
     ],
     "top_sells": [
@@ -109352,7 +109352,7 @@
         "delta_shares": -5284000,
         "value_usd": 1296738350,
         "delta_value_usd": -2648295434,
-        "delta_pct": "-60.2%"
+        "delta_pct": 39.8
       },
       {
         "issuer": "APPLE INC",
@@ -109363,7 +109363,7 @@
         "delta_shares": -6993000,
         "value_usd": 2256243858,
         "delta_value_usd": -2061762894,
-        "delta_pct": "-44.0%"
+        "delta_pct": 56.0
       },
       {
         "issuer": "NVIDIA CORPORATION",
@@ -109374,7 +109374,7 @@
         "delta_shares": -9325900,
         "value_usd": 2466329920,
         "delta_value_usd": -1910396130,
-        "delta_pct": "-39.7%"
+        "delta_pct": 60.3
       },
       {
         "issuer": "NVIDIA CORPORATION",
@@ -109385,7 +109385,7 @@
         "delta_shares": -8506500,
         "value_usd": 4451193760,
         "delta_value_usd": -1895289340,
-        "delta_pct": "-25.0%"
+        "delta_pct": 75.0
       },
       {
         "issuer": "TESLA INC",
@@ -109396,7 +109396,7 @@
         "delta_shares": -3193900,
         "value_usd": 464278575,
         "delta_value_usd": -1533737441,
-        "delta_pct": "-71.9%"
+        "delta_pct": 28.1
       }
     ],
     "largest_holdings": [
@@ -109409,7 +109409,7 @@
         "delta_shares": 14122048,
         "value_usd": 31550488745,
         "delta_value_usd": 444766220,
-        "delta_pct": "+8.5%"
+        "delta_pct": 108.5
       },
       {
         "issuer": "APPLE INC",
@@ -109420,7 +109420,7 @@
         "delta_shares": 7420687,
         "value_usd": 27050306935,
         "delta_value_usd": 91389962,
-        "delta_pct": "+7.5%"
+        "delta_pct": 107.5
       },
       {
         "issuer": "STATE STR SPDR S&P 500 ETF T",
@@ -109431,7 +109431,7 @@
         "delta_shares": 3521472,
         "value_usd": 23807598362,
         "delta_value_usd": 1245283735,
-        "delta_pct": "+10.6%"
+        "delta_pct": 110.6
       },
       {
         "issuer": "MICROSOFT CORP",
@@ -109442,7 +109442,7 @@
         "delta_shares": 9817298,
         "value_usd": 22661054452,
         "delta_value_usd": -2197336785,
-        "delta_pct": "+19.1%"
+        "delta_pct": 119.1
       },
       {
         "issuer": "ALPHABET INC",
@@ -109453,7 +109453,7 @@
         "delta_shares": 5610937,
         "value_usd": 16634436430,
         "delta_value_usd": 284599983,
-        "delta_pct": "+10.7%"
+        "delta_pct": 110.7
       },
       {
         "issuer": "AMAZON COM INC",
@@ -109464,7 +109464,7 @@
         "delta_shares": 3484771,
         "value_usd": 14098964982,
         "delta_value_usd": -722181171,
-        "delta_pct": "+5.4%"
+        "delta_pct": 105.4
       },
       {
         "issuer": "BROADCOM INC",
@@ -109475,7 +109475,7 @@
         "delta_shares": 2651303,
         "value_usd": 11152465575,
         "delta_value_usd": -400819046,
-        "delta_pct": "+7.9%"
+        "delta_pct": 107.9
       },
       {
         "issuer": "TESLA INC",
@@ -109486,7 +109486,7 @@
         "delta_shares": 1978636,
         "value_usd": 10928815969,
         "delta_value_usd": -1402353021,
-        "delta_pct": "+7.2%"
+        "delta_pct": 107.2
       },
       {
         "issuer": "META PLATFORMS INC",
@@ -109497,7 +109497,7 @@
         "delta_shares": 3246054,
         "value_usd": 10706228914,
         "delta_value_usd": 496698773,
-        "delta_pct": "+21.0%"
+        "delta_pct": 121.0
       },
       {
         "issuer": "ALPHABET INC",
@@ -109508,7 +109508,7 @@
         "delta_shares": 8221703,
         "value_usd": 9149108409,
         "delta_value_usd": 1720746510,
-        "delta_pct": "+34.7%"
+        "delta_pct": 134.7
       }
     ]
   },

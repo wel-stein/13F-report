@@ -31981,7 +31981,7 @@
     "quarter": "2026-03-31",
     "aum_usd": 535462965059,
     "aum_usd_prior": 570656014881,
-    "aum_change_pct": "-6.2%",
+    "aum_change_pct": 93.8,
     "holdings_count": 1869,
     "holdings_count_prior": 1912,
     "holdings_count_change": -43,
@@ -32138,7 +32138,7 @@
         "delta_shares": -22828246,
         "value_usd": 0,
         "delta_value_usd": -2098600654,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "QIAGEN NV",
@@ -32149,7 +32149,7 @@
         "delta_shares": -14137799,
         "value_usd": 0,
         "delta_value_usd": -640962027,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "SYNOVUS FINL CORP",
@@ -32160,7 +32160,7 @@
         "delta_shares": -6810107,
         "value_usd": 0,
         "delta_value_usd": -340845855,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "CARNIVAL CORP",
@@ -32171,7 +32171,7 @@
         "delta_shares": -10239048,
         "value_usd": 0,
         "delta_value_usd": -312700526,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "PINNACLE FINL PARTNERS INC",
@@ -32182,7 +32182,7 @@
         "delta_shares": -3067116,
         "value_usd": 0,
         "delta_value_usd": -292633537,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       }
     ],
     "top_buys": [
@@ -32206,7 +32206,7 @@
         "delta_shares": 9261467,
         "value_usd": 2472632919,
         "delta_value_usd": 1985588223,
-        "delta_pct": "+285.9%"
+        "delta_pct": 385.9
       },
       {
         "issuer": "BLACKROCK INC",
@@ -32217,7 +32217,7 @@
         "delta_shares": 2193546,
         "value_usd": 3505113663,
         "delta_value_usd": 1951919740,
-        "delta_pct": "+151.2%"
+        "delta_pct": 251.2
       },
       {
         "issuer": "NORTHROP GRUMMAN CORP",
@@ -32228,7 +32228,7 @@
         "delta_shares": 2170005,
         "value_usd": 3391182397,
         "delta_value_usd": 1794221478,
-        "delta_pct": "+77.5%"
+        "delta_pct": 177.5
       },
       {
         "issuer": "KLA CORP",
@@ -32239,7 +32239,7 @@
         "delta_shares": 1002441,
         "value_usd": 2120960960,
         "delta_value_usd": 1588721897,
-        "delta_pct": "+228.9%"
+        "delta_pct": 328.9
       }
     ],
     "top_sells": [
@@ -32252,7 +32252,7 @@
         "delta_shares": -12271790,
         "value_usd": 16504836992,
         "delta_value_usd": -4511363108,
-        "delta_pct": "-15.9%"
+        "delta_pct": 84.1
       },
       {
         "issuer": "ALPHABET INC",
@@ -32263,7 +32263,7 @@
         "delta_shares": -9665827,
         "value_usd": 13693746665,
         "delta_value_usd": -4236868991,
-        "delta_pct": "-16.9%"
+        "delta_pct": 83.1
       },
       {
         "issuer": "NVIDIA CORPORATION",
@@ -32274,7 +32274,7 @@
         "delta_shares": -6850830,
         "value_usd": 23344465647,
         "delta_value_usd": -2897335957,
-        "delta_pct": "-4.9%"
+        "delta_pct": 95.1
       },
       {
         "issuer": "UNITEDHEALTH GROUP INC",
@@ -32285,7 +32285,7 @@
         "delta_shares": -5597135,
         "value_usd": 2730696597,
         "delta_value_usd": -2448324588,
-        "delta_pct": "-35.7%"
+        "delta_pct": 64.3
       },
       {
         "issuer": "AMAZON COM INC",
@@ -32296,7 +32296,7 @@
         "delta_shares": -3819677,
         "value_usd": 12996798605,
         "delta_value_usd": -2288859115,
-        "delta_pct": "-5.8%"
+        "delta_pct": 94.2
       }
     ],
     "largest_holdings": [
@@ -32309,7 +32309,7 @@
         "delta_shares": -6850830,
         "value_usd": 23344465647,
         "delta_value_usd": -2897335957,
-        "delta_pct": "-4.9%"
+        "delta_pct": 95.1
       },
       {
         "issuer": "MICROSOFT CORP",
@@ -32320,7 +32320,7 @@
         "delta_shares": 3832724,
         "value_usd": 19523567959,
         "delta_value_usd": -4130016864,
-        "delta_pct": "+7.8%"
+        "delta_pct": 107.8
       },
       {
         "issuer": "APPLE INC",
@@ -32331,7 +32331,7 @@
         "delta_shares": -12271790,
         "value_usd": 16504836992,
         "delta_value_usd": -4511363108,
-        "delta_pct": "-15.9%"
+        "delta_pct": 84.1
       },
       {
         "issuer": "BROADCOM INC",
@@ -32342,7 +32342,7 @@
         "delta_shares": 2302102,
         "value_usd": 15378927308,
         "delta_value_usd": -1021325760,
-        "delta_pct": "+4.9%"
+        "delta_pct": 104.9
       },
       {
         "issuer": "ALPHABET INC",
@@ -32353,7 +32353,7 @@
         "delta_shares": -9665827,
         "value_usd": 13693746665,
         "delta_value_usd": -4236868991,
-        "delta_pct": "-16.9%"
+        "delta_pct": 83.1
       },
       {
         "issuer": "AMAZON COM INC",
@@ -32364,7 +32364,7 @@
         "delta_shares": -3819677,
         "value_usd": 12996798605,
         "delta_value_usd": -2288859115,
-        "delta_pct": "-5.8%"
+        "delta_pct": 94.2
       },
       {
         "issuer": "ELI LILLY & CO",
@@ -32375,7 +32375,7 @@
         "delta_shares": 69876,
         "value_usd": 12349807897,
         "delta_value_usd": -2004891678,
-        "delta_pct": "+0.5%"
+        "delta_pct": 100.5
       },
       {
         "issuer": "MERCK & CO INC",
@@ -32386,7 +32386,7 @@
         "delta_shares": -2120487,
         "value_usd": 10142247862,
         "delta_value_usd": 1044051552,
-        "delta_pct": "-2.5%"
+        "delta_pct": 97.5
       },
       {
         "issuer": "META PLATFORMS INC",
@@ -32397,7 +32397,7 @@
         "delta_shares": 2915166,
         "value_usd": 6688070970,
         "delta_value_usd": 896039314,
-        "delta_pct": "+33.2%"
+        "delta_pct": 133.2
       },
       {
         "issuer": "MASTERCARD INCORPORATED",
@@ -32408,7 +32408,7 @@
         "delta_shares": -495176,
         "value_usd": 6496370462,
         "delta_value_usd": -1208658744,
-        "delta_pct": "-3.7%"
+        "delta_pct": 96.3
       }
     ]
   },

@@ -19606,7 +19606,7 @@
     "quarter": "2026-03-31",
     "aum_usd": 22404547213,
     "aum_usd_prior": 27421613830,
-    "aum_change_pct": "-18.3%",
+    "aum_change_pct": 81.7,
     "holdings_count": 993,
     "holdings_count_prior": 1040,
     "holdings_count_change": -47,
@@ -19763,7 +19763,7 @@
         "delta_shares": -1932066,
         "value_usd": 0,
         "delta_value_usd": -511823604,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "WORKDAY INC",
@@ -19774,7 +19774,7 @@
         "delta_shares": -965117,
         "value_usd": 0,
         "delta_value_usd": -207287829,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "SERVICENOW INC",
@@ -19785,7 +19785,7 @@
         "delta_shares": -1338885,
         "value_usd": 0,
         "delta_value_usd": -205103793,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "GLOBAL PMTS INC",
@@ -19796,7 +19796,7 @@
         "delta_shares": -958080,
         "value_usd": 0,
         "delta_value_usd": -74155392,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "GODADDY INC",
@@ -19807,7 +19807,7 @@
         "delta_shares": -567916,
         "value_usd": 0,
         "delta_value_usd": -70467017,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       }
     ],
     "top_buys": [
@@ -19820,7 +19820,7 @@
         "delta_shares": 2440457,
         "value_usd": 914036840,
         "delta_value_usd": 464340852,
-        "delta_pct": "+125.3%"
+        "delta_pct": 225.3
       },
       {
         "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
@@ -19842,7 +19842,7 @@
         "delta_shares": 586064,
         "value_usd": 498551839,
         "delta_value_usd": 244639687,
-        "delta_pct": "+65.9%"
+        "delta_pct": 165.9
       },
       {
         "issuer": "BROADCOM INC",
@@ -19853,7 +19853,7 @@
         "delta_shares": 669640,
         "value_usd": 568068464,
         "delta_value_usd": 164605850,
-        "delta_pct": "+57.4%"
+        "delta_pct": 157.4
       },
       {
         "issuer": "UNION PAC CORP",
@@ -19864,7 +19864,7 @@
         "delta_shares": 478341,
         "value_usd": 129280067,
         "delta_value_usd": 116671045,
-        "delta_pct": "+877.5%"
+        "delta_pct": 977.5
       }
     ],
     "top_sells": [
@@ -19877,7 +19877,7 @@
         "delta_shares": -1506505,
         "value_usd": 1750004460,
         "delta_value_usd": -1116872869,
-        "delta_pct": "-36.0%"
+        "delta_pct": 64.0
       },
       {
         "issuer": "SALESFORCE INC",
@@ -19888,7 +19888,7 @@
         "delta_shares": -1932066,
         "value_usd": 0,
         "delta_value_usd": -511823604,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "ADOBE INC",
@@ -19899,7 +19899,7 @@
         "delta_shares": -1273743,
         "value_usd": 318921,
         "delta_value_usd": -445937578,
-        "delta_pct": "-99.9%"
+        "delta_pct": 0.1
       },
       {
         "issuer": "BOOKING HOLDINGS INC",
@@ -19910,7 +19910,7 @@
         "delta_shares": -80474,
         "value_usd": 227357,
         "delta_value_usd": -431026657,
-        "delta_pct": "-99.9%"
+        "delta_pct": 0.1
       },
       {
         "issuer": "MASTERCARD INCORPORATED",
@@ -19921,7 +19921,7 @@
         "delta_shares": -405277,
         "value_usd": 1963664,
         "delta_value_usd": -231644428,
-        "delta_pct": "-99.0%"
+        "delta_pct": 1.0
       }
     ],
     "largest_holdings": [
@@ -19934,7 +19934,7 @@
         "delta_shares": -90551,
         "value_usd": 2838644353,
         "delta_value_usd": -199590880,
-        "delta_pct": "-2.0%"
+        "delta_pct": 98.0
       },
       {
         "issuer": "ISHARES TR",
@@ -19945,7 +19945,7 @@
         "delta_shares": -1506505,
         "value_usd": 1750004460,
         "delta_value_usd": -1116872869,
-        "delta_pct": "-36.0%"
+        "delta_pct": 64.0
       },
       {
         "issuer": "AMAZON COM INC",
@@ -19956,7 +19956,7 @@
         "delta_shares": 2440457,
         "value_usd": 914036840,
         "delta_value_usd": 464340852,
-        "delta_pct": "+125.3%"
+        "delta_pct": 225.3
       },
       {
         "issuer": "NVIDIA CORPORATION",
@@ -19967,7 +19967,7 @@
         "delta_shares": 827798,
         "value_usd": 818459723,
         "delta_value_usd": 97598990,
-        "delta_pct": "+21.4%"
+        "delta_pct": 121.4
       },
       {
         "issuer": "ALPHABET INC",
@@ -19978,7 +19978,7 @@
         "delta_shares": 406848,
         "value_usd": 574451135,
         "delta_value_usd": 76522597,
-        "delta_pct": "+25.6%"
+        "delta_pct": 125.6
       },
       {
         "issuer": "BROADCOM INC",
@@ -19989,7 +19989,7 @@
         "delta_shares": 669640,
         "value_usd": 568068464,
         "delta_value_usd": 164605850,
-        "delta_pct": "+57.4%"
+        "delta_pct": 157.4
       },
       {
         "issuer": "MICRON TECHNOLOGY INC",
@@ -20000,7 +20000,7 @@
         "delta_shares": 586064,
         "value_usd": 498551839,
         "delta_value_usd": 244639687,
-        "delta_pct": "+65.9%"
+        "delta_pct": 165.9
       },
       {
         "issuer": "MICROSOFT CORP",
@@ -20011,7 +20011,7 @@
         "delta_shares": 100888,
         "value_usd": 401626676,
         "delta_value_usd": -74299413,
-        "delta_pct": "+10.3%"
+        "delta_pct": 110.3
       },
       {
         "issuer": "GE VERNOVA INC",
@@ -20022,7 +20022,7 @@
         "delta_shares": -231100,
         "value_usd": 379621591,
         "delta_value_usd": -55654068,
-        "delta_pct": "-34.7%"
+        "delta_pct": 65.3
       },
       {
         "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",

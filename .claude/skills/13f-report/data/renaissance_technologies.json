@@ -58321,7 +58321,7 @@
     "quarter": "2026-03-31",
     "aum_usd": 63929893013,
     "aum_usd_prior": 64461244358,
-    "aum_change_pct": "-0.8%",
+    "aum_change_pct": 99.2,
     "holdings_count": 3213,
     "holdings_count_prior": 3185,
     "holdings_count_change": 28,
@@ -58478,7 +58478,7 @@
         "delta_shares": -2986061,
         "value_usd": 0,
         "delta_value_usd": -427932474,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "FORD MTR CO",
@@ -58489,7 +58489,7 @@
         "delta_shares": -24730852,
         "value_usd": 0,
         "delta_value_usd": -324468778,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "GE VERNOVA INC",
@@ -58500,7 +58500,7 @@
         "delta_shares": -345390,
         "value_usd": 0,
         "delta_value_usd": -225736542,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "AMAZON COM INC",
@@ -58511,7 +58511,7 @@
         "delta_shares": -890926,
         "value_usd": 0,
         "delta_value_usd": -205645092,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "CARNIVAL CORP",
@@ -58522,7 +58522,7 @@
         "delta_shares": -6275423,
         "value_usd": 0,
         "delta_value_usd": -191651418,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       }
     ],
     "top_buys": [
@@ -58546,7 +58546,7 @@
         "delta_shares": 1655528,
         "value_usd": 440696066,
         "delta_value_usd": 278176236,
-        "delta_pct": "+190.0%"
+        "delta_pct": 290.0
       },
       {
         "issuer": "LINDE PLC",
@@ -58557,7 +58557,7 @@
         "delta_shares": 502520,
         "value_usd": 312239563,
         "delta_value_usd": 257960116,
-        "delta_pct": "+394.8%"
+        "delta_pct": 494.8
       },
       {
         "issuer": "BROADCOM INC",
@@ -58568,7 +58568,7 @@
         "delta_shares": 792908,
         "value_usd": 245685342,
         "delta_value_usd": 245377247,
-        "delta_pct": "+89191.0%"
+        "delta_pct": 89291.0
       },
       {
         "issuer": "MERCADOLIBRE",
@@ -58592,7 +58592,7 @@
         "delta_shares": -7175826,
         "value_usd": 235153,
         "delta_value_usd": -672800587,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "COSTCO WHOLESALE CORPORATION",
@@ -58603,7 +58603,7 @@
         "delta_shares": -673546,
         "value_usd": 19386949,
         "delta_value_usd": -578216773,
-        "delta_pct": "-97.2%"
+        "delta_pct": 2.8
       },
       {
         "issuer": "PALANTIR TECHNOLOGIES INC",
@@ -58614,7 +58614,7 @@
         "delta_shares": -1810801,
         "value_usd": 1021901255,
         "delta_value_usd": -541716969,
-        "delta_pct": "-20.6%"
+        "delta_pct": 79.4
       },
       {
         "issuer": "TESLA INC",
@@ -58625,7 +58625,7 @@
         "delta_shares": -1150832,
         "value_usd": 78547058,
         "delta_value_usd": -534036003,
-        "delta_pct": "-84.5%"
+        "delta_pct": 15.5
       },
       {
         "issuer": "PROCTER AND GAMBLE CO",
@@ -58636,7 +58636,7 @@
         "delta_shares": -2986061,
         "value_usd": 0,
         "delta_value_usd": -427932474,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       }
     ],
     "largest_holdings": [
@@ -58649,7 +58649,7 @@
         "delta_shares": -122240,
         "value_usd": 1059666527,
         "delta_value_usd": 129380079,
-        "delta_pct": "-6.4%"
+        "delta_pct": 93.6
       },
       {
         "issuer": "PALANTIR TECHNOLOGIES INC",
@@ -58660,7 +58660,7 @@
         "delta_shares": -1810801,
         "value_usd": 1021901255,
         "delta_value_usd": -541716969,
-        "delta_pct": "-20.6%"
+        "delta_pct": 79.4
       },
       {
         "issuer": "APPLE INC",
@@ -58682,7 +58682,7 @@
         "delta_shares": 571100,
         "value_usd": 779676525,
         "delta_value_usd": 76371711,
-        "delta_pct": "+2.3%"
+        "delta_pct": 102.3
       },
       {
         "issuer": "MICRON TECHNOLOGY INC",
@@ -58693,7 +58693,7 @@
         "delta_shares": -848157,
         "value_usd": 730739401,
         "delta_value_usd": -128671721,
-        "delta_pct": "-28.2%"
+        "delta_pct": 71.8
       },
       {
         "issuer": "VERISIGN INC",
@@ -58704,7 +58704,7 @@
         "delta_shares": 38800,
         "value_usd": 699915982,
         "delta_value_usd": 24672657,
-        "delta_pct": "+1.4%"
+        "delta_pct": 101.4
       },
       {
         "issuer": "EXELIXIS INC",
@@ -58715,7 +58715,7 @@
         "delta_shares": -187050,
         "value_usd": 588750730,
         "delta_value_usd": -21101775,
-        "delta_pct": "-1.3%"
+        "delta_pct": 98.7
       },
       {
         "issuer": "FRANCO NEV CORP",
@@ -58726,7 +58726,7 @@
         "delta_shares": -259200,
         "value_usd": 548183692,
         "delta_value_usd": 34519393,
-        "delta_pct": "-10.5%"
+        "delta_pct": 89.5
       },
       {
         "issuer": "SANDISK CORP",
@@ -58737,7 +58737,7 @@
         "delta_shares": -409432,
         "value_usd": 507997533,
         "delta_value_usd": 221005113,
-        "delta_pct": "-33.9%"
+        "delta_pct": 66.1
       },
       {
         "issuer": "NVIDIA CORPORATION",
@@ -58748,7 +58748,7 @@
         "delta_shares": 1655528,
         "value_usd": 440696066,
         "delta_value_usd": 278176236,
-        "delta_pct": "+190.0%"
+        "delta_pct": 290.0
       }
     ]
   },

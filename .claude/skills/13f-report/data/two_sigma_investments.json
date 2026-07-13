@@ -77611,7 +77611,7 @@
     "quarter": "2026-03-31",
     "aum_usd": 123930684213,
     "aum_usd_prior": 70897743818,
-    "aum_change_pct": "+74.8%",
+    "aum_change_pct": 174.8,
     "holdings_count": 4546,
     "holdings_count_prior": 4041,
     "holdings_count_change": 505,
@@ -77768,7 +77768,7 @@
         "delta_shares": -2180476,
         "value_usd": 0,
         "delta_value_usd": -200451159,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "FIRST TR EXCHANGE-TRADED FD",
@@ -77779,7 +77779,7 @@
         "delta_shares": -305460,
         "value_usd": 0,
         "delta_value_usd": -82223723,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "ISHARES TR",
@@ -77790,7 +77790,7 @@
         "delta_shares": -312700,
         "value_usd": 0,
         "delta_value_usd": -66314289,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "NEW GOLD INC CDA",
@@ -77801,7 +77801,7 @@
         "delta_shares": -6860719,
         "value_usd": 0,
         "delta_value_usd": -59756862,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "FORD MTR CO",
@@ -77812,7 +77812,7 @@
         "delta_shares": -55000000,
         "value_usd": 0,
         "delta_value_usd": -57117500,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       }
     ],
     "top_buys": [
@@ -77825,7 +77825,7 @@
         "delta_shares": 10028554,
         "value_usd": 1959252328,
         "delta_value_usd": 1734390956,
-        "delta_pct": "+831.8%"
+        "delta_pct": 931.8
       },
       {
         "issuer": "APPLE INC",
@@ -77836,7 +77836,7 @@
         "delta_shares": 5052600,
         "value_usd": 1508640189,
         "delta_value_usd": 1266183751,
-        "delta_pct": "+566.5%"
+        "delta_pct": 666.5
       },
       {
         "issuer": "ALPHABET INC",
@@ -77847,7 +77847,7 @@
         "delta_shares": 4405228,
         "value_usd": 1274358948,
         "delta_value_usd": 1266095748,
-        "delta_pct": "+16686.5%"
+        "delta_pct": 16786.5
       },
       {
         "issuer": "AMAZON COM INC",
@@ -77858,7 +77858,7 @@
         "delta_shares": 5186930,
         "value_usd": 1319425231,
         "delta_value_usd": 1054389167,
-        "delta_pct": "+451.7%"
+        "delta_pct": 551.7
       },
       {
         "issuer": "JPMORGAN CHASE & CO",
@@ -77869,7 +77869,7 @@
         "delta_shares": 2913874,
         "value_usd": 973930814,
         "delta_value_usd": 846004963,
-        "delta_pct": "+733.9%"
+        "delta_pct": 833.9
       }
     ],
     "top_sells": [
@@ -77882,7 +77882,7 @@
         "delta_shares": -1506521,
         "value_usd": 172108955,
         "delta_value_usd": -231229767,
-        "delta_pct": "-53.8%"
+        "delta_pct": 46.2
       },
       {
         "issuer": "SOFI TECHNOLOGIES INC",
@@ -77893,7 +77893,7 @@
         "delta_shares": -7957813,
         "value_usd": 23634045,
         "delta_value_usd": -223664932,
-        "delta_pct": "-84.2%"
+        "delta_pct": 15.8
       },
       {
         "issuer": "SELECT SECTOR SPDR TR",
@@ -77904,7 +77904,7 @@
         "delta_shares": -1608366,
         "value_usd": 193423589,
         "delta_value_usd": -210566711,
-        "delta_pct": "-47.5%"
+        "delta_pct": 52.5
       },
       {
         "issuer": "AMGEN INC",
@@ -77915,7 +77915,7 @@
         "delta_shares": -628708,
         "value_usd": 25220608,
         "delta_value_usd": -204023388,
-        "delta_pct": "-89.8%"
+        "delta_pct": 10.2
       },
       {
         "issuer": "PROCTER & GAMBLE CO",
@@ -77926,7 +77926,7 @@
         "delta_shares": -1419412,
         "value_usd": 6427869,
         "delta_value_usd": -203365646,
-        "delta_pct": "-97.0%"
+        "delta_pct": 3.0
       }
     ],
     "largest_holdings": [
@@ -77939,7 +77939,7 @@
         "delta_shares": 10028554,
         "value_usd": 1959252328,
         "delta_value_usd": 1734390956,
-        "delta_pct": "+831.8%"
+        "delta_pct": 931.8
       },
       {
         "issuer": "APPLE INC",
@@ -77950,7 +77950,7 @@
         "delta_shares": 5052600,
         "value_usd": 1508640189,
         "delta_value_usd": 1266183751,
-        "delta_pct": "+566.5%"
+        "delta_pct": 666.5
       },
       {
         "issuer": "AMAZON COM INC",
@@ -77961,7 +77961,7 @@
         "delta_shares": 5186930,
         "value_usd": 1319425231,
         "delta_value_usd": 1054389167,
-        "delta_pct": "+451.7%"
+        "delta_pct": 551.7
       },
       {
         "issuer": "ALPHABET INC",
@@ -77972,7 +77972,7 @@
         "delta_shares": 4405228,
         "value_usd": 1274358948,
         "delta_value_usd": 1266095748,
-        "delta_pct": "+16686.5%"
+        "delta_pct": 16786.5
       },
       {
         "issuer": "TESLA INC",
@@ -77983,7 +77983,7 @@
         "delta_shares": 2344541,
         "value_usd": 1082870203,
         "delta_value_usd": 827268243,
-        "delta_pct": "+412.5%"
+        "delta_pct": 512.5
       },
       {
         "issuer": "JPMORGAN CHASE & CO",
@@ -77994,7 +77994,7 @@
         "delta_shares": 2913874,
         "value_usd": 973930814,
         "delta_value_usd": 846004963,
-        "delta_pct": "+733.9%"
+        "delta_pct": 833.9
       },
       {
         "issuer": "PALANTIR TECHNOLOGIES INC",
@@ -78005,7 +78005,7 @@
         "delta_shares": 4866142,
         "value_usd": 940653833,
         "delta_value_usd": 662588843,
-        "delta_pct": "+311.1%"
+        "delta_pct": 411.1
       },
       {
         "issuer": "COSTCO WHOLESALE CORPORATION",
@@ -78016,7 +78016,7 @@
         "delta_shares": 615669,
         "value_usd": 871669989,
         "delta_value_usd": 648216999,
-        "delta_pct": "+237.6%"
+        "delta_pct": 337.6
       },
       {
         "issuer": "TJX COS INC NEW",
@@ -78027,7 +78027,7 @@
         "delta_shares": 3562638,
         "value_usd": 837349900,
         "delta_value_usd": 579188326,
-        "delta_pct": "+212.0%"
+        "delta_pct": 312.0
       },
       {
         "issuer": "MASTERCARD INCORPORATED",
@@ -78038,7 +78038,7 @@
         "delta_shares": 1233602,
         "value_usd": 836979467,
         "delta_value_usd": 584938231,
-        "delta_pct": "+279.4%"
+        "delta_pct": 379.4
       }
     ]
   },

@@ -227641,7 +227641,7 @@
     "quarter": "2026-03-31",
     "aum_usd": 618473172395,
     "aum_usd_prior": 665872168045,
-    "aum_change_pct": "-7.1%",
+    "aum_change_pct": 92.9,
     "holdings_count": 12857,
     "holdings_count_prior": 12508,
     "holdings_count_change": 349,
@@ -227798,7 +227798,7 @@
         "delta_shares": -90804000,
         "value_usd": 0,
         "delta_value_usd": -416588935,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "DIREXION SHS ETF TR",
@@ -227809,7 +227809,7 @@
         "delta_shares": -8242500,
         "value_usd": 0,
         "delta_value_usd": -346432275,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "SEAGATE HDD CAYMAN",
@@ -227820,7 +227820,7 @@
         "delta_shares": -100000000,
         "value_usd": 0,
         "delta_value_usd": -335953994,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "CYBERARK SOFTWARE LTD",
@@ -227831,7 +227831,7 @@
         "delta_shares": -683106,
         "value_usd": 0,
         "delta_value_usd": -304706262,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "CARNIVAL CORP",
@@ -227842,7 +227842,7 @@
         "delta_shares": -8403019,
         "value_usd": 0,
         "delta_value_usd": -256628200,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       }
     ],
     "top_buys": [
@@ -227855,7 +227855,7 @@
         "delta_shares": 8236200,
         "value_usd": 24186274668,
         "delta_value_usd": 4441962988,
-        "delta_pct": "+28.4%"
+        "delta_pct": 128.4
       },
       {
         "issuer": "ISHARES TR",
@@ -227866,7 +227866,7 @@
         "delta_shares": 3986430,
         "value_usd": 2652522508,
         "delta_value_usd": 2601617767,
-        "delta_pct": "+5363.9%"
+        "delta_pct": 5463.9
       },
       {
         "issuer": "MICRON TECHNOLOGY INC",
@@ -227877,7 +227877,7 @@
         "delta_shares": 4435300,
         "value_usd": 5647333440,
         "delta_value_usd": 2142298853,
-        "delta_pct": "+36.1%"
+        "delta_pct": 136.1
       },
       {
         "issuer": "SANDISK CORP",
@@ -227888,7 +227888,7 @@
         "delta_shares": 2060029,
         "value_usd": 2243702575,
         "delta_value_usd": 1894405026,
-        "delta_pct": "+140.0%"
+        "delta_pct": 240.0
       },
       {
         "issuer": "SPDR GOLD TR",
@@ -227899,7 +227899,7 @@
         "delta_shares": 2810100,
         "value_usd": 9428557509,
         "delta_value_usd": 1858243889,
-        "delta_pct": "+14.7%"
+        "delta_pct": 114.7
       }
     ],
     "top_sells": [
@@ -227912,7 +227912,7 @@
         "delta_shares": -7322100,
         "value_usd": 13532815250,
         "delta_value_usd": -6131236722,
-        "delta_pct": "-16.7%"
+        "delta_pct": 83.3
       },
       {
         "issuer": "TESLA INC",
@@ -227923,7 +227923,7 @@
         "delta_shares": -6710500,
         "value_usd": 9452561600,
         "delta_value_usd": -5000404844,
-        "delta_pct": "-20.9%"
+        "delta_pct": 79.1
       },
       {
         "issuer": "NVIDIA CORPORATION",
@@ -227934,7 +227934,7 @@
         "delta_shares": -11050300,
         "value_usd": 11665267200,
         "delta_value_usd": -2870225750,
-        "delta_pct": "-14.2%"
+        "delta_pct": 85.8
       },
       {
         "issuer": "INVESCO QQQ TR",
@@ -227945,7 +227945,7 @@
         "delta_shares": -3011500,
         "value_usd": 11252874434,
         "delta_value_usd": -2573892184,
-        "delta_pct": "-13.4%"
+        "delta_pct": 86.6
       },
       {
         "issuer": "META PLATFORMS INC",
@@ -227956,7 +227956,7 @@
         "delta_shares": -1730000,
         "value_usd": 7606010646,
         "delta_value_usd": -2311313532,
-        "delta_pct": "-11.5%"
+        "delta_pct": 88.5
       }
     ],
     "largest_holdings": [
@@ -227969,7 +227969,7 @@
         "delta_shares": 8236200,
         "value_usd": 24186274668,
         "delta_value_usd": 4441962988,
-        "delta_pct": "+28.4%"
+        "delta_pct": 128.4
       },
       {
         "issuer": "INVESCO QQQ TR",
@@ -227980,7 +227980,7 @@
         "delta_shares": -617700,
         "value_usd": 20542586534,
         "delta_value_usd": -1700964256,
-        "delta_pct": "-1.7%"
+        "delta_pct": 98.3
       },
       {
         "issuer": "STATE STR SPDR S&P 500 ETF T",
@@ -227991,7 +227991,7 @@
         "delta_shares": 236100,
         "value_usd": 17577389520,
         "delta_value_usd": -692542928,
-        "delta_pct": "+0.9%"
+        "delta_pct": 100.9
       },
       {
         "issuer": "TESLA INC",
@@ -228002,7 +228002,7 @@
         "delta_shares": -7322100,
         "value_usd": 13532815250,
         "delta_value_usd": -6131236722,
-        "delta_pct": "-16.7%"
+        "delta_pct": 83.3
       },
       {
         "issuer": "NVIDIA CORPORATION",
@@ -228013,7 +228013,7 @@
         "delta_shares": -11050300,
         "value_usd": 11665267200,
         "delta_value_usd": -2870225750,
-        "delta_pct": "-14.2%"
+        "delta_pct": 85.8
       },
       {
         "issuer": "INVESCO QQQ TR",
@@ -228024,7 +228024,7 @@
         "delta_shares": -3011500,
         "value_usd": 11252874434,
         "delta_value_usd": -2573892184,
-        "delta_pct": "-13.4%"
+        "delta_pct": 86.6
       },
       {
         "issuer": "TESLA INC",
@@ -228035,7 +228035,7 @@
         "delta_shares": -6710500,
         "value_usd": 9452561600,
         "delta_value_usd": -5000404844,
-        "delta_pct": "-20.9%"
+        "delta_pct": 79.1
       },
       {
         "issuer": "SPDR GOLD TR",
@@ -228046,7 +228046,7 @@
         "delta_shares": 2810100,
         "value_usd": 9428557509,
         "delta_value_usd": 1858243889,
-        "delta_pct": "+14.7%"
+        "delta_pct": 114.7
       },
       {
         "issuer": "NVIDIA CORPORATION",
@@ -228057,7 +228057,7 @@
         "delta_shares": -3358000,
         "value_usd": 9014788320,
         "delta_value_usd": -1251719630,
-        "delta_pct": "-6.1%"
+        "delta_pct": 93.9
       },
       {
         "issuer": "APPLE INC",
@@ -228068,7 +228068,7 @@
         "delta_shares": 103300,
         "value_usd": 8075826211,
         "delta_value_usd": -546920525,
-        "delta_pct": "+0.3%"
+        "delta_pct": 100.3
       }
     ]
   },

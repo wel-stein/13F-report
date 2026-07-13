@@ -3931,7 +3931,7 @@
     "quarter": "2026-03-31",
     "aum_usd": 12859485476,
     "aum_usd_prior": 15067426139,
-    "aum_change_pct": "-14.7%",
+    "aum_change_pct": 85.3,
     "holdings_count": 182,
     "holdings_count_prior": 196,
     "holdings_count_change": -14,
@@ -4064,7 +4064,7 @@
         "delta_shares": -2927539,
         "value_usd": 0,
         "delta_value_usd": -111129371,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "PagerDuty Inc",
@@ -4075,7 +4075,7 @@
         "delta_shares": -8323386,
         "value_usd": 0,
         "delta_value_usd": -109119591,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "Unity Software Inc",
@@ -4086,7 +4086,7 @@
         "delta_shares": -974337,
         "value_usd": 0,
         "delta_value_usd": -43036485,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "Qualcomm Inc",
@@ -4097,7 +4097,7 @@
         "delta_shares": -250168,
         "value_usd": 0,
         "delta_value_usd": -42791236,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "Futu Holdings Ltd",
@@ -4108,7 +4108,7 @@
         "delta_shares": -106024,
         "value_usd": 0,
         "delta_value_usd": -17410201,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       }
     ],
     "top_buys": [
@@ -4132,7 +4132,7 @@
         "delta_shares": 367854,
         "value_usd": 430249668,
         "delta_value_usd": 101818536,
-        "delta_pct": "+8.9%"
+        "delta_pct": 108.9
       },
       {
         "issuer": "CoreWeave Inc",
@@ -4143,7 +4143,7 @@
         "delta_shares": 613869,
         "value_usd": 196628508,
         "delta_value_usd": 58832560,
-        "delta_pct": "+31.9%"
+        "delta_pct": 131.9
       },
       {
         "issuer": "Intellia Therapeutics Inc",
@@ -4154,7 +4154,7 @@
         "delta_shares": 301923,
         "value_usd": 186008545,
         "delta_value_usd": 58284705,
-        "delta_pct": "+2.1%"
+        "delta_pct": 102.1
       },
       {
         "issuer": "Bullish",
@@ -4165,7 +4165,7 @@
         "delta_shares": 1740339,
         "value_usd": 234461649,
         "delta_value_usd": 51863884,
-        "delta_pct": "+36.1%"
+        "delta_pct": 136.1
       }
     ],
     "top_sells": [
@@ -4178,7 +4178,7 @@
         "delta_shares": -2061333,
         "value_usd": 361486706,
         "delta_value_usd": -276623069,
-        "delta_pct": "-35.0%"
+        "delta_pct": 65.0
       },
       {
         "issuer": "Tesla Inc",
@@ -4189,7 +4189,7 @@
         "delta_shares": -83163,
         "value_usd": 1052546690,
         "delta_value_usd": -258158459,
-        "delta_pct": "-2.9%"
+        "delta_pct": 97.1
       },
       {
         "issuer": "Coinbase Global Inc",
@@ -4200,7 +4200,7 @@
         "delta_shares": -169044,
         "value_usd": 414329300,
         "delta_value_usd": -160502388,
-        "delta_pct": "-6.7%"
+        "delta_pct": 93.3
       },
       {
         "issuer": "DraftKings Inc",
@@ -4211,7 +4211,7 @@
         "delta_shares": -3187657,
         "value_usd": 29254220,
         "delta_value_usd": -127220561,
-        "delta_pct": "-70.2%"
+        "delta_pct": 29.8
       },
       {
         "issuer": "Palantir Technologies Inc",
@@ -4222,7 +4222,7 @@
         "delta_shares": -122020,
         "value_usd": 454913400,
         "delta_value_usd": -119556932,
-        "delta_pct": "-3.8%"
+        "delta_pct": 96.2
       }
     ],
     "largest_holdings": [
@@ -4235,7 +4235,7 @@
         "delta_shares": -83163,
         "value_usd": 1052546690,
         "delta_value_usd": -258158459,
-        "delta_pct": "-2.9%"
+        "delta_pct": 97.1
       },
       {
         "issuer": "Advanced Micro Devices Inc",
@@ -4246,7 +4246,7 @@
         "delta_shares": 138075,
         "value_usd": 551875889,
         "delta_value_usd": 461225,
-        "delta_pct": "+5.4%"
+        "delta_pct": 105.4
       },
       {
         "issuer": "CRISPR Therapeutics AG",
@@ -4257,7 +4257,7 @@
         "delta_shares": 791566,
         "value_usd": 538189027,
         "delta_value_usd": -13587650,
-        "delta_pct": "+7.5%"
+        "delta_pct": 107.5
       },
       {
         "issuer": "Shopify Inc",
@@ -4268,7 +4268,7 @@
         "delta_shares": 198754,
         "value_usd": 495553074,
         "delta_value_usd": -144930060,
-        "delta_pct": "+5.0%"
+        "delta_pct": 105.0
       },
       {
         "issuer": "Palantir Technologies Inc",
@@ -4279,7 +4279,7 @@
         "delta_shares": -122020,
         "value_usd": 454913400,
         "delta_value_usd": -119556932,
-        "delta_pct": "-3.8%"
+        "delta_pct": 96.2
       },
       {
         "issuer": "Tempus AI Inc",
@@ -4290,7 +4290,7 @@
         "delta_shares": 2050162,
         "value_usd": 434462230,
         "delta_value_usd": -11813019,
-        "delta_pct": "+27.1%"
+        "delta_pct": 127.1
       },
       {
         "issuer": "Circle Internet Group Inc",
@@ -4301,7 +4301,7 @@
         "delta_shares": 367854,
         "value_usd": 430249668,
         "delta_value_usd": 101818536,
-        "delta_pct": "+8.9%"
+        "delta_pct": 108.9
       },
       {
         "issuer": "Robinhood Markets Inc",
@@ -4312,7 +4312,7 @@
         "delta_shares": 1196850,
         "value_usd": 416012113,
         "delta_value_usd": -127570341,
-        "delta_pct": "+24.9%"
+        "delta_pct": 124.9
       },
       {
         "issuer": "Coinbase Global Inc",
@@ -4323,7 +4323,7 @@
         "delta_shares": -169044,
         "value_usd": 414329300,
         "delta_value_usd": -160502388,
-        "delta_pct": "-6.7%"
+        "delta_pct": 93.3
       },
       {
         "issuer": "Teradyne Inc",
@@ -4334,7 +4334,7 @@
         "delta_shares": -1111134,
         "value_usd": 369128978,
         "delta_value_usd": -86948026,
-        "delta_pct": "-47.2%"
+        "delta_pct": 52.8
       }
     ]
   },

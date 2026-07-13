@@ -1141,7 +1141,7 @@
     "quarter": "2026-03-31",
     "aum_usd": 263095703570,
     "aum_usd_prior": 274160086701,
-    "aum_change_pct": "-4.0%",
+    "aum_change_pct": 96.0,
     "holdings_count": 29,
     "holdings_count_prior": 42,
     "holdings_count_change": -13,
@@ -1240,7 +1240,7 @@
         "delta_shares": -8297460,
         "value_usd": 0,
         "delta_value_usd": -2910002197,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "MASTERCARD INCORPORATED",
@@ -1251,7 +1251,7 @@
         "delta_shares": -3986648,
         "value_usd": 0,
         "delta_value_usd": -2275897610,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "UNITEDHEALTH GROUP INC",
@@ -1262,7 +1262,7 @@
         "delta_shares": -5039564,
         "value_usd": 0,
         "delta_value_usd": -1663610472,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "DOMINOS PIZZA INC",
@@ -1273,7 +1273,7 @@
         "delta_shares": -3350000,
         "value_usd": 0,
         "delta_value_usd": -1396347000,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "AON PLC",
@@ -1284,7 +1284,7 @@
         "delta_shares": -3602995,
         "value_usd": 0,
         "delta_value_usd": -1271424876,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       }
     ],
     "top_buys": [
@@ -1297,7 +1297,7 @@
         "delta_shares": 36403656,
         "value_usd": 15600071913,
         "delta_value_usd": 10014229467,
-        "delta_pct": "+204.0%"
+        "delta_pct": 304.0
       },
       {
         "issuer": "DELTA AIR LINES INC",
@@ -1330,7 +1330,7 @@
         "delta_shares": 10080791,
         "value_usd": 1268219376,
         "delta_value_usd": 916555428,
-        "delta_pct": "+199.0%"
+        "delta_pct": 299.0
       },
       {
         "issuer": "LENNAR CORP",
@@ -1341,7 +1341,7 @@
         "delta_shares": 3048692,
         "value_usd": 877052911,
         "delta_value_usd": 152215251,
-        "delta_pct": "+43.2%"
+        "delta_pct": 143.2
       }
     ],
     "top_sells": [
@@ -1354,7 +1354,7 @@
         "delta_shares": -3671769,
         "value_usd": 25039178044,
         "delta_value_usd": -3412098326,
-        "delta_pct": "-0.7%"
+        "delta_pct": 99.3
       },
       {
         "issuer": "VISA INC",
@@ -1365,7 +1365,7 @@
         "delta_shares": -8297460,
         "value_usd": 0,
         "delta_value_usd": -2910002197,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "CHEVRON CORPORATION",
@@ -1376,7 +1376,7 @@
         "delta_shares": -45780506,
         "value_usd": 17457364606,
         "delta_value_usd": -2379766525,
-        "delta_pct": "-35.2%"
+        "delta_pct": 64.8
       },
       {
         "issuer": "MASTERCARD INCORPORATED",
@@ -1387,7 +1387,7 @@
         "delta_shares": -3986648,
         "value_usd": 0,
         "delta_value_usd": -2275897610,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "CONSTELLATION BRANDS INC",
@@ -1398,7 +1398,7 @@
         "delta_shares": -12367110,
         "value_usd": 94933500,
         "delta_value_usd": -1698546500,
-        "delta_pct": "-95.1%"
+        "delta_pct": 4.9
       }
     ],
     "largest_holdings": [
@@ -1411,7 +1411,7 @@
         "delta_shares": 0,
         "value_usd": 57843260493,
         "delta_value_usd": -4118474790,
-        "delta_pct": "+0.0%"
+        "delta_pct": 100.0
       },
       {
         "issuer": "AMERICAN EXPRESS CO",
@@ -1422,7 +1422,7 @@
         "delta_shares": 0,
         "value_usd": 45859204536,
         "delta_value_usd": -10229173929,
-        "delta_pct": "+0.0%"
+        "delta_pct": 100.0
       },
       {
         "issuer": "COCA COLA CO",
@@ -1433,7 +1433,7 @@
         "delta_shares": 0,
         "value_usd": 30420000000,
         "delta_value_usd": 2456000000,
-        "delta_pct": "+0.0%"
+        "delta_pct": 100.0
       },
       {
         "issuer": "BANK AMERICA CORP",
@@ -1444,7 +1444,7 @@
         "delta_shares": -3671769,
         "value_usd": 25039178044,
         "delta_value_usd": -3412098326,
-        "delta_pct": "-0.7%"
+        "delta_pct": 99.3
       },
       {
         "issuer": "CHEVRON CORPORATION",
@@ -1455,7 +1455,7 @@
         "delta_shares": -45780506,
         "value_usd": 17457364606,
         "delta_value_usd": -2379766525,
-        "delta_pct": "-35.2%"
+        "delta_pct": 64.8
       },
       {
         "issuer": "OCCIDENTAL PETE CORP",
@@ -1466,7 +1466,7 @@
         "delta_shares": 0,
         "value_usd": 17221193015,
         "delta_value_usd": 6326801372,
-        "delta_pct": "+0.0%"
+        "delta_pct": 100.0
       },
       {
         "issuer": "ALPHABET INC",
@@ -1477,7 +1477,7 @@
         "delta_shares": 36403656,
         "value_usd": 15600071913,
         "delta_value_usd": 10014229467,
-        "delta_pct": "+204.0%"
+        "delta_pct": 304.0
       },
       {
         "issuer": "CHUBB LTD SWITZ",
@@ -1488,7 +1488,7 @@
         "delta_shares": 0,
         "value_usd": 11162836215,
         "delta_value_usd": 472981217,
-        "delta_pct": "+0.0%"
+        "delta_pct": 100.0
       },
       {
         "issuer": "MOODYS CORP",
@@ -1499,7 +1499,7 @@
         "delta_shares": 0,
         "value_usd": 10762190653,
         "delta_value_usd": -1840365439,
-        "delta_pct": "+0.0%"
+        "delta_pct": 100.0
       },
       {
         "issuer": "KRAFT HEINZ CO",
@@ -1510,7 +1510,7 @@
         "delta_shares": 0,
         "value_usd": 7323527057,
         "delta_value_usd": -573117280,
-        "delta_pct": "+0.0%"
+        "delta_pct": 100.0
       }
     ]
   },

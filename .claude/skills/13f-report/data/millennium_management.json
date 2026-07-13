@@ -129781,7 +129781,7 @@
     "quarter": "2026-03-31",
     "aum_usd": 240290955946,
     "aum_usd_prior": 237791015622,
-    "aum_change_pct": "+1.1%",
+    "aum_change_pct": 101.1,
     "holdings_count": 5622,
     "holdings_count_prior": 5950,
     "holdings_count_change": -328,
@@ -129932,7 +129932,7 @@
         "delta_shares": -14494278,
         "value_usd": 0,
         "delta_value_usd": -9927710773,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "ISHARES  TR",
@@ -129943,7 +129943,7 @@
         "delta_shares": -30678500,
         "value_usd": 0,
         "delta_value_usd": -7551819560,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "INVESCO  QQQ  TR",
@@ -129954,7 +129954,7 @@
         "delta_shares": -8722600,
         "value_usd": 0,
         "delta_value_usd": -5358380406,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "ISHARES  TR",
@@ -129965,7 +129965,7 @@
         "delta_shares": -15680700,
         "value_usd": 0,
         "delta_value_usd": -3859961112,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "SPDR  S&P    500   ETF   TR",
@@ -129976,7 +129976,7 @@
         "delta_shares": -3647038,
         "value_usd": 0,
         "delta_value_usd": -2486988153,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       }
     ],
     "top_buys": [
@@ -130046,7 +130046,7 @@
         "delta_shares": -14494278,
         "value_usd": 0,
         "delta_value_usd": -9927710773,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "ISHARES  TR",
@@ -130057,7 +130057,7 @@
         "delta_shares": -30678500,
         "value_usd": 0,
         "delta_value_usd": -7551819560,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "INVESCO  QQQ  TR",
@@ -130068,7 +130068,7 @@
         "delta_shares": -8722600,
         "value_usd": 0,
         "delta_value_usd": -5358380406,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "WALMART       INC",
@@ -130079,7 +130079,7 @@
         "delta_shares": -39823763,
         "value_usd": 118538264,
         "delta_value_usd": -4424490030,
-        "delta_pct": "-97.7%"
+        "delta_pct": 2.3
       },
       {
         "issuer": "ISHARES  TR",
@@ -130090,7 +130090,7 @@
         "delta_shares": -15680700,
         "value_usd": 0,
         "delta_value_usd": -3859961112,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       }
     ],
     "largest_holdings": [
@@ -130125,7 +130125,7 @@
         "delta_shares": 104800,
         "value_usd": 4118979200,
         "delta_value_usd": -266232600,
-        "delta_pct": "+0.4%"
+        "delta_pct": 100.4
       },
       {
         "issuer": "INVESCO  QQQ  TR",
@@ -130158,7 +130158,7 @@
         "delta_shares": 2618700,
         "value_usd": 2546362413,
         "delta_value_usd": 486044489,
-        "delta_pct": "+61.5%"
+        "delta_pct": 161.5
       },
       {
         "issuer": "INVESCO  QQQ  TR",
@@ -130180,7 +130180,7 @@
         "delta_shares": 1493900,
         "value_usd": 2277515758,
         "delta_value_usd": 98228728,
-        "delta_pct": "+15.8%"
+        "delta_pct": 115.8
       },
       {
         "issuer": "APPLE   INC",
@@ -130191,7 +130191,7 @@
         "delta_shares": -306200,
         "value_usd": 2209673393,
         "delta_value_usd": -240573601,
-        "delta_pct": "-3.4%"
+        "delta_pct": 96.6
       },
       {
         "issuer": "META  PLATFORMS      INC",

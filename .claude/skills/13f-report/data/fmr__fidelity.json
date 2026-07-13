@@ -86896,7 +86896,7 @@
     "quarter": "2026-03-31",
     "aum_usd": 1898434661409,
     "aum_usd_prior": 1961271425547,
-    "aum_change_pct": "-3.2%",
+    "aum_change_pct": 96.8,
     "holdings_count": 5417,
     "holdings_count_prior": 5416,
     "holdings_count_change": 1,
@@ -87053,7 +87053,7 @@
         "delta_shares": -21848855,
         "value_usd": 0,
         "delta_value_usd": -2008565308,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "CYBERARK SOFTWARE LTD",
@@ -87064,7 +87064,7 @@
         "delta_shares": -1656991,
         "value_usd": 0,
         "delta_value_usd": -739117475,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "CARNIVAL CORP",
@@ -87075,7 +87075,7 @@
         "delta_shares": -19616279,
         "value_usd": 0,
         "delta_value_usd": -599081189,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "SYNOVUS FINL CORP",
@@ -87086,7 +87086,7 @@
         "delta_shares": -8624516,
         "value_usd": 0,
         "delta_value_usd": -431656987,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "REV GROUP INC",
@@ -87097,7 +87097,7 @@
         "delta_shares": -5391518,
         "value_usd": 0,
         "delta_value_usd": -327858228,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       }
     ],
     "top_buys": [
@@ -87110,7 +87110,7 @@
         "delta_shares": 8288753,
         "value_usd": 23754174612,
         "delta_value_usd": 7902784338,
-        "delta_pct": "+6.3%"
+        "delta_pct": 106.3
       },
       {
         "issuer": "ASTRAZENECA PLC",
@@ -87132,7 +87132,7 @@
         "delta_shares": 1857271,
         "value_usd": 6480792548,
         "delta_value_usd": 3389366686,
-        "delta_pct": "+73.0%"
+        "delta_pct": 173.0
       },
       {
         "issuer": "CIENA CORP",
@@ -87143,7 +87143,7 @@
         "delta_shares": 81546,
         "value_usd": 8234263456,
         "delta_value_usd": 3293009149,
-        "delta_pct": "+0.4%"
+        "delta_pct": 100.4
       },
       {
         "issuer": "LAM RESEARCH CORP",
@@ -87154,7 +87154,7 @@
         "delta_shares": 6893278,
         "value_usd": 7173600869,
         "delta_value_usd": 2606250825,
-        "delta_pct": "+25.8%"
+        "delta_pct": 125.8
       }
     ],
     "top_sells": [
@@ -87167,7 +87167,7 @@
         "delta_shares": -10737378,
         "value_usd": 70410541716,
         "delta_value_usd": -26772290283,
-        "delta_pct": "-5.3%"
+        "delta_pct": 94.7
       },
       {
         "issuer": "META PLATFORMS INC",
@@ -87178,7 +87178,7 @@
         "delta_shares": -5726859,
         "value_usd": 66718799159,
         "delta_value_usd": -14037675973,
-        "delta_pct": "-4.7%"
+        "delta_pct": 95.3
       },
       {
         "issuer": "BERKSHIRE HATHAWAY INC DEL",
@@ -87189,7 +87189,7 @@
         "delta_shares": -7565,
         "value_usd": 12208380000,
         "delta_value_usd": -6333282000,
-        "delta_pct": "-30.8%"
+        "delta_pct": 69.2
       },
       {
         "issuer": "BOSTON SCIENTIFIC CORP",
@@ -87200,7 +87200,7 @@
         "delta_shares": -23160546,
         "value_usd": 4657706307,
         "delta_value_usd": -4628138525,
-        "delta_pct": "-23.8%"
+        "delta_pct": 76.2
       },
       {
         "issuer": "WELLS FARGO & CO",
@@ -87211,7 +87211,7 @@
         "delta_shares": -24011255,
         "value_usd": 12872453663,
         "delta_value_usd": -4435269416,
-        "delta_pct": "-12.9%"
+        "delta_pct": 87.1
       }
     ],
     "largest_holdings": [
@@ -87224,7 +87224,7 @@
         "delta_shares": 22789685,
         "value_usd": 173327957590,
         "delta_value_usd": -7775344768,
-        "delta_pct": "+2.3%"
+        "delta_pct": 102.3
       },
       {
         "issuer": "APPLE INC",
@@ -87235,7 +87235,7 @@
         "delta_shares": 44776,
         "value_usd": 78025715113,
         "delta_value_usd": -5543305105,
-        "delta_pct": "+0.0%"
+        "delta_pct": 100.0
       },
       {
         "issuer": "AMAZON COM INC",
@@ -87246,7 +87246,7 @@
         "delta_shares": 27227887,
         "value_usd": 74706176222,
         "delta_value_usd": -1803914704,
-        "delta_pct": "+8.2%"
+        "delta_pct": 108.2
       },
       {
         "issuer": "MICROSOFT CORP",
@@ -87257,7 +87257,7 @@
         "delta_shares": -10737378,
         "value_usd": 70410541716,
         "delta_value_usd": -26772290283,
-        "delta_pct": "-5.3%"
+        "delta_pct": 94.7
       },
       {
         "issuer": "ALPHABET INC",
@@ -87268,7 +87268,7 @@
         "delta_shares": 4766553,
         "value_usd": 68020786537,
         "delta_value_usd": -4525765274,
-        "delta_pct": "+2.1%"
+        "delta_pct": 102.1
       },
       {
         "issuer": "META PLATFORMS INC",
@@ -87279,7 +87279,7 @@
         "delta_shares": -5726859,
         "value_usd": 66718799159,
         "delta_value_usd": -14037675973,
-        "delta_pct": "-4.7%"
+        "delta_pct": 95.3
       },
       {
         "issuer": "BROADCOM INC",
@@ -87290,7 +87290,7 @@
         "delta_shares": 926640,
         "value_usd": 38414176558,
         "delta_value_usd": -4220580073,
-        "delta_pct": "+0.8%"
+        "delta_pct": 100.8
       },
       {
         "issuer": "ALPHABET INC",
@@ -87301,7 +87301,7 @@
         "delta_shares": -327738,
         "value_usd": 31141533036,
         "delta_value_usd": -3027451643,
-        "delta_pct": "-0.3%"
+        "delta_pct": 99.7
       },
       {
         "issuer": "ELI LILLY & CO",
@@ -87312,7 +87312,7 @@
         "delta_shares": 619361,
         "value_usd": 24227689049,
         "delta_value_usd": -3414876562,
-        "delta_pct": "+2.4%"
+        "delta_pct": 102.4
       },
       {
         "issuer": "EXXON MOBIL CORP",
@@ -87323,7 +87323,7 @@
         "delta_shares": 8288753,
         "value_usd": 23754174612,
         "delta_value_usd": 7902784338,
-        "delta_pct": "+6.3%"
+        "delta_pct": 106.3
       }
     ]
   },

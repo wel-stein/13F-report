@@ -83821,7 +83821,7 @@
     "quarter": "2024-06-30",
     "aum_usd": 4418304733920,
     "aum_usd_prior": 4295718804000,
-    "aum_change_pct": "+2.9%",
+    "aum_change_pct": 102.9,
     "holdings_count": 5277,
     "holdings_count_prior": 5283,
     "holdings_count_change": -6,
@@ -83978,7 +83978,7 @@
         "delta_shares": -16099401,
         "value_usd": 0,
         "delta_value_usd": -4226092875,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "SPDR S&P 500 ETF TR",
@@ -83989,7 +83989,7 @@
         "delta_shares": -6204000,
         "value_usd": 0,
         "delta_value_usd": -3245126280,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "LABORATORY CORP AMER HLDGS",
@@ -84000,7 +84000,7 @@
         "delta_shares": -9434259,
         "value_usd": 0,
         "delta_value_usd": -2061008293,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "SHOCKWAVE MED INC",
@@ -84011,7 +84011,7 @@
         "delta_shares": -3783822,
         "value_usd": 0,
         "delta_value_usd": -1232125801,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "JPMORGAN CHASE & CO",
@@ -84022,7 +84022,7 @@
         "delta_shares": -3411400,
         "value_usd": 0,
         "delta_value_usd": -683303420,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       }
     ],
     "top_buys": [
@@ -84035,7 +84035,7 @@
         "delta_shares": 1657031313,
         "value_usd": 227223445280,
         "delta_value_usd": 62559642147,
-        "delta_pct": "+909.3%"
+        "delta_pct": 1009.3
       },
       {
         "issuer": "APPLE INC",
@@ -84046,7 +84046,7 @@
         "delta_shares": 9692346,
         "value_usd": 221196441637,
         "delta_value_usd": 42767487978,
-        "delta_pct": "+0.9%"
+        "delta_pct": 100.9
       },
       {
         "issuer": "MICROSOFT CORP",
@@ -84057,7 +84057,7 @@
         "delta_shares": 7956448,
         "value_usd": 247599710152,
         "delta_value_usd": 17878234904,
-        "delta_pct": "+1.5%"
+        "delta_pct": 101.5
       },
       {
         "issuer": "ALPHABET INC",
@@ -84068,7 +84068,7 @@
         "delta_shares": 5188144,
         "value_usd": 76700326355,
         "delta_value_usd": 13929267752,
-        "delta_pct": "+1.2%"
+        "delta_pct": 101.2
       },
       {
         "issuer": "AMAZON COM INC",
@@ -84079,7 +84079,7 @@
         "delta_shares": 10158877,
         "value_usd": 125360342023,
         "delta_value_usd": 10181165146,
-        "delta_pct": "+1.6%"
+        "delta_pct": 101.6
       }
     ],
     "top_sells": [
@@ -84092,7 +84092,7 @@
         "delta_shares": -12027700,
         "value_usd": 1355107800,
         "delta_value_usd": -6238665539,
-        "delta_pct": "-82.8%"
+        "delta_pct": 17.2
       },
       {
         "issuer": "PIONEER NAT RES CO",
@@ -84103,7 +84103,7 @@
         "delta_shares": -16099401,
         "value_usd": 0,
         "delta_value_usd": -4226092875,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "SPDR S&P 500 ETF TR",
@@ -84114,7 +84114,7 @@
         "delta_shares": -6204000,
         "value_usd": 0,
         "delta_value_usd": -3245126280,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "ABBVIE INC",
@@ -84125,7 +84125,7 @@
         "delta_shares": -6527594,
         "value_usd": 23400732597,
         "delta_value_usd": -2632120235,
-        "delta_pct": "-4.6%"
+        "delta_pct": 95.4
       },
       {
         "issuer": "BRISTOL-MYERS SQUIBB CO",
@@ -84136,7 +84136,7 @@
         "delta_shares": -3902228,
         "value_usd": 6589102184,
         "delta_value_usd": -2226585232,
-        "delta_pct": "-2.4%"
+        "delta_pct": 97.6
       }
     ],
     "largest_holdings": [
@@ -84149,7 +84149,7 @@
         "delta_shares": 7956448,
         "value_usd": 247599710152,
         "delta_value_usd": 17878234904,
-        "delta_pct": "+1.5%"
+        "delta_pct": 101.5
       },
       {
         "issuer": "NVIDIA CORPORATION",
@@ -84160,7 +84160,7 @@
         "delta_shares": 1657031313,
         "value_usd": 227223445280,
         "delta_value_usd": 62559642147,
-        "delta_pct": "+909.3%"
+        "delta_pct": 1009.3
       },
       {
         "issuer": "APPLE INC",
@@ -84171,7 +84171,7 @@
         "delta_shares": 9692346,
         "value_usd": 221196441637,
         "delta_value_usd": 42767487978,
-        "delta_pct": "+0.9%"
+        "delta_pct": 100.9
       },
       {
         "issuer": "AMAZON COM INC",
@@ -84182,7 +84182,7 @@
         "delta_shares": 10158877,
         "value_usd": 125360342023,
         "delta_value_usd": 10181165146,
-        "delta_pct": "+1.6%"
+        "delta_pct": 101.6
       },
       {
         "issuer": "META PLATFORMS INC",
@@ -84193,7 +84193,7 @@
         "delta_shares": 2166868,
         "value_usd": 81234712205,
         "delta_value_usd": 4055271854,
-        "delta_pct": "+1.4%"
+        "delta_pct": 101.4
       },
       {
         "issuer": "ALPHABET INC",
@@ -84204,7 +84204,7 @@
         "delta_shares": 5188144,
         "value_usd": 76700326355,
         "delta_value_usd": 13929267752,
-        "delta_pct": "+1.2%"
+        "delta_pct": 101.2
       },
       {
         "issuer": "ALPHABET INC",
@@ -84215,7 +84215,7 @@
         "delta_shares": -42079,
         "value_usd": 65174685236,
         "delta_value_usd": 11065685513,
-        "delta_pct": "-0.0%"
+        "delta_pct": 100.0
       },
       {
         "issuer": "ELI LILLY & CO",
@@ -84226,7 +84226,7 @@
         "delta_shares": 581810,
         "value_usd": 59624881806,
         "delta_value_usd": 8844021143,
-        "delta_pct": "+0.9%"
+        "delta_pct": 100.9
       },
       {
         "issuer": "BROADCOM INC",
@@ -84237,7 +84237,7 @@
         "delta_shares": -707422,
         "value_usd": 54909661593,
         "delta_value_usd": 8642574346,
-        "delta_pct": "-2.0%"
+        "delta_pct": 98.0
       },
       {
         "issuer": "BERKSHIRE HATHAWAY INC DEL",
@@ -84248,7 +84248,7 @@
         "delta_shares": -250166,
         "value_usd": 43632181274,
         "delta_value_usd": -1576767006,
-        "delta_pct": "-0.2%"
+        "delta_pct": 99.8
       }
     ]
   },

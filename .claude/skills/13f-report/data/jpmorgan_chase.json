@@ -123901,7 +123901,7 @@
     "quarter": "2026-03-31",
     "aum_usd": 1557139501048,
     "aum_usd_prior": 1592803635626,
-    "aum_change_pct": "-2.2%",
+    "aum_change_pct": 97.8,
     "holdings_count": 7499,
     "holdings_count_prior": 7406,
     "holdings_count_change": 93,
@@ -124058,7 +124058,7 @@
         "delta_shares": -3746985,
         "value_usd": 0,
         "delta_value_usd": -344460507,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "CYBERARK SOFTWARE LTD",
@@ -124069,7 +124069,7 @@
         "delta_shares": -687392,
         "value_usd": 0,
         "delta_value_usd": -306618267,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "AMCOR PLC",
@@ -124080,7 +124080,7 @@
         "delta_shares": -14132230,
         "value_usd": 0,
         "delta_value_usd": -117862807,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "FRONTIER COMMUNICATIONS PAR",
@@ -124091,7 +124091,7 @@
         "delta_shares": -2804012,
         "value_usd": 0,
         "delta_value_usd": -106748756,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       },
       {
         "issuer": "PIPER SANDLER COMPANIES",
@@ -124102,7 +124102,7 @@
         "delta_shares": -294624,
         "value_usd": 0,
         "delta_value_usd": -100086720,
-        "delta_pct": "-100.0%"
+        "delta_pct": 0.0
       }
     ],
     "top_buys": [
@@ -124115,7 +124115,7 @@
         "delta_shares": 15568104,
         "value_usd": 15834176674,
         "delta_value_usd": 8503970958,
-        "delta_pct": "+133.2%"
+        "delta_pct": 233.2
       },
       {
         "issuer": "ISHARES CORE S&P 500 ETF",
@@ -124126,7 +124126,7 @@
         "delta_shares": 12467700,
         "value_usd": 14960108448,
         "delta_value_usd": 7361298915,
-        "delta_pct": "+112.4%"
+        "delta_pct": 212.4
       },
       {
         "issuer": "EXXON MOBIL CORP",
@@ -124137,7 +124137,7 @@
         "delta_shares": 15223344,
         "value_usd": 14677748150,
         "delta_value_usd": 6208680140,
-        "delta_pct": "+21.6%"
+        "delta_pct": 121.6
       },
       {
         "issuer": "STE STR SPDR PT S&P 500 ETF",
@@ -124148,7 +124148,7 @@
         "delta_shares": 60724409,
         "value_usd": 5146013377,
         "delta_value_usd": 4467269222,
-        "delta_pct": "+717.7%"
+        "delta_pct": 817.7
       },
       {
         "issuer": "ASTRAZENECA PLC",
@@ -124172,7 +124172,7 @@
         "delta_shares": -20630851,
         "value_usd": 45634226358,
         "delta_value_usd": -25825393638,
-        "delta_pct": "-14.0%"
+        "delta_pct": 86.0
       },
       {
         "issuer": "NVIDIA CORPORATION",
@@ -124183,7 +124183,7 @@
         "delta_shares": -8342254,
         "value_usd": 73962942086,
         "delta_value_usd": -11107380759,
-        "delta_pct": "-1.8%"
+        "delta_pct": 98.2
       },
       {
         "issuer": "BROADCOM INC",
@@ -124194,7 +124194,7 @@
         "delta_shares": -1976042,
         "value_usd": 26929994418,
         "delta_value_usd": -5519944617,
-        "delta_pct": "-2.1%"
+        "delta_pct": 97.9
       },
       {
         "issuer": "STATE STR SPDR S&P 500 ETF T",
@@ -124205,7 +124205,7 @@
         "delta_shares": -6316300,
         "value_usd": 11933552707,
         "delta_value_usd": -5250422141,
-        "delta_pct": "-25.1%"
+        "delta_pct": 74.9
       },
       {
         "issuer": "ORACLE CORP",
@@ -124216,7 +124216,7 @@
         "delta_shares": -8731038,
         "value_usd": 4509947850,
         "delta_value_usd": -3524916094,
-        "delta_pct": "-21.2%"
+        "delta_pct": 78.8
       }
     ],
     "largest_holdings": [
@@ -124229,7 +124229,7 @@
         "delta_shares": -8342254,
         "value_usd": 73962942086,
         "delta_value_usd": -11107380759,
-        "delta_pct": "-1.8%"
+        "delta_pct": 98.2
       },
       {
         "issuer": "APPLE INC",
@@ -124240,7 +124240,7 @@
         "delta_shares": 6203030,
         "value_usd": 57124969118,
         "delta_value_usd": -4157471099,
-        "delta_pct": "+2.8%"
+        "delta_pct": 102.8
       },
       {
         "issuer": "MICROSOFT CORP",
@@ -124251,7 +124251,7 @@
         "delta_shares": -20630851,
         "value_usd": 45634226358,
         "delta_value_usd": -25825393638,
-        "delta_pct": "-14.0%"
+        "delta_pct": 86.0
       },
       {
         "issuer": "AMAZON COM INC",
@@ -124262,7 +124262,7 @@
         "delta_shares": 8891287,
         "value_usd": 33948006659,
         "delta_value_usd": -2993879108,
-        "delta_pct": "+5.6%"
+        "delta_pct": 105.6
       },
       {
         "issuer": "ALPHABET INC",
@@ -124273,7 +124273,7 @@
         "delta_shares": 19208423,
         "value_usd": 32725263581,
         "delta_value_usd": 1156074668,
-        "delta_pct": "+19.1%"
+        "delta_pct": 119.1
       },
       {
         "issuer": "STATE STREET SPDR S&P 500 ETF",
@@ -124284,7 +124284,7 @@
         "delta_shares": 1230464,
         "value_usd": 28938468727,
         "delta_value_usd": -1448175667,
-        "delta_pct": "+2.8%"
+        "delta_pct": 102.8
       },
       {
         "issuer": "BROADCOM INC",
@@ -124295,7 +124295,7 @@
         "delta_shares": -1976042,
         "value_usd": 26929994418,
         "delta_value_usd": -5519944617,
-        "delta_pct": "-2.1%"
+        "delta_pct": 97.9
       },
       {
         "issuer": "META PLATFORMS INC",
@@ -124306,7 +124306,7 @@
         "delta_shares": 6325302,
         "value_usd": 26915984229,
         "delta_value_usd": -2032600317,
-        "delta_pct": "+14.4%"
+        "delta_pct": 114.4
       },
       {
         "issuer": "ALPHABET INC",
@@ -124317,7 +124317,7 @@
         "delta_shares": 6270810,
         "value_usd": 19398139061,
         "delta_value_usd": -838795222,
-        "delta_pct": "+9.7%"
+        "delta_pct": 109.7
       },
       {
         "issuer": "TESLA INC",
@@ -124328,7 +124328,7 @@
         "delta_shares": 1483545,
         "value_usd": 16369584018,
         "delta_value_usd": -3684158558,
-        "delta_pct": "+3.3%"
+        "delta_pct": 103.3
       }
     ]
   },
