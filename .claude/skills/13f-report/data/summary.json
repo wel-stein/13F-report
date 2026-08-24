@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17",
+  "generated_at": "2026-08-24",
   "filers": [
     {
       "name": "Berkshire Hathaway",
@@ -11048,7 +11048,7 @@
       ],
       "weighted_score": 75.24,
       "conviction_score": 155.6,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "MICROSOFT CORP",
@@ -13231,7 +13231,7 @@
       ],
       "weighted_score": 37.78,
       "conviction_score": 138.9,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "BROADCOM INC",
@@ -14353,7 +14353,7 @@
       ],
       "weighted_score": 10.17,
       "conviction_score": 138.9,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "CHEVRON CORPORATION",
