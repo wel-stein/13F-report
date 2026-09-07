@@ -2,14 +2,14 @@
   "name": "Citadel Advisors",
   "cik": "1423053",
   "latest_filing": {
-    "form": "13F-HR",
-    "filing_date": "2026-08-14",
+    "form": "13F-HR/A",
+    "filing_date": "2026-09-02",
     "report_date": "2026-06-30",
-    "accession": "0001104659-26-097200",
+    "accession": "0001104659-26-104387",
     "primary_doc": "xslForm13F_X02/primary_doc.xml"
   },
-  "holdings_count": 13575,
-  "total_value_usd": 875096281441,
+  "holdings_count": 13572,
+  "total_value_usd": 875011794337,
   "prior_filing": {
     "form": "13F-HR",
     "filing_date": "2026-05-15",
@@ -22474,21 +22474,6 @@
       "delta_shares": 174147,
       "delta_value_usd": 18316830,
       "action": "add"
-    },
-    {
-      "issuer": "CHURCHILL CAP CORP XI",
-      "class": "CL A ORD SHS",
-      "cusip": "G2131A108",
-      "put_call": "",
-      "share_type": "SH",
-      "sector": "Other",
-      "shares": 3253289,
-      "value_usd": 53934268,
-      "shares_prior": 0,
-      "value_usd_prior": 0,
-      "delta_shares": 3253289,
-      "delta_value_usd": 53934268,
-      "action": "new"
     },
     {
       "issuer": "SOUTHWEST AIRLS CO",
@@ -45096,21 +45081,6 @@
       "action": "add"
     },
     {
-      "issuer": "ODYSSEY MARINE EXPL INC",
-      "class": "COM NEW",
-      "cusip": "676118201",
-      "put_call": "",
-      "share_type": "SH",
-      "sector": "Other",
-      "shares": 4036680,
-      "value_usd": 14668411,
-      "shares_prior": 1549082,
-      "value_usd_prior": 1291934,
-      "delta_shares": 2487598,
-      "delta_value_usd": 13376477,
-      "action": "add"
-    },
-    {
       "issuer": "ALBANY INTL CORP",
       "class": "CL A",
       "cusip": "012348108",
@@ -48124,21 +48094,6 @@
       "delta_shares": 494700,
       "delta_value_usd": 12733578,
       "action": "new"
-    },
-    {
-      "issuer": "RALLYBIO CORP",
-      "class": "COM",
-      "cusip": "75120L209",
-      "put_call": "",
-      "share_type": "SH",
-      "sector": "Other",
-      "shares": 7705787,
-      "value_usd": 12732490,
-      "shares_prior": 19886,
-      "value_usd_prior": 178377,
-      "delta_shares": 7685901,
-      "delta_value_usd": 12554113,
-      "action": "add"
     },
     {
       "issuer": "AMERISAFE INC",
@@ -74854,21 +74809,6 @@
       "delta_shares": -20800,
       "delta_value_usd": -1868338,
       "action": "trim"
-    },
-    {
-      "issuer": "PASSAGE BIO INC",
-      "class": "COM NEW",
-      "cusip": "702712209",
-      "put_call": "",
-      "share_type": "SH",
-      "sector": "Other",
-      "shares": 2886125,
-      "value_usd": 4307135,
-      "shares_prior": 0,
-      "value_usd_prior": 0,
-      "delta_shares": 2886125,
-      "delta_value_usd": 4307135,
-      "action": "new"
     },
     {
       "issuer": "GORILLA TECHNOLOGY GROUP INC",
@@ -117918,6 +117858,21 @@
       "value_usd_prior": 786462,
       "delta_shares": 3500,
       "delta_value_usd": 369150,
+      "action": "add"
+    },
+    {
+      "issuer": "RALLYBIO CORP",
+      "class": "COM",
+      "cusip": "75120L209",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 72200,
+      "value_usd": 1155200,
+      "shares_prior": 19886,
+      "value_usd_prior": 178377,
+      "delta_shares": 52314,
+      "delta_value_usd": 976823,
       "action": "add"
     },
     {
@@ -216113,6 +216068,21 @@
       "action": "exit"
     },
     {
+      "issuer": "ODYSSEY MARINE EXPL INC",
+      "class": "COM NEW",
+      "cusip": "676118201",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 1549082,
+      "value_usd_prior": 1291934,
+      "delta_shares": -1549082,
+      "delta_value_usd": -1291934,
+      "action": "exit"
+    },
+    {
       "issuer": "SEI EXCHANGE TRADED FUNDS",
       "class": "SELECT INTL EQUI",
       "cusip": "81589A700",
@@ -243584,23 +243554,23 @@
   ],
   "summary": {
     "quarter": "2026-06-30",
-    "aum_usd": 875096281441,
+    "aum_usd": 875011794337,
     "aum_usd_prior": 618473172395,
     "aum_change_pct": 141.5,
-    "holdings_count": 13575,
+    "holdings_count": 13572,
     "holdings_count_prior": 12857,
-    "holdings_count_change": 718,
-    "new_positions_count": 3330,
-    "added_count": 5726,
+    "holdings_count_change": 715,
+    "new_positions_count": 3328,
+    "added_count": 5725,
     "trimmed_count": 4465,
     "held_count": 54,
-    "exited_count": 2612,
+    "exited_count": 2613,
     "top10_concentration_pct": 22.7,
     "sector_breakdown": [
       {
         "sector": "Other",
-        "value_usd": 231939395651,
-        "count": 9536,
+        "value_usd": 231854908547,
+        "count": 9533,
         "pct_of_portfolio": 26.5
       },
       {
@@ -244020,15 +243990,15 @@
   "history": [
     {
       "quarter": "2026-06-30",
-      "filing_date": "2026-08-14",
-      "total_value_usd": 875096281441,
-      "holdings_count": 13575,
+      "filing_date": "2026-09-02",
+      "total_value_usd": 875011794337,
+      "holdings_count": 13572,
       "top5_holdings": [
         {
           "issuer": "STATE STR SPDR S&P 500 ETF T",
           "cusip": "78462F103",
           "value_usd": 35656923314,
-          "pct_of_portfolio": 4.07
+          "pct_of_portfolio": 4.08
         },
         {
           "issuer": "INVESCO QQQ TR",
