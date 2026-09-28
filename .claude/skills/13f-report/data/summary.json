@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21",
+  "generated_at": "2026-09-28",
   "filers": [
     {
       "name": "Berkshire Hathaway",
@@ -1562,10 +1562,10 @@
       "name": "State Street",
       "cik": "0000093751",
       "latest_filing": {
-        "form": "13F-HR",
-        "filing_date": "2026-08-07",
+        "form": "13F-HR/A",
+        "filing_date": "2026-09-22",
         "report_date": "2026-06-30",
-        "accession": "0000093751-26-000507",
+        "accession": "0000093751-26-000583",
         "primary_doc": "xslForm13F_X02/primary_doc.xml"
       },
       "prior_filing": {
@@ -1575,78 +1575,78 @@
         "accession": "0000093751-26-000315",
         "primary_doc": "xslForm13F_X02/primary_doc.xml"
       },
-      "holdings_count": 4177,
+      "holdings_count": 4261,
       "holdings_count_prior": 4269,
-      "total_value_usd": 3371239854465,
+      "total_value_usd": 3383260349220,
       "total_value_usd_prior": 2896359015041,
       "summary": {
         "quarter": "2026-06-30",
-        "aum_usd": 3371239854465,
+        "aum_usd": 3383260349220,
         "aum_usd_prior": 2896359015041,
-        "aum_change_pct": 116.4,
-        "holdings_count": 4177,
+        "aum_change_pct": 116.8,
+        "holdings_count": 4261,
         "holdings_count_prior": 4269,
-        "holdings_count_change": -92,
-        "new_positions_count": 58,
-        "added_count": 2868,
-        "trimmed_count": 888,
-        "held_count": 363,
-        "exited_count": 150,
-        "top10_concentration_pct": 29.0,
+        "holdings_count_change": -8,
+        "new_positions_count": 186,
+        "added_count": 2842,
+        "trimmed_count": 872,
+        "held_count": 361,
+        "exited_count": 194,
+        "top10_concentration_pct": 28.9,
         "sector_breakdown": [
           {
-            "sector": "Technology",
-            "value_usd": 972018902428,
-            "count": 190,
-            "pct_of_portfolio": 28.83
-          },
-          {
             "sector": "Other",
-            "value_usd": 967057628716,
-            "count": 3180,
-            "pct_of_portfolio": 28.69
+            "value_usd": 978983940298,
+            "count": 3239,
+            "pct_of_portfolio": 28.94
           },
           {
-            "sector": "Financials",
-            "value_usd": 264661337224,
-            "count": 154,
-            "pct_of_portfolio": 7.85
+            "sector": "Technology",
+            "value_usd": 972188806179,
+            "count": 196,
+            "pct_of_portfolio": 28.74
           },
           {
             "sector": "Healthcare",
-            "value_usd": 263106888447,
-            "count": 347,
-            "pct_of_portfolio": 7.8
+            "value_usd": 263191956555,
+            "count": 356,
+            "pct_of_portfolio": 7.78
+          },
+          {
+            "sector": "Financials",
+            "value_usd": 258947867602,
+            "count": 154,
+            "pct_of_portfolio": 7.65
           },
           {
             "sector": "Communications",
-            "value_usd": 239269505281,
-            "count": 29,
-            "pct_of_portfolio": 7.1
+            "value_usd": 239559302281,
+            "count": 31,
+            "pct_of_portfolio": 7.08
           },
           {
             "sector": "Consumer Discretionary",
             "value_usd": 201978985605,
             "count": 26,
-            "pct_of_portfolio": 5.99
+            "pct_of_portfolio": 5.97
           },
           {
             "sector": "Energy",
-            "value_usd": 137775681539,
-            "count": 84,
-            "pct_of_portfolio": 4.09
+            "value_usd": 137843236726,
+            "count": 88,
+            "pct_of_portfolio": 4.07
           },
           {
             "sector": "Industrials",
-            "value_usd": 115119032299,
-            "count": 19,
-            "pct_of_portfolio": 3.41
+            "value_usd": 119314553342,
+            "count": 20,
+            "pct_of_portfolio": 3.53
           },
           {
             "sector": "Consumer Staples",
             "value_usd": 108429454597,
             "count": 22,
-            "pct_of_portfolio": 3.22
+            "pct_of_portfolio": 3.2
           },
           {
             "sector": "Real Estate",
@@ -1656,14 +1656,14 @@
           },
           {
             "sector": "Materials",
-            "value_usd": 24744458881,
-            "count": 14,
-            "pct_of_portfolio": 0.73
+            "value_usd": 25687128668,
+            "count": 15,
+            "pct_of_portfolio": 0.76
           },
           {
             "sector": "Utilities",
-            "value_usd": 18575106386,
-            "count": 12,
+            "value_usd": 18632244305,
+            "count": 14,
             "pct_of_portfolio": 0.55
           },
           {
@@ -1675,58 +1675,58 @@
         ],
         "largest_new_positions": [
           {
-            "issuer": "VERSIGENT LTD",
-            "cusip": "G9600F104",
+            "issuer": "HONEYWELL INTL INC",
+            "cusip": "438516205",
             "action": "new",
-            "shares": 2868558,
+            "shares": 18738370,
             "shares_prior": 0,
-            "delta_shares": 2868558,
-            "value_usd": 120508122,
-            "delta_value_usd": 120508122,
+            "delta_shares": 18738370,
+            "value_usd": 4195521043,
+            "delta_value_usd": 4195521043,
             "delta_pct": "new"
           },
           {
-            "issuer": "INFLEQTION INC",
-            "cusip": "45676K103",
+            "issuer": "HONEYWELL AEROSPACE INC",
+            "cusip": "43849R105",
             "action": "new",
-            "shares": 2627458,
+            "shares": 13321170,
             "shares_prior": 0,
-            "delta_shares": 2627458,
-            "value_usd": 34997741,
-            "delta_value_usd": 34997741,
+            "delta_shares": 13321170,
+            "value_usd": 2945044264,
+            "delta_value_usd": 2945044264,
             "delta_pct": "new"
           },
           {
-            "issuer": "ALMONTY INDS INC",
-            "cusip": "020398707",
+            "issuer": "SPDR SERIES TRUST",
+            "cusip": "78464A664",
             "action": "new",
-            "shares": 1994040,
+            "shares": 77418976,
             "shares_prior": 0,
-            "delta_shares": 1994040,
-            "value_usd": 33021302,
-            "delta_value_usd": 33021302,
+            "delta_shares": 77418976,
+            "value_usd": 2030699740,
+            "delta_value_usd": 2030699740,
             "delta_pct": "new"
           },
           {
-            "issuer": "ENLIGHT RENEWABLE ENERGY LTD",
-            "cusip": "M4056D110",
+            "issuer": "SPACE EXPLORATION TECHN CORP",
+            "cusip": "84615Q103",
             "action": "new",
-            "shares": 185903,
+            "shares": 10876324,
             "shares_prior": 0,
-            "delta_shares": 185903,
-            "value_usd": 16549085,
-            "delta_value_usd": 16549085,
+            "delta_shares": 10876324,
+            "value_usd": 1858328719,
+            "delta_value_usd": 1858328719,
             "delta_pct": "new"
           },
           {
-            "issuer": "JANUS LIVING INC",
-            "cusip": "471024109",
+            "issuer": "CARNIVAL CORP LTD",
+            "cusip": "G2004J103",
             "action": "new",
-            "shares": 460915,
+            "shares": 58217260,
             "shares_prior": 0,
-            "delta_shares": 460915,
-            "value_usd": 13246697,
-            "delta_value_usd": 13246697,
+            "delta_shares": 58217260,
+            "value_usd": 1663267118,
+            "delta_value_usd": 1663267118,
             "delta_pct": "new"
           }
         ],
@@ -1743,6 +1743,17 @@
             "delta_pct": 0.0
           },
           {
+            "issuer": "SPDR SERIES TRUST",
+            "cusip": "78464A664",
+            "action": "exit",
+            "shares": 0,
+            "shares_prior": 68517636,
+            "delta_shares": -68517636,
+            "value_usd": 0,
+            "delta_value_usd": -1802013827,
+            "delta_pct": 0.0
+          },
+          {
             "issuer": "COTERRA ENERGY INC",
             "cusip": "127097103",
             "action": "exit",
@@ -1754,36 +1765,25 @@
             "delta_pct": 0.0
           },
           {
-            "issuer": "DUPONT DE NEMOURS INC",
-            "cusip": "26614N102",
+            "issuer": "CARNIVAL CORP",
+            "cusip": "143658300",
             "action": "exit",
             "shares": 0,
-            "shares_prior": 18703524,
-            "delta_shares": -18703524,
+            "shares_prior": 50238525,
+            "delta_shares": -50238525,
             "value_usd": 0,
-            "delta_value_usd": -856621399,
+            "delta_value_usd": -1300173027,
             "delta_pct": 0.0
           },
           {
-            "issuer": "HOLOGIC INC",
-            "cusip": "436440101",
+            "issuer": "SPDR SERIES TRUST",
+            "cusip": "78468R622",
             "action": "exit",
             "shares": 0,
-            "shares_prior": 9990906,
-            "delta_shares": -9990906,
+            "shares_prior": 11074520,
+            "delta_shares": -11074520,
             "value_usd": 0,
-            "delta_value_usd": -755212585,
-            "delta_pct": 0.0
-          },
-          {
-            "issuer": "VANGUARD SCOTTSDALE FDS",
-            "cusip": "92206C706",
-            "action": "exit",
-            "shares": 0,
-            "shares_prior": 4950000,
-            "delta_shares": -4950000,
-            "value_usd": 0,
-            "delta_value_usd": -294772500,
+            "delta_value_usd": -1060053054,
             "delta_pct": 0.0
           }
         ],
@@ -2017,39 +2017,39 @@
       "history": [
         {
           "quarter": "2026-06-30",
-          "filing_date": "2026-08-07",
-          "total_value_usd": 3371239854465,
-          "holdings_count": 4177,
+          "filing_date": "2026-09-22",
+          "total_value_usd": 3383260349220,
+          "holdings_count": 4261,
           "top5_holdings": [
             {
               "issuer": "NVIDIA CORPORATION",
               "cusip": "67066G104",
               "value_usd": 202047567909,
-              "pct_of_portfolio": 5.99
+              "pct_of_portfolio": 5.97
             },
             {
               "issuer": "APPLE INC",
               "cusip": "037833100",
               "value_usd": 177993996255,
-              "pct_of_portfolio": 5.28
+              "pct_of_portfolio": 5.26
             },
             {
               "issuer": "MICROSOFT CORP",
               "cusip": "594918104",
               "value_usd": 117744958902,
-              "pct_of_portfolio": 3.49
+              "pct_of_portfolio": 3.48
             },
             {
               "issuer": "AMAZON COM INC",
               "cusip": "023135106",
               "value_usd": 94665539570,
-              "pct_of_portfolio": 2.81
+              "pct_of_portfolio": 2.8
             },
             {
               "issuer": "ALPHABET INC",
               "cusip": "02079K305",
               "value_usd": 85403303049,
-              "pct_of_portfolio": 2.53
+              "pct_of_portfolio": 2.52
             }
           ]
         }
@@ -10546,7 +10546,7 @@
           "cik": "0000093751",
           "action": "add",
           "value_usd": 177993996255,
-          "portfolio_weight_pct": 5.28
+          "portfolio_weight_pct": 5.26
         },
         {
           "name": "FMR (Fidelity)",
@@ -10724,9 +10724,9 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 75.38,
+      "weighted_score": 75.36,
       "conviction_score": 155.6,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "NVIDIA CORPORATION",
@@ -10761,7 +10761,7 @@
           "cik": "0000093751",
           "action": "add",
           "value_usd": 202047567909,
-          "portfolio_weight_pct": 5.99
+          "portfolio_weight_pct": 5.97
         },
         {
           "name": "JPMorgan Chase",
@@ -10932,9 +10932,9 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 75.24,
+      "weighted_score": 75.22,
       "conviction_score": 155.6,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "MICROSOFT CORP",
@@ -10962,7 +10962,7 @@
           "cik": "0000093751",
           "action": "add",
           "value_usd": 117744958902,
-          "portfolio_weight_pct": 3.49
+          "portfolio_weight_pct": 3.48
         },
         {
           "name": "FMR (Fidelity)",
@@ -11140,7 +11140,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 43.22,
+      "weighted_score": 43.21,
       "conviction_score": 155.6,
       "net_action": "add"
     },
@@ -11378,7 +11378,7 @@
           "cik": "0000093751",
           "action": "add",
           "value_usd": 85403303049,
-          "portfolio_weight_pct": 2.53
+          "portfolio_weight_pct": 2.52
         },
         {
           "name": "BlackRock",
@@ -11549,7 +11549,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 43.99,
+      "weighted_score": 43.98,
       "conviction_score": 150.0,
       "net_action": "add"
     },
@@ -11787,7 +11787,7 @@
           "cik": "0000093751",
           "action": "add",
           "value_usd": 51841811018,
-          "portfolio_weight_pct": 1.54
+          "portfolio_weight_pct": 1.53
         },
         {
           "name": "JPMorgan Chase",
@@ -11951,7 +11951,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 22.58,
+      "weighted_score": 22.57,
       "conviction_score": 150.0,
       "net_action": "trim"
     },
@@ -11981,7 +11981,7 @@
           "cik": "0000093751",
           "action": "add",
           "value_usd": 43438261820,
-          "portfolio_weight_pct": 1.29
+          "portfolio_weight_pct": 1.28
         },
         {
           "name": "FMR (Fidelity)",
@@ -12182,7 +12182,7 @@
           "cik": "0000093751",
           "action": "add",
           "value_usd": 17377558512,
-          "portfolio_weight_pct": 0.52
+          "portfolio_weight_pct": 0.51
         },
         {
           "name": "BlackRock",
@@ -12930,7 +12930,7 @@
       ],
       "weighted_score": 1.98,
       "conviction_score": 144.4,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "AMAZON COM INC",
@@ -12958,7 +12958,7 @@
           "cik": "0000093751",
           "action": "add",
           "value_usd": 94665539570,
-          "portfolio_weight_pct": 2.81
+          "portfolio_weight_pct": 2.8
         },
         {
           "name": "FMR (Fidelity)",
@@ -13115,9 +13115,9 @@
           "portfolio_weight_pct": 0.01
         }
       ],
-      "weighted_score": 37.78,
+      "weighted_score": 37.77,
       "conviction_score": 138.9,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "BROADCOM INC",
@@ -13138,7 +13138,7 @@
           "cik": "0000093751",
           "action": "add",
           "value_usd": 74379179363,
-          "portfolio_weight_pct": 2.21
+          "portfolio_weight_pct": 2.2
         },
         {
           "name": "BlackRock",
@@ -13302,7 +13302,7 @@
           "portfolio_weight_pct": 0.01
         }
       ],
-      "weighted_score": 28.83,
+      "weighted_score": 28.82,
       "conviction_score": 138.9,
       "net_action": "add"
     },
@@ -13713,7 +13713,7 @@
           "cik": "0000093751",
           "action": "add",
           "value_usd": 17081618645,
-          "portfolio_weight_pct": 0.51
+          "portfolio_weight_pct": 0.5
         },
         {
           "name": "FMR (Fidelity)",
@@ -14239,7 +14239,7 @@
       ],
       "weighted_score": 10.17,
       "conviction_score": 138.9,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "CHEVRON CORPORATION",
@@ -14424,7 +14424,7 @@
           "portfolio_weight_pct": 0.29
         }
       ],
-      "weighted_score": 9.48,
+      "weighted_score": 9.47,
       "conviction_score": 138.9,
       "net_action": "trim"
     },
@@ -14440,7 +14440,7 @@
           "cik": "0000093751",
           "action": "add",
           "value_usd": 30278720120,
-          "portfolio_weight_pct": 0.9
+          "portfolio_weight_pct": 0.89
         },
         {
           "name": "Vanguard Group",
@@ -14611,7 +14611,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 8.85,
+      "weighted_score": 8.84,
       "conviction_score": 138.9,
       "net_action": "add"
     },
@@ -15943,7 +15943,7 @@
           "cik": "0000093751",
           "action": "add",
           "value_usd": 5576693925,
-          "portfolio_weight_pct": 0.17
+          "portfolio_weight_pct": 0.16
         },
         {
           "name": "JPMorgan Chase",
@@ -17231,7 +17231,7 @@
       ],
       "weighted_score": 1.56,
       "conviction_score": 138.9,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "SPOTIFY TECHNOLOGY S A",
@@ -17813,7 +17813,7 @@
           "cik": "0000093751",
           "action": "add",
           "value_usd": 67458979762,
-          "portfolio_weight_pct": 2.0
+          "portfolio_weight_pct": 1.99
         },
         {
           "name": "BlackRock",
@@ -17970,7 +17970,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 27.35,
+      "weighted_score": 27.34,
       "conviction_score": 133.3,
       "net_action": "add"
     },
@@ -17993,7 +17993,7 @@
           "cik": "0000093751",
           "action": "add",
           "value_usd": 49402311574,
-          "portfolio_weight_pct": 1.47
+          "portfolio_weight_pct": 1.46
         },
         {
           "name": "BlackRock",
@@ -18150,7 +18150,7 @@
           "portfolio_weight_pct": 1.06
         }
       ],
-      "weighted_score": 24.62,
+      "weighted_score": 24.61,
       "conviction_score": 133.3,
       "net_action": "trim"
     },
@@ -18187,7 +18187,7 @@
           "cik": "0000093751",
           "action": "add",
           "value_usd": 13691874874,
-          "portfolio_weight_pct": 0.41
+          "portfolio_weight_pct": 0.4
         },
         {
           "name": "FMR (Fidelity)",
@@ -18353,7 +18353,7 @@
           "cik": "0000093751",
           "action": "add",
           "value_usd": 40984757878,
-          "portfolio_weight_pct": 1.22
+          "portfolio_weight_pct": 1.21
         },
         {
           "name": "BlackRock",
@@ -18870,7 +18870,7 @@
           "portfolio_weight_pct": 0.01
         }
       ],
-      "weighted_score": 7.99,
+      "weighted_score": 7.98,
       "conviction_score": 133.3,
       "net_action": "add"
     },
@@ -19066,7 +19066,7 @@
           "cik": "0000093751",
           "action": "trim",
           "value_usd": 36624377308,
-          "portfolio_weight_pct": 1.09
+          "portfolio_weight_pct": 1.08
         },
         {
           "name": "Vanguard Group",
@@ -19230,7 +19230,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 6.81,
+      "weighted_score": 6.8,
       "conviction_score": 133.3,
       "net_action": "add"
     },

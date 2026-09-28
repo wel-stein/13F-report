@@ -2,14 +2,14 @@
   "name": "State Street",
   "cik": "0000093751",
   "latest_filing": {
-    "form": "13F-HR",
-    "filing_date": "2026-08-07",
+    "form": "13F-HR/A",
+    "filing_date": "2026-09-22",
     "report_date": "2026-06-30",
-    "accession": "0000093751-26-000507",
+    "accession": "0000093751-26-000583",
     "primary_doc": "xslForm13F_X02/primary_doc.xml"
   },
-  "holdings_count": 4177,
-  "total_value_usd": 3371239854465,
+  "holdings_count": 4261,
+  "total_value_usd": 3383260349220,
   "prior_filing": {
     "form": "13F-HR",
     "filing_date": "2026-05-15",
@@ -516,7 +516,7 @@
       "action": "add"
     },
     {
-      "issuer": "BANK AMERICA CORP",
+      "issuer": "BANK OF AMER CORP",
       "class": "COM",
       "cusip": "060505104",
       "put_call": "",
@@ -1476,12 +1476,12 @@
       "action": "add"
     },
     {
-      "issuer": "CHUBB LTD SWITZ",
+      "issuer": "CHUBB LIMITED",
       "class": "COM",
       "cusip": "H1467J104",
       "put_call": "",
       "share_type": "SH",
-      "sector": "Financials",
+      "sector": "Other",
       "shares": 16727420,
       "value_usd": 5716716296,
       "shares_prior": 16706179,
@@ -1866,7 +1866,7 @@
       "action": "add"
     },
     {
-      "issuer": "BANK NEW YORK MELLON CORP",
+      "issuer": "BANK OF NY MELLON CORP",
       "class": "COM",
       "cusip": "064058100",
       "put_call": "",
@@ -2089,6 +2089,21 @@
       "delta_shares": 1302180,
       "delta_value_usd": -784911654,
       "action": "add"
+    },
+    {
+      "issuer": "HONEYWELL INTL INC",
+      "class": "COM",
+      "cusip": "438516205",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Industrials",
+      "shares": 18738370,
+      "value_usd": 4195521043,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 18738370,
+      "delta_value_usd": 4195521043,
+      "action": "new"
     },
     {
       "issuer": "GENERAL DYNAMICS CORP",
@@ -2721,7 +2736,7 @@
       "action": "add"
     },
     {
-      "issuer": "PUBLIC STORAGE OPER CO",
+      "issuer": "PUBLIC STORAGE",
       "class": "COM",
       "cusip": "74460D109",
       "put_call": "",
@@ -3036,6 +3051,21 @@
       "action": "add"
     },
     {
+      "issuer": "HONEYWELL AEROSPACE INC",
+      "class": "COM",
+      "cusip": "43849R105",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 13321170,
+      "value_usd": 2945044264,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 13321170,
+      "delta_value_usd": 2945044264,
+      "action": "new"
+    },
+    {
       "issuer": "ENTERGY CORP NEW",
       "class": "COM",
       "cusip": "29364G103",
@@ -3171,7 +3201,7 @@
       "action": "trim"
     },
     {
-      "issuer": "FLEXTRONICS INTL LTD",
+      "issuer": "FLEX LTD",
       "class": "ORD",
       "cusip": "Y2573F102",
       "put_call": "",
@@ -3952,18 +3982,18 @@
     },
     {
       "issuer": "SPDR SERIES TRUST",
-      "class": "STATE STREET SPD",
+      "class": "ST LON TREAS ETF",
       "cusip": "78464A664",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 77418976,
       "value_usd": 2030699740,
-      "shares_prior": 68517636,
-      "value_usd_prior": 1802013827,
-      "delta_shares": 8901340,
-      "delta_value_usd": 228685913,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 77418976,
+      "delta_value_usd": 2030699740,
+      "action": "new"
     },
     {
       "issuer": "SNOWFLAKE INC",
@@ -4174,6 +4204,21 @@
       "delta_shares": 196969,
       "delta_value_usd": -3261183,
       "action": "add"
+    },
+    {
+      "issuer": "SPACE EXPLORATION TECHN CORP",
+      "class": "CLASS A COM STK",
+      "cusip": "84615Q103",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 10876324,
+      "value_usd": 1858328719,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 10876324,
+      "delta_value_usd": 1858328719,
+      "action": "new"
     },
     {
       "issuer": "PRUDENTIAL FINL INC",
@@ -4566,19 +4611,19 @@
       "action": "add"
     },
     {
-      "issuer": "CARNIVAL CORP",
-      "class": "COMMON STOCK",
-      "cusip": "143658300",
+      "issuer": "CARNIVAL CORP LTD",
+      "class": "COMMON SHARES",
+      "cusip": "G2004J103",
       "put_call": "",
       "share_type": "SH",
       "sector": "Consumer Discretionary",
       "shares": 58217260,
       "value_usd": 1663267118,
-      "shares_prior": 50238525,
-      "value_usd_prior": 1300173027,
-      "delta_shares": 7978735,
-      "delta_value_usd": 363094091,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 58217260,
+      "delta_value_usd": 1663267118,
+      "action": "new"
     },
     {
       "issuer": "WATERS CORP",
@@ -5212,18 +5257,18 @@
     },
     {
       "issuer": "SPDR SERIES TRUST",
-      "class": "STATE STREET SPD",
+      "class": "ST BLOO HIGH ETF",
       "cusip": "78468R622",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 13671856,
       "value_usd": 1317556763,
-      "shares_prior": 11074520,
-      "value_usd_prior": 1060053054,
-      "delta_shares": 2597336,
-      "delta_value_usd": 257503709,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 13671856,
+      "delta_value_usd": 1317556763,
+      "action": "new"
     },
     {
       "issuer": "FIRST SOLAR INC",
@@ -6411,6 +6456,21 @@
       "action": "add"
     },
     {
+      "issuer": "DUPONT DE NEMOURS INC",
+      "class": "COMMON STOCK",
+      "cusip": "26614N201",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Materials",
+      "shares": 6949792,
+      "value_usd": 942669787,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 6949792,
+      "delta_value_usd": 942669787,
+      "action": "new"
+    },
+    {
       "issuer": "HEALTHPEAK PROPERTIES INC",
       "class": "COM",
       "cusip": "42250P103",
@@ -7444,6 +7504,21 @@
       "delta_shares": 596955,
       "delta_value_usd": -101282970,
       "action": "add"
+    },
+    {
+      "issuer": "FEDEX FGHT HLDG CO INC",
+      "class": "COMMON STOCK",
+      "cusip": "314352105",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 4793027,
+      "value_usd": 723747077,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 4793027,
+      "delta_value_usd": 723747077,
+      "action": "new"
     },
     {
       "issuer": "SUPER MICRO COMPUTER INC",
@@ -10192,18 +10267,18 @@
     },
     {
       "issuer": "SPDR SERIES TRUST",
-      "class": "STATE STREET SPD",
+      "class": "ST SHO TREAS ETF",
       "cusip": "78468R101",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 13899161,
       "value_usd": 403214661,
-      "shares_prior": 12749549,
-      "value_usd_prior": 372031840,
-      "delta_shares": 1149612,
-      "delta_value_usd": 31182821,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 13899161,
+      "delta_value_usd": 403214661,
+      "action": "new"
     },
     {
       "issuer": "PROSPERITY BANCSHARES INC",
@@ -10612,18 +10687,18 @@
     },
     {
       "issuer": "SPDR SERIES TRUST",
-      "class": "STATE STREET SPD",
+      "class": "ST STR AGGRE ETF",
       "cusip": "78464A649",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 14524976,
       "value_usd": 370677388,
-      "shares_prior": 15769631,
-      "value_usd_prior": 404017946,
-      "delta_shares": -1244655,
-      "delta_value_usd": -33340558,
-      "action": "trim"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 14524976,
+      "delta_value_usd": 370677388,
+      "action": "new"
     },
     {
       "issuer": "VIAVI SOLUTIONS INC",
@@ -11272,18 +11347,18 @@
     },
     {
       "issuer": "SPDR SERIES TRUST",
-      "class": "STATE STREET SPD",
+      "class": "ST STR P500ETF",
       "cusip": "78464A854",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 3842593,
       "value_usd": 337687073,
-      "shares_prior": 4685783,
-      "value_usd_prior": 358649831,
-      "delta_shares": -843190,
-      "delta_value_usd": -20962758,
-      "action": "trim"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 3842593,
+      "delta_value_usd": 337687073,
+      "action": "new"
     },
     {
       "issuer": "MGM RESORTS INTERNATIONAL",
@@ -12217,18 +12292,18 @@
     },
     {
       "issuer": "SPDR INDEX SHS FDS",
-      "class": "STATE STREET SPD",
+      "class": "ST DOW GLOBA ETF",
       "cusip": "78463X749",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 6029648,
       "value_usd": 299733802,
-      "shares_prior": 6138513,
-      "value_usd_prior": 280959740,
-      "delta_shares": -108865,
-      "delta_value_usd": 18774062,
-      "action": "trim"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 6029648,
+      "delta_value_usd": 299733802,
+      "action": "new"
     },
     {
       "issuer": "HUT 8 CORP",
@@ -12502,18 +12577,18 @@
     },
     {
       "issuer": "SELECT SECTOR SPDR TR",
-      "class": "STATE STREET TEC",
+      "class": "ST STR TECHN ETF",
       "cusip": "81369Y803",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 1523838,
       "value_usd": 290321616,
-      "shares_prior": 1445017,
-      "value_usd_prior": 192042759,
-      "delta_shares": 78821,
-      "delta_value_usd": 98278857,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 1523838,
+      "delta_value_usd": 290321616,
+      "action": "new"
     },
     {
       "issuer": "ENSIGN GROUP INC",
@@ -13102,18 +13177,18 @@
     },
     {
       "issuer": "SPDR INDEX SHS FDS",
-      "class": "STATE STREET SPD",
+      "class": "ST PORT MARK ETF",
       "cusip": "78463X509",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 5231398,
       "value_usd": 270881788,
-      "shares_prior": 4901772,
-      "value_usd_prior": 229942125,
-      "delta_shares": 329626,
-      "delta_value_usd": 40939663,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 5231398,
+      "delta_value_usd": 270881788,
+      "action": "new"
     },
     {
       "issuer": "FULTON FINL CORP PA",
@@ -14782,18 +14857,18 @@
     },
     {
       "issuer": "SPDR INDEX SHS FDS",
-      "class": "STATE STREET SPD",
+      "class": "ST STR PO EX ETF",
       "cusip": "78463X889",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 4485803,
       "value_usd": 226039613,
-      "shares_prior": 7886187,
-      "value_usd_prior": 360004437,
-      "delta_shares": -3400384,
-      "delta_value_usd": -133964824,
-      "action": "trim"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 4485803,
+      "delta_value_usd": 226039613,
+      "action": "new"
     },
     {
       "issuer": "RADIAN GROUP INC",
@@ -15622,18 +15697,18 @@
     },
     {
       "issuer": "SELECT SECTOR SPDR TR",
-      "class": "STATE STREET IND",
+      "class": "ST STR INDL ETF",
       "cusip": "81369Y704",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 1099118,
       "value_usd": 203589627,
-      "shares_prior": 759214,
-      "value_usd_prior": 122787680,
-      "delta_shares": 339904,
-      "delta_value_usd": 80801947,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 1099118,
+      "delta_value_usd": 203589627,
+      "action": "new"
     },
     {
       "issuer": "NOBLE CORP PLC",
@@ -17766,7 +17841,7 @@
       "action": "add"
     },
     {
-      "issuer": "ALBERTSONS COS INC",
+      "issuer": "ALBERTSONS COMPANIES INC",
       "class": "COMMON STOCK",
       "cusip": "013091103",
       "put_call": "",
@@ -18891,6 +18966,21 @@
       "action": "add"
     },
     {
+      "issuer": "ALPHABET INC",
+      "class": "DEP SHS RP1/20 B",
+      "cusip": "02079K602",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Communications",
+      "shares": 2900000,
+      "value_usd": 145464000,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 2900000,
+      "delta_value_usd": 145464000,
+      "action": "new"
+    },
+    {
       "issuer": "GAP INC",
       "class": "COM",
       "cusip": "364760108",
@@ -18979,6 +19069,21 @@
       "delta_shares": 96374,
       "delta_value_usd": 60966938,
       "action": "add"
+    },
+    {
+      "issuer": "ALPHABET INC",
+      "class": "DEP SHS RP1/20 A",
+      "cusip": "02079K404",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Communications",
+      "shares": 2900000,
+      "value_usd": 144333000,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 2900000,
+      "delta_value_usd": 144333000,
+      "action": "new"
     },
     {
       "issuer": "DEFINIUM THERAPEUTICS INC",
@@ -19177,18 +19282,18 @@
     },
     {
       "issuer": "SSGA ACTIVE ETF TR",
-      "class": "STATE STREET BLA",
+      "class": "ST STR BL LN ETF",
       "cusip": "78467V608",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 3509642,
       "value_usd": 141403476,
-      "shares_prior": 3653808,
-      "value_usd_prior": 146663853,
-      "delta_shares": -144166,
-      "delta_value_usd": -5260377,
-      "action": "trim"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 3509642,
+      "delta_value_usd": 141403476,
+      "action": "new"
     },
     {
       "issuer": "KORN FERRY",
@@ -19462,18 +19567,18 @@
     },
     {
       "issuer": "ASCENDIS PHARMA A/S",
-      "class": "SPONSORED ADR",
-      "cusip": "04351P101",
+      "class": "ORD SHS",
+      "cusip": "K08588103",
       "put_call": "",
       "share_type": "SH",
       "sector": "Healthcare",
       "shares": 513969,
       "value_usd": 137085812,
-      "shares_prior": 87334,
-      "value_usd_prior": 19975906,
-      "delta_shares": 426635,
-      "delta_value_usd": 117109906,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 513969,
+      "delta_value_usd": 137085812,
+      "action": "new"
     },
     {
       "issuer": "HAEMONETICS CORP MASS",
@@ -20511,7 +20616,7 @@
       "action": "trim"
     },
     {
-      "issuer": "VERSIGENT LTD",
+      "issuer": "VERSIGENT PLC",
       "class": "ORDINARY SHARES",
       "cusip": "G9600F104",
       "put_call": "",
@@ -20811,7 +20916,7 @@
       "action": "add"
     },
     {
-      "issuer": "BITMINE IMMERSION TECNOLOGIE",
+      "issuer": "BITMINE IMMERSION TECHS INC",
       "class": "COM NEW",
       "cusip": "09175A206",
       "put_call": "",
@@ -21682,18 +21787,18 @@
     },
     {
       "issuer": "SPDR SERIES TRUST",
-      "class": "STATE STREET SPD",
+      "class": "ST LONG BD ETF",
       "cusip": "78464A367",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 4795091,
       "value_usd": 107410038,
-      "shares_prior": 7080029,
-      "value_usd_prior": 157318245,
-      "delta_shares": -2284938,
-      "delta_value_usd": -49908207,
-      "action": "trim"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 4795091,
+      "delta_value_usd": 107410038,
+      "action": "new"
     },
     {
       "issuer": "10X GENOMICS INC",
@@ -21832,18 +21937,18 @@
     },
     {
       "issuer": "SPDR SERIES TRUST",
-      "class": "STATE STREET SPD",
+      "class": "ST SHOR CORP ETF",
       "cusip": "78464A474",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 3530180,
       "value_usd": 105940702,
-      "shares_prior": 3260348,
-      "value_usd_prior": 98038664,
-      "delta_shares": 269832,
-      "delta_value_usd": 7902038,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 3530180,
+      "delta_value_usd": 105940702,
+      "action": "new"
     },
     {
       "issuer": "ITAU UNIBANCO HLDG S A",
@@ -21904,6 +22009,21 @@
       "delta_shares": 132787,
       "delta_value_usd": 5483297,
       "action": "add"
+    },
+    {
+      "issuer": "CEREBRAS SYSTEMS INC",
+      "class": "COM CL A",
+      "cusip": "15675D103",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 476663,
+      "value_usd": 105342523,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 476663,
+      "delta_value_usd": 105342523,
+      "action": "new"
     },
     {
       "issuer": "CRANE NXT CO",
@@ -22401,7 +22521,7 @@
       "action": "add"
     },
     {
-      "issuer": "IAC INC",
+      "issuer": "PEOPLE INC",
       "class": "COM NEW",
       "cusip": "44891N208",
       "put_call": "",
@@ -22417,18 +22537,18 @@
     },
     {
       "issuer": "SPDR SERIES TRUST",
-      "class": "STATE STREET SPD",
+      "class": "ST STR TIPS ETF",
       "cusip": "78464A656",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 3869418,
       "value_usd": 99366654,
-      "shares_prior": 3671821,
-      "value_usd_prior": 95504064,
-      "delta_shares": 197597,
-      "delta_value_usd": 3862590,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 3869418,
+      "delta_value_usd": 99366654,
+      "action": "new"
     },
     {
       "issuer": "ANDERSONS INC",
@@ -22492,18 +22612,18 @@
     },
     {
       "issuer": "SELECT SECTOR SPDR TR",
-      "class": "STATE STREET ENE",
+      "class": "ST STR ENERG ETF",
       "cusip": "81369Y506",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 1852648,
       "value_usd": 98394135,
-      "shares_prior": 999596,
-      "value_usd_prior": 61235251,
-      "delta_shares": 853052,
-      "delta_value_usd": 37158884,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 1852648,
+      "delta_value_usd": 98394135,
+      "action": "new"
     },
     {
       "issuer": "GLOBAL NET LEASE INC",
@@ -22972,18 +23092,18 @@
     },
     {
       "issuer": "SPDR SERIES TRUST",
-      "class": "STATE STREET SPD",
+      "class": "ST STR SP600 SML",
       "cusip": "78468R853",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 1613064,
       "value_usd": 93025401,
-      "shares_prior": 1932381,
-      "value_usd_prior": 93372650,
-      "delta_shares": -319317,
-      "delta_value_usd": -347249,
-      "action": "trim"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 1613064,
+      "delta_value_usd": 93025401,
+      "action": "new"
     },
     {
       "issuer": "PROTO LABS INC",
@@ -23826,7 +23946,7 @@
       "action": "add"
     },
     {
-      "issuer": "DIME CMNTY BANCSHARES INC",
+      "issuer": "DIME COML BANCSHARES INC",
       "class": "COM",
       "cusip": "25432X102",
       "put_call": "",
@@ -24291,6 +24411,21 @@
       "action": "add"
     },
     {
+      "issuer": "KEEL INFRASTRUCTURE CORP",
+      "class": "COM SHS",
+      "cusip": "486917107",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 13606205,
+      "value_usd": 78099617,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 13606205,
+      "delta_value_usd": 78099617,
+      "action": "new"
+    },
+    {
       "issuer": "TENCENT MUSIC ENTMT GROUP",
       "class": "SPON ADS",
       "cusip": "88034P109",
@@ -24516,7 +24651,7 @@
       "action": "add"
     },
     {
-      "issuer": "ICON PLC",
+      "issuer": "ICON PUB LTD CO",
       "class": "SHS",
       "cusip": "G4705A100",
       "put_call": "",
@@ -25461,6 +25596,21 @@
       "action": "add"
     },
     {
+      "issuer": "AKAMAI TECHNOLOGIES INC",
+      "class": "NOTE  0.250% 5/1",
+      "cusip": "00971TAQ4",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Technology",
+      "shares": 45900000,
+      "value_usd": 66951756,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 45900000,
+      "delta_value_usd": 66951756,
+      "action": "new"
+    },
+    {
       "issuer": "VERADERMICS INC",
       "class": "COMMON STOCK",
       "cusip": "922967104",
@@ -26016,7 +26166,7 @@
       "action": "add"
     },
     {
-      "issuer": "LENDINGCLUB ISSUANCE TR SER",
+      "issuer": "HAPPEN INC",
       "class": "COM NEW",
       "cusip": "52603A208",
       "put_call": "",
@@ -26376,6 +26526,21 @@
       "action": "add"
     },
     {
+      "issuer": "SUPER MICRO COMPUTER INC",
+      "class": "7 DEP CM SR A WI",
+      "cusip": "86800U500",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 1140000,
+      "value_usd": 58219800,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 1140000,
+      "delta_value_usd": 58219800,
+      "action": "new"
+    },
+    {
       "issuer": "FIRST ADVANTAGE CORP NEW",
       "class": "COM",
       "cusip": "31846B108",
@@ -26391,7 +26556,7 @@
       "action": "add"
     },
     {
-      "issuer": "BANK AMERICA CORP",
+      "issuer": "BANK OF AMER CORP",
       "class": "7.25%CNV PFD L",
       "cusip": "060505682",
       "put_call": "",
@@ -26812,18 +26977,18 @@
     },
     {
       "issuer": "SPDR SERIES TRUST",
-      "class": "BLOOMBERG EMERGI",
+      "class": "SST SPDR BLOOMBE",
       "cusip": "78464A391",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 2621626,
       "value_usd": 54844416,
-      "shares_prior": 2516441,
-      "value_usd_prior": 51939342,
-      "delta_shares": 105185,
-      "delta_value_usd": 2905074,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 2621626,
+      "delta_value_usd": 54844416,
+      "action": "new"
     },
     {
       "issuer": "HUNTSMAN CORP",
@@ -27367,18 +27532,18 @@
     },
     {
       "issuer": "SELECT SECTOR SPDR TR",
-      "class": "STATE STREET CON",
+      "class": "ST STR STAPL ETF",
       "cusip": "81369Y308",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 621446,
       "value_usd": 51623519,
-      "shares_prior": 364180,
-      "value_usd_prior": 29855476,
-      "delta_shares": 257266,
-      "delta_value_usd": 21768043,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 621446,
+      "delta_value_usd": 51623519,
+      "action": "new"
     },
     {
       "issuer": "CHIME FINL INC",
@@ -27697,18 +27862,18 @@
     },
     {
       "issuer": "SPDR INDEX SHS FDS",
-      "class": "STATE STREET SPD",
+      "class": "SP CHINA ETF",
       "cusip": "78463X400",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 571688,
       "value_usd": 49462446,
-      "shares_prior": 443070,
-      "value_usd_prior": 41258678,
-      "delta_shares": 128618,
-      "delta_value_usd": 8203768,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 571688,
+      "delta_value_usd": 49462446,
+      "action": "new"
     },
     {
       "issuer": "CENTRAL PAC FINL CORP",
@@ -28866,7 +29031,7 @@
       "action": "add"
     },
     {
-      "issuer": "CENTRAIS ELET BRAS SA",
+      "issuer": "AXIA ENERGIA SA",
       "class": "SPONSORED ADR",
       "cusip": "15234Q207",
       "put_call": "",
@@ -28972,18 +29137,18 @@
     },
     {
       "issuer": "SPDR SERIES TRUST",
-      "class": "STATE STREET SPD",
+      "class": "ST PORT HIGH ETF",
       "cusip": "78468R606",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 1866599,
       "value_usd": 43753081,
-      "shares_prior": 1026212,
-      "value_usd_prior": 23931264,
-      "delta_shares": 840387,
-      "delta_value_usd": 19821817,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 1866599,
+      "delta_value_usd": 43753081,
+      "action": "new"
     },
     {
       "issuer": "JAZZ INVESTMENTS I LTD",
@@ -29017,18 +29182,18 @@
     },
     {
       "issuer": "SELECT SECTOR SPDR TR",
-      "class": "STATE STREET CON",
+      "class": "ST STR DISCR ETF",
       "cusip": "81369Y407",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 371556,
       "value_usd": 43576088,
-      "shares_prior": 12349,
-      "value_usd_prior": 1345794,
-      "delta_shares": 359207,
-      "delta_value_usd": 42230294,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 371556,
+      "delta_value_usd": 43576088,
+      "action": "new"
     },
     {
       "issuer": "PARK AEROSPACE CORP",
@@ -29256,6 +29421,21 @@
       "action": "add"
     },
     {
+      "issuer": "SOUTHERN CO",
+      "class": "NOTE  3.250% 6/1",
+      "cusip": "842587ED5",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Utilities",
+      "shares": 42425000,
+      "value_usd": 42855498,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 42425000,
+      "delta_value_usd": 42855498,
+      "action": "new"
+    },
+    {
       "issuer": "ADTRAN HOLDINGS INC",
       "class": "COM",
       "cusip": "00486H105",
@@ -29299,6 +29479,21 @@
       "delta_shares": 385059,
       "delta_value_usd": 20305459,
       "action": "add"
+    },
+    {
+      "issuer": "GAMESTOP CORP",
+      "class": "NOTE         6/1",
+      "cusip": "36467WAG4",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Other",
+      "shares": 41950000,
+      "value_usd": 42478570,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 41950000,
+      "delta_value_usd": 42478570,
+      "action": "new"
     },
     {
       "issuer": "VISHAY PRECISION GROUP INC",
@@ -29691,6 +29886,21 @@
       "action": "trim"
     },
     {
+      "issuer": "DOORDASH INC",
+      "class": "NOTE         5/1",
+      "cusip": "25809KAB1",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Other",
+      "shares": 41785000,
+      "value_usd": 41062120,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 41785000,
+      "delta_value_usd": 41062120,
+      "action": "new"
+    },
+    {
       "issuer": "BYLINE BANCORP INC",
       "class": "COM",
       "cusip": "124411109",
@@ -29976,6 +30186,21 @@
       "action": "add"
     },
     {
+      "issuer": "SITIME CORP",
+      "class": "NOTE         6/1",
+      "cusip": "82982TAA4",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Other",
+      "shares": 35500000,
+      "value_usd": 39328615,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 35500000,
+      "delta_value_usd": 39328615,
+      "action": "new"
+    },
+    {
       "issuer": "TRIP COM GROUP LTD",
       "class": "NOTE  0.750% 6/1",
       "cusip": "89677QAB3",
@@ -30081,7 +30306,7 @@
       "action": "add"
     },
     {
-      "issuer": "FRESH DEL MONTE PRODUCE INC",
+      "issuer": "DEL MONTE CORP",
       "class": "ORD",
       "cusip": "G36738105",
       "put_call": "",
@@ -30109,6 +30334,36 @@
       "delta_shares": 87827,
       "delta_value_usd": 1784558,
       "action": "add"
+    },
+    {
+      "issuer": "GAMESTOP CORP",
+      "class": "NOTE         4/0",
+      "cusip": "36467WAE9",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Other",
+      "shares": 38100000,
+      "value_usd": 38820470,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 38100000,
+      "delta_value_usd": 38820470,
+      "action": "new"
+    },
+    {
+      "issuer": "CLOUDFLARE INC",
+      "class": "NOTE         6/1",
+      "cusip": "18915MAF4",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Technology",
+      "shares": 30550000,
+      "value_usd": 38725180,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 30550000,
+      "delta_value_usd": 38725180,
+      "action": "new"
     },
     {
       "issuer": "4D MOLECULAR THERAPEUTICS IN",
@@ -30877,18 +31132,33 @@
     },
     {
       "issuer": "SELECT SECTOR SPDR TR",
-      "class": "STATE STREET COM",
+      "class": "ST STR SVC ETF",
       "cusip": "81369Y852",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 331706,
       "value_usd": 35535664,
-      "shares_prior": 647835,
-      "value_usd_prior": 71818988,
-      "delta_shares": -316129,
-      "delta_value_usd": -36283324,
-      "action": "trim"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 331706,
+      "delta_value_usd": 35535664,
+      "action": "new"
+    },
+    {
+      "issuer": "UBER TECHNOLOGIES INC",
+      "class": "NOTE         5/1",
+      "cusip": "90353TAS9",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Technology",
+      "shares": 30750000,
+      "value_usd": 35503350,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 30750000,
+      "delta_value_usd": 35503350,
+      "action": "new"
     },
     {
       "issuer": "ICF INTL INC",
@@ -31491,7 +31761,7 @@
       "action": "new"
     },
     {
-      "issuer": "ASGN INC",
+      "issuer": "EVERFORTH INC",
       "class": "COM",
       "cusip": "00191U102",
       "put_call": "",
@@ -32076,22 +32346,37 @@
       "action": "add"
     },
     {
+      "issuer": "SUPER MICRO COMPUTER INC",
+      "class": "NOTE         6/1",
+      "cusip": "86800UAF1",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Other",
+      "shares": 34650000,
+      "value_usd": 30665250,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 34650000,
+      "delta_value_usd": 30665250,
+      "action": "new"
+    },
+    {
       "issuer": "SPDR SERIES TRUST",
-      "class": "FTSE INT GVT ETF",
+      "class": "ST STR FTSE ETF",
       "cusip": "78464A490",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 776972,
       "value_usd": 30604927,
-      "shares_prior": 2170666,
-      "value_usd_prior": 85958374,
-      "delta_shares": -1393694,
-      "delta_value_usd": -55353447,
-      "action": "trim"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 776972,
+      "delta_value_usd": 30604927,
+      "action": "new"
     },
     {
-      "issuer": "FERROVIAL SE",
+      "issuer": "FERROVIAL NV",
       "class": "ORD SHS",
       "cusip": "N3168P101",
       "put_call": "",
@@ -32149,6 +32434,21 @@
       "delta_shares": 513034,
       "delta_value_usd": 23646828,
       "action": "add"
+    },
+    {
+      "issuer": "FIRST TRACKS BIOTHERAPEUTICS",
+      "class": "ORD SHS",
+      "cusip": "337185102",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Healthcare",
+      "shares": 1512896,
+      "value_usd": 30439468,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 1512896,
+      "delta_value_usd": 30439468,
+      "action": "new"
     },
     {
       "issuer": "SOUTHERN CO",
@@ -32617,33 +32917,33 @@
     },
     {
       "issuer": "SPDR SERIES TRUST",
-      "class": "STATE STREET SPD",
+      "class": "ST STR RATE ETF",
       "cusip": "78468R200",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 941322,
       "value_usd": 29039784,
-      "shares_prior": 692132,
-      "value_usd_prior": 21303823,
-      "delta_shares": 249190,
-      "delta_value_usd": 7735961,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 941322,
+      "delta_value_usd": 29039784,
+      "action": "new"
     },
     {
-      "issuer": "GCI LIBERTY INC",
-      "class": "COM SER C",
+      "issuer": "LIBERTY CAP CORP",
+      "class": "SER C GCI GROUP",
       "cusip": "36164V800",
       "put_call": "",
       "share_type": "SH",
       "sector": "Other",
       "shares": 1343959,
       "value_usd": 28975756,
-      "shares_prior": 945135,
-      "value_usd_prior": 35168473,
-      "delta_shares": 398824,
-      "delta_value_usd": -6192717,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 1343959,
+      "delta_value_usd": 28975756,
+      "action": "new"
     },
     {
       "issuer": "COURSERA INC",
@@ -32857,18 +33157,33 @@
     },
     {
       "issuer": "SPDR INDEX SHS FDS",
-      "class": "STATE STREET SPD",
+      "class": "ST DOW INTL ETF",
       "cusip": "78463X863",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 1039777,
       "value_usd": 28084377,
-      "shares_prior": 559013,
-      "value_usd_prior": 14880926,
-      "delta_shares": 480764,
-      "delta_value_usd": 13203451,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 1039777,
+      "delta_value_usd": 28084377,
+      "action": "new"
+    },
+    {
+      "issuer": "CYBERARK SOFTWARE LTD",
+      "class": "NOTE         6/1",
+      "cusip": "23248VAD7",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Technology",
+      "shares": 16800000,
+      "value_usd": 27993840,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 16800000,
+      "delta_value_usd": 27993840,
+      "action": "new"
     },
     {
       "issuer": "CHIMERA INVT CORP",
@@ -34056,6 +34371,21 @@
       "action": "add"
     },
     {
+      "issuer": "FIRSTENERGY CORP",
+      "class": "NOTE  3.625% 1/1",
+      "cusip": "337932AT4",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Energy",
+      "shares": 21244000,
+      "value_usd": 23564169,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 21244000,
+      "delta_value_usd": 23564169,
+      "action": "new"
+    },
+    {
       "issuer": "OIL DRI CORP AMER",
       "class": "COM",
       "cusip": "677864100",
@@ -34866,19 +35196,34 @@
       "action": "add"
     },
     {
+      "issuer": "MERIT MED SYS INC",
+      "class": "NOTE  3.000% 2/0",
+      "cusip": "589889AB0",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Other",
+      "shares": 19610000,
+      "value_usd": 21343227,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 19610000,
+      "delta_value_usd": 21343227,
+      "action": "new"
+    },
+    {
       "issuer": "SELECT SECTOR SPDR TR",
-      "class": "STATE STREET UTI",
+      "class": "ST STR UTIL ETF",
       "cusip": "81369Y886",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 470354,
       "value_usd": 21325850,
-      "shares_prior": 216485,
-      "value_usd_prior": 9934497,
-      "delta_shares": 253869,
-      "delta_value_usd": 11391353,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 470354,
+      "delta_value_usd": 21325850,
+      "action": "new"
     },
     {
       "issuer": "DAILY JOURNAL CORP",
@@ -35166,6 +35511,21 @@
       "action": "add"
     },
     {
+      "issuer": "MAKEMYTRIP LIMITED MAURITIUS",
+      "class": "NOTE         7/0",
+      "cusip": "56087FAD6",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Other",
+      "shares": 22525000,
+      "value_usd": 20527033,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 22525000,
+      "delta_value_usd": 20527033,
+      "action": "new"
+    },
+    {
       "issuer": "STRATEGY INC",
       "class": "NOTE  2.250% 6/1",
       "cusip": "594972AN1",
@@ -35376,7 +35736,7 @@
       "action": "add"
     },
     {
-      "issuer": "FIDELIS INSURANCE HOLDINGS L",
+      "issuer": "PELAGOS INS CAP LTD",
       "class": "COM",
       "cusip": "G3398L118",
       "put_call": "",
@@ -35526,6 +35886,21 @@
       "action": "add"
     },
     {
+      "issuer": "FIRSTENERGY CORP",
+      "class": "NOTE  3.875% 1/1",
+      "cusip": "337932AV9",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Energy",
+      "shares": 17420000,
+      "value_usd": 19677076,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 17420000,
+      "delta_value_usd": 19677076,
+      "action": "new"
+    },
+    {
       "issuer": "GCM GROSVENOR INC",
       "class": "COM CL A",
       "cusip": "36831E108",
@@ -35601,7 +35976,7 @@
       "action": "add"
     },
     {
-      "issuer": "EXP WORLD HLDGS INC",
+      "issuer": "AGNT INC",
       "class": "COM",
       "cusip": "30212W100",
       "put_call": "",
@@ -35779,6 +36154,21 @@
       "delta_shares": -293321,
       "delta_value_usd": -14009108,
       "action": "trim"
+    },
+    {
+      "issuer": "KAILERA THERAPEUTICS INC",
+      "class": "COMMON STOCK",
+      "cusip": "482931102",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Healthcare",
+      "shares": 868160,
+      "value_usd": 19125565,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 868160,
+      "delta_value_usd": 19125565,
+      "action": "new"
     },
     {
       "issuer": "FRONTIER GROUP HLDGS INC",
@@ -36006,7 +36396,7 @@
       "action": "add"
     },
     {
-      "issuer": "RUMBLE INC",
+      "issuer": "RUM GROUP INC",
       "class": "COM CL A",
       "cusip": "78137L105",
       "put_call": "",
@@ -36486,6 +36876,21 @@
       "action": "add"
     },
     {
+      "issuer": "RUBRIK INC.",
+      "class": "NOTE         6/1",
+      "cusip": "781154AD1",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Other",
+      "shares": 17017000,
+      "value_usd": 17352235,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 17017000,
+      "delta_value_usd": 17352235,
+      "action": "new"
+    },
+    {
       "issuer": "SUPER MICRO COMPUTER INC",
       "class": "NOTE  2.250% 7/1",
       "cusip": "86800UAD6",
@@ -36802,18 +37207,18 @@
     },
     {
       "issuer": "SELECT SECTOR SPDR TR",
-      "class": "STATE STREET HEA",
+      "class": "ST STR CARE ETF",
       "cusip": "81369Y209",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 105561,
       "value_usd": 16748308,
-      "shares_prior": 1122816,
-      "value_usd_prior": 164616054,
-      "delta_shares": -1017255,
-      "delta_value_usd": -147867746,
-      "action": "trim"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 105561,
+      "delta_value_usd": 16748308,
+      "action": "new"
     },
     {
       "issuer": "SYNAPTICS INC",
@@ -36889,6 +37294,21 @@
       "delta_shares": 3300000,
       "delta_value_usd": 3865618,
       "action": "add"
+    },
+    {
+      "issuer": "MADISON AIR SOLUTIONS CORP",
+      "class": "COM SHS CL A",
+      "cusip": "55658T105",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 424564,
+      "value_usd": 16557996,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 424564,
+      "delta_value_usd": 16557996,
+      "action": "new"
     },
     {
       "issuer": "UNIVERSAL HEALTH RLTY INCOME",
@@ -37101,7 +37521,7 @@
       "action": "add"
     },
     {
-      "issuer": "MONTROSE ENVIRONMENTAL GROUP",
+      "issuer": "ONTERRIS INC",
       "class": "COM",
       "cusip": "615111101",
       "put_call": "",
@@ -37206,6 +37626,21 @@
       "action": "add"
     },
     {
+      "issuer": "ALLIANT ENERGY CORP",
+      "class": "NOTE  3.250% 5/3",
+      "cusip": "018802AE8",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Energy",
+      "shares": 14400000,
+      "value_usd": 15824140,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 14400000,
+      "delta_value_usd": 15824140,
+      "action": "new"
+    },
+    {
       "issuer": "DAQO NEW ENERGY CORP",
       "class": "SPNSRD ADS NEW",
       "cusip": "23703Q203",
@@ -37264,6 +37699,21 @@
       "delta_shares": 56927,
       "delta_value_usd": 1668373,
       "action": "add"
+    },
+    {
+      "issuer": "REVOLUTION MEDICINES INC",
+      "class": "NOTE  0.500% 5/0",
+      "cusip": "76155XAA8",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Other",
+      "shares": 12500000,
+      "value_usd": 15724997,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 12500000,
+      "delta_value_usd": 15724997,
+      "action": "new"
     },
     {
       "issuer": "CIVISTA BANCSHARES INC",
@@ -37701,6 +38151,21 @@
       "action": "add"
     },
     {
+      "issuer": "TRAVERE THERAPEUTICS INC",
+      "class": "NOTE  0.500% 5/1",
+      "cusip": "89422GAB3",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Healthcare",
+      "shares": 12700000,
+      "value_usd": 14916499,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 12700000,
+      "delta_value_usd": 14916499,
+      "action": "new"
+    },
+    {
       "issuer": "HYLIION HOLDINGS CORP",
       "class": "COMMON STOCK",
       "cusip": "449109107",
@@ -38074,6 +38539,21 @@
       "delta_shares": -18162,
       "delta_value_usd": -3917589,
       "action": "trim"
+    },
+    {
+      "issuer": "WEC ENERGY GROUP INC",
+      "class": "NOTE  3.375% 6/0",
+      "cusip": "92939UAT3",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Utilities",
+      "shares": 13700000,
+      "value_usd": 14282421,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 13700000,
+      "delta_value_usd": 14282421,
+      "action": "new"
     },
     {
       "issuer": "BLOCK INC",
@@ -38812,18 +39292,18 @@
     },
     {
       "issuer": "SPDR SERIES TRUST",
-      "class": "STATE STREET SPD",
+      "class": "ST INTER BD ETF",
       "cusip": "78464A375",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 387515,
       "value_usd": 12966252,
-      "shares_prior": 2621127,
-      "value_usd_prior": 87912600,
-      "delta_shares": -2233612,
-      "delta_value_usd": -74946348,
-      "action": "trim"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 387515,
+      "delta_value_usd": 12966252,
+      "action": "new"
     },
     {
       "issuer": "GRINDR INC",
@@ -39006,6 +39486,21 @@
       "action": "add"
     },
     {
+      "issuer": "THOMSON REUTERS CORP",
+      "class": "COM",
+      "cusip": "884903881",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 154441,
+      "value_usd": 12613196,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 154441,
+      "delta_value_usd": 12613196,
+      "action": "new"
+    },
+    {
       "issuer": "STURM RUGER & CO INC",
       "class": "COM",
       "cusip": "864159108",
@@ -39124,6 +39619,21 @@
       "delta_shares": -375691,
       "delta_value_usd": -2700212,
       "action": "trim"
+    },
+    {
+      "issuer": "ENVIRI CORP",
+      "class": "COM",
+      "cusip": "29390K102",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 565509,
+      "value_usd": 12412923,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 565509,
+      "delta_value_usd": 12412923,
+      "action": "new"
     },
     {
       "issuer": "DLOCAL LTD",
@@ -39529,6 +40039,21 @@
       "delta_shares": 21019,
       "delta_value_usd": -2143359,
       "action": "add"
+    },
+    {
+      "issuer": "ETSY INC",
+      "class": "NOTE  1.000% 6/1",
+      "cusip": "29786AAQ9",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Other",
+      "shares": 10044000,
+      "value_usd": 11679610,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 10044000,
+      "delta_value_usd": 11679610,
+      "action": "new"
     },
     {
       "issuer": "SAVERS VALUE VLG INC",
@@ -40012,18 +40537,18 @@
     },
     {
       "issuer": "SPDR INDEX SHS FDS",
-      "class": "STATE STREET SPD",
+      "class": "ST STR INFRA ETF",
       "cusip": "78463X855",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 142200,
       "value_usd": 10765962,
-      "shares_prior": 142200,
-      "value_usd_prior": 10810044,
-      "delta_shares": 0,
-      "delta_value_usd": -44082,
-      "action": "hold"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 142200,
+      "delta_value_usd": 10765962,
+      "action": "new"
     },
     {
       "issuer": "OOMA INC",
@@ -40234,6 +40759,21 @@
       "delta_shares": -308308,
       "delta_value_usd": -7132567,
       "action": "trim"
+    },
+    {
+      "issuer": "AVALYN PHARMACEUTICALS INC",
+      "class": "COM SHS",
+      "cusip": "05348Y105",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Healthcare",
+      "shares": 318995,
+      "value_usd": 10501315,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 318995,
+      "delta_value_usd": 10501315,
+      "action": "new"
     },
     {
       "issuer": "SAFE BULKERS INC",
@@ -40521,6 +41061,21 @@
       "action": "add"
     },
     {
+      "issuer": "FERVO ENERGY CO",
+      "class": "CL A COM",
+      "cusip": "31556C106",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 343068,
+      "value_usd": 10027878,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 343068,
+      "delta_value_usd": 10027878,
+      "action": "new"
+    },
+    {
       "issuer": "PACIFIC BIOSCIENCES CALIF IN",
       "class": "COM",
       "cusip": "69404D108",
@@ -40564,6 +41119,36 @@
       "delta_shares": -23000,
       "delta_value_usd": -3555583,
       "action": "trim"
+    },
+    {
+      "issuer": "ARXIS INC",
+      "class": "CL A COM",
+      "cusip": "04339D105",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 215610,
+      "value_usd": 9948245,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 215610,
+      "delta_value_usd": 9948245,
+      "action": "new"
+    },
+    {
+      "issuer": "GOLAR LNG LTD",
+      "class": "NOTE  2.750%12/1",
+      "cusip": "38046YAD3",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 8700000,
+      "value_usd": 9896443,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 8700000,
+      "delta_value_usd": 9896443,
+      "action": "new"
     },
     {
       "issuer": "C4 THERAPEUTICS INC",
@@ -40654,6 +41239,21 @@
       "delta_shares": 27817,
       "delta_value_usd": 661065,
       "action": "add"
+    },
+    {
+      "issuer": "CELCUITY INC",
+      "class": "NOTE  0.250% 8/0",
+      "cusip": "15102KAB6",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Other",
+      "shares": 8500000,
+      "value_usd": 9672658,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 8500000,
+      "delta_value_usd": 9672658,
+      "action": "new"
     },
     {
       "issuer": "SK TELECOM CO LTD",
@@ -40776,6 +41376,21 @@
       "action": "add"
     },
     {
+      "issuer": "NCL CORP LTD",
+      "class": "NOTE  0.875% 4/1",
+      "cusip": "62886HBT7",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Other",
+      "shares": 8550000,
+      "value_usd": 9521534,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 8550000,
+      "delta_value_usd": 9521534,
+      "action": "new"
+    },
+    {
       "issuer": "SHIFT4 PMTS INC",
       "class": "6 SER A CNV PREF",
       "cusip": "82452J307",
@@ -40864,6 +41479,21 @@
       "delta_shares": -12018,
       "delta_value_usd": 781541,
       "action": "trim"
+    },
+    {
+      "issuer": "BLACKSTONE DIGITAL INFRASTRU",
+      "class": "COMMON STOCK",
+      "cusip": "09264B107",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 430074,
+      "value_usd": 9302501,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 430074,
+      "delta_value_usd": 9302501,
+      "action": "new"
     },
     {
       "issuer": "RBB BANCORP",
@@ -41061,6 +41691,21 @@
       "action": "add"
     },
     {
+      "issuer": "NATIONAL HEALTHCARE PPTYS IN",
+      "class": "COM CLASS A",
+      "cusip": "42226B501",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 612615,
+      "value_usd": 8974810,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 612615,
+      "delta_value_usd": 8974810,
+      "action": "new"
+    },
+    {
       "issuer": "CLIMB BIO INC",
       "class": "COM",
       "cusip": "28658R106",
@@ -41209,6 +41854,21 @@
       "delta_shares": 82485,
       "delta_value_usd": 1699997,
       "action": "add"
+    },
+    {
+      "issuer": "GDS HLDGS LTD",
+      "class": "NOTE  2.250% 6/0",
+      "cusip": "36165LAD0",
+      "put_call": "",
+      "share_type": "PRN",
+      "sector": "Other",
+      "shares": 7300000,
+      "value_usd": 8830628,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 7300000,
+      "delta_value_usd": 8830628,
+      "action": "new"
     },
     {
       "issuer": "IMMUNOCORE HLDGS PLC",
@@ -41422,18 +42082,18 @@
     },
     {
       "issuer": "SPDR SERIES TRUST",
-      "class": "STATE STREET SPD",
+      "class": "ST STR R1K LOWV",
       "cusip": "78468R804",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 47392,
       "value_usd": 8599752,
-      "shares_prior": 51697,
-      "value_usd_prior": 9207236,
-      "delta_shares": -4305,
-      "delta_value_usd": -607484,
-      "action": "trim"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 47392,
+      "delta_value_usd": 8599752,
+      "action": "new"
     },
     {
       "issuer": "BANKWELL FINL GROUP INC",
@@ -41524,6 +42184,21 @@
       "delta_shares": 14852,
       "delta_value_usd": 2386243,
       "action": "add"
+    },
+    {
+      "issuer": "X-ENERGY INC",
+      "class": "COM CL A",
+      "cusip": "98386P102",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Energy",
+      "shares": 464138,
+      "value_usd": 8521574,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 464138,
+      "delta_value_usd": 8521574,
+      "action": "new"
     },
     {
       "issuer": "POLESTAR AUTOMOTIVE HLDG UK",
@@ -42532,18 +43207,18 @@
     },
     {
       "issuer": "SPDR SERIES TRUST",
-      "class": "BLOOMBERG INTL",
+      "class": "SST SPDR BLOOMBE",
       "cusip": "78464A151",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 238685,
       "value_usd": 7442198,
-      "shares_prior": 215196,
-      "value_usd_prior": 6688292,
-      "delta_shares": 23489,
-      "delta_value_usd": 753906,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 238685,
+      "delta_value_usd": 7442198,
+      "action": "new"
     },
     {
       "issuer": "TENAX THERAPEUTICS INC",
@@ -42592,18 +43267,18 @@
     },
     {
       "issuer": "SELECT SECTOR SPDR TR",
-      "class": "STATE STREET MAT",
+      "class": "ST STR MATER ETF",
       "cusip": "81369Y100",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 144538,
       "value_usd": 7346867,
-      "shares_prior": 109021,
-      "value_usd_prior": 5447779,
-      "delta_shares": 35517,
-      "delta_value_usd": 1899088,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 144538,
+      "delta_value_usd": 7346867,
+      "action": "new"
     },
     {
       "issuer": "ICL GROUP LTD",
@@ -42666,7 +43341,7 @@
       "action": "add"
     },
     {
-      "issuer": "AMC NETWORKS INC",
+      "issuer": "AMC GLOBAL MEDIA INC",
       "class": "CL A",
       "cusip": "00164V103",
       "put_call": "",
@@ -42982,18 +43657,18 @@
     },
     {
       "issuer": "SPDR INDEX SHS FDS",
-      "class": "STATE STREET SPD",
+      "class": "ST STR SP GLBDIV",
       "cusip": "78463X459",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 87600,
       "value_usd": 6999941,
-      "shares_prior": 87600,
-      "value_usd_prior": 6758533,
-      "delta_shares": 0,
-      "delta_value_usd": 241408,
-      "action": "hold"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 87600,
+      "delta_value_usd": 6999941,
+      "action": "new"
     },
     {
       "issuer": "OPEN LENDING CORP",
@@ -43189,6 +43864,21 @@
       "delta_shares": 166617,
       "delta_value_usd": 81615,
       "action": "add"
+    },
+    {
+      "issuer": "AEVEX CORP",
+      "class": "COM CL A",
+      "cusip": "00835T107",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 329580,
+      "value_usd": 6884926,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 329580,
+      "delta_value_usd": 6884926,
+      "action": "new"
     },
     {
       "issuer": "STRATTEC SEC CORP",
@@ -43401,7 +44091,7 @@
       "action": "add"
     },
     {
-      "issuer": "NATIONAL RESH CORP",
+      "issuer": "NRC HEALTH",
       "class": "COM NEW",
       "cusip": "637372202",
       "put_call": "",
@@ -43476,7 +44166,7 @@
       "action": "add"
     },
     {
-      "issuer": "SHOE CARNIVAL INC",
+      "issuer": "SHOE STA GROUP INC",
       "class": "COM",
       "cusip": "824889109",
       "put_call": "",
@@ -43612,18 +44302,18 @@
     },
     {
       "issuer": "SELECT SECTOR SPDR TR",
-      "class": "STATE STREET FIN",
+      "class": "ST STR FINL ETF",
       "cusip": "81369Y605",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 116246,
       "value_usd": 6231948,
-      "shares_prior": 1194323,
-      "value_usd_prior": 58963727,
-      "delta_shares": -1078077,
-      "delta_value_usd": -52731779,
-      "action": "trim"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 116246,
+      "delta_value_usd": 6231948,
+      "action": "new"
     },
     {
       "issuer": "ROCKET PHARMACEUTICALS INC",
@@ -44032,18 +44722,18 @@
     },
     {
       "issuer": "PETCO HEALTH & WELLNESS CO I",
-      "class": "COM",
+      "class": "CL A COM",
       "cusip": "71601V105",
       "put_call": "",
       "share_type": "SH",
       "sector": "Other",
       "shares": 2153278,
       "value_usd": 5856916,
-      "shares_prior": 2068855,
-      "value_usd_prior": 5751417,
-      "delta_shares": 84423,
-      "delta_value_usd": 105499,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 2153278,
+      "delta_value_usd": 5856916,
+      "action": "new"
     },
     {
       "issuer": "PHARVARIS N V",
@@ -44826,6 +45516,21 @@
       "action": "add"
     },
     {
+      "issuer": "Z SQUARED INC",
+      "class": "COM NEW",
+      "cusip": "98878K108",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 498517,
+      "value_usd": 5274310,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 498517,
+      "delta_value_usd": 5274310,
+      "action": "new"
+    },
+    {
       "issuer": "SUMMIT MIDSTREAM CORPORATION",
       "class": "COM",
       "cusip": "86614G101",
@@ -45186,7 +45891,7 @@
       "action": "add"
     },
     {
-      "issuer": "CENTRAIS ELET BRAS SA",
+      "issuer": "AXIA ENERGIA SA",
       "class": "SPON ADS PF CL C",
       "cusip": "15236F100",
       "put_call": "",
@@ -45426,7 +46131,7 @@
       "action": "add"
     },
     {
-      "issuer": "LOVESAC COMPANY",
+      "issuer": "LOVESAC CO",
       "class": "COM",
       "cusip": "54738L109",
       "put_call": "",
@@ -46071,6 +46776,21 @@
       "action": "add"
     },
     {
+      "issuer": "YESWAY INC",
+      "class": "COM CL A",
+      "cusip": "98585C100",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 218577,
+      "value_usd": 4437113,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 218577,
+      "delta_value_usd": 4437113,
+      "action": "new"
+    },
+    {
       "issuer": "UTAH MED PRODS INC",
       "class": "COM",
       "cusip": "917488108",
@@ -46219,6 +46939,21 @@
       "delta_shares": 58246,
       "delta_value_usd": 23444,
       "action": "add"
+    },
+    {
+      "issuer": "SUNCRETE INC",
+      "class": "COM SHS CL A",
+      "cusip": "86723E104",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 193441,
+      "value_usd": 4358226,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 193441,
+      "delta_value_usd": 4358226,
+      "action": "new"
     },
     {
       "issuer": "MNTN INC",
@@ -46731,6 +47466,21 @@
       "action": "add"
     },
     {
+      "issuer": "ALAMAR BIOSCIENCES INC",
+      "class": "COMMON STOCK",
+      "cusip": "010911105",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Healthcare",
+      "shares": 145059,
+      "value_usd": 3929648,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 145059,
+      "delta_value_usd": 3929648,
+      "action": "new"
+    },
+    {
       "issuer": "ANGEL OAK MORTGAGE REIT INC",
       "class": "COM",
       "cusip": "03464Y108",
@@ -46911,19 +47661,19 @@
       "action": "trim"
     },
     {
-      "issuer": "GCI LIBERTY INC",
-      "class": "COM SER A",
+      "issuer": "LIBERTY CAP CORP",
+      "class": "SER A GCI GROUP",
       "cusip": "36164V602",
       "put_call": "",
       "share_type": "SH",
       "sector": "Other",
       "shares": 175280,
       "value_usd": 3838632,
-      "shares_prior": 67631,
-      "value_usd_prior": 2492202,
-      "delta_shares": 107649,
-      "delta_value_usd": 1346430,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 175280,
+      "delta_value_usd": 3838632,
+      "action": "new"
     },
     {
       "issuer": "PRIORITY TECHNOLOGY HLDGS IN",
@@ -47361,6 +48111,21 @@
       "action": "trim"
     },
     {
+      "issuer": "AIAI HOLDINGS CORP",
+      "class": "COM CL A",
+      "cusip": "008933103",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 256421,
+      "value_usd": 3566816,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 256421,
+      "delta_value_usd": 3566816,
+      "action": "new"
+    },
+    {
       "issuer": "LIFECORE BIOMEDICAL INC",
       "class": "COM",
       "cusip": "514766104",
@@ -47706,6 +48471,21 @@
       "action": "add"
     },
     {
+      "issuer": "FIRST NORTHN CMNTY BANCORP",
+      "class": "COM",
+      "cusip": "335925103",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Financials",
+      "shares": 180974,
+      "value_usd": 3246674,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 180974,
+      "delta_value_usd": 3246674,
+      "action": "new"
+    },
+    {
       "issuer": "UP FINTECH HLDG LTD",
       "class": "SPONSORED ADS",
       "cusip": "91531W106",
@@ -47946,7 +48726,7 @@
       "action": "add"
     },
     {
-      "issuer": "KINGSWAY FINL SVCS INC",
+      "issuer": "KINGSWAY CORP",
       "class": "COM NEW",
       "cusip": "496904202",
       "put_call": "",
@@ -48067,18 +48847,18 @@
     },
     {
       "issuer": "SPDR SERIES TRUST",
-      "class": "STATE STREET SPD",
+      "class": "ST STR CORPO ETF",
       "cusip": "78464A144",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 105032,
       "value_usd": 3050129,
-      "shares_prior": 73953,
-      "value_usd_prior": 2146856,
-      "delta_shares": 31079,
-      "delta_value_usd": 903273,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 105032,
+      "delta_value_usd": 3050129,
+      "action": "new"
     },
     {
       "issuer": "OHIO VY BANC CORP",
@@ -48306,6 +49086,36 @@
       "action": "trim"
     },
     {
+      "issuer": "HMH HLDG INC",
+      "class": "CL A",
+      "cusip": "40445M100",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 150759,
+      "value_usd": 2825224,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 150759,
+      "delta_value_usd": 2825224,
+      "action": "new"
+    },
+    {
+      "issuer": "HEMAB THERAPEUTICS HLDGS INC",
+      "class": "COM SHS",
+      "cusip": "423494103",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Healthcare",
+      "shares": 76900,
+      "value_usd": 2824537,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 76900,
+      "delta_value_usd": 2824537,
+      "action": "new"
+    },
+    {
       "issuer": "GEMINI SPACE STA INC",
       "class": "CL A COM",
       "cusip": "36866J105",
@@ -48427,18 +49237,18 @@
     },
     {
       "issuer": "SPDR INDEX SHS FDS",
-      "class": "STATE STREET SPD",
+      "class": "ST STR EU 50 ETF",
       "cusip": "78463X202",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 39968,
       "value_usd": 2745002,
-      "shares_prior": 43410,
-      "value_usd_prior": 2694893,
-      "delta_shares": -3442,
-      "delta_value_usd": 50109,
-      "action": "trim"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 39968,
+      "delta_value_usd": 2745002,
+      "action": "new"
     },
     {
       "issuer": "SPRUCE BIOSCIENCES INC",
@@ -48681,6 +49491,21 @@
       "action": "add"
     },
     {
+      "issuer": "ELMET GROUP CO (THE)",
+      "class": "COMMON STOCK",
+      "cusip": "289395105",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 133738,
+      "value_usd": 2639988,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 133738,
+      "delta_value_usd": 2639988,
+      "action": "new"
+    },
+    {
       "issuer": "STAR BULK CARRIERS CORP.",
       "class": "SHS PAR",
       "cusip": "Y8162K204",
@@ -48831,19 +49656,34 @@
       "action": "add"
     },
     {
+      "issuer": "DIGIMARC CORP",
+      "class": "COM",
+      "cusip": "25382K100",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 315208,
+      "value_usd": 2591010,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 315208,
+      "delta_value_usd": 2591010,
+      "action": "new"
+    },
+    {
       "issuer": "SELECT SECTOR SPDR TR",
-      "class": "STATE STREET REA",
+      "class": "ST STR REAL ETF",
       "cusip": "81369Y860",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 58324,
       "value_usd": 2568006,
-      "shares_prior": 61005,
-      "value_usd_prior": 2490834,
-      "delta_shares": -2681,
-      "delta_value_usd": 77172,
-      "action": "trim"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 58324,
+      "delta_value_usd": 2568006,
+      "action": "new"
     },
     {
       "issuer": "STELLANTIS N.V",
@@ -48904,6 +49744,21 @@
       "delta_shares": -813,
       "delta_value_usd": -626245,
       "action": "trim"
+    },
+    {
+      "issuer": "GMR SOLUTIONS INC",
+      "class": "COM CL A",
+      "cusip": "38013D106",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 164450,
+      "value_usd": 2542397,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 164450,
+      "delta_value_usd": 2542397,
+      "action": "new"
     },
     {
       "issuer": "DOMO INC",
@@ -49146,6 +50001,21 @@
       "action": "trim"
     },
     {
+      "issuer": "BOOST RUN INC",
+      "class": "ORD SHS CL A",
+      "cusip": "09940T100",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 62900,
+      "value_usd": 2441149,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 62900,
+      "delta_value_usd": 2441149,
+      "action": "new"
+    },
+    {
       "issuer": "OMEGA FLEX INC",
       "class": "COM",
       "cusip": "682095104",
@@ -49282,18 +50152,18 @@
     },
     {
       "issuer": "SPDR SERIES TRUST",
-      "class": "STATE STREET SPD",
+      "class": "ST STR SP500DIV",
       "cusip": "78468R788",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 49021,
       "value_usd": 2338792,
-      "shares_prior": 39768,
-      "value_usd_prior": 1810239,
-      "delta_shares": 9253,
-      "delta_value_usd": 528553,
-      "action": "add"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 49021,
+      "delta_value_usd": 2338792,
+      "action": "new"
     },
     {
       "issuer": "OP BANCORP",
@@ -50601,7 +51471,7 @@
       "action": "add"
     },
     {
-      "issuer": "ANGEL STUDIOS INC",
+      "issuer": "ANGEL STUDIOS INC.",
       "class": "CL A COM",
       "cusip": "034948109",
       "put_call": "",
@@ -50734,6 +51604,21 @@
       "delta_shares": 335600,
       "delta_value_usd": 1152474,
       "action": "add"
+    },
+    {
+      "issuer": "HAWKEYE 360 INC",
+      "class": "COM SHS",
+      "cusip": "420201105",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 82000,
+      "value_usd": 1658040,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 82000,
+      "delta_value_usd": 1658040,
+      "action": "new"
     },
     {
       "issuer": "NOVA LTD",
@@ -51216,6 +52101,21 @@
       "action": "trim"
     },
     {
+      "issuer": "ODYSSEY THERAPEUTICS INC",
+      "class": "COMMON STOCK",
+      "cusip": "67613T104",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Healthcare",
+      "shares": 78950,
+      "value_usd": 1477155,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 78950,
+      "delta_value_usd": 1477155,
+      "action": "new"
+    },
+    {
       "issuer": "FREIGHTCAR AMER INC",
       "class": "COM",
       "cusip": "357023100",
@@ -51244,6 +52144,21 @@
       "delta_shares": -141895,
       "delta_value_usd": -266927,
       "action": "trim"
+    },
+    {
+      "issuer": "SEAPORT THERAPEUTICS INC",
+      "class": "COMMON STOCK",
+      "cusip": "81221K108",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Healthcare",
+      "shares": 66650,
+      "value_usd": 1447638,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 66650,
+      "delta_value_usd": 1447638,
+      "action": "new"
     },
     {
       "issuer": "HSBC HLDGS PLC",
@@ -52056,7 +52971,7 @@
       "action": "add"
     },
     {
-      "issuer": "ENHANCED GROUP INC COMMON STOCK USD",
+      "issuer": "ENHANCED GROUP INC",
       "class": "COM CL A",
       "cusip": "29333R107",
       "put_call": "",
@@ -52113,6 +53028,21 @@
       "value_usd_prior": 0,
       "delta_shares": 165700,
       "delta_value_usd": 942833,
+      "action": "new"
+    },
+    {
+      "issuer": "IMMUNIC INC",
+      "class": "COM NEW",
+      "cusip": "4525EP200",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 61259,
+      "value_usd": 941551,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 61259,
+      "delta_value_usd": 941551,
       "action": "new"
     },
     {
@@ -52177,18 +53107,18 @@
     },
     {
       "issuer": "SPDR SERIES TRUST",
-      "class": "BLOOMBERG INTL T",
+      "class": "ST INTL BBG ETF",
       "cusip": "78464A516",
       "put_call": "",
       "share_type": "SH",
       "sector": "Fund/ETF",
       "shares": 42776,
       "value_usd": 927384,
-      "shares_prior": 1096126,
-      "value_usd_prior": 24059966,
-      "delta_shares": -1053350,
-      "delta_value_usd": -23132582,
-      "action": "trim"
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 42776,
+      "delta_value_usd": 927384,
+      "action": "new"
     },
     {
       "issuer": "HOOKER FURNISHINGS CORPORATI",
@@ -52476,7 +53406,7 @@
       "action": "add"
     },
     {
-      "issuer": "NL INDS INC",
+      "issuer": "NLI HOLDINGS INC",
       "class": "COM NEW",
       "cusip": "629156407",
       "put_call": "",
@@ -52639,6 +53569,21 @@
       "delta_shares": 1088,
       "delta_value_usd": 67357,
       "action": "add"
+    },
+    {
+      "issuer": "MOBIA MED INC",
+      "class": "COMMON STOCK",
+      "cusip": "60705V103",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 54850,
+      "value_usd": 734990,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 54850,
+      "delta_value_usd": 734990,
+      "action": "new"
     },
     {
       "issuer": "EASTERN CO",
@@ -52821,12 +53766,12 @@
       "action": "trim"
     },
     {
-      "issuer": "RYVYL INC",
+      "issuer": "RTB DIGITAL INC",
       "class": "COM SHS",
       "cusip": "39366L406",
       "put_call": "",
       "share_type": "SH",
-      "sector": "Other",
+      "sector": "Technology",
       "shares": 44979,
       "value_usd": 678283,
       "shares_prior": 0,
@@ -53121,6 +54066,21 @@
       "action": "trim"
     },
     {
+      "issuer": "SUJA LIFE INC",
+      "class": "COM SHS CL A",
+      "cusip": "86508F102",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 59700,
+      "value_usd": 606552,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 59700,
+      "delta_value_usd": 606552,
+      "action": "new"
+    },
+    {
       "issuer": "OWLET INC",
       "class": "CL A NEW",
       "cusip": "69120X206",
@@ -53181,7 +54141,7 @@
       "action": "add"
     },
     {
-      "issuer": "SKILLZ INC",
+      "issuer": "FIRY INC",
       "class": "COM CL A",
       "cusip": "83067L208",
       "put_call": "",
@@ -54261,6 +55221,21 @@
       "action": "hold"
     },
     {
+      "issuer": "CUE BIOPHARMA INC",
+      "class": "COM",
+      "cusip": "22978P205",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Healthcare",
+      "shares": 14176,
+      "value_usd": 447395,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 14176,
+      "delta_value_usd": 447395,
+      "action": "new"
+    },
+    {
       "issuer": "PLDT INC",
       "class": "SPONSORED ADR",
       "cusip": "69344D408",
@@ -54379,6 +55354,21 @@
       "delta_shares": -479917,
       "delta_value_usd": -193269,
       "action": "trim"
+    },
+    {
+      "issuer": "LINCOLN INTL INC",
+      "class": "CL A",
+      "cusip": "533714101",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 17950,
+      "value_usd": 435826,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 17950,
+      "delta_value_usd": 435826,
+      "action": "new"
     },
     {
       "issuer": "ARCOS DORADOS HLDGS INC",
@@ -54966,6 +55956,21 @@
       "action": "trim"
     },
     {
+      "issuer": "WHEELS UP EXPERIENCE INC",
+      "class": "COM CL A",
+      "cusip": "96328L304",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 41807,
+      "value_usd": 375009,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 41807,
+      "delta_value_usd": 375009,
+      "action": "new"
+    },
+    {
       "issuer": "PUBLIC POL HLDG CO INC",
       "class": "ORD SHS",
       "cusip": "744430208",
@@ -55219,6 +56224,21 @@
       "delta_shares": -50,
       "delta_value_usd": 46440,
       "action": "trim"
+    },
+    {
+      "issuer": "SILVER BOW MNG CORP",
+      "class": "COMMON SHARES",
+      "cusip": "827427105",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 50300,
+      "value_usd": 340028,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 50300,
+      "delta_value_usd": 340028,
+      "action": "new"
     },
     {
       "issuer": "NOODLES & CO",
@@ -55656,7 +56676,22 @@
       "action": "trim"
     },
     {
-      "issuer": "ALT5 SIGMA CORP",
+      "issuer": "CHRONOSCALE CORP",
+      "class": "COMMON STOCK",
+      "cusip": "170924104",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 13838,
+      "value_usd": 307480,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 13838,
+      "delta_value_usd": 307480,
+      "action": "new"
+    },
+    {
+      "issuer": "AI FINL CORP",
       "class": "COM",
       "cusip": "47089W104",
       "put_call": "",
@@ -55686,7 +56721,7 @@
       "action": "hold"
     },
     {
-      "issuer": "SRX HEALTH SOLUTIONS INC.",
+      "issuer": "SRX GLOBAL INC",
       "class": "COM NEW",
       "cusip": "08771Y402",
       "put_call": "",
@@ -55941,6 +56976,21 @@
       "action": "hold"
     },
     {
+      "issuer": "BARK INC",
+      "class": "COM NEW",
+      "cusip": "68622E203",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 28550,
+      "value_usd": 284929,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 28550,
+      "delta_value_usd": 284929,
+      "action": "new"
+    },
+    {
       "issuer": "RANI THERAPEUTICS HLDGS INC",
       "class": "COM CL A",
       "cusip": "753018100",
@@ -56016,7 +57066,7 @@
       "action": "hold"
     },
     {
-      "issuer": "STANDARD LITHIUM LTD",
+      "issuer": "STANDARD LITHIUM CORP",
       "class": "COM",
       "cusip": "853606101",
       "put_call": "",
@@ -56196,7 +57246,7 @@
       "action": "trim"
     },
     {
-      "issuer": "THE BEAUTY HEALTH COMPANY",
+      "issuer": "SKINHEALTH SYSTEMS INC",
       "class": "COM CL A",
       "cusip": "88331L108",
       "put_call": "",
@@ -56856,6 +57906,21 @@
       "action": "hold"
     },
     {
+      "issuer": "RARE EARTHS AMERICAS INC",
+      "class": "COMMON STOCK",
+      "cusip": "75381A108",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 14800,
+      "value_usd": 226144,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 14800,
+      "delta_value_usd": 226144,
+      "action": "new"
+    },
+    {
       "issuer": "HF FOODS GROUP INC",
       "class": "COM",
       "cusip": "40417F109",
@@ -56932,7 +57997,7 @@
     },
     {
       "issuer": "ISHARES TR",
-      "class": "MSCI WORLD SMALL",
+      "class": "MSCI WO SMAL ETF",
       "cusip": "46438G430",
       "put_call": "",
       "share_type": "SH",
@@ -57831,6 +58896,21 @@
       "action": "hold"
     },
     {
+      "issuer": "NAKAMOTO INC",
+      "class": "COM",
+      "cusip": "49457M205",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 46471,
+      "value_usd": 183560,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 46471,
+      "delta_value_usd": 183560,
+      "action": "new"
+    },
+    {
       "issuer": "GOSSAMER BIO INC",
       "class": "COM",
       "cusip": "38341P102",
@@ -58069,6 +59149,21 @@
       "delta_shares": 28500,
       "delta_value_usd": 81474,
       "action": "add"
+    },
+    {
+      "issuer": "CARPARTS COM INC",
+      "class": "COM",
+      "cusip": "14427M206",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 26477,
+      "value_usd": 170512,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 26477,
+      "delta_value_usd": 170512,
+      "action": "new"
     },
     {
       "issuer": "SUI GROUP HOLDINGS LIMITED",
@@ -58369,6 +59464,21 @@
       "delta_shares": 0,
       "delta_value_usd": 23164,
       "action": "hold"
+    },
+    {
+      "issuer": "KALA BIO INC",
+      "class": "COM",
+      "cusip": "483119301",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 88570,
+      "value_usd": 153226,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 88570,
+      "delta_value_usd": 153226,
+      "action": "new"
     },
     {
       "issuer": "KYNTRA BIO INC",
@@ -58746,12 +59856,12 @@
       "action": "add"
     },
     {
-      "issuer": "U S ENERGY CORP DEL",
+      "issuer": "BIG SKY INDL INC",
       "class": "COM",
       "cusip": "911805307",
       "put_call": "",
       "share_type": "SH",
-      "sector": "Energy",
+      "sector": "Other",
       "shares": 124571,
       "value_usd": 137028,
       "shares_prior": 124571,
@@ -58834,6 +59944,21 @@
       "delta_shares": 869,
       "delta_value_usd": 19769,
       "action": "add"
+    },
+    {
+      "issuer": "PLUS THERAPEUTICS INC",
+      "class": "COM NEW",
+      "cusip": "72941H806",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Healthcare",
+      "shares": 30853,
+      "value_usd": 134828,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 30853,
+      "delta_value_usd": 134828,
+      "action": "new"
     },
     {
       "issuer": "PIONEER PWR SOLUTIONS INC",
@@ -58926,7 +60051,7 @@
       "action": "add"
     },
     {
-      "issuer": "SHARPS TECHNOLOGY INC",
+      "issuer": "SKYAI INC",
       "class": "COM",
       "cusip": "82003F309",
       "put_call": "",
@@ -59076,12 +60201,12 @@
       "action": "trim"
     },
     {
-      "issuer": "NOVABAY PHARMACEUTICALS INC",
+      "issuer": "STABLECOIN DEV CORP",
       "class": "COM SHS",
       "cusip": "66987P508",
       "put_call": "",
       "share_type": "SH",
-      "sector": "Healthcare",
+      "sector": "Other",
       "shares": 117154,
       "value_usd": 123012,
       "shares_prior": 117154,
@@ -59089,6 +60214,21 @@
       "delta_shares": 0,
       "delta_value_usd": -51547,
       "action": "hold"
+    },
+    {
+      "issuer": "LUNAI BIOWORKS INC",
+      "class": "COM SHS",
+      "cusip": "29350E302",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 37537,
+      "value_usd": 122746,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 37537,
+      "delta_value_usd": 122746,
+      "action": "new"
     },
     {
       "issuer": "PIXELWORKS INC",
@@ -59301,6 +60441,21 @@
       "action": "hold"
     },
     {
+      "issuer": "MOBIX LABS INC",
+      "class": "COM CL A NEW",
+      "cusip": "60743G209",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 52630,
+      "value_usd": 110523,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 52630,
+      "delta_value_usd": 110523,
+      "action": "new"
+    },
+    {
       "issuer": "MYOMO INC",
       "class": "COM NEW",
       "cusip": "62857J201",
@@ -59466,12 +60621,12 @@
       "action": "add"
     },
     {
-      "issuer": "MAWSON INFRASTRUCTURE GROUP",
+      "issuer": "BIG DIGITAL ENERGY INC",
       "class": "COM NEW",
       "cusip": "57778N406",
       "put_call": "",
       "share_type": "SH",
-      "sector": "Other",
+      "sector": "Energy",
       "shares": 11800,
       "value_usd": 105256,
       "shares_prior": 0,
@@ -59524,6 +60679,21 @@
       "delta_shares": -110163,
       "delta_value_usd": -1768625,
       "action": "trim"
+    },
+    {
+      "issuer": "CARDLYTICS INC",
+      "class": "COM NEW",
+      "cusip": "14161W303",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 22768,
+      "value_usd": 102228,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 22768,
+      "delta_value_usd": 102228,
+      "action": "new"
     },
     {
       "issuer": "AWARE INC MASS",
@@ -59886,6 +61056,21 @@
       "action": "hold"
     },
     {
+      "issuer": "TRILLER GROUP INC",
+      "class": "COM",
+      "cusip": "895970309",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 31250,
+      "value_usd": 84688,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 31250,
+      "delta_value_usd": 84688,
+      "action": "new"
+    },
+    {
       "issuer": "SIEBERT FINL CORP",
       "class": "COM",
       "cusip": "826176109",
@@ -59991,7 +61176,7 @@
       "action": "hold"
     },
     {
-      "issuer": "ALLBIRDS INC",
+      "issuer": "SMARTBIRD INC",
       "class": "CL A NEW",
       "cusip": "01675A208",
       "put_call": "",
@@ -60126,7 +61311,7 @@
       "action": "hold"
     },
     {
-      "issuer": "BLOCKCHAIN DIGITAL INFRSTR I",
+      "issuer": "AIB DATA CENTERS INC",
       "class": "COM",
       "cusip": "093919108",
       "put_call": "",
@@ -60321,12 +61506,12 @@
       "action": "trim"
     },
     {
-      "issuer": "HOTH THERAPEUTICS INC",
+      "issuer": "ROCKET ONE INC",
       "class": "COM NEW",
       "cusip": "44148G204",
       "put_call": "",
       "share_type": "SH",
-      "sector": "Healthcare",
+      "sector": "Other",
       "shares": 63939,
       "value_usd": 63939,
       "shares_prior": 63939,
@@ -60409,6 +61594,21 @@
       "delta_shares": 0,
       "delta_value_usd": -7236,
       "action": "hold"
+    },
+    {
+      "issuer": "SCYNEXIS INC",
+      "class": "COM",
+      "cusip": "811292309",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 15090,
+      "value_usd": 61416,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 15090,
+      "delta_value_usd": 61416,
+      "action": "new"
     },
     {
       "issuer": "LOTUS TECHNOLOGY INC",
@@ -60771,6 +61971,21 @@
       "action": "hold"
     },
     {
+      "issuer": "UPLAND SOFTWARE INC",
+      "class": "COM NEW",
+      "cusip": "91544A208",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Technology",
+      "shares": 10994,
+      "value_usd": 51342,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 10994,
+      "delta_value_usd": 51342,
+      "action": "new"
+    },
+    {
       "issuer": "IRIDEX CORP",
       "class": "COM",
       "cusip": "462684101",
@@ -60936,8 +62151,8 @@
       "action": "hold"
     },
     {
-      "issuer": "VOLITIONRX LTD COMMON STOCK USD 0.001",
-      "class": "COM",
+      "issuer": "VOLITIONRX LTD",
+      "class": "COMMON STK",
       "cusip": "928661206",
       "put_call": "",
       "share_type": "SH",
@@ -61326,6 +62541,21 @@
       "action": "hold"
     },
     {
+      "issuer": "ALL IN FUTURETECH ALLIANCE I",
+      "class": "COM",
+      "cusip": "019170208",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 17157,
+      "value_usd": 38260,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 17157,
+      "delta_value_usd": 38260,
+      "action": "new"
+    },
+    {
       "issuer": "GLIMPSE GROUP INC",
       "class": "COM",
       "cusip": "37892C106",
@@ -61459,6 +62689,21 @@
       "delta_shares": -44180,
       "delta_value_usd": -147491,
       "action": "trim"
+    },
+    {
+      "issuer": "VIDA GLOBAL INC",
+      "class": "COM CL A",
+      "cusip": "92649G108",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 11800,
+      "value_usd": 33040,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 11800,
+      "delta_value_usd": 33040,
+      "action": "new"
     },
     {
       "issuer": "INNSUITES HOSPITALITY TR",
@@ -62016,7 +63261,7 @@
       "action": "hold"
     },
     {
-      "issuer": "POLAR PWR INC",
+      "issuer": "POLAR PWR INC.",
       "class": "COM NEW",
       "cusip": "73102V204",
       "put_call": "",
@@ -62436,6 +63681,21 @@
       "action": "hold"
     },
     {
+      "issuer": "SENTI BIOSCIENCES HOLDINGS I",
+      "class": "COM NEW",
+      "cusip": "816944102",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Healthcare",
+      "shares": 10010,
+      "value_usd": 11011,
+      "shares_prior": 0,
+      "value_usd_prior": 0,
+      "delta_shares": 10010,
+      "delta_value_usd": 11011,
+      "action": "new"
+    },
+    {
       "issuer": "CURIS INC",
       "class": "COM",
       "cusip": "231269309",
@@ -62693,6 +63953,21 @@
       "action": "exit"
     },
     {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "STATE STREET SPD",
+      "cusip": "78464A664",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 68517636,
+      "value_usd_prior": 1802013827,
+      "delta_shares": -68517636,
+      "delta_value_usd": -1802013827,
+      "action": "exit"
+    },
+    {
       "issuer": "COTERRA ENERGY INC",
       "class": "COM",
       "cusip": "127097103",
@@ -62705,6 +63980,36 @@
       "value_usd_prior": 1712665303,
       "delta_shares": -48738341,
       "delta_value_usd": -1712665303,
+      "action": "exit"
+    },
+    {
+      "issuer": "CARNIVAL CORP",
+      "class": "COMMON STOCK",
+      "cusip": "143658300",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Consumer Discretionary",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 50238525,
+      "value_usd_prior": 1300173027,
+      "delta_shares": -50238525,
+      "delta_value_usd": -1300173027,
+      "action": "exit"
+    },
+    {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "STATE STREET SPD",
+      "cusip": "78468R622",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 11074520,
+      "value_usd_prior": 1060053054,
+      "delta_shares": -11074520,
+      "delta_value_usd": -1060053054,
       "action": "exit"
     },
     {
@@ -62738,6 +64043,66 @@
       "action": "exit"
     },
     {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "STATE STREET SPD",
+      "cusip": "78464A649",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 15769631,
+      "value_usd_prior": 404017946,
+      "delta_shares": -15769631,
+      "delta_value_usd": -404017946,
+      "action": "exit"
+    },
+    {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "STATE STREET SPD",
+      "cusip": "78468R101",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 12749549,
+      "value_usd_prior": 372031840,
+      "delta_shares": -12749549,
+      "delta_value_usd": -372031840,
+      "action": "exit"
+    },
+    {
+      "issuer": "SPDR INDEX SHS FDS",
+      "class": "STATE STREET SPD",
+      "cusip": "78463X889",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 7886187,
+      "value_usd_prior": 360004437,
+      "delta_shares": -7886187,
+      "delta_value_usd": -360004437,
+      "action": "exit"
+    },
+    {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "STATE STREET SPD",
+      "cusip": "78464A854",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 4685783,
+      "value_usd_prior": 358649831,
+      "delta_shares": -4685783,
+      "delta_value_usd": -358649831,
+      "action": "exit"
+    },
+    {
       "issuer": "VANGUARD SCOTTSDALE FDS",
       "class": "INTER TERM TREAS",
       "cusip": "92206C706",
@@ -62750,6 +64115,21 @@
       "value_usd_prior": 294772500,
       "delta_shares": -4950000,
       "delta_value_usd": -294772500,
+      "action": "exit"
+    },
+    {
+      "issuer": "SPDR INDEX SHS FDS",
+      "class": "STATE STREET SPD",
+      "cusip": "78463X749",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 6138513,
+      "value_usd_prior": 280959740,
+      "delta_shares": -6138513,
+      "delta_value_usd": -280959740,
       "action": "exit"
     },
     {
@@ -62798,6 +64178,21 @@
       "action": "exit"
     },
     {
+      "issuer": "SPDR INDEX SHS FDS",
+      "class": "STATE STREET SPD",
+      "cusip": "78463X509",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 4901772,
+      "value_usd_prior": 229942125,
+      "delta_shares": -4901772,
+      "delta_value_usd": -229942125,
+      "action": "exit"
+    },
+    {
       "issuer": "SEALED AIR CORP NEW",
       "class": "COM",
       "cusip": "81211K100",
@@ -62843,6 +64238,21 @@
       "action": "exit"
     },
     {
+      "issuer": "SELECT SECTOR SPDR TR",
+      "class": "STATE STREET TEC",
+      "cusip": "81369Y803",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 1445017,
+      "value_usd_prior": 192042759,
+      "delta_shares": -1445017,
+      "delta_value_usd": -192042759,
+      "action": "exit"
+    },
+    {
       "issuer": "TRI POINTE HOMES INC",
       "class": "COM",
       "cusip": "87265H109",
@@ -62873,6 +64283,21 @@
       "action": "exit"
     },
     {
+      "issuer": "SELECT SECTOR SPDR TR",
+      "class": "STATE STREET HEA",
+      "cusip": "81369Y209",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 1122816,
+      "value_usd_prior": 164616054,
+      "delta_shares": -1122816,
+      "delta_value_usd": -164616054,
+      "action": "exit"
+    },
+    {
       "issuer": "CLEARWATER ANALYTICS HLDGS I",
       "class": "CL A",
       "cusip": "185123106",
@@ -62890,6 +64315,36 @@
     {
       "issuer": "SPDR SERIES TRUST",
       "class": "STATE STREET SPD",
+      "cusip": "78464A367",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 7080029,
+      "value_usd_prior": 157318245,
+      "delta_shares": -7080029,
+      "delta_value_usd": -157318245,
+      "action": "exit"
+    },
+    {
+      "issuer": "SSGA ACTIVE ETF TR",
+      "class": "STATE STREET BLA",
+      "cusip": "78467V608",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 3653808,
+      "value_usd_prior": 146663853,
+      "delta_shares": -3653808,
+      "delta_value_usd": -146663853,
+      "action": "exit"
+    },
+    {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "STATE STREET SPD",
       "cusip": "78464A383",
       "put_call": "",
       "share_type": "SH",
@@ -62900,6 +64355,21 @@
       "value_usd_prior": 140862364,
       "delta_shares": -6291307,
       "delta_value_usd": -140862364,
+      "action": "exit"
+    },
+    {
+      "issuer": "SELECT SECTOR SPDR TR",
+      "class": "STATE STREET IND",
+      "cusip": "81369Y704",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 759214,
+      "value_usd_prior": 122787680,
+      "delta_shares": -759214,
+      "delta_value_usd": -122787680,
       "action": "exit"
     },
     {
@@ -62948,6 +64418,21 @@
       "action": "exit"
     },
     {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "STATE STREET SPD",
+      "cusip": "78464A474",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 3260348,
+      "value_usd_prior": 98038664,
+      "delta_shares": -3260348,
+      "delta_value_usd": -98038664,
+      "action": "exit"
+    },
+    {
       "issuer": "LUMENTUM HLDGS INC",
       "class": "NOTE  0.500% 6/1",
       "cusip": "55024UAF6",
@@ -62960,6 +64445,36 @@
       "value_usd_prior": 95805099,
       "delta_shares": -17862000,
       "delta_value_usd": -95805099,
+      "action": "exit"
+    },
+    {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "STATE STREET SPD",
+      "cusip": "78464A656",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 3671821,
+      "value_usd_prior": 95504064,
+      "delta_shares": -3671821,
+      "delta_value_usd": -95504064,
+      "action": "exit"
+    },
+    {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "STATE STREET SPD",
+      "cusip": "78468R853",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 1932381,
+      "value_usd_prior": 93372650,
+      "delta_shares": -1932381,
+      "delta_value_usd": -93372650,
       "action": "exit"
     },
     {
@@ -62978,6 +64493,21 @@
       "action": "exit"
     },
     {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "STATE STREET SPD",
+      "cusip": "78464A375",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 2621127,
+      "value_usd_prior": 87912600,
+      "delta_shares": -2621127,
+      "delta_value_usd": -87912600,
+      "action": "exit"
+    },
+    {
       "issuer": "VERIS RESIDENTIAL INC",
       "class": "COM",
       "cusip": "554489104",
@@ -62990,6 +64520,21 @@
       "value_usd_prior": 87048764,
       "delta_shares": -4593925,
       "delta_value_usd": -87048764,
+      "action": "exit"
+    },
+    {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "FTSE INT GVT ETF",
+      "cusip": "78464A490",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 2170666,
+      "value_usd_prior": 85958374,
+      "delta_shares": -2170666,
+      "delta_value_usd": -85958374,
       "action": "exit"
     },
     {
@@ -63038,6 +64583,21 @@
       "action": "exit"
     },
     {
+      "issuer": "SELECT SECTOR SPDR TR",
+      "class": "STATE STREET COM",
+      "cusip": "81369Y852",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 647835,
+      "value_usd_prior": 71818988,
+      "delta_shares": -647835,
+      "delta_value_usd": -71818988,
+      "action": "exit"
+    },
+    {
       "issuer": "LUMENTUM HLDGS INC",
       "class": "NOTE  0.500%12/1",
       "cusip": "55024UAD1",
@@ -63083,6 +64643,36 @@
       "action": "exit"
     },
     {
+      "issuer": "SELECT SECTOR SPDR TR",
+      "class": "STATE STREET ENE",
+      "cusip": "81369Y506",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 999596,
+      "value_usd_prior": 61235251,
+      "delta_shares": -999596,
+      "delta_value_usd": -61235251,
+      "action": "exit"
+    },
+    {
+      "issuer": "SELECT SECTOR SPDR TR",
+      "class": "STATE STREET FIN",
+      "cusip": "81369Y605",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 1194323,
+      "value_usd_prior": 58963727,
+      "delta_shares": -1194323,
+      "delta_value_usd": -58963727,
+      "action": "exit"
+    },
+    {
       "issuer": "ENVIRI CORP",
       "class": "COM",
       "cusip": "415864107",
@@ -63095,6 +64685,21 @@
       "value_usd_prior": 57660060,
       "delta_shares": -2938841,
       "delta_value_usd": -57660060,
+      "action": "exit"
+    },
+    {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "BLOOMBERG EMERGI",
+      "cusip": "78464A391",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 2516441,
+      "value_usd_prior": 51939342,
+      "delta_shares": -2516441,
+      "delta_value_usd": -51939342,
       "action": "exit"
     },
     {
@@ -63125,6 +64730,21 @@
       "value_usd_prior": 44730338,
       "delta_shares": -1141954,
       "delta_value_usd": -44730338,
+      "action": "exit"
+    },
+    {
+      "issuer": "SPDR INDEX SHS FDS",
+      "class": "STATE STREET SPD",
+      "cusip": "78463X400",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 443070,
+      "value_usd_prior": 41258678,
+      "delta_shares": -443070,
+      "delta_value_usd": -41258678,
       "action": "exit"
     },
     {
@@ -63203,6 +64823,21 @@
       "action": "exit"
     },
     {
+      "issuer": "GCI LIBERTY INC",
+      "class": "COM SER C",
+      "cusip": "36164V800",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 945135,
+      "value_usd_prior": 35168473,
+      "delta_shares": -945135,
+      "delta_value_usd": -35168473,
+      "action": "exit"
+    },
+    {
       "issuer": "HERITAGE COMM CORP",
       "class": "COM",
       "cusip": "426927109",
@@ -63215,6 +64850,21 @@
       "value_usd_prior": 30516206,
       "delta_shares": -2419810,
       "delta_value_usd": -30516206,
+      "action": "exit"
+    },
+    {
+      "issuer": "SELECT SECTOR SPDR TR",
+      "class": "STATE STREET CON",
+      "cusip": "81369Y308",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 364180,
+      "value_usd_prior": 29855476,
+      "delta_shares": -364180,
+      "delta_value_usd": -29855476,
       "action": "exit"
     },
     {
@@ -63308,6 +64958,36 @@
       "action": "exit"
     },
     {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "BLOOMBERG INTL T",
+      "cusip": "78464A516",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 1096126,
+      "value_usd_prior": 24059966,
+      "delta_shares": -1096126,
+      "delta_value_usd": -24059966,
+      "action": "exit"
+    },
+    {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "STATE STREET SPD",
+      "cusip": "78468R606",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 1026212,
+      "value_usd_prior": 23931264,
+      "delta_shares": -1026212,
+      "delta_value_usd": -23931264,
+      "action": "exit"
+    },
+    {
       "issuer": "WAYFAIR INC",
       "class": "NOTE  3.500%11/1",
       "cusip": "94419LAR2",
@@ -63365,6 +65045,36 @@
       "value_usd_prior": 21895366,
       "delta_shares": -372941,
       "delta_value_usd": -21895366,
+      "action": "exit"
+    },
+    {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "STATE STREET SPD",
+      "cusip": "78468R200",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 692132,
+      "value_usd_prior": 21303823,
+      "delta_shares": -692132,
+      "delta_value_usd": -21303823,
+      "action": "exit"
+    },
+    {
+      "issuer": "ASCENDIS PHARMA A/S",
+      "class": "SPONSORED ADR",
+      "cusip": "04351P101",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Healthcare",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 87334,
+      "value_usd_prior": 19975906,
+      "delta_shares": -87334,
+      "delta_value_usd": -19975906,
       "action": "exit"
     },
     {
@@ -63518,6 +65228,21 @@
       "action": "exit"
     },
     {
+      "issuer": "SPDR INDEX SHS FDS",
+      "class": "STATE STREET SPD",
+      "cusip": "78463X863",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 559013,
+      "value_usd_prior": 14880926,
+      "delta_shares": -559013,
+      "delta_value_usd": -14880926,
+      "action": "exit"
+    },
+    {
       "issuer": "ONESTREAM INC",
       "class": "CL A",
       "cusip": "68278B107",
@@ -63578,6 +65303,21 @@
       "action": "exit"
     },
     {
+      "issuer": "SPDR INDEX SHS FDS",
+      "class": "STATE STREET SPD",
+      "cusip": "78463X855",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 142200,
+      "value_usd_prior": 10810044,
+      "delta_shares": -142200,
+      "delta_value_usd": -10810044,
+      "action": "exit"
+    },
+    {
       "issuer": "CSG SYS INTL INC",
       "class": "NOTE  3.875% 9/1",
       "cusip": "126349AH2",
@@ -63590,6 +65330,21 @@
       "value_usd_prior": 10482699,
       "delta_shares": -8617000,
       "delta_value_usd": -10482699,
+      "action": "exit"
+    },
+    {
+      "issuer": "SELECT SECTOR SPDR TR",
+      "class": "STATE STREET UTI",
+      "cusip": "81369Y886",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 216485,
+      "value_usd_prior": 9934497,
+      "delta_shares": -216485,
+      "delta_value_usd": -9934497,
       "action": "exit"
     },
     {
@@ -63620,6 +65375,21 @@
       "value_usd_prior": 9242975,
       "delta_shares": -53707,
       "delta_value_usd": -9242975,
+      "action": "exit"
+    },
+    {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "STATE STREET SPD",
+      "cusip": "78468R804",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 51697,
+      "value_usd_prior": 9207236,
+      "delta_shares": -51697,
+      "delta_value_usd": -9207236,
       "action": "exit"
     },
     {
@@ -63668,6 +65438,36 @@
       "action": "exit"
     },
     {
+      "issuer": "SPDR INDEX SHS FDS",
+      "class": "STATE STREET SPD",
+      "cusip": "78463X459",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 87600,
+      "value_usd_prior": 6758533,
+      "delta_shares": -87600,
+      "delta_value_usd": -6758533,
+      "action": "exit"
+    },
+    {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "BLOOMBERG INTL",
+      "cusip": "78464A151",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 215196,
+      "value_usd_prior": 6688292,
+      "delta_shares": -215196,
+      "delta_value_usd": -6688292,
+      "action": "exit"
+    },
+    {
       "issuer": "BITFARMS LTD",
       "class": "COM",
       "cusip": "09173B107",
@@ -63695,6 +65495,36 @@
       "value_usd_prior": 6121154,
       "delta_shares": -755698,
       "delta_value_usd": -6121154,
+      "action": "exit"
+    },
+    {
+      "issuer": "PETCO HEALTH & WELLNESS CO I",
+      "class": "COM",
+      "cusip": "71601V105",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 2068855,
+      "value_usd_prior": 5751417,
+      "delta_shares": -2068855,
+      "delta_value_usd": -5751417,
+      "action": "exit"
+    },
+    {
+      "issuer": "SELECT SECTOR SPDR TR",
+      "class": "STATE STREET MAT",
+      "cusip": "81369Y100",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 109021,
+      "value_usd_prior": 5447779,
+      "delta_shares": -109021,
+      "delta_value_usd": -5447779,
       "action": "exit"
     },
     {
@@ -63803,6 +65633,81 @@
       "action": "exit"
     },
     {
+      "issuer": "SPDR INDEX SHS FDS",
+      "class": "STATE STREET SPD",
+      "cusip": "78463X202",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 43410,
+      "value_usd_prior": 2694893,
+      "delta_shares": -43410,
+      "delta_value_usd": -2694893,
+      "action": "exit"
+    },
+    {
+      "issuer": "GCI LIBERTY INC",
+      "class": "COM SER A",
+      "cusip": "36164V602",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Other",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 67631,
+      "value_usd_prior": 2492202,
+      "delta_shares": -67631,
+      "delta_value_usd": -2492202,
+      "action": "exit"
+    },
+    {
+      "issuer": "SELECT SECTOR SPDR TR",
+      "class": "STATE STREET REA",
+      "cusip": "81369Y860",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 61005,
+      "value_usd_prior": 2490834,
+      "delta_shares": -61005,
+      "delta_value_usd": -2490834,
+      "action": "exit"
+    },
+    {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "STATE STREET SPD",
+      "cusip": "78464A144",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 73953,
+      "value_usd_prior": 2146856,
+      "delta_shares": -73953,
+      "delta_value_usd": -2146856,
+      "action": "exit"
+    },
+    {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "STATE STREET SPD",
+      "cusip": "78468R788",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 39768,
+      "value_usd_prior": 1810239,
+      "delta_shares": -39768,
+      "delta_value_usd": -1810239,
+      "action": "exit"
+    },
+    {
       "issuer": "DIGIMARC CORP NEW",
       "class": "COM",
       "cusip": "25381B101",
@@ -63845,6 +65750,21 @@
       "value_usd_prior": 1503172,
       "delta_shares": -143023,
       "delta_value_usd": -1503172,
+      "action": "exit"
+    },
+    {
+      "issuer": "SELECT SECTOR SPDR TR",
+      "class": "STATE STREET CON",
+      "cusip": "81369Y407",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 12349,
+      "value_usd_prior": 1345794,
+      "delta_shares": -12349,
+      "delta_value_usd": -1345794,
       "action": "exit"
     },
     {
@@ -65397,6 +67317,21 @@
       "action": "trim"
     },
     {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "STATE STREET SPD",
+      "cusip": "78464A664",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 68517636,
+      "value_usd_prior": 1802013827,
+      "delta_shares": -68517636,
+      "delta_value_usd": -1802013827,
+      "action": "exit"
+    },
+    {
       "issuer": "COTERRA ENERGY INC",
       "class": "COM",
       "cusip": "127097103",
@@ -65409,6 +67344,36 @@
       "value_usd_prior": 1712665303,
       "delta_shares": -48738341,
       "delta_value_usd": -1712665303,
+      "action": "exit"
+    },
+    {
+      "issuer": "CARNIVAL CORP",
+      "class": "COMMON STOCK",
+      "cusip": "143658300",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Consumer Discretionary",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 50238525,
+      "value_usd_prior": 1300173027,
+      "delta_shares": -50238525,
+      "delta_value_usd": -1300173027,
+      "action": "exit"
+    },
+    {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "STATE STREET SPD",
+      "cusip": "78468R622",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 11074520,
+      "value_usd_prior": 1060053054,
+      "delta_shares": -11074520,
+      "delta_value_usd": -1060053054,
       "action": "exit"
     },
     {
@@ -65562,6 +67527,21 @@
       "action": "trim"
     },
     {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "STATE STREET SPD",
+      "cusip": "78464A649",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 15769631,
+      "value_usd_prior": 404017946,
+      "delta_shares": -15769631,
+      "delta_value_usd": -404017946,
+      "action": "exit"
+    },
+    {
       "issuer": "BAKER HUGHES COMPANY",
       "class": "CL A",
       "cusip": "05722G100",
@@ -65577,6 +67557,36 @@
       "action": "trim"
     },
     {
+      "issuer": "SPDR SERIES TRUST",
+      "class": "STATE STREET SPD",
+      "cusip": "78468R101",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 12749549,
+      "value_usd_prior": 372031840,
+      "delta_shares": -12749549,
+      "delta_value_usd": -372031840,
+      "action": "exit"
+    },
+    {
+      "issuer": "SPDR INDEX SHS FDS",
+      "class": "STATE STREET SPD",
+      "cusip": "78463X889",
+      "put_call": "",
+      "share_type": "SH",
+      "sector": "Fund/ETF",
+      "shares": 0,
+      "value_usd": 0,
+      "shares_prior": 7886187,
+      "value_usd_prior": 360004437,
+      "delta_shares": -7886187,
+      "delta_value_usd": -360004437,
+      "action": "exit"
+    },
+    {
       "issuer": "TKO GROUP HOLDINGS INC",
       "class": "CL A",
       "cusip": "87256C101",
@@ -65590,166 +67600,76 @@
       "delta_shares": -1776296,
       "delta_value_usd": -359765679,
       "action": "trim"
-    },
-    {
-      "issuer": "CHENIERE ENERGY INC",
-      "class": "COM NEW",
-      "cusip": "16411R208",
-      "put_call": "",
-      "share_type": "SH",
-      "sector": "Energy",
-      "shares": 5938476,
-      "value_usd": 1419355149,
-      "shares_prior": 6194544,
-      "value_usd_prior": 1757763805,
-      "delta_shares": -256068,
-      "delta_value_usd": -338408656,
-      "action": "trim"
-    },
-    {
-      "issuer": "OMNICOM GROUP INC",
-      "class": "COM",
-      "cusip": "681919106",
-      "put_call": "",
-      "share_type": "SH",
-      "sector": "Other",
-      "shares": 24590402,
-      "value_usd": 1812367298,
-      "shares_prior": 27760218,
-      "value_usd_prior": 2109953580,
-      "delta_shares": -3169816,
-      "delta_value_usd": -297586282,
-      "action": "trim"
-    },
-    {
-      "issuer": "VANGUARD SCOTTSDALE FDS",
-      "class": "INTER TERM TREAS",
-      "cusip": "92206C706",
-      "put_call": "",
-      "share_type": "SH",
-      "sector": "Other",
-      "shares": 0,
-      "value_usd": 0,
-      "shares_prior": 4950000,
-      "value_usd_prior": 294772500,
-      "delta_shares": -4950000,
-      "delta_value_usd": -294772500,
-      "action": "exit"
-    },
-    {
-      "issuer": "APELLIS PHARMACEUTICALS INC",
-      "class": "COM",
-      "cusip": "03753U106",
-      "put_call": "",
-      "share_type": "SH",
-      "sector": "Healthcare",
-      "shares": 0,
-      "value_usd": 0,
-      "shares_prior": 6844990,
-      "value_usd_prior": 275373948,
-      "delta_shares": -6844990,
-      "delta_value_usd": -275373948,
-      "action": "exit"
-    },
-    {
-      "issuer": "VANGUARD SCOTTSDALE FDS",
-      "class": "SHORT TERM TREAS",
-      "cusip": "92206C102",
-      "put_call": "",
-      "share_type": "SH",
-      "sector": "Other",
-      "shares": 0,
-      "value_usd": 0,
-      "shares_prior": 4400000,
-      "value_usd_prior": 257576000,
-      "delta_shares": -4400000,
-      "delta_value_usd": -257576000,
-      "action": "exit"
-    },
-    {
-      "issuer": "MASIMO CORP",
-      "class": "COM",
-      "cusip": "574795100",
-      "put_call": "",
-      "share_type": "SH",
-      "sector": "Other",
-      "shares": 0,
-      "value_usd": 0,
-      "shares_prior": 1437724,
-      "value_usd_prior": 255727968,
-      "delta_shares": -1437724,
-      "delta_value_usd": -255727968,
-      "action": "exit"
     }
   ],
   "summary": {
     "quarter": "2026-06-30",
-    "aum_usd": 3371239854465,
+    "aum_usd": 3383260349220,
     "aum_usd_prior": 2896359015041,
-    "aum_change_pct": 116.4,
-    "holdings_count": 4177,
+    "aum_change_pct": 116.8,
+    "holdings_count": 4261,
     "holdings_count_prior": 4269,
-    "holdings_count_change": -92,
-    "new_positions_count": 58,
-    "added_count": 2868,
-    "trimmed_count": 888,
-    "held_count": 363,
-    "exited_count": 150,
-    "top10_concentration_pct": 29.0,
+    "holdings_count_change": -8,
+    "new_positions_count": 186,
+    "added_count": 2842,
+    "trimmed_count": 872,
+    "held_count": 361,
+    "exited_count": 194,
+    "top10_concentration_pct": 28.9,
     "sector_breakdown": [
       {
-        "sector": "Technology",
-        "value_usd": 972018902428,
-        "count": 190,
-        "pct_of_portfolio": 28.83
-      },
-      {
         "sector": "Other",
-        "value_usd": 967057628716,
-        "count": 3180,
-        "pct_of_portfolio": 28.69
+        "value_usd": 978983940298,
+        "count": 3239,
+        "pct_of_portfolio": 28.94
       },
       {
-        "sector": "Financials",
-        "value_usd": 264661337224,
-        "count": 154,
-        "pct_of_portfolio": 7.85
+        "sector": "Technology",
+        "value_usd": 972188806179,
+        "count": 196,
+        "pct_of_portfolio": 28.74
       },
       {
         "sector": "Healthcare",
-        "value_usd": 263106888447,
-        "count": 347,
-        "pct_of_portfolio": 7.8
+        "value_usd": 263191956555,
+        "count": 356,
+        "pct_of_portfolio": 7.78
+      },
+      {
+        "sector": "Financials",
+        "value_usd": 258947867602,
+        "count": 154,
+        "pct_of_portfolio": 7.65
       },
       {
         "sector": "Communications",
-        "value_usd": 239269505281,
-        "count": 29,
-        "pct_of_portfolio": 7.1
+        "value_usd": 239559302281,
+        "count": 31,
+        "pct_of_portfolio": 7.08
       },
       {
         "sector": "Consumer Discretionary",
         "value_usd": 201978985605,
         "count": 26,
-        "pct_of_portfolio": 5.99
+        "pct_of_portfolio": 5.97
       },
       {
         "sector": "Energy",
-        "value_usd": 137775681539,
-        "count": 84,
-        "pct_of_portfolio": 4.09
+        "value_usd": 137843236726,
+        "count": 88,
+        "pct_of_portfolio": 4.07
       },
       {
         "sector": "Industrials",
-        "value_usd": 115119032299,
-        "count": 19,
-        "pct_of_portfolio": 3.41
+        "value_usd": 119314553342,
+        "count": 20,
+        "pct_of_portfolio": 3.53
       },
       {
         "sector": "Consumer Staples",
         "value_usd": 108429454597,
         "count": 22,
-        "pct_of_portfolio": 3.22
+        "pct_of_portfolio": 3.2
       },
       {
         "sector": "Real Estate",
@@ -65759,14 +67679,14 @@
       },
       {
         "sector": "Materials",
-        "value_usd": 24744458881,
-        "count": 14,
-        "pct_of_portfolio": 0.73
+        "value_usd": 25687128668,
+        "count": 15,
+        "pct_of_portfolio": 0.76
       },
       {
         "sector": "Utilities",
-        "value_usd": 18575106386,
-        "count": 12,
+        "value_usd": 18632244305,
+        "count": 14,
         "pct_of_portfolio": 0.55
       },
       {
@@ -65778,58 +67698,58 @@
     ],
     "largest_new_positions": [
       {
-        "issuer": "VERSIGENT LTD",
-        "cusip": "G9600F104",
+        "issuer": "HONEYWELL INTL INC",
+        "cusip": "438516205",
         "action": "new",
-        "shares": 2868558,
+        "shares": 18738370,
         "shares_prior": 0,
-        "delta_shares": 2868558,
-        "value_usd": 120508122,
-        "delta_value_usd": 120508122,
+        "delta_shares": 18738370,
+        "value_usd": 4195521043,
+        "delta_value_usd": 4195521043,
         "delta_pct": "new"
       },
       {
-        "issuer": "INFLEQTION INC",
-        "cusip": "45676K103",
+        "issuer": "HONEYWELL AEROSPACE INC",
+        "cusip": "43849R105",
         "action": "new",
-        "shares": 2627458,
+        "shares": 13321170,
         "shares_prior": 0,
-        "delta_shares": 2627458,
-        "value_usd": 34997741,
-        "delta_value_usd": 34997741,
+        "delta_shares": 13321170,
+        "value_usd": 2945044264,
+        "delta_value_usd": 2945044264,
         "delta_pct": "new"
       },
       {
-        "issuer": "ALMONTY INDS INC",
-        "cusip": "020398707",
+        "issuer": "SPDR SERIES TRUST",
+        "cusip": "78464A664",
         "action": "new",
-        "shares": 1994040,
+        "shares": 77418976,
         "shares_prior": 0,
-        "delta_shares": 1994040,
-        "value_usd": 33021302,
-        "delta_value_usd": 33021302,
+        "delta_shares": 77418976,
+        "value_usd": 2030699740,
+        "delta_value_usd": 2030699740,
         "delta_pct": "new"
       },
       {
-        "issuer": "ENLIGHT RENEWABLE ENERGY LTD",
-        "cusip": "M4056D110",
+        "issuer": "SPACE EXPLORATION TECHN CORP",
+        "cusip": "84615Q103",
         "action": "new",
-        "shares": 185903,
+        "shares": 10876324,
         "shares_prior": 0,
-        "delta_shares": 185903,
-        "value_usd": 16549085,
-        "delta_value_usd": 16549085,
+        "delta_shares": 10876324,
+        "value_usd": 1858328719,
+        "delta_value_usd": 1858328719,
         "delta_pct": "new"
       },
       {
-        "issuer": "JANUS LIVING INC",
-        "cusip": "471024109",
+        "issuer": "CARNIVAL CORP LTD",
+        "cusip": "G2004J103",
         "action": "new",
-        "shares": 460915,
+        "shares": 58217260,
         "shares_prior": 0,
-        "delta_shares": 460915,
-        "value_usd": 13246697,
-        "delta_value_usd": 13246697,
+        "delta_shares": 58217260,
+        "value_usd": 1663267118,
+        "delta_value_usd": 1663267118,
         "delta_pct": "new"
       }
     ],
@@ -65846,6 +67766,17 @@
         "delta_pct": 0.0
       },
       {
+        "issuer": "SPDR SERIES TRUST",
+        "cusip": "78464A664",
+        "action": "exit",
+        "shares": 0,
+        "shares_prior": 68517636,
+        "delta_shares": -68517636,
+        "value_usd": 0,
+        "delta_value_usd": -1802013827,
+        "delta_pct": 0.0
+      },
+      {
         "issuer": "COTERRA ENERGY INC",
         "cusip": "127097103",
         "action": "exit",
@@ -65857,36 +67788,25 @@
         "delta_pct": 0.0
       },
       {
-        "issuer": "DUPONT DE NEMOURS INC",
-        "cusip": "26614N102",
+        "issuer": "CARNIVAL CORP",
+        "cusip": "143658300",
         "action": "exit",
         "shares": 0,
-        "shares_prior": 18703524,
-        "delta_shares": -18703524,
+        "shares_prior": 50238525,
+        "delta_shares": -50238525,
         "value_usd": 0,
-        "delta_value_usd": -856621399,
+        "delta_value_usd": -1300173027,
         "delta_pct": 0.0
       },
       {
-        "issuer": "HOLOGIC INC",
-        "cusip": "436440101",
+        "issuer": "SPDR SERIES TRUST",
+        "cusip": "78468R622",
         "action": "exit",
         "shares": 0,
-        "shares_prior": 9990906,
-        "delta_shares": -9990906,
+        "shares_prior": 11074520,
+        "delta_shares": -11074520,
         "value_usd": 0,
-        "delta_value_usd": -755212585,
-        "delta_pct": 0.0
-      },
-      {
-        "issuer": "VANGUARD SCOTTSDALE FDS",
-        "cusip": "92206C706",
-        "action": "exit",
-        "shares": 0,
-        "shares_prior": 4950000,
-        "delta_shares": -4950000,
-        "value_usd": 0,
-        "delta_value_usd": -294772500,
+        "delta_value_usd": -1060053054,
         "delta_pct": 0.0
       }
     ],
@@ -66120,39 +68040,39 @@
   "history": [
     {
       "quarter": "2026-06-30",
-      "filing_date": "2026-08-07",
-      "total_value_usd": 3371239854465,
-      "holdings_count": 4177,
+      "filing_date": "2026-09-22",
+      "total_value_usd": 3383260349220,
+      "holdings_count": 4261,
       "top5_holdings": [
         {
           "issuer": "NVIDIA CORPORATION",
           "cusip": "67066G104",
           "value_usd": 202047567909,
-          "pct_of_portfolio": 5.99
+          "pct_of_portfolio": 5.97
         },
         {
           "issuer": "APPLE INC",
           "cusip": "037833100",
           "value_usd": 177993996255,
-          "pct_of_portfolio": 5.28
+          "pct_of_portfolio": 5.26
         },
         {
           "issuer": "MICROSOFT CORP",
           "cusip": "594918104",
           "value_usd": 117744958902,
-          "pct_of_portfolio": 3.49
+          "pct_of_portfolio": 3.48
         },
         {
           "issuer": "AMAZON COM INC",
           "cusip": "023135106",
           "value_usd": 94665539570,
-          "pct_of_portfolio": 2.81
+          "pct_of_portfolio": 2.8
         },
         {
           "issuer": "ALPHABET INC",
           "cusip": "02079K305",
           "value_usd": 85403303049,
-          "pct_of_portfolio": 2.53
+          "pct_of_portfolio": 2.52
         }
       ]
     }
