@@ -9,6 +9,7 @@ export default function Sidebar({
   onSelect,
   onSelectOverview,
   onSelectQuiet,
+  onSelectPeg,
   onSelectCompare,
   open = false,
   onClose,
@@ -61,7 +62,7 @@ export default function Sidebar({
         </div>
       </div>
       <nav className="py-2">
-        {(onSelectOverview || onSelectQuiet || onSelectCompare) && (
+        {(onSelectOverview || onSelectQuiet || onSelectPeg || onSelectCompare) && (
           <p className="px-4 pb-1 pt-2 text-[11px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
             Aggregate
           </p>
@@ -94,6 +95,20 @@ export default function Sidebar({
             <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">悄悄吸筹 — broadly bought, nobody's top-10</p>
           </button>
         )}
+        {onSelectPeg && (
+          <button
+            onClick={onSelectPeg}
+            className={
+              'block w-full text-left px-4 py-3 border-l-4 transition ' +
+              (selectedView === 'peg'
+                ? 'border-indigo-500 bg-indigo-50 dark:bg-indigo-950/40'
+                : 'border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/60')
+            }
+          >
+            <span className="text-sm font-medium text-slate-900 dark:text-slate-100">Valuation Map</span>
+            <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">P/E vs EPS growth · PEG 估值地图</p>
+          </button>
+        )}
         {onSelectCompare && (
           <button
             onClick={onSelectCompare}
@@ -108,7 +123,7 @@ export default function Sidebar({
             <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">Pick two filers to diff</p>
           </button>
         )}
-        {(onSelectOverview || onSelectQuiet || onSelectCompare) && filers.length > 0 && (
+        {(onSelectOverview || onSelectQuiet || onSelectPeg || onSelectCompare) && filers.length > 0 && (
           <>
             <div className="my-2 border-t border-slate-200 dark:border-slate-800" aria-hidden="true" />
             <p className="px-4 pb-1 pt-1 text-[11px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">

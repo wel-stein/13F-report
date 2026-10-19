@@ -35,10 +35,14 @@ Output goes to `.claude/skills/13f-report/data/`:
 - `<filer-slug>.json` — one file per filer (latest filing, holdings count, total value, top buys, top sells)
 - `summary.json` — combined report across all filers, with `generated_at` timestamp
 - `tickers.json` — `{ cusip: ticker }` map used by the portal's Quiet
-  Accumulation view. Hand-curated entries are kept as-is; each live run
-  *fills in* any still-unmapped CUSIPs by matching the holding's issuer name
-  against SEC's `company_tickers.json` (best-effort — a fetch failure leaves
-  the existing map untouched and never fails the run).
+  Accumulation and Valuation Map views. Hand-curated entries are kept as-is
+  (share classes like GOOGL/GOOG and BRK-A/BRK-B are curated, since name
+  matching can't tell them apart); each live run *fills in* any
+  still-unmapped CUSIPs by matching every issuer spelling the filers used
+  against SEC's `company_tickers.json`, after folding 13F abbreviations
+  (`SYS`, `MATLS`, `FINL`, …) and word order. A company listing several
+  tickers (preferreds) maps to its primary one. Best-effort — a fetch failure
+  leaves the existing map untouched and never fails the run.
 - `fundamentals.json` — `{ generated_at, source, stocks: { TICKER: {…} } }`
   per-stock fundamentals used by the portal's thesis card. For every held
   security that maps to a ticker and a SEC CIK, the downloader pulls EDGAR
@@ -47,6 +51,33 @@ Output goes to `.claude/skills/13f-report/data/`:
   (revenue growth % + FCF margin %), cash, and debt. Incremental (entries
   fetched within ~80 days are skipped), capped at `max_fetch`, and fully
   fail-safe. Foreign filers without US-GAAP/IFRS XBRL simply stay absent.
+- `valuation.json` — `{ generated_at, price_date, cohort_filers, source, stocks: [...] }`
+  inputs for the portal's **Valuation Map** (P/E vs EPS growth, PEG). Covers
+  the 100 largest companies by combined 13F value among filers on the latest
+  quarter (share classes merged by CIK, ETFs dropped). Per company:
+  - `price` — 13F-implied quarter-end price: median of `value_usd / shares`
+    across those filers (SEC publishes no prices; the median shrugs off a
+    filer still reporting in $thousands).
+  - `eps_ttm` — trailing-twelve-month diluted EPS from XBRL `companyfacts`:
+    the reported figure (fiscal year + YTD − prior-year YTD) or TTM net
+    income ÷ latest diluted shares, whichever is fresher (the latter wins
+    when a stock split landed mid-year). For each concept the first tag with
+    current data is used, since companies switch tags over the years.
+    `pe = price / eps_ttm` (null when ≤ 0 or out of range). 20-F/40-F filers
+    are skipped: the 13F holds their ADRs, whose share ratio XBRL doesn't give.
+  - `eps_cagr_3y_pct` / `eps_cagr_5y_pct` — annual diluted EPS CAGR from 10-K
+    filings, restated across stock splits by chaining year-over-year ratios
+    taken *within* each filing. Null when either end is a loss.
+  - `holders`, `buyers`, `sellers`, `net_shares_pct`, `held_value_usd` — the
+    13F side (net change in shares held across the cohort drives dot color).
+  - `note` — why a company can't be plotted (non-USD EPS, negative TTM
+    earnings, …).
+
+  EDGAR inputs are cached ~20 days per company (earnings only move
+  quarterly; a `version` bump drops the cache); prices and flows are
+  recomputed every run. Companies whose EDGAR inputs come back incomplete
+  are logged with the tags tried, for debugging from the workflow log. The whole step is
+  fail-safe and never breaks the refresh.
 
 ### Useful flags
 
@@ -121,7 +152,8 @@ own original. `holdings_count` reflects the aggregated security count
 
 A single-page admin portal under `portal/` reads the JSON in `data/`. The
 sidebar groups entries into **Aggregate** (Overview, Quiet Accumulation,
-Compare filers) and **Filers** (one entry per filer in `summary.json`).
+Valuation Map, Compare filers) and **Filers** (one entry per filer in
+`summary.json`).
 
 Per-investor view renders:
 
@@ -157,12 +189,46 @@ growth, net margin and FCF transitions, cash/debt, and a **Rule of 40** bar
 (revenue growth + FCF margin vs. the 40% healthy line). Stocks not yet
 enriched show a graceful "pending next EDGAR refresh" state.
 
+The **Valuation Map** view (PEG 估值地图) plots trailing P/E against historical
+diluted EPS CAGR for the top 25 / 50 / 100 stocks by combined 13F value, with
+the PEG = 1 diagonal splitting the PEG > 1 and PEG < 1 regions. Dot color is
+the tracked filers' net share flow this quarter (blue ≥ +2%, orange ≤ −2%,
+gray in between); outliers past the axis range are pinned to the edge as
+triangles. A 3-yr / 5-yr growth toggle, a sortable table view (default:
+PEG ascending), and a "Not plotted" list with reasons sit alongside; clicking
+a dot or row opens the same thesis card. It's a *trailing* PEG (Lynch's
+original form) — forward P/E and consensus 3–5-yr growth need analyst
+estimates, which SEC doesn't publish. Data comes from `valuation.json`, which
+only the live downloader writes (not `--smoke-test`).
+
+#### Optional: current P/E from moomoo (local OpenD)
+
+`moomoo_quotes.py` re-prices the map at today's price instead of the 13F
+quarter-end. It runs on the machine where moomoo **OpenD** is logged in (not
+in GitHub Actions: OpenD needs an interactive first login with an SMS code):
+
+```bash
+pip install moomoo-api
+python3 .claude/skills/13f-report/moomoo_quotes.py --push
+```
+
+It reads `data/valuation.json`, takes the latest `get_market_snapshot` price
+for each stock (`BRK-B` → `US.BRK.B`), divides by the same SEC TTM diluted
+EPS, and writes `data/quotes.json` = `{ as_of, eps_from, source, pe: {TICKER:
+ratio} }`. Only ratios and a date are published, never raw quotes, since the
+portal is public. `--push` pulls first (fresh EPS), then commits and pushes,
+and Vercel redeploys. The portal uses it only when `as_of` is newer than the
+13F price date, and offers a "P/E price: Latest / 13F q-end" toggle. Without
+the file, nothing changes. Flags: `--host`, `--port` (OpenD, default
+127.0.0.1:11111), `--data-dir`. OpenAPI needs US-market quote access on the
+account. Check moomoo's OpenAPI terms for what you may publish.
+
 The Compare view diffs two filers side-by-side: overlap, only-A, only-B,
 overlap-weight stats, plus a sortable table joining the two filers'
 holdings (with a "X sold" badge when one side exited what the other still
 holds).
 
-State lives in the URL hash (`#cik=…&filter=…&sort=…&q=…` or `#cik=compare&a=…&b=…`)
+State lives in the URL hash (`#cik=…&filter=…&sort=…&q=…`, `#cik=peg`, or `#cik=compare&a=…&b=…`)
 so refresh, back/forward, and shareable links all work. Light/dark theme
 toggle is in the mobile top-bar and the sidebar header on desktop;
 preference persists in `localStorage`.

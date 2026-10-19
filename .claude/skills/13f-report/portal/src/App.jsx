@@ -6,6 +6,7 @@ import ThemeToggle from './components/ThemeToggle.jsx'
 import TopMoves from './components/TopMoves.jsx'
 import Overview from './components/Overview.jsx'
 import QuietAccumulation from './components/QuietAccumulation.jsx'
+import ValuationMap from './components/ValuationMap.jsx'
 import Compare from './components/Compare.jsx'
 import CopyLink from './components/CopyLink.jsx'
 import PortfolioBar from './components/PortfolioBar.jsx'
@@ -33,6 +34,8 @@ const VALID_SORT_KEYS = new Set([
   'delta_pct', 'value_usd', 'delta_value_usd', 'action',
 ])
 const DEFAULT_SORT = 'value_usd:desc'
+// Non-filer views addressed through the same #cik= hash slot.
+const VIEW_SENTINELS = new Set(['overview', 'quiet', 'peg', 'compare'])
 
 function normalizeSort(raw) {
   if (typeof raw !== 'string') return DEFAULT_SORT
@@ -60,8 +63,8 @@ function writeHash(state, { push = false } = {}) {
   const params = new URLSearchParams()
   if (state.cik) params.set('cik', state.cik)
   // Filter/sort/query only apply to the filer view; strip them on aggregate
-  // views (overview / quiet / compare) so we don't leak stale state across views.
-  if (state.cik && state.cik !== 'overview' && state.cik !== 'quiet' && state.cik !== 'compare') {
+  // views (overview / quiet / peg / compare) so we don't leak stale state across views.
+  if (state.cik && !VIEW_SENTINELS.has(state.cik)) {
     if (state.filter && state.filter !== 'all') params.set('filter', state.filter)
     if (state.sort   && state.sort   !== DEFAULT_SORT) params.set('sort', state.sort)
     if (state.q) params.set('q', state.q)
@@ -85,6 +88,10 @@ export default function App() {
   const [summaryError, setSummaryError] = useState(null)
   const [tickers, setTickers] = useState({})
   const [fundamentals, setFundamentals] = useState({})
+  // undefined = not requested yet, null = missing (pre-first refresh), object = loaded
+  const [valuation, setValuation] = useState(undefined)
+  // Optional moomoo P/E refresh (data/quotes.json, pushed from a local OpenD).
+  const [quotes, setQuotes] = useState(undefined)
   const [filerCache, setFilerCache] = useState({})
   const [filerError, setFilerError] = useState(null)
   const [loadingFiler, setLoadingFiler] = useState(false)
@@ -161,7 +168,7 @@ export default function App() {
         // Default to overview, and clear stale a/b/cik values that don't
         // correspond to any filer in the loaded summary.
         setHashState((s) => {
-          const isViewSentinel = s.cik === 'overview' || s.cik === 'quiet' || s.cik === 'compare'
+          const isViewSentinel = VIEW_SENTINELS.has(s.cik)
           const cikValid = isViewSentinel || !s.cik || knownCiks.has(s.cik)
           return {
             ...s,
@@ -191,10 +198,23 @@ export default function App() {
       .catch(() => setFundamentals({}))
   }, [])
 
-  const view = !hashState.cik || hashState.cik === 'overview' ? 'overview'
-    : hashState.cik === 'quiet' ? 'quiet'
-    : hashState.cik === 'compare' ? 'compare'
+  const view = !hashState.cik ? 'overview'
+    : VIEW_SENTINELS.has(hashState.cik) ? hashState.cik
     : 'filer'
+
+  // Valuation map data (data/valuation.json + optional quotes.json) is only
+  // fetched once that view opens.
+  useEffect(() => {
+    if (view !== 'peg' || valuation !== undefined) return
+    fetch('/valuation.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => setValuation(Array.isArray(data?.stocks) ? data : null))
+      .catch(() => setValuation(null))
+    fetch('/quotes.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => setQuotes(data?.pe && typeof data.pe === 'object' ? data : null))
+      .catch(() => setQuotes(null))
+  }, [view, valuation])
 
   const selected = useMemo(() => {
     if (!summary || view !== 'filer') return null
@@ -207,6 +227,7 @@ export default function App() {
     let t = '13F Admin Portal'
     if (view === 'overview') t = 'Overview · 13F Admin Portal'
     else if (view === 'quiet') t = 'Quiet Accumulation · 13F Admin Portal'
+    else if (view === 'peg') t = 'Valuation Map · 13F Admin Portal'
     else if (view === 'compare') t = 'Compare · 13F Admin Portal'
     else if (selected) t = `${selected.name} · 13F Admin Portal`
     document.title = t
@@ -342,6 +363,7 @@ export default function App() {
         onSelect={handleSelect}
         onSelectOverview={() => handleSelect('overview')}
         onSelectQuiet={() => handleSelect('quiet')}
+        onSelectPeg={() => handleSelect('peg')}
         onSelectCompare={handleSelectCompare}
         open={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
@@ -380,6 +402,10 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
             tickers={tickers}
             fundamentals={fundamentals}
           />
+        )}
+
+        {!summaryError && view === 'peg' && (
+          <ValuationMap valuation={valuation} quotes={quotes} fundamentals={fundamentals} />
         )}
 
         {!summaryError && view === 'compare' && summary && (

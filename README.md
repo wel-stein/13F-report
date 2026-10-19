@@ -13,9 +13,11 @@ viewing the result in a React + Tailwind admin portal.
 ├── .claude/skills/13f-report/
 │   ├── SKILL.md              # full usage and output schema
 │   ├── download_13f.py       # SEC EDGAR fetcher / parser / differ
+│   ├── moomoo_quotes.py      # optional: today's P/E from a local moomoo OpenD
 │   ├── investors.json        # CIKs of the top 20 filers (editable)
 │   ├── fixtures/             # XML fixtures for offline smoke test
-│   ├── data/                 # JSON output (per-filer + summary.json)
+│   ├── data/                 # JSON output (per-filer, summary, tickers,
+│   │                         #   fundamentals, valuation)
 │   └── portal/               # Vite + React + Tailwind admin UI
 ├── .github/workflows/
 │   └── refresh-13f-data.yml  # weekly auto-refresh of data/
@@ -43,6 +45,11 @@ npm run dev   # http://localhost:5173
   per-filer list (with a search box once filers exceed 8).
 - **Overview** — combined AUM across all filers, plus *Top 10 consensus buys /
   sells* across the cohort and a clickable per-filer summary table.
+- **Valuation Map** (PEG 估值地图) — trailing P/E vs historical EPS CAGR
+  scatter for the top 25 / 50 / 100 stocks by combined 13F value, split by the
+  PEG = 1 line, with dots colored by the filers' net share buying/selling this
+  quarter. Price is 13F-implied (quarter-end), earnings come from SEC XBRL;
+  3-yr / 5-yr toggle, sortable table, click-through to the thesis card.
 - **Compare filers** — pick any two and see overlap, only-A, only-B, and
   divergent positions (with "X sold" badges when one side exited what the
   other still holds). Sortable, paginated.
@@ -67,6 +74,30 @@ push). Manual runs are available via the Actions tab → *Refresh 13F data* →
 
 User-Agent precedence: `workflow_dispatch` input → `vars.SEC_UA` repo
 variable → built-in default (`Western welstein@gmail.com`).
+
+## Optional: today's P/E from moomoo
+
+The Valuation Map prices stocks at the 13F quarter-end by default. If you run
+moomoo **OpenD** on your own computer (it can't run in GitHub Actions, since
+its first login needs an SMS code), `moomoo_quotes.py` re-prices the map daily:
+
+```bash
+pip install moomoo-api                 # once
+python3 .claude/skills/13f-report/moomoo_quotes.py --push
+```
+
+It pulls the repo, computes P/E = latest moomoo price ÷ the same SEC TTM EPS,
+writes `data/quotes.json` (P/E ratios and a date only, no raw quotes, since the
+site is public), commits, and pushes. Vercel then redeploys. Schedule it after
+the US close, e.g. with cron in a local clone (06:00 Taiwan time, Tue–Sat):
+
+```cron
+0 6 * * 2-6  cd ~/13F-report && /usr/bin/python3 .claude/skills/13f-report/moomoo_quotes.py --push >> ~/moomoo_quotes.log 2>&1
+```
+
+OpenD must be running and logged in, and the account needs US-market quote
+access for OpenAPI. If the file is missing or older than the 13F prices, the
+portal falls back to quarter-end P/E.
 
 ## Deployment
 
