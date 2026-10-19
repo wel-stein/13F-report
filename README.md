@@ -62,7 +62,10 @@ npm run dev   # http://localhost:5173
   `prefers-color-scheme` on first load).
 - **URL hash state** — `#cik=…&filter=…&sort=…&q=…` (or `#cik=compare&a=…&b=…`)
   so refresh, deep-link, and browser Back/Forward all work.
-- Mobile-responsive layout with a slide-out drawer sidebar.
+- Mobile-friendly: a slide-out drawer sidebar, no sideways scrolling down to
+  360px wide, ~40px touch targets and 16px inputs (no iOS zoom on focus) on
+  phones. The Overview loads a precomputed `aggregates.json` (~1 MB) rather
+  than every filer's JSON (~36 MB).
 
 ## Auto-refresh
 

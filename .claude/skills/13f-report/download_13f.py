@@ -474,10 +474,18 @@ def _quarter_snapshot(filer: dict) -> dict:
     }
 
 
+def _is_quarter_end(d: str) -> bool:
+    return d[5:] in ("03-31", "06-30", "09-30", "12-31")
+
+
 def merge_history(existing: list[dict], filer: dict, max_quarters: int = 8) -> list[dict]:
+    # 13F report dates are always calendar quarter-ends. Anything else is a
+    # --smoke-test snapshot (report_date = today) that must not land in, or
+    # linger in, a real filer's history.
     snapshot = _quarter_snapshot(filer)
     quarter = snapshot["quarter"]
-    if not quarter:
+    existing = [q for q in existing if _is_quarter_end(q.get("quarter", ""))]
+    if not _is_quarter_end(quarter):
         return existing
     updated = [q for q in existing if q.get("quarter") != quarter]
     updated.append(snapshot)
@@ -543,6 +551,84 @@ def build_conviction_rankings(results: list[dict], top_n: int = 50) -> list[dict
 
     rankings.sort(key=lambda e: (e["holder_count"], e["weighted_score"]), reverse=True)
     return rankings[:top_n]
+
+
+def build_aggregates(results: list[dict], top_n: int = 10) -> dict:
+    """Cross-filer aggregates for the portal's Overview and Quiet Accumulation
+    views -> data/aggregates.json.
+
+    Both views used to download every filer's full JSON (~36 MB) and fold it
+    in the browser, which is slow and heavy on a phone. This is the same
+    folding, done once per refresh:
+
+    - consensus: top buys / sells by summed Δ value per (cusip, class,
+      put_call) over holdings + exits.
+    - accumulation: per cusip, the filers that bought it (new/add) and opened
+      it (new), with net $ bought. Only names in no filer's top 10 and bought
+      by 2+ filers, since that is all the view can show. Filers are listed
+      once in `filers` and referenced by index.
+    """
+    valid = [r for r in results if "error" not in r]
+    names = [r["name"] for r in valid]
+
+    moves: dict[str, dict] = {}
+    for r in valid:
+        for h in (*r.get("holdings", ()), *r.get("exited", ())):
+            if not h.get("cusip") or not h.get("delta_value_usd"):
+                continue
+            key = f"{h['cusip']}|{h.get('class') or ''}|{h.get('put_call') or ''}"
+            e = moves.setdefault(key, {
+                "issuer": h.get("issuer"), "cusip": h["cusip"], "class": h.get("class"),
+                "put_call": h.get("put_call"), "delta_value_usd": 0, "filers": [], "actions": [],
+            })
+            e["delta_value_usd"] += h["delta_value_usd"]
+            if r["name"] not in e["filers"]:
+                e["filers"].append(r["name"])
+            if h.get("action") not in e["actions"]:
+                e["actions"].append(h.get("action"))
+    rows = list(moves.values())
+    buys = sorted((m for m in rows if m["delta_value_usd"] > 0), key=lambda m: -m["delta_value_usd"])
+    sells = sorted((m for m in rows if m["delta_value_usd"] < 0), key=lambda m: m["delta_value_usd"])
+
+    profiles: dict[str, dict] = {}
+
+    def profile(cusip: str, issuer: str = "", sector=None) -> dict:
+        return profiles.setdefault(cusip, {"cusip": cusip, "issuer": issuer, "sector": sector,
+                                           "buyers": [], "new": [], "net_buy_usd": 0, "top10": 0})
+
+    for idx, r in enumerate(valid):
+        holdings = r.get("holdings") or []
+        top10 = dict.fromkeys(h.get("cusip") for h in
+                              sorted(holdings, key=lambda h: -(h.get("value_usd") or 0))[:10])
+        for cusip in top10:
+            profile(cusip)["top10"] += 1
+        for h in holdings:
+            if h.get("put_call"):  # long common/preferred only
+                continue
+            p = profile(h.get("cusip"), h.get("issuer") or "", h.get("sector"))
+            p["issuer"] = p["issuer"] or h.get("issuer") or ""
+            p["sector"] = p["sector"] or h.get("sector")
+            if h.get("action") in ("new", "add"):
+                if idx not in p["buyers"]:
+                    p["buyers"].append(idx)
+                if (h.get("delta_value_usd") or 0) > 0:
+                    p["net_buy_usd"] += h["delta_value_usd"]
+                if h.get("action") == "new" and idx not in p["new"]:
+                    p["new"].append(idx)
+    accumulation = [{k: v for k, v in p.items() if k != "top10"} for p in profiles.values()
+                    if p["top10"] == 0 and p["issuer"] and len(p["buyers"]) >= 2]
+
+    return {
+        "generated_at": date.today().isoformat(),
+        "filers": names,
+        "consensus": {"buys": buys[:top_n], "sells": sells[:top_n]},
+        "accumulation": accumulation,
+    }
+
+
+def write_aggregates(results: list[dict], out_dir: Path) -> None:
+    (out_dir / "aggregates.json").write_text(
+        json.dumps(build_aggregates(results), separators=(",", ":")) + "\n")
 
 
 def build_summary(filer: dict) -> dict:
@@ -1342,6 +1428,7 @@ def run(investors_path: Path, out_dir: Path, top_n: int) -> int:
         print(f"[{inv['name']}] {status}", file=sys.stderr)
     summary["conviction_rankings"] = build_conviction_rankings(all_results)
     (out_dir / "summary.json").write_text(json.dumps(summary, indent=2))
+    write_aggregates(all_results, out_dir)
     enrich_tickers(all_results, out_dir)
     enrich_fundamentals(all_results, out_dir)
     try:
@@ -1437,7 +1524,9 @@ def smoke_test_offline(fixtures_dir: Path, out_dir: Path, investors_path: Path) 
         summary["filers"].append(_summary_entry(payload))
     summary["conviction_rankings"] = build_conviction_rankings(all_payloads)
     (out_dir / "summary.json").write_text(json.dumps(summary, indent=2))
-    print(f"wrote {len(investors)} filer JSONs + summary.json to {out_dir}", file=sys.stderr)
+    write_aggregates(all_payloads, out_dir)
+    print(f"wrote {len(investors)} filer JSONs + summary.json + aggregates.json to {out_dir}",
+          file=sys.stderr)
     return 0
 
 

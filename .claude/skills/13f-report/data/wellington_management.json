@@ -33202,44 +33202,6 @@
       ]
     },
     {
-      "quarter": "2026-05-12",
-      "filing_date": "2026-05-12",
-      "total_value_usd": 852000000,
-      "holdings_count": 5,
-      "top5_holdings": [
-        {
-          "issuer": "APPLE INC",
-          "cusip": "037833100",
-          "value_usd": 419400000,
-          "pct_of_portfolio": 49.23
-        },
-        {
-          "issuer": "BANK OF AMERICA CORP",
-          "cusip": "060505104",
-          "value_usd": 157200000,
-          "pct_of_portfolio": 18.45
-        },
-        {
-          "issuer": "COCA COLA CO",
-          "cusip": "191216100",
-          "value_usd": 152400000,
-          "pct_of_portfolio": 17.89
-        },
-        {
-          "issuer": "OCCIDENTAL PETROLEUM CORP",
-          "cusip": "674599105",
-          "value_usd": 106800000,
-          "pct_of_portfolio": 12.54
-        },
-        {
-          "issuer": "SIRIUS XM HOLDINGS INC",
-          "cusip": "82968B103",
-          "value_usd": 16200000,
-          "pct_of_portfolio": 1.9
-        }
-      ]
-    },
-    {
       "quarter": "2026-03-31",
       "filing_date": "2026-05-15",
       "total_value_usd": 535462965059,

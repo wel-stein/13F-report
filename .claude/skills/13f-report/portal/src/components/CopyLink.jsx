@@ -32,7 +32,7 @@ export default function CopyLink({ className = '', label = 'Copy link' }) {
       type="button"
       onClick={handleCopy}
       className={
-        'inline-flex items-center gap-1 rounded border border-slate-300 bg-white px-2 py-0.5 text-[11px] font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 ' +
+        'inline-flex items-center gap-1 rounded border border-slate-300 bg-white px-2.5 py-2 text-xs font-medium sm:px-2 sm:py-0.5 sm:text-[11px] text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 ' +
         className
       }
       aria-label={label}

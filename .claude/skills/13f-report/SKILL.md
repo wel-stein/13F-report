@@ -34,6 +34,12 @@ Output goes to `.claude/skills/13f-report/data/`:
 
 - `<filer-slug>.json` — one file per filer (latest filing, holdings count, total value, top buys, top sells)
 - `summary.json` — combined report across all filers, with `generated_at` timestamp
+- `aggregates.json` — `{ generated_at, filers, consensus: { buys, sells },
+  accumulation }`, the cross-filer folds behind the Overview's top-10
+  consensus lists and the Quiet Accumulation screen, precomputed so those
+  views load ~1 MB instead of every filer JSON (~36 MB). `accumulation` keeps
+  only names in no filer's top 10 that 2+ filers bought, with buyers / new
+  openers as indexes into `filers`. Written by live runs and `--smoke-test`.
 - `tickers.json` — `{ cusip: ticker }` map used by the portal's Quiet
   Accumulation and Valuation Map views. Hand-curated entries are kept as-is
   (share classes like GOOGL/GOOG and BRK-A/BRK-B are curated, since name
@@ -168,8 +174,8 @@ Per-investor view renders:
 - A "View on EDGAR ↗" link to the filing index on sec.gov.
 
 The Overview view aggregates across every filer: combined AUM, top-10
-consensus buys / sells (joined on CUSIP), and a per-filer summary table
-with click-through.
+consensus buys / sells (joined on CUSIP, read from `aggregates.json`), and a
+per-filer summary table with click-through.
 
 The **Quiet Accumulation** view (悄悄吸筹) screens for stocks being broadly
 accumulated under the radar: securities that many filers bought or newly
@@ -216,7 +222,10 @@ It reads `data/valuation.json`, takes the latest `get_market_snapshot` price
 for each stock (`BRK-B` → `US.BRK.B`), divides by the same SEC TTM diluted
 EPS, and writes `data/quotes.json` = `{ as_of, eps_from, source, pe: {TICKER:
 ratio} }`. Only ratios and a date are published, never raw quotes, since the
-portal is public. `--push` pulls first (fresh EPS), then commits and pushes,
+portal is public. A stock whose ratio disagrees with moomoo's own
+`pe_ttm_ratio` by a split-sized gap (outside 0.7–1.43×, e.g. a split since the
+last 10-Q) is left out and logged, so the map keeps its consistent 13F
+quarter-end P/E. `--push` pulls first (fresh EPS), then commits and pushes,
 and Vercel redeploys. The portal uses it only when `as_of` is newer than the
 13F price date, and offers a "P/E price: Latest / 13F q-end" toggle. Without
 the file, nothing changes. Flags: `--host`, `--port` (OpenD, default
@@ -257,9 +266,12 @@ at the site root.
 
 ### Expected page flow
 
-1. On load, fetches `/summary.json` and lands on the Overview view.
+1. On load, fetches `/summary.json` and lands on the Overview view, which
+   (with Quiet Accumulation) reads `/aggregates.json`.
 2. Selecting a filer fetches `/<filer-slug>.json` and renders stats + the
    holdings table; selecting "Compare filers" lazy-loads two filer JSONs.
+   `tickers.json` and `fundamentals.json` load only once Quiet Accumulation
+   or the Valuation Map opens.
 3. Each table supports sorting any column; the holdings table also
    filters by action (`All / New / Added / Trimmed / Exited / Hold`) and
    free-text searches issuer/CUSIP.

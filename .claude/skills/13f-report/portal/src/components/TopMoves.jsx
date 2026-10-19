@@ -12,7 +12,7 @@ function MoveRow({ row }) {
           <span className="truncate text-sm font-medium text-slate-900 dark:text-slate-100">
             {row.issuer}
           </span>
-          <span className={`inline-flex shrink-0 rounded px-1.5 py-0.5 text-[10px] font-medium ring-1 ring-inset ${cls}`}>
+          <span className={`inline-flex shrink-0 rounded px-1.5 py-0.5 text-[11px] font-medium ring-1 ring-inset ${cls}`}>
             {row.action}
           </span>
         </div>
@@ -55,7 +55,7 @@ export default function TopMoves({ buys = [], sells = [], limit = 5 }) {
   const buysTop = buys.slice(0, limit)
   const sellsTop = sells.slice(0, limit)
   return (
-    <div className="grid gap-4 md:grid-cols-2">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
       <Panel title={panelTitle('Buys', buysTop.length)} rows={buysTop} emptyLabel="No new or added positions." />
       <Panel title={panelTitle('Sells', sellsTop.length)} rows={sellsTop} emptyLabel="No trims or exits." />
     </div>

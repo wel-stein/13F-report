@@ -82,7 +82,7 @@ function Picker({ label, value, onChange, filers, exclude, allFilers }) {
       <select
         value={value ?? ''}
         onChange={(e) => onChange(e.target.value || null)}
-        className="rounded border border-slate-300 bg-white px-2 py-1.5 text-sm text-slate-900 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
+        className="rounded border border-slate-300 bg-white px-2 py-2.5 text-base text-slate-900 sm:py-1.5 sm:text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
       >
         <option value="">— pick a filer —</option>
         {orphan && <option value={value} disabled>{`Unknown filer (${value})`}</option>}
@@ -219,7 +219,7 @@ export default function Compare({
         {(a || b) && <CopyLink />}
       </div>
 
-      <div className="grid items-end gap-3 sm:grid-cols-[1fr_auto_1fr]">
+      <div className="grid grid-cols-1 items-end gap-3 sm:grid-cols-[1fr_auto_1fr]">
         <Picker label="Filer A" value={a} onChange={onChangeA} filers={filers} exclude={b} allFilers={filers} />
         <button
           type="button"
@@ -242,7 +242,7 @@ export default function Compare({
             type="button"
             onClick={onSwap}
             disabled={!a && !b}
-            className="rounded border border-slate-300 bg-white px-2 py-1 text-xs font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 sm:hidden"
+            className="rounded border border-slate-300 bg-white px-2 py-3 text-xs font-medium text-slate-700 sm:py-1 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 sm:hidden"
           >
             Swap A and B
           </button>
@@ -388,17 +388,17 @@ export default function Compare({
                 </span>
                 <div className="flex items-center gap-1">
                   <button type="button" onClick={() => setPage(0)} disabled={safePage === 0}
-                    className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+                    className="rounded border border-slate-300 bg-white px-3 py-3 font-medium sm:px-2 sm:py-1 text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
                     aria-label="First page">‹‹</button>
                   <button type="button" onClick={() => setPage(Math.max(0, safePage - 1))} disabled={safePage === 0}
-                    className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+                    className="rounded border border-slate-300 bg-white px-3 py-3 font-medium sm:px-2 sm:py-1 text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
                     aria-label="Previous page">‹ Prev</button>
                   <span className="px-2 tabular-nums">Page {safePage + 1} / {pageCount}</span>
                   <button type="button" onClick={() => setPage(Math.min(pageCount - 1, safePage + 1))} disabled={safePage >= pageCount - 1}
-                    className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+                    className="rounded border border-slate-300 bg-white px-3 py-3 font-medium sm:px-2 sm:py-1 text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
                     aria-label="Next page">Next ›</button>
                   <button type="button" onClick={() => setPage(pageCount - 1)} disabled={safePage >= pageCount - 1}
-                    className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+                    className="rounded border border-slate-300 bg-white px-3 py-3 font-medium sm:px-2 sm:py-1 text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
                     aria-label="Last page">››</button>
                 </div>
               </div>
