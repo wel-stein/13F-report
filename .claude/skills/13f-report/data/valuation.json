@@ -1,9 +1,9 @@
 {
-  "version": 2,
+  "version": 3,
   "generated_at": "2026-10-19",
   "price_date": "2026-06-30",
   "cohort_filers": 16,
-  "source": "13F-implied quarter-end price + SEC EDGAR XBRL companyconcept",
+  "source": "13F-implied quarter-end price + SEC EDGAR XBRL companyfacts",
   "stocks": [
     {
       "rank": 1,
@@ -735,9 +735,9 @@
       "eps_history": null,
       "eps_cagr_3y_pct": null,
       "eps_cagr_5y_pct": null,
-      "skip": null,
+      "skip": "too little XBRL history (new SEC entity?)",
       "fetched": "2026-10-19",
-      "note": "no TTM EPS in XBRL"
+      "note": "too little XBRL history (new SEC entity?)"
     },
     {
       "rank": 17,
@@ -868,22 +868,47 @@
       "cik": "21344",
       "price": 81.27,
       "price_filers": 15,
-      "pe": null,
+      "pe": 25.6,
       "held_value_usd": 79166037106,
       "holders": 15,
       "buyers": 9,
       "sellers": 5,
       "net_shares_pct": 0.18,
-      "eps_ttm": null,
-      "eps_ttm_end": null,
-      "net_income_ttm": null,
-      "eps_fy_end": null,
-      "eps_history": null,
-      "eps_cagr_3y_pct": null,
-      "eps_cagr_5y_pct": null,
-      "skip": "foreign filer (ADR ratio unknown)",
+      "eps_ttm": 3.18,
+      "eps_ttm_end": "2026-04-03",
+      "net_income_ttm": 13701000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          1.79
+        ],
+        [
+          "2021-12-31",
+          2.25
+        ],
+        [
+          "2022-12-31",
+          2.19
+        ],
+        [
+          "2023-12-31",
+          2.47
+        ],
+        [
+          "2024-12-31",
+          2.46
+        ],
+        [
+          "2025-12-31",
+          3.04
+        ]
+      ],
+      "eps_cagr_3y_pct": 11.6,
+      "eps_cagr_5y_pct": 11.2,
+      "skip": null,
       "fetched": "2026-10-19",
-      "note": "foreign filer (ADR ratio unknown)"
+      "note": null
     },
     {
       "rank": 21,
@@ -1125,9 +1150,9 @@
       "eps_history": null,
       "eps_cagr_3y_pct": null,
       "eps_cagr_5y_pct": null,
-      "skip": null,
+      "skip": "too little XBRL history (new SEC entity?)",
       "fetched": "2026-10-19",
-      "note": "no TTM EPS in XBRL"
+      "note": "too little XBRL history (new SEC entity?)"
     },
     {
       "rank": 27,
@@ -2786,22 +2811,47 @@
       "cik": "896159",
       "price": 340.74,
       "price_filers": 14,
-      "pe": null,
+      "pe": 12.1,
       "held_value_usd": 30642326073,
       "holders": 14,
       "buyers": 5,
       "sellers": 8,
       "net_shares_pct": -0.29,
-      "eps_ttm": null,
-      "eps_ttm_end": null,
-      "net_income_ttm": null,
-      "eps_fy_end": null,
-      "eps_history": null,
-      "eps_cagr_3y_pct": null,
-      "eps_cagr_5y_pct": null,
-      "skip": "foreign filer (ADR ratio unknown)",
+      "eps_ttm": 28.27,
+      "eps_ttm_end": "2026-03-31",
+      "net_income_ttm": 11299000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          7.7779
+        ],
+        [
+          "2021-12-31",
+          19.24
+        ],
+        [
+          "2022-12-31",
+          12.39
+        ],
+        [
+          "2023-12-31",
+          21.8
+        ],
+        [
+          "2024-12-31",
+          22.7
+        ],
+        [
+          "2025-12-31",
+          25.68
+        ]
+      ],
+      "eps_cagr_3y_pct": 27.5,
+      "eps_cagr_5y_pct": 27.0,
+      "skip": null,
       "fetched": "2026-10-19",
-      "note": "foreign filer (ADR ratio unknown)"
+      "note": null
     },
     {
       "rank": 62,
@@ -3153,22 +3203,47 @@
       "cik": "766704",
       "price": 226.97,
       "price_filers": 12,
-      "pe": null,
+      "pe": 112.9,
       "held_value_usd": 26735061216,
       "holders": 12,
       "buyers": 7,
       "sellers": 5,
       "net_shares_pct": -0.96,
-      "eps_ttm": null,
-      "eps_ttm_end": null,
-      "net_income_ttm": null,
-      "eps_fy_end": null,
-      "eps_history": null,
-      "eps_cagr_3y_pct": null,
-      "eps_cagr_5y_pct": null,
-      "skip": "foreign filer (ADR ratio unknown)",
+      "eps_ttm": 2.01,
+      "eps_ttm_end": "2026-03-31",
+      "net_income_ttm": 1407560000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          2.33
+        ],
+        [
+          "2021-12-31",
+          0.78
+        ],
+        [
+          "2022-12-31",
+          0.3
+        ],
+        [
+          "2023-12-31",
+          0.66
+        ],
+        [
+          "2024-12-31",
+          1.57
+        ],
+        [
+          "2025-12-31",
+          1.39
+        ]
+      ],
+      "eps_cagr_3y_pct": 66.7,
+      "eps_cagr_5y_pct": -9.8,
+      "skip": null,
       "fetched": "2026-10-19",
-      "note": "foreign filer (ADR ratio unknown)"
+      "note": null
     },
     {
       "rank": 70,
@@ -4112,22 +4187,47 @@
       "cik": "1413447",
       "price": 281.03,
       "price_filers": 13,
-      "pe": null,
+      "pe": 26.9,
       "held_value_usd": 20030407057,
       "holders": 13,
       "buyers": 10,
       "sellers": 3,
       "net_shares_pct": -9.1,
-      "eps_ttm": null,
-      "eps_ttm_end": null,
-      "net_income_ttm": null,
-      "eps_fy_end": null,
-      "eps_history": null,
-      "eps_cagr_3y_pct": null,
-      "eps_cagr_5y_pct": null,
-      "skip": "foreign filer (ADR ratio unknown)",
+      "eps_ttm": 10.46,
+      "eps_ttm_end": "2026-03-29",
+      "net_income_ttm": 2653000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          0.18
+        ],
+        [
+          "2021-12-31",
+          6.79
+        ],
+        [
+          "2022-12-31",
+          10.55
+        ],
+        [
+          "2023-12-31",
+          10.7
+        ],
+        [
+          "2024-12-31",
+          9.73
+        ],
+        [
+          "2025-12-31",
+          7.95
+        ]
+      ],
+      "eps_cagr_3y_pct": -9.0,
+      "eps_cagr_5y_pct": 113.3,
+      "skip": null,
       "fetched": "2026-10-19",
-      "note": "foreign filer (ADR ratio unknown)"
+      "note": null
     },
     {
       "rank": 91,
@@ -4307,22 +4407,47 @@
       "cik": "1800",
       "price": 90.74,
       "price_filers": 14,
-      "pe": null,
+      "pe": 25.4,
       "held_value_usd": 19128601319,
       "holders": 14,
       "buyers": 7,
       "sellers": 7,
       "net_shares_pct": -6.31,
-      "eps_ttm": null,
-      "eps_ttm_end": null,
-      "net_income_ttm": null,
-      "eps_fy_end": null,
-      "eps_history": null,
-      "eps_cagr_3y_pct": null,
-      "eps_cagr_5y_pct": null,
-      "skip": "foreign filer (ADR ratio unknown)",
+      "eps_ttm": 3.57,
+      "eps_ttm_end": "2026-03-31",
+      "net_income_ttm": 6276000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          2.5
+        ],
+        [
+          "2021-12-31",
+          3.94
+        ],
+        [
+          "2022-12-31",
+          3.91
+        ],
+        [
+          "2023-12-31",
+          3.26
+        ],
+        [
+          "2024-12-31",
+          7.64
+        ],
+        [
+          "2025-12-31",
+          3.72
+        ]
+      ],
+      "eps_cagr_3y_pct": -1.6,
+      "eps_cagr_5y_pct": 8.3,
+      "skip": null,
       "fetched": "2026-10-19",
-      "note": "foreign filer (ADR ratio unknown)"
+      "note": null
     },
     {
       "rank": 96,
@@ -4429,22 +4554,47 @@
       "cik": "813672",
       "price": 375.32,
       "price_filers": 13,
-      "pe": null,
+      "pe": 87.5,
       "held_value_usd": 18339818732,
       "holders": 13,
       "buyers": 7,
       "sellers": 7,
       "net_shares_pct": 5.52,
-      "eps_ttm": null,
-      "eps_ttm_end": null,
-      "net_income_ttm": null,
-      "eps_fy_end": null,
-      "eps_history": null,
-      "eps_cagr_3y_pct": null,
-      "eps_cagr_5y_pct": null,
-      "skip": "foreign filer (ADR ratio unknown)",
+      "eps_ttm": 4.29,
+      "eps_ttm_end": "2026-03-31",
+      "net_income_ttm": 1170969000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2021-01-02",
+          2.11
+        ],
+        [
+          "2022-01-01",
+          2.5
+        ],
+        [
+          "2022-12-31",
+          3.09
+        ],
+        [
+          "2023-12-31",
+          3.82
+        ],
+        [
+          "2024-12-31",
+          3.85
+        ],
+        [
+          "2025-12-31",
+          4.06
+        ]
+      ],
+      "eps_cagr_3y_pct": 9.5,
+      "eps_cagr_5y_pct": 14.0,
+      "skip": null,
       "fetched": "2026-10-19",
-      "note": "foreign filer (ADR ratio unknown)"
+      "note": null
     },
     {
       "rank": 99,
