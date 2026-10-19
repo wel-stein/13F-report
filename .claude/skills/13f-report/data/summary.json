@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12",
+  "generated_at": "2026-10-19",
   "filers": [
     {
       "name": "Berkshire Hathaway",
@@ -10726,7 +10726,7 @@
       ],
       "weighted_score": 75.36,
       "conviction_score": 155.6,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "NVIDIA CORPORATION",
@@ -10934,7 +10934,7 @@
       ],
       "weighted_score": 75.22,
       "conviction_score": 155.6,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "MICROSOFT CORP",
@@ -12930,7 +12930,7 @@
       ],
       "weighted_score": 1.98,
       "conviction_score": 144.4,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "AMAZON COM INC",
@@ -13117,7 +13117,7 @@
       ],
       "weighted_score": 37.77,
       "conviction_score": 138.9,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "BROADCOM INC",
@@ -14239,7 +14239,7 @@
       ],
       "weighted_score": 10.17,
       "conviction_score": 138.9,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "CHEVRON CORPORATION",
@@ -17231,7 +17231,7 @@
       ],
       "weighted_score": 1.56,
       "conviction_score": 138.9,
-      "net_action": "trim"
+      "net_action": "add"
     },
     {
       "issuer": "SPOTIFY TECHNOLOGY S A",
