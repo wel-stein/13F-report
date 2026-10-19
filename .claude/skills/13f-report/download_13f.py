@@ -29,7 +29,7 @@ import time
 import urllib.error
 import urllib.request
 from collections import Counter
-from datetime import date
+from datetime import date, timedelta
 from functools import lru_cache
 from pathlib import Path
 from xml.etree import ElementTree as ET
@@ -939,10 +939,11 @@ def enrich_fundamentals(all_results: list[dict], out_dir: Path,
 # diluted-share tags, each in preference order.
 _VALUATION_TAGS = (
     ("us-gaap",
-     ("EarningsPerShareDiluted", "EarningsPerShareBasicAndDiluted"),
-     ("NetIncomeLoss", "ProfitLoss"),
+     ("EarningsPerShareDiluted", "EarningsPerShareBasicAndDiluted", "EarningsPerShareBasic"),
+     ("NetIncomeLoss", "NetIncomeLossAvailableToCommonStockholdersBasic", "ProfitLoss"),
      ("WeightedAverageNumberOfDilutedSharesOutstanding",
-      "WeightedAverageNumberOfShareOutstandingBasicAndDiluted")),
+      "WeightedAverageNumberOfShareOutstandingBasicAndDiluted",
+      "WeightedAverageNumberOfSharesOutstandingBasic")),
     ("ifrs-full",
      ("DilutedEarningsLossPerShare",),
      ("ProfitLossAttributableToOwnersOfParent", "ProfitLoss"),
@@ -953,13 +954,21 @@ _ANNUAL_FORMS = ("10-K", "10-K/A", "20-F", "20-F/A", "40-F", "40-F/A")
 _FUND_HINTS = ("ISHARES", "SPDR", "VANGUARD", " ETF", "INVESCO QQQ", "SELECT SECTOR",
                "PROSHARES", "VANECK", "WISDOMTREE", "DIREXION", "GLOBAL X", "INDEX FDS")
 # EDGAR-derived fields cached between runs (earnings only move quarterly).
+# Bump the version whenever their derivation changes, to drop stale caches.
+_VALUATION_VERSION = 2
 _VALUATION_INPUT_KEYS = ("eps_ttm", "eps_ttm_end", "net_income_ttm", "eps_fy_end",
                          "eps_history", "eps_cagr_3y_pct", "eps_cagr_5y_pct",
                          "skip", "fetched")
 
 
-def _concept(cik: str, taxonomy: str, tags: tuple[str, ...]) -> tuple[list[dict], str] | None:
-    """Facts for the first of `tags` the company files: (facts, unit), else None."""
+def _concept(cik: str, taxonomy: str, tags: tuple[str, ...],
+             good=lambda rows: True) -> tuple[list[dict], str, str] | None:
+    """(facts, unit, tag) for the first of `tags` whose facts pass `good`.
+
+    Companies switch tags over the years, so a tag can exist yet stop years
+    ago; when none passes, the tag with the most recent fact wins.
+    """
+    best, best_end = None, ""
     for tag in tags:
         url = COMPANY_CONCEPT_URL.format(cik=cik, taxonomy=taxonomy, tag=tag)
         try:
@@ -969,11 +978,22 @@ def _concept(cik: str, taxonomy: str, tags: tuple[str, ...]) -> tuple[list[dict]
                 continue
             raise
         units = doc.get("units") or {}
-        if units:
-            unit = next((u for u in ("USD/shares", "USD", "shares") if u in units),
-                        next(iter(units)))
-            return units[unit], unit
-    return None
+        if not units:
+            continue
+        unit = next((u for u in ("USD/shares", "USD", "shares") if u in units),
+                    next(iter(units)))
+        rows = units[unit]
+        if good(rows):
+            return rows, unit, tag
+        last = max((e.get("end", "") for e in rows), default="")
+        if best is None or last > best_end:
+            best, best_end = (rows, unit, tag), last
+    return best
+
+
+def _last_end(rows: list[dict], annual_only: bool = False) -> str:
+    return max((e["end"] for e in rows if e.get("end") and e.get("start")
+                and (not annual_only or _is_annual(e["start"], e["end"]))), default="")
 
 
 def _days(start: str, end: str) -> int:
@@ -1077,21 +1097,47 @@ def _latest_shares(periods: dict[tuple[str, str], float]) -> float | None:
     return periods[key] or None
 
 
+def _pick_ttm(reported, derived, share_periods) -> tuple[float, str] | None:
+    """Choose between reported TTM EPS and TTM net income / latest shares.
+
+    Reported is what the company states, but its fiscal year (10-K) and YTD
+    (10-Q) parts sit on different share bases if a split landed in between;
+    derived is split-proof but leans on two more tags. Take the fresher one;
+    when equally fresh but far apart, trust derived only if the share count
+    itself jumped like a split.
+    """
+    if not reported or not derived:
+        return reported or derived
+    if reported[1] != derived[1]:
+        return max(reported, derived, key=lambda t: t[1])
+    if derived[0] and 0.67 <= reported[0] / derived[0] <= 1.5:
+        return reported
+    annual = [(k, v) for k, v in share_periods.items() if _is_annual(*k)]
+    fy_shares = max(annual)[1] if annual else None
+    latest = _latest_shares(share_periods)
+    split = bool(fy_shares and latest) and not 0.67 <= latest / fy_shares <= 1.5
+    return derived if split else reported
+
+
 def _valuation_inputs(cik: str) -> dict:
     """EDGAR-side inputs for one company: TTM diluted EPS and EPS CAGRs.
 
-    TTM EPS = TTM net income (immune to splits) / the latest diluted share
-    count (on the newest share basis, same as the 13F price). Companies that
-    can't be valued come back as {"skip": reason}.
+    TTM EPS is the reported figure or TTM net income / latest diluted shares,
+    whichever is fresher (see _pick_ttm). Companies that can't be valued come
+    back as {"skip": reason}; "_diag" names the tags used, for the run log.
     """
+    recent = (date.today() - timedelta(days=400)).isoformat()
     for taxonomy, eps_tags, ni_tags, share_tags in _VALUATION_TAGS:
-        eps = _concept(cik, taxonomy, eps_tags)
+        eps = _concept(cik, taxonomy, eps_tags, lambda r: _last_end(r, annual_only=True) >= recent)
         if eps is None:
             continue
-        rows, unit = eps
+        rows, unit, eps_tag = eps
         if unit != "USD/shares":
-            # Price is USD, so a non-USD EPS (ASML, TSMC...) can't make a P/E.
+            # Price is USD, so a non-USD EPS (ASML...) can't make a P/E.
             return {"skip": f"EPS reported in {unit.split('/')[0]}"}
+        if not any(str(e.get("form", "")).startswith("10-") for e in rows):
+            # 20-F/40-F filers: the 13F holds ADRs, whose share ratio XBRL doesn't give.
+            return {"skip": "foreign filer (ADR ratio unknown)"}
         out: dict = {}
         chain = _annual_eps_chain(rows)
         if chain:
@@ -1099,14 +1145,22 @@ def _valuation_inputs(cik: str) -> dict:
             out["eps_history"] = [[end, round(v, 4)] for end, v in reversed(chain)]
             out["eps_cagr_3y_pct"] = _cagr_pct(chain, 3)
             out["eps_cagr_5y_pct"] = _cagr_pct(chain, 5)
-        ni = _concept(cik, taxonomy, ni_tags)
-        sh = _concept(cik, taxonomy, share_tags)
-        ttm = _ttm(_durations(ni[0])) if ni and ni[1] == "USD" else None
-        shares = _latest_shares(_durations(sh[0])) if sh and sh[1] == "shares" else None
-        if ttm and shares:
-            out["net_income_ttm"] = ttm[0]
-            out["eps_ttm"] = round(ttm[0] / shares, 4)
+        latest = _last_end(rows)
+        ni = _concept(cik, taxonomy, ni_tags, lambda r: _last_end(r) >= latest)
+        sh = _concept(cik, taxonomy, share_tags, lambda r: _last_end(r) >= latest)
+        ni_ttm = _ttm(_durations(ni[0])) if ni and ni[1] == "USD" else None
+        share_periods = _durations(sh[0]) if sh and sh[1] == "shares" else {}
+        shares = _latest_shares(share_periods)
+        derived = (ni_ttm[0] / shares, ni_ttm[1]) if ni_ttm and shares else None
+        ttm = _pick_ttm(_ttm(_durations(rows)), derived, share_periods)
+        if ttm:
+            out["eps_ttm"] = round(ttm[0], 4)
             out["eps_ttm_end"] = ttm[1]
+        if ni_ttm:
+            out["net_income_ttm"] = ni_ttm[0]
+        out["_diag"] = "; ".join(
+            f"{name}={c[2]} ({len(c[0])} facts, last {_last_end(c[0])})" if c else f"{name}=none"
+            for name, c in (("eps", eps), ("ni", ni), ("shares", sh)))
         return out
     return {"skip": "no EPS in XBRL"}
 
@@ -1130,7 +1184,8 @@ def enrich_valuation(all_results: list[dict], out_dir: Path,
         prev = json.loads(path.read_text()) if path.exists() else {}
     except Exception:
         prev = {}
-    cache = {s["cik"]: s for s in prev.get("stocks", []) if s.get("cik")}
+    cache = ({s["cik"]: s for s in prev.get("stocks", []) if s.get("cik")}
+             if prev.get("version") == _VALUATION_VERSION else {})
 
     valid = [r for r in all_results if "error" not in r and r.get("latest_filing")]
     if not valid:
@@ -1204,6 +1259,9 @@ def enrich_valuation(all_results: list[dict], out_dir: Path,
             try:
                 inputs = {**_valuation_inputs(cik), "fetched": today.isoformat()}
                 fetched += 1
+                diag = inputs.pop("_diag", "")
+                if diag and not (inputs.get("eps_ttm") and inputs.get("eps_history")):
+                    print(f"valuation: {main['ticker']} incomplete: {diag}", file=sys.stderr)
             except Exception as ex:
                 print(f"valuation: EDGAR fetch failed for {main['ticker']}: {ex}",
                       file=sys.stderr)
@@ -1247,7 +1305,8 @@ def enrich_valuation(all_results: list[dict], out_dir: Path,
             "note": note,
         })
 
-    doc = {"generated_at": today.isoformat(), "price_date": price_date,
+    doc = {"version": _VALUATION_VERSION,
+           "generated_at": today.isoformat(), "price_date": price_date,
            "cohort_filers": len(cohort),
            "source": "13F-implied quarter-end price + SEC EDGAR XBRL companyconcept",
            "stocks": stocks}

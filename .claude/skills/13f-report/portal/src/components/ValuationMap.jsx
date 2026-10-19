@@ -492,10 +492,10 @@ export default function ValuationMap({ valuation, fundamentals }) {
 
           <p className="max-w-4xl text-xs text-slate-500 dark:text-slate-400">
             <span className="font-medium">Method.</span> Price = median of 13F value ÷ shares across the {valuation.cohort_filers} filers
-            reporting {valuation.price_date}. TTM EPS = trailing-twelve-month net income ÷ latest diluted share count (SEC XBRL).
+            reporting {valuation.price_date}. TTM EPS = trailing-twelve-month diluted EPS from SEC XBRL, checked against stock splits.
             EPS CAGR = annual diluted EPS from 10-K filings, restated across stock splits. This is a <em>trailing</em> PEG
             (Peter Lynch's original form); forward P/E and consensus 3–5-yr growth need analyst estimates, which SEC doesn't
-            publish. Non-USD reporters (e.g. ASML, TSMC), loss-makers and companies with a loss in the base year are listed
+            publish. Foreign 20-F filers (e.g. ASML, TSMC), loss-makers and companies with a loss in the base year are listed
             under “Not plotted”. Not investment advice.
           </p>
         </>

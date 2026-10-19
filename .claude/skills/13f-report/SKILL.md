@@ -58,8 +58,13 @@ Output goes to `.claude/skills/13f-report/data/`:
   - `price` — 13F-implied quarter-end price: median of `value_usd / shares`
     across those filers (SEC publishes no prices; the median shrugs off a
     filer still reporting in $thousands).
-  - `eps_ttm` — TTM net income ÷ latest diluted share count, from XBRL
-    `companyconcept`; `pe = price / eps_ttm` (null when ≤ 0 or out of range).
+  - `eps_ttm` — trailing-twelve-month diluted EPS from XBRL `companyconcept`:
+    the reported figure (fiscal year + YTD − prior-year YTD) or TTM net
+    income ÷ latest diluted shares, whichever is fresher (the latter wins
+    when a stock split landed mid-year). For each concept the first tag with
+    current data is used, since companies switch tags over the years.
+    `pe = price / eps_ttm` (null when ≤ 0 or out of range). 20-F/40-F filers
+    are skipped: the 13F holds their ADRs, whose share ratio XBRL doesn't give.
   - `eps_cagr_3y_pct` / `eps_cagr_5y_pct` — annual diluted EPS CAGR from 10-K
     filings, restated across stock splits by chaining year-over-year ratios
     taken *within* each filing. Null when either end is a loss.
@@ -69,7 +74,9 @@ Output goes to `.claude/skills/13f-report/data/`:
     earnings, …).
 
   EDGAR inputs are cached ~20 days per company (earnings only move
-  quarterly); prices and flows are recomputed every run. The whole step is
+  quarterly; a `version` bump drops the cache); prices and flows are
+  recomputed every run. Companies whose EDGAR inputs come back incomplete
+  are logged with the tags tried, for debugging from the workflow log. The whole step is
   fail-safe and never breaks the refresh.
 
 ### Useful flags
