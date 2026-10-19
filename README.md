@@ -15,7 +15,8 @@ viewing the result in a React + Tailwind admin portal.
 │   ├── download_13f.py       # SEC EDGAR fetcher / parser / differ
 │   ├── investors.json        # CIKs of the top 20 filers (editable)
 │   ├── fixtures/             # XML fixtures for offline smoke test
-│   ├── data/                 # JSON output (per-filer + summary.json)
+│   ├── data/                 # JSON output (per-filer, summary, tickers,
+│   │                         #   fundamentals, valuation)
 │   └── portal/               # Vite + React + Tailwind admin UI
 ├── .github/workflows/
 │   └── refresh-13f-data.yml  # weekly auto-refresh of data/
@@ -43,6 +44,11 @@ npm run dev   # http://localhost:5173
   per-filer list (with a search box once filers exceed 8).
 - **Overview** — combined AUM across all filers, plus *Top 10 consensus buys /
   sells* across the cohort and a clickable per-filer summary table.
+- **Valuation Map** (PEG 估值地图) — trailing P/E vs historical EPS CAGR
+  scatter for the top 25 / 50 / 100 stocks by combined 13F value, split by the
+  PEG = 1 line, with dots colored by the filers' net share buying/selling this
+  quarter. Price is 13F-implied (quarter-end), earnings come from SEC XBRL;
+  3-yr / 5-yr toggle, sortable table, click-through to the thesis card.
 - **Compare filers** — pick any two and see overlap, only-A, only-B, and
   divergent positions (with "X sold" badges when one side exited what the
   other still holds). Sortable, paginated.

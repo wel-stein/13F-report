@@ -23,11 +23,14 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import statistics
 import sys
 import time
 import urllib.error
 import urllib.request
+from collections import Counter
 from datetime import date
+from functools import lru_cache
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
@@ -36,6 +39,8 @@ EDGAR_DATA = "https://data.sec.gov"
 EDGAR_ARCHIVES = "https://www.sec.gov/Archives/edgar/data"
 COMPANY_TICKERS_URL = "https://www.sec.gov/files/company_tickers.json"
 COMPANY_FACTS_URL = "https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:0>10}.json"
+COMPANY_CONCEPT_URL = ("https://data.sec.gov/api/xbrl/companyconcept/"
+                       "CIK{cik:0>10}/{taxonomy}/{tag}.json")
 NS_INFO = "{http://www.sec.gov/edgar/document/thirteenf/informationtable}"
 _UA = os.environ.get("SEC_UA", DEFAULT_UA)
 
@@ -60,6 +65,13 @@ def http_get(url: str, retries: int = 4) -> bytes:
             last = e
             time.sleep(2 ** attempt)
     raise RuntimeError(f"GET {url} failed after {retries} attempts: {last}")
+
+
+@lru_cache(maxsize=1)
+def _company_tickers() -> list[dict]:
+    """SEC's ticker/CIK/title list, fetched once per run (failures aren't cached)."""
+    raw = json.loads(http_get(COMPANY_TICKERS_URL))
+    return list(raw.values() if isinstance(raw, dict) else raw)
 
 
 def get_recent_13f(cik: str) -> list[dict]:
@@ -637,17 +649,33 @@ _NAME_STOPWORDS = {
     "LTD", "LIMITED", "PLC", "LLC", "LP", "NV", "SA", "AG", "AB", "SE",
     "HLDG", "HLDGS", "HOLDING", "HOLDINGS", "GROUP", "GRP", "THE", "COM",
     "CL", "CLASS", "A", "B", "C", "NEW", "DEL", "TR", "TRUST", "ADR", "ADS",
-    "SH", "SHS", "ORD", "REIT", "SPONSORED",
+    "SH", "SHS", "ORD", "REIT", "SPONSORED", "OF", "AND", "DE",
+}
+
+
+# 13F issuer strings are abbreviated ("CISCO SYS INC", "APPLIED MATLS INC");
+# SEC titles mostly aren't. Fold both spellings onto one canonical token.
+_NAME_ABBREV = {
+    "SYSTEMS": "SYS", "SYSTEM": "SYS", "MATERIALS": "MATLS", "INSTRUMENTS": "INSTRS",
+    "FINANCIAL": "FINL", "SERVICES": "SVCS", "PROPERTY": "PPTY", "PROPERTIES": "PPTYS",
+    "INTERNATIONAL": "INTL", "MACHINES": "MACHS", "TECHNOLOGIES": "TECH",
+    "TECHNOLOGY": "TECH", "LABORATORIES": "LABS", "PHARMACEUTICALS": "PHARMA",
+    "COMMUNICATIONS": "COMMS", "MANUFACTURING": "MFG", "INDUSTRIES": "INDS",
+    "AMERICA": "AMER", "BANCORPORATION": "BANCORP", "HLDNGS": "HOLDINGS",
 }
 
 
 def _normalize_issuer(name: str) -> str:
-    """Reduce a company name to a comparable core token string."""
+    """Reduce a company name to a comparable core token string.
+
+    Tokens are abbreviation-folded and sorted so word order doesn't matter
+    ("DISNEY WALT CO" and "Walt Disney Co" both become "DISNEY WALT").
+    """
     cleaned = []
     for ch in (name or "").upper():
         cleaned.append(ch if ch.isalnum() or ch == " " else " ")
-    tokens = [t for t in "".join(cleaned).split() if t and t not in _NAME_STOPWORDS]
-    return " ".join(tokens)
+    tokens = (_NAME_ABBREV.get(t, t) for t in "".join(cleaned).split())
+    return " ".join(sorted(t for t in tokens if t and t not in _NAME_STOPWORDS))
 
 
 def enrich_tickers(all_results: list[dict], out_dir: Path) -> None:
@@ -667,43 +695,49 @@ def enrich_tickers(all_results: list[dict], out_dir: Path) -> None:
     except Exception:
         existing = {}
 
-    # CUSIPs still missing a ticker, keyed to the issuer name we'll match on.
-    want: dict[str, str] = {}
+    # CUSIPs still missing a ticker, keyed to every issuer spelling the filers
+    # used for it (filers abbreviate differently, so any one may match).
+    want: dict[str, set[str]] = {}
     for res in all_results:
         if "error" in res:
             continue
         for arr in ("holdings", "exited"):
             for h in res.get(arr, ()):
                 cusip, issuer = h.get("cusip"), h.get("issuer")
-                if cusip and issuer and cusip not in existing and cusip not in want:
-                    want[cusip] = issuer
+                if cusip and issuer and cusip not in existing:
+                    want.setdefault(cusip, set()).add(issuer)
     if not want:
         return
 
     try:
-        raw = json.loads(http_get(COMPANY_TICKERS_URL))
+        sec_rows = _company_tickers()
     except Exception as e:
         print(f"ticker enrichment skipped (SEC company_tickers fetch failed: {e})",
               file=sys.stderr)
         return
 
-    # normalized title -> ticker, but only when the normalized name is unique
-    # across SEC's list (ambiguous names are left unmatched on purpose).
-    by_name: dict[str, str | None] = {}
-    for row in (raw.values() if isinstance(raw, dict) else raw):
-        title, ticker = row.get("title"), row.get("ticker")
+    # normalized title -> (ticker, cik), but only when the normalized name maps
+    # to a single company (ambiguous names are left unmatched on purpose). One
+    # company listing several tickers (preferreds, share classes) is not
+    # ambiguous: SEC lists the primary ticker first, so the first one wins.
+    by_name: dict[str, tuple[str, object] | None] = {}
+    for row in sec_rows:
+        title, ticker, cik = row.get("title"), row.get("ticker"), row.get("cik_str")
         if not title or not ticker:
             continue
         norm = _normalize_issuer(title)
         if not norm:
             continue
-        by_name[norm] = None if norm in by_name else ticker
+        if norm not in by_name:
+            by_name[norm] = (ticker, cik)
+        elif by_name[norm] is not None and by_name[norm][1] != cik:
+            by_name[norm] = None
 
     added = 0
-    for cusip, issuer in want.items():
-        ticker = by_name.get(_normalize_issuer(issuer))
-        if ticker:
-            existing[cusip] = ticker
+    for cusip, issuers in want.items():
+        hits = {by_name[n] for n in map(_normalize_issuer, issuers) if by_name.get(n)}
+        if len(hits) == 1:
+            existing[cusip] = next(iter(hits))[0]
             added += 1
 
     if added:
@@ -848,13 +882,13 @@ def enrich_fundamentals(all_results: list[dict], out_dir: Path,
         return
 
     try:
-        raw = json.loads(http_get(COMPANY_TICKERS_URL))
+        sec_rows = _company_tickers()
     except Exception as e:
         print(f"fundamentals enrichment skipped (company_tickers fetch failed: {e})",
               file=sys.stderr)
         return
     ticker_cik = {}
-    for row in (raw.values() if isinstance(raw, dict) else raw):
+    for row in sec_rows:
         t, cik = row.get("ticker"), row.get("cik_str")
         if t and cik is not None:
             ticker_cik.setdefault(t.upper(), str(cik))
@@ -895,6 +929,333 @@ def enrich_fundamentals(all_results: list[dict], out_dir: Path,
           f"({fetched} fetched), {len(stocks)} total", file=sys.stderr)
 
 
+# --- Valuation map (P/E vs EPS growth, PEG) for the portal ------------------
+# SEC publishes no prices, but every 13F row carries market value *and* share
+# count at quarter-end, so value / shares is the quarter-end price. The median
+# across filers shrugs off the odd filer still reporting in $thousands.
+#
+# Earnings come from XBRL companyconcept (one small JSON per concept rather
+# than the multi-MB companyfacts). Per taxonomy: EPS tags, net-income tags,
+# diluted-share tags, each in preference order.
+_VALUATION_TAGS = (
+    ("us-gaap",
+     ("EarningsPerShareDiluted", "EarningsPerShareBasicAndDiluted"),
+     ("NetIncomeLoss", "ProfitLoss"),
+     ("WeightedAverageNumberOfDilutedSharesOutstanding",
+      "WeightedAverageNumberOfShareOutstandingBasicAndDiluted")),
+    ("ifrs-full",
+     ("DilutedEarningsLossPerShare",),
+     ("ProfitLossAttributableToOwnersOfParent", "ProfitLoss"),
+     ("AdjustedWeightedAverageShares", "WeightedAverageShares")),
+)
+_ANNUAL_FORMS = ("10-K", "10-K/A", "20-F", "20-F/A", "40-F", "40-F/A")
+# Issuer-name hints for ETFs / index trusts (no earnings, not stocks).
+_FUND_HINTS = ("ISHARES", "SPDR", "VANGUARD", " ETF", "INVESCO QQQ", "SELECT SECTOR",
+               "PROSHARES", "VANECK", "WISDOMTREE", "DIREXION", "GLOBAL X", "INDEX FDS")
+# EDGAR-derived fields cached between runs (earnings only move quarterly).
+_VALUATION_INPUT_KEYS = ("eps_ttm", "eps_ttm_end", "net_income_ttm", "eps_fy_end",
+                         "eps_history", "eps_cagr_3y_pct", "eps_cagr_5y_pct",
+                         "skip", "fetched")
+
+
+def _concept(cik: str, taxonomy: str, tags: tuple[str, ...]) -> tuple[list[dict], str] | None:
+    """Facts for the first of `tags` the company files: (facts, unit), else None."""
+    for tag in tags:
+        url = COMPANY_CONCEPT_URL.format(cik=cik, taxonomy=taxonomy, tag=tag)
+        try:
+            doc = json.loads(http_get(url))
+        except urllib.error.HTTPError as e:
+            if e.code == 404:  # company doesn't file this concept
+                continue
+            raise
+        units = doc.get("units") or {}
+        if units:
+            unit = next((u for u in ("USD/shares", "USD", "shares") if u in units),
+                        next(iter(units)))
+            return units[unit], unit
+    return None
+
+
+def _days(start: str, end: str) -> int:
+    return (date.fromisoformat(end) - date.fromisoformat(start)).days
+
+
+def _is_annual(start: str, end: str) -> bool:
+    return 350 <= _days(start, end) <= 380
+
+
+def _durations(rows: list[dict]) -> dict[tuple[str, str], float]:
+    """(start, end) -> value for duration facts; the latest filing wins."""
+    best: dict[tuple[str, str], tuple[str, float]] = {}
+    for e in rows:
+        start, end, val = e.get("start"), e.get("end"), e.get("val")
+        if not start or not end or val is None:
+            continue
+        filed = e.get("filed", "")
+        if (start, end) not in best or filed >= best[(start, end)][0]:
+            best[(start, end)] = (filed, val)
+    return {k: v for k, (_, v) in best.items()}
+
+
+def _annual_eps_chain(rows: list[dict], max_years: int = 5) -> list[tuple[str, float]]:
+    """Annual EPS as [(fiscal-year end, eps)], newest first, on one share basis.
+
+    A stock split makes an old filing's EPS incomparable with a new one, but
+    each 10-K states its comparative years on the same basis. So each year is
+    linked to the one before by their ratio *within* the newest filing that
+    carries both, chaining back from the latest year.
+    """
+    by_accn: dict[str, dict[str, float]] = {}
+    filed: dict[str, str] = {}
+    for e in rows:
+        start, end, val, accn = e.get("start"), e.get("end"), e.get("val"), e.get("accn")
+        if not (start and end and accn) or val is None:
+            continue
+        if e.get("form") not in _ANNUAL_FORMS or not _is_annual(start, end):
+            continue
+        by_accn.setdefault(accn, {})[end] = val
+        filed[accn] = max(filed.get(accn, ""), e.get("filed", ""))
+    if not by_accn:
+        return []
+    newest_first = sorted(by_accn, key=lambda a: filed[a], reverse=True)
+    ends = sorted({end for vals in by_accn.values() for end in vals}, reverse=True)
+    cur = ends[0]
+    val = next(by_accn[a][cur] for a in newest_first if cur in by_accn[a])
+    chain = [(cur, val)]
+    while len(chain) <= max_years:
+        prev = next((e for e in ends if e < cur and 340 <= _days(e, cur) <= 390), None)
+        if prev is None:
+            break
+        pair = next((by_accn[a] for a in newest_first
+                     if by_accn[a].get(cur) and prev in by_accn[a]), None)
+        if pair is None:
+            break
+        val = val * pair[prev] / pair[cur]
+        chain.append((prev, val))
+        cur = prev
+    return chain
+
+
+def _cagr_pct(chain: list[tuple[str, float]], years: int) -> float | None:
+    if len(chain) <= years:
+        return None
+    new, old = chain[0][1], chain[years][1]
+    if new <= 0 or old <= 0:
+        return None
+    return round(((new / old) ** (1 / years) - 1) * 100, 1)
+
+
+def _ttm(periods: dict[tuple[str, str], float]) -> tuple[float, str] | None:
+    """Trailing-twelve-month total as (value, period end).
+
+    Last fiscal year + this year's YTD - the same YTD a year earlier; falls
+    back to the fiscal year alone when no later 10-Q is on file.
+    """
+    annual = [(k, v) for k, v in periods.items() if _is_annual(*k)]
+    if not annual:
+        return None
+    (_, fy_end), fy_val = max(annual, key=lambda kv: kv[0][1])
+    ytd = [(k, v) for k, v in periods.items()
+           if k[1] > fy_end and abs(_days(fy_end, k[0]) - 1) <= 7 and 80 <= _days(*k) <= 300]
+    if not ytd:
+        return fy_val, fy_end
+    (y_start, y_end), y_val = max(ytd, key=lambda kv: kv[0][1])
+    span = _days(y_start, y_end)
+    prior = next((v for (s, e), v in periods.items()
+                  if abs(_days(e, y_end) - 365) <= 10 and abs(_days(s, e) - span) <= 10), None)
+    if prior is None:
+        return fy_val, fy_end
+    return fy_val + y_val - prior, y_end
+
+
+def _latest_shares(periods: dict[tuple[str, str], float]) -> float | None:
+    """Diluted share count of the most recent (shortest) reported period."""
+    if not periods:
+        return None
+    last = max(end for _, end in periods)
+    key = min((k for k in periods if k[1] == last), key=lambda k: _days(*k))
+    return periods[key] or None
+
+
+def _valuation_inputs(cik: str) -> dict:
+    """EDGAR-side inputs for one company: TTM diluted EPS and EPS CAGRs.
+
+    TTM EPS = TTM net income (immune to splits) / the latest diluted share
+    count (on the newest share basis, same as the 13F price). Companies that
+    can't be valued come back as {"skip": reason}.
+    """
+    for taxonomy, eps_tags, ni_tags, share_tags in _VALUATION_TAGS:
+        eps = _concept(cik, taxonomy, eps_tags)
+        if eps is None:
+            continue
+        rows, unit = eps
+        if unit != "USD/shares":
+            # Price is USD, so a non-USD EPS (ASML, TSMC...) can't make a P/E.
+            return {"skip": f"EPS reported in {unit.split('/')[0]}"}
+        out: dict = {}
+        chain = _annual_eps_chain(rows)
+        if chain:
+            out["eps_fy_end"] = chain[0][0]
+            out["eps_history"] = [[end, round(v, 4)] for end, v in reversed(chain)]
+            out["eps_cagr_3y_pct"] = _cagr_pct(chain, 3)
+            out["eps_cagr_5y_pct"] = _cagr_pct(chain, 5)
+        ni = _concept(cik, taxonomy, ni_tags)
+        sh = _concept(cik, taxonomy, share_tags)
+        ttm = _ttm(_durations(ni[0])) if ni and ni[1] == "USD" else None
+        shares = _latest_shares(_durations(sh[0])) if sh and sh[1] == "shares" else None
+        if ttm and shares:
+            out["net_income_ttm"] = ttm[0]
+            out["eps_ttm"] = round(ttm[0] / shares, 4)
+            out["eps_ttm_end"] = ttm[1]
+        return out
+    return {"skip": "no EPS in XBRL"}
+
+
+def enrich_valuation(all_results: list[dict], out_dir: Path,
+                     universe: int = 100, refetch_days: int = 20) -> None:
+    """P/E vs EPS-growth (PEG) map inputs -> data/valuation.json.
+
+    Universe: the `universe` largest companies by combined 13F value across
+    the filers on the latest quarter (share classes merged by CIK). Each gets
+    a 13F-implied quarter-end price, trailing P/E on TTM diluted EPS,
+    historical 3y/5y diluted EPS CAGR, and the cohort's net share flow.
+    EDGAR inputs are cached for `refetch_days`.
+    """
+    path = out_dir / "valuation.json"
+    try:
+        cusip_ticker = json.loads((out_dir / "tickers.json").read_text())
+    except Exception:
+        return
+    try:
+        prev = json.loads(path.read_text()) if path.exists() else {}
+    except Exception:
+        prev = {}
+    cache = {s["cik"]: s for s in prev.get("stocks", []) if s.get("cik")}
+
+    valid = [r for r in all_results if "error" not in r and r.get("latest_filing")]
+    if not valid:
+        return
+    # Stale filers (a manager that stopped filing) would mix in old prices.
+    price_date = Counter(r["latest_filing"].get("report_date", "") for r in valid).most_common(1)[0][0]
+    cohort = [r for r in valid if r["latest_filing"].get("report_date") == price_date]
+
+    by_cusip: dict[str, dict] = {}
+    for r in cohort:
+        for h in (*r.get("holdings", ()), *r.get("exited", ())):
+            if h.get("put_call") or h.get("share_type") != "SH":
+                continue
+            ticker = cusip_ticker.get(h.get("cusip"))
+            issuer = h.get("issuer") or ""
+            if not ticker or any(k in issuer.upper() for k in _FUND_HINTS):
+                continue
+            e = by_cusip.setdefault(h["cusip"], {
+                "ticker": ticker, "issuer": issuer, "value": 0, "shares": 0,
+                "shares_prior": 0, "prices": [], "holders": set(),
+                "buyers": set(), "sellers": set(),
+            })
+            e["value"] += h["value_usd"]
+            e["shares"] += h["shares"]
+            e["shares_prior"] += h["shares_prior"]
+            if h["shares"] > 0:
+                e["holders"].add(r["name"])
+                e["prices"].append(h["value_usd"] / h["shares"])
+            if h["action"] in ("new", "add"):
+                e["buyers"].add(r["name"])
+            elif h["action"] in ("trim", "exit"):
+                e["sellers"].add(r["name"])
+    if not by_cusip:
+        return
+
+    try:
+        sec_rows = _company_tickers()
+    except Exception as e:
+        print(f"valuation enrichment skipped (company_tickers fetch failed: {e})",
+              file=sys.stderr)
+        return
+    ticker_cik: dict[str, str] = {}
+    for row in sec_rows:
+        t, cik = row.get("ticker"), row.get("cik_str")
+        if t and cik is not None:
+            ticker_cik.setdefault(t.upper(), str(cik))
+
+    # Merge share classes (GOOGL + GOOG, BRK-A + BRK-B) into one company.
+    companies: dict[str, list[dict]] = {}
+    for e in by_cusip.values():
+        cik = ticker_cik.get(e["ticker"].upper())
+        if cik:
+            companies.setdefault(cik, []).append(e)
+    ranked = sorted(companies.items(), key=lambda kv: -sum(c["value"] for c in kv[1]))
+
+    today = date.today()
+
+    def is_fresh(entry):
+        d = (entry or {}).get("fetched", "")
+        return bool(d) and (today - date.fromisoformat(d)).days < refetch_days
+
+    stocks: list[dict] = []
+    fetched = 0
+    for rank, (cik, classes) in enumerate(ranked[:universe], 1):
+        classes.sort(key=lambda c: -c["value"])
+        main = classes[0]
+        cached = cache.get(cik)
+        if is_fresh(cached):
+            inputs = {k: cached[k] for k in _VALUATION_INPUT_KEYS if k in cached}
+        else:
+            try:
+                inputs = {**_valuation_inputs(cik), "fetched": today.isoformat()}
+                fetched += 1
+            except Exception as ex:
+                print(f"valuation: EDGAR fetch failed for {main['ticker']}: {ex}",
+                      file=sys.stderr)
+                inputs = ({k: cached[k] for k in _VALUATION_INPUT_KEYS if k in cached}
+                          if cached else {"skip": "EDGAR fetch failed"})
+
+        # Per-share figures follow one share class; Berkshire's EPS is per
+        # Class A share, so take the first class whose price gives a sane P/E.
+        eps = inputs.get("eps_ttm")
+        pick, pe = main, None
+        if eps and eps > 0:
+            for c in classes:
+                cand = statistics.median(c["prices"]) / eps if c["prices"] else None
+                if cand and 1 <= cand <= 1000:
+                    pick, pe = c, cand
+                    break
+        note = inputs.get("skip")
+        if not note:
+            if eps is None:
+                note = "no TTM EPS in XBRL"
+            elif eps <= 0:
+                note = "negative TTM earnings"
+            elif pe is None:
+                note = "P/E out of range"
+        stocks.append({
+            "rank": rank,
+            "ticker": pick["ticker"],
+            "issuer": main["issuer"],
+            "cik": cik,
+            "price": round(statistics.median(pick["prices"]), 2) if pick["prices"] else None,
+            "price_filers": len(pick["prices"]),
+            "pe": round(pe, 1) if pe else None,
+            "held_value_usd": sum(c["value"] for c in classes),
+            "holders": len(set().union(*(c["holders"] for c in classes))),
+            "buyers": len(main["buyers"]),
+            "sellers": len(main["sellers"]),
+            "net_shares_pct": (round((main["shares"] - main["shares_prior"])
+                                     / main["shares_prior"] * 100, 2)
+                               if main["shares_prior"] else None),
+            **{k: inputs.get(k) for k in _VALUATION_INPUT_KEYS},
+            "note": note,
+        })
+
+    doc = {"generated_at": today.isoformat(), "price_date": price_date,
+           "cohort_filers": len(cohort),
+           "source": "13F-implied quarter-end price + SEC EDGAR XBRL companyconcept",
+           "stocks": stocks}
+    path.write_text(json.dumps(doc, indent=2) + "\n")
+    print(f"valuation: {sum(1 for s in stocks if s['pe'])} of {len(stocks)} companies "
+          f"valued ({fetched} fetched from EDGAR)", file=sys.stderr)
+
+
 def run(investors_path: Path, out_dir: Path, top_n: int) -> int:
     investors = json.loads(investors_path.read_text())
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -926,6 +1287,10 @@ def run(investors_path: Path, out_dir: Path, top_n: int) -> int:
     (out_dir / "summary.json").write_text(json.dumps(summary, indent=2))
     enrich_tickers(all_results, out_dir)
     enrich_fundamentals(all_results, out_dir)
+    try:
+        enrich_valuation(all_results, out_dir)
+    except Exception as e:  # optional view; never fail the data refresh over it
+        print(f"valuation enrichment skipped ({type(e).__name__}: {e})", file=sys.stderr)
     return 1 if failures == len(investors) else 0
 
 
