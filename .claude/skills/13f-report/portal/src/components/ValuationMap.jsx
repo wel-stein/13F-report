@@ -61,7 +61,7 @@ function useWidth(ref) {
 function Segmented({ options, value, onChange, label }) {
   return (
     <div className="flex items-center gap-2">
-      <span className="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">{label}</span>
+      <span className="whitespace-nowrap text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">{label}</span>
       <div className="inline-flex rounded-md shadow-sm" role="group" aria-label={label}>
         {options.map(([v, text], i) => (
           <button
@@ -70,7 +70,7 @@ function Segmented({ options, value, onChange, label }) {
             onClick={() => onChange(v)}
             aria-pressed={value === v}
             className={
-              'px-3 py-1.5 text-xs font-medium ring-1 ring-inset transition ' +
+              'whitespace-nowrap px-3 py-3 text-xs font-medium ring-1 ring-inset transition sm:py-1.5 ' +
               (i === 0 ? 'rounded-l-md ' : '-ml-px ') +
               (i === options.length - 1 ? 'rounded-r-md ' : '') +
               (value === v
@@ -93,6 +93,8 @@ function Scatter({ points, horizon, onOpen }) {
   const wrapRef = useRef(null)
   const width = useWidth(wrapRef)
   const [hover, setHover] = useState(null)
+  // Fingers need a bigger hit area than a mouse pointer.
+  const hitR = typeof window !== 'undefined' && window.matchMedia?.('(pointer: coarse)').matches ? 18 : 13
   const height = Math.round(Math.min(Math.max(width * 0.6, 320), 560))
   const iw = Math.max(width - M.left - M.right, 0)
   const ih = height - M.top - M.bottom
@@ -219,7 +221,7 @@ function Scatter({ points, horizon, onOpen }) {
                   onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen(p) } }}
                   className="cursor-pointer outline-none"
                 >
-                  <circle r={13} fill="transparent" />
+                  <circle r={hitR} fill="transparent" />
                   {pinned ? (
                     <path
                       d={p.pinY ? 'M0,-7 L6,4 L-6,4 Z' : p.pinX > 0 ? 'M7,0 L-4,6 L-4,-6 Z' : 'M-7,0 L4,6 L4,-6 Z'}
@@ -334,7 +336,7 @@ function PointsTable({ points, onOpen }) {
                 aria-sort={sort.key === c.key ? (sort.dir === 'asc' ? 'ascending' : 'descending') : 'none'}
                 className={`px-3 py-2 font-semibold ${c.num ? 'text-right' : 'text-left'} ${c.cls}`}
               >
-                <button type="button" onClick={() => toggle(c.key)} className="inline-flex items-center gap-1 hover:text-slate-900 dark:hover:text-white">
+                <button type="button" onClick={() => toggle(c.key)} className="-my-2 inline-flex items-center gap-1 py-2 hover:text-slate-900 sm:my-0 sm:py-0 dark:hover:text-white">
                   {c.label}
                   <span className="text-[10px] text-slate-400">{sort.key === c.key ? (sort.dir === 'asc' ? '▲' : '▼') : ''}</span>
                 </button>
@@ -453,7 +455,7 @@ export default function ValuationMap({ valuation, quotes, fundamentals }) {
                 label="P/E price"
                 value={basis}
                 onChange={setBasis}
-                options={[['live', `Latest · ${live.as_of}`], ['13f', `13F q-end · ${valuation.price_date}`]]}
+                options={[['live', 'Latest'], ['13f', '13F q-end']]}
               />
             )}
           </div>
@@ -498,7 +500,7 @@ export default function ValuationMap({ valuation, quotes, fundamentals }) {
               <summary className="cursor-pointer font-semibold text-slate-900 dark:text-slate-100">
                 Not plotted <span className="font-normal text-slate-500 dark:text-slate-400">· {skipped.length} of top {topN}</span>
               </summary>
-              <ul className="mt-2 grid gap-x-6 gap-y-1 text-xs text-slate-600 dark:text-slate-400 sm:grid-cols-2 lg:grid-cols-3">
+              <ul className="mt-2 grid grid-cols-1 gap-x-6 gap-y-1 text-xs text-slate-600 dark:text-slate-400 sm:grid-cols-2 lg:grid-cols-3">
                 {skipped.map((s) => (
                   <li key={s.ticker}>
                     <span className="font-mono font-semibold text-slate-800 dark:text-slate-200">{s.ticker}</span> — {s.reason}

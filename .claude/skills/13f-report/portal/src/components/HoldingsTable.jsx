@@ -178,7 +178,7 @@ export default function HoldingsTable({
               onClick={() => emit({ filter: f.id })}
               aria-pressed={filter === f.id}
               className={
-                'rounded px-3 py-1.5 text-xs font-medium ring-1 ring-inset transition ' +
+                'rounded px-3 py-3 text-xs font-medium ring-1 ring-inset transition sm:py-1.5 ' +
                 (filter === f.id
                   ? 'bg-indigo-600 text-white ring-indigo-600'
                   : 'bg-white text-slate-700 ring-slate-300 hover:bg-slate-50 dark:bg-slate-900 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-800')
@@ -195,7 +195,7 @@ export default function HoldingsTable({
               onChange={(e) => setLocalQuery(e.target.value)}
               placeholder="Filter issuer or CUSIP…"
               aria-label="Filter holdings by issuer or CUSIP"
-              className="w-full rounded border border-slate-300 bg-white px-2 py-1 pr-7 text-sm text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500"
+              className="w-full rounded border border-slate-300 bg-white px-2 py-2.5 pr-7 text-base text-slate-900 sm:py-1 sm:text-sm placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500"
             />
             {localQuery && (
               <button
@@ -218,7 +218,7 @@ export default function HoldingsTable({
             onClick={() => downloadCsv(filtered, `${csvBaseName}-${filter}.csv`)}
             disabled={filtered.length === 0}
             title="Export the currently filtered & sorted rows as CSV"
-            className="shrink-0 rounded border border-slate-300 bg-white px-2 py-1 text-xs font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+            className="shrink-0 rounded border border-slate-300 bg-white px-2 py-3 text-xs font-medium text-slate-700 sm:py-1 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
           >
             CSV
           </button>
@@ -346,14 +346,14 @@ export default function HoldingsTable({
               type="button"
               onClick={() => goToPage(0)}
               disabled={safePage === 0}
-              className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+              className="rounded border border-slate-300 bg-white px-3 py-3 font-medium sm:px-2 sm:py-1 text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
               aria-label="First page"
             >‹‹</button>
             <button
               type="button"
               onClick={() => goToPage(Math.max(0, safePage - 1))}
               disabled={safePage === 0}
-              className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+              className="rounded border border-slate-300 bg-white px-3 py-3 font-medium sm:px-2 sm:py-1 text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
               aria-label="Previous page"
             >‹ Prev</button>
             <span className="px-2 tabular-nums">
@@ -363,14 +363,14 @@ export default function HoldingsTable({
               type="button"
               onClick={() => goToPage(Math.min(pageCount - 1, safePage + 1))}
               disabled={safePage >= pageCount - 1}
-              className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+              className="rounded border border-slate-300 bg-white px-3 py-3 font-medium sm:px-2 sm:py-1 text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
               aria-label="Next page"
             >Next ›</button>
             <button
               type="button"
               onClick={() => goToPage(pageCount - 1)}
               disabled={safePage >= pageCount - 1}
-              className="rounded border border-slate-300 bg-white px-2 py-1 font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+              className="rounded border border-slate-300 bg-white px-3 py-3 font-medium sm:px-2 sm:py-1 text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
               aria-label="Last page"
             >››</button>
           </div>

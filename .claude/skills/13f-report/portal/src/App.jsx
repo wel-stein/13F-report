@@ -92,6 +92,8 @@ export default function App() {
   const [valuation, setValuation] = useState(undefined)
   // Optional moomoo P/E refresh (data/quotes.json, pushed from a local OpenD).
   const [quotes, setQuotes] = useState(undefined)
+  // Cross-filer aggregates (data/aggregates.json) for Overview + Quiet Accumulation.
+  const [aggregates, setAggregates] = useState(undefined)
   const [filerCache, setFilerCache] = useState({})
   const [filerError, setFilerError] = useState(null)
   const [loadingFiler, setLoadingFiler] = useState(false)
@@ -181,26 +183,27 @@ export default function App() {
       .catch((e) => setSummaryError(e.message))
   }, [])
 
-  // Load the CUSIP→ticker map once (best-effort; the Quiet Accumulation view
-  // degrades to "—" when it's absent).
+  const view = !hashState.cik ? 'overview'
+    : VIEW_SENTINELS.has(hashState.cik) ? hashState.cik
+    : 'filer'
+
+  // The CUSIP→ticker map (Quiet Accumulation's ticker column, "—" when absent)
+  // and EDGAR fundamentals (thesis cards) only feed the Quiet Accumulation and
+  // Valuation Map views, so fetch them (~1 MB) the first time one opens.
+  const needsStockData = view === 'quiet' || view === 'peg'
+  const stockDataRequested = useRef(false)
   useEffect(() => {
+    if (!needsStockData || stockDataRequested.current) return
+    stockDataRequested.current = true
     fetch('/tickers.json')
       .then((r) => (r.ok ? r.json() : {}))
       .then((data) => setTickers(data && typeof data === 'object' ? data : {}))
       .catch(() => setTickers({}))
-  }, [])
-
-  // Load per-stock EDGAR fundamentals once (best-effort; drives the thesis card).
-  useEffect(() => {
     fetch('/fundamentals.json')
       .then((r) => (r.ok ? r.json() : null))
       .then((data) => setFundamentals(data?.stocks && typeof data.stocks === 'object' ? data.stocks : {}))
       .catch(() => setFundamentals({}))
-  }, [])
-
-  const view = !hashState.cik ? 'overview'
-    : VIEW_SENTINELS.has(hashState.cik) ? hashState.cik
-    : 'filer'
+  }, [needsStockData])
 
   // Valuation map data (data/valuation.json + optional quotes.json) is only
   // fetched once that view opens.
@@ -234,8 +237,8 @@ export default function App() {
   }, [view, selected])
 
   // Cache lookups via ref so fetchFiler stays referentially stable across
-  // cache writes (otherwise the prefetch effect re-runs N times as N
-  // filers load, walking the whole filer list each pass).
+  // cache writes (otherwise effects that depend on it, like the compare
+  // pre-load, re-run on every filer that lands).
   const filerCacheRef = useRef(filerCache)
   useEffect(() => { filerCacheRef.current = filerCache }, [filerCache])
   const inFlightRef = useRef(new Set())
@@ -271,21 +274,17 @@ export default function App() {
     loadSelectedFiler()
   }, [view, loadSelectedFiler])
 
-  // Overview & Quiet Accumulation views: prefetch every (non-errored) filer
-  // JSON. fetchFiler is stable, so this only re-runs when the view or summary
-  // actually changes.
+  // Overview & Quiet Accumulation read one precomputed aggregates file
+  // (~1 MB) instead of every filer's full JSON (~36 MB), which matters on phones.
   useEffect(() => {
-    if ((view !== 'overview' && view !== 'quiet') || !summary) return
-    summary.filers
-      .filter((f) => !f.error)
-      .forEach((f) => { fetchFiler(f).catch(() => { /* best-effort */ }) })
-  }, [view, summary, fetchFiler])
+    if ((view !== 'overview' && view !== 'quiet') || aggregates !== undefined) return
+    fetch('/aggregates.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => setAggregates(Array.isArray(data?.filers) ? data : null))
+      .catch(() => setAggregates(null))
+  }, [view, aggregates])
 
   const filerData = selected && filerCache[selected.cik]
-  const overviewFilerData = useMemo(
-    () => (summary?.filers ?? []).map((f) => ({ name: f.name, cik: f.cik, data: filerCache[f.cik] ?? null })),
-    [summary, filerCache],
-  )
 
   const handleSelect = (cik) => {
     setSidebarOpen(false)
@@ -390,7 +389,7 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
         {!summaryError && view === 'overview' && summary && (
           <Overview
             summary={summary}
-            filerData={overviewFilerData}
+            aggregates={aggregates}
             onSelect={handleSelect}
           />
         )}
@@ -398,7 +397,7 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
         {!summaryError && view === 'quiet' && summary && (
           <QuietAccumulation
             summary={summary}
-            filerData={overviewFilerData}
+            aggregates={aggregates}
             tickers={tickers}
             fundamentals={fundamentals}
           />

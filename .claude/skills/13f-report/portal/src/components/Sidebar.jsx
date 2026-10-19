@@ -139,7 +139,7 @@ export default function Sidebar({
               onChange={(e) => setFilerQuery(e.target.value)}
               placeholder="Search filers…"
               aria-label="Search filers"
-              className="w-full rounded border border-slate-300 bg-white px-2 py-1 text-xs text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500"
+              className="w-full rounded border border-slate-300 bg-white px-2 py-2 text-base text-slate-900 sm:py-1 sm:text-xs placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500"
             />
           </div>
         )}

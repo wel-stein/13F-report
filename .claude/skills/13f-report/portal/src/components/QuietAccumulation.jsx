@@ -27,64 +27,28 @@ const looksLikeFund = (issuer) => {
   return FUND_HINTS.some((h) => u.includes(h))
 }
 
-// Build the per-security accumulation profile across every filer.
-// "Quiet" = bought broadly this quarter but a top-10 holding of NOBODY, so it
-// hasn't shown up as a headline conviction position yet.
-function buildProfiles(filerData) {
-  const acc = new Map()
-  const get = (row) => {
-    const key = row.cusip
-    let e = acc.get(key)
-    if (!e) {
-      e = {
-        cusip: key,
-        issuer: row.issuer,
-        sector: row.sector || null,
-        buyers: new Set(),
-        newFilers: new Set(),
-        activeBuyers: new Set(),
-        activeNew: new Set(),
-        activeAdd: new Set(),
-        top10Count: 0,
-        netBuyUsd: 0,
-      }
-      acc.set(key, e)
+// Per-security accumulation profiles, precomputed across every filer by
+// download_13f.py (aggregates.json, filers referenced by index). Only names
+// that are a top-10 position of NOBODY ship, so "quiet" is already applied.
+function buildProfiles(aggregates) {
+  const names = aggregates?.filers ?? []
+  return (aggregates?.accumulation ?? []).map((a) => {
+    const buyers = a.buyers.map((i) => names[i])
+    const newFilers = new Set(a.new.map((i) => names[i]))
+    const active = buyers.filter((n) => ACTIVE_MANAGERS.has(n))
+    return {
+      cusip: a.cusip,
+      issuer: a.issuer,
+      sector: a.sector,
+      buyers: new Set(buyers),
+      newFilers,
+      activeBuyers: new Set(active),
+      activeNew: new Set(active.filter((n) => newFilers.has(n))),
+      activeAdd: new Set(active.filter((n) => !newFilers.has(n))),
+      top10Count: 0,
+      netBuyUsd: a.net_buy_usd,
     }
-    return e
-  }
-
-  for (const { name, data } of filerData) {
-    if (!data) continue
-    const holdings = data.holdings ?? []
-    // This filer's top-10 positions by current market value.
-    const top10 = new Set(
-      [...holdings]
-        .sort((a, b) => (b.value_usd ?? 0) - (a.value_usd ?? 0))
-        .slice(0, 10)
-        .map((h) => h.cusip),
-    )
-    for (const cusip of top10) get({ cusip, issuer: '' }).top10Count += 1
-
-    for (const h of holdings) {
-      // Long common/preferred only — skip option lines (put_call set).
-      if (h.put_call) continue
-      const e = get(h)
-      if (!e.issuer && h.issuer) e.issuer = h.issuer
-      if (!e.sector && h.sector) e.sector = h.sector
-      const isActive = ACTIVE_MANAGERS.has(name)
-      if (h.action === 'new' || h.action === 'add') {
-        e.buyers.add(name)
-        if ((h.delta_value_usd ?? 0) > 0) e.netBuyUsd += h.delta_value_usd
-        if (h.action === 'new') e.newFilers.add(name)
-        if (isActive) {
-          e.activeBuyers.add(name)
-          if (h.action === 'new') e.activeNew.add(name)
-          else e.activeAdd.add(name)
-        }
-      }
-    }
-  }
-  return [...acc.values()]
+  })
 }
 
 function scoreRow(e, activeOnly) {
@@ -101,7 +65,7 @@ function Toggle({ active, onClick, children }) {
       onClick={onClick}
       aria-pressed={active}
       className={
-        'rounded-md px-3 py-1.5 text-xs font-medium ring-1 ring-inset transition ' +
+        'rounded-md px-3 py-3 text-xs font-medium ring-1 ring-inset transition sm:py-1.5 ' +
         (active
           ? 'bg-indigo-600 text-white ring-indigo-600'
           : 'bg-white text-slate-700 ring-slate-300 hover:bg-slate-50 dark:bg-slate-900 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-800')
@@ -114,16 +78,15 @@ function Toggle({ active, onClick, children }) {
 
 const LIMIT = 50
 
-export default function QuietAccumulation({ summary, filerData, tickers, fundamentals }) {
+export default function QuietAccumulation({ summary, aggregates, tickers, fundamentals }) {
   const [activeOnly, setActiveOnly] = useState(false)
   const [minBuyers, setMinBuyers] = useState(8)
   const [selected, setSelected] = useState(null)
 
   const ok = (summary?.filers ?? []).filter((f) => !f.error)
-  const fullyLoaded = ok.every((f) => filerData.find((d) => d.cik === f.cik && d.data))
-  const loadedCount = filerData.filter((d) => d.data).length
+  const loaded = aggregates !== undefined
 
-  const profiles = useMemo(() => buildProfiles(filerData), [filerData])
+  const profiles = useMemo(() => buildProfiles(aggregates), [aggregates])
 
   // When "active only" is on, the floor is interpreted against active buyers;
   // its sensible range (max 10 active managers) is smaller, so cap it.
@@ -173,15 +136,15 @@ export default function QuietAccumulation({ summary, filerData, tickers, fundame
             max={activeOnly ? 5 : 16}
             value={effMin}
             onChange={(e) => setMinBuyers(Number(e.target.value))}
-            className="h-1 w-32 cursor-pointer accent-indigo-600"
+            className="h-8 w-32 cursor-pointer accent-indigo-600 sm:h-1"
           />
           <span className="w-5 tabular-nums text-slate-900 dark:text-slate-100">{effMin}</span>
         </label>
       </div>
 
-      {!fullyLoaded && (
-        <p className="text-sm text-slate-500 dark:text-slate-400">
-          Loading filer data… {loadedCount}/{ok.length} — results fill in as filers load.
+      {aggregates === null && (
+        <p className="text-sm text-rose-700 dark:text-rose-400">
+          aggregates.json not found; re-run the downloader to build it.
         </p>
       )}
 
@@ -196,7 +159,7 @@ export default function QuietAccumulation({ summary, filerData, tickers, fundame
         </div>
         {rows.length === 0 ? (
           <p className="px-4 py-8 text-center text-sm text-slate-500 dark:text-slate-400">
-            {fullyLoaded ? 'No securities match the current filters.' : 'Loading…'}
+            {loaded ? 'No securities match the current filters.' : 'Loading…'}
           </p>
         ) : (
           <div className="overflow-x-auto">

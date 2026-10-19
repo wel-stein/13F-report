@@ -1,40 +1,4 @@
-import { useMemo } from 'react'
 import { ACTION_STYLE, fmtCompactUSD, fmtSignedUSD } from '../format.js'
-
-function aggregateMoves(filerData) {
-  // Pull from each filer's full holdings + exited arrays so we don't miss
-  // moves that happen to fall outside the per-filer top_buys/top_sells cuts.
-  // Key by CUSIP|class|put_call so options/common stay separate.
-  const acc = new Map()
-  const credit = (row, sourceName) => {
-    if (!row?.cusip) return
-    if (!row.delta_value_usd) return
-    const key = `${row.cusip}|${row.class ?? ''}|${row.put_call ?? ''}`
-    const e = acc.get(key) ?? {
-      issuer: row.issuer,
-      cusip: row.cusip,
-      class: row.class,
-      put_call: row.put_call,
-      delta_value_usd: 0,
-      filers: new Set(),
-      actions: new Set(),
-    }
-    e.delta_value_usd += row.delta_value_usd
-    e.filers.add(sourceName)
-    e.actions.add(row.action)
-    acc.set(key, e)
-  }
-  for (const { name, data } of filerData) {
-    if (!data) continue
-    for (const r of data.holdings ?? []) credit(r, name)
-    for (const r of data.exited ?? []) credit(r, name)
-  }
-  return [...acc.values()].map((e) => ({
-    ...e,
-    filers: [...e.filers],
-    actions: [...e.actions],
-  }))
-}
 
 function ConsensusList({ title, rows, tone, emptyLabel = 'No data yet.' }) {
   const ringClass = tone === 'emerald'
@@ -87,7 +51,7 @@ function StatCard({ label, value, sub, tone = 'slate' }) {
   }[tone]
   return (
     <div className="rounded-lg border border-slate-200 bg-white px-3 py-3 shadow-sm dark:border-slate-800 dark:bg-slate-900 sm:px-4">
-      <p className="text-[10px] font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400 sm:text-xs">{label}</p>
+      <p className="text-[11px] font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400 sm:text-xs">{label}</p>
       <p className={`mt-1 break-words text-xl font-semibold sm:text-2xl ${toneClass}`}>{value}</p>
       {sub && <p className="mt-0.5 break-words text-[11px] text-slate-500 dark:text-slate-400 sm:text-xs">{sub}</p>}
     </div>
@@ -153,7 +117,7 @@ function ConvictionRankings({ rankings }) {
   )
 }
 
-export default function Overview({ summary, filerData, onSelect }) {
+export default function Overview({ summary, aggregates, onSelect }) {
   const filers = summary?.filers ?? []
   const ok = filers.filter((f) => !f.error)
   const errored = filers.filter((f) => f.error)
@@ -162,17 +126,12 @@ export default function Overview({ summary, filerData, onSelect }) {
   const totalAumPrior = ok.reduce((s, f) => s + (f.total_value_usd_prior ?? 0), 0)
   const aumDelta = totalAumPrior ? totalAum - totalAumPrior : null
 
-  const moves = useMemo(() => aggregateMoves(filerData), [filerData])
-  const topBuys = useMemo(
-    () => [...moves].filter((m) => m.delta_value_usd > 0).sort((a, b) => b.delta_value_usd - a.delta_value_usd).slice(0, 10),
-    [moves],
-  )
-  const topSells = useMemo(
-    () => [...moves].filter((m) => m.delta_value_usd < 0).sort((a, b) => a.delta_value_usd - b.delta_value_usd).slice(0, 10),
-    [moves],
-  )
-
-  const fullyLoaded = ok.every((f) => filerData.find((d) => d.cik === f.cik && d.data))
+  // Summed Δ value per security across every filer's holdings + exits,
+  // precomputed by download_13f.py into aggregates.json.
+  const topBuys = aggregates?.consensus?.buys ?? []
+  const topSells = aggregates?.consensus?.sells ?? []
+  const pending = aggregates === undefined ? 'Loading…'
+    : aggregates === null ? 'aggregates.json not found; re-run the downloader.' : null
 
   return (
     <div className="space-y-5">
@@ -199,26 +158,20 @@ export default function Overview({ summary, filerData, onSelect }) {
         />
       </div>
 
-      <div className="grid gap-3 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
         <ConsensusList
           title="Top 10 consensus buys"
           rows={topBuys}
           tone="emerald"
-          emptyLabel={fullyLoaded ? 'No net buys reported.' : 'Loading…'}
+          emptyLabel={pending ?? 'No net buys reported.'}
         />
         <ConsensusList
           title="Top 10 consensus sells"
           rows={topSells}
           tone="rose"
-          emptyLabel={fullyLoaded ? 'No net sells reported.' : 'Loading…'}
+          emptyLabel={pending ?? 'No net sells reported.'}
         />
       </div>
-
-      {!fullyLoaded && (
-        <p className="text-sm text-slate-500 dark:text-slate-400">
-          Loading filer data… {filerData.filter((d) => d.data).length}/{ok.length}
-        </p>
-      )}
 
       <ConvictionRankings rankings={summary?.conviction_rankings} />
 
@@ -249,7 +202,7 @@ export default function Overview({ summary, filerData, onSelect }) {
                       <button
                         type="button"
                         onClick={() => onSelect(f.cik)}
-                        className="text-left text-indigo-700 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:text-indigo-400"
+                        className="-my-2 py-2 text-left text-indigo-700 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:text-indigo-400 sm:my-0 sm:py-0"
                       >
                         {f.name}
                       </button>
