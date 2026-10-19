@@ -201,6 +201,28 @@ original form) — forward P/E and consensus 3–5-yr growth need analyst
 estimates, which SEC doesn't publish. Data comes from `valuation.json`, which
 only the live downloader writes (not `--smoke-test`).
 
+#### Optional: current P/E from moomoo (local OpenD)
+
+`moomoo_quotes.py` re-prices the map at today's price instead of the 13F
+quarter-end. It runs on the machine where moomoo **OpenD** is logged in (not
+in GitHub Actions: OpenD needs an interactive first login with an SMS code):
+
+```bash
+pip install moomoo-api
+python3 .claude/skills/13f-report/moomoo_quotes.py --push
+```
+
+It reads `data/valuation.json`, takes the latest `get_market_snapshot` price
+for each stock (`BRK-B` → `US.BRK.B`), divides by the same SEC TTM diluted
+EPS, and writes `data/quotes.json` = `{ as_of, eps_from, source, pe: {TICKER:
+ratio} }`. Only ratios and a date are published, never raw quotes, since the
+portal is public. `--push` pulls first (fresh EPS), then commits and pushes,
+and Vercel redeploys. The portal uses it only when `as_of` is newer than the
+13F price date, and offers a "P/E price: Latest / 13F q-end" toggle. Without
+the file, nothing changes. Flags: `--host`, `--port` (OpenD, default
+127.0.0.1:11111), `--data-dir`. OpenAPI needs US-market quote access on the
+account. Check moomoo's OpenAPI terms for what you may publish.
+
 The Compare view diffs two filers side-by-side: overlap, only-A, only-B,
 overlap-weight stats, plus a sortable table joining the two filers'
 holdings (with a "X sold" badge when one side exited what the other still

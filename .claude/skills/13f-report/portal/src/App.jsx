@@ -90,6 +90,8 @@ export default function App() {
   const [fundamentals, setFundamentals] = useState({})
   // undefined = not requested yet, null = missing (pre-first refresh), object = loaded
   const [valuation, setValuation] = useState(undefined)
+  // Optional moomoo P/E refresh (data/quotes.json, pushed from a local OpenD).
+  const [quotes, setQuotes] = useState(undefined)
   const [filerCache, setFilerCache] = useState({})
   const [filerError, setFilerError] = useState(null)
   const [loadingFiler, setLoadingFiler] = useState(false)
@@ -200,13 +202,18 @@ export default function App() {
     : VIEW_SENTINELS.has(hashState.cik) ? hashState.cik
     : 'filer'
 
-  // Valuation map data (data/valuation.json) is only fetched once that view opens.
+  // Valuation map data (data/valuation.json + optional quotes.json) is only
+  // fetched once that view opens.
   useEffect(() => {
     if (view !== 'peg' || valuation !== undefined) return
     fetch('/valuation.json')
       .then((r) => (r.ok ? r.json() : null))
       .then((data) => setValuation(Array.isArray(data?.stocks) ? data : null))
       .catch(() => setValuation(null))
+    fetch('/quotes.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => setQuotes(data?.pe && typeof data.pe === 'object' ? data : null))
+      .catch(() => setQuotes(null))
   }, [view, valuation])
 
   const selected = useMemo(() => {
@@ -398,7 +405,7 @@ python3 download_13f.py --user-agent "Your Name you@example.com"`}
         )}
 
         {!summaryError && view === 'peg' && (
-          <ValuationMap valuation={valuation} fundamentals={fundamentals} />
+          <ValuationMap valuation={valuation} quotes={quotes} fundamentals={fundamentals} />
         )}
 
         {!summaryError && view === 'compare' && summary && (

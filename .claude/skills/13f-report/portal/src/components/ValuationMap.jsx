@@ -282,10 +282,10 @@ function Tooltip({ p, horizon, width }) {
       <p className="mb-1.5 truncate text-[11px] text-slate-500 dark:text-slate-400">{p.issuer}</p>
       <div className="space-y-0.5">
         <Row label="PEG" value={fmtPEG(p.peg)} />
-        <Row label="Trailing P/E" value={fmtPE(p.y)} />
+        <Row label="Trailing P/E" value={fmtPE(p.y)} sub={p.peDate} />
         <Row label={`EPS CAGR (${horizon})`} value={fmtX(p.x)} />
         <Row label="TTM EPS" value={fmtUSD(p.eps_ttm)} sub={p.eps_ttm_end ? `to ${p.eps_ttm_end}` : null} />
-        <Row label="Price" value={fmtUSD(p.price)} />
+        <Row label="13F price" value={fmtUSD(p.price)} sub="q-end" />
         <Row label="13F holders" value={p.holders} sub={fmtCompactUSD(p.held_value_usd)} />
         <Row label="Net shares Δ" value={fmtSignedPct(p.net_shares_pct)} sub={`${p.buyers}↑ ${p.sellers}↓`} />
       </div>
@@ -301,7 +301,7 @@ const COLUMNS = [
   { key: 'y', label: 'P/E', num: true, cls: '' },
   { key: 'x', label: 'EPS CAGR', num: true, cls: '' },
   { key: 'peg', label: 'PEG', num: true, cls: '' },
-  { key: 'price', label: 'Price', num: true, cls: 'hidden lg:table-cell' },
+  { key: 'price', label: '13F price', num: true, cls: 'hidden lg:table-cell' },
   { key: 'holders', label: 'Holders', num: true, cls: 'hidden sm:table-cell' },
   { key: 'net_shares_pct', label: 'Net shares Δ', num: true, cls: 'hidden sm:table-cell' },
   { key: 'held_value_usd', label: '13F value', num: true, cls: 'hidden lg:table-cell' },
@@ -381,10 +381,15 @@ function PointsTable({ points, onOpen }) {
   )
 }
 
-export default function ValuationMap({ valuation, fundamentals }) {
+export default function ValuationMap({ valuation, quotes, fundamentals }) {
   const [topN, setTopN] = useState(25)
   const [horizon, setHorizon] = useState('3y')
+  const [basis, setBasis] = useState('live')
   const [selected, setSelected] = useState(null)
+
+  // moomoo P/E (latest price / the same SEC EPS) only when newer than the 13F prices.
+  const live = quotes?.pe && valuation?.price_date && quotes.as_of > valuation.price_date ? quotes : null
+  const useLive = !!live && basis === 'live'
 
   const growthKey = horizon === '5y' ? 'eps_cagr_5y_pct' : 'eps_cagr_3y_pct'
   const { points, skipped } = useMemo(() => {
@@ -393,14 +398,17 @@ export default function ValuationMap({ valuation, fundamentals }) {
     const skipped = []
     for (const s of universe) {
       const x = s[growthKey]
-      if (s.pe != null && x != null) {
-        points.push({ ...s, x, y: s.pe, peg: x > 0 ? s.pe / x : null, flow: flowOf(s) })
+      const livePE = useLive ? live.pe[s.ticker] : undefined
+      const pe = livePE ?? s.pe
+      if (pe != null && x != null) {
+        const peDate = livePE != null ? live.as_of : valuation.price_date
+        points.push({ ...s, x, y: pe, peDate, peg: x > 0 ? pe / x : null, flow: flowOf(s) })
       } else {
         skipped.push({ ticker: s.ticker, reason: s.note ?? `no ${horizon} EPS CAGR (loss in base year or short history)` })
       }
     }
     return { points, skipped }
-  }, [valuation, topN, growthKey, horizon])
+  }, [valuation, topN, growthKey, horizon, live, useLive])
 
   const cheap = points.filter((p) => p.peg != null && p.peg < 1).length
   const open = (p) => setSelected({ issuer: p.issuer, ticker: p.ticker, buyerCount: p.buyers, newCount: 0, netBuyUsd: 0 })
@@ -414,7 +422,9 @@ export default function ValuationMap({ valuation, fundamentals }) {
           diagonal (PEG &lt; 1) you pay less P/E per point of earnings growth. Dot color shows whether the tracked
           filers were net buyers or sellers of the shares this quarter.
           {valuation?.price_date && (
-            <span className="text-slate-500"> · prices as of {valuation.price_date} · generated {valuation.generated_at}</span>
+            <span className="text-slate-500">
+              {' '}· P/E on {useLive ? `${live.as_of} prices (moomoo)` : `${valuation.price_date} 13F prices`} · generated {valuation.generated_at}
+            </span>
           )}
         </p>
       </div>
@@ -438,6 +448,14 @@ export default function ValuationMap({ valuation, fundamentals }) {
           <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
             <Segmented label="Universe" value={topN} onChange={setTopN} options={TOP_OPTIONS.map((n) => [n, `Top ${n}`])} />
             <Segmented label="Growth" value={horizon} onChange={setHorizon} options={[['3y', '3-yr CAGR'], ['5y', '5-yr CAGR']]} />
+            {live && (
+              <Segmented
+                label="P/E price"
+                value={basis}
+                onChange={setBasis}
+                options={[['live', `Latest · ${live.as_of}`], ['13f', `13F q-end · ${valuation.price_date}`]]}
+              />
+            )}
           </div>
 
           <div className="rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
@@ -493,6 +511,7 @@ export default function ValuationMap({ valuation, fundamentals }) {
           <p className="max-w-4xl text-xs text-slate-500 dark:text-slate-400">
             <span className="font-medium">Method.</span> Price = median of 13F value ÷ shares across the {valuation.cohort_filers} filers
             reporting {valuation.price_date}. TTM EPS = trailing-twelve-month diluted EPS from SEC XBRL, checked against stock splits.
+            {live && ` “Latest” P/E = the ${live.as_of} moomoo price ÷ that same SEC EPS.`}
             EPS CAGR = annual diluted EPS from 10-K filings, restated across stock splits. This is a <em>trailing</em> PEG
             (Peter Lynch's original form); forward P/E and consensus 3–5-yr growth need analyst estimates, which SEC doesn't
             publish. Foreign 20-F filers (e.g. ASML, TSMC), loss-makers and companies with a loss in the base year are listed
