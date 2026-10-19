@@ -70,9 +70,11 @@ def fetch_snapshots(ctx, codes: list[str], ok) -> tuple[dict[str, dict], list[st
     return rows, bad, err
 
 
-def build_quotes(valuation: dict, snapshots: dict[str, dict]) -> dict:
-    """quotes.json payload: P/E = latest price / SEC TTM EPS, per ticker."""
+def build_quotes(valuation: dict, snapshots: dict[str, dict]) -> tuple[dict, list[str]]:
+    """quotes.json payload (P/E = latest price / SEC TTM EPS), plus the
+    tickers left out because that P/E disagrees with moomoo's own."""
     pe: dict[str, float] = {}
+    mismatched: list[str] = []
     as_of = ""
     for s in valuation.get("stocks", []):
         eps = s.get("eps_ttm")
@@ -83,6 +85,14 @@ def build_quotes(valuation: dict, snapshots: dict[str, dict]) -> dict:
         if price <= 0 or snap.get("suspension"):
             continue
         ratio = price / eps
+        # A split after the last 10-Q puts the price on the new share basis
+        # but the SEC EPS on the old one, halving (2:1) the P/E. moomoo's own
+        # P/E TTM is on one basis, so a split-sized gap means skip: the map
+        # then keeps the 13F quarter-end P/E, which is consistent.
+        ref = snap.get("pe_ttm_ratio") or 0
+        if ref and (ref < 0 or not 0.7 <= ratio / ref <= 1.43):
+            mismatched.append(s["ticker"])
+            continue
         if 1 <= ratio <= 1000:  # same sanity band as the SEC-side P/E
             pe[s["ticker"]] = round(ratio, 1)
             as_of = max(as_of, str(snap.get("update_time", ""))[:10])
@@ -91,7 +101,7 @@ def build_quotes(valuation: dict, snapshots: dict[str, dict]) -> dict:
         "eps_from": valuation.get("generated_at"),
         "source": "moomoo OpenAPI snapshot price / SEC TTM diluted EPS",
         "pe": dict(sorted(pe.items())),
-    }
+    }, mismatched
 
 
 def git(repo: Path, *args: str) -> str:
@@ -135,11 +145,14 @@ def main() -> int:
               file=sys.stderr)
         return 1
 
-    doc = build_quotes(valuation, snapshots)
+    doc, mismatched = build_quotes(valuation, snapshots)
     out = data_dir / "quotes.json"
     out.write_text(json.dumps(doc, indent=1) + "\n")
     print(f"quotes: P/E for {len(doc['pe'])} of {len(codes)} stocks as of {doc['as_of']}"
           + (f"; OpenD rejected {', '.join(bad)}" if bad else ""), file=sys.stderr)
+    if mismatched:
+        print(f"quotes: kept 13F quarter-end P/E for {', '.join(mismatched)}: price / SEC EPS "
+              "disagrees with moomoo's P/E TTM (stock split since the last 10-Q?)", file=sys.stderr)
 
     if repo:
         rel = str(out.resolve().relative_to(repo.resolve()))
