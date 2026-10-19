@@ -39,8 +39,6 @@ EDGAR_DATA = "https://data.sec.gov"
 EDGAR_ARCHIVES = "https://www.sec.gov/Archives/edgar/data"
 COMPANY_TICKERS_URL = "https://www.sec.gov/files/company_tickers.json"
 COMPANY_FACTS_URL = "https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:0>10}.json"
-COMPANY_CONCEPT_URL = ("https://data.sec.gov/api/xbrl/companyconcept/"
-                       "CIK{cik:0>10}/{taxonomy}/{tag}.json")
 NS_INFO = "{http://www.sec.gov/edgar/document/thirteenf/informationtable}"
 _UA = os.environ.get("SEC_UA", DEFAULT_UA)
 
@@ -934,9 +932,9 @@ def enrich_fundamentals(all_results: list[dict], out_dir: Path,
 # count at quarter-end, so value / shares is the quarter-end price. The median
 # across filers shrugs off the odd filer still reporting in $thousands.
 #
-# Earnings come from XBRL companyconcept (one small JSON per concept rather
-# than the multi-MB companyfacts). Per taxonomy: EPS tags, net-income tags,
-# diluted-share tags, each in preference order.
+# Earnings come from XBRL companyfacts (companyconcept, though smaller, serves
+# empty or years-stale series for some filers, e.g. KO and ABT). Per taxonomy:
+# EPS tags, net-income tags, diluted-share tags, each in preference order.
 _VALUATION_TAGS = (
     ("us-gaap",
      ("EarningsPerShareDiluted", "EarningsPerShareBasicAndDiluted", "EarningsPerShareBasic"),
@@ -955,13 +953,13 @@ _FUND_HINTS = ("ISHARES", "SPDR", "VANGUARD", " ETF", "INVESCO QQQ", "SELECT SEC
                "PROSHARES", "VANECK", "WISDOMTREE", "DIREXION", "GLOBAL X", "INDEX FDS")
 # EDGAR-derived fields cached between runs (earnings only move quarterly).
 # Bump the version whenever their derivation changes, to drop stale caches.
-_VALUATION_VERSION = 2
+_VALUATION_VERSION = 3
 _VALUATION_INPUT_KEYS = ("eps_ttm", "eps_ttm_end", "net_income_ttm", "eps_fy_end",
                          "eps_history", "eps_cagr_3y_pct", "eps_cagr_5y_pct",
                          "skip", "fetched")
 
 
-def _concept(cik: str, taxonomy: str, tags: tuple[str, ...],
+def _concept(facts: dict, taxonomy: str, tags: tuple[str, ...],
              good=lambda rows: True) -> tuple[list[dict], str, str] | None:
     """(facts, unit, tag) for the first of `tags` whose facts pass `good`.
 
@@ -969,21 +967,15 @@ def _concept(cik: str, taxonomy: str, tags: tuple[str, ...],
     ago; when none passes, the tag with the most recent fact wins.
     """
     best, best_end = None, ""
+    concepts = facts.get("facts", {}).get(taxonomy, {})
     for tag in tags:
-        url = COMPANY_CONCEPT_URL.format(cik=cik, taxonomy=taxonomy, tag=tag)
-        try:
-            doc = json.loads(http_get(url))
-        except urllib.error.HTTPError as e:
-            if e.code == 404:  # company doesn't file this concept
-                continue
-            raise
-        units = doc.get("units") or {}
+        units = (concepts.get(tag) or {}).get("units") or {}
         if not units:
             continue
         unit = next((u for u in ("USD/shares", "USD", "shares") if u in units),
                     next(iter(units)))
         rows = units[unit]
-        if good(rows):
+        if rows and good(rows):
             return rows, unit, tag
         last = max((e.get("end", "") for e in rows), default="")
         if best is None or last > best_end:
@@ -1127,15 +1119,17 @@ def _valuation_inputs(cik: str) -> dict:
     back as {"skip": reason}; "_diag" names the tags used, for the run log.
     """
     recent = (date.today() - timedelta(days=400)).isoformat()
+    facts = json.loads(http_get(COMPANY_FACTS_URL.format(cik=cik)))
     for taxonomy, eps_tags, ni_tags, share_tags in _VALUATION_TAGS:
-        eps = _concept(cik, taxonomy, eps_tags, lambda r: _last_end(r, annual_only=True) >= recent)
+        eps = _concept(facts, taxonomy, eps_tags, lambda r: _last_end(r, annual_only=True) >= recent)
         if eps is None:
             continue
         rows, unit, eps_tag = eps
         if unit != "USD/shares":
             # Price is USD, so a non-USD EPS (ASML...) can't make a P/E.
             return {"skip": f"EPS reported in {unit.split('/')[0]}"}
-        if not any(str(e.get("form", "")).startswith("10-") for e in rows):
+        forms = {str(e.get("form", "")) for e in rows}
+        if not any(f.startswith("10-") for f in forms) and any(f[:4] in ("20-F", "40-F") for f in forms):
             # 20-F/40-F filers: the 13F holds ADRs, whose share ratio XBRL doesn't give.
             return {"skip": "foreign filer (ADR ratio unknown)"}
         out: dict = {}
@@ -1146,8 +1140,8 @@ def _valuation_inputs(cik: str) -> dict:
             out["eps_cagr_3y_pct"] = _cagr_pct(chain, 3)
             out["eps_cagr_5y_pct"] = _cagr_pct(chain, 5)
         latest = _last_end(rows)
-        ni = _concept(cik, taxonomy, ni_tags, lambda r: _last_end(r) >= latest)
-        sh = _concept(cik, taxonomy, share_tags, lambda r: _last_end(r) >= latest)
+        ni = _concept(facts, taxonomy, ni_tags, lambda r: _last_end(r) >= latest)
+        sh = _concept(facts, taxonomy, share_tags, lambda r: _last_end(r) >= latest)
         ni_ttm = _ttm(_durations(ni[0])) if ni and ni[1] == "USD" else None
         share_periods = _durations(sh[0]) if sh and sh[1] == "shares" else {}
         shares = _latest_shares(share_periods)
@@ -1158,6 +1152,10 @@ def _valuation_inputs(cik: str) -> dict:
             out["eps_ttm_end"] = ttm[1]
         if ni_ttm:
             out["net_income_ttm"] = ni_ttm[0]
+        if not chain and not ttm:
+            # e.g. XOM after re-incorporating: SEC maps the ticker to a new
+            # entity whose filings start this year; the history stays behind.
+            out["skip"] = "too little XBRL history (new SEC entity?)"
         out["_diag"] = "; ".join(
             f"{name}={c[2]} ({len(c[0])} facts, last {_last_end(c[0])})" if c else f"{name}=none"
             for name, c in (("eps", eps), ("ni", ni), ("shares", sh)))
@@ -1308,7 +1306,7 @@ def enrich_valuation(all_results: list[dict], out_dir: Path,
     doc = {"version": _VALUATION_VERSION,
            "generated_at": today.isoformat(), "price_date": price_date,
            "cohort_filers": len(cohort),
-           "source": "13F-implied quarter-end price + SEC EDGAR XBRL companyconcept",
+           "source": "13F-implied quarter-end price + SEC EDGAR XBRL companyfacts",
            "stocks": stocks}
     path.write_text(json.dumps(doc, indent=2) + "\n")
     print(f"valuation: {sum(1 for s in stocks if s['pe'])} of {len(stocks)} companies "

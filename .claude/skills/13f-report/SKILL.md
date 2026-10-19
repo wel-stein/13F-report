@@ -58,7 +58,7 @@ Output goes to `.claude/skills/13f-report/data/`:
   - `price` — 13F-implied quarter-end price: median of `value_usd / shares`
     across those filers (SEC publishes no prices; the median shrugs off a
     filer still reporting in $thousands).
-  - `eps_ttm` — trailing-twelve-month diluted EPS from XBRL `companyconcept`:
+  - `eps_ttm` — trailing-twelve-month diluted EPS from XBRL `companyfacts`:
     the reported figure (fiscal year + YTD − prior-year YTD) or TTM net
     income ÷ latest diluted shares, whichever is fresher (the latter wins
     when a stock split landed mid-year). For each concept the first tag with
