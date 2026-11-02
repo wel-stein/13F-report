@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "generated_at": "2026-10-26",
+  "generated_at": "2026-11-02",
   "price_date": "2026-06-30",
   "cohort_filers": 16,
   "source": "13F-implied quarter-end price + SEC EDGAR XBRL companyfacts",
