@@ -1,8 +1,8 @@
 {
   "version": 3,
-  "generated_at": "2026-11-02",
+  "generated_at": "2026-11-09",
   "price_date": "2026-06-30",
-  "cohort_filers": 16,
+  "cohort_filers": 15,
   "source": "13F-implied quarter-end price + SEC EDGAR XBRL companyfacts",
   "stocks": [
     {
@@ -11,13 +11,13 @@
       "issuer": "NVIDIA CORPORATION",
       "cik": "1045810",
       "price": 200.09,
-      "price_filers": 15,
+      "price_filers": 14,
       "pe": 25.3,
-      "held_value_usd": 718438652832,
-      "holders": 15,
+      "held_value_usd": 687989457902,
+      "holders": 14,
       "buyers": 8,
-      "sellers": 7,
-      "net_shares_pct": 1.35,
+      "sellers": 6,
+      "net_shares_pct": 1.45,
       "eps_ttm": 7.91,
       "eps_ttm_end": "2026-07-26",
       "net_income_ttm": 192880000000,
@@ -51,7 +51,7 @@
       "eps_cagr_3y_pct": 206.6,
       "eps_cagr_5y_pct": 96.1,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -60,16 +60,16 @@
       "issuer": "ALPHABET INC",
       "cik": "1652044",
       "price": 357.37,
-      "price_filers": 16,
-      "pe": 17.9,
-      "held_value_usd": 600166813482,
-      "holders": 16,
+      "price_filers": 15,
+      "pe": 18.7,
+      "held_value_usd": 576324212422,
+      "holders": 15,
       "buyers": 10,
-      "sellers": 6,
-      "net_shares_pct": 8.66,
-      "eps_ttm": 19.93,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 244205000000,
+      "sellers": 5,
+      "net_shares_pct": 9.11,
+      "eps_ttm": 19.15,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 235694000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -100,7 +100,7 @@
       "eps_cagr_3y_pct": 33.3,
       "eps_cagr_5y_pct": 29.8,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -109,22 +109,18 @@
       "issuer": "APPLE INC",
       "cik": "320193",
       "price": 289.36,
-      "price_filers": 15,
-      "pe": 33.2,
-      "held_value_usd": 597659269805,
-      "holders": 15,
+      "price_filers": 14,
+      "pe": 32.2,
+      "held_value_usd": 572084605347,
+      "holders": 14,
       "buyers": 4,
-      "sellers": 10,
-      "net_shares_pct": -1.13,
-      "eps_ttm": 8.72,
-      "eps_ttm_end": "2026-06-27",
-      "net_income_ttm": 128930000000,
-      "eps_fy_end": "2025-09-27",
+      "sellers": 9,
+      "net_shares_pct": -1.01,
+      "eps_ttm": 8.98,
+      "eps_ttm_end": "2026-09-26",
+      "net_income_ttm": 132175000000,
+      "eps_fy_end": "2026-09-26",
       "eps_history": [
-        [
-          "2020-09-26",
-          3.28
-        ],
         [
           "2021-09-25",
           5.61
@@ -144,12 +140,16 @@
         [
           "2025-09-27",
           7.46
+        ],
+        [
+          "2026-09-26",
+          8.98
         ]
       ],
-      "eps_cagr_3y_pct": 6.9,
-      "eps_cagr_5y_pct": 17.9,
+      "eps_cagr_3y_pct": 13.6,
+      "eps_cagr_5y_pct": 9.9,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -158,16 +158,16 @@
       "issuer": "MICROSOFT CORP",
       "cik": "789019",
       "price": 373.02,
-      "price_filers": 15,
-      "pe": 20.8,
-      "held_value_usd": 379426024799,
-      "holders": 15,
-      "buyers": 8,
+      "price_filers": 14,
+      "pe": 19.5,
+      "held_value_usd": 359479820211,
+      "holders": 14,
+      "buyers": 7,
       "sellers": 7,
-      "net_shares_pct": -1.2,
-      "eps_ttm": 17.95,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 133749000000,
+      "net_shares_pct": -1.43,
+      "eps_ttm": 19.15,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 142631000000,
       "eps_fy_end": "2026-06-30",
       "eps_history": [
         [
@@ -198,7 +198,7 @@
       "eps_cagr_3y_pct": 22.9,
       "eps_cagr_5y_pct": 17.4,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -207,16 +207,16 @@
       "issuer": "AMAZON COM INC",
       "cik": "1018724",
       "price": 238.34,
-      "price_filers": 15,
-      "pe": 19.2,
-      "held_value_usd": 339531942302,
-      "holders": 15,
-      "buyers": 9,
+      "price_filers": 14,
+      "pe": 19.3,
+      "held_value_usd": 323190537641,
+      "holders": 14,
+      "buyers": 8,
       "sellers": 6,
-      "net_shares_pct": 0.13,
-      "eps_ttm": 12.43,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 135281000000,
+      "net_shares_pct": 0.02,
+      "eps_ttm": 12.37,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 134779000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -247,7 +247,7 @@
       "eps_cagr_3y_pct": null,
       "eps_cagr_5y_pct": 28.0,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -256,13 +256,13 @@
       "issuer": "BROADCOM INC",
       "cik": "1730168",
       "price": 377.75,
-      "price_filers": 15,
+      "price_filers": 14,
       "pe": 48.2,
-      "held_value_usd": 259625327881,
-      "holders": 15,
+      "held_value_usd": 249097136558,
+      "holders": 14,
       "buyers": 8,
-      "sellers": 7,
-      "net_shares_pct": 4.18,
+      "sellers": 6,
+      "net_shares_pct": 4.47,
       "eps_ttm": 7.84,
       "eps_ttm_end": "2026-08-02",
       "net_income_ttm": 38265000000,
@@ -296,7 +296,7 @@
       "eps_cagr_3y_pct": 21.6,
       "eps_cagr_5y_pct": 49.8,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -305,16 +305,16 @@
       "issuer": "META PLATFORMS INC",
       "cik": "1326801",
       "price": 563.29,
-      "price_filers": 15,
-      "pe": 21.2,
-      "held_value_usd": 193009116367,
-      "holders": 15,
+      "price_filers": 14,
+      "pe": 19.2,
+      "held_value_usd": 185216776043,
+      "holders": 14,
       "buyers": 5,
-      "sellers": 10,
-      "net_shares_pct": -6.22,
-      "eps_ttm": 26.55,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 68098000000,
+      "sellers": 9,
+      "net_shares_pct": -6.37,
+      "eps_ttm": 29.31,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 75249000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -345,7 +345,7 @@
       "eps_cagr_3y_pct": 39.8,
       "eps_cagr_5y_pct": 18.4,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -354,13 +354,13 @@
       "issuer": "MICRON TECHNOLOGY INC",
       "cik": "723125",
       "price": 1154.29,
-      "price_filers": 14,
+      "price_filers": 13,
       "pe": 15.5,
-      "held_value_usd": 189283518889,
-      "holders": 14,
+      "held_value_usd": 181035239025,
+      "holders": 13,
       "buyers": 6,
-      "sellers": 8,
-      "net_shares_pct": 5.71,
+      "sellers": 7,
+      "net_shares_pct": 6.16,
       "eps_ttm": 74.33,
       "eps_ttm_end": "2026-09-03",
       "net_income_ttm": 84969000000,
@@ -394,7 +394,7 @@
       "eps_cagr_3y_pct": null,
       "eps_cagr_5y_pct": 70.6,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -403,16 +403,16 @@
       "issuer": "ELI LILLY & CO",
       "cik": "59478",
       "price": 1199.43,
-      "price_filers": 15,
-      "pe": 40.3,
-      "held_value_usd": 152890635371,
-      "holders": 15,
+      "price_filers": 14,
+      "pe": 38.9,
+      "held_value_usd": 147153211340,
+      "holders": 14,
       "buyers": 8,
-      "sellers": 7,
-      "net_shares_pct": 1.27,
-      "eps_ttm": 29.79,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 26711000000,
+      "sellers": 6,
+      "net_shares_pct": 1.38,
+      "eps_ttm": 30.81,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 27580000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -443,7 +443,7 @@
       "eps_cagr_3y_pct": 49.3,
       "eps_cagr_5y_pct": 27.6,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -452,16 +452,16 @@
       "issuer": "TESLA INC",
       "cik": "1318605",
       "price": 420.6,
-      "price_filers": 14,
-      "pe": 389.4,
-      "held_value_usd": 137671263548,
-      "holders": 14,
+      "price_filers": 13,
+      "pe": 462.2,
+      "held_value_usd": 131587633214,
+      "holders": 13,
       "buyers": 7,
-      "sellers": 8,
-      "net_shares_pct": 1.11,
-      "eps_ttm": 1.08,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 3804000000,
+      "sellers": 7,
+      "net_shares_pct": 1.26,
+      "eps_ttm": 0.91,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 3279000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -492,7 +492,7 @@
       "eps_cagr_3y_pct": -33.2,
       "eps_cagr_5y_pct": 38.8,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -501,16 +501,16 @@
       "issuer": "ADVANCED MICRO DEVICES INC",
       "cik": "2488",
       "price": 580.91,
-      "price_filers": 15,
-      "pe": 149.0,
-      "held_value_usd": 127459885676,
-      "holders": 15,
+      "price_filers": 14,
+      "pe": 126.0,
+      "held_value_usd": 121520368680,
+      "holders": 14,
       "buyers": 10,
-      "sellers": 5,
-      "net_shares_pct": 17.04,
-      "eps_ttm": 3.9,
-      "eps_ttm_end": "2026-06-27",
-      "net_income_ttm": 6434000000,
+      "sellers": 4,
+      "net_shares_pct": 17.94,
+      "eps_ttm": 4.61,
+      "eps_ttm_end": "2026-09-26",
+      "net_income_ttm": 7619000000,
       "eps_fy_end": "2025-12-27",
       "eps_history": [
         [
@@ -541,7 +541,7 @@
       "eps_cagr_3y_pct": 46.7,
       "eps_cagr_5y_pct": 5.2,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -550,16 +550,16 @@
       "issuer": "JPMORGAN CHASE & CO",
       "cik": "19617",
       "price": 327.33,
-      "price_filers": 14,
-      "pe": 14.0,
-      "held_value_usd": 102178321631,
-      "holders": 14,
-      "buyers": 7,
+      "price_filers": 13,
+      "pe": 13.7,
+      "held_value_usd": 95093982723,
+      "holders": 13,
+      "buyers": 6,
       "sellers": 7,
-      "net_shares_pct": -1.24,
-      "eps_ttm": 23.34,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 65019000000,
+      "net_shares_pct": -1.49,
+      "eps_ttm": 23.84,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 65931000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -590,7 +590,7 @@
       "eps_cagr_3y_pct": 18.3,
       "eps_cagr_5y_pct": 17.7,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -599,22 +599,22 @@
       "issuer": "BERKSHIRE HATHAWAY INC DEL",
       "cik": "1067983",
       "price": 748850.0,
-      "price_filers": 10,
-      "pe": 14.3,
-      "held_value_usd": 97111535425,
-      "holders": 13,
+      "price_filers": 9,
+      "pe": 16.0,
+      "held_value_usd": 91655261789,
+      "holders": 12,
       "buyers": 5,
-      "sellers": 8,
-      "net_shares_pct": -1.86,
-      "eps_ttm": 52192.0312,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 85768000000,
+      "sellers": 7,
+      "net_shares_pct": -1.82,
+      "eps_ttm": 46907.5942,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 77084000000,
       "eps_fy_end": null,
       "eps_history": null,
       "eps_cagr_3y_pct": null,
       "eps_cagr_5y_pct": null,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -623,16 +623,16 @@
       "issuer": "JOHNSON & JOHNSON",
       "cik": "200406",
       "price": 253.97,
-      "price_filers": 13,
-      "pe": 29.5,
-      "held_value_usd": 90446915732,
-      "holders": 13,
+      "price_filers": 12,
+      "pe": 38.6,
+      "held_value_usd": 84939995757,
+      "holders": 12,
       "buyers": 6,
-      "sellers": 7,
-      "net_shares_pct": 0.79,
-      "eps_ttm": 8.62,
-      "eps_ttm_end": "2026-06-28",
-      "net_income_ttm": 21037000000,
+      "sellers": 6,
+      "net_shares_pct": 0.88,
+      "eps_ttm": 6.58,
+      "eps_ttm_end": "2026-09-27",
+      "net_income_ttm": 16095000000,
       "eps_fy_end": "2025-12-28",
       "eps_history": [
         [
@@ -663,7 +663,7 @@
       "eps_cagr_3y_pct": 17.9,
       "eps_cagr_5y_pct": 14.9,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -672,16 +672,16 @@
       "issuer": "LAM RESEARCH CORP",
       "cik": "707549",
       "price": 433.33,
-      "price_filers": 14,
-      "pe": 75.2,
-      "held_value_usd": 85200277648,
-      "holders": 14,
+      "price_filers": 13,
+      "pe": 64.6,
+      "held_value_usd": 81422692782,
+      "holders": 13,
       "buyers": 9,
-      "sellers": 5,
-      "net_shares_pct": 13.25,
-      "eps_ttm": 5.76,
-      "eps_ttm_end": "2026-06-28",
-      "net_income_ttm": 7265396000,
+      "sellers": 4,
+      "net_shares_pct": 13.99,
+      "eps_ttm": 6.71,
+      "eps_ttm_end": "2026-09-27",
+      "net_income_ttm": 8449874000,
       "eps_fy_end": "2026-06-28",
       "eps_history": [
         [
@@ -712,122 +712,25 @@
       "eps_cagr_3y_pct": 20.2,
       "eps_cagr_5y_pct": 16.5,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
       "rank": 16,
-      "ticker": "XOM",
-      "issuer": "EXXON MOBIL CORP",
-      "cik": "2115436",
-      "price": 136.72,
-      "price_filers": 13,
-      "pe": null,
-      "held_value_usd": 84274509624,
-      "holders": 13,
-      "buyers": 6,
-      "sellers": 8,
-      "net_shares_pct": -5.24,
-      "eps_ttm": null,
-      "eps_ttm_end": null,
-      "net_income_ttm": null,
-      "eps_fy_end": null,
-      "eps_history": null,
-      "eps_cagr_3y_pct": null,
-      "eps_cagr_5y_pct": null,
-      "skip": "too little XBRL history (new SEC entity?)",
-      "fetched": "2026-10-19",
-      "note": "too little XBRL history (new SEC entity?)"
-    },
-    {
-      "rank": 17,
-      "ticker": "V",
-      "issuer": "VISA INC",
-      "cik": "1403161",
-      "price": 343.09,
-      "price_filers": 14,
-      "pe": null,
-      "held_value_usd": 82810452114,
-      "holders": 14,
-      "buyers": 4,
-      "sellers": 10,
-      "net_shares_pct": -3.22,
-      "eps_ttm": null,
-      "eps_ttm_end": null,
-      "net_income_ttm": null,
-      "eps_fy_end": null,
-      "eps_history": null,
-      "eps_cagr_3y_pct": null,
-      "eps_cagr_5y_pct": null,
-      "skip": "no EPS in XBRL",
-      "fetched": "2026-10-19",
-      "note": "no EPS in XBRL"
-    },
-    {
-      "rank": 18,
-      "ticker": "BAC",
-      "issuer": "BANK OF AMER CORP",
-      "cik": "70858",
-      "price": 56.98,
-      "price_filers": 14,
-      "pe": 13.2,
-      "held_value_usd": 81984281182,
-      "holders": 14,
-      "buyers": 3,
-      "sellers": 12,
-      "net_shares_pct": -3.99,
-      "eps_ttm": 4.33,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 33637000000,
-      "eps_fy_end": "2025-12-31",
-      "eps_history": [
-        [
-          "2020-12-31",
-          1.8518
-        ],
-        [
-          "2021-12-31",
-          3.5352
-        ],
-        [
-          "2022-12-31",
-          3.1589
-        ],
-        [
-          "2023-12-31",
-          3.05
-        ],
-        [
-          "2024-12-31",
-          3.19
-        ],
-        [
-          "2025-12-31",
-          3.81
-        ]
-      ],
-      "eps_cagr_3y_pct": 6.4,
-      "eps_cagr_5y_pct": 15.5,
-      "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 19,
       "ticker": "AXP",
       "issuer": "AMERICAN EXPRESS CO",
       "cik": "4962",
       "price": 338.25,
-      "price_filers": 15,
-      "pe": 20.5,
-      "held_value_usd": 80937693998,
-      "holders": 15,
+      "price_filers": 14,
+      "pe": 19.1,
+      "held_value_usd": 79673907240,
+      "holders": 14,
       "buyers": 6,
-      "sellers": 8,
-      "net_shares_pct": -1.93,
-      "eps_ttm": 16.48,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 11446000000,
+      "sellers": 7,
+      "net_shares_pct": -1.91,
+      "eps_ttm": 17.75,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 12256000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -858,8 +761,105 @@
       "eps_cagr_3y_pct": 16.0,
       "eps_cagr_5y_pct": 32.5,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
+    },
+    {
+      "rank": 17,
+      "ticker": "BAC",
+      "issuer": "BANK OF AMER CORP",
+      "cik": "70858",
+      "price": 56.98,
+      "price_filers": 13,
+      "pe": 13.6,
+      "held_value_usd": 79670328013,
+      "holders": 13,
+      "buyers": 3,
+      "sellers": 11,
+      "net_shares_pct": -4.07,
+      "eps_ttm": 4.2,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 32238000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          1.8518
+        ],
+        [
+          "2021-12-31",
+          3.5352
+        ],
+        [
+          "2022-12-31",
+          3.1589
+        ],
+        [
+          "2023-12-31",
+          3.05
+        ],
+        [
+          "2024-12-31",
+          3.19
+        ],
+        [
+          "2025-12-31",
+          3.81
+        ]
+      ],
+      "eps_cagr_3y_pct": 6.4,
+      "eps_cagr_5y_pct": 15.5,
+      "skip": null,
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 18,
+      "ticker": "XOM",
+      "issuer": "EXXON MOBIL CORP",
+      "cik": "2115436",
+      "price": 136.72,
+      "price_filers": 12,
+      "pe": null,
+      "held_value_usd": 79106282418,
+      "holders": 12,
+      "buyers": 6,
+      "sellers": 7,
+      "net_shares_pct": -4.59,
+      "eps_ttm": null,
+      "eps_ttm_end": null,
+      "net_income_ttm": null,
+      "eps_fy_end": null,
+      "eps_history": null,
+      "eps_cagr_3y_pct": null,
+      "eps_cagr_5y_pct": null,
+      "skip": "too little XBRL history (new SEC entity?)",
+      "fetched": "2026-11-09",
+      "note": "too little XBRL history (new SEC entity?)"
+    },
+    {
+      "rank": 19,
+      "ticker": "V",
+      "issuer": "VISA INC",
+      "cik": "1403161",
+      "price": 343.09,
+      "price_filers": 13,
+      "pe": null,
+      "held_value_usd": 78908407959,
+      "holders": 13,
+      "buyers": 4,
+      "sellers": 9,
+      "net_shares_pct": -3.14,
+      "eps_ttm": null,
+      "eps_ttm_end": null,
+      "net_income_ttm": null,
+      "eps_fy_end": null,
+      "eps_history": null,
+      "eps_cagr_3y_pct": null,
+      "eps_cagr_5y_pct": null,
+      "skip": "no EPS in XBRL",
+      "fetched": "2026-11-09",
+      "note": "no EPS in XBRL"
     },
     {
       "rank": 20,
@@ -867,16 +867,16 @@
       "issuer": "COCA COLA CO",
       "cik": "21344",
       "price": 81.27,
-      "price_filers": 15,
-      "pe": 25.6,
-      "held_value_usd": 79166037106,
-      "holders": 15,
-      "buyers": 9,
+      "price_filers": 14,
+      "pe": 24.0,
+      "held_value_usd": 76396045136,
+      "holders": 14,
+      "buyers": 8,
       "sellers": 5,
-      "net_shares_pct": 0.18,
-      "eps_ttm": 3.18,
-      "eps_ttm_end": "2026-04-03",
-      "net_income_ttm": 13701000000,
+      "net_shares_pct": -0.4,
+      "eps_ttm": 3.39,
+      "eps_ttm_end": "2026-10-02",
+      "net_income_ttm": 14629000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -907,7 +907,7 @@
       "eps_cagr_3y_pct": 11.6,
       "eps_cagr_5y_pct": 11.2,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -916,16 +916,16 @@
       "issuer": "INTEL CORP",
       "cik": "50863",
       "price": 139.63,
-      "price_filers": 14,
+      "price_filers": 13,
       "pe": null,
-      "held_value_usd": 77012666987,
-      "holders": 14,
+      "held_value_usd": 72860561449,
+      "holders": 13,
       "buyers": 9,
-      "sellers": 5,
-      "net_shares_pct": 15.56,
-      "eps_ttm": -2.09,
-      "eps_ttm_end": "2026-06-27",
-      "net_income_ttm": -11289000000,
+      "sellers": 4,
+      "net_shares_pct": 16.71,
+      "eps_ttm": -2.35,
+      "eps_ttm_end": "2026-09-26",
+      "net_income_ttm": -12032000000,
       "eps_fy_end": "2025-12-27",
       "eps_history": [
         [
@@ -956,7 +956,7 @@
       "eps_cagr_3y_pct": null,
       "eps_cagr_5y_pct": null,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": "negative TTM earnings"
     },
     {
@@ -965,16 +965,16 @@
       "issuer": "MASTERCARD INCORPORATED",
       "cik": "1141391",
       "price": 513.6,
-      "price_filers": 12,
-      "pe": 28.3,
-      "held_value_usd": 73832917696,
-      "holders": 12,
+      "price_filers": 11,
+      "pe": 26.9,
+      "held_value_usd": 70249959394,
+      "holders": 11,
       "buyers": 3,
-      "sellers": 11,
-      "net_shares_pct": -3.12,
-      "eps_ttm": 18.18,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 16257000000,
+      "sellers": 10,
+      "net_shares_pct": -2.99,
+      "eps_ttm": 19.11,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 16958000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -1005,22 +1005,71 @@
       "eps_cagr_3y_pct": 17.4,
       "eps_cagr_5y_pct": 21.0,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
       "rank": 23,
+      "ticker": "CAT",
+      "issuer": "CATERPILLAR INC",
+      "cik": "18230",
+      "price": 1064.9,
+      "price_filers": 13,
+      "pe": 41.8,
+      "held_value_usd": 70039063418,
+      "holders": 13,
+      "buyers": 7,
+      "sellers": 7,
+      "net_shares_pct": 10.15,
+      "eps_ttm": 25.48,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 11831000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          5.46
+        ],
+        [
+          "2021-12-31",
+          11.83
+        ],
+        [
+          "2022-12-31",
+          12.64
+        ],
+        [
+          "2023-12-31",
+          20.12
+        ],
+        [
+          "2024-12-31",
+          22.05
+        ],
+        [
+          "2025-12-31",
+          18.81
+        ]
+      ],
+      "eps_cagr_3y_pct": 14.2,
+      "eps_cagr_5y_pct": 28.1,
+      "skip": null,
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 24,
       "ticker": "AMAT",
       "issuer": "APPLIED MATLS INC",
       "cik": "6951",
       "price": 723.0,
-      "price_filers": 13,
+      "price_filers": 12,
       "pe": 62.4,
-      "held_value_usd": 73723164898,
-      "holders": 13,
+      "held_value_usd": 68646835734,
+      "holders": 12,
       "buyers": 8,
-      "sellers": 5,
-      "net_shares_pct": 20.52,
+      "sellers": 4,
+      "net_shares_pct": 24.37,
       "eps_ttm": 11.59,
       "eps_ttm_end": "2026-07-26",
       "net_income_ttm": 9267000000,
@@ -1054,93 +1103,20 @@
       "eps_cagr_3y_pct": 5.2,
       "eps_cagr_5y_pct": 17.2,
       "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 24,
-      "ticker": "CAT",
-      "issuer": "CATERPILLAR INC",
-      "cik": "18230",
-      "price": 1064.9,
-      "price_filers": 14,
-      "pe": 45.9,
-      "held_value_usd": 73231773574,
-      "holders": 14,
-      "buyers": 7,
-      "sellers": 8,
-      "net_shares_pct": 8.99,
-      "eps_ttm": 23.22,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 10844000000,
-      "eps_fy_end": "2025-12-31",
-      "eps_history": [
-        [
-          "2020-12-31",
-          5.46
-        ],
-        [
-          "2021-12-31",
-          11.83
-        ],
-        [
-          "2022-12-31",
-          12.64
-        ],
-        [
-          "2023-12-31",
-          20.12
-        ],
-        [
-          "2024-12-31",
-          22.05
-        ],
-        [
-          "2025-12-31",
-          18.81
-        ]
-      ],
-      "eps_cagr_3y_pct": 14.2,
-      "eps_cagr_5y_pct": 28.1,
-      "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
       "rank": 25,
-      "ticker": "TSM",
-      "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
-      "cik": "1046179",
-      "price": 477.57,
-      "price_filers": 15,
-      "pe": null,
-      "held_value_usd": 66162077321,
-      "holders": 15,
-      "buyers": 5,
-      "sellers": 11,
-      "net_shares_pct": 0.58,
-      "eps_ttm": null,
-      "eps_ttm_end": null,
-      "net_income_ttm": null,
-      "eps_fy_end": null,
-      "eps_history": null,
-      "eps_cagr_3y_pct": null,
-      "eps_cagr_5y_pct": null,
-      "skip": "foreign filer (ADR ratio unknown)",
-      "fetched": "2026-10-19",
-      "note": "foreign filer (ADR ratio unknown)"
-    },
-    {
-      "rank": 26,
       "ticker": "SPCX",
       "issuer": "SPACE EXPLORATION TECHN CORP",
       "cik": "1181412",
       "price": 170.86,
-      "price_filers": 14,
+      "price_filers": 13,
       "pe": null,
-      "held_value_usd": 65285348928,
-      "holders": 14,
-      "buyers": 14,
+      "held_value_usd": 65082860338,
+      "holders": 13,
+      "buyers": 13,
       "sellers": 0,
       "net_shares_pct": null,
       "eps_ttm": null,
@@ -1151,8 +1127,32 @@
       "eps_cagr_3y_pct": null,
       "eps_cagr_5y_pct": null,
       "skip": "too little XBRL history (new SEC entity?)",
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": "too little XBRL history (new SEC entity?)"
+    },
+    {
+      "rank": 26,
+      "ticker": "TSM",
+      "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
+      "cik": "1046179",
+      "price": 477.57,
+      "price_filers": 14,
+      "pe": null,
+      "held_value_usd": 62431290040,
+      "holders": 14,
+      "buyers": 5,
+      "sellers": 10,
+      "net_shares_pct": 1.6,
+      "eps_ttm": null,
+      "eps_ttm_end": null,
+      "net_income_ttm": null,
+      "eps_fy_end": null,
+      "eps_history": null,
+      "eps_cagr_3y_pct": null,
+      "eps_cagr_5y_pct": null,
+      "skip": "foreign filer (ADR ratio unknown)",
+      "fetched": "2026-11-09",
+      "note": "foreign filer (ADR ratio unknown)"
     },
     {
       "rank": 27,
@@ -1160,13 +1160,13 @@
       "issuer": "CISCO SYS INC",
       "cik": "858877",
       "price": 117.46,
-      "price_filers": 12,
+      "price_filers": 11,
       "pe": 35.3,
-      "held_value_usd": 64792120917,
-      "holders": 12,
+      "held_value_usd": 60077547230,
+      "holders": 11,
       "buyers": 7,
-      "sellers": 6,
-      "net_shares_pct": 1.21,
+      "sellers": 5,
+      "net_shares_pct": 2.26,
       "eps_ttm": 3.33,
       "eps_ttm_end": "2026-07-25",
       "net_income_ttm": 13267000000,
@@ -1200,7 +1200,7 @@
       "eps_cagr_3y_pct": 2.7,
       "eps_cagr_5y_pct": 5.9,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -1209,16 +1209,16 @@
       "issuer": "ABBVIE INC",
       "cik": "1551152",
       "price": 251.64,
-      "price_filers": 13,
-      "pe": 71.1,
-      "held_value_usd": 62988573289,
-      "holders": 13,
+      "price_filers": 12,
+      "pe": 43.3,
+      "held_value_usd": 59754151612,
+      "holders": 12,
       "buyers": 7,
-      "sellers": 6,
-      "net_shares_pct": -1.53,
-      "eps_ttm": 3.54,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 6310000000,
+      "sellers": 5,
+      "net_shares_pct": -1.44,
+      "eps_ttm": 5.81,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 10342000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -1249,25 +1249,74 @@
       "eps_cagr_3y_pct": -29.1,
       "eps_cagr_5y_pct": -2.8,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
       "rank": 29,
+      "ticker": "GE",
+      "issuer": "GE AEROSPACE",
+      "cik": "40545",
+      "price": 373.73,
+      "price_filers": 14,
+      "pe": 43.2,
+      "held_value_usd": 57888624769,
+      "holders": 14,
+      "buyers": 4,
+      "sellers": 10,
+      "net_shares_pct": -0.41,
+      "eps_ttm": 8.66,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 9103000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          4.5097
+        ],
+        [
+          "2021-12-31",
+          -6.0
+        ],
+        [
+          "2022-12-31",
+          0.05
+        ],
+        [
+          "2023-12-31",
+          8.36
+        ],
+        [
+          "2024-12-31",
+          5.99
+        ],
+        [
+          "2025-12-31",
+          8.14
+        ]
+      ],
+      "eps_cagr_3y_pct": 446.0,
+      "eps_cagr_5y_pct": 12.5,
+      "skip": null,
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 30,
       "ticker": "UNH",
       "issuer": "UNITEDHEALTH GROUP INC",
       "cik": "731766",
       "price": 415.63,
-      "price_filers": 14,
-      "pe": 26.7,
-      "held_value_usd": 62037812691,
-      "holders": 14,
-      "buyers": 8,
+      "price_filers": 13,
+      "pe": 23.7,
+      "held_value_usd": 57588496008,
+      "holders": 13,
+      "buyers": 7,
       "sellers": 6,
-      "net_shares_pct": 11.2,
-      "eps_ttm": 15.56,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 14122000000,
+      "net_shares_pct": 11.55,
+      "eps_ttm": 17.52,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 15884000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -1298,22 +1347,71 @@
       "eps_cagr_3y_pct": -14.5,
       "eps_cagr_5y_pct": -3.8,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
-      "rank": 30,
+      "rank": 31,
+      "ticker": "CVX",
+      "issuer": "CHEVRON CORPORATION",
+      "cik": "93410",
+      "price": 165.76,
+      "price_filers": 14,
+      "pe": 12.2,
+      "held_value_usd": 57520138974,
+      "holders": 14,
+      "buyers": 5,
+      "sellers": 8,
+      "net_shares_pct": -1.99,
+      "eps_ttm": 13.62,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 26977000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          -2.96
+        ],
+        [
+          "2021-12-31",
+          8.14
+        ],
+        [
+          "2022-12-31",
+          18.28
+        ],
+        [
+          "2023-12-31",
+          11.36
+        ],
+        [
+          "2024-12-31",
+          9.72
+        ],
+        [
+          "2025-12-31",
+          6.63
+        ]
+      ],
+      "eps_cagr_3y_pct": -28.7,
+      "eps_cagr_5y_pct": null,
+      "skip": null,
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 32,
       "ticker": "WMT",
       "issuer": "WALMART INC",
       "cik": "104169",
       "price": 113.26,
-      "price_filers": 14,
+      "price_filers": 13,
       "pe": 41.0,
-      "held_value_usd": 60283240941,
-      "holders": 14,
+      "held_value_usd": 57207171078,
+      "holders": 13,
       "buyers": 8,
-      "sellers": 6,
-      "net_shares_pct": -2.56,
+      "sellers": 5,
+      "net_shares_pct": -2.51,
       "eps_ttm": 2.76,
       "eps_ttm_end": "2026-07-31",
       "net_income_ttm": 22076000000,
@@ -1347,123 +1445,66 @@
       "eps_cagr_3y_pct": 24.3,
       "eps_cagr_5y_pct": 11.6,
       "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 31,
-      "ticker": "GE",
-      "issuer": "GE AEROSPACE",
-      "cik": "40545",
-      "price": 373.73,
-      "price_filers": 15,
-      "pe": 44.1,
-      "held_value_usd": 59992942124,
-      "holders": 15,
-      "buyers": 4,
-      "sellers": 11,
-      "net_shares_pct": -0.46,
-      "eps_ttm": 8.48,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 8971000000,
-      "eps_fy_end": "2025-12-31",
-      "eps_history": [
-        [
-          "2020-12-31",
-          4.5097
-        ],
-        [
-          "2021-12-31",
-          -6.0
-        ],
-        [
-          "2022-12-31",
-          0.05
-        ],
-        [
-          "2023-12-31",
-          8.36
-        ],
-        [
-          "2024-12-31",
-          5.99
-        ],
-        [
-          "2025-12-31",
-          8.14
-        ]
-      ],
-      "eps_cagr_3y_pct": 446.0,
-      "eps_cagr_5y_pct": 12.5,
-      "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 32,
-      "ticker": "CVX",
-      "issuer": "CHEVRON CORPORATION",
-      "cik": "93410",
-      "price": 165.76,
-      "price_filers": 15,
-      "pe": 16.0,
-      "held_value_usd": 59898253078,
-      "holders": 15,
-      "buyers": 5,
-      "sellers": 9,
-      "net_shares_pct": -2.07,
-      "eps_ttm": 10.39,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 20592000000,
-      "eps_fy_end": "2025-12-31",
-      "eps_history": [
-        [
-          "2020-12-31",
-          -2.96
-        ],
-        [
-          "2021-12-31",
-          8.14
-        ],
-        [
-          "2022-12-31",
-          18.28
-        ],
-        [
-          "2023-12-31",
-          11.36
-        ],
-        [
-          "2024-12-31",
-          9.72
-        ],
-        [
-          "2025-12-31",
-          6.63
-        ]
-      ],
-      "eps_cagr_3y_pct": -28.7,
-      "eps_cagr_5y_pct": null,
-      "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
       "rank": 33,
+      "ticker": "SNDK",
+      "issuer": "SANDISK CORP",
+      "cik": "2023554",
+      "price": 2273.73,
+      "price_filers": 13,
+      "pe": 18.1,
+      "held_value_usd": 55060129259,
+      "holders": 13,
+      "buyers": 5,
+      "sellers": 8,
+      "net_shares_pct": -17.11,
+      "eps_ttm": 125.61,
+      "eps_ttm_end": "2026-10-02",
+      "net_income_ttm": 19422000000,
+      "eps_fy_end": "2026-07-03",
+      "eps_history": [
+        [
+          "2023-06-30",
+          -14.78
+        ],
+        [
+          "2024-06-28",
+          -4.63
+        ],
+        [
+          "2025-06-27",
+          -11.32
+        ],
+        [
+          "2026-07-03",
+          73.76
+        ]
+      ],
+      "eps_cagr_3y_pct": null,
+      "eps_cagr_5y_pct": null,
+      "skip": null,
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 34,
       "ticker": "KLAC",
       "issuer": "KLA CORP",
       "cik": "319201",
       "price": 301.71,
-      "price_filers": 13,
-      "pe": 82.4,
-      "held_value_usd": 57465830653,
-      "holders": 13,
-      "buyers": 13,
+      "price_filers": 12,
+      "pe": 75.6,
+      "held_value_usd": 54943400223,
+      "holders": 12,
+      "buyers": 12,
       "sellers": 0,
-      "net_shares_pct": 915.42,
-      "eps_ttm": 3.66,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 4830771000,
+      "net_shares_pct": 918.79,
+      "eps_ttm": 3.99,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 5258319000,
       "eps_fy_end": "2026-06-30",
       "eps_history": [
         [
@@ -1494,48 +1535,7 @@
       "eps_cagr_3y_pct": 14.8,
       "eps_cagr_5y_pct": 22.3,
       "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 34,
-      "ticker": "SNDK",
-      "issuer": "SANDISK CORP",
-      "cik": "2023554",
-      "price": 2273.73,
-      "price_filers": 14,
-      "pe": 30.8,
-      "held_value_usd": 56681482163,
-      "holders": 14,
-      "buyers": 5,
-      "sellers": 9,
-      "net_shares_pct": -16.76,
-      "eps_ttm": 73.76,
-      "eps_ttm_end": "2026-07-03",
-      "net_income_ttm": 11433000000,
-      "eps_fy_end": "2026-07-03",
-      "eps_history": [
-        [
-          "2023-06-30",
-          -14.78
-        ],
-        [
-          "2024-06-28",
-          -4.63
-        ],
-        [
-          "2025-06-27",
-          -11.32
-        ],
-        [
-          "2026-07-03",
-          73.76
-        ]
-      ],
-      "eps_cagr_3y_pct": null,
-      "eps_cagr_5y_pct": null,
-      "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -1544,16 +1544,16 @@
       "issuer": "GE VERNOVA INC",
       "cik": "1996810",
       "price": 1174.86,
-      "price_filers": 14,
-      "pe": 33.7,
-      "held_value_usd": 56482585945,
-      "holders": 14,
+      "price_filers": 13,
+      "pe": 30.8,
+      "held_value_usd": 53985113556,
+      "holders": 13,
       "buyers": 4,
-      "sellers": 10,
-      "net_shares_pct": -6.34,
-      "eps_ttm": 34.88,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 9529000000,
+      "sellers": 9,
+      "net_shares_pct": -6.35,
+      "eps_ttm": 38.09,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 10368000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -1576,7 +1576,7 @@
       "eps_cagr_3y_pct": null,
       "eps_cagr_5y_pct": null,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -1585,16 +1585,16 @@
       "issuer": "MERCK & CO INC",
       "cik": "310158",
       "price": 128.5,
-      "price_filers": 13,
-      "pe": 102.8,
-      "held_value_usd": 53327203221,
-      "holders": 13,
+      "price_filers": 12,
+      "pe": 129.8,
+      "held_value_usd": 50970491052,
+      "holders": 12,
       "buyers": 6,
-      "sellers": 7,
-      "net_shares_pct": -2.52,
-      "eps_ttm": 1.25,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 3173000000,
+      "sellers": 6,
+      "net_shares_pct": -2.54,
+      "eps_ttm": 0.99,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 2453000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -1625,7 +1625,7 @@
       "eps_cagr_3y_pct": 8.4,
       "eps_cagr_5y_pct": 21.2,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -1634,16 +1634,16 @@
       "issuer": "WESTERN DIGITAL CORP",
       "cik": "106040",
       "price": 638.72,
-      "price_filers": 14,
-      "pe": 26.3,
-      "held_value_usd": 52480422734,
-      "holders": 14,
-      "buyers": 8,
+      "price_filers": 13,
+      "pe": 24.7,
+      "held_value_usd": 50613800578,
+      "holders": 13,
+      "buyers": 7,
       "sellers": 6,
-      "net_shares_pct": -5.41,
-      "eps_ttm": 24.28,
-      "eps_ttm_end": "2026-07-03",
-      "net_income_ttm": 9424000000,
+      "net_shares_pct": -6.04,
+      "eps_ttm": 25.84,
+      "eps_ttm_end": "2026-10-02",
+      "net_income_ttm": 10021000000,
       "eps_fy_end": "2026-07-03",
       "eps_history": [
         [
@@ -1674,22 +1674,71 @@
       "eps_cagr_3y_pct": null,
       "eps_cagr_5y_pct": 54.7,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
       "rank": 38,
+      "ticker": "WFC",
+      "issuer": "WELLS FARGO & CO",
+      "cik": "72971",
+      "price": 82.64,
+      "price_filers": 13,
+      "pe": 11.7,
+      "held_value_usd": 46836237618,
+      "holders": 13,
+      "buyers": 8,
+      "sellers": 5,
+      "net_shares_pct": -6.21,
+      "eps_ttm": 7.09,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 22972000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          0.4413
+        ],
+        [
+          "2021-12-31",
+          5.08
+        ],
+        [
+          "2022-12-31",
+          3.27
+        ],
+        [
+          "2023-12-31",
+          4.83
+        ],
+        [
+          "2024-12-31",
+          5.37
+        ],
+        [
+          "2025-12-31",
+          6.26
+        ]
+      ],
+      "eps_cagr_3y_pct": 24.2,
+      "eps_cagr_5y_pct": 70.0,
+      "skip": null,
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 39,
       "ticker": "COST",
       "issuer": "COSTCO WHOLESALE CORPORATION",
       "cik": "909832",
       "price": 935.47,
-      "price_filers": 13,
+      "price_filers": 12,
       "pe": 45.1,
-      "held_value_usd": 49122673615,
-      "holders": 13,
+      "held_value_usd": 46115083317,
+      "holders": 12,
       "buyers": 6,
-      "sellers": 8,
-      "net_shares_pct": -0.37,
+      "sellers": 7,
+      "net_shares_pct": -0.05,
       "eps_ttm": 20.76,
       "eps_ttm_end": "2026-08-30",
       "net_income_ttm": 9226000000,
@@ -1723,71 +1772,71 @@
       "eps_cagr_3y_pct": 13.6,
       "eps_cagr_5y_pct": 13.0,
       "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 39,
-      "ticker": "WFC",
-      "issuer": "WELLS FARGO & CO",
-      "cik": "72971",
-      "price": 82.64,
-      "price_filers": 14,
-      "pe": 12.0,
-      "held_value_usd": 48201160627,
-      "holders": 14,
-      "buyers": 8,
-      "sellers": 6,
-      "net_shares_pct": -6.12,
-      "eps_ttm": 6.88,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 22610000000,
-      "eps_fy_end": "2025-12-31",
-      "eps_history": [
-        [
-          "2020-12-31",
-          0.4413
-        ],
-        [
-          "2021-12-31",
-          5.08
-        ],
-        [
-          "2022-12-31",
-          3.27
-        ],
-        [
-          "2023-12-31",
-          4.83
-        ],
-        [
-          "2024-12-31",
-          5.37
-        ],
-        [
-          "2025-12-31",
-          6.26
-        ]
-      ],
-      "eps_cagr_3y_pct": 24.2,
-      "eps_cagr_5y_pct": 70.0,
-      "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
       "rank": 40,
+      "ticker": "MS",
+      "issuer": "MORGAN STANLEY",
+      "cik": "895421",
+      "price": 209.04,
+      "price_filers": 12,
+      "pe": 16.6,
+      "held_value_usd": 44226423770,
+      "holders": 12,
+      "buyers": 5,
+      "sellers": 8,
+      "net_shares_pct": -1.79,
+      "eps_ttm": 12.61,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 20454000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          6.46
+        ],
+        [
+          "2021-12-31",
+          8.03
+        ],
+        [
+          "2022-12-31",
+          6.15
+        ],
+        [
+          "2023-12-31",
+          5.18
+        ],
+        [
+          "2024-12-31",
+          7.95
+        ],
+        [
+          "2025-12-31",
+          10.21
+        ]
+      ],
+      "eps_cagr_3y_pct": 18.4,
+      "eps_cagr_5y_pct": 9.6,
+      "skip": null,
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 41,
       "ticker": "HD",
       "issuer": "HOME DEPOT INC",
       "cik": "354950",
       "price": 352.68,
-      "price_filers": 12,
+      "price_filers": 11,
       "pe": 24.7,
-      "held_value_usd": 46930358797,
-      "holders": 12,
+      "held_value_usd": 44152963277,
+      "holders": 11,
       "buyers": 6,
-      "sellers": 6,
-      "net_shares_pct": 1.45,
+      "sellers": 5,
+      "net_shares_pct": 1.57,
       "eps_ttm": 14.29,
       "eps_ttm_end": "2026-08-02",
       "net_income_ttm": 14231000000,
@@ -1821,74 +1870,74 @@
       "eps_cagr_3y_pct": -5.2,
       "eps_cagr_5y_pct": 3.6,
       "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 41,
-      "ticker": "MS",
-      "issuer": "MORGAN STANLEY",
-      "cik": "895421",
-      "price": 209.04,
-      "price_filers": 13,
-      "pe": 16.9,
-      "held_value_usd": 46266650586,
-      "holders": 13,
-      "buyers": 5,
-      "sellers": 9,
-      "net_shares_pct": -1.74,
-      "eps_ttm": 12.38,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 20155000000,
-      "eps_fy_end": "2025-12-31",
-      "eps_history": [
-        [
-          "2020-12-31",
-          6.46
-        ],
-        [
-          "2021-12-31",
-          8.03
-        ],
-        [
-          "2022-12-31",
-          6.15
-        ],
-        [
-          "2023-12-31",
-          5.18
-        ],
-        [
-          "2024-12-31",
-          7.95
-        ],
-        [
-          "2025-12-31",
-          10.21
-        ]
-      ],
-      "eps_cagr_3y_pct": 18.4,
-      "eps_cagr_5y_pct": 9.6,
-      "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
       "rank": 42,
+      "ticker": "PANW",
+      "issuer": "PALO ALTO NETWORKS INC",
+      "cik": "1327567",
+      "price": 341.02,
+      "price_filers": 10,
+      "pe": 852.5,
+      "held_value_usd": 43990664537,
+      "holders": 10,
+      "buyers": 8,
+      "sellers": 5,
+      "net_shares_pct": 20.96,
+      "eps_ttm": 0.4,
+      "eps_ttm_end": "2026-07-31",
+      "net_income_ttm": 306600000,
+      "eps_fy_end": "2026-07-31",
+      "eps_history": [
+        [
+          "2021-07-31",
+          -0.865
+        ],
+        [
+          "2022-07-31",
+          -0.45
+        ],
+        [
+          "2023-07-31",
+          0.64
+        ],
+        [
+          "2024-07-31",
+          3.64
+        ],
+        [
+          "2025-07-31",
+          1.6
+        ],
+        [
+          "2026-07-31",
+          0.4
+        ]
+      ],
+      "eps_cagr_3y_pct": -14.5,
+      "eps_cagr_5y_pct": null,
+      "skip": null,
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 43,
       "ticker": "GS",
       "issuer": "GOLDMAN SACHS GROUP INC",
       "cik": "886982",
       "price": 1011.37,
-      "price_filers": 12,
-      "pe": 15.6,
-      "held_value_usd": 46183078764,
-      "holders": 12,
+      "price_filers": 11,
+      "pe": 14.5,
+      "held_value_usd": 43623050954,
+      "holders": 11,
       "buyers": 7,
-      "sellers": 6,
-      "net_shares_pct": 3.11,
-      "eps_ttm": 64.76,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 20973000000,
+      "sellers": 5,
+      "net_shares_pct": 3.52,
+      "eps_ttm": 69.55,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 22169000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -1919,22 +1968,22 @@
       "eps_cagr_3y_pct": 19.5,
       "eps_cagr_5y_pct": 15.7,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
-      "rank": 43,
+      "rank": 44,
       "ticker": "MRVL",
       "issuer": "MARVELL TECHNOLOGY INC",
       "cik": "1835632",
       "price": 297.89,
-      "price_filers": 14,
+      "price_filers": 13,
       "pe": 98.6,
-      "held_value_usd": 45827405114,
-      "holders": 14,
-      "buyers": 9,
+      "held_value_usd": 43456800885,
+      "holders": 13,
+      "buyers": 8,
       "sellers": 5,
-      "net_shares_pct": -16.7,
+      "net_shares_pct": -19.38,
       "eps_ttm": 3.02,
       "eps_ttm_end": "2026-08-01",
       "net_income_ttm": 2639900000,
@@ -1968,56 +2017,7 @@
       "eps_cagr_3y_pct": null,
       "eps_cagr_5y_pct": null,
       "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 44,
-      "ticker": "PANW",
-      "issuer": "PALO ALTO NETWORKS INC",
-      "cik": "1327567",
-      "price": 341.02,
-      "price_filers": 11,
-      "pe": 852.5,
-      "held_value_usd": 45560419935,
-      "holders": 11,
-      "buyers": 8,
-      "sellers": 6,
-      "net_shares_pct": 20.1,
-      "eps_ttm": 0.4,
-      "eps_ttm_end": "2026-07-31",
-      "net_income_ttm": 307000000,
-      "eps_fy_end": "2026-07-31",
-      "eps_history": [
-        [
-          "2021-07-31",
-          -0.865
-        ],
-        [
-          "2022-07-31",
-          -0.45
-        ],
-        [
-          "2023-07-31",
-          0.64
-        ],
-        [
-          "2024-07-31",
-          3.64
-        ],
-        [
-          "2025-07-31",
-          1.6
-        ],
-        [
-          "2026-07-31",
-          0.4
-        ]
-      ],
-      "eps_cagr_3y_pct": -14.5,
-      "eps_cagr_5y_pct": null,
-      "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -2026,16 +2026,16 @@
       "issuer": "NETFLIX INC.",
       "cik": "1065280",
       "price": 71.4,
-      "price_filers": 14,
-      "pe": 22.5,
-      "held_value_usd": 43916801424,
-      "holders": 14,
+      "price_filers": 13,
+      "pe": 20.6,
+      "held_value_usd": 42010319056,
+      "holders": 13,
       "buyers": 7,
-      "sellers": 8,
-      "net_shares_pct": -8.92,
-      "eps_ttm": 3.18,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 13649441000,
+      "sellers": 7,
+      "net_shares_pct": -9.19,
+      "eps_ttm": 3.46,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 14766452000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -2066,7 +2066,7 @@
       "eps_cagr_3y_pct": 36.6,
       "eps_cagr_5y_pct": 33.1,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -2075,16 +2075,16 @@
       "issuer": "AMPHENOL CORP",
       "cik": "820313",
       "price": 176.32,
-      "price_filers": 14,
-      "pe": 44.1,
-      "held_value_usd": 43317341799,
-      "holders": 14,
+      "price_filers": 13,
+      "pe": 76.8,
+      "held_value_usd": 40748002574,
+      "holders": 13,
       "buyers": 4,
-      "sellers": 10,
-      "net_shares_pct": -3.9,
-      "eps_ttm": 4.0,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 5143100000,
+      "sellers": 9,
+      "net_shares_pct": -3.5,
+      "eps_ttm": 2.2965,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 5931700000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -2115,74 +2115,25 @@
       "eps_cagr_3y_pct": 29.7,
       "eps_cagr_5y_pct": 27.8,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
       "rank": 47,
-      "ticker": "TXN",
-      "issuer": "TEXAS INSTRS INC",
-      "cik": "97476",
-      "price": 298.07,
-      "price_filers": 14,
-      "pe": 45.3,
-      "held_value_usd": 43006055987,
-      "holders": 14,
-      "buyers": 9,
-      "sellers": 5,
-      "net_shares_pct": -2.2,
-      "eps_ttm": 6.58,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 6052000000,
-      "eps_fy_end": "2025-12-31",
-      "eps_history": [
-        [
-          "2020-12-31",
-          5.97
-        ],
-        [
-          "2021-12-31",
-          8.26
-        ],
-        [
-          "2022-12-31",
-          9.41
-        ],
-        [
-          "2023-12-31",
-          7.07
-        ],
-        [
-          "2024-12-31",
-          5.2
-        ],
-        [
-          "2025-12-31",
-          5.45
-        ]
-      ],
-      "eps_cagr_3y_pct": -16.6,
-      "eps_cagr_5y_pct": -1.8,
-      "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 48,
       "ticker": "PM",
       "issuer": "PHILIP MORRIS INTL INC",
       "cik": "1413329",
       "price": 180.91,
-      "price_filers": 12,
-      "pe": 26.0,
-      "held_value_usd": 41889699992,
-      "holders": 12,
-      "buyers": 8,
+      "price_filers": 11,
+      "pe": 26.4,
+      "held_value_usd": 39778502205,
+      "holders": 11,
+      "buyers": 7,
       "sellers": 4,
-      "net_shares_pct": 1.98,
-      "eps_ttm": 6.95,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 10874000000,
+      "net_shares_pct": 0.88,
+      "eps_ttm": 6.85,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 10709000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -2213,74 +2164,25 @@
       "eps_cagr_3y_pct": 7.7,
       "eps_cagr_5y_pct": 7.1,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
-      "rank": 49,
-      "ticker": "PG",
-      "issuer": "PROCTER & GAMBLE CO",
-      "cik": "80424",
-      "price": 146.64,
-      "price_filers": 13,
-      "pe": 22.2,
-      "held_value_usd": 40017141388,
-      "holders": 13,
-      "buyers": 4,
-      "sellers": 9,
-      "net_shares_pct": -4.95,
-      "eps_ttm": 6.62,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 16046000000,
-      "eps_fy_end": "2026-06-30",
-      "eps_history": [
-        [
-          "2021-06-30",
-          5.5
-        ],
-        [
-          "2022-06-30",
-          5.81
-        ],
-        [
-          "2023-06-30",
-          5.9
-        ],
-        [
-          "2024-06-30",
-          6.02
-        ],
-        [
-          "2025-06-30",
-          6.51
-        ],
-        [
-          "2026-06-30",
-          6.62
-        ]
-      ],
-      "eps_cagr_3y_pct": 3.9,
-      "eps_cagr_5y_pct": 3.8,
-      "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 50,
+      "rank": 48,
       "ticker": "RTX",
       "issuer": "RTX CORPORATION",
       "cik": "101829",
       "price": 189.73,
-      "price_filers": 14,
-      "pe": 33.4,
-      "held_value_usd": 40004831450,
-      "holders": 14,
+      "price_filers": 13,
+      "pe": 30.9,
+      "held_value_usd": 38548575014,
+      "holders": 13,
       "buyers": 8,
-      "sellers": 6,
-      "net_shares_pct": -1.6,
-      "eps_ttm": 5.68,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 7738000000,
+      "sellers": 5,
+      "net_shares_pct": -1.1,
+      "eps_ttm": 6.15,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 8403000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -2311,7 +2213,105 @@
       "eps_cagr_3y_pct": 12.3,
       "eps_cagr_5y_pct": null,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 49,
+      "ticker": "TXN",
+      "issuer": "TEXAS INSTRS INC",
+      "cik": "97476",
+      "price": 298.07,
+      "price_filers": 13,
+      "pe": 38.7,
+      "held_value_usd": 38517390234,
+      "holders": 13,
+      "buyers": 9,
+      "sellers": 4,
+      "net_shares_pct": -1.51,
+      "eps_ttm": 7.71,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 7113000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          5.97
+        ],
+        [
+          "2021-12-31",
+          8.26
+        ],
+        [
+          "2022-12-31",
+          9.41
+        ],
+        [
+          "2023-12-31",
+          7.07
+        ],
+        [
+          "2024-12-31",
+          5.2
+        ],
+        [
+          "2025-12-31",
+          5.45
+        ]
+      ],
+      "eps_cagr_3y_pct": -16.6,
+      "eps_cagr_5y_pct": -1.8,
+      "skip": null,
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 50,
+      "ticker": "PG",
+      "issuer": "PROCTER & GAMBLE CO",
+      "cik": "80424",
+      "price": 146.64,
+      "price_filers": 12,
+      "pe": 22.1,
+      "held_value_usd": 37735636845,
+      "holders": 12,
+      "buyers": 4,
+      "sellers": 8,
+      "net_shares_pct": -5.06,
+      "eps_ttm": 6.64,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 16027000000,
+      "eps_fy_end": "2026-06-30",
+      "eps_history": [
+        [
+          "2021-06-30",
+          5.5
+        ],
+        [
+          "2022-06-30",
+          5.81
+        ],
+        [
+          "2023-06-30",
+          5.9
+        ],
+        [
+          "2024-06-30",
+          6.02
+        ],
+        [
+          "2025-06-30",
+          6.51
+        ],
+        [
+          "2026-06-30",
+          6.62
+        ]
+      ],
+      "eps_cagr_3y_pct": 3.9,
+      "eps_cagr_5y_pct": 3.8,
+      "skip": null,
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -2320,16 +2320,16 @@
       "issuer": "SEAGATE TECHNOLOGY HLDNGS PL",
       "cik": "1137789",
       "price": 965.0,
-      "price_filers": 14,
-      "pe": 69.4,
-      "held_value_usd": 38076532625,
-      "holders": 14,
-      "buyers": 9,
+      "price_filers": 13,
+      "pe": 50.6,
+      "held_value_usd": 36835340759,
+      "holders": 13,
+      "buyers": 8,
       "sellers": 5,
-      "net_shares_pct": 7.82,
-      "eps_ttm": 13.9,
-      "eps_ttm_end": "2026-07-03",
-      "net_income_ttm": 3184000000,
+      "net_shares_pct": 7.43,
+      "eps_ttm": 19.06,
+      "eps_ttm_end": "2026-10-02",
+      "net_income_ttm": 4396000000,
       "eps_fy_end": "2026-07-03",
       "eps_history": [
         [
@@ -2360,71 +2360,22 @@
       "eps_cagr_3y_pct": null,
       "eps_cagr_5y_pct": 21.0,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
       "rank": 52,
-      "ticker": "IBM",
-      "issuer": "INTERNATIONAL BUSINESS MACHS",
-      "cik": "51143",
-      "price": 281.21,
-      "price_filers": 12,
-      "pe": 24.9,
-      "held_value_usd": 35852030447,
-      "holders": 12,
-      "buyers": 7,
-      "sellers": 5,
-      "net_shares_pct": 2.58,
-      "eps_ttm": 11.29,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 10725000000,
-      "eps_fy_end": "2025-12-31",
-      "eps_history": [
-        [
-          "2020-12-31",
-          6.23
-        ],
-        [
-          "2021-12-31",
-          6.35
-        ],
-        [
-          "2022-12-31",
-          1.8
-        ],
-        [
-          "2023-12-31",
-          8.14
-        ],
-        [
-          "2024-12-31",
-          6.43
-        ],
-        [
-          "2025-12-31",
-          11.17
-        ]
-      ],
-      "eps_cagr_3y_pct": 83.8,
-      "eps_cagr_5y_pct": 12.4,
-      "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 53,
       "ticker": "NEE",
       "issuer": "NEXTERA ENERGY INC",
       "cik": "753308",
       "price": 87.77,
-      "price_filers": 12,
+      "price_filers": 11,
       "pe": 22.3,
-      "held_value_usd": 34946974100,
-      "holders": 12,
+      "held_value_usd": 33801702048,
+      "holders": 11,
       "buyers": 2,
-      "sellers": 11,
-      "net_shares_pct": -0.6,
+      "sellers": 10,
+      "net_shares_pct": -0.55,
       "eps_ttm": 3.94,
       "eps_ttm_end": "2026-03-31",
       "net_income_ttm": 8184000000,
@@ -2458,7 +2409,56 @@
       "eps_cagr_3y_pct": 16.3,
       "eps_cagr_5y_pct": 17.4,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 53,
+      "ticker": "IBM",
+      "issuer": "INTERNATIONAL BUSINESS MACHS",
+      "cik": "51143",
+      "price": 281.21,
+      "price_filers": 11,
+      "pe": 23.9,
+      "held_value_usd": 33245248620,
+      "holders": 11,
+      "buyers": 6,
+      "sellers": 5,
+      "net_shares_pct": 1.0,
+      "eps_ttm": 11.75,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 11171000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          6.23
+        ],
+        [
+          "2021-12-31",
+          6.35
+        ],
+        [
+          "2022-12-31",
+          1.8
+        ],
+        [
+          "2023-12-31",
+          8.14
+        ],
+        [
+          "2024-12-31",
+          6.43
+        ],
+        [
+          "2025-12-31",
+          11.17
+        ]
+      ],
+      "eps_cagr_3y_pct": 83.8,
+      "eps_cagr_5y_pct": 12.4,
+      "skip": null,
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -2467,13 +2467,13 @@
       "issuer": "ORACLE CORP",
       "cik": "1341439",
       "price": 146.55,
-      "price_filers": 14,
+      "price_filers": 13,
       "pe": 23.0,
-      "held_value_usd": 33024489619,
-      "holders": 14,
+      "held_value_usd": 31112559443,
+      "holders": 13,
       "buyers": 10,
-      "sellers": 4,
-      "net_shares_pct": 3.56,
+      "sellers": 3,
+      "net_shares_pct": 3.86,
       "eps_ttm": 6.38,
       "eps_ttm_end": "2026-08-31",
       "net_income_ttm": 18817000000,
@@ -2507,74 +2507,25 @@
       "eps_cagr_3y_pct": 23.8,
       "eps_cagr_5y_pct": 5.1,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
       "rank": 55,
-      "ticker": "C",
-      "issuer": "CITIGROUP INC",
-      "cik": "831001",
-      "price": 139.96,
-      "price_filers": 13,
-      "pe": 20.0,
-      "held_value_usd": 31751483737,
-      "holders": 13,
-      "buyers": 7,
-      "sellers": 8,
-      "net_shares_pct": -0.83,
-      "eps_ttm": 6.99,
-      "eps_ttm_end": "2025-12-31",
-      "net_income_ttm": 14306000000,
-      "eps_fy_end": "2025-12-31",
-      "eps_history": [
-        [
-          "2020-12-31",
-          4.72
-        ],
-        [
-          "2021-12-31",
-          10.14
-        ],
-        [
-          "2022-12-31",
-          7.0
-        ],
-        [
-          "2023-12-31",
-          4.04
-        ],
-        [
-          "2024-12-31",
-          5.94
-        ],
-        [
-          "2025-12-31",
-          6.99
-        ]
-      ],
-      "eps_cagr_3y_pct": -0.0,
-      "eps_cagr_5y_pct": 8.2,
-      "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 56,
       "ticker": "ETN",
       "issuer": "EATON CORP PLC",
       "cik": "1551182",
       "price": 426.12,
-      "price_filers": 12,
-      "pe": 43.4,
-      "held_value_usd": 31632011120,
-      "holders": 12,
-      "buyers": 6,
+      "price_filers": 11,
+      "pe": 42.6,
+      "held_value_usd": 30494747251,
+      "holders": 11,
+      "buyers": 5,
       "sellers": 7,
-      "net_shares_pct": 0.41,
-      "eps_ttm": 9.82,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 3829000000,
+      "net_shares_pct": 0.43,
+      "eps_ttm": 10.01,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 3897000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -2605,71 +2556,22 @@
       "eps_cagr_3y_pct": 19.4,
       "eps_cagr_5y_pct": 24.5,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
-      "rank": 57,
-      "ticker": "LIN",
-      "issuer": "LINDE PLC",
-      "cik": "1707925",
-      "price": 518.94,
-      "price_filers": 13,
-      "pe": 33.5,
-      "held_value_usd": 31451713847,
-      "holders": 13,
-      "buyers": 5,
-      "sellers": 8,
-      "net_shares_pct": 0.68,
-      "eps_ttm": 15.5,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 7244000000,
-      "eps_fy_end": "2025-12-31",
-      "eps_history": [
-        [
-          "2020-12-31",
-          4.71
-        ],
-        [
-          "2021-12-31",
-          7.33
-        ],
-        [
-          "2022-12-31",
-          8.23
-        ],
-        [
-          "2023-12-31",
-          12.59
-        ],
-        [
-          "2024-12-31",
-          13.62
-        ],
-        [
-          "2025-12-31",
-          14.61
-        ]
-      ],
-      "eps_cagr_3y_pct": 21.1,
-      "eps_cagr_5y_pct": 25.4,
-      "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 58,
+      "rank": 56,
       "ticker": "CRWD",
       "issuer": "CROWDSTRIKE HLDGS INC",
       "cik": "1535527",
       "price": 763.14,
-      "price_filers": 15,
+      "price_filers": 14,
       "pe": null,
-      "held_value_usd": 31448971343,
-      "holders": 15,
+      "held_value_usd": 30295014908,
+      "holders": 14,
       "buyers": 7,
-      "sellers": 8,
-      "net_shares_pct": 27.18,
+      "sellers": 7,
+      "net_shares_pct": 28.48,
       "eps_ttm": 0.0444,
       "eps_ttm_end": "2026-07-31",
       "net_income_ttm": 46332000,
@@ -2703,25 +2605,25 @@
       "eps_cagr_3y_pct": null,
       "eps_cagr_5y_pct": null,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": "P/E out of range"
     },
     {
-      "rank": 59,
+      "rank": 57,
       "ticker": "PLTR",
       "issuer": "PALANTIR TECHNOLOGIES INC",
       "cik": "1321655",
       "price": 116.67,
-      "price_filers": 14,
-      "pe": 99.7,
-      "held_value_usd": 31401609228,
-      "holders": 14,
+      "price_filers": 13,
+      "pe": 82.2,
+      "held_value_usd": 29965779981,
+      "holders": 13,
       "buyers": 8,
-      "sellers": 7,
-      "net_shares_pct": 3.94,
-      "eps_ttm": 1.17,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 3016692000,
+      "sellers": 6,
+      "net_shares_pct": 4.3,
+      "eps_ttm": 1.42,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 3669105000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -2752,74 +2654,25 @@
       "eps_cagr_3y_pct": null,
       "eps_cagr_5y_pct": null,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
-      "rank": 60,
-      "ticker": "TMO",
-      "issuer": "THERMO FISHER SCIENTIFIC INC",
-      "cik": "97745",
-      "price": 501.36,
-      "price_filers": 13,
-      "pe": 27.0,
-      "held_value_usd": 31213367491,
-      "holders": 13,
-      "buyers": 5,
-      "sellers": 9,
-      "net_shares_pct": 4.17,
-      "eps_ttm": 18.58,
-      "eps_ttm_end": "2026-06-27",
-      "net_income_ttm": 6984000000,
-      "eps_fy_end": "2025-12-31",
-      "eps_history": [
-        [
-          "2020-12-31",
-          15.96
-        ],
-        [
-          "2021-12-31",
-          19.46
-        ],
-        [
-          "2022-12-31",
-          17.63
-        ],
-        [
-          "2023-12-31",
-          15.45
-        ],
-        [
-          "2024-12-31",
-          16.53
-        ],
-        [
-          "2025-12-31",
-          17.74
-        ]
-      ],
-      "eps_cagr_3y_pct": 0.2,
-      "eps_cagr_5y_pct": 2.1,
-      "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 61,
+      "rank": 58,
       "ticker": "CB",
       "issuer": "CHUBB LIMITED",
       "cik": "896159",
       "price": 340.74,
-      "price_filers": 14,
-      "pe": 12.1,
-      "held_value_usd": 30642326073,
-      "holders": 14,
+      "price_filers": 13,
+      "pe": 11.9,
+      "held_value_usd": 29599777272,
+      "holders": 13,
       "buyers": 5,
-      "sellers": 8,
-      "net_shares_pct": -0.29,
-      "eps_ttm": 28.27,
-      "eps_ttm_end": "2026-03-31",
-      "net_income_ttm": 11299000000,
+      "sellers": 7,
+      "net_shares_pct": 0.05,
+      "eps_ttm": 28.53,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 11228000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -2850,57 +2703,204 @@
       "eps_cagr_3y_pct": 27.5,
       "eps_cagr_5y_pct": 27.0,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
-      "rank": 62,
-      "ticker": "GILD",
-      "issuer": "GILEAD SCIENCES INC",
-      "cik": "882095",
-      "price": 126.34,
-      "price_filers": 14,
-      "pe": null,
-      "held_value_usd": 29483639081,
-      "holders": 14,
-      "buyers": 9,
-      "sellers": 5,
-      "net_shares_pct": -4.69,
-      "eps_ttm": -2.65,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": -3240000000,
+      "rank": 59,
+      "ticker": "TMO",
+      "issuer": "THERMO FISHER SCIENTIFIC INC",
+      "cik": "97745",
+      "price": 501.36,
+      "price_filers": 12,
+      "pe": 26.4,
+      "held_value_usd": 29238806043,
+      "holders": 12,
+      "buyers": 4,
+      "sellers": 9,
+      "net_shares_pct": 4.14,
+      "eps_ttm": 18.96,
+      "eps_ttm_end": "2026-09-26",
+      "net_income_ttm": 7089000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
           "2020-12-31",
-          0.1
+          15.96
         ],
         [
           "2021-12-31",
-          4.93
+          19.46
         ],
         [
           "2022-12-31",
-          3.64
+          17.63
         ],
         [
           "2023-12-31",
-          4.5
+          15.45
         ],
         [
           "2024-12-31",
-          0.38
+          16.53
         ],
         [
           "2025-12-31",
-          6.78
+          17.74
         ]
       ],
-      "eps_cagr_3y_pct": 23.0,
-      "eps_cagr_5y_pct": 132.4,
+      "eps_cagr_3y_pct": 0.2,
+      "eps_cagr_5y_pct": 2.1,
       "skip": null,
-      "fetched": "2026-10-19",
-      "note": "negative TTM earnings"
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 60,
+      "ticker": "LIN",
+      "issuer": "LINDE PLC",
+      "cik": "1707925",
+      "price": 518.94,
+      "price_filers": 12,
+      "pe": 34.5,
+      "held_value_usd": 28995979471,
+      "holders": 12,
+      "buyers": 5,
+      "sellers": 7,
+      "net_shares_pct": 1.28,
+      "eps_ttm": 15.06,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 7007000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          4.71
+        ],
+        [
+          "2021-12-31",
+          7.33
+        ],
+        [
+          "2022-12-31",
+          8.23
+        ],
+        [
+          "2023-12-31",
+          12.59
+        ],
+        [
+          "2024-12-31",
+          13.62
+        ],
+        [
+          "2025-12-31",
+          14.61
+        ]
+      ],
+      "eps_cagr_3y_pct": 21.1,
+      "eps_cagr_5y_pct": 25.4,
+      "skip": null,
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 61,
+      "ticker": "C",
+      "issuer": "CITIGROUP INC",
+      "cik": "831001",
+      "price": 139.96,
+      "price_filers": 12,
+      "pe": 20.0,
+      "held_value_usd": 28506881667,
+      "holders": 12,
+      "buyers": 7,
+      "sellers": 7,
+      "net_shares_pct": -0.81,
+      "eps_ttm": 6.99,
+      "eps_ttm_end": "2025-12-31",
+      "net_income_ttm": 14306000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          4.72
+        ],
+        [
+          "2021-12-31",
+          10.14
+        ],
+        [
+          "2022-12-31",
+          7.0
+        ],
+        [
+          "2023-12-31",
+          4.04
+        ],
+        [
+          "2024-12-31",
+          5.94
+        ],
+        [
+          "2025-12-31",
+          6.99
+        ]
+      ],
+      "eps_cagr_3y_pct": -0.0,
+      "eps_cagr_5y_pct": 8.2,
+      "skip": null,
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 62,
+      "ticker": "BA",
+      "issuer": "BOEING CO",
+      "cik": "12927",
+      "price": 216.47,
+      "price_filers": 13,
+      "pe": 22.3,
+      "held_value_usd": 28057064938,
+      "holders": 13,
+      "buyers": 8,
+      "sellers": 5,
+      "net_shares_pct": 0.76,
+      "eps_ttm": 9.69,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 7656000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          -20.88
+        ],
+        [
+          "2021-12-31",
+          -7.15
+        ],
+        [
+          "2022-12-31",
+          -8.3
+        ],
+        [
+          "2023-12-31",
+          -3.67
+        ],
+        [
+          "2024-12-31",
+          -18.36
+        ],
+        [
+          "2025-12-31",
+          2.48
+        ]
+      ],
+      "eps_cagr_3y_pct": null,
+      "eps_cagr_5y_pct": null,
+      "skip": null,
+      "fetched": "2026-11-09",
+      "note": null
     },
     {
       "rank": 63,
@@ -2908,16 +2908,16 @@
       "issuer": "MCDONALDS CORP",
       "cik": "63908",
       "price": 270.31,
-      "price_filers": 13,
-      "pe": 22.0,
-      "held_value_usd": 29091966286,
-      "holders": 13,
+      "price_filers": 12,
+      "pe": 21.4,
+      "held_value_usd": 27732690567,
+      "holders": 12,
       "buyers": 4,
-      "sellers": 10,
-      "net_shares_pct": -6.44,
-      "eps_ttm": 12.31,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 8787000000,
+      "sellers": 9,
+      "net_shares_pct": -6.61,
+      "eps_ttm": 12.64,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 8995000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -2948,22 +2948,71 @@
       "eps_cagr_3y_pct": 12.8,
       "eps_cagr_5y_pct": 13.6,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
       "rank": 64,
+      "ticker": "GILD",
+      "issuer": "GILEAD SCIENCES INC",
+      "cik": "882095",
+      "price": 126.34,
+      "price_filers": 13,
+      "pe": null,
+      "held_value_usd": 27555194206,
+      "holders": 13,
+      "buyers": 8,
+      "sellers": 5,
+      "net_shares_pct": -5.04,
+      "eps_ttm": -3.13,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": -3862000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          0.1
+        ],
+        [
+          "2021-12-31",
+          4.93
+        ],
+        [
+          "2022-12-31",
+          3.64
+        ],
+        [
+          "2023-12-31",
+          4.5
+        ],
+        [
+          "2024-12-31",
+          0.38
+        ],
+        [
+          "2025-12-31",
+          6.78
+        ]
+      ],
+      "eps_cagr_3y_pct": 23.0,
+      "eps_cagr_5y_pct": 132.4,
+      "skip": null,
+      "fetched": "2026-11-09",
+      "note": "negative TTM earnings"
+    },
+    {
+      "rank": 65,
       "ticker": "DIS",
       "issuer": "DISNEY WALT CO",
       "cik": "1744489",
       "price": 96.25,
-      "price_filers": 13,
+      "price_filers": 12,
       "pe": 19.8,
-      "held_value_usd": 28849506690,
-      "holders": 13,
-      "buyers": 8,
+      "held_value_usd": 27462786243,
+      "holders": 12,
+      "buyers": 7,
       "sellers": 5,
-      "net_shares_pct": 3.33,
+      "net_shares_pct": 3.19,
       "eps_ttm": 4.85,
       "eps_ttm_end": "2026-06-27",
       "net_income_ttm": 8600000000,
@@ -2997,56 +3046,7 @@
       "eps_cagr_3y_pct": 58.5,
       "eps_cagr_5y_pct": null,
       "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 65,
-      "ticker": "BA",
-      "issuer": "BOEING CO",
-      "cik": "12927",
-      "price": 216.47,
-      "price_filers": 14,
-      "pe": 77.9,
-      "held_value_usd": 28804827864,
-      "holders": 14,
-      "buyers": 8,
-      "sellers": 6,
-      "net_shares_pct": 0.66,
-      "eps_ttm": 2.78,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 2435000000,
-      "eps_fy_end": "2025-12-31",
-      "eps_history": [
-        [
-          "2020-12-31",
-          -20.88
-        ],
-        [
-          "2021-12-31",
-          -7.15
-        ],
-        [
-          "2022-12-31",
-          -8.3
-        ],
-        [
-          "2023-12-31",
-          -3.67
-        ],
-        [
-          "2024-12-31",
-          -18.36
-        ],
-        [
-          "2025-12-31",
-          2.48
-        ]
-      ],
-      "eps_cagr_3y_pct": null,
-      "eps_cagr_5y_pct": null,
-      "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -3055,13 +3055,13 @@
       "issuer": "ANALOG DEVICES INC",
       "cik": "6281",
       "price": 397.17,
-      "price_filers": 13,
+      "price_filers": 12,
       "pe": 47.2,
-      "held_value_usd": 28325075180,
-      "holders": 13,
+      "held_value_usd": 26999008740,
+      "holders": 12,
       "buyers": 5,
-      "sellers": 9,
-      "net_shares_pct": -4.38,
+      "sellers": 8,
+      "net_shares_pct": -4.55,
       "eps_ttm": 8.42,
       "eps_ttm_end": "2026-08-01",
       "net_income_ttm": 4135004000,
@@ -3095,7 +3095,7 @@
       "eps_cagr_3y_pct": -4.6,
       "eps_cagr_5y_pct": 6.8,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -3104,16 +3104,16 @@
       "issuer": "ARISTA NETWORKS INC",
       "cik": "1596532",
       "price": 169.88,
-      "price_filers": 13,
-      "pe": 53.8,
-      "held_value_usd": 27903482472,
-      "holders": 13,
+      "price_filers": 12,
+      "pe": 45.5,
+      "held_value_usd": 26992269868,
+      "holders": 12,
       "buyers": 6,
-      "sellers": 9,
-      "net_shares_pct": -4.8,
-      "eps_ttm": 3.16,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 533203511,
+      "sellers": 8,
+      "net_shares_pct": -4.9,
+      "eps_ttm": 3.73,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 1240603511,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -3144,74 +3144,25 @@
       "eps_cagr_3y_pct": 37.0,
       "eps_cagr_5y_pct": 40.6,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
       "rank": 68,
-      "ticker": "TJX",
-      "issuer": "TJX COS INC NEW",
-      "cik": "109198",
-      "price": 151.5,
-      "price_filers": 14,
-      "pe": 28.1,
-      "held_value_usd": 26878337950,
-      "holders": 14,
-      "buyers": 6,
-      "sellers": 8,
-      "net_shares_pct": 0.02,
-      "eps_ttm": 5.4,
-      "eps_ttm_end": "2026-08-01",
-      "net_income_ttm": 6066706000,
-      "eps_fy_end": "2026-01-31",
-      "eps_history": [
-        [
-          "2021-01-30",
-          0.07
-        ],
-        [
-          "2022-01-29",
-          2.7
-        ],
-        [
-          "2023-01-28",
-          2.97
-        ],
-        [
-          "2024-02-03",
-          3.86
-        ],
-        [
-          "2025-02-01",
-          4.26
-        ],
-        [
-          "2026-01-31",
-          4.87
-        ]
-      ],
-      "eps_cagr_3y_pct": 17.9,
-      "eps_cagr_5y_pct": 133.6,
-      "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 69,
       "ticker": "WELL",
       "issuer": "WELLTOWER INC",
       "cik": "766704",
       "price": 226.97,
-      "price_filers": 12,
-      "pe": 112.9,
-      "held_value_usd": 26735061216,
-      "holders": 12,
-      "buyers": 7,
+      "price_filers": 11,
+      "pe": 99.1,
+      "held_value_usd": 25815678139,
+      "holders": 11,
+      "buyers": 6,
       "sellers": 5,
-      "net_shares_pct": -0.96,
-      "eps_ttm": 2.01,
-      "eps_ttm_end": "2026-03-31",
-      "net_income_ttm": 1407560000,
+      "net_shares_pct": -1.05,
+      "eps_ttm": 2.29,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 1666702000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -3242,8 +3193,32 @@
       "eps_cagr_3y_pct": 66.7,
       "eps_cagr_5y_pct": -9.8,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
+    },
+    {
+      "rank": 69,
+      "ticker": "ASML",
+      "issuer": "ASML HLDG NV",
+      "cik": "937966",
+      "price": 1989.44,
+      "price_filers": 13,
+      "pe": null,
+      "held_value_usd": 25686594364,
+      "holders": 13,
+      "buyers": 9,
+      "sellers": 5,
+      "net_shares_pct": 26.27,
+      "eps_ttm": null,
+      "eps_ttm_end": null,
+      "net_income_ttm": null,
+      "eps_fy_end": null,
+      "eps_history": null,
+      "eps_cagr_3y_pct": null,
+      "eps_cagr_5y_pct": null,
+      "skip": "EPS reported in EUR",
+      "fetched": "2026-11-09",
+      "note": "EPS reported in EUR"
     },
     {
       "rank": 70,
@@ -3251,13 +3226,13 @@
       "issuer": "DEERE & CO",
       "cik": "315189",
       "price": 634.33,
-      "price_filers": 14,
+      "price_filers": 13,
       "pe": 35.3,
-      "held_value_usd": 26662146073,
-      "holders": 14,
-      "buyers": 7,
+      "held_value_usd": 25402866666,
+      "holders": 13,
+      "buyers": 6,
       "sellers": 7,
-      "net_shares_pct": 4.04,
+      "net_shares_pct": 3.16,
       "eps_ttm": 17.99,
       "eps_ttm_end": "2026-08-02",
       "net_income_ttm": 4873000000,
@@ -3291,32 +3266,57 @@
       "eps_cagr_3y_pct": -7.4,
       "eps_cagr_5y_pct": 16.3,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
       "rank": 71,
-      "ticker": "ASML",
-      "issuer": "ASML HLDG NV",
-      "cik": "937966",
-      "price": 1989.44,
-      "price_filers": 14,
-      "pe": null,
-      "held_value_usd": 26269780218,
-      "holders": 14,
-      "buyers": 10,
-      "sellers": 5,
-      "net_shares_pct": 26.06,
-      "eps_ttm": null,
-      "eps_ttm_end": null,
-      "net_income_ttm": null,
-      "eps_fy_end": null,
-      "eps_history": null,
-      "eps_cagr_3y_pct": null,
-      "eps_cagr_5y_pct": null,
-      "skip": "EPS reported in EUR",
-      "fetched": "2026-10-19",
-      "note": "EPS reported in EUR"
+      "ticker": "TJX",
+      "issuer": "TJX COS INC NEW",
+      "cik": "109198",
+      "price": 151.5,
+      "price_filers": 13,
+      "pe": 28.1,
+      "held_value_usd": 25279607070,
+      "holders": 13,
+      "buyers": 6,
+      "sellers": 7,
+      "net_shares_pct": 1.38,
+      "eps_ttm": 5.4,
+      "eps_ttm_end": "2026-08-01",
+      "net_income_ttm": 6066706000,
+      "eps_fy_end": "2026-01-31",
+      "eps_history": [
+        [
+          "2021-01-30",
+          0.07
+        ],
+        [
+          "2022-01-29",
+          2.7
+        ],
+        [
+          "2023-01-28",
+          2.97
+        ],
+        [
+          "2024-02-03",
+          3.86
+        ],
+        [
+          "2025-02-01",
+          4.26
+        ],
+        [
+          "2026-01-31",
+          4.87
+        ]
+      ],
+      "eps_cagr_3y_pct": 17.9,
+      "eps_cagr_5y_pct": 133.6,
+      "skip": null,
+      "fetched": "2026-11-09",
+      "note": null
     },
     {
       "rank": 72,
@@ -3324,16 +3324,16 @@
       "issuer": "LOCKHEED MARTIN CORP",
       "cik": "936468",
       "price": 509.46,
-      "price_filers": 15,
-      "pe": 18.8,
-      "held_value_usd": 25383046066,
-      "holders": 15,
-      "buyers": 10,
+      "price_filers": 14,
+      "pe": 18.1,
+      "held_value_usd": 24737788525,
+      "holders": 14,
+      "buyers": 9,
       "sellers": 5,
-      "net_shares_pct": -0.14,
-      "eps_ttm": 27.12,
-      "eps_ttm_end": "2026-06-28",
-      "net_income_ttm": 6287000000,
+      "net_shares_pct": -0.16,
+      "eps_ttm": 28.16,
+      "eps_ttm_end": "2026-09-27",
+      "net_income_ttm": 6513000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -3364,7 +3364,7 @@
       "eps_cagr_3y_pct": -0.3,
       "eps_cagr_5y_pct": -2.4,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -3373,16 +3373,16 @@
       "issuer": "AMGEN INC",
       "cik": "318154",
       "price": 362.12,
-      "price_filers": 13,
-      "pe": 22.5,
-      "held_value_usd": 25343475395,
-      "holders": 13,
+      "price_filers": 12,
+      "pe": 21.0,
+      "held_value_usd": 24005229786,
+      "holders": 12,
       "buyers": 6,
-      "sellers": 7,
-      "net_shares_pct": -0.42,
-      "eps_ttm": 16.1,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 8743000000,
+      "sellers": 6,
+      "net_shares_pct": -0.3,
+      "eps_ttm": 17.25,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 9391000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -3413,7 +3413,7 @@
       "eps_cagr_3y_pct": 5.5,
       "eps_cagr_5y_pct": 2.9,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -3422,16 +3422,16 @@
       "issuer": "APPLOVIN CORP",
       "cik": "1751008",
       "price": 515.23,
-      "price_filers": 13,
-      "pe": 39.6,
-      "held_value_usd": 24227787486,
-      "holders": 13,
-      "buyers": 9,
+      "price_filers": 12,
+      "pe": 34.7,
+      "held_value_usd": 23497772434,
+      "holders": 12,
+      "buyers": 8,
       "sellers": 5,
-      "net_shares_pct": 2.26,
-      "eps_ttm": 13.01,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 4410201000,
+      "net_shares_pct": 2.21,
+      "eps_ttm": 14.85,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 5013558000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -3462,7 +3462,7 @@
       "eps_cagr_3y_pct": null,
       "eps_cagr_5y_pct": null,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -3471,16 +3471,16 @@
       "issuer": "TRANE TECHNOLOGIES PLC",
       "cik": "1466258",
       "price": 491.16,
-      "price_filers": 14,
-      "pe": 37.2,
-      "held_value_usd": 23588963673,
-      "holders": 14,
+      "price_filers": 13,
+      "pe": 34.7,
+      "held_value_usd": 22472622548,
+      "holders": 13,
       "buyers": 6,
-      "sellers": 8,
-      "net_shares_pct": -7.45,
-      "eps_ttm": 13.21,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 2949000000,
+      "sellers": 7,
+      "net_shares_pct": -7.62,
+      "eps_ttm": 14.16,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 3150100000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -3511,22 +3511,71 @@
       "eps_cagr_3y_pct": 20.2,
       "eps_cagr_5y_pct": 29.8,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
       "rank": 76,
+      "ticker": "SCHW",
+      "issuer": "SCHWAB CHARLES CORP",
+      "cik": "316709",
+      "price": 92.27,
+      "price_filers": 13,
+      "pe": 15.8,
+      "held_value_usd": 22155465000,
+      "holders": 13,
+      "buyers": 10,
+      "sellers": 3,
+      "net_shares_pct": -1.88,
+      "eps_ttm": 5.85,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 1800852000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          2.12
+        ],
+        [
+          "2021-12-31",
+          2.83
+        ],
+        [
+          "2022-12-31",
+          3.5
+        ],
+        [
+          "2023-12-31",
+          2.54
+        ],
+        [
+          "2024-12-31",
+          2.99
+        ],
+        [
+          "2025-12-31",
+          4.65
+        ]
+      ],
+      "eps_cagr_3y_pct": 9.9,
+      "eps_cagr_5y_pct": 17.0,
+      "skip": null,
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 77,
       "ticker": "PEP",
       "issuer": "PEPSICO INC",
       "cik": "77476",
       "price": 135.4,
-      "price_filers": 13,
+      "price_filers": 12,
       "pe": 17.0,
-      "held_value_usd": 23418451551,
-      "holders": 13,
+      "held_value_usd": 21967504975,
+      "holders": 12,
       "buyers": 8,
-      "sellers": 5,
-      "net_shares_pct": 0.24,
+      "sellers": 4,
+      "net_shares_pct": 0.5,
       "eps_ttm": 7.95,
       "eps_ttm_end": "2026-09-05",
       "net_income_ttm": 10896000000,
@@ -3560,123 +3609,25 @@
       "eps_cagr_3y_pct": -2.2,
       "eps_cagr_5y_pct": 3.2,
       "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 77,
-      "ticker": "SCHW",
-      "issuer": "SCHWAB CHARLES CORP",
-      "cik": "316709",
-      "price": 92.27,
-      "price_filers": 14,
-      "pe": 16.8,
-      "held_value_usd": 23123312506,
-      "holders": 14,
-      "buyers": 10,
-      "sellers": 4,
-      "net_shares_pct": -3.63,
-      "eps_ttm": 5.49,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 1252852000,
-      "eps_fy_end": "2025-12-31",
-      "eps_history": [
-        [
-          "2020-12-31",
-          2.12
-        ],
-        [
-          "2021-12-31",
-          2.83
-        ],
-        [
-          "2022-12-31",
-          3.5
-        ],
-        [
-          "2023-12-31",
-          2.54
-        ],
-        [
-          "2024-12-31",
-          2.99
-        ],
-        [
-          "2025-12-31",
-          4.65
-        ]
-      ],
-      "eps_cagr_3y_pct": 9.9,
-      "eps_cagr_5y_pct": 17.0,
-      "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
       "rank": 78,
-      "ticker": "QCOM",
-      "issuer": "QUALCOMM INC",
-      "cik": "804328",
-      "price": 184.79,
-      "price_filers": 13,
-      "pe": 21.1,
-      "held_value_usd": 22647491202,
-      "holders": 13,
-      "buyers": 8,
-      "sellers": 6,
-      "net_shares_pct": 0.78,
-      "eps_ttm": 8.75,
-      "eps_ttm_end": "2026-06-28",
-      "net_income_ttm": 9260000000,
-      "eps_fy_end": "2025-09-28",
-      "eps_history": [
-        [
-          "2020-09-27",
-          4.52
-        ],
-        [
-          "2021-09-26",
-          7.87
-        ],
-        [
-          "2022-09-25",
-          11.37
-        ],
-        [
-          "2023-09-24",
-          6.42
-        ],
-        [
-          "2024-09-29",
-          8.97
-        ],
-        [
-          "2025-09-28",
-          5.01
-        ]
-      ],
-      "eps_cagr_3y_pct": -23.9,
-      "eps_cagr_5y_pct": 2.1,
-      "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 79,
       "ticker": "DHR",
       "issuer": "DANAHER CORP DEL",
       "cik": "313616",
       "price": 190.48,
-      "price_filers": 14,
-      "pe": 33.8,
-      "held_value_usd": 22557022453,
-      "holders": 14,
+      "price_filers": 13,
+      "pe": 31.2,
+      "held_value_usd": 21844147600,
+      "holders": 13,
       "buyers": 8,
-      "sellers": 6,
-      "net_shares_pct": 1.31,
-      "eps_ttm": 5.63,
-      "eps_ttm_end": "2026-06-26",
-      "net_income_ttm": 4004000000,
+      "sellers": 5,
+      "net_shares_pct": 1.42,
+      "eps_ttm": 6.1,
+      "eps_ttm_end": "2026-09-25",
+      "net_income_ttm": 4331000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -3707,22 +3658,22 @@
       "eps_cagr_3y_pct": -19.4,
       "eps_cagr_5y_pct": 0.6,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
-      "rank": 80,
+      "rank": 79,
       "ticker": "DELL",
       "issuer": "DELL TECHNOLOGIES INC",
       "cik": "1571996",
       "price": 431.46,
-      "price_filers": 14,
+      "price_filers": 13,
       "pe": 25.1,
-      "held_value_usd": 21985723834,
-      "holders": 14,
-      "buyers": 6,
+      "held_value_usd": 21201456694,
+      "holders": 13,
+      "buyers": 5,
       "sellers": 8,
-      "net_shares_pct": 12.26,
+      "net_shares_pct": 12.66,
       "eps_ttm": 17.19,
       "eps_ttm_end": "2026-07-31",
       "net_income_ttm": 11378000000,
@@ -3748,7 +3699,56 @@
       "eps_cagr_3y_pct": 38.9,
       "eps_cagr_5y_pct": null,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 80,
+      "ticker": "QCOM",
+      "issuer": "QUALCOMM INC",
+      "cik": "804328",
+      "price": 184.79,
+      "price_filers": 12,
+      "pe": 14.6,
+      "held_value_usd": 21123561654,
+      "holders": 12,
+      "buyers": 7,
+      "sellers": 6,
+      "net_shares_pct": -0.02,
+      "eps_ttm": 12.7,
+      "eps_ttm_end": "2026-09-27",
+      "net_income_ttm": 13628000000,
+      "eps_fy_end": "2026-09-27",
+      "eps_history": [
+        [
+          "2021-09-26",
+          7.87
+        ],
+        [
+          "2022-09-25",
+          11.37
+        ],
+        [
+          "2023-09-24",
+          6.42
+        ],
+        [
+          "2024-09-29",
+          8.97
+        ],
+        [
+          "2025-09-28",
+          5.01
+        ],
+        [
+          "2026-09-27",
+          12.7
+        ]
+      ],
+      "eps_cagr_3y_pct": 25.5,
+      "eps_cagr_5y_pct": 10.0,
+      "skip": null,
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -3757,16 +3757,16 @@
       "issuer": "BLACKROCK INC",
       "cik": "2012383",
       "price": 961.56,
-      "price_filers": 14,
-      "pe": 23.0,
-      "held_value_usd": 21470988207,
-      "holders": 14,
+      "price_filers": 13,
+      "pe": 21.9,
+      "held_value_usd": 20674067096,
+      "holders": 13,
       "buyers": 8,
-      "sellers": 6,
-      "net_shares_pct": 5.41,
-      "eps_ttm": 41.73,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 6576000000,
+      "sellers": 5,
+      "net_shares_pct": 5.7,
+      "eps_ttm": 43.92,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 6912000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -3789,74 +3789,25 @@
       "eps_cagr_3y_pct": 1.3,
       "eps_cagr_5y_pct": null,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
       "rank": 82,
-      "ticker": "CVS",
-      "issuer": "CVS HEALTH CORP",
-      "cik": "64803",
-      "price": 103.45,
-      "price_filers": 13,
-      "pe": 27.3,
-      "held_value_usd": 21262357129,
-      "holders": 13,
-      "buyers": 7,
-      "sellers": 6,
-      "net_shares_pct": 2.52,
-      "eps_ttm": 3.79,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 4890000000,
-      "eps_fy_end": "2025-12-31",
-      "eps_history": [
-        [
-          "2020-12-31",
-          5.5242
-        ],
-        [
-          "2021-12-31",
-          6.02
-        ],
-        [
-          "2022-12-31",
-          3.26
-        ],
-        [
-          "2023-12-31",
-          6.47
-        ],
-        [
-          "2024-12-31",
-          3.66
-        ],
-        [
-          "2025-12-31",
-          1.39
-        ]
-      ],
-      "eps_cagr_3y_pct": -24.7,
-      "eps_cagr_5y_pct": -24.1,
-      "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 83,
       "ticker": "PH",
       "issuer": "PARKER-HANNIFIN CORP",
       "cik": "76334",
       "price": 978.12,
-      "price_filers": 13,
-      "pe": 34.3,
-      "held_value_usd": 21134739933,
-      "holders": 13,
+      "price_filers": 12,
+      "pe": 33.6,
+      "held_value_usd": 20422518287,
+      "holders": 12,
       "buyers": 7,
-      "sellers": 6,
-      "net_shares_pct": -0.16,
-      "eps_ttm": 28.48,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 3649000000,
+      "sellers": 5,
+      "net_shares_pct": -0.11,
+      "eps_ttm": 29.11,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 3724000000,
       "eps_fy_end": "2026-06-30",
       "eps_history": [
         [
@@ -3887,169 +3838,71 @@
       "eps_cagr_3y_pct": 21.1,
       "eps_cagr_5y_pct": 16.4,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 83,
+      "ticker": "CVS",
+      "issuer": "CVS HEALTH CORP",
+      "cik": "64803",
+      "price": 103.45,
+      "price_filers": 12,
+      "pe": 12.0,
+      "held_value_usd": 20329903267,
+      "holders": 12,
+      "buyers": 7,
+      "sellers": 5,
+      "net_shares_pct": 2.63,
+      "eps_ttm": 8.61,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 11037000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          5.5242
+        ],
+        [
+          "2021-12-31",
+          6.02
+        ],
+        [
+          "2022-12-31",
+          3.26
+        ],
+        [
+          "2023-12-31",
+          6.47
+        ],
+        [
+          "2024-12-31",
+          3.66
+        ],
+        [
+          "2025-12-31",
+          1.39
+        ]
+      ],
+      "eps_cagr_3y_pct": -24.7,
+      "eps_cagr_5y_pct": -24.1,
+      "skip": null,
+      "fetched": "2026-11-09",
       "note": null
     },
     {
       "rank": 84,
-      "ticker": "COP",
-      "issuer": "CONOCOPHILLIPS",
-      "cik": "1163165",
-      "price": 103.96,
-      "price_filers": 14,
-      "pe": 13.8,
-      "held_value_usd": 21054905233,
-      "holders": 14,
-      "buyers": 6,
-      "sellers": 8,
-      "net_shares_pct": -0.17,
-      "eps_ttm": 7.56,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 9282000000,
-      "eps_fy_end": "2025-12-31",
-      "eps_history": [
-        [
-          "2020-12-31",
-          -2.51
-        ],
-        [
-          "2021-12-31",
-          6.07
-        ],
-        [
-          "2022-12-31",
-          14.57
-        ],
-        [
-          "2023-12-31",
-          9.06
-        ],
-        [
-          "2024-12-31",
-          7.81
-        ],
-        [
-          "2025-12-31",
-          6.35
-        ]
-      ],
-      "eps_cagr_3y_pct": -24.2,
-      "eps_cagr_5y_pct": null,
-      "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 85,
-      "ticker": "UNP",
-      "issuer": "UNION PAC CORP",
-      "cik": "100885",
-      "price": 272.0,
-      "price_filers": 14,
-      "pe": 22.0,
-      "held_value_usd": 21049261975,
-      "holders": 14,
-      "buyers": 7,
-      "sellers": 7,
-      "net_shares_pct": -0.11,
-      "eps_ttm": 12.35,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 7330000000,
-      "eps_fy_end": "2025-12-31",
-      "eps_history": [
-        [
-          "2020-12-31",
-          7.88
-        ],
-        [
-          "2021-12-31",
-          9.95
-        ],
-        [
-          "2022-12-31",
-          11.21
-        ],
-        [
-          "2023-12-31",
-          10.45
-        ],
-        [
-          "2024-12-31",
-          11.09
-        ],
-        [
-          "2025-12-31",
-          11.98
-        ]
-      ],
-      "eps_cagr_3y_pct": 2.2,
-      "eps_cagr_5y_pct": 8.7,
-      "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 86,
-      "ticker": "MCO",
-      "issuer": "MOODYS CORP",
-      "cik": "1059556",
-      "price": 452.92,
-      "price_filers": 15,
-      "pe": 28.7,
-      "held_value_usd": 20805880618,
-      "holders": 15,
-      "buyers": 4,
-      "sellers": 10,
-      "net_shares_pct": -1.24,
-      "eps_ttm": 15.76,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 2795000000,
-      "eps_fy_end": "2025-12-31",
-      "eps_history": [
-        [
-          "2020-12-31",
-          9.39
-        ],
-        [
-          "2021-12-31",
-          11.78
-        ],
-        [
-          "2022-12-31",
-          7.44
-        ],
-        [
-          "2023-12-31",
-          8.73
-        ],
-        [
-          "2024-12-31",
-          11.26
-        ],
-        [
-          "2025-12-31",
-          13.67
-        ]
-      ],
-      "eps_cagr_3y_pct": 22.5,
-      "eps_cagr_5y_pct": 7.8,
-      "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 87,
       "ticker": "CIEN",
       "issuer": "CIENA CORP",
       "cik": "936395",
       "price": 490.56,
-      "price_filers": 14,
+      "price_filers": 13,
       "pe": 109.7,
-      "held_value_usd": 20653567363,
-      "holders": 14,
+      "held_value_usd": 20248619813,
+      "holders": 13,
       "buyers": 9,
-      "sellers": 5,
-      "net_shares_pct": -3.38,
+      "sellers": 4,
+      "net_shares_pct": -3.23,
       "eps_ttm": 4.47,
       "eps_ttm_end": "2026-08-01",
       "net_income_ttm": 654410000,
@@ -4083,119 +3936,172 @@
       "eps_cagr_3y_pct": -5.3,
       "eps_cagr_5y_pct": -18.2,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
-      "rank": 88,
-      "ticker": "COF",
-      "issuer": "CAPITAL ONE FINL CORP",
-      "cik": "927628",
-      "price": 200.62,
-      "price_filers": 15,
-      "pe": 10.6,
-      "held_value_usd": 20439360625,
-      "holders": 15,
-      "buyers": 10,
-      "sellers": 5,
-      "net_shares_pct": 2.41,
-      "eps_ttm": 18.84,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 10520000000,
+      "rank": 85,
+      "ticker": "UNP",
+      "issuer": "UNION PAC CORP",
+      "cik": "100885",
+      "price": 272.0,
+      "price_filers": 13,
+      "pe": 21.2,
+      "held_value_usd": 20011503580,
+      "holders": 13,
+      "buyers": 6,
+      "sellers": 7,
+      "net_shares_pct": -0.38,
+      "eps_ttm": 12.82,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 7618000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
           "2020-12-31",
-          5.18
+          7.88
         ],
         [
           "2021-12-31",
-          26.94
+          9.95
         ],
         [
           "2022-12-31",
-          17.91
+          11.21
         ],
         [
           "2023-12-31",
-          11.95
+          10.45
         ],
         [
           "2024-12-31",
-          11.59
+          11.09
         ],
         [
           "2025-12-31",
-          4.03
+          11.98
         ]
       ],
-      "eps_cagr_3y_pct": -39.2,
-      "eps_cagr_5y_pct": -4.9,
+      "eps_cagr_3y_pct": 2.2,
+      "eps_cagr_5y_pct": 8.7,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
-      "rank": 89,
-      "ticker": "HWM",
-      "issuer": "HOWMET AEROSPACE INC",
-      "cik": "4281",
-      "price": 268.86,
-      "price_filers": 14,
-      "pe": 57.9,
-      "held_value_usd": 20198247470,
-      "holders": 14,
-      "buyers": 7,
-      "sellers": 7,
-      "net_shares_pct": -3.52,
-      "eps_ttm": 4.64,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 1871000000,
+      "rank": 86,
+      "ticker": "COP",
+      "issuer": "CONOCOPHILLIPS",
+      "cik": "1163165",
+      "price": 103.96,
+      "price_filers": 13,
+      "pe": 11.0,
+      "held_value_usd": 19919136637,
+      "holders": 13,
+      "buyers": 5,
+      "sellers": 8,
+      "net_shares_pct": -0.49,
+      "eps_ttm": 9.49,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 11557000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
+          "2020-12-31",
+          -2.51
+        ],
+        [
           "2021-12-31",
-          0.59
+          6.07
         ],
         [
           "2022-12-31",
-          1.11
+          14.57
         ],
         [
           "2023-12-31",
-          1.83
+          9.06
         ],
         [
           "2024-12-31",
-          2.81
+          7.81
         ],
         [
           "2025-12-31",
-          3.71
+          6.35
         ]
       ],
-      "eps_cagr_3y_pct": 49.5,
+      "eps_cagr_3y_pct": -24.2,
       "eps_cagr_5y_pct": null,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
-      "rank": 90,
+      "rank": 87,
+      "ticker": "MCO",
+      "issuer": "MOODYS CORP",
+      "cik": "1059556",
+      "price": 452.92,
+      "price_filers": 14,
+      "pe": 27.6,
+      "held_value_usd": 19891159180,
+      "holders": 14,
+      "buyers": 4,
+      "sellers": 9,
+      "net_shares_pct": -0.58,
+      "eps_ttm": 16.39,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 2883000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          9.39
+        ],
+        [
+          "2021-12-31",
+          11.78
+        ],
+        [
+          "2022-12-31",
+          7.44
+        ],
+        [
+          "2023-12-31",
+          8.73
+        ],
+        [
+          "2024-12-31",
+          11.26
+        ],
+        [
+          "2025-12-31",
+          13.67
+        ]
+      ],
+      "eps_cagr_3y_pct": 22.5,
+      "eps_cagr_5y_pct": 7.8,
+      "skip": null,
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 88,
       "ticker": "NXPI",
       "issuer": "NXP SEMICONDUCTORS N V",
       "cik": "1413447",
       "price": 281.03,
-      "price_filers": 13,
-      "pe": 26.9,
-      "held_value_usd": 20030407057,
-      "holders": 13,
-      "buyers": 10,
+      "price_filers": 12,
+      "pe": 22.1,
+      "held_value_usd": 19693240115,
+      "holders": 12,
+      "buyers": 9,
       "sellers": 3,
-      "net_shares_pct": -9.1,
-      "eps_ttm": 10.46,
-      "eps_ttm_end": "2026-03-29",
-      "net_income_ttm": 2653000000,
+      "net_shares_pct": -9.25,
+      "eps_ttm": 12.71,
+      "eps_ttm_end": "2026-09-27",
+      "net_income_ttm": 3228000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -4226,7 +4132,101 @@
       "eps_cagr_3y_pct": -9.0,
       "eps_cagr_5y_pct": 113.3,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 89,
+      "ticker": "COF",
+      "issuer": "CAPITAL ONE FINL CORP",
+      "cik": "927628",
+      "price": 200.62,
+      "price_filers": 14,
+      "pe": 11.5,
+      "held_value_usd": 19311627378,
+      "holders": 14,
+      "buyers": 9,
+      "sellers": 5,
+      "net_shares_pct": 2.35,
+      "eps_ttm": 17.45,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 10867000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          5.18
+        ],
+        [
+          "2021-12-31",
+          26.94
+        ],
+        [
+          "2022-12-31",
+          17.91
+        ],
+        [
+          "2023-12-31",
+          11.95
+        ],
+        [
+          "2024-12-31",
+          11.59
+        ],
+        [
+          "2025-12-31",
+          4.03
+        ]
+      ],
+      "eps_cagr_3y_pct": -39.2,
+      "eps_cagr_5y_pct": -4.9,
+      "skip": null,
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 90,
+      "ticker": "HWM",
+      "issuer": "HOWMET AEROSPACE INC",
+      "cik": "4281",
+      "price": 268.86,
+      "price_filers": 13,
+      "pe": 52.7,
+      "held_value_usd": 19098482186,
+      "holders": 13,
+      "buyers": 6,
+      "sellers": 7,
+      "net_shares_pct": -3.78,
+      "eps_ttm": 5.1,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 2053000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2021-12-31",
+          0.59
+        ],
+        [
+          "2022-12-31",
+          1.11
+        ],
+        [
+          "2023-12-31",
+          1.83
+        ],
+        [
+          "2024-12-31",
+          2.81
+        ],
+        [
+          "2025-12-31",
+          3.71
+        ]
+      ],
+      "eps_cagr_3y_pct": 49.5,
+      "eps_cagr_5y_pct": null,
+      "skip": null,
+      "fetched": "2026-11-09",
       "note": null
     },
     {
@@ -4235,13 +4235,13 @@
       "issuer": "ASTRAZENECA PLC",
       "cik": "901832",
       "price": 189.62,
-      "price_filers": 12,
+      "price_filers": 11,
       "pe": null,
-      "held_value_usd": 19913395279,
-      "holders": 12,
-      "buyers": 5,
+      "held_value_usd": 18632709043,
+      "holders": 11,
+      "buyers": 4,
       "sellers": 7,
-      "net_shares_pct": 0.33,
+      "net_shares_pct": 0.28,
       "eps_ttm": null,
       "eps_ttm_end": null,
       "net_income_ttm": null,
@@ -4250,71 +4250,22 @@
       "eps_cagr_3y_pct": null,
       "eps_cagr_5y_pct": null,
       "skip": "foreign filer (ADR ratio unknown)",
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": "foreign filer (ADR ratio unknown)"
     },
     {
       "rank": 92,
-      "ticker": "VZ",
-      "issuer": "VERIZON COMMUNICATIONS INC",
-      "cik": "732712",
-      "price": 42.34,
-      "price_filers": 12,
-      "pe": 11.0,
-      "held_value_usd": 19725220452,
-      "holders": 12,
-      "buyers": 3,
-      "sellers": 10,
-      "net_shares_pct": -3.79,
-      "eps_ttm": 3.84,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 16606000000,
-      "eps_fy_end": "2025-12-31",
-      "eps_history": [
-        [
-          "2020-12-31",
-          4.3
-        ],
-        [
-          "2021-12-31",
-          5.32
-        ],
-        [
-          "2022-12-31",
-          5.06
-        ],
-        [
-          "2023-12-31",
-          2.75
-        ],
-        [
-          "2024-12-31",
-          4.14
-        ],
-        [
-          "2025-12-31",
-          4.06
-        ]
-      ],
-      "eps_cagr_3y_pct": -7.1,
-      "eps_cagr_5y_pct": -1.1,
-      "skip": null,
-      "fetched": "2026-10-19",
-      "note": null
-    },
-    {
-      "rank": 93,
       "ticker": "PLD",
       "issuer": "PROLOGIS INC.",
       "cik": "1045609",
       "price": 135.47,
-      "price_filers": 12,
+      "price_filers": 11,
       "pe": 34.0,
-      "held_value_usd": 19339562848,
-      "holders": 12,
-      "buyers": 8,
+      "held_value_usd": 18596719899,
+      "holders": 11,
+      "buyers": 7,
       "sellers": 5,
-      "net_shares_pct": -0.24,
+      "net_shares_pct": -0.25,
       "eps_ttm": 3.98,
       "eps_ttm_end": "2026-03-31",
       "net_income_ttm": 3717254000,
@@ -4348,74 +4299,74 @@
       "eps_cagr_3y_pct": -5.7,
       "eps_cagr_5y_pct": 12.1,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
-      "rank": 94,
-      "ticker": "ISRG",
-      "issuer": "INTUITIVE SURGICAL INC",
-      "cik": "1035267",
-      "price": 397.68,
-      "price_filers": 15,
-      "pe": 45.6,
-      "held_value_usd": 19179468902,
-      "holders": 15,
-      "buyers": 8,
-      "sellers": 7,
-      "net_shares_pct": -4.0,
-      "eps_ttm": 8.72,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 3138800000,
+      "rank": 93,
+      "ticker": "VZ",
+      "issuer": "VERIZON COMMUNICATIONS INC",
+      "cik": "732712",
+      "price": 42.34,
+      "price_filers": 11,
+      "pe": 10.8,
+      "held_value_usd": 18439873014,
+      "holders": 11,
+      "buyers": 3,
+      "sellers": 9,
+      "net_shares_pct": -2.38,
+      "eps_ttm": 3.92,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 16854000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
           "2020-12-31",
-          2.94
+          4.3
         ],
         [
           "2021-12-31",
-          4.66
+          5.32
         ],
         [
           "2022-12-31",
-          3.65
+          5.06
         ],
         [
           "2023-12-31",
-          5.03
+          2.75
         ],
         [
           "2024-12-31",
-          6.42
+          4.14
         ],
         [
           "2025-12-31",
-          7.87
+          4.06
         ]
       ],
-      "eps_cagr_3y_pct": 29.2,
-      "eps_cagr_5y_pct": 21.8,
+      "eps_cagr_3y_pct": -7.1,
+      "eps_cagr_5y_pct": -1.1,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
-      "rank": 95,
+      "rank": 94,
       "ticker": "ABT",
       "issuer": "ABBOTT LABORATORIES",
       "cik": "1800",
       "price": 90.74,
-      "price_filers": 14,
-      "pe": 25.4,
-      "held_value_usd": 19128601319,
-      "holders": 14,
+      "price_filers": 13,
+      "pe": 33.7,
+      "held_value_usd": 18221936374,
+      "holders": 13,
       "buyers": 7,
-      "sellers": 7,
-      "net_shares_pct": -6.31,
-      "eps_ttm": 3.57,
-      "eps_ttm_end": "2026-03-31",
-      "net_income_ttm": 6276000000,
+      "sellers": 6,
+      "net_shares_pct": -5.61,
+      "eps_ttm": 2.69,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 4701000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -4446,74 +4397,74 @@
       "eps_cagr_3y_pct": -1.6,
       "eps_cagr_5y_pct": 8.3,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
-      "rank": 96,
-      "ticker": "SYK",
-      "issuer": "STRYKER CORPORATION",
-      "cik": "310764",
-      "price": 314.84,
+      "rank": 95,
+      "ticker": "ISRG",
+      "issuer": "INTUITIVE SURGICAL INC",
+      "cik": "1035267",
+      "price": 397.68,
       "price_filers": 14,
-      "pe": 32.6,
-      "held_value_usd": 18751431521,
+      "pe": 48.1,
+      "held_value_usd": 17843716319,
       "holders": 14,
-      "buyers": 7,
-      "sellers": 7,
-      "net_shares_pct": 2.62,
-      "eps_ttm": 9.65,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 3729000000,
+      "buyers": 8,
+      "sellers": 6,
+      "net_shares_pct": -3.91,
+      "eps_ttm": 8.27,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 2957200000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
           "2020-12-31",
-          4.2
+          2.94
         ],
         [
           "2021-12-31",
-          5.21
+          4.66
         ],
         [
           "2022-12-31",
-          6.17
+          3.65
         ],
         [
           "2023-12-31",
-          8.25
+          5.03
         ],
         [
           "2024-12-31",
-          7.76
+          6.42
         ],
         [
           "2025-12-31",
-          8.4
+          7.87
         ]
       ],
-      "eps_cagr_3y_pct": 10.8,
-      "eps_cagr_5y_pct": 14.9,
+      "eps_cagr_3y_pct": 29.2,
+      "eps_cagr_5y_pct": 21.8,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
-      "rank": 97,
+      "rank": 96,
       "ticker": "UBER",
       "issuer": "UBER TECHNOLOGIES INC",
       "cik": "1543151",
       "price": 72.16,
-      "price_filers": 12,
-      "pe": 15.8,
-      "held_value_usd": 18682325458,
-      "holders": 12,
-      "buyers": 4,
+      "price_filers": 11,
+      "pe": 42.4,
+      "held_value_usd": 17798423341,
+      "holders": 11,
+      "buyers": 3,
       "sellers": 10,
-      "net_shares_pct": -2.41,
-      "eps_ttm": 4.56,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 9579000000,
+      "net_shares_pct": -2.66,
+      "eps_ttm": 1.7,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 3465000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -4544,25 +4495,25 @@
       "eps_cagr_3y_pct": null,
       "eps_cagr_5y_pct": null,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
-      "rank": 98,
+      "rank": 97,
       "ticker": "CDNS",
       "issuer": "CADENCE DESIGN SYSTEM INC",
       "cik": "813672",
       "price": 375.32,
-      "price_filers": 13,
-      "pe": 87.5,
-      "held_value_usd": 18339818732,
-      "holders": 13,
+      "price_filers": 12,
+      "pe": 74.6,
+      "held_value_usd": 17732468864,
+      "holders": 12,
       "buyers": 7,
-      "sellers": 7,
-      "net_shares_pct": 5.52,
-      "eps_ttm": 4.29,
-      "eps_ttm_end": "2026-03-31",
-      "net_income_ttm": 1170969000,
+      "sellers": 6,
+      "net_shares_pct": 5.73,
+      "eps_ttm": 5.03,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 1380619000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
@@ -4593,105 +4544,146 @@
       "eps_cagr_3y_pct": 9.5,
       "eps_cagr_5y_pct": 14.0,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     },
     {
-      "rank": 99,
-      "ticker": "BKNG",
-      "issuer": "BOOKING HOLDINGS INC",
-      "cik": "1075531",
-      "price": 178.24,
+      "rank": 98,
+      "ticker": "SYK",
+      "issuer": "STRYKER CORPORATION",
+      "cik": "310764",
+      "price": 314.84,
       "price_filers": 13,
-      "pe": 19.0,
-      "held_value_usd": 18244350449,
+      "pe": 33.5,
+      "held_value_usd": 17634216714,
       "holders": 13,
-      "buyers": 13,
-      "sellers": 0,
-      "net_shares_pct": 2190.39,
-      "eps_ttm": 9.3623,
-      "eps_ttm_end": "2026-06-30",
-      "net_income_ttm": 7209000000,
+      "buyers": 7,
+      "sellers": 6,
+      "net_shares_pct": 3.4,
+      "eps_ttm": 9.39,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 3623000000,
       "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
           "2020-12-31",
-          1.44
+          4.2
         ],
         [
           "2021-12-31",
-          28.17
+          5.21
         ],
         [
           "2022-12-31",
-          76.35
+          6.17
         ],
         [
           "2023-12-31",
-          117.4
+          8.25
         ],
         [
           "2024-12-31",
-          172.69
+          7.76
         ],
         [
           "2025-12-31",
-          165.57
+          8.4
         ]
       ],
-      "eps_cagr_3y_pct": 29.4,
-      "eps_cagr_5y_pct": 158.3,
+      "eps_cagr_3y_pct": 10.8,
+      "eps_cagr_5y_pct": 14.9,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
+      "note": null
+    },
+    {
+      "rank": 99,
+      "ticker": "OXY",
+      "issuer": "OCCIDENTAL PETE CORP",
+      "cik": "797468",
+      "price": 48.57,
+      "price_filers": 13,
+      "pe": 6.5,
+      "held_value_usd": 17105656631,
+      "holders": 13,
+      "buyers": 11,
+      "sellers": 1,
+      "net_shares_pct": 2.37,
+      "eps_ttm": 7.42,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 7505000000,
+      "eps_fy_end": "2025-12-31",
+      "eps_history": [
+        [
+          "2020-12-31",
+          -17.06
+        ],
+        [
+          "2021-12-31",
+          1.58
+        ],
+        [
+          "2022-12-31",
+          12.4
+        ],
+        [
+          "2023-12-31",
+          3.9
+        ],
+        [
+          "2024-12-31",
+          2.44
+        ],
+        [
+          "2025-12-31",
+          1.61
+        ]
+      ],
+      "eps_cagr_3y_pct": -49.4,
+      "eps_cagr_5y_pct": null,
+      "skip": null,
+      "fetched": "2026-11-09",
       "note": null
     },
     {
       "rank": 100,
-      "ticker": "CRM",
-      "issuer": "SALESFORCE INC",
-      "cik": "1108524",
-      "price": 156.66,
-      "price_filers": 13,
-      "pe": 14.3,
-      "held_value_usd": 17747289172,
-      "holders": 13,
-      "buyers": 5,
-      "sellers": 9,
-      "net_shares_pct": -6.03,
-      "eps_ttm": 10.92,
-      "eps_ttm_end": "2026-07-31",
-      "net_income_ttm": 9662000000,
-      "eps_fy_end": "2026-01-31",
+      "ticker": "ALAB",
+      "issuer": "ASTERA LABS INC",
+      "cik": "1736297",
+      "price": 483.02,
+      "price_filers": 12,
+      "pe": 190.9,
+      "held_value_usd": 16929605210,
+      "holders": 12,
+      "buyers": 7,
+      "sellers": 6,
+      "net_shares_pct": 4.1,
+      "eps_ttm": 2.53,
+      "eps_ttm_end": "2026-09-30",
+      "net_income_ttm": 461324000,
+      "eps_fy_end": "2025-12-31",
       "eps_history": [
         [
-          "2021-01-31",
-          4.38
+          "2022-12-31",
+          -1.71
         ],
         [
-          "2022-01-31",
-          1.48
+          "2023-12-31",
+          -0.71
         ],
         [
-          "2023-01-31",
-          0.21
+          "2024-12-31",
+          -0.64
         ],
         [
-          "2024-01-31",
-          4.2
-        ],
-        [
-          "2025-01-31",
-          6.36
-        ],
-        [
-          "2026-01-31",
-          7.8
+          "2025-12-31",
+          1.22
         ]
       ],
-      "eps_cagr_3y_pct": 233.7,
-      "eps_cagr_5y_pct": 12.2,
+      "eps_cagr_3y_pct": null,
+      "eps_cagr_5y_pct": null,
       "skip": null,
-      "fetched": "2026-10-19",
+      "fetched": "2026-11-09",
       "note": null
     }
   ]

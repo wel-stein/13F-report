@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02",
+  "generated_at": "2026-11-09",
   "source": "SEC EDGAR XBRL companyfacts",
   "stocks": {
     "A": {
@@ -352,7 +352,7 @@
       "fcf_margin_pct": 16.7,
       "cash": 8522000000,
       "total_debt": 12929000000,
-      "as_of": "2026-08-17",
+      "as_of": "2026-11-09",
       "fy_3y": 2022,
       "rule_of_40": 22.4,
       "ticker": "ABT"
@@ -390,7 +390,7 @@
       "fcf_margin_pct": -18.5,
       "cash": 83837,
       "total_debt": 375000,
-      "as_of": "2026-08-17",
+      "as_of": "2026-11-09",
       "fy_3y": 2022,
       "rule_of_40": 17.5,
       "ticker": "ABTS"
@@ -1685,7 +1685,7 @@
       "fcf_margin_pct": -13.3,
       "cash": 325338,
       "total_debt": null,
-      "as_of": "2026-08-17",
+      "as_of": "2026-11-09",
       "fy_3y": 2022,
       "rule_of_40": -17.9,
       "ticker": "AGMH"
@@ -2377,7 +2377,7 @@
       "fcf_margin_pct": null,
       "cash": null,
       "total_debt": null,
-      "as_of": "2026-08-17",
+      "as_of": "2026-11-09",
       "fy_3y": 2021,
       "ticker": "AKAN"
     },
@@ -5432,7 +5432,7 @@
       "fcf_margin_pct": -14.6,
       "cash": 574267,
       "total_debt": null,
-      "as_of": "2026-08-17",
+      "as_of": "2026-11-09",
       "fy_3y": 2023,
       "rule_of_40": 13.9,
       "ticker": "ATXG"
@@ -5544,7 +5544,7 @@
       "fcf_margin_pct": null,
       "cash": 13190,
       "total_debt": null,
-      "as_of": "2026-08-17",
+      "as_of": "2026-11-09",
       "fy_3y": 2023,
       "ticker": "AURE"
     },
@@ -8503,7 +8503,7 @@
       "fcf_margin_pct": 0.7,
       "cash": null,
       "total_debt": 1924428,
-      "as_of": "2026-08-17",
+      "as_of": "2026-11-09",
       "fy_3y": 2022,
       "rule_of_40": -21.0,
       "ticker": "BON"
@@ -10313,7 +10313,7 @@
       "fcf_margin_pct": null,
       "cash": null,
       "total_debt": 15728000000,
-      "as_of": "2026-08-17",
+      "as_of": "2026-11-09",
       "fy_3y": 2022,
       "ticker": "CB"
     },
@@ -11514,7 +11514,7 @@
       "fcf_margin_pct": 12.1,
       "cash": 242082000,
       "total_debt": null,
-      "as_of": "2026-08-17",
+      "as_of": "2026-11-09",
       "fy_3y": 2022,
       "rule_of_40": 13.2,
       "ticker": "CHR"
@@ -11795,7 +11795,7 @@
       "fcf_margin_pct": -90.2,
       "cash": 2130758,
       "total_debt": null,
-      "as_of": "2026-08-17",
+      "as_of": "2026-11-09",
       "fy_3y": 2024,
       "rule_of_40": -103.0,
       "ticker": "CJMB"
@@ -20603,7 +20603,7 @@
       "fcf_margin_pct": -4.3,
       "cash": null,
       "total_debt": 4624283,
-      "as_of": "2026-08-17",
+      "as_of": "2026-11-09",
       "fy_3y": 2025,
       "rule_of_40": 13.6,
       "ticker": "FATN"
@@ -20904,7 +20904,7 @@
       "fcf_margin_pct": 1.8,
       "cash": null,
       "total_debt": null,
-      "as_of": "2026-08-17",
+      "as_of": "2026-11-09",
       "fy_3y": 2023,
       "rule_of_40": -34.5,
       "ticker": "FEBO"
@@ -21659,7 +21659,7 @@
       "fcf_margin_pct": -7.4,
       "cash": null,
       "total_debt": null,
-      "as_of": "2026-08-17",
+      "as_of": "2026-11-09",
       "fy_3y": 2021,
       "rule_of_40": -51.5,
       "ticker": "FLZH"
@@ -23703,7 +23703,7 @@
       "fcf_margin_pct": 35.3,
       "cash": 453800000,
       "total_debt": 13469600000,
-      "as_of": "2026-08-17",
+      "as_of": "2026-11-09",
       "fy_3y": 2023,
       "rule_of_40": 36.5,
       "ticker": "GIS"
@@ -23889,10 +23889,67 @@
       "fcf_margin_pct": -22.2,
       "cash": 129883000,
       "total_debt": null,
-      "as_of": "2026-07-27",
+      "as_of": "2026-11-09",
       "fy_3y": 2024,
       "rule_of_40": 41.3,
       "ticker": "GLUE"
+    },
+    "GM": {
+      "cik": "1467858",
+      "fiscal_year": 2025,
+      "revenue": 167971000000,
+      "revenue_prior": 171606000000,
+      "revenue_growth_pct": -2.1,
+      "net_income": 2697000000,
+      "net_margin_pct": 1.6,
+      "net_margin_pct_3y": 6.9,
+      "fcf": 17564000000,
+      "fcf_3y": 6805000000,
+      "fcf_margin_pct": 10.5,
+      "cash": 20945000000,
+      "total_debt": null,
+      "as_of": "2026-11-09",
+      "fy_3y": 2022,
+      "rule_of_40": 8.4,
+      "ticker": "GM"
+    },
+    "GME": {
+      "cik": "1326380",
+      "fiscal_year": 2025,
+      "revenue": 3629900000,
+      "revenue_prior": 3823000000,
+      "revenue_growth_pct": -5.1,
+      "net_income": 418400000,
+      "net_margin_pct": 11.5,
+      "net_margin_pct_3y": -5.3,
+      "fcf": 597300000,
+      "fcf_3y": 52300000,
+      "fcf_margin_pct": 16.5,
+      "cash": 6304700000,
+      "total_debt": 4164300000,
+      "as_of": "2026-11-09",
+      "fy_3y": 2022,
+      "rule_of_40": 11.4,
+      "ticker": "GME"
+    },
+    "GMED": {
+      "cik": "1237831",
+      "fiscal_year": 2025,
+      "revenue": 2938931000,
+      "revenue_prior": 2519355000,
+      "revenue_growth_pct": 16.7,
+      "net_income": 537868000,
+      "net_margin_pct": 18.3,
+      "net_margin_pct_3y": 18.6,
+      "fcf": 588768000,
+      "fcf_3y": 104421000,
+      "fcf_margin_pct": 20.0,
+      "cash": 526156000,
+      "total_debt": null,
+      "as_of": "2026-11-09",
+      "fy_3y": 2022,
+      "rule_of_40": 36.7,
+      "ticker": "GMED"
     },
     "GMEX": {
       "cik": "1928581",
@@ -23945,10 +24002,28 @@
       "fcf_margin_pct": 38.2,
       "cash": 46542000,
       "total_debt": 190169000,
-      "as_of": "2026-07-27",
+      "as_of": "2026-11-09",
       "fy_3y": 2020,
       "rule_of_40": 14.1,
       "ticker": "GNK"
+    },
+    "GNL": {
+      "cik": "1526113",
+      "fiscal_year": 2025,
+      "revenue": 495286000,
+      "revenue_prior": 805010000,
+      "revenue_growth_pct": -38.5,
+      "net_income": null,
+      "net_margin_pct": null,
+      "net_margin_pct_3y": null,
+      "fcf": null,
+      "fcf_3y": null,
+      "fcf_margin_pct": null,
+      "cash": 180114000,
+      "total_debt": null,
+      "as_of": "2026-11-09",
+      "fy_3y": 2022,
+      "ticker": "GNL"
     },
     "GNLN": {
       "cik": "1743745",
@@ -23964,7 +24039,7 @@
       "fcf_margin_pct": -375.6,
       "cash": 32513000,
       "total_debt": 7674000,
-      "as_of": "2026-07-27",
+      "as_of": "2026-11-09",
       "fy_3y": 2022,
       "rule_of_40": -442.8,
       "ticker": "GNLN"
@@ -23983,7 +24058,7 @@
       "fcf_margin_pct": -329575.0,
       "cash": 5333000,
       "total_debt": null,
-      "as_of": "2026-07-27",
+      "as_of": "2026-11-09",
       "fy_3y": 2023,
       "rule_of_40": -329575.0,
       "ticker": "GNLX"
@@ -24002,7 +24077,7 @@
       "fcf_margin_pct": 6.4,
       "cash": 341413000,
       "total_debt": null,
-      "as_of": "2026-07-27",
+      "as_of": "2026-11-09",
       "fy_3y": 2022,
       "rule_of_40": 4.4,
       "ticker": "GNRC"
@@ -24021,7 +24096,7 @@
       "fcf_margin_pct": null,
       "cash": null,
       "total_debt": null,
-      "as_of": "2026-07-27",
+      "as_of": "2026-11-09",
       "fy_3y": 2022,
       "ticker": "GNS"
     },
@@ -24039,7 +24114,7 @@
       "fcf_margin_pct": 2.4,
       "cash": 11063091,
       "total_debt": 348952,
-      "as_of": "2026-07-27",
+      "as_of": "2026-11-09",
       "fy_3y": 2015,
       "rule_of_40": 31.9,
       "ticker": "GNSS"
@@ -24058,10 +24133,28 @@
       "fcf_margin_pct": 18.1,
       "cash": 145645715,
       "total_debt": null,
-      "as_of": "2026-07-27",
+      "as_of": "2026-11-09",
       "fy_3y": 2022,
       "rule_of_40": 386.0,
       "ticker": "GNTX"
+    },
+    "GNW": {
+      "cik": "1276520",
+      "fiscal_year": 2025,
+      "revenue": 7301000000,
+      "revenue_prior": 7295000000,
+      "revenue_growth_pct": 0.1,
+      "net_income": 223000000,
+      "net_margin_pct": 3.1,
+      "net_margin_pct_3y": 9.2,
+      "fcf": null,
+      "fcf_3y": null,
+      "fcf_margin_pct": null,
+      "cash": null,
+      "total_debt": 1513000000,
+      "as_of": "2026-11-09",
+      "fy_3y": 2022,
+      "ticker": "GNW"
     },
     "GO": {
       "cik": "1771515",

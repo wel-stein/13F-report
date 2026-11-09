@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02",
+  "generated_at": "2026-11-09",
   "filers": [
     {
       "name": "Berkshire Hathaway",
@@ -6534,342 +6534,342 @@
       "cik": "0001390777",
       "latest_filing": {
         "form": "13F-HR",
+        "filing_date": "2026-11-05",
+        "report_date": "2026-09-30",
+        "accession": "0001390777-26-000121",
+        "primary_doc": "xslForm13F_X02/primary_doc.xml"
+      },
+      "prior_filing": {
+        "form": "13F-HR",
         "filing_date": "2026-08-06",
         "report_date": "2026-06-30",
         "accession": "0001390777-26-000087",
         "primary_doc": "xslForm13F_X02/primary_doc.xml"
       },
-      "prior_filing": {
-        "form": "13F-HR",
-        "filing_date": "2026-05-05",
-        "report_date": "2026-03-31",
-        "accession": "0001390777-26-000061",
-        "primary_doc": "xslForm13F_X02/primary_doc.xml"
-      },
-      "holdings_count": 4289,
-      "holdings_count_prior": 4194,
-      "total_value_usd": 609434404889,
-      "total_value_usd_prior": 543905795593,
+      "holdings_count": 4391,
+      "holdings_count_prior": 4289,
+      "total_value_usd": 608486273647,
+      "total_value_usd_prior": 609434404889,
       "summary": {
-        "quarter": "2026-06-30",
-        "aum_usd": 609434404889,
-        "aum_usd_prior": 543905795593,
-        "aum_change_pct": 112.0,
-        "holdings_count": 4289,
-        "holdings_count_prior": 4194,
-        "holdings_count_change": 95,
-        "new_positions_count": 365,
-        "added_count": 2237,
-        "trimmed_count": 1585,
-        "held_count": 102,
-        "exited_count": 270,
-        "top10_concentration_pct": 25.1,
+        "quarter": "2026-09-30",
+        "aum_usd": 608486273647,
+        "aum_usd_prior": 609434404889,
+        "aum_change_pct": 99.8,
+        "holdings_count": 4391,
+        "holdings_count_prior": 4289,
+        "holdings_count_change": 102,
+        "new_positions_count": 248,
+        "added_count": 1914,
+        "trimmed_count": 2036,
+        "held_count": 193,
+        "exited_count": 146,
+        "top10_concentration_pct": 27.7,
         "sector_breakdown": [
           {
             "sector": "Technology",
-            "value_usd": 164265929084,
-            "count": 161,
-            "pct_of_portfolio": 26.95
+            "value_usd": 177141697248,
+            "count": 162,
+            "pct_of_portfolio": 29.11
           },
           {
             "sector": "Other",
-            "value_usd": 158357861453,
-            "count": 2824,
-            "pct_of_portfolio": 25.98
+            "value_usd": 153555550386,
+            "count": 2854,
+            "pct_of_portfolio": 25.24
           },
           {
             "sector": "Fund/ETF",
-            "value_usd": 53578564788,
-            "count": 481,
-            "pct_of_portfolio": 8.79
+            "value_usd": 53320136512,
+            "count": 559,
+            "pct_of_portfolio": 8.76
           },
           {
             "sector": "Financials",
-            "value_usd": 50862694481,
+            "value_usd": 49077737008,
             "count": 231,
-            "pct_of_portfolio": 8.35
+            "pct_of_portfolio": 8.07
           },
           {
             "sector": "Healthcare",
-            "value_usd": 46299114477,
-            "count": 289,
-            "pct_of_portfolio": 7.6
+            "value_usd": 48123558131,
+            "count": 287,
+            "pct_of_portfolio": 7.91
           },
           {
             "sector": "Communications",
-            "value_usd": 37197138449,
-            "count": 25,
-            "pct_of_portfolio": 6.1
-          },
-          {
-            "sector": "Energy",
-            "value_usd": 22111287366,
-            "count": 83,
-            "pct_of_portfolio": 3.63
+            "value_usd": 38161406979,
+            "count": 24,
+            "pct_of_portfolio": 6.27
           },
           {
             "sector": "Consumer Discretionary",
-            "value_usd": 21889120993,
+            "value_usd": 19036855793,
             "count": 29,
-            "pct_of_portfolio": 3.59
+            "pct_of_portfolio": 3.13
           },
           {
             "sector": "Consumer Staples",
-            "value_usd": 19306699380,
+            "value_usd": 18690368975,
             "count": 25,
-            "pct_of_portfolio": 3.17
+            "pct_of_portfolio": 3.07
+          },
+          {
+            "sector": "Energy",
+            "value_usd": 18002230918,
+            "count": 82,
+            "pct_of_portfolio": 2.96
           },
           {
             "sector": "Industrials",
-            "value_usd": 18462908017,
+            "value_usd": 16826090884,
             "count": 28,
-            "pct_of_portfolio": 3.03
-          },
-          {
-            "sector": "Real Estate",
-            "value_usd": 7256692203,
-            "count": 65,
-            "pct_of_portfolio": 1.19
+            "pct_of_portfolio": 2.77
           },
           {
             "sector": "Materials",
-            "value_usd": 7021314306,
-            "count": 34,
+            "value_usd": 7039734759,
+            "count": 33,
+            "pct_of_portfolio": 1.16
+          },
+          {
+            "sector": "Real Estate",
+            "value_usd": 7003063823,
+            "count": 63,
             "pct_of_portfolio": 1.15
           },
           {
             "sector": "Utilities",
-            "value_usd": 2825079892,
+            "value_usd": 2507842231,
             "count": 14,
-            "pct_of_portfolio": 0.46
+            "pct_of_portfolio": 0.41
           }
         ],
         "largest_new_positions": [
           {
-            "issuer": "HONEYWELL INTERNATIONAL INC",
-            "cusip": "438516205",
+            "issuer": "EXXONMOBIL HOLDINGS CORP",
+            "cusip": "30233Q108",
             "action": "new",
-            "shares": 3273200,
+            "shares": 35849842,
             "shares_prior": 0,
-            "delta_shares": 3273200,
-            "value_usd": 732869137,
-            "delta_value_usd": 732869137,
+            "delta_shares": 35849842,
+            "value_usd": 5834561904,
+            "delta_value_usd": 5834561904,
             "delta_pct": "new"
           },
           {
-            "issuer": "HONEYWELL AEROSPACE INC",
-            "cusip": "43849R105",
+            "issuer": "VANGUARD MRNGSTAR GR ETF-SUI",
+            "cusip": "922908736",
             "action": "new",
-            "shares": 2914841,
+            "shares": 10587724,
             "shares_prior": 0,
-            "delta_shares": 2914841,
-            "value_usd": 644412386,
-            "delta_value_usd": 644412386,
+            "delta_shares": 10587724,
+            "value_usd": 954059745,
+            "delta_value_usd": 954059745,
             "delta_pct": "new"
           },
           {
-            "issuer": "HORIZN INTRNTNL MNGD RSK ETF",
-            "cusip": "44053A465",
+            "issuer": "VANGUARD MRNGSTR VAL ETF-AUI",
+            "cusip": "922908744",
             "action": "new",
-            "shares": 13314478,
+            "shares": 3111748,
             "shares_prior": 0,
-            "delta_shares": 13314478,
-            "value_usd": 414061625,
-            "delta_value_usd": 414061625,
+            "delta_shares": 3111748,
+            "value_usd": 672386375,
+            "delta_value_usd": 672386375,
             "delta_pct": "new"
           },
           {
-            "issuer": "SPACE EXPLORATION TECHN-CL A",
-            "cusip": "84615Q103",
+            "issuer": "VG MORNINGSTAR TS MKT ETF-US",
+            "cusip": "922908769",
             "action": "new",
-            "shares": 1185114,
+            "shares": 1699149,
             "shares_prior": 0,
-            "delta_shares": 1185114,
-            "value_usd": 202488590,
-            "delta_value_usd": 202488590,
+            "delta_shares": 1699149,
+            "value_usd": 635889752,
+            "delta_value_usd": 635889752,
             "delta_pct": "new"
           },
           {
-            "issuer": "CARNIVAL CORP LTD",
-            "cusip": "G2004J103",
+            "issuer": "VANGUARD MOST SM-CAP ETF-USD",
+            "cusip": "922908751",
             "action": "new",
-            "shares": 5810769,
+            "shares": 1898300,
             "shares_prior": 0,
-            "delta_shares": 5810769,
-            "value_usd": 166013678,
-            "delta_value_usd": 166013678,
+            "delta_shares": 1898300,
+            "value_usd": 540047258,
+            "delta_value_usd": 540047258,
             "delta_pct": "new"
           }
         ],
         "largest_exits": [
           {
-            "issuer": "HONEYWELL INTERNATIONAL INC",
-            "cusip": "438516106",
+            "issuer": "EXXON MOBIL CORP",
+            "cusip": "30231G102",
             "action": "exit",
             "shares": 0,
-            "shares_prior": 6340148,
-            "delta_shares": -6340148,
+            "shares_prior": 37801544,
+            "delta_shares": -37801544,
             "value_usd": 0,
-            "delta_value_usd": -1433063708,
+            "delta_value_usd": -5168227206,
             "delta_pct": 0.0
           },
           {
-            "issuer": "HORIZN INTRNTNL MNGD RSK ETF",
-            "cusip": "44053A465",
+            "issuer": "VANGUARD GROWTH ETF",
+            "cusip": "922908736",
             "action": "exit",
             "shares": 0,
-            "shares_prior": 14050030,
-            "delta_shares": -14050030,
+            "shares_prior": 10634944,
+            "delta_shares": -10634944,
             "value_usd": 0,
-            "delta_value_usd": -374573800,
+            "delta_value_usd": -916094142,
             "delta_pct": 0.0
           },
           {
-            "issuer": "COTERRA ENERGY INC",
-            "cusip": "127097103",
+            "issuer": "VANGUARD VALUE ETF",
+            "cusip": "922908744",
             "action": "exit",
             "shares": 0,
-            "shares_prior": 8485584,
-            "delta_shares": -8485584,
+            "shares_prior": 3095793,
+            "delta_shares": -3095793,
             "value_usd": 0,
-            "delta_value_usd": -298183456,
+            "delta_value_usd": -674666029,
             "delta_pct": 0.0
           },
           {
-            "issuer": "DUPONT DE NEMOURS INC",
-            "cusip": "26614N102",
+            "issuer": "VANGUARD TOTAL STOCK MKT ETF",
+            "cusip": "922908769",
             "action": "exit",
             "shares": 0,
-            "shares_prior": 3706596,
-            "delta_shares": -3706596,
+            "shares_prior": 1778086,
+            "delta_shares": -1778086,
             "value_usd": 0,
-            "delta_value_usd": -169762104,
+            "delta_value_usd": -657963009,
             "delta_pct": 0.0
           },
           {
-            "issuer": "CARNIVAL CORP",
-            "cusip": "143658300",
+            "issuer": "VANGUARD SMALL-CAP ETF",
+            "cusip": "922908751",
             "action": "exit",
             "shares": 0,
-            "shares_prior": 5608651,
-            "delta_shares": -5608651,
+            "shares_prior": 1913874,
+            "delta_shares": -1913874,
             "value_usd": 0,
-            "delta_value_usd": -145151899,
+            "delta_value_usd": -580133638,
             "delta_pct": 0.0
           }
         ],
         "top_buys": [
           {
-            "issuer": "AMAZON.COM INC",
-            "cusip": "023135106",
+            "issuer": "MICROSOFT CORP",
+            "cusip": "594918104",
             "action": "add",
-            "shares": 68563416,
-            "shares_prior": 66930843,
-            "delta_shares": 1632573,
-            "value_usd": 16341404661,
-            "delta_value_usd": 2401718044,
-            "delta_pct": 102.4
+            "shares": 54826999,
+            "shares_prior": 53472212,
+            "delta_shares": 1354787,
+            "value_usd": 28120768153,
+            "delta_value_usd": 8174563565,
+            "delta_pct": 102.5
           },
           {
-            "issuer": "MARVELL TECHNOLOGY INC",
-            "cusip": "573874104",
-            "action": "add",
-            "shares": 7957985,
-            "shares_prior": 3142260,
-            "delta_shares": 4815725,
-            "value_usd": 2370604229,
-            "delta_value_usd": 2059363472,
-            "delta_pct": 253.3
+            "issuer": "EXXONMOBIL HOLDINGS CORP",
+            "cusip": "30233Q108",
+            "action": "new",
+            "shares": 35849842,
+            "shares_prior": 0,
+            "delta_shares": 35849842,
+            "value_usd": 5834561904,
+            "delta_value_usd": 5834561904,
+            "delta_pct": "new"
           },
           {
-            "issuer": "UNITEDHEALTH GROUP INC",
-            "cusip": "91324P102",
+            "issuer": "APPLE INC",
+            "cusip": "037833100",
             "action": "add",
-            "shares": 10704994,
-            "shares_prior": 10088271,
-            "delta_shares": 616723,
-            "value_usd": 4449316683,
-            "delta_value_usd": 1719531433,
-            "delta_pct": 106.1
+            "shares": 89084228,
+            "shares_prior": 88383551,
+            "delta_shares": 700677,
+            "value_usd": 29666829907,
+            "delta_value_usd": 4092165449,
+            "delta_pct": 100.8
           },
           {
-            "issuer": "ISHARES CORE S&P 500 ETF",
-            "cusip": "464287200",
+            "issuer": "NETAPP INC",
+            "cusip": "64110D104",
             "action": "add",
-            "shares": 13633768,
-            "shares_prior": 13359615,
-            "delta_shares": 274153,
-            "value_usd": 10210192246,
-            "delta_value_usd": 1483558239,
-            "delta_pct": 102.1
+            "shares": 5761068,
+            "shares_prior": 1174544,
+            "delta_shares": 4586524,
+            "value_usd": 1210285016,
+            "delta_value_usd": 1028512528,
+            "delta_pct": 490.5
           },
           {
-            "issuer": "KLA CORP",
-            "cusip": "482480100",
-            "action": "add",
-            "shares": 8360447,
-            "shares_prior": 888388,
-            "delta_shares": 7472059,
-            "value_usd": 2522430430,
-            "delta_value_usd": 1214359023,
-            "delta_pct": 941.1
+            "issuer": "VANGUARD MRNGSTAR GR ETF-SUI",
+            "cusip": "922908736",
+            "action": "new",
+            "shares": 10587724,
+            "shares_prior": 0,
+            "delta_shares": 10587724,
+            "value_usd": 954059745,
+            "delta_value_usd": 954059745,
+            "delta_pct": "new"
           }
         ],
         "top_sells": [
           {
             "issuer": "EXXON MOBIL CORP",
             "cusip": "30231G102",
-            "action": "trim",
-            "shares": 37801544,
-            "shares_prior": 44289134,
-            "delta_shares": -6487590,
-            "value_usd": 5168227206,
-            "delta_value_usd": -2345867197,
-            "delta_pct": 85.4
-          },
-          {
-            "issuer": "HONEYWELL INTERNATIONAL INC",
-            "cusip": "438516106",
             "action": "exit",
             "shares": 0,
-            "shares_prior": 6340148,
-            "delta_shares": -6340148,
+            "shares_prior": 37801544,
+            "delta_shares": -37801544,
             "value_usd": 0,
-            "delta_value_usd": -1433063708,
+            "delta_value_usd": -5168227206,
             "delta_pct": 0.0
           },
           {
-            "issuer": "CHEVRON CORP",
-            "cusip": "166764100",
+            "issuer": "APPLIED MATERIALS INC",
+            "cusip": "038222105",
             "action": "trim",
-            "shares": 14346731,
-            "shares_prior": 14928556,
-            "delta_shares": -581825,
-            "value_usd": 2378114104,
-            "delta_value_usd": -710604165,
-            "delta_pct": 96.1
+            "shares": 6569870,
+            "shares_prior": 7021201,
+            "delta_shares": -451331,
+            "value_usd": 3359700040,
+            "delta_value_usd": -1716629124,
+            "delta_pct": 93.6
           },
           {
-            "issuer": "NETFLIX INC",
-            "cusip": "64110L106",
+            "issuer": "ALPHABET INC-CL A",
+            "cusip": "02079K305",
             "action": "trim",
-            "shares": 26701433,
-            "shares_prior": 27082031,
-            "delta_shares": -380598,
-            "value_usd": 1906482368,
-            "delta_value_usd": -697454937,
-            "delta_pct": 98.6
+            "shares": 37298153,
+            "shares_prior": 39216785,
+            "delta_shares": -1918632,
+            "value_usd": 12833548431,
+            "delta_value_usd": -1181354179,
+            "delta_pct": 95.1
           },
           {
-            "issuer": "VERIZON COMMUNICATIONS INC",
-            "cusip": "92343V104",
+            "issuer": "TESLA INC",
+            "cusip": "88160R101",
             "action": "trim",
-            "shares": 30357757,
-            "shares_prior": 38164982,
-            "delta_shares": -7807225,
-            "value_usd": 1285347438,
-            "delta_value_usd": -630534665,
-            "delta_pct": 79.5
+            "shares": 14215567,
+            "shares_prior": 14464171,
+            "delta_shares": -248604,
+            "value_usd": 5043825272,
+            "delta_value_usd": -1039805062,
+            "delta_pct": 98.3
+          },
+          {
+            "issuer": "LAM RESEARCH CORP",
+            "cusip": "512807306",
+            "action": "trim",
+            "shares": 8535087,
+            "shares_prior": 8717571,
+            "delta_shares": -182484,
+            "value_usd": 2803861678,
+            "delta_value_usd": -973723188,
+            "delta_pct": 97.9
           }
         ],
         "largest_holdings": [
@@ -6877,115 +6877,153 @@
             "issuer": "NVIDIA CORP",
             "cusip": "67066G104",
             "action": "trim",
-            "shares": 152177494,
-            "shares_prior": 153763594,
-            "delta_shares": -1586100,
-            "value_usd": 30449194930,
-            "delta_value_usd": 3632824209,
-            "delta_pct": 99.0
+            "shares": 150056016,
+            "shares_prior": 152177494,
+            "delta_shares": -2121478,
+            "value_usd": 34269793038,
+            "delta_value_usd": 3820598108,
+            "delta_pct": 98.6
           },
           {
             "issuer": "APPLE INC",
             "cusip": "037833100",
-            "action": "trim",
-            "shares": 88383551,
-            "shares_prior": 92111869,
-            "delta_shares": -3728318,
-            "value_usd": 25574664458,
-            "delta_value_usd": 2197593390,
-            "delta_pct": 96.0
+            "action": "add",
+            "shares": 89084228,
+            "shares_prior": 88383551,
+            "delta_shares": 700677,
+            "value_usd": 29666829907,
+            "delta_value_usd": 4092165449,
+            "delta_pct": 100.8
           },
           {
             "issuer": "MICROSOFT CORP",
             "cusip": "594918104",
             "action": "add",
-            "shares": 53472212,
-            "shares_prior": 51657016,
-            "delta_shares": 1815196,
-            "value_usd": 19946204588,
-            "delta_value_usd": 824327094,
-            "delta_pct": 103.5
+            "shares": 54826999,
+            "shares_prior": 53472212,
+            "delta_shares": 1354787,
+            "value_usd": 28120768153,
+            "delta_value_usd": 8174563565,
+            "delta_pct": 102.5
           },
           {
             "issuer": "AMAZON.COM INC",
             "cusip": "023135106",
-            "action": "add",
-            "shares": 68563416,
-            "shares_prior": 66930843,
-            "delta_shares": 1632573,
-            "value_usd": 16341404661,
-            "delta_value_usd": 2401718044,
-            "delta_pct": 102.4
+            "action": "trim",
+            "shares": 67948189,
+            "shares_prior": 68563416,
+            "delta_shares": -615227,
+            "value_usd": 16929291179,
+            "delta_value_usd": 587886518,
+            "delta_pct": 99.1
           },
           {
             "issuer": "ALPHABET INC-CL A",
             "cusip": "02079K305",
             "action": "trim",
-            "shares": 39216785,
-            "shares_prior": 40113894,
-            "delta_shares": -897109,
-            "value_usd": 14014902610,
-            "delta_value_usd": 2479751134,
-            "delta_pct": 97.8
-          },
-          {
-            "issuer": "BROADCOM INC",
-            "cusip": "11135F101",
-            "action": "trim",
-            "shares": 27870791,
-            "shares_prior": 28712968,
-            "delta_shares": -842177,
-            "value_usd": 10528191323,
-            "delta_value_usd": 1641240793,
-            "delta_pct": 97.1
+            "shares": 37298153,
+            "shares_prior": 39216785,
+            "delta_shares": -1918632,
+            "value_usd": 12833548431,
+            "delta_value_usd": -1181354179,
+            "delta_pct": 95.1
           },
           {
             "issuer": "ISHARES CORE S&P 500 ETF",
             "cusip": "464287200",
-            "action": "add",
-            "shares": 13633768,
-            "shares_prior": 13359615,
-            "delta_shares": 274153,
-            "value_usd": 10210192246,
-            "delta_value_usd": 1483558239,
-            "delta_pct": 102.1
-          },
-          {
-            "issuer": "ALPHABET INC-CL C",
-            "cusip": "02079K107",
             "action": "trim",
-            "shares": 27814503,
-            "shares_prior": 28754117,
-            "delta_shares": -939614,
-            "value_usd": 9827698450,
-            "delta_value_usd": 1579292541,
-            "delta_pct": 96.7
-          },
-          {
-            "issuer": "MICRON TECHNOLOGY INC",
-            "cusip": "595112103",
-            "action": "trim",
-            "shares": 7145760,
-            "shares_prior": 7441161,
-            "delta_shares": -295401,
-            "value_usd": 8248279864,
-            "delta_value_usd": 5734358071,
-            "delta_pct": 96.0
+            "shares": 13500395,
+            "shares_prior": 13633768,
+            "delta_shares": -133373,
+            "value_usd": 10339277609,
+            "delta_value_usd": 129085363,
+            "delta_pct": 99.0
           },
           {
             "issuer": "META PLATFORMS INC-CLASS A",
             "cusip": "30303M102",
             "action": "trim",
-            "shares": 13833621,
-            "shares_prior": 14153836,
-            "delta_shares": -320215,
-            "value_usd": 7792340324,
-            "delta_value_usd": -305493969,
+            "shares": 13752509,
+            "shares_prior": 13833621,
+            "delta_shares": -81112,
+            "value_usd": 9973043893,
+            "delta_value_usd": 2180703569,
+            "delta_pct": 99.4
+          },
+          {
+            "issuer": "BROADCOM INC",
+            "cusip": "11135F101",
+            "action": "trim",
+            "shares": 27398150,
+            "shares_prior": 27870791,
+            "delta_shares": -472641,
+            "value_usd": 9621956066,
+            "delta_value_usd": -906235257,
+            "delta_pct": 98.3
+          },
+          {
+            "issuer": "ALPHABET INC-CL C",
+            "cusip": "02079K107",
+            "action": "trim",
+            "shares": 27183700,
+            "shares_prior": 27814503,
+            "delta_shares": -630803,
+            "value_usd": 9262573838,
+            "delta_value_usd": -565124612,
             "delta_pct": 97.7
+          },
+          {
+            "issuer": "MICRON TECHNOLOGY INC",
+            "cusip": "595112103",
+            "action": "trim",
+            "shares": 6950772,
+            "shares_prior": 7145760,
+            "delta_shares": -194988,
+            "value_usd": 7403337565,
+            "delta_value_usd": -844942299,
+            "delta_pct": 97.3
           }
         ]
       },
       "history": [
+        {
+          "quarter": "2026-09-30",
+          "filing_date": "2026-11-05",
+          "total_value_usd": 608486273647,
+          "holdings_count": 4391,
+          "top5_holdings": [
+            {
+              "issuer": "NVIDIA CORP",
+              "cusip": "67066G104",
+              "value_usd": 34269793038,
+              "pct_of_portfolio": 5.63
+            },
+            {
+              "issuer": "APPLE INC",
+              "cusip": "037833100",
+              "value_usd": 29666829907,
+              "pct_of_portfolio": 4.88
+            },
+            {
+              "issuer": "MICROSOFT CORP",
+              "cusip": "594918104",
+              "value_usd": 28120768153,
+              "pct_of_portfolio": 4.62
+            },
+            {
+              "issuer": "AMAZON.COM INC",
+              "cusip": "023135106",
+              "value_usd": 16929291179,
+              "pct_of_portfolio": 2.78
+            },
+            {
+              "issuer": "ALPHABET INC-CL A",
+              "cusip": "02079K305",
+              "value_usd": 12833548431,
+              "pct_of_portfolio": 2.11
+            }
+          ]
+        },
         {
           "quarter": "2026-06-30",
           "filing_date": "2026-08-06",
@@ -9878,7 +9916,7 @@
       "issuer": "APPLE INC",
       "cusip": "037833100",
       "sector": "Technology",
-      "total_value_usd": 1234270037864,
+      "total_value_usd": 1238358948691,
       "holder_count": 28,
       "holders": [
         {
@@ -9947,9 +9985,9 @@
         {
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 25574664458,
-          "portfolio_weight_pct": 4.2
+          "action": "add",
+          "value_usd": 29666829907,
+          "portfolio_weight_pct": 4.88
         },
         {
           "name": "Wellington Management",
@@ -10067,7 +10105,7 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "trim",
-          "value_usd": 6018688,
+          "value_usd": 2764066,
           "portfolio_weight_pct": 0.0
         },
         {
@@ -10078,7 +10116,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 75.36,
+      "weighted_score": 76.04,
       "conviction_score": 155.6,
       "net_action": "add"
     },
@@ -10086,7 +10124,7 @@
       "issuer": "NVIDIA CORPORATION",
       "cusip": "67066G104",
       "sector": "Technology",
-      "total_value_usd": 1405314955385,
+      "total_value_usd": 1409135825489,
       "holder_count": 28,
       "holders": [
         {
@@ -10149,8 +10187,8 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "trim",
-          "value_usd": 30449194930,
-          "portfolio_weight_pct": 5.0
+          "value_usd": 34269793038,
+          "portfolio_weight_pct": 5.63
         },
         {
           "name": "Wellington Management",
@@ -10281,12 +10319,12 @@
         {
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
-          "action": "hold",
-          "value_usd": 1600720,
+          "action": "add",
+          "value_usd": 1872716,
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 75.22,
+      "weighted_score": 75.86,
       "conviction_score": 155.6,
       "net_action": "add"
     },
@@ -10294,7 +10332,7 @@
       "issuer": "MICROSOFT CORP",
       "cusip": "594918104",
       "sector": "Technology",
-      "total_value_usd": 997580722854,
+      "total_value_usd": 1005755053279,
       "holder_count": 28,
       "holders": [
         {
@@ -10347,18 +10385,18 @@
           "portfolio_weight_pct": 3.41
         },
         {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "add",
+          "value_usd": 28120768153,
+          "portfolio_weight_pct": 4.62
+        },
+        {
           "name": "Goldman Sachs Group",
           "cik": "0000886982",
           "action": "add",
           "value_usd": 23848318733,
           "portfolio_weight_pct": 2.07
-        },
-        {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "add",
-          "value_usd": 19946204588,
-          "portfolio_weight_pct": 3.27
         },
         {
           "name": "Wellington Management",
@@ -10482,8 +10520,8 @@
         {
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
-          "action": "hold",
-          "value_usd": 746040,
+          "action": "trim",
+          "value_usd": 512900,
           "portfolio_weight_pct": 0.0
         },
         {
@@ -10494,7 +10532,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 43.21,
+      "weighted_score": 44.56,
       "conviction_score": 155.6,
       "net_action": "add"
     },
@@ -10502,7 +10540,7 @@
       "issuer": "ADVANCED MICRO DEVICES INC",
       "cusip": "007903107",
       "sector": "Technology",
-      "total_value_usd": 207831158235,
+      "total_value_usd": 208434675366,
       "holder_count": 28,
       "holders": [
         {
@@ -10578,9 +10616,9 @@
         {
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 5939516996,
-          "portfolio_weight_pct": 0.97
+          "action": "add",
+          "value_usd": 6560029055,
+          "portfolio_weight_pct": 1.08
         },
         {
           "name": "Wellington Management",
@@ -10660,18 +10698,18 @@
           "portfolio_weight_pct": 1.28
         },
         {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "add",
-          "value_usd": 80862672,
-          "portfolio_weight_pct": 0.01
-        },
-        {
           "name": "BlackRock",
           "cik": "1364742",
           "action": "add",
           "value_usd": 71907693,
           "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "trim",
+          "value_usd": 63867744,
+          "portfolio_weight_pct": 0.01
         },
         {
           "name": "Two Sigma Investments",
@@ -10702,216 +10740,15 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 22.72,
+      "weighted_score": 22.82,
       "conviction_score": 155.6,
-      "net_action": "add"
-    },
-    {
-      "issuer": "ALPHABET INC",
-      "cusip": "02079K305",
-      "sector": "Communications",
-      "total_value_usd": 615379210404,
-      "holder_count": 27,
-      "holders": [
-        {
-          "name": "Vanguard Group",
-          "cik": "0000102909",
-          "action": "add",
-          "value_usd": 165567397786,
-          "portfolio_weight_pct": 2.4
-        },
-        {
-          "name": "FMR (Fidelity)",
-          "cik": "0000315066",
-          "action": "add",
-          "value_usd": 89597664038,
-          "portfolio_weight_pct": 3.89
-        },
-        {
-          "name": "State Street",
-          "cik": "0000093751",
-          "action": "add",
-          "value_usd": 85403303049,
-          "portfolio_weight_pct": 2.52
-        },
-        {
-          "name": "BlackRock",
-          "cik": "1364742",
-          "action": "add",
-          "value_usd": 76700326355,
-          "portfolio_weight_pct": 1.74
-        },
-        {
-          "name": "Morgan Stanley",
-          "cik": "0000895421",
-          "action": "trim",
-          "value_usd": 43067125043,
-          "portfolio_weight_pct": 2.28
-        },
-        {
-          "name": "JPMorgan Chase",
-          "cik": "0000019617",
-          "action": "add",
-          "value_usd": 32507323431,
-          "portfolio_weight_pct": 1.8
-        },
-        {
-          "name": "Berkshire Hathaway",
-          "cik": "1067983",
-          "action": "add",
-          "value_usd": 28157599351,
-          "portfolio_weight_pct": 9.41
-        },
-        {
-          "name": "Northern Trust",
-          "cik": "0000073124",
-          "action": "add",
-          "value_usd": 23416577406,
-          "portfolio_weight_pct": 2.72
-        },
-        {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
-          "action": "add",
-          "value_usd": 20936514597,
-          "portfolio_weight_pct": 1.82
-        },
-        {
-          "name": "Wellington Management",
-          "cik": "0000902219",
-          "action": "trim",
-          "value_usd": 15868519535,
-          "portfolio_weight_pct": 2.74
-        },
-        {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 14014902610,
-          "portfolio_weight_pct": 2.3
-        },
-        {
-          "name": "Citadel Advisors",
-          "cik": "1423053",
-          "action": "add",
-          "value_usd": 7199790442,
-          "portfolio_weight_pct": 0.82
-        },
-        {
-          "name": "Citadel Advisors",
-          "cik": "1423053",
-          "action": "trim",
-          "value_usd": 4508151076,
-          "portfolio_weight_pct": 0.52
-        },
-        {
-          "name": "Millennium Management",
-          "cik": "1273087",
-          "action": "trim",
-          "value_usd": 2166591362,
-          "portfolio_weight_pct": 0.78
-        },
-        {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
-          "action": "add",
-          "value_usd": 1212163303,
-          "portfolio_weight_pct": 0.11
-        },
-        {
-          "name": "Citadel Advisors",
-          "cik": "1423053",
-          "action": "add",
-          "value_usd": 1068743932,
-          "portfolio_weight_pct": 0.12
-        },
-        {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
-          "action": "add",
-          "value_usd": 965113422,
-          "portfolio_weight_pct": 0.08
-        },
-        {
-          "name": "Renaissance Technologies",
-          "cik": "1037389",
-          "action": "add",
-          "value_usd": 828174623,
-          "portfolio_weight_pct": 1.14
-        },
-        {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
-          "action": "trim",
-          "value_usd": 802885668,
-          "portfolio_weight_pct": 0.58
-        },
-        {
-          "name": "Millennium Management",
-          "cik": "1273087",
-          "action": "trim",
-          "value_usd": 722423455,
-          "portfolio_weight_pct": 0.26
-        },
-        {
-          "name": "Bridgewater Associates",
-          "cik": "1350694",
-          "action": "trim",
-          "value_usd": 472506037,
-          "portfolio_weight_pct": 1.94
-        },
-        {
-          "name": "ARK Investment Management",
-          "cik": "1697748",
-          "action": "new",
-          "value_usd": 50075399,
-          "portfolio_weight_pct": 0.33
-        },
-        {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
-          "action": "trim",
-          "value_usd": 38917593,
-          "portfolio_weight_pct": 0.03
-        },
-        {
-          "name": "T. Rowe Price Associates",
-          "cik": "0000080255",
-          "action": "add",
-          "value_usd": 36207335,
-          "portfolio_weight_pct": 3.62
-        },
-        {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
-          "action": "trim",
-          "value_usd": 36165844,
-          "portfolio_weight_pct": 0.03
-        },
-        {
-          "name": "Millennium Management",
-          "cik": "1273087",
-          "action": "trim",
-          "value_usd": 33690342,
-          "portfolio_weight_pct": 0.01
-        },
-        {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "hold",
-          "value_usd": 357370,
-          "portfolio_weight_pct": 0.0
-        }
-      ],
-      "weighted_score": 43.98,
-      "conviction_score": 150.0,
       "net_action": "add"
     },
     {
       "issuer": "SPDR S&P 500 ETF TR",
       "cusip": "78462F103",
       "sector": "Fund/ETF",
-      "total_value_usd": 195790487822,
+      "total_value_usd": 195761069738,
       "holder_count": 27,
       "holders": [
         {
@@ -11009,8 +10846,8 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "trim",
-          "value_usd": 1934968751,
-          "portfolio_weight_pct": 0.32
+          "value_usd": 1903507190,
+          "portfolio_weight_pct": 0.31
         },
         {
           "name": "BlackRock",
@@ -11085,8 +10922,8 @@
         {
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 35172867,
+          "action": "add",
+          "value_usd": 37216344,
           "portfolio_weight_pct": 0.01
         },
         {
@@ -11112,7 +10949,7 @@
       "issuer": "META PLATFORMS INC",
       "cusip": "30303M102",
       "sector": "Communications",
-      "total_value_usd": 425344325933,
+      "total_value_usd": 427525029502,
       "holder_count": 27,
       "holders": [
         {
@@ -11172,18 +11009,18 @@
           "portfolio_weight_pct": 1.02
         },
         {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "trim",
+          "value_usd": 9973043893,
+          "portfolio_weight_pct": 1.64
+        },
+        {
           "name": "Citadel Advisors",
           "cik": "1423053",
           "action": "add",
           "value_usd": 8675623593,
           "portfolio_weight_pct": 0.99
-        },
-        {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 7792340324,
-          "portfolio_weight_pct": 1.28
         },
         {
           "name": "Citadel Advisors",
@@ -11305,7 +11142,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 22.57,
+      "weighted_score": 22.93,
       "conviction_score": 150.0,
       "net_action": "trim"
     },
@@ -11313,7 +11150,7 @@
       "issuer": "ELI LILLY & CO",
       "cusip": "532457108",
       "sector": "Healthcare",
-      "total_value_usd": 307478411951,
+      "total_value_usd": 307232162819,
       "holder_count": 27,
       "holders": [
         {
@@ -11383,8 +11220,8 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "trim",
-          "value_usd": 5737424031,
-          "portfolio_weight_pct": 0.94
+          "value_usd": 5491386649,
+          "portfolio_weight_pct": 0.9
         },
         {
           "name": "Citadel Advisors",
@@ -11501,788 +11338,206 @@
         {
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 5997150,
+          "action": "hold",
+          "value_usd": 5785400,
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 16.51,
+      "weighted_score": 16.47,
       "conviction_score": 150.0,
       "net_action": "add"
     },
     {
-      "issuer": "GE AEROSPACE",
-      "cusip": "369604301",
-      "sector": "Other",
-      "total_value_usd": 102628257451,
+      "issuer": "ALPHABET INC",
+      "cusip": "02079K305",
+      "sector": "Communications",
+      "total_value_usd": 614197498855,
       "holder_count": 26,
       "holders": [
         {
           "name": "Vanguard Group",
           "cik": "0000102909",
           "action": "add",
-          "value_usd": 28564096574,
-          "portfolio_weight_pct": 0.41
-        },
-        {
-          "name": "FMR (Fidelity)",
-          "cik": "0000315066",
-          "action": "trim",
-          "value_usd": 18320767707,
-          "portfolio_weight_pct": 0.8
-        },
-        {
-          "name": "State Street",
-          "cik": "0000093751",
-          "action": "add",
-          "value_usd": 17377558512,
-          "portfolio_weight_pct": 0.51
-        },
-        {
-          "name": "BlackRock",
-          "cik": "1364742",
-          "action": "add",
-          "value_usd": 12676122036,
-          "portfolio_weight_pct": 0.29
-        },
-        {
-          "name": "JPMorgan Chase",
-          "cik": "0000019617",
-          "action": "add",
-          "value_usd": 6086682344,
-          "portfolio_weight_pct": 0.34
-        },
-        {
-          "name": "Morgan Stanley",
-          "cik": "0000895421",
-          "action": "add",
-          "value_usd": 5461292887,
-          "portfolio_weight_pct": 0.29
-        },
-        {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
-          "action": "trim",
-          "value_usd": 3811030789,
-          "portfolio_weight_pct": 0.33
-        },
-        {
-          "name": "Northern Trust",
-          "cik": "0000073124",
-          "action": "trim",
-          "value_usd": 3793671939,
-          "portfolio_weight_pct": 0.44
-        },
-        {
-          "name": "Wellington Management",
-          "cik": "0000902219",
-          "action": "add",
-          "value_usd": 2540592249,
-          "portfolio_weight_pct": 0.44
-        },
-        {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 2104317355,
-          "portfolio_weight_pct": 0.35
-        },
-        {
-          "name": "Citadel Advisors",
-          "cik": "1423053",
-          "action": "trim",
-          "value_usd": 505058722,
-          "portfolio_weight_pct": 0.06
-        },
-        {
-          "name": "Citadel Advisors",
-          "cik": "1423053",
-          "action": "add",
-          "value_usd": 480691526,
-          "portfolio_weight_pct": 0.05
-        },
-        {
-          "name": "Citadel Advisors",
-          "cik": "1423053",
-          "action": "trim",
-          "value_usd": 204195981,
-          "portfolio_weight_pct": 0.02
-        },
-        {
-          "name": "Millennium Management",
-          "cik": "1273087",
-          "action": "trim",
-          "value_usd": 170234015,
-          "portfolio_weight_pct": 0.06
-        },
-        {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
-          "action": "trim",
-          "value_usd": 119369362,
-          "portfolio_weight_pct": 0.01
-        },
-        {
-          "name": "Renaissance Technologies",
-          "cik": "1037389",
-          "action": "trim",
-          "value_usd": 114659613,
-          "portfolio_weight_pct": 0.16
-        },
-        {
-          "name": "Millennium Management",
-          "cik": "1273087",
-          "action": "trim",
-          "value_usd": 92442116,
-          "portfolio_weight_pct": 0.03
-        },
-        {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
-          "action": "trim",
-          "value_usd": 48846511,
-          "portfolio_weight_pct": 0.0
-        },
-        {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
-          "action": "trim",
-          "value_usd": 38714691,
-          "portfolio_weight_pct": 0.03
-        },
-        {
-          "name": "Bridgewater Associates",
-          "cik": "1350694",
-          "action": "trim",
-          "value_usd": 37959382,
-          "portfolio_weight_pct": 0.16
-        },
-        {
-          "name": "Millennium Management",
-          "cik": "1273087",
-          "action": "trim",
-          "value_usd": 30309503,
-          "portfolio_weight_pct": 0.01
-        },
-        {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
-          "action": "add",
-          "value_usd": 20368285,
-          "portfolio_weight_pct": 0.01
-        },
-        {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
-          "action": "add",
-          "value_usd": 14239113,
-          "portfolio_weight_pct": 0.01
-        },
-        {
-          "name": "T. Rowe Price Associates",
-          "cik": "0000080255",
-          "action": "trim",
-          "value_usd": 7707394,
-          "portfolio_weight_pct": 0.77
-        },
-        {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 5979680,
-          "portfolio_weight_pct": 0.0
-        },
-        {
-          "name": "ARK Investment Management",
-          "cik": "1697748",
-          "action": "trim",
-          "value_usd": 1349165,
-          "portfolio_weight_pct": 0.01
-        }
-      ],
-      "weighted_score": 5.6,
-      "conviction_score": 144.4,
-      "net_action": "trim"
-    },
-    {
-      "issuer": "CROWDSTRIKE HLDGS INC",
-      "cusip": "22788C105",
-      "sector": "Technology",
-      "total_value_usd": 54542760819,
-      "holder_count": 26,
-      "holders": [
-        {
-          "name": "Vanguard Group",
-          "cik": "0000102909",
-          "action": "add",
-          "value_usd": 11351747634,
-          "portfolio_weight_pct": 0.16
-        },
-        {
-          "name": "State Street",
-          "cik": "0000093751",
-          "action": "add",
-          "value_usd": 8840099289,
-          "portfolio_weight_pct": 0.26
-        },
-        {
-          "name": "BlackRock",
-          "cik": "1364742",
-          "action": "add",
-          "value_usd": 7072577707,
-          "portfolio_weight_pct": 0.16
-        },
-        {
-          "name": "JPMorgan Chase",
-          "cik": "0000019617",
-          "action": "add",
-          "value_usd": 6072891623,
-          "portfolio_weight_pct": 0.34
+          "value_usd": 165567397786,
+          "portfolio_weight_pct": 2.4
         },
         {
           "name": "FMR (Fidelity)",
           "cik": "0000315066",
           "action": "add",
-          "value_usd": 5988448225,
-          "portfolio_weight_pct": 0.26
-        },
-        {
-          "name": "Morgan Stanley",
-          "cik": "0000895421",
-          "action": "trim",
-          "value_usd": 4956251016,
-          "portfolio_weight_pct": 0.26
-        },
-        {
-          "name": "Citadel Advisors",
-          "cik": "1423053",
-          "action": "add",
-          "value_usd": 2095658754,
-          "portfolio_weight_pct": 0.24
-        },
-        {
-          "name": "Citadel Advisors",
-          "cik": "1423053",
-          "action": "trim",
-          "value_usd": 1995611100,
-          "portfolio_weight_pct": 0.23
-        },
-        {
-          "name": "Northern Trust",
-          "cik": "0000073124",
-          "action": "trim",
-          "value_usd": 1789583905,
-          "portfolio_weight_pct": 0.21
-        },
-        {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
-          "action": "add",
-          "value_usd": 1690002614,
-          "portfolio_weight_pct": 0.15
-        },
-        {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 1153956435,
-          "portfolio_weight_pct": 0.19
-        },
-        {
-          "name": "Renaissance Technologies",
-          "cik": "1037389",
-          "action": "new",
-          "value_usd": 571561334,
-          "portfolio_weight_pct": 0.79
-        },
-        {
-          "name": "Millennium Management",
-          "cik": "1273087",
-          "action": "trim",
-          "value_usd": 237718110,
-          "portfolio_weight_pct": 0.09
-        },
-        {
-          "name": "Citadel Advisors",
-          "cik": "1423053",
-          "action": "trim",
-          "value_usd": 213766961,
-          "portfolio_weight_pct": 0.02
-        },
-        {
-          "name": "Millennium Management",
-          "cik": "1273087",
-          "action": "add",
-          "value_usd": 185061450,
-          "portfolio_weight_pct": 0.07
-        },
-        {
-          "name": "Wellington Management",
-          "cik": "0000902219",
-          "action": "trim",
-          "value_usd": 85654070,
-          "portfolio_weight_pct": 0.01
-        },
-        {
-          "name": "BlackRock",
-          "cik": "1364742",
-          "action": "hold",
-          "value_usd": 54451299,
-          "portfolio_weight_pct": 0.0
-        },
-        {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
-          "action": "add",
-          "value_usd": 39225396,
-          "portfolio_weight_pct": 0.0
-        },
-        {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
-          "action": "add",
-          "value_usd": 29686146,
-          "portfolio_weight_pct": 0.02
-        },
-        {
-          "name": "Millennium Management",
-          "cik": "1273087",
-          "action": "trim",
-          "value_usd": 26411512,
-          "portfolio_weight_pct": 0.01
-        },
-        {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
-          "action": "add",
-          "value_usd": 23962596,
-          "portfolio_weight_pct": 0.02
-        },
-        {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
-          "action": "trim",
-          "value_usd": 20066766,
-          "portfolio_weight_pct": 0.01
-        },
-        {
-          "name": "Bridgewater Associates",
-          "cik": "1350694",
-          "action": "add",
-          "value_usd": 18960213,
-          "portfolio_weight_pct": 0.08
-        },
-        {
-          "name": "ARK Investment Management",
-          "cik": "1697748",
-          "action": "trim",
-          "value_usd": 18029183,
-          "portfolio_weight_pct": 0.12
-        },
-        {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
-          "action": "hold",
-          "value_usd": 8089284,
-          "portfolio_weight_pct": 0.0
-        },
-        {
-          "name": "T. Rowe Price Associates",
-          "cik": "0000080255",
-          "action": "add",
-          "value_usd": 3288197,
-          "portfolio_weight_pct": 0.33
-        }
-      ],
-      "weighted_score": 4.03,
-      "conviction_score": 144.4,
-      "net_action": "add"
-    },
-    {
-      "issuer": "ROBLOX CORP",
-      "cusip": "771049103",
-      "sector": "Technology",
-      "total_value_usd": 15456236921,
-      "holder_count": 26,
-      "holders": [
-        {
-          "name": "Vanguard Group",
-          "cik": "0000102909",
-          "action": "add",
-          "value_usd": 5142065267,
-          "portfolio_weight_pct": 0.07
-        },
-        {
-          "name": "FMR (Fidelity)",
-          "cik": "0000315066",
-          "action": "add",
-          "value_usd": 4335375505,
-          "portfolio_weight_pct": 0.19
-        },
-        {
-          "name": "Morgan Stanley",
-          "cik": "0000895421",
-          "action": "trim",
-          "value_usd": 1182291234,
-          "portfolio_weight_pct": 0.06
-        },
-        {
-          "name": "BlackRock",
-          "cik": "1364742",
-          "action": "add",
-          "value_usd": 1010279203,
-          "portfolio_weight_pct": 0.02
+          "value_usd": 89597664038,
+          "portfolio_weight_pct": 3.89
         },
         {
           "name": "State Street",
           "cik": "0000093751",
           "action": "add",
-          "value_usd": 807695971,
-          "portfolio_weight_pct": 0.02
+          "value_usd": 85403303049,
+          "portfolio_weight_pct": 2.52
         },
         {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
+          "name": "BlackRock",
+          "cik": "1364742",
           "action": "add",
-          "value_usd": 731337533,
-          "portfolio_weight_pct": 0.53
+          "value_usd": 76700326355,
+          "portfolio_weight_pct": 1.74
         },
         {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
-          "action": "add",
-          "value_usd": 397852031,
-          "portfolio_weight_pct": 0.03
-        },
-        {
-          "name": "Renaissance Technologies",
-          "cik": "1037389",
+          "name": "Morgan Stanley",
+          "cik": "0000895421",
           "action": "trim",
-          "value_usd": 370548714,
-          "portfolio_weight_pct": 0.51
-        },
-        {
-          "name": "ARK Investment Management",
-          "cik": "1697748",
-          "action": "add",
-          "value_usd": 351615103,
+          "value_usd": 43067125043,
           "portfolio_weight_pct": 2.28
         },
         {
           "name": "JPMorgan Chase",
           "cik": "0000019617",
-          "action": "trim",
-          "value_usd": 253869887,
-          "portfolio_weight_pct": 0.01
+          "action": "add",
+          "value_usd": 32507323431,
+          "portfolio_weight_pct": 1.8
+        },
+        {
+          "name": "Berkshire Hathaway",
+          "cik": "1067983",
+          "action": "add",
+          "value_usd": 28157599351,
+          "portfolio_weight_pct": 9.41
         },
         {
           "name": "Northern Trust",
           "cik": "0000073124",
           "action": "add",
-          "value_usd": 207291176,
-          "portfolio_weight_pct": 0.02
+          "value_usd": 23416577406,
+          "portfolio_weight_pct": 2.72
         },
         {
-          "name": "Citadel Advisors",
-          "cik": "1423053",
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
           "action": "add",
-          "value_usd": 148500904,
-          "portfolio_weight_pct": 0.02
+          "value_usd": 20936514597,
+          "portfolio_weight_pct": 1.82
         },
         {
-          "name": "Citadel Advisors",
-          "cik": "1423053",
-          "action": "add",
-          "value_usd": 112867050,
-          "portfolio_weight_pct": 0.01
+          "name": "Wellington Management",
+          "cik": "0000902219",
+          "action": "trim",
+          "value_usd": 15868519535,
+          "portfolio_weight_pct": 2.74
         },
         {
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "trim",
-          "value_usd": 90825904,
-          "portfolio_weight_pct": 0.01
+          "value_usd": 12833548431,
+          "portfolio_weight_pct": 2.11
         },
         {
           "name": "Citadel Advisors",
           "cik": "1423053",
           "action": "add",
-          "value_usd": 87502858,
-          "portfolio_weight_pct": 0.01
+          "value_usd": 7199790442,
+          "portfolio_weight_pct": 0.82
         },
         {
-          "name": "Wellington Management",
-          "cik": "0000902219",
+          "name": "Citadel Advisors",
+          "cik": "1423053",
           "action": "trim",
-          "value_usd": 85001541,
-          "portfolio_weight_pct": 0.01
+          "value_usd": 4508151076,
+          "portfolio_weight_pct": 0.52
         },
         {
           "name": "Millennium Management",
           "cik": "1273087",
           "action": "trim",
-          "value_usd": 72956752,
-          "portfolio_weight_pct": 0.03
+          "value_usd": 2166591362,
+          "portfolio_weight_pct": 0.78
         },
         {
           "name": "Goldman Sachs Group",
           "cik": "0000886982",
-          "action": "trim",
-          "value_usd": 23541102,
-          "portfolio_weight_pct": 0.0
-        },
-        {
-          "name": "Millennium Management",
-          "cik": "1273087",
           "action": "add",
-          "value_usd": 22214230,
-          "portfolio_weight_pct": 0.01
-        },
-        {
-          "name": "Millennium Management",
-          "cik": "1273087",
-          "action": "add",
-          "value_usd": 18304308,
-          "portfolio_weight_pct": 0.01
-        },
-        {
-          "name": "Wellington Management",
-          "cik": "0000902219",
-          "action": "new",
-          "value_usd": 916020,
-          "portfolio_weight_pct": 0.0
-        },
-        {
-          "name": "T. Rowe Price Associates",
-          "cik": "0000080255",
-          "action": "trim",
-          "value_usd": 893154,
-          "portfolio_weight_pct": 0.09
-        },
-        {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
-          "action": "trim",
-          "value_usd": 772196,
-          "portfolio_weight_pct": 0.0
-        },
-        {
-          "name": "Bridgewater Associates",
-          "cik": "1350694",
-          "action": "hold",
-          "value_usd": 696934,
-          "portfolio_weight_pct": 0.0
-        },
-        {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
-          "action": "trim",
-          "value_usd": 685188,
-          "portfolio_weight_pct": 0.0
-        },
-        {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
-          "action": "trim",
-          "value_usd": 337156,
-          "portfolio_weight_pct": 0.0
-        }
-      ],
-      "weighted_score": 3.97,
-      "conviction_score": 144.4,
-      "net_action": "add"
-    },
-    {
-      "issuer": "BOSTON SCIENTIFIC CORP",
-      "cusip": "101137107",
-      "sector": "Healthcare",
-      "total_value_usd": 33906972671,
-      "holder_count": 26,
-      "holders": [
-        {
-          "name": "Vanguard Group",
-          "cik": "0000102909",
-          "action": "add",
-          "value_usd": 13319059814,
-          "portfolio_weight_pct": 0.19
-        },
-        {
-          "name": "BlackRock",
-          "cik": "1364742",
-          "action": "trim",
-          "value_usd": 9735478227,
-          "portfolio_weight_pct": 0.22
-        },
-        {
-          "name": "State Street",
-          "cik": "0000093751",
-          "action": "add",
-          "value_usd": 2992345845,
-          "portfolio_weight_pct": 0.09
-        },
-        {
-          "name": "FMR (Fidelity)",
-          "cik": "0000315066",
-          "action": "trim",
-          "value_usd": 1950597451,
-          "portfolio_weight_pct": 0.08
-        },
-        {
-          "name": "JPMorgan Chase",
-          "cik": "0000019617",
-          "action": "trim",
-          "value_usd": 1039512868,
-          "portfolio_weight_pct": 0.06
-        },
-        {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
-          "action": "add",
-          "value_usd": 826243102,
-          "portfolio_weight_pct": 0.6
-        },
-        {
-          "name": "Morgan Stanley",
-          "cik": "0000895421",
-          "action": "trim",
-          "value_usd": 808664356,
-          "portfolio_weight_pct": 0.04
-        },
-        {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
-          "action": "trim",
-          "value_usd": 723611345,
-          "portfolio_weight_pct": 0.06
-        },
-        {
-          "name": "Wellington Management",
-          "cik": "0000902219",
-          "action": "trim",
-          "value_usd": 653082019,
+          "value_usd": 1212163303,
           "portfolio_weight_pct": 0.11
         },
         {
-          "name": "Northern Trust",
-          "cik": "0000073124",
-          "action": "trim",
-          "value_usd": 553330751,
-          "portfolio_weight_pct": 0.06
-        },
-        {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 339030836,
-          "portfolio_weight_pct": 0.06
-        },
-        {
           "name": "Citadel Advisors",
           "cik": "1423053",
           "action": "add",
-          "value_usd": 212877084,
-          "portfolio_weight_pct": 0.02
+          "value_usd": 1068743932,
+          "portfolio_weight_pct": 0.12
         },
         {
-          "name": "Millennium Management",
-          "cik": "1273087",
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
           "action": "add",
-          "value_usd": 210735360,
+          "value_usd": 965113422,
           "portfolio_weight_pct": 0.08
-        },
-        {
-          "name": "Citadel Advisors",
-          "cik": "1423053",
-          "action": "add",
-          "value_usd": 115304288,
-          "portfolio_weight_pct": 0.01
-        },
-        {
-          "name": "Citadel Advisors",
-          "cik": "1423053",
-          "action": "add",
-          "value_usd": 105248880,
-          "portfolio_weight_pct": 0.01
         },
         {
           "name": "Renaissance Technologies",
           "cik": "1037389",
-          "action": "trim",
-          "value_usd": 102944373,
-          "portfolio_weight_pct": 0.14
-        },
-        {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
           "action": "add",
-          "value_usd": 89773112,
-          "portfolio_weight_pct": 0.01
+          "value_usd": 828174623,
+          "portfolio_weight_pct": 1.14
         },
         {
-          "name": "BlackRock",
-          "cik": "1364742",
-          "action": "new",
-          "value_usd": 61608000,
-          "portfolio_weight_pct": 0.0
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "trim",
+          "value_usd": 802885668,
+          "portfolio_weight_pct": 0.58
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "trim",
+          "value_usd": 722423455,
+          "portfolio_weight_pct": 0.26
         },
         {
           "name": "Bridgewater Associates",
           "cik": "1350694",
-          "action": "add",
-          "value_usd": 18866096,
-          "portfolio_weight_pct": 0.08
-        },
-        {
-          "name": "BlackRock",
-          "cik": "1364742",
-          "action": "new",
-          "value_usd": 17943330,
-          "portfolio_weight_pct": 0.0
-        },
-        {
-          "name": "Millennium Management",
-          "cik": "1273087",
           "action": "trim",
-          "value_usd": 13094224,
-          "portfolio_weight_pct": 0.0
+          "value_usd": 472506037,
+          "portfolio_weight_pct": 1.94
         },
         {
-          "name": "Millennium Management",
-          "cik": "1273087",
-          "action": "add",
-          "value_usd": 8301260,
-          "portfolio_weight_pct": 0.0
-        },
-        {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
+          "name": "ARK Investment Management",
+          "cik": "1697748",
           "action": "new",
-          "value_usd": 6402000,
-          "portfolio_weight_pct": 0.0
+          "value_usd": 50075399,
+          "portfolio_weight_pct": 0.33
         },
         {
           "name": "Two Sigma Investments",
           "cik": "1179392",
-          "action": "add",
-          "value_usd": 1323080,
-          "portfolio_weight_pct": 0.0
-        },
-        {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
-          "action": "new",
-          "value_usd": 1293204,
-          "portfolio_weight_pct": 0.0
+          "action": "trim",
+          "value_usd": 38917593,
+          "portfolio_weight_pct": 0.03
         },
         {
           "name": "T. Rowe Price Associates",
           "cik": "0000080255",
+          "action": "add",
+          "value_usd": 36207335,
+          "portfolio_weight_pct": 3.62
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
           "action": "trim",
-          "value_usd": 301766,
+          "value_usd": 36165844,
           "portfolio_weight_pct": 0.03
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "trim",
+          "value_usd": 33690342,
+          "portfolio_weight_pct": 0.01
         }
       ],
-      "weighted_score": 1.98,
+      "weighted_score": 43.79,
       "conviction_score": 144.4,
       "net_action": "add"
     },
@@ -12290,8 +11545,8 @@
       "issuer": "AMAZON COM INC",
       "cusip": "023135106",
       "sector": "Consumer Discretionary",
-      "total_value_usd": 675978443362,
-      "holder_count": 25,
+      "total_value_usd": 676566529200,
+      "holder_count": 26,
       "holders": [
         {
           "name": "Vanguard Group",
@@ -12345,9 +11600,9 @@
         {
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
-          "action": "add",
-          "value_usd": 16341404661,
-          "portfolio_weight_pct": 2.68
+          "action": "trim",
+          "value_usd": 16929291179,
+          "portfolio_weight_pct": 2.78
         },
         {
           "name": "Goldman Sachs Group",
@@ -12467,17 +11722,994 @@
           "action": "trim",
           "value_usd": 15110756,
           "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "new",
+          "value_usd": 199320,
+          "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 37.77,
-      "conviction_score": 138.9,
+      "weighted_score": 37.87,
+      "conviction_score": 144.4,
+      "net_action": "trim"
+    },
+    {
+      "issuer": "MICRON TECHNOLOGY INC",
+      "cusip": "595112103",
+      "sector": "Technology",
+      "total_value_usd": 287525326755,
+      "holder_count": 26,
+      "holders": [
+        {
+          "name": "State Street",
+          "cik": "0000093751",
+          "action": "trim",
+          "value_usd": 57802075982,
+          "portfolio_weight_pct": 1.71
+        },
+        {
+          "name": "FMR (Fidelity)",
+          "cik": "0000315066",
+          "action": "trim",
+          "value_usd": 30841323297,
+          "portfolio_weight_pct": 1.34
+        },
+        {
+          "name": "Vanguard Group",
+          "cik": "0000102909",
+          "action": "add",
+          "value_usd": 30427016150,
+          "portfolio_weight_pct": 0.44
+        },
+        {
+          "name": "JPMorgan Chase",
+          "cik": "0000019617",
+          "action": "add",
+          "value_usd": 29589469394,
+          "portfolio_weight_pct": 1.64
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "add",
+          "value_usd": 22249286037,
+          "portfolio_weight_pct": 2.54
+        },
+        {
+          "name": "Morgan Stanley",
+          "cik": "0000895421",
+          "action": "add",
+          "value_usd": 21320259525,
+          "portfolio_weight_pct": 1.13
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "add",
+          "value_usd": 20879496990,
+          "portfolio_weight_pct": 1.81
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "add",
+          "value_usd": 16339782953,
+          "portfolio_weight_pct": 1.87
+        },
+        {
+          "name": "Northern Trust",
+          "cik": "0000073124",
+          "action": "add",
+          "value_usd": 12475980711,
+          "portfolio_weight_pct": 1.45
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "add",
+          "value_usd": 12222661381,
+          "portfolio_weight_pct": 1.06
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "add",
+          "value_usd": 12076772204,
+          "portfolio_weight_pct": 0.27
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "trim",
+          "value_usd": 7403337565,
+          "portfolio_weight_pct": 1.22
+        },
+        {
+          "name": "Wellington Management",
+          "cik": "0000902219",
+          "action": "add",
+          "value_usd": 5823555805,
+          "portfolio_weight_pct": 1.0
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "add",
+          "value_usd": 3259830389,
+          "portfolio_weight_pct": 1.18
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "trim",
+          "value_usd": 1282185332,
+          "portfolio_weight_pct": 0.11
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "trim",
+          "value_usd": 1144940251,
+          "portfolio_weight_pct": 0.41
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "trim",
+          "value_usd": 693177694,
+          "portfolio_weight_pct": 0.08
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "trim",
+          "value_usd": 617744842,
+          "portfolio_weight_pct": 0.45
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "trim",
+          "value_usd": 596912216,
+          "portfolio_weight_pct": 0.22
+        },
+        {
+          "name": "Renaissance Technologies",
+          "cik": "1037389",
+          "action": "trim",
+          "value_usd": 244224678,
+          "portfolio_weight_pct": 0.34
+        },
+        {
+          "name": "Bridgewater Associates",
+          "cik": "1350694",
+          "action": "trim",
+          "value_usd": 134666397,
+          "portfolio_weight_pct": 0.55
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "add",
+          "value_usd": 66277967,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "T. Rowe Price Associates",
+          "cik": "0000080255",
+          "action": "add",
+          "value_usd": 16351494,
+          "portfolio_weight_pct": 1.64
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "trim",
+          "value_usd": 8657175,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "trim",
+          "value_usd": 7849172,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "new",
+          "value_usd": 1491154,
+          "portfolio_weight_pct": 0.0
+        }
+      ],
+      "weighted_score": 22.47,
+      "conviction_score": 144.4,
       "net_action": "add"
+    },
+    {
+      "issuer": "GE AEROSPACE",
+      "cusip": "369604301",
+      "sector": "Other",
+      "total_value_usd": 102239192731,
+      "holder_count": 26,
+      "holders": [
+        {
+          "name": "Vanguard Group",
+          "cik": "0000102909",
+          "action": "add",
+          "value_usd": 28564096574,
+          "portfolio_weight_pct": 0.41
+        },
+        {
+          "name": "FMR (Fidelity)",
+          "cik": "0000315066",
+          "action": "trim",
+          "value_usd": 18320767707,
+          "portfolio_weight_pct": 0.8
+        },
+        {
+          "name": "State Street",
+          "cik": "0000093751",
+          "action": "add",
+          "value_usd": 17377558512,
+          "portfolio_weight_pct": 0.51
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "add",
+          "value_usd": 12676122036,
+          "portfolio_weight_pct": 0.29
+        },
+        {
+          "name": "JPMorgan Chase",
+          "cik": "0000019617",
+          "action": "add",
+          "value_usd": 6086682344,
+          "portfolio_weight_pct": 0.34
+        },
+        {
+          "name": "Morgan Stanley",
+          "cik": "0000895421",
+          "action": "add",
+          "value_usd": 5461292887,
+          "portfolio_weight_pct": 0.29
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "trim",
+          "value_usd": 3811030789,
+          "portfolio_weight_pct": 0.33
+        },
+        {
+          "name": "Northern Trust",
+          "cik": "0000073124",
+          "action": "trim",
+          "value_usd": 3793671939,
+          "portfolio_weight_pct": 0.44
+        },
+        {
+          "name": "Wellington Management",
+          "cik": "0000902219",
+          "action": "add",
+          "value_usd": 2540592249,
+          "portfolio_weight_pct": 0.44
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "trim",
+          "value_usd": 1716235675,
+          "portfolio_weight_pct": 0.28
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "trim",
+          "value_usd": 505058722,
+          "portfolio_weight_pct": 0.06
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "add",
+          "value_usd": 480691526,
+          "portfolio_weight_pct": 0.05
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "trim",
+          "value_usd": 204195981,
+          "portfolio_weight_pct": 0.02
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "trim",
+          "value_usd": 170234015,
+          "portfolio_weight_pct": 0.06
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "trim",
+          "value_usd": 119369362,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Renaissance Technologies",
+          "cik": "1037389",
+          "action": "trim",
+          "value_usd": 114659613,
+          "portfolio_weight_pct": 0.16
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "trim",
+          "value_usd": 92442116,
+          "portfolio_weight_pct": 0.03
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "trim",
+          "value_usd": 48846511,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "trim",
+          "value_usd": 38714691,
+          "portfolio_weight_pct": 0.03
+        },
+        {
+          "name": "Bridgewater Associates",
+          "cik": "1350694",
+          "action": "trim",
+          "value_usd": 37959382,
+          "portfolio_weight_pct": 0.16
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "trim",
+          "value_usd": 30309503,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "add",
+          "value_usd": 20368285,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "add",
+          "value_usd": 14239113,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "T. Rowe Price Associates",
+          "cik": "0000080255",
+          "action": "trim",
+          "value_usd": 7707394,
+          "portfolio_weight_pct": 0.77
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "hold",
+          "value_usd": 4996640,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "ARK Investment Management",
+          "cik": "1697748",
+          "action": "trim",
+          "value_usd": 1349165,
+          "portfolio_weight_pct": 0.01
+        }
+      ],
+      "weighted_score": 5.53,
+      "conviction_score": 144.4,
+      "net_action": "trim"
+    },
+    {
+      "issuer": "CROWDSTRIKE HLDGS INC",
+      "cusip": "22788C105",
+      "sector": "Technology",
+      "total_value_usd": 54935083055,
+      "holder_count": 26,
+      "holders": [
+        {
+          "name": "Vanguard Group",
+          "cik": "0000102909",
+          "action": "add",
+          "value_usd": 11351747634,
+          "portfolio_weight_pct": 0.16
+        },
+        {
+          "name": "State Street",
+          "cik": "0000093751",
+          "action": "add",
+          "value_usd": 8840099289,
+          "portfolio_weight_pct": 0.26
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "add",
+          "value_usd": 7072577707,
+          "portfolio_weight_pct": 0.16
+        },
+        {
+          "name": "JPMorgan Chase",
+          "cik": "0000019617",
+          "action": "add",
+          "value_usd": 6072891623,
+          "portfolio_weight_pct": 0.34
+        },
+        {
+          "name": "FMR (Fidelity)",
+          "cik": "0000315066",
+          "action": "add",
+          "value_usd": 5988448225,
+          "portfolio_weight_pct": 0.26
+        },
+        {
+          "name": "Morgan Stanley",
+          "cik": "0000895421",
+          "action": "trim",
+          "value_usd": 4956251016,
+          "portfolio_weight_pct": 0.26
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "add",
+          "value_usd": 2095658754,
+          "portfolio_weight_pct": 0.24
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "trim",
+          "value_usd": 1995611100,
+          "portfolio_weight_pct": 0.23
+        },
+        {
+          "name": "Northern Trust",
+          "cik": "0000073124",
+          "action": "trim",
+          "value_usd": 1789583905,
+          "portfolio_weight_pct": 0.21
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "add",
+          "value_usd": 1690002614,
+          "portfolio_weight_pct": 0.15
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "add",
+          "value_usd": 1546278671,
+          "portfolio_weight_pct": 0.25
+        },
+        {
+          "name": "Renaissance Technologies",
+          "cik": "1037389",
+          "action": "new",
+          "value_usd": 571561334,
+          "portfolio_weight_pct": 0.79
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "trim",
+          "value_usd": 237718110,
+          "portfolio_weight_pct": 0.09
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "trim",
+          "value_usd": 213766961,
+          "portfolio_weight_pct": 0.02
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "add",
+          "value_usd": 185061450,
+          "portfolio_weight_pct": 0.07
+        },
+        {
+          "name": "Wellington Management",
+          "cik": "0000902219",
+          "action": "trim",
+          "value_usd": 85654070,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "hold",
+          "value_usd": 54451299,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "add",
+          "value_usd": 39225396,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "add",
+          "value_usd": 29686146,
+          "portfolio_weight_pct": 0.02
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "trim",
+          "value_usd": 26411512,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "add",
+          "value_usd": 23962596,
+          "portfolio_weight_pct": 0.02
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "trim",
+          "value_usd": 20066766,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Bridgewater Associates",
+          "cik": "1350694",
+          "action": "add",
+          "value_usd": 18960213,
+          "portfolio_weight_pct": 0.08
+        },
+        {
+          "name": "ARK Investment Management",
+          "cik": "1697748",
+          "action": "trim",
+          "value_usd": 18029183,
+          "portfolio_weight_pct": 0.12
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "hold",
+          "value_usd": 8089284,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "T. Rowe Price Associates",
+          "cik": "0000080255",
+          "action": "add",
+          "value_usd": 3288197,
+          "portfolio_weight_pct": 0.33
+        }
+      ],
+      "weighted_score": 4.09,
+      "conviction_score": 144.4,
+      "net_action": "add"
+    },
+    {
+      "issuer": "ROBLOX CORP",
+      "cusip": "771049103",
+      "sector": "Technology",
+      "total_value_usd": 15436020834,
+      "holder_count": 26,
+      "holders": [
+        {
+          "name": "Vanguard Group",
+          "cik": "0000102909",
+          "action": "add",
+          "value_usd": 5142065267,
+          "portfolio_weight_pct": 0.07
+        },
+        {
+          "name": "FMR (Fidelity)",
+          "cik": "0000315066",
+          "action": "add",
+          "value_usd": 4335375505,
+          "portfolio_weight_pct": 0.19
+        },
+        {
+          "name": "Morgan Stanley",
+          "cik": "0000895421",
+          "action": "trim",
+          "value_usd": 1182291234,
+          "portfolio_weight_pct": 0.06
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "add",
+          "value_usd": 1010279203,
+          "portfolio_weight_pct": 0.02
+        },
+        {
+          "name": "State Street",
+          "cik": "0000093751",
+          "action": "add",
+          "value_usd": 807695971,
+          "portfolio_weight_pct": 0.02
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "add",
+          "value_usd": 731337533,
+          "portfolio_weight_pct": 0.53
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "add",
+          "value_usd": 397852031,
+          "portfolio_weight_pct": 0.03
+        },
+        {
+          "name": "Renaissance Technologies",
+          "cik": "1037389",
+          "action": "trim",
+          "value_usd": 370548714,
+          "portfolio_weight_pct": 0.51
+        },
+        {
+          "name": "ARK Investment Management",
+          "cik": "1697748",
+          "action": "add",
+          "value_usd": 351615103,
+          "portfolio_weight_pct": 2.28
+        },
+        {
+          "name": "JPMorgan Chase",
+          "cik": "0000019617",
+          "action": "trim",
+          "value_usd": 253869887,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Northern Trust",
+          "cik": "0000073124",
+          "action": "add",
+          "value_usd": 207291176,
+          "portfolio_weight_pct": 0.02
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "add",
+          "value_usd": 148500904,
+          "portfolio_weight_pct": 0.02
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "add",
+          "value_usd": 112867050,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "add",
+          "value_usd": 87502858,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Wellington Management",
+          "cik": "0000902219",
+          "action": "trim",
+          "value_usd": 85001541,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "trim",
+          "value_usd": 72956752,
+          "portfolio_weight_pct": 0.03
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "trim",
+          "value_usd": 70609817,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "trim",
+          "value_usd": 23541102,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "add",
+          "value_usd": 22214230,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "add",
+          "value_usd": 18304308,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Wellington Management",
+          "cik": "0000902219",
+          "action": "new",
+          "value_usd": 916020,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "T. Rowe Price Associates",
+          "cik": "0000080255",
+          "action": "trim",
+          "value_usd": 893154,
+          "portfolio_weight_pct": 0.09
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "trim",
+          "value_usd": 772196,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "Bridgewater Associates",
+          "cik": "1350694",
+          "action": "hold",
+          "value_usd": 696934,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "trim",
+          "value_usd": 685188,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "trim",
+          "value_usd": 337156,
+          "portfolio_weight_pct": 0.0
+        }
+      ],
+      "weighted_score": 3.97,
+      "conviction_score": 144.4,
+      "net_action": "add"
+    },
+    {
+      "issuer": "BOSTON SCIENTIFIC CORP",
+      "cusip": "101137107",
+      "sector": "Healthcare",
+      "total_value_usd": 33897397981,
+      "holder_count": 26,
+      "holders": [
+        {
+          "name": "Vanguard Group",
+          "cik": "0000102909",
+          "action": "add",
+          "value_usd": 13319059814,
+          "portfolio_weight_pct": 0.19
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "trim",
+          "value_usd": 9735478227,
+          "portfolio_weight_pct": 0.22
+        },
+        {
+          "name": "State Street",
+          "cik": "0000093751",
+          "action": "add",
+          "value_usd": 2992345845,
+          "portfolio_weight_pct": 0.09
+        },
+        {
+          "name": "FMR (Fidelity)",
+          "cik": "0000315066",
+          "action": "trim",
+          "value_usd": 1950597451,
+          "portfolio_weight_pct": 0.08
+        },
+        {
+          "name": "JPMorgan Chase",
+          "cik": "0000019617",
+          "action": "trim",
+          "value_usd": 1039512868,
+          "portfolio_weight_pct": 0.06
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "add",
+          "value_usd": 826243102,
+          "portfolio_weight_pct": 0.6
+        },
+        {
+          "name": "Morgan Stanley",
+          "cik": "0000895421",
+          "action": "trim",
+          "value_usd": 808664356,
+          "portfolio_weight_pct": 0.04
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "trim",
+          "value_usd": 723611345,
+          "portfolio_weight_pct": 0.06
+        },
+        {
+          "name": "Wellington Management",
+          "cik": "0000902219",
+          "action": "trim",
+          "value_usd": 653082019,
+          "portfolio_weight_pct": 0.11
+        },
+        {
+          "name": "Northern Trust",
+          "cik": "0000073124",
+          "action": "trim",
+          "value_usd": 553330751,
+          "portfolio_weight_pct": 0.06
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "trim",
+          "value_usd": 329456146,
+          "portfolio_weight_pct": 0.05
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "add",
+          "value_usd": 212877084,
+          "portfolio_weight_pct": 0.02
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "add",
+          "value_usd": 210735360,
+          "portfolio_weight_pct": 0.08
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "add",
+          "value_usd": 115304288,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "add",
+          "value_usd": 105248880,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Renaissance Technologies",
+          "cik": "1037389",
+          "action": "trim",
+          "value_usd": 102944373,
+          "portfolio_weight_pct": 0.14
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "add",
+          "value_usd": 89773112,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "new",
+          "value_usd": 61608000,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "Bridgewater Associates",
+          "cik": "1350694",
+          "action": "add",
+          "value_usd": 18866096,
+          "portfolio_weight_pct": 0.08
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "new",
+          "value_usd": 17943330,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "trim",
+          "value_usd": 13094224,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "add",
+          "value_usd": 8301260,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "new",
+          "value_usd": 6402000,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "add",
+          "value_usd": 1323080,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "new",
+          "value_usd": 1293204,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "T. Rowe Price Associates",
+          "cik": "0000080255",
+          "action": "trim",
+          "value_usd": 301766,
+          "portfolio_weight_pct": 0.03
+        }
+      ],
+      "weighted_score": 1.97,
+      "conviction_score": 144.4,
+      "net_action": "trim"
     },
     {
       "issuer": "BROADCOM INC",
       "cusip": "11135F101",
       "sector": "Technology",
-      "total_value_usd": 491745105120,
+      "total_value_usd": 490838869863,
       "holder_count": 25,
       "holders": [
         {
@@ -12547,8 +12779,8 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "trim",
-          "value_usd": 10528191323,
-          "portfolio_weight_pct": 1.73
+          "value_usd": 9621956066,
+          "portfolio_weight_pct": 1.58
         },
         {
           "name": "Citadel Advisors",
@@ -12656,194 +12888,7 @@
           "portfolio_weight_pct": 0.01
         }
       ],
-      "weighted_score": 28.82,
-      "conviction_score": 138.9,
-      "net_action": "add"
-    },
-    {
-      "issuer": "MICRON TECHNOLOGY INC",
-      "cusip": "595112103",
-      "sector": "Technology",
-      "total_value_usd": 288368777900,
-      "holder_count": 25,
-      "holders": [
-        {
-          "name": "State Street",
-          "cik": "0000093751",
-          "action": "trim",
-          "value_usd": 57802075982,
-          "portfolio_weight_pct": 1.71
-        },
-        {
-          "name": "FMR (Fidelity)",
-          "cik": "0000315066",
-          "action": "trim",
-          "value_usd": 30841323297,
-          "portfolio_weight_pct": 1.34
-        },
-        {
-          "name": "Vanguard Group",
-          "cik": "0000102909",
-          "action": "add",
-          "value_usd": 30427016150,
-          "portfolio_weight_pct": 0.44
-        },
-        {
-          "name": "JPMorgan Chase",
-          "cik": "0000019617",
-          "action": "add",
-          "value_usd": 29589469394,
-          "portfolio_weight_pct": 1.64
-        },
-        {
-          "name": "Citadel Advisors",
-          "cik": "1423053",
-          "action": "add",
-          "value_usd": 22249286037,
-          "portfolio_weight_pct": 2.54
-        },
-        {
-          "name": "Morgan Stanley",
-          "cik": "0000895421",
-          "action": "add",
-          "value_usd": 21320259525,
-          "portfolio_weight_pct": 1.13
-        },
-        {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
-          "action": "add",
-          "value_usd": 20879496990,
-          "portfolio_weight_pct": 1.81
-        },
-        {
-          "name": "Citadel Advisors",
-          "cik": "1423053",
-          "action": "add",
-          "value_usd": 16339782953,
-          "portfolio_weight_pct": 1.87
-        },
-        {
-          "name": "Northern Trust",
-          "cik": "0000073124",
-          "action": "add",
-          "value_usd": 12475980711,
-          "portfolio_weight_pct": 1.45
-        },
-        {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
-          "action": "add",
-          "value_usd": 12222661381,
-          "portfolio_weight_pct": 1.06
-        },
-        {
-          "name": "BlackRock",
-          "cik": "1364742",
-          "action": "add",
-          "value_usd": 12076772204,
-          "portfolio_weight_pct": 0.27
-        },
-        {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 8248279864,
-          "portfolio_weight_pct": 1.35
-        },
-        {
-          "name": "Wellington Management",
-          "cik": "0000902219",
-          "action": "add",
-          "value_usd": 5823555805,
-          "portfolio_weight_pct": 1.0
-        },
-        {
-          "name": "Millennium Management",
-          "cik": "1273087",
-          "action": "add",
-          "value_usd": 3259830389,
-          "portfolio_weight_pct": 1.18
-        },
-        {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
-          "action": "trim",
-          "value_usd": 1282185332,
-          "portfolio_weight_pct": 0.11
-        },
-        {
-          "name": "Millennium Management",
-          "cik": "1273087",
-          "action": "trim",
-          "value_usd": 1144940251,
-          "portfolio_weight_pct": 0.41
-        },
-        {
-          "name": "Citadel Advisors",
-          "cik": "1423053",
-          "action": "trim",
-          "value_usd": 693177694,
-          "portfolio_weight_pct": 0.08
-        },
-        {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
-          "action": "trim",
-          "value_usd": 617744842,
-          "portfolio_weight_pct": 0.45
-        },
-        {
-          "name": "Millennium Management",
-          "cik": "1273087",
-          "action": "trim",
-          "value_usd": 596912216,
-          "portfolio_weight_pct": 0.22
-        },
-        {
-          "name": "Renaissance Technologies",
-          "cik": "1037389",
-          "action": "trim",
-          "value_usd": 244224678,
-          "portfolio_weight_pct": 0.34
-        },
-        {
-          "name": "Bridgewater Associates",
-          "cik": "1350694",
-          "action": "trim",
-          "value_usd": 134666397,
-          "portfolio_weight_pct": 0.55
-        },
-        {
-          "name": "BlackRock",
-          "cik": "1364742",
-          "action": "add",
-          "value_usd": 66277967,
-          "portfolio_weight_pct": 0.0
-        },
-        {
-          "name": "T. Rowe Price Associates",
-          "cik": "0000080255",
-          "action": "add",
-          "value_usd": 16351494,
-          "portfolio_weight_pct": 1.64
-        },
-        {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
-          "action": "trim",
-          "value_usd": 8657175,
-          "portfolio_weight_pct": 0.01
-        },
-        {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
-          "action": "trim",
-          "value_usd": 7849172,
-          "portfolio_weight_pct": 0.01
-        }
-      ],
-      "weighted_score": 22.61,
+      "weighted_score": 28.68,
       "conviction_score": 138.9,
       "net_action": "add"
     },
@@ -12851,7 +12896,7 @@
       "issuer": "AMERICAN EXPRESS CO",
       "cusip": "025816109",
       "sector": "Financials",
-      "total_value_usd": 108414483182,
+      "total_value_usd": 108261378484,
       "holder_count": 25,
       "holders": [
         {
@@ -12921,8 +12966,8 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "trim",
-          "value_usd": 1263786758,
-          "portfolio_weight_pct": 0.21
+          "value_usd": 1110682060,
+          "portfolio_weight_pct": 0.18
         },
         {
           "name": "Wellington Management",
@@ -13030,7 +13075,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 19.83,
+      "weighted_score": 19.81,
       "conviction_score": 138.9,
       "net_action": "trim"
     },
@@ -13038,7 +13083,7 @@
       "issuer": "BANK OF AMER CORP",
       "cusip": "060505104",
       "sector": "Other",
-      "total_value_usd": 137875625235,
+      "total_value_usd": 137791431695,
       "holder_count": 25,
       "holders": [
         {
@@ -13114,9 +13159,9 @@
         {
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 2313953169,
-          "portfolio_weight_pct": 0.38
+          "action": "add",
+          "value_usd": 2229759629,
+          "portfolio_weight_pct": 0.37
         },
         {
           "name": "Citadel Advisors",
@@ -13217,7 +13262,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 14.55,
+      "weighted_score": 14.53,
       "conviction_score": 138.9,
       "net_action": "trim"
     },
@@ -13225,7 +13270,7 @@
       "issuer": "INVESCO QQQ TR",
       "cusip": "46090E103",
       "sector": "Fund/ETF",
-      "total_value_usd": 95151857933,
+      "total_value_usd": 95164534713,
       "holder_count": 25,
       "holders": [
         {
@@ -13348,18 +13393,18 @@
           "portfolio_weight_pct": 0.08
         },
         {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "add",
+          "value_usd": 88009830,
+          "portfolio_weight_pct": 0.01
+        },
+        {
           "name": "BlackRock",
           "cik": "1364742",
           "action": "trim",
           "value_usd": 85042025,
           "portfolio_weight_pct": 0.0
-        },
-        {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "add",
-          "value_usd": 75333050,
-          "portfolio_weight_pct": 0.01
         },
         {
           "name": "Wellington Management",
@@ -13412,7 +13457,7 @@
       "issuer": "TAIWAN SEMICONDUCTOR MFG LTD",
       "cusip": "874039100",
       "sector": "Technology",
-      "total_value_usd": 94249313510,
+      "total_value_usd": 93676310762,
       "holder_count": 25,
       "holders": [
         {
@@ -13475,8 +13520,8 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "trim",
-          "value_usd": 3730787281,
-          "portfolio_weight_pct": 0.61
+          "value_usd": 3157784533,
+          "portfolio_weight_pct": 0.52
         },
         {
           "name": "Wellington Management",
@@ -13591,15 +13636,15 @@
           "portfolio_weight_pct": 0.54
         }
       ],
-      "weighted_score": 10.17,
+      "weighted_score": 10.08,
       "conviction_score": 138.9,
-      "net_action": "add"
+      "net_action": "trim"
     },
     {
       "issuer": "CHEVRON CORPORATION",
       "cusip": "166764100",
       "sector": "Energy",
-      "total_value_usd": 109331018002,
+      "total_value_usd": 109951406553,
       "holder_count": 25,
       "holders": [
         {
@@ -13654,9 +13699,9 @@
         {
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 2378114104,
-          "portfolio_weight_pct": 0.39
+          "action": "add",
+          "value_usd": 2998502655,
+          "portfolio_weight_pct": 0.49
         },
         {
           "name": "Goldman Sachs Group",
@@ -13778,7 +13823,7 @@
           "portfolio_weight_pct": 0.29
         }
       ],
-      "weighted_score": 9.47,
+      "weighted_score": 9.58,
       "conviction_score": 138.9,
       "net_action": "trim"
     },
@@ -13786,7 +13831,7 @@
       "issuer": "INTEL CORP",
       "cusip": "458140100",
       "sector": "Technology",
-      "total_value_usd": 112923595579,
+      "total_value_usd": 112420032905,
       "holder_count": 25,
       "holders": [
         {
@@ -13846,18 +13891,18 @@
           "portfolio_weight_pct": 0.5
         },
         {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 4152105538,
-          "portfolio_weight_pct": 0.68
-        },
-        {
           "name": "Goldman Sachs Group",
           "cik": "0000886982",
           "action": "add",
           "value_usd": 3896755605,
           "portfolio_weight_pct": 0.34
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "add",
+          "value_usd": 3648542864,
+          "portfolio_weight_pct": 0.6
         },
         {
           "name": "Citadel Advisors",
@@ -13965,7 +14010,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 8.84,
+      "weighted_score": 8.76,
       "conviction_score": 138.9,
       "net_action": "add"
     },
@@ -13973,7 +14018,7 @@
       "issuer": "VISA INC",
       "cusip": "92826C839",
       "sector": "Financials",
-      "total_value_usd": 175411833553,
+      "total_value_usd": 175551338318,
       "holder_count": 25,
       "holders": [
         {
@@ -14036,8 +14081,8 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "trim",
-          "value_usd": 3902044155,
-          "portfolio_weight_pct": 0.64
+          "value_usd": 4041548920,
+          "portfolio_weight_pct": 0.66
         },
         {
           "name": "Wellington Management",
@@ -14152,7 +14197,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 8.52,
+      "weighted_score": 8.54,
       "conviction_score": 138.9,
       "net_action": "trim"
     },
@@ -14160,7 +14205,7 @@
       "issuer": "PALANTIR TECHNOLOGIES INC",
       "cusip": "69608A108",
       "sector": "Technology",
-      "total_value_usd": 77554843381,
+      "total_value_usd": 78367746365,
       "holder_count": 25,
       "holders": [
         {
@@ -14220,6 +14265,13 @@
           "portfolio_weight_pct": 0.28
         },
         {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "trim",
+          "value_usd": 2248732231,
+          "portfolio_weight_pct": 0.37
+        },
+        {
           "name": "Citadel Advisors",
           "cik": "1423053",
           "action": "trim",
@@ -14232,13 +14284,6 @@
           "action": "trim",
           "value_usd": 1489747563,
           "portfolio_weight_pct": 0.17
-        },
-        {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 1435829247,
-          "portfolio_weight_pct": 0.24
         },
         {
           "name": "Renaissance Technologies",
@@ -14339,7 +14384,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 7.25,
+      "weighted_score": 7.38,
       "conviction_score": 138.9,
       "net_action": "add"
     },
@@ -14347,7 +14392,7 @@
       "issuer": "MERCK & CO INC",
       "cusip": "58933Y105",
       "sector": "Healthcare",
-      "total_value_usd": 107219784707,
+      "total_value_usd": 107512786112,
       "holder_count": 25,
       "holders": [
         {
@@ -14417,8 +14462,8 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "trim",
-          "value_usd": 2356712169,
-          "portfolio_weight_pct": 0.39
+          "value_usd": 2649713574,
+          "portfolio_weight_pct": 0.44
         },
         {
           "name": "Citadel Advisors",
@@ -14526,7 +14571,7 @@
           "portfolio_weight_pct": 0.24
         }
       ],
-      "weighted_score": 5.79,
+      "weighted_score": 5.83,
       "conviction_score": 138.9,
       "net_action": "trim"
     },
@@ -14534,7 +14579,7 @@
       "issuer": "WALMART INC",
       "cusip": "931142103",
       "sector": "Consumer Staples",
-      "total_value_usd": 131911516950,
+      "total_value_usd": 131597709769,
       "holder_count": 25,
       "holders": [
         {
@@ -14597,8 +14642,8 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "trim",
-          "value_usd": 3076069863,
-          "portfolio_weight_pct": 0.5
+          "value_usd": 2762262682,
+          "portfolio_weight_pct": 0.45
         },
         {
           "name": "Wellington Management",
@@ -14713,7 +14758,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 5.71,
+      "weighted_score": 5.66,
       "conviction_score": 138.9,
       "net_action": "trim"
     },
@@ -14721,7 +14766,7 @@
       "issuer": "WESTERN DIGITAL CORP.",
       "cusip": "958102105",
       "sector": "Technology",
-      "total_value_usd": 68346444777,
+      "total_value_usd": 67756971375,
       "holder_count": 25,
       "holders": [
         {
@@ -14788,18 +14833,18 @@
           "portfolio_weight_pct": 0.05
         },
         {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "add",
-          "value_usd": 1863072931,
-          "portfolio_weight_pct": 0.31
-        },
-        {
           "name": "Citadel Advisors",
           "cik": "1423053",
           "action": "add",
           "value_usd": 1484193664,
           "portfolio_weight_pct": 0.17
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "trim",
+          "value_usd": 1273599529,
+          "portfolio_weight_pct": 0.21
         },
         {
           "name": "Wellington Management",
@@ -14900,7 +14945,7 @@
           "portfolio_weight_pct": 0.13
         }
       ],
-      "weighted_score": 5.06,
+      "weighted_score": 4.96,
       "conviction_score": 138.9,
       "net_action": "add"
     },
@@ -14908,7 +14953,7 @@
       "issuer": "INTUITIVE SURGICAL INC",
       "cusip": "46120E602",
       "sector": "Healthcare",
-      "total_value_usd": 52376428107,
+      "total_value_usd": 52462418606,
       "holder_count": 25,
       "holders": [
         {
@@ -14961,18 +15006,18 @@
           "portfolio_weight_pct": 0.26
         },
         {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "add",
+          "value_usd": 1421743082,
+          "portfolio_weight_pct": 0.23
+        },
+        {
           "name": "Northern Trust",
           "cik": "0000073124",
           "action": "add",
           "value_usd": 1397048249,
           "portfolio_weight_pct": 0.16
-        },
-        {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 1335752583,
-          "portfolio_weight_pct": 0.22
         },
         {
           "name": "Goldman Sachs Group",
@@ -15087,7 +15132,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 3.51,
+      "weighted_score": 3.53,
       "conviction_score": 138.9,
       "net_action": "add"
     },
@@ -15095,7 +15140,7 @@
       "issuer": "CONOCOPHILLIPS",
       "cusip": "20825C104",
       "sector": "Energy",
-      "total_value_usd": 43978569555,
+      "total_value_usd": 43944929898,
       "holder_count": 25,
       "holders": [
         {
@@ -15157,9 +15202,9 @@
         {
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
-          "action": "add",
-          "value_usd": 1135768596,
-          "portfolio_weight_pct": 0.19
+          "action": "trim",
+          "value_usd": 1102128939,
+          "portfolio_weight_pct": 0.18
         },
         {
           "name": "Goldman Sachs Group",
@@ -15282,7 +15327,7 @@
       "issuer": "CAPITAL ONE FINL CORP",
       "cusip": "14040H105",
       "sector": "Other",
-      "total_value_usd": 38063683793,
+      "total_value_usd": 38157911476,
       "holder_count": 25,
       "holders": [
         {
@@ -15352,8 +15397,8 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "add",
-          "value_usd": 1127733247,
-          "portfolio_weight_pct": 0.19
+          "value_usd": 1221960930,
+          "portfolio_weight_pct": 0.2
         },
         {
           "name": "Berkshire Hathaway",
@@ -15461,7 +15506,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 2.58,
+      "weighted_score": 2.6,
       "conviction_score": 138.9,
       "net_action": "add"
     },
@@ -15469,7 +15514,7 @@
       "issuer": "CLOUDFLARE INC",
       "cusip": "18915M107",
       "sector": "Technology",
-      "total_value_usd": 21942593039,
+      "total_value_usd": 22054731700,
       "holder_count": 25,
       "holders": [
         {
@@ -15553,8 +15598,8 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "add",
-          "value_usd": 256474972,
-          "portfolio_weight_pct": 0.04
+          "value_usd": 368613633,
+          "portfolio_weight_pct": 0.06
         },
         {
           "name": "Citadel Advisors",
@@ -15648,7 +15693,7 @@
           "portfolio_weight_pct": 0.04
         }
       ],
-      "weighted_score": 1.91,
+      "weighted_score": 1.93,
       "conviction_score": 138.9,
       "net_action": "add"
     },
@@ -15656,7 +15701,7 @@
       "issuer": "ADOBE INC",
       "cusip": "00724F101",
       "sector": "Technology",
-      "total_value_usd": 47418632320,
+      "total_value_usd": 47483509957,
       "holder_count": 25,
       "holders": [
         {
@@ -15691,8 +15736,8 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "trim",
-          "value_usd": 954468452,
-          "portfolio_weight_pct": 0.16
+          "value_usd": 1019346089,
+          "portfolio_weight_pct": 0.17
         },
         {
           "name": "Northern Trust",
@@ -15835,7 +15880,7 @@
           "portfolio_weight_pct": 0.01
         }
       ],
-      "weighted_score": 1.88,
+      "weighted_score": 1.89,
       "conviction_score": 138.9,
       "net_action": "trim"
     },
@@ -15843,7 +15888,7 @@
       "issuer": "AIRBNB INC",
       "cusip": "009066101",
       "sector": "Consumer Discretionary",
-      "total_value_usd": 18562798425,
+      "total_value_usd": 18679544210,
       "holder_count": 25,
       "holders": [
         {
@@ -15903,6 +15948,13 @@
           "portfolio_weight_pct": 0.37
         },
         {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "add",
+          "value_usd": 446831091,
+          "portfolio_weight_pct": 0.07
+        },
+        {
           "name": "Goldman Sachs Group",
           "cik": "0000886982",
           "action": "add",
@@ -15921,13 +15973,6 @@
           "cik": "1423053",
           "action": "trim",
           "value_usd": 400637500,
-          "portfolio_weight_pct": 0.05
-        },
-        {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 330085306,
           "portfolio_weight_pct": 0.05
         },
         {
@@ -16022,7 +16067,7 @@
           "portfolio_weight_pct": 0.05
         }
       ],
-      "weighted_score": 1.79,
+      "weighted_score": 1.8,
       "conviction_score": 138.9,
       "net_action": "trim"
     },
@@ -16030,7 +16075,7 @@
       "issuer": "VALERO ENERGY CORP",
       "cusip": "91913Y100",
       "sector": "Energy",
-      "total_value_usd": 23663316404,
+      "total_value_usd": 23962915354,
       "holder_count": 25,
       "holders": [
         {
@@ -16069,18 +16114,18 @@
           "portfolio_weight_pct": 0.11
         },
         {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "trim",
+          "value_usd": 990567321,
+          "portfolio_weight_pct": 0.16
+        },
+        {
           "name": "Northern Trust",
           "cik": "0000073124",
           "action": "add",
           "value_usd": 851389819,
           "portfolio_weight_pct": 0.1
-        },
-        {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 690968371,
-          "portfolio_weight_pct": 0.11
         },
         {
           "name": "Goldman Sachs Group",
@@ -16209,7 +16254,7 @@
           "portfolio_weight_pct": 0.1
         }
       ],
-      "weighted_score": 1.73,
+      "weighted_score": 1.78,
       "conviction_score": 138.9,
       "net_action": "trim"
     },
@@ -16217,7 +16262,7 @@
       "issuer": "MERCADOLIBRE INC",
       "cusip": "58733R102",
       "sector": "Other",
-      "total_value_usd": 10616042857,
+      "total_value_usd": 10617463187,
       "holder_count": 25,
       "holders": [
         {
@@ -16307,8 +16352,8 @@
         {
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
-          "action": "add",
-          "value_usd": 190251819,
+          "action": "trim",
+          "value_usd": 191672149,
           "portfolio_weight_pct": 0.03
         },
         {
@@ -16398,13 +16443,200 @@
       ],
       "weighted_score": 1.73,
       "conviction_score": 138.9,
-      "net_action": "add"
+      "net_action": "trim"
+    },
+    {
+      "issuer": "SPOTIFY TECHNOLOGY S A",
+      "cusip": "L8681T102",
+      "sector": "Communications",
+      "total_value_usd": 13607484021,
+      "holder_count": 25,
+      "holders": [
+        {
+          "name": "Morgan Stanley",
+          "cik": "0000895421",
+          "action": "trim",
+          "value_usd": 3405991806,
+          "portfolio_weight_pct": 0.18
+        },
+        {
+          "name": "State Street",
+          "cik": "0000093751",
+          "action": "trim",
+          "value_usd": 2127395843,
+          "portfolio_weight_pct": 0.06
+        },
+        {
+          "name": "Wellington Management",
+          "cik": "0000902219",
+          "action": "trim",
+          "value_usd": 1428607330,
+          "portfolio_weight_pct": 0.25
+        },
+        {
+          "name": "BlackRock",
+          "cik": "1364742",
+          "action": "trim",
+          "value_usd": 1332415940,
+          "portfolio_weight_pct": 0.03
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "trim",
+          "value_usd": 843064070,
+          "portfolio_weight_pct": 0.07
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "add",
+          "value_usd": 804212108,
+          "portfolio_weight_pct": 0.09
+        },
+        {
+          "name": "Northern Trust",
+          "cik": "0000073124",
+          "action": "trim",
+          "value_usd": 666942798,
+          "portfolio_weight_pct": 0.08
+        },
+        {
+          "name": "JPMorgan Chase",
+          "cik": "0000019617",
+          "action": "trim",
+          "value_usd": 657448859,
+          "portfolio_weight_pct": 0.04
+        },
+        {
+          "name": "Vanguard Group",
+          "cik": "0000102909",
+          "action": "add",
+          "value_usd": 600577831,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "FMR (Fidelity)",
+          "cik": "0000315066",
+          "action": "trim",
+          "value_usd": 466513943,
+          "portfolio_weight_pct": 0.02
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "add",
+          "value_usd": 387000677,
+          "portfolio_weight_pct": 0.04
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "add",
+          "value_usd": 353833009,
+          "portfolio_weight_pct": 0.06
+        },
+        {
+          "name": "Citadel Advisors",
+          "cik": "1423053",
+          "action": "trim",
+          "value_usd": 260643969,
+          "portfolio_weight_pct": 0.03
+        },
+        {
+          "name": "Renaissance Technologies",
+          "cik": "1037389",
+          "action": "trim",
+          "value_usd": 60227113,
+          "portfolio_weight_pct": 0.08
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "trim",
+          "value_usd": 43984654,
+          "portfolio_weight_pct": 0.02
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "trim",
+          "value_usd": 42009936,
+          "portfolio_weight_pct": 0.02
+        },
+        {
+          "name": "ARK Investment Management",
+          "cik": "1697748",
+          "action": "add",
+          "value_usd": 34484423,
+          "portfolio_weight_pct": 0.22
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "add",
+          "value_usd": 28395354,
+          "portfolio_weight_pct": 0.02
+        },
+        {
+          "name": "Millennium Management",
+          "cik": "1273087",
+          "action": "trim",
+          "value_usd": 23369717,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Bridgewater Associates",
+          "cik": "1350694",
+          "action": "trim",
+          "value_usd": 14792709,
+          "portfolio_weight_pct": 0.06
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "add",
+          "value_usd": 7116515,
+          "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "trim",
+          "value_usd": 5968690,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "Two Sigma Investments",
+          "cik": "1179392",
+          "action": "add",
+          "value_usd": 5693212,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "Goldman Sachs Group",
+          "cik": "0000886982",
+          "action": "hold",
+          "value_usd": 5142256,
+          "portfolio_weight_pct": 0.0
+        },
+        {
+          "name": "T. Rowe Price Associates",
+          "cik": "0000080255",
+          "action": "trim",
+          "value_usd": 1651259,
+          "portfolio_weight_pct": 0.17
+        }
+      ],
+      "weighted_score": 1.56,
+      "conviction_score": 138.9,
+      "net_action": "trim"
     },
     {
       "issuer": "VISTRA CORP",
       "cusip": "92840M102",
       "sector": "Other",
-      "total_value_usd": 19353815000,
+      "total_value_usd": 19318885696,
       "holder_count": 25,
       "holders": [
         {
@@ -16474,7 +16706,7 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "add",
-          "value_usd": 381937694,
+          "value_usd": 347008390,
           "portfolio_weight_pct": 0.06
         },
         {
@@ -16583,194 +16815,7 @@
           "portfolio_weight_pct": 0.05
         }
       ],
-      "weighted_score": 1.56,
-      "conviction_score": 138.9,
-      "net_action": "add"
-    },
-    {
-      "issuer": "SPOTIFY TECHNOLOGY S A",
-      "cusip": "L8681T102",
-      "sector": "Communications",
-      "total_value_usd": 13585332381,
-      "holder_count": 25,
-      "holders": [
-        {
-          "name": "Morgan Stanley",
-          "cik": "0000895421",
-          "action": "trim",
-          "value_usd": 3405991806,
-          "portfolio_weight_pct": 0.18
-        },
-        {
-          "name": "State Street",
-          "cik": "0000093751",
-          "action": "trim",
-          "value_usd": 2127395843,
-          "portfolio_weight_pct": 0.06
-        },
-        {
-          "name": "Wellington Management",
-          "cik": "0000902219",
-          "action": "trim",
-          "value_usd": 1428607330,
-          "portfolio_weight_pct": 0.25
-        },
-        {
-          "name": "BlackRock",
-          "cik": "1364742",
-          "action": "trim",
-          "value_usd": 1332415940,
-          "portfolio_weight_pct": 0.03
-        },
-        {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
-          "action": "trim",
-          "value_usd": 843064070,
-          "portfolio_weight_pct": 0.07
-        },
-        {
-          "name": "Citadel Advisors",
-          "cik": "1423053",
-          "action": "add",
-          "value_usd": 804212108,
-          "portfolio_weight_pct": 0.09
-        },
-        {
-          "name": "Northern Trust",
-          "cik": "0000073124",
-          "action": "trim",
-          "value_usd": 666942798,
-          "portfolio_weight_pct": 0.08
-        },
-        {
-          "name": "JPMorgan Chase",
-          "cik": "0000019617",
-          "action": "trim",
-          "value_usd": 657448859,
-          "portfolio_weight_pct": 0.04
-        },
-        {
-          "name": "Vanguard Group",
-          "cik": "0000102909",
-          "action": "add",
-          "value_usd": 600577831,
-          "portfolio_weight_pct": 0.01
-        },
-        {
-          "name": "FMR (Fidelity)",
-          "cik": "0000315066",
-          "action": "trim",
-          "value_usd": 466513943,
-          "portfolio_weight_pct": 0.02
-        },
-        {
-          "name": "Citadel Advisors",
-          "cik": "1423053",
-          "action": "add",
-          "value_usd": 387000677,
-          "portfolio_weight_pct": 0.04
-        },
-        {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "add",
-          "value_usd": 331681369,
-          "portfolio_weight_pct": 0.05
-        },
-        {
-          "name": "Citadel Advisors",
-          "cik": "1423053",
-          "action": "trim",
-          "value_usd": 260643969,
-          "portfolio_weight_pct": 0.03
-        },
-        {
-          "name": "Renaissance Technologies",
-          "cik": "1037389",
-          "action": "trim",
-          "value_usd": 60227113,
-          "portfolio_weight_pct": 0.08
-        },
-        {
-          "name": "Millennium Management",
-          "cik": "1273087",
-          "action": "trim",
-          "value_usd": 43984654,
-          "portfolio_weight_pct": 0.02
-        },
-        {
-          "name": "Millennium Management",
-          "cik": "1273087",
-          "action": "trim",
-          "value_usd": 42009936,
-          "portfolio_weight_pct": 0.02
-        },
-        {
-          "name": "ARK Investment Management",
-          "cik": "1697748",
-          "action": "add",
-          "value_usd": 34484423,
-          "portfolio_weight_pct": 0.22
-        },
-        {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
-          "action": "add",
-          "value_usd": 28395354,
-          "portfolio_weight_pct": 0.02
-        },
-        {
-          "name": "Millennium Management",
-          "cik": "1273087",
-          "action": "trim",
-          "value_usd": 23369717,
-          "portfolio_weight_pct": 0.01
-        },
-        {
-          "name": "Bridgewater Associates",
-          "cik": "1350694",
-          "action": "trim",
-          "value_usd": 14792709,
-          "portfolio_weight_pct": 0.06
-        },
-        {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
-          "action": "add",
-          "value_usd": 7116515,
-          "portfolio_weight_pct": 0.01
-        },
-        {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
-          "action": "trim",
-          "value_usd": 5968690,
-          "portfolio_weight_pct": 0.0
-        },
-        {
-          "name": "Two Sigma Investments",
-          "cik": "1179392",
-          "action": "add",
-          "value_usd": 5693212,
-          "portfolio_weight_pct": 0.0
-        },
-        {
-          "name": "Goldman Sachs Group",
-          "cik": "0000886982",
-          "action": "hold",
-          "value_usd": 5142256,
-          "portfolio_weight_pct": 0.0
-        },
-        {
-          "name": "T. Rowe Price Associates",
-          "cik": "0000080255",
-          "action": "trim",
-          "value_usd": 1651259,
-          "portfolio_weight_pct": 0.17
-        }
-      ],
-      "weighted_score": 1.56,
+      "weighted_score": 1.55,
       "conviction_score": 138.9,
       "net_action": "trim"
     },
@@ -16778,7 +16823,7 @@
       "issuer": "EOG RES INC",
       "cusip": "26875P101",
       "sector": "Other",
-      "total_value_usd": 22715575494,
+      "total_value_usd": 22754862632,
       "holder_count": 25,
       "holders": [
         {
@@ -16817,18 +16862,18 @@
           "portfolio_weight_pct": 0.05
         },
         {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "trim",
+          "value_usd": 694186413,
+          "portfolio_weight_pct": 0.11
+        },
+        {
           "name": "Northern Trust",
           "cik": "0000073124",
           "action": "trim",
           "value_usd": 665072651,
           "portfolio_weight_pct": 0.08
-        },
-        {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "add",
-          "value_usd": 654899275,
-          "portfolio_weight_pct": 0.11
         },
         {
           "name": "Goldman Sachs Group",
@@ -16957,7 +17002,7 @@
           "portfolio_weight_pct": 0.07
         }
       ],
-      "weighted_score": 1.4,
+      "weighted_score": 1.41,
       "conviction_score": 138.9,
       "net_action": "add"
     },
@@ -16965,7 +17010,7 @@
       "issuer": "DRAFTKINGS INC NEW",
       "cusip": "26142V105",
       "sector": "Other",
-      "total_value_usd": 3950048993,
+      "total_value_usd": 3943593009,
       "holder_count": 25,
       "holders": [
         {
@@ -17074,18 +17119,18 @@
           "portfolio_weight_pct": 0.0
         },
         {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 24013880,
-          "portfolio_weight_pct": 0.0
-        },
-        {
           "name": "Two Sigma Investments",
           "cik": "1179392",
           "action": "trim",
           "value_usd": 19032854,
           "portfolio_weight_pct": 0.01
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "trim",
+          "value_usd": 17557896,
+          "portfolio_weight_pct": 0.0
         },
         {
           "name": "Bridgewater Associates",
@@ -17152,7 +17197,7 @@
       "issuer": "ALPHABET INC",
       "cusip": "02079K107",
       "sector": "Communications",
-      "total_value_usd": 449797918723,
+      "total_value_usd": 449232611151,
       "holder_count": 24,
       "holders": [
         {
@@ -17212,18 +17257,18 @@
           "portfolio_weight_pct": 1.02
         },
         {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 9827698450,
-          "portfolio_weight_pct": 1.61
-        },
-        {
           "name": "Berkshire Hathaway",
           "cik": "1067983",
           "action": "add",
           "value_usd": 9606489032,
           "portfolio_weight_pct": 3.21
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "trim",
+          "value_usd": 9262573838,
+          "portfolio_weight_pct": 1.52
         },
         {
           "name": "Wellington Management",
@@ -17319,12 +17364,12 @@
         {
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
-          "action": "hold",
-          "value_usd": 353330,
+          "action": "trim",
+          "value_usd": 170370,
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 27.34,
+      "weighted_score": 27.25,
       "conviction_score": 133.3,
       "net_action": "add"
     },
@@ -17332,7 +17377,7 @@
       "issuer": "TESLA INC",
       "cusip": "88160R101",
       "sector": "Consumer Discretionary",
-      "total_value_usd": 319150282210,
+      "total_value_usd": 318110477148,
       "holder_count": 24,
       "holders": [
         {
@@ -17409,8 +17454,8 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "trim",
-          "value_usd": 6083630334,
-          "portfolio_weight_pct": 1.0
+          "value_usd": 5043825272,
+          "portfolio_weight_pct": 0.83
         },
         {
           "name": "Wellington Management",
@@ -17504,7 +17549,7 @@
           "portfolio_weight_pct": 1.06
         }
       ],
-      "weighted_score": 24.61,
+      "weighted_score": 24.44,
       "conviction_score": 133.3,
       "net_action": "trim"
     },
@@ -17512,7 +17557,7 @@
       "issuer": "COCA COLA CO",
       "cusip": "191216100",
       "sector": "Consumer Staples",
-      "total_value_usd": 126181256844,
+      "total_value_usd": 126465010410,
       "holder_count": 24,
       "holders": [
         {
@@ -17582,8 +17627,8 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "add",
-          "value_usd": 2769991970,
-          "portfolio_weight_pct": 0.45
+          "value_usd": 3053745536,
+          "portfolio_weight_pct": 0.5
         },
         {
           "name": "Wellington Management",
@@ -17684,7 +17729,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 15.25,
+      "weighted_score": 15.29,
       "conviction_score": 133.3,
       "net_action": "add"
     },
@@ -17692,7 +17737,7 @@
       "issuer": "JPMORGAN CHASE & CO.",
       "cusip": "46625H100",
       "sector": "Financials",
-      "total_value_usd": 232558167767,
+      "total_value_usd": 232640639347,
       "holder_count": 24,
       "holders": [
         {
@@ -17748,8 +17793,8 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "add",
-          "value_usd": 7084338908,
-          "portfolio_weight_pct": 1.16
+          "value_usd": 7166810488,
+          "portfolio_weight_pct": 1.18
         },
         {
           "name": "Citadel Advisors",
@@ -17864,7 +17909,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 10.95,
+      "weighted_score": 10.96,
       "conviction_score": 133.3,
       "net_action": "trim"
     },
@@ -17872,7 +17917,7 @@
       "issuer": "ISHARES TR",
       "cusip": "464287655",
       "sector": "Fund/ETF",
-      "total_value_usd": 47654357455,
+      "total_value_usd": 47622277446,
       "holder_count": 24,
       "holders": [
         {
@@ -17962,9 +18007,9 @@
         {
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 548059185,
-          "portfolio_weight_pct": 0.09
+          "action": "add",
+          "value_usd": 516632507,
+          "portfolio_weight_pct": 0.08
         },
         {
           "name": "Goldman Sachs Group",
@@ -18025,8 +18070,8 @@
         {
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 14992455,
+          "action": "add",
+          "value_usd": 14339124,
           "portfolio_weight_pct": 0.0
         },
         {
@@ -18044,7 +18089,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 8.53,
+      "weighted_score": 8.52,
       "conviction_score": 133.3,
       "net_action": "trim"
     },
@@ -18052,7 +18097,7 @@
       "issuer": "APPLIED MATLS INC",
       "cusip": "038222105",
       "sector": "Other",
-      "total_value_usd": 117555093190,
+      "total_value_usd": 115838464066,
       "holder_count": 24,
       "holders": [
         {
@@ -18115,8 +18160,8 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "trim",
-          "value_usd": 5076329164,
-          "portfolio_weight_pct": 0.83
+          "value_usd": 3359700040,
+          "portfolio_weight_pct": 0.55
         },
         {
           "name": "Citadel Advisors",
@@ -18224,7 +18269,7 @@
           "portfolio_weight_pct": 0.01
         }
       ],
-      "weighted_score": 7.98,
+      "weighted_score": 7.7,
       "conviction_score": 133.3,
       "net_action": "add"
     },
@@ -18232,7 +18277,7 @@
       "issuer": "UNITEDHEALTH GROUP INC",
       "cusip": "91324P102",
       "sector": "Healthcare",
-      "total_value_usd": 135694170533,
+      "total_value_usd": 135024028200,
       "holder_count": 24,
       "holders": [
         {
@@ -18278,18 +18323,18 @@
           "portfolio_weight_pct": 0.33
         },
         {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "add",
-          "value_usd": 4449316683,
-          "portfolio_weight_pct": 0.73
-        },
-        {
           "name": "Wellington Management",
           "cik": "0000902219",
           "action": "add",
           "value_usd": 4436922985,
           "portfolio_weight_pct": 0.76
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "trim",
+          "value_usd": 3779174350,
+          "portfolio_weight_pct": 0.62
         },
         {
           "name": "Northern Trust",
@@ -18404,7 +18449,7 @@
           "portfolio_weight_pct": 0.01
         }
       ],
-      "weighted_score": 7.67,
+      "weighted_score": 7.56,
       "conviction_score": 133.3,
       "net_action": "trim"
     },
@@ -18412,7 +18457,7 @@
       "issuer": "CATERPILLAR INC",
       "cusip": "149123101",
       "sector": "Industrials",
-      "total_value_usd": 118279719666,
+      "total_value_usd": 117460928792,
       "holder_count": 24,
       "holders": [
         {
@@ -18472,18 +18517,18 @@
           "portfolio_weight_pct": 0.33
         },
         {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 3192710156,
-          "portfolio_weight_pct": 0.52
-        },
-        {
           "name": "Citadel Advisors",
           "cik": "1423053",
           "action": "add",
           "value_usd": 2908561370,
           "portfolio_weight_pct": 0.33
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "trim",
+          "value_usd": 2373919282,
+          "portfolio_weight_pct": 0.39
         },
         {
           "name": "Citadel Advisors",
@@ -18584,7 +18629,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 6.8,
+      "weighted_score": 6.67,
       "conviction_score": 133.3,
       "net_action": "add"
     },
@@ -18592,7 +18637,7 @@
       "issuer": "CHUBB LIMITED",
       "cusip": "H1467J104",
       "sector": "Other",
-      "total_value_usd": 49382077716,
+      "total_value_usd": 49230009897,
       "holder_count": 24,
       "holders": [
         {
@@ -18659,18 +18704,18 @@
           "portfolio_weight_pct": 0.14
         },
         {
-          "name": "Bank of New York Mellon",
-          "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 1042548801,
-          "portfolio_weight_pct": 0.17
-        },
-        {
           "name": "Goldman Sachs Group",
           "cik": "0000886982",
           "action": "trim",
           "value_usd": 953916069,
           "portfolio_weight_pct": 0.08
+        },
+        {
+          "name": "Bank of New York Mellon",
+          "cik": "0001390777",
+          "action": "trim",
+          "value_usd": 890480982,
+          "portfolio_weight_pct": 0.15
         },
         {
           "name": "Citadel Advisors",
@@ -18764,7 +18809,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 6.19,
+      "weighted_score": 6.16,
       "conviction_score": 133.3,
       "net_action": "trim"
     },
@@ -18772,7 +18817,7 @@
       "issuer": "NETFLIX INC",
       "cusip": "64110L106",
       "sector": "Technology",
-      "total_value_usd": 107558400216,
+      "total_value_usd": 107376026513,
       "holder_count": 24,
       "holders": [
         {
@@ -18856,8 +18901,8 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "trim",
-          "value_usd": 1906482368,
-          "portfolio_weight_pct": 0.31
+          "value_usd": 1724108665,
+          "portfolio_weight_pct": 0.28
         },
         {
           "name": "Citadel Advisors",
@@ -18944,7 +18989,7 @@
           "portfolio_weight_pct": 0.67
         }
       ],
-      "weighted_score": 6.06,
+      "weighted_score": 6.03,
       "conviction_score": 133.3,
       "net_action": "add"
     },
@@ -18952,7 +18997,7 @@
       "issuer": "COSTCO WHSL CORP NEW",
       "cusip": "22160K105",
       "sector": "Other",
-      "total_value_usd": 118758766482,
+      "total_value_usd": 118573207519,
       "holder_count": 24,
       "holders": [
         {
@@ -19015,8 +19060,8 @@
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
           "action": "trim",
-          "value_usd": 3007590298,
-          "portfolio_weight_pct": 0.49
+          "value_usd": 2822031335,
+          "portfolio_weight_pct": 0.46
         },
         {
           "name": "Citadel Advisors",
@@ -19124,7 +19169,7 @@
           "portfolio_weight_pct": 0.19
         }
       ],
-      "weighted_score": 5.72,
+      "weighted_score": 5.69,
       "conviction_score": 133.3,
       "net_action": "add"
     },
@@ -19132,7 +19177,7 @@
       "issuer": "TEXAS INSTRS INC",
       "cusip": "882508104",
       "sector": "Other",
-      "total_value_usd": 76549124736,
+      "total_value_usd": 76432508850,
       "holder_count": 24,
       "holders": [
         {
@@ -19166,9 +19211,9 @@
         {
           "name": "Bank of New York Mellon",
           "cik": "0001390777",
-          "action": "trim",
-          "value_usd": 4488665753,
-          "portfolio_weight_pct": 0.74
+          "action": "add",
+          "value_usd": 4372049867,
+          "portfolio_weight_pct": 0.72
         },
         {
           "name": "Wellington Management",
@@ -19304,7 +19349,7 @@
           "portfolio_weight_pct": 0.0
         }
       ],
-      "weighted_score": 5.28,
+      "weighted_score": 5.26,
       "conviction_score": 133.3,
       "net_action": "add"
     }
