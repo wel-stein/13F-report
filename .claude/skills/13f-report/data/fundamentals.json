@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16",
+  "generated_at": "2026-11-23",
   "source": "SEC EDGAR XBRL companyfacts",
   "stocks": {
     "A": {
@@ -19227,6 +19227,25 @@
       "rule_of_40": 24.3,
       "ticker": "ENB"
     },
+    "ENGS": {
+      "cik": "1971828",
+      "fiscal_year": 2026,
+      "revenue": 13887627,
+      "revenue_prior": 9457387,
+      "revenue_growth_pct": 46.8,
+      "net_income": 380152,
+      "net_margin_pct": 2.7,
+      "net_margin_pct_3y": -30.1,
+      "fcf": -1161514,
+      "fcf_3y": -696899,
+      "fcf_margin_pct": -8.4,
+      "cash": 344513,
+      "total_debt": 5544495,
+      "as_of": "2026-11-23",
+      "fy_3y": 2025,
+      "rule_of_40": 38.4,
+      "ticker": "ENGS"
+    },
     "ENIC": {
       "cik": "1659939",
       "fiscal_year": 2024,
@@ -21943,6 +21962,25 @@
       "fy_3y": 2022,
       "ticker": "FLNG"
     },
+    "FLNT": {
+      "cik": "1460329",
+      "fiscal_year": 2025,
+      "revenue": 208764000,
+      "revenue_prior": 254623000,
+      "revenue_growth_pct": -18.0,
+      "net_income": -27167000,
+      "net_margin_pct": -13.0,
+      "net_margin_pct_3y": -34.2,
+      "fcf": -1537000,
+      "fcf_3y": 1947000,
+      "fcf_margin_pct": -0.7,
+      "cash": 12935000,
+      "total_debt": 34580000,
+      "as_of": "2026-11-23",
+      "fy_3y": 2022,
+      "rule_of_40": -18.7,
+      "ticker": "FLNT"
+    },
     "FLO": {
       "cik": "1128928",
       "fiscal_year": 2025,
@@ -24340,7 +24378,7 @@
       "fcf_margin_pct": 2.2,
       "cash": null,
       "total_debt": null,
-      "as_of": "2026-08-24",
+      "as_of": "2026-11-23",
       "fy_3y": 2022,
       "rule_of_40": 2.5,
       "ticker": "GLP"
@@ -24381,6 +24419,25 @@
       "fy_3y": 2024,
       "rule_of_40": 41.3,
       "ticker": "GLUE"
+    },
+    "GLXG": {
+      "cik": "1905920",
+      "fiscal_year": 2026,
+      "revenue": 3674528,
+      "revenue_prior": 3494225,
+      "revenue_growth_pct": 5.2,
+      "net_income": -1354982,
+      "net_margin_pct": -36.9,
+      "net_margin_pct_3y": 18.3,
+      "fcf": -1046913,
+      "fcf_3y": 853714,
+      "fcf_margin_pct": -28.5,
+      "cash": null,
+      "total_debt": null,
+      "as_of": "2026-11-23",
+      "fy_3y": 2024,
+      "rule_of_40": -23.3,
+      "ticker": "GLXG"
     },
     "GM": {
       "cik": "1467858",
@@ -24441,20 +24498,21 @@
     },
     "GMEX": {
       "cik": "1928581",
-      "fiscal_year": 2025,
-      "revenue": 5200138,
-      "revenue_prior": 4466775,
-      "revenue_growth_pct": 16.4,
-      "net_income": -682724,
-      "net_margin_pct": -13.1,
+      "fiscal_year": 2026,
+      "revenue": 5609615,
+      "revenue_prior": 5200138,
+      "revenue_growth_pct": 7.9,
+      "net_income": -17275818,
+      "net_margin_pct": -308.0,
       "net_margin_pct_3y": -33.2,
-      "fcf": null,
+      "fcf": -8859889,
       "fcf_3y": -424845,
-      "fcf_margin_pct": null,
-      "cash": 2890822,
+      "fcf_margin_pct": -157.9,
+      "cash": 14919028,
       "total_debt": null,
-      "as_of": "2026-07-27",
+      "as_of": "2026-11-23",
       "fy_3y": 2023,
+      "rule_of_40": -150.0,
       "ticker": "GMEX"
     },
     "GMHS": {
